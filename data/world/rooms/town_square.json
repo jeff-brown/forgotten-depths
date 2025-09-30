@@ -1,0 +1,25 @@
+{
+  "id": "town_square",
+  "title": "Town Square",
+  "description": "The heart of Millhaven, this bustling town square is paved with smooth cobblestones. A magnificent fountain stands in the center, its crystal-clear water sparkling in the sunlight. Merchants and townsfolk go about their daily business, creating a lively atmosphere. To the north stands the impressive town hall, while various shops and establishments line the other sides of the square.",
+  "area_id": "starter_town",
+  "exits": {
+    "north": "town_hall",
+    "south": "market_square",
+    "east": "inn_entrance",
+    "west": "blacksmith_shop"
+  },
+  "items": [
+    "fountain_coin"
+  ],
+  "npcs": [
+    "town_crier"
+  ],
+  "features": [
+    "fountain",
+    "cobblestones",
+    "lamp_posts"
+  ],
+  "is_safe": true,
+  "light_level": "bright"
+}

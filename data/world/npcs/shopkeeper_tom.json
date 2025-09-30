@@ -1,0 +1,45 @@
+{
+  "id": "shopkeeper_tom",
+  "name": "Tom Hartwell",
+  "short_description": "a friendly shopkeeper",
+  "long_description": "Tom is a stout, middle-aged man with kind brown eyes and a well-groomed beard streaked with gray. His leather apron is worn but clean, and his sleeves are rolled up, revealing strong forearms from years of moving heavy crates and barrels. He has the easy manner of someone who genuinely enjoys helping people find what they need. Behind him, the shelves of his general store are meticulously organized, with everything from rope and lanterns to dried goods and basic tools. A merchant's scale sits prominently on his polished wooden counter, and he keeps a ledger nearby to track his inventory and transactions.",
+  "level": 6,
+  "type": "npc",
+  "hostile": false,
+  "health": 55,
+  "race": "human",
+  "class": "merchant",
+  "keywords": ["tom", "hartwell", "shopkeeper", "merchant", "general", "store", "keeper"],
+  "dialogue": {
+    "greeting": "Welcome to Tom's General Store! Whatever you need for your adventures, I'm sure we can find it here. What can I help you with today?",
+    "default": "Quality goods at fair prices - that's my motto! Been serving travelers and locals alike for over twenty years. This rope here is strong enough to hold a mountain giant!",
+    "goodbye": "Safe travels, friend! Remember, if you need anything at all, Tom's General Store is always here to help!"
+  },
+  "services": ["vendor", "general_goods", "repairs"],
+  "shop": {
+    "type": "general_store",
+    "buy_rate": 0.5,
+    "sell_rate": 1.0,
+    "specialties": ["tools", "rope", "lanterns", "provisions", "basic_supplies", "adventuring_gear"],
+    "inventory": [
+      {"item_id": "rope", "price": 15, "stock": -1},
+      {"item_id": "torch", "price": 3, "stock": -1},
+      {"item_id": "bread", "price": 6, "stock": -1},
+      {"item_id": "apple", "price": 3, "stock": -1},
+      {"item_id": "orange", "price": 4, "stock": -1},
+      {"item_id": "grapes", "price": 6, "stock": -1},
+      {"item_id": "health_potion", "price": 30, "stock": -1},
+      {"item_id": "mana_potion", "price": 30, "stock": -1},
+      {"item_id": "dagger", "price": 35, "stock": -1},
+      {"item_id": "cloth_robe", "price": 40, "stock": -1}
+    ]
+  },
+  "stats": {
+    "strength": 14,
+    "dexterity": 11,
+    "constitution": 15,
+    "intelligence": 13,
+    "wisdom": 16,
+    "charisma": 14
+  }
+}

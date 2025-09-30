@@ -1,0 +1,23 @@
+{
+  "id": "town_hall",
+  "title": "Millhaven Town Hall",
+  "description": "An impressive stone building that serves as the seat of local government. The spacious main hall features high vaulted ceilings, tall windows that flood the room with natural light, and polished marble floors. Official notices and proclamations hang on the walls, while a grand wooden desk sits at the far end where Mayor Thornfield conducts official business.",
+  "area_id": "starter_town",
+  "exits": {
+    "south": "town_square"
+  },
+  "items": [
+    "official_notices"
+  ],
+  "npcs": [
+    "mayor_thornfield"
+  ],
+  "features": [
+    "marble_floors",
+    "vaulted_ceiling",
+    "grand_desk",
+    "official_notices"
+  ],
+  "is_safe": true,
+  "light_level": "bright"
+}

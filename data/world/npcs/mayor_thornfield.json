@@ -1,0 +1,33 @@
+{
+  "id": "mayor_thornfield",
+  "name": "Mayor Edmund Thornfield",
+  "short_description": "the distinguished town mayor",
+  "long_description": "Mayor Edmund Thornfield is a distinguished gentleman in his late fifties with silver-streaked hair meticulously combed back and a well-maintained beard that frames his weathered yet dignified face. He wears fine woolen robes of deep blue trimmed with gold thread, befitting his station as the town's leader. A heavy bronze medallion bearing the seal of Millhaven hangs from his neck, and his hands are adorned with rings that speak of both office and modest wealth. Despite his formal appearance, his warm brown eyes hold genuine concern for his constituents, and deep laugh lines around his eyes suggest a man who, while serious about his duties, still finds time for joy. Behind his grand wooden desk, scrolls and official documents are neatly organized, evidence of his methodical approach to governance.",
+  "level": 10,
+  "type": "npc",
+  "hostile": false,
+  "health": 75,
+  "race": "human",
+  "class": "noble",
+  "keywords": ["mayor", "thornfield", "edmund", "official", "leader", "politician"],
+  "dialogue": {
+    "greeting": "Welcome to Millhaven, citizen! I am Mayor Thornfield. How may the town government be of service to you today?",
+    "default": "As mayor, it's my duty to ensure the prosperity and safety of all who call Millhaven home. We've worked hard to make this a place where adventurers and merchants alike can find respite and opportunity.",
+    "goodbye": "May your endeavors bring prosperity to yourself and to our fair town. Millhaven's doors are always open to you, friend."
+  },
+  "services": ["information", "town_services", "official_business"],
+  "shop": {
+    "type": "government",
+    "buy_rate": 0.0,
+    "sell_rate": 0.0,
+    "specialties": ["licenses", "permits", "official_documents"]
+  },
+  "stats": {
+    "strength": 11,
+    "dexterity": 10,
+    "constitution": 13,
+    "intelligence": 17,
+    "wisdom": 18,
+    "charisma": 19
+  }
+}

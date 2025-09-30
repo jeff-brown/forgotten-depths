@@ -1,0 +1,28 @@
+{
+  "id": "starter_town",
+  "name": "Millhaven",
+  "description": "A small, peaceful town where new adventurers begin their journey. The cobblestone streets are well-maintained, and friendly faces can be seen everywhere.",
+  "level_range": [1, 5],
+  "climate": "temperate",
+  "rooms": [
+    "town_square",
+    "town_hall",
+    "market_square",
+    "inn_entrance",
+    "inn_room_1",
+    "blacksmith_shop",
+    "general_store",
+    "tavern",
+    "arena"
+  ],
+  "notable_npcs": [
+    "mayor_thornfield",
+    "blacksmith_goran",
+    "innkeeper_mary",
+    "shopkeeper_tom"
+  ],
+  "quests": [
+    "welcome_quest",
+    "first_delivery"
+  ]
+}

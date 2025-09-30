@@ -1,0 +1,38 @@
+{
+  "id": "blacksmith_goran",
+  "name": "Goran the Blacksmith",
+  "short_description": "a burly blacksmith",
+  "long_description": "Goran is a mountain of a man, with arms like tree trunks and hands blackened by years of working the forge. His graying beard is singed at the edges from countless hours near the flames. Despite his intimidating appearance, his eyes twinkle with warmth and pride in his craft. Sweat glistens on his brow as he works tirelessly to create the finest weapons and armor in Millhaven.",
+  "level": 15,
+  "type": "npc",
+  "hostile": false,
+  "health": 200,
+  "race": "human",
+  "class": "artisan",
+  "keywords": ["goran", "blacksmith", "smith", "craftsman"],
+  "dialogue": {
+    "greeting": "Welcome to my smithy! Looking for some quality metalwork?",
+    "default": "I've been working this forge for thirty years. Nothing beats good honest steel, worked with skill and patience.",
+    "goodbye": "May your blade stay sharp and your armor strong!"
+  },
+  "services": ["blacksmith", "repair", "forge"],
+  "shop": {
+    "type": "blacksmith",
+    "buy_rate": 0.6,
+    "sell_markup": 0.9,
+    "specialties": ["weapons", "armor", "tools"],
+    "inventory": [
+      {"item_id": "short_sword", "price": 45, "stock": 5},
+      {"item_id": "dagger", "price": 25, "stock": 8},
+      {"item_id": "leather_armor", "price": 70, "stock": 4}
+    ]
+  },
+  "stats": {
+    "strength": 18,
+    "dexterity": 14,
+    "constitution": 16,
+    "intelligence": 12,
+    "wisdom": 15,
+    "charisma": 11
+  }
+}

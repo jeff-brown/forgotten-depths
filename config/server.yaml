@@ -1,0 +1,52 @@
+# Server Configuration for Forgotten Depths MUD
+
+# Network Settings
+network:
+  host: "localhost"
+  port: 4000
+  max_connections: 100
+  heartbeat_interval: 30
+  connection_timeout: 300
+
+# Web Client Settings
+web:
+  enabled: true
+  host: "0.0.0.0"
+  port: 8080
+  debug: false
+
+# Game Settings
+game:
+  tick_rate: 1.0
+  save_interval: 60
+  idle_timeout: 1800
+  max_level: 100
+  starting_room: "town_square"
+
+# Combat Settings
+combat:
+  base_damage: 5
+  critical_chance: 0.05
+  critical_multiplier: 2.0
+  flee_chance: 0.7
+
+# Experience Settings
+experience:
+  base_needed: 100
+  multiplier: 1.5
+  mob_base: 25
+
+# Logging Settings
+logging:
+  level: "INFO"
+  file: "logs/server.log"
+  max_size: "10MB"
+  backup_count: 5
+  console: true
+
+# Security Settings
+security:
+  max_login_attempts: 3
+  login_timeout: 900
+  password_min_length: 6
+  password_max_length: 50

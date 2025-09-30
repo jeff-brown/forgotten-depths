@@ -1,0 +1,10 @@
+{
+  "id": "inn_entrance",
+  "title": "Inn Entrance",
+  "description": "The welcoming entrance to the town inn. A polished wooden counter sits near the entrance where guests can check in. Comfortable chairs are arranged around a small fireplace, creating a cozy atmosphere. Stairs lead up to the guest rooms, and the town square is visible through the main door to the west.",
+  "area_id": "starter_town",
+  "is_safe": true,
+  "is_starting_room": true,
+  "light_level": 0.8,
+  "npcs": ["innkeeper_mary"]
+}

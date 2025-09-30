@@ -1,0 +1,39 @@
+{
+  "id": "spice_merchant",
+  "name": "Zahra the Spice Merchant",
+  "short_description": "an exotic spice merchant",
+  "long_description": "Zahra is a worldly woman in her thirties with dark, intelligent eyes and olive-toned skin that speaks of distant lands. Her black hair is adorned with small silver bells that chime softly when she moves. She wears flowing robes of deep purple and gold, and her fingers are stained with various spice powders. Her stall is a sensory feast - dozens of small bowls and sacks overflow with colorful spices, herbs, and exotic seasonings. The air around her is thick with the intoxicating aromas of cinnamon, cardamom, star anise, and dozens of other fragrant treasures from across the known world.",
+  "level": 8,
+  "type": "npc",
+  "hostile": false,
+  "health": 65,
+  "race": "human",
+  "class": "merchant",
+  "keywords": ["zahra", "spice", "merchant", "trader", "exotic"],
+  "dialogue": {
+    "greeting": "Welcome, friend! Come, breathe in the essence of a thousand lands! My spices will awaken your senses and transform any meal into a feast!",
+    "default": "These saffron threads are worth their weight in gold - they come from the distant eastern kingdoms where the sun kisses the earth just so. One pinch will elevate your cooking beyond imagination!",
+    "goodbye": "May your meals be forever flavorful, and may the winds carry you back to my humble stall!"
+  },
+  "services": ["vendor", "spices", "exotic_goods", "shop"],
+  "shop": {
+    "type": "spice_vendor",
+    "buy_rate": 0.3,
+    "sell_markup": 1.2,
+    "specialties": ["spices", "herbs", "exotic_seasonings", "cooking_supplies"],
+    "inventory": [
+      {"item_id": "cinnamon", "price": 15, "stock": 8},
+      {"item_id": "saffron", "price": 50, "stock": 3},
+      {"item_id": "pepper", "price": 8, "stock": 12},
+      {"item_id": "cooking_herbs", "price": 6, "stock": 20}
+    ]
+  },
+  "stats": {
+    "strength": 9,
+    "dexterity": 14,
+    "constitution": 12,
+    "intelligence": 16,
+    "wisdom": 17,
+    "charisma": 18
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "inn_balcony",
+  "title": "Inn Balcony",
+  "description": "A small wooden balcony jutting out from the second floor of the inn. From here you have a great view of the town square below. The evening breeze carries the sounds and smells of the bustling town. A window leads back into the inn room.",
+  "area_id": "starter_town",
+  "is_safe": true,
+  "light_level": 0.8
+}

@@ -1,0 +1,183 @@
+/* Basic styling for the MUD web client */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #000;
+    padding: 10px 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #00ff00;
+    font-size: 1.5em;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+}
+
+#connection-status {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+#connection-status.connected {
+    background-color: #004400;
+    color: #00ff00;
+}
+
+#connection-status.disconnected {
+    background-color: #440000;
+    color: #ff0000;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.game-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.output-area {
+    flex: 1;
+    background-color: #000;
+    border: 1px solid #333;
+    padding: 10px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.output-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output-area::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.output-area::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+.output-area::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#command-input {
+    flex: 1;
+    background-color: #000;
+    border: 1px solid #333;
+    color: #00ff00;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+#command-input:focus {
+    outline: none;
+    border-color: #00ff00;
+}
+
+#send-button {
+    background-color: #004400;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+#send-button:hover {
+    background-color: #006600;
+}
+
+#send-button:active {
+    background-color: #002200;
+}
+
+/* Message styling */
+.message {
+    margin-bottom: 5px;
+}
+
+.message.system {
+    color: #ffff00;
+}
+
+.message.error {
+    color: #ff0000;
+}
+
+.message.chat {
+    color: #00ffff;
+}
+
+.message.combat {
+    color: #ff8800;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .game-area {
+        padding: 5px;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    #send-button {
+        padding: 8px;
+    }
+}

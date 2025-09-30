@@ -1,0 +1,38 @@
+{
+  "id": "bartender",
+  "name": "Gareth Brewmaster",
+  "short_description": "a jovial bartender",
+  "long_description": "Gareth is a robust man in his forties with laughing green eyes and a magnificent red beard that's streaked with premature gray from years of taste-testing his own ales. His broad shoulders and thick arms speak of countless hours hauling barrels and kegs, while his quick hands dance across the polished oak bar with practiced ease. He wears a stained leather apron over a simple cotton shirt, and his sleeves are rolled up to reveal forearms covered in small burn scars from working the kitchen. Behind him, rows of bottles gleam in the firelight, and the air around him carries the rich scents of malt, hops, and hearty stew. His booming laugh can be heard throughout the tavern, and he greets every patron like an old friend.",
+  "level": 7,
+  "type": "npc",
+  "hostile": false,
+  "health": 60,
+  "race": "human",
+  "class": "merchant",
+  "keywords": ["gareth", "bartender", "brewmaster", "barkeep", "tender"],
+  "dialogue": {
+    "greeting": "Welcome to the Drunken Dragon! Pull up a stool and let old Gareth fix you something that'll warm your bones and lift your spirits!",
+    "default": "This ale here is my own special brew - been perfecting the recipe for fifteen years! The secret's in the hops I get from the mountain valleys. One sip and you'll taste adventure itself!",
+    "goodbye": "Safe travels, friend! May your mug always be full and your heart always light! You're always welcome at the Dragon!"
+  },
+  "services": ["vendor", "drinks", "food", "rumors", "shop"],
+  "shop": {
+    "type": "tavern",
+    "buy_rate": 0.3,
+    "sell_markup": 1.0,
+    "specialties": ["ale", "wine", "spirits", "tavern_food", "room_rental"],
+    "inventory": [
+      {"item_id": "ale", "price": 8, "stock": -1},
+      {"item_id": "bread", "price": 4, "stock": -1},
+      {"item_id": "stew", "price": 12, "stock": -1}
+    ]
+  },
+  "stats": {
+    "strength": 16,
+    "dexterity": 12,
+    "constitution": 17,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 17
+  }
+}

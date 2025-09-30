@@ -1,0 +1,27 @@
+{
+  "id": "town_crier",
+  "name": "Town Crier",
+  "short_description": "a loudly dressed town crier",
+  "long_description": "The town crier stands proudly in his colorful uniform, adorned with brass buttons and bright ribbons. His voice carries far across the square as he announces the latest news and events. A large brass bell hangs at his side, ready to gather attention when needed.",
+  "level": 1,
+  "type": "npc",
+  "hostile": false,
+  "health": 100,
+  "race": "human",
+  "class": "commoner",
+  "keywords": ["crier", "town", "herald"],
+  "dialogue": {
+    "greeting": "Hear ye, hear ye! Welcome to Millhaven, traveler!",
+    "default": "I announce all the important news and events in town. Is there anything you'd like to know?",
+    "goodbye": "May your travels be safe and prosperous!"
+  },
+  "services": ["information", "news"],
+  "stats": {
+    "strength": 10,
+    "dexterity": 12,
+    "constitution": 11,
+    "intelligence": 14,
+    "wisdom": 13,
+    "charisma": 16
+  }
+}

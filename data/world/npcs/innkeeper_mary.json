@@ -1,0 +1,37 @@
+{
+  "id": "innkeeper_mary",
+  "name": "Mary the Innkeeper",
+  "short_description": "a friendly innkeeper",
+  "long_description": "Mary is the warm and welcoming innkeeper of this establishment. Her kind eyes and genuine smile make travelers feel at home. She wears a simple but clean apron over her dress and always seems to know exactly what a weary traveler needs.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 150,
+  "race": "human",
+  "class": "commoner",
+  "keywords": ["mary", "innkeeper", "keeper"],
+  "dialogue": {
+    "greeting": "Welcome to our inn! Would you like a room for the night?",
+    "default": "We have the most comfortable beds in town, and my stew is famous throughout the region!",
+    "goodbye": "Safe travels, and come back anytime!"
+  },
+  "services": ["innkeeper", "rooms", "food", "shop"],
+  "shop": {
+    "type": "inn",
+    "buy_rate": 0.4,
+    "sell_markup": 1.0,
+    "inventory": [
+      {"item_id": "bread", "price": 4, "stock": -1},
+      {"item_id": "ale", "price": 8, "stock": -1},
+      {"item_id": "stew", "price": 10, "stock": -1}
+    ]
+  },
+  "stats": {
+    "strength": 12,
+    "dexterity": 14,
+    "constitution": 13,
+    "intelligence": 15,
+    "wisdom": 16,
+    "charisma": 17
+  }
+}

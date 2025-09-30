@@ -1,0 +1,23 @@
+{
+  "id": "market_square",
+  "title": "Market Square",
+  "description": "A bustling marketplace filled with colorful stalls and the voices of merchants hawking their wares. The scent of fresh bread, exotic spices, and ripe fruits fills the air. Shoppers browse the various goods on display while children dart between the stalls. To the north lies the main town square, while shops line the eastern and western edges.",
+  "area_id": "starter_town",
+  "exits": {
+    "north": "town_square",
+    "east": "general_store",
+    "west": "tavern"
+  },
+  "items": [],
+  "npcs": [
+    "fruit_vendor",
+    "spice_merchant"
+  ],
+  "features": [
+    "market_stalls",
+    "vendor_carts",
+    "cobblestone_paths"
+  ],
+  "is_safe": true,
+  "light_level": "bright"
+}

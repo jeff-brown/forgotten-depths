@@ -1,0 +1,21 @@
+{
+  "id": "tavern",
+  "title": "The Drunken Dragon Tavern",
+  "description": "A warm and inviting tavern filled with the sounds of laughter, clinking mugs, and lively conversation. The air is thick with the aroma of roasted meat and ale. Wooden tables and chairs are scattered throughout the room, while a massive stone fireplace crackles merrily in one corner. A polished oak bar dominates one side of the room, tended by a jovial bartender. To the north, a heavy wooden door leads to what appears to be an arena.",
+  "area_id": "starter_town",
+  "exits": {
+    "east": "market_square",
+    "north": "arena"
+  },
+  "items": [],
+  "npcs": [
+    "bartender"
+  ],
+  "features": [
+    "fireplace",
+    "oak_bar",
+    "wooden_tables"
+  ],
+  "is_safe": true,
+  "light_level": "warm"
+}

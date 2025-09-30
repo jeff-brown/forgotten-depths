@@ -1,0 +1,10 @@
+# Base requirements for Forgotten Depths MUD
+
+# Configuration and data handling
+PyYAML>=6.0
+
+# Database
+# SQLite is included with Python, no additional requirements needed
+
+# Optional: For enhanced terminal client
+# colorama>=0.4.4

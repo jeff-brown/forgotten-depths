@@ -1,0 +1,332 @@
+{
+  "items": {
+    "bread": {
+      "name": "Bread",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 5,
+      "description": "A loaf of fresh bread that restores health when eaten.",
+      "properties": {
+        "restore_health": 10
+      }
+    },
+    "ale": {
+      "name": "Ale",
+      "type": "consumable",
+      "weight": 2,
+      "base_value": 10,
+      "description": "A mug of hearty ale that restores mana when consumed.",
+      "properties": {
+        "restore_mana": 5
+      }
+    },
+    "short_sword": {
+      "name": "Short Sword",
+      "type": "weapon",
+      "weight": 5,
+      "base_value": 50,
+      "description": "A well-balanced short sword with a sharp blade.",
+      "properties": {
+        "damage": "1d6+1",
+        "weapon_type": "sword",
+        "material": "steel"
+      }
+    },
+    "dagger": {
+      "name": "Dagger",
+      "type": "weapon",
+      "weight": 2,
+      "base_value": 25,
+      "description": "A small, quick blade perfect for close combat.",
+      "properties": {
+        "damage": "1d4+1",
+        "weapon_type": "dagger",
+        "material": "steel"
+      }
+    },
+    "leather_armor": {
+      "name": "Leather Armor",
+      "type": "armor",
+      "weight": 10,
+      "base_value": 75,
+      "description": "Sturdy leather armor that provides basic protection.",
+      "properties": {
+        "armor_class": 2,
+        "armor_type": "light",
+        "material": "leather"
+      }
+    },
+    "cloth_robe": {
+      "name": "Cloth Robe",
+      "type": "armor",
+      "weight": 3,
+      "base_value": 30,
+      "description": "A simple cloth robe favored by mages and scholars.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "cloth",
+        "material": "cloth",
+        "mana_bonus": 5
+      }
+    },
+    "health_potion": {
+      "name": "Health Potion",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 20,
+      "description": "A red potion that instantly restores health.",
+      "properties": {
+        "restore_health": 25,
+        "instant": true
+      }
+    },
+    "mana_potion": {
+      "name": "Mana Potion",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 20,
+      "description": "A blue potion that instantly restores mana.",
+      "properties": {
+        "restore_mana": 15,
+        "instant": true
+      }
+    },
+    "rope": {
+      "name": "Rope",
+      "type": "tool",
+      "weight": 5,
+      "base_value": 10,
+      "description": "Fifty feet of sturdy hemp rope.",
+      "properties": {
+        "length": 50,
+        "material": "hemp"
+      }
+    },
+    "torch": {
+      "name": "Torch",
+      "type": "tool",
+      "weight": 1,
+      "base_value": 2,
+      "description": "A wooden torch that provides light in dark places.",
+      "properties": {
+        "light_radius": 30,
+        "burn_time": 60
+      }
+    },
+    "bronze_gong": {
+      "name": "Bronze Gong",
+      "type": "fixture",
+      "weight": 1000,
+      "base_value": 500,
+      "description": "A massive bronze gong mounted on an ornate stand. Its surface is covered in ancient runes and shows the green patina of age. When struck, it produces a deep, resonant tone that seems to call forth challenges from the depths.",
+      "properties": {
+        "can_take": false,
+        "actions": ["ring", "strike", "hit"],
+        "keywords": ["gong", "bronze", "bronze gong"]
+      }
+    },
+    "stew": {
+      "name": "Hearty Stew",
+      "type": "consumable",
+      "weight": 2,
+      "base_value": 12,
+      "description": "A warm bowl of hearty stew with chunks of meat and vegetables.",
+      "properties": {
+        "restore_health": 15,
+        "restore_mana": 5
+      }
+    },
+    "apple": {
+      "name": "Apple",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 2,
+      "description": "A crisp, red apple that's perfect for a quick snack.",
+      "properties": {
+        "restore_health": 3
+      }
+    },
+    "orange": {
+      "name": "Orange",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 3,
+      "description": "A juicy orange that provides refreshing nourishment.",
+      "properties": {
+        "restore_health": 4
+      }
+    },
+    "grapes": {
+      "name": "Grapes",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 5,
+      "description": "A cluster of sweet grapes, perfect for travel rations.",
+      "properties": {
+        "restore_health": 6
+      }
+    },
+    "cinnamon": {
+      "name": "Cinnamon",
+      "type": "ingredient",
+      "weight": 0.5,
+      "base_value": 15,
+      "description": "A small pouch of aromatic cinnamon spice.",
+      "properties": {
+        "cooking_bonus": 2
+      }
+    },
+    "saffron": {
+      "name": "Saffron",
+      "type": "ingredient",
+      "weight": 0.2,
+      "base_value": 50,
+      "description": "Precious golden saffron threads, worth their weight in gold.",
+      "properties": {
+        "cooking_bonus": 5,
+        "rare": true
+      }
+    },
+    "pepper": {
+      "name": "Black Pepper",
+      "type": "ingredient",
+      "weight": 0.5,
+      "base_value": 8,
+      "description": "A small container of freshly ground black pepper.",
+      "properties": {
+        "cooking_bonus": 1
+      }
+    },
+    "cooking_herbs": {
+      "name": "Cooking Herbs",
+      "type": "ingredient",
+      "weight": 0.5,
+      "base_value": 6,
+      "description": "A bundle of fresh herbs perfect for seasoning food.",
+      "properties": {
+        "cooking_bonus": 1
+      }
+    },
+    "rat_tail": {
+      "name": "Rat Tail",
+      "type": "crafting",
+      "weight": 0.1,
+      "base_value": 2,
+      "description": "A long, scaly tail from a giant rat. Often used in alchemy.",
+      "properties": {
+        "alchemy_ingredient": true
+      }
+    },
+    "small_bone": {
+      "name": "Small Bone",
+      "type": "crafting",
+      "weight": 0.5,
+      "base_value": 1,
+      "description": "A small animal bone that could be useful for crafting.",
+      "properties": {
+        "crafting_material": true
+      }
+    },
+    "rusty_dagger": {
+      "name": "Rusty Dagger",
+      "type": "weapon",
+      "weight": 2,
+      "base_value": 8,
+      "description": "A small, rusty blade that's seen better days. Still sharp enough to be dangerous.",
+      "properties": {
+        "damage": "1d3",
+        "weapon_type": "dagger",
+        "material": "iron",
+        "condition": "poor"
+      }
+    },
+    "goblin_ear": {
+      "name": "Goblin Ear",
+      "type": "trophy",
+      "weight": 0.1,
+      "base_value": 5,
+      "description": "A leathery green ear from a goblin. Some collectors pay well for these.",
+      "properties": {
+        "trophy": true
+      }
+    },
+    "tattered_cloth": {
+      "name": "Tattered Cloth",
+      "type": "crafting",
+      "weight": 0.3,
+      "base_value": 1,
+      "description": "A piece of worn, tattered cloth that might be useful for repairs.",
+      "properties": {
+        "crafting_material": true
+      }
+    },
+    "bone_fragment": {
+      "name": "Bone Fragment",
+      "type": "crafting",
+      "weight": 0.5,
+      "base_value": 3,
+      "description": "A fragment of bone with an eerie magical aura. Necromancers value these.",
+      "properties": {
+        "alchemy_ingredient": true,
+        "magical": true
+      }
+    },
+    "rusty_sword": {
+      "name": "Rusty Sword",
+      "type": "weapon",
+      "weight": 5,
+      "base_value": 15,
+      "description": "An old, rusty sword that has lost much of its edge. Could be repaired by a skilled blacksmith.",
+      "properties": {
+        "damage": "1d4+1",
+        "weapon_type": "sword",
+        "material": "iron",
+        "condition": "poor"
+      }
+    },
+    "ancient_coin": {
+      "name": "Ancient Coin",
+      "type": "treasure",
+      "weight": 0.1,
+      "base_value": 20,
+      "description": "An old coin from a long-forgotten kingdom. Valuable to collectors and historians.",
+      "properties": {
+        "valuable": true,
+        "collectible": true
+      }
+    },
+    "wolf_pelt": {
+      "name": "Wolf Pelt",
+      "type": "crafting",
+      "weight": 3,
+      "base_value": 12,
+      "description": "A thick, gray wolf pelt in good condition. Perfect for making warm clothing.",
+      "properties": {
+        "crafting_material": true,
+        "leather_working": true
+      }
+    },
+    "wolf_fang": {
+      "name": "Wolf Fang",
+      "type": "trophy",
+      "weight": 0.2,
+      "base_value": 6,
+      "description": "A sharp fang from a gray wolf. Could be fashioned into a necklace or charm.",
+      "properties": {
+        "trophy": true,
+        "crafting_material": true
+      }
+    },
+    "raw_meat": {
+      "name": "Raw Meat",
+      "type": "ingredient",
+      "weight": 2,
+      "base_value": 4,
+      "description": "Fresh raw meat from a wild animal. Should be cooked before eating.",
+      "properties": {
+        "cooking_ingredient": true,
+        "perishable": true
+      }
+    }
+  }
+}

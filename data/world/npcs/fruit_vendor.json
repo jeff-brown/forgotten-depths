@@ -1,0 +1,39 @@
+{
+  "id": "fruit_vendor",
+  "name": "Elara the Fruit Vendor",
+  "short_description": "a cheerful fruit vendor",
+  "long_description": "Elara is a middle-aged woman with sun-weathered hands and a warm smile that never seems to fade. Her auburn hair is tied back in a practical bun, and she wears a simple brown apron over her green dress. Her stall overflows with fresh fruits of every color - bright red apples, golden oranges, deep purple grapes, and exotic fruits from distant lands. The sweet aroma of ripe fruit surrounds her, and she greets every potential customer with genuine enthusiasm.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "merchant",
+  "keywords": ["elara", "fruit", "vendor", "merchant", "seller"],
+  "dialogue": {
+    "greeting": "Fresh fruit today! The finest in all of Millhaven! What can I get for you?",
+    "default": "These apples came in just this morning from the orchards. Sweet as honey and crisp as autumn air!",
+    "goodbye": "Thank you kindly! May your travels be as sweet as my fruit!"
+  },
+  "services": ["vendor", "food", "shop"],
+  "shop": {
+    "type": "food_vendor",
+    "buy_rate": 0.4,
+    "sell_markup": 1.0,
+    "specialties": ["fruit", "food", "provisions"],
+    "inventory": [
+      {"item_id": "apple", "price": 2, "stock": 30},
+      {"item_id": "orange", "price": 3, "stock": 20},
+      {"item_id": "grapes", "price": 5, "stock": 15},
+      {"item_id": "bread", "price": 5, "stock": 10}
+    ]
+  },
+  "stats": {
+    "strength": 10,
+    "dexterity": 12,
+    "constitution": 14,
+    "intelligence": 13,
+    "wisdom": 15,
+    "charisma": 16
+  }
+}

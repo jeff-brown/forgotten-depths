@@ -1,0 +1,82 @@
+# Game Settings Configuration for Forgotten Depths MUD
+
+# Player Settings
+player:
+  starting_stats:
+    strength: 10
+    dexterity: 10
+    constitution: 10
+    intelligence: 10
+    wisdom: 10
+    charisma: 10
+
+  starting_resources:
+    health: 100
+    mana: 50
+    gold: 100
+
+  inventory:
+    default_size: 20
+    max_size: 100
+    starting_items:
+      - "bread"
+      - "health_potion_small"
+
+# World Settings
+world:
+  respawn_time: 300
+  room_capacity: 50
+  weather_enabled: false
+  day_night_cycle: false
+
+# Combat Settings
+combat:
+  turn_based: false
+  auto_attack: true
+  damage_variance: 0.2
+  armor_effectiveness: 0.1
+
+# Economy Settings
+economy:
+  vendor_buy_rate: 0.5
+  vendor_sell_rate: 1.2
+  tax_rate: 0.05
+  inflation_rate: 0.0
+
+# Communication Settings
+communication:
+  max_message_length: 500
+  profanity_filter: false
+  chat_channels:
+    - "global"
+    - "newbie"
+    - "trade"
+
+  message_history: 100
+
+# Quest Settings
+quests:
+  auto_accept: false
+  completion_rewards_multiplier: 1.0
+  daily_quests: false
+
+# Magic Settings
+magic:
+  mana_regeneration: 1
+  spell_failure_chance: 0.05
+  reagent_required: false
+
+# Death Settings
+death:
+  permadeath: false
+  corpse_decay_time: 600
+  death_penalty:
+    experience_loss: 0.1
+    item_loss: false
+    stat_loss: false
+
+# Admin Settings
+admin:
+  godmode_available: true
+  building_enabled: true
+  player_editing: true

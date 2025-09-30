@@ -1,0 +1,90 @@
+[
+  {
+    "id": "rat",
+    "name": "Giant Rat",
+    "description": "A large, mangy rat with yellowed teeth and beady red eyes. It looks hungry and aggressive.",
+    "type": "monster",
+    "level": 1,
+    "health": 15,
+    "max_health": 15,
+    "damage_min": 1,
+    "damage_max": 3,
+    "armor": 0,
+    "experience_reward": 10,
+    "gold_reward": [1, 3],
+    "aggressive": true,
+    "speed": 1.2,
+    "loot_table": [
+      {"item_id": "rat_tail", "chance": 0.3},
+      {"item_id": "small_bone", "chance": 0.1}
+    ]
+  },
+  {
+    "id": "goblin_scout",
+    "name": "Goblin Scout",
+    "description": "A small, green-skinned creature wearing tattered leather armor. It carries a crude dagger and looks ready for trouble.",
+    "type": "monster",
+    "level": 2,
+    "health": 25,
+    "max_health": 25,
+    "damage_min": 3,
+    "damage_max": 6,
+    "armor": 2,
+    "experience_reward": 20,
+    "gold_reward": [2, 8],
+    "aggressive": true,
+    "speed": 1.0,
+    "abilities": ["backstab"],
+    "loot_table": [
+      {"item_id": "rusty_dagger", "chance": 0.2},
+      {"item_id": "goblin_ear", "chance": 0.4},
+      {"item_id": "tattered_cloth", "chance": 0.3}
+    ]
+  },
+  {
+    "id": "skeleton_warrior",
+    "name": "Skeleton Warrior",
+    "description": "The animated bones of a long-dead warrior, held together by dark magic. Its empty eye sockets glow with an eerie light.",
+    "type": "undead",
+    "level": 4,
+    "health": 40,
+    "max_health": 40,
+    "damage_min": 5,
+    "damage_max": 9,
+    "armor": 3,
+    "experience_reward": 35,
+    "gold_reward": [3, 12],
+    "aggressive": true,
+    "speed": 0.8,
+    "resistances": ["poison", "fear"],
+    "weaknesses": ["holy", "bludgeoning"],
+    "loot_table": [
+      {"item_id": "bone_fragment", "chance": 0.6},
+      {"item_id": "rusty_sword", "chance": 0.15},
+      {"item_id": "ancient_coin", "chance": 0.1}
+    ]
+  },
+  {
+    "id": "wolf",
+    "name": "Gray Wolf",
+    "description": "A fierce gray wolf with sharp fangs and intelligent eyes. It moves with predatory grace and seems ready to defend its territory.",
+    "type": "animal",
+    "level": 3,
+    "health": 35,
+    "max_health": 35,
+    "damage_min": 4,
+    "damage_max": 8,
+    "armor": 1,
+    "experience_reward": 25,
+    "gold_reward": [0, 2],
+    "aggressive": false,
+    "pack_animal": true,
+    "speed": 1.3,
+    "abilities": ["howl", "pack_tactics"],
+    "loot_table": [
+      {"item_id": "wolf_pelt", "chance": 0.7},
+      {"item_id": "wolf_fang", "chance": 0.3},
+      {"item_id": "raw_meat", "chance": 0.5}
+    ]
+  }
+]

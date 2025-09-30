@@ -1,0 +1,8 @@
+{
+  "id": "inn_room_1",
+  "title": "Inn Room",
+  "description": "A cozy inn room with a comfortable bed, a small wooden table, and a window overlooking the town square. The room is simply furnished but clean and welcoming. A window leads out to a small balcony.",
+  "area_id": "starter_town",
+  "is_safe": true,
+  "light_level": 0.7
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "health_potion_small",
+    "name": "Small Health Potion",
+    "description": "A small vial containing a red liquid that glows faintly. Restores a modest amount of health when consumed.",
+    "type": "consumable",
+    "effect_type": "heal",
+    "effect_amount": 25,
+    "weight": 0.5,
+    "value": 15,
+    "stackable": true,
+    "max_stack": 10,
+    "required_level": 1
+  },
+  {
+    "id": "mana_potion_small",
+    "name": "Small Mana Potion",
+    "description": "A small vial containing a blue liquid that shimmers with magical energy. Restores mana when consumed.",
+    "type": "consumable",
+    "effect_type": "restore_mana",
+    "effect_amount": 20,
+    "weight": 0.5,
+    "value": 20,
+    "stackable": true,
+    "max_stack": 10,
+    "required_level": 1
+  },
+  {
+    "id": "bread",
+    "name": "Loaf of Bread",
+    "description": "A fresh loaf of bread, still warm from the oven. Provides sustenance and slowly restores health.",
+    "type": "consumable",
+    "effect_type": "heal_over_time",
+    "effect_amount": 5,
+    "duration": 60,
+    "weight": 1.0,
+    "value": 3,
+    "stackable": true,
+    "max_stack": 5,
+    "required_level": 1
+  },
+  {
+    "id": "antidote",
+    "name": "Antidote",
+    "description": "A bitter-tasting liquid that neutralizes most common poisons. Essential for any adventurer.",
+    "type": "consumable",
+    "effect_type": "cure_poison",
+    "effect_amount": 1,
+    "weight": 0.3,
+    "value": 25,
+    "stackable": true,
+    "max_stack": 5,
+    "required_level": 1
+  },
+  {
+    "id": "fountain_coin",
+    "name": "Fountain Coin",
+    "description": "A shiny copper coin that seems to have been thrown into the fountain. Legend says making a wish and throwing it back brings good luck.",
+    "type": "misc",
+    "weight": 0.1,
+    "value": 1,
+    "stackable": true,
+    "max_stack": 50,
+    "special_use": "fountain_wish"
+  }
+]

@@ -1,0 +1,1 @@
+"""Client package for the Forgotten Depths MUD."""

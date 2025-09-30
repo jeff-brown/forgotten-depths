@@ -1,0 +1,1 @@
+"""Shared interfaces and protocols."""

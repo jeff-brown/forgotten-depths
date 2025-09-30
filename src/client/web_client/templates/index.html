@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgotten Depths MUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Forgotten Depths</h1>
+            <div class="status">
+                <span id="connection-status" class="disconnected">Disconnected</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-area">
+                <div id="output" class="output-area"></div>
+                <div class="input-area">
+                    <input type="text" id="command-input" placeholder="Enter command..." autocomplete="off">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/client.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"""NPC-related classes and functionality."""

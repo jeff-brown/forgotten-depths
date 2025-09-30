@@ -1,0 +1,335 @@
+"""Player management system for handling player connections, authentication, and data persistence."""
+
+import asyncio
+import time
+from typing import Optional, Dict, Any
+
+from ...persistence.player_storage import PlayerStorage
+from ...utils.logger import get_logger
+
+
+class PlayerManager:
+    """Manages player connections, authentication, and data persistence."""
+
+    def __init__(self, game_engine):
+        """Initialize the player manager with a reference to the game engine."""
+        self.game_engine = game_engine
+        self.logger = get_logger()
+
+        # Player management
+        self.connected_players: Dict[int, Any] = {}
+
+    @property
+    def player_storage(self) -> Optional[PlayerStorage]:
+        """Get the player storage instance from the game engine."""
+        return self.game_engine.player_storage
+
+    @property
+    def connection_manager(self):
+        """Get the connection manager from the game engine."""
+        return self.game_engine.connection_manager
+
+    def handle_player_connect(self, player_id: int):
+        """Handle a new player connection."""
+        self.logger.info(f"Player {player_id} connected")
+
+        # Initialize player session
+        self.connected_players[player_id] = {
+            'player_id': player_id,
+            'connection_time': time.time(),
+            'authenticated': False,
+            'character': None,
+            'login_state': 'username_prompt'
+        }
+
+        # Send initial prompts (async)
+        asyncio.create_task(self._send_welcome_messages(player_id))
+
+    async def _send_welcome_messages(self, player_id: int):
+        """Send welcome messages to a new player."""
+        await self.connection_manager.send_message(player_id, "Welcome to Forgotten Depths!")
+        await self.connection_manager.send_message(player_id, "Username: ", add_newline=False)
+
+    async def handle_player_disconnect(self, player_id: int):
+        """Handle a player disconnection."""
+        self.logger.info(f"Player {player_id} disconnected")
+
+        if player_id in self.connected_players:
+            player_data = self.connected_players[player_id]
+
+            # Notify others in the room that this player has left
+            if (player_data.get('character') and
+                player_data.get('authenticated') and
+                player_data.get('username')):
+                username = player_data['username']
+                room_id = player_data['character'].get('room_id')
+                if room_id:
+                    await self.game_engine._notify_room_except_player(room_id, player_id, f"{username} has left the game.")
+
+            # Save character if authenticated
+            if player_data.get('character') and player_data.get('authenticated'):
+                self.save_player_character(player_id, player_data['character'])
+
+            # Clean up
+            del self.connected_players[player_id]
+
+    def authenticate_player(self, username: str, password: str) -> bool:
+        """Authenticate a player."""
+        # Development mode: allow any non-empty username
+        if username and len(username.strip()) > 0:
+            return True
+
+        # Legacy authentication for production
+        if not self.player_storage:
+            return True
+
+        player_id = self.player_storage.authenticate_player(username, password)
+        return player_id is not None
+
+    def save_player_character(self, player_id: int, character: Dict[str, Any]):
+        """Save a player's character to the database.
+
+        Args:
+            player_id: The player's connection ID
+            character: The character data dict to save
+        """
+        if not self.player_storage:
+            return
+
+        try:
+            # Get the player's username
+            player_data = self.connected_players.get(player_id)
+            if not player_data:
+                return
+
+            username = player_data.get('username')
+            if not username:
+                self.logger.warning(f"Cannot save character for player {player_id}: no username")
+                return
+
+            # Save the character data
+            print(f"[DEBUG] Saving character for '{username}': level {character.get('level')}, gold {character.get('gold')}, room {character.get('room_id')}")
+            success = self.player_storage.save_character_data(username, character)
+            if success:
+                self.logger.info(f"Successfully saved character data for {username}")
+                print(f"[DEBUG] Save confirmed for '{username}'")
+            else:
+                self.logger.error(f"Failed to save character data for {username}")
+                print(f"[DEBUG] Save FAILED for '{username}'")
+
+        except Exception as e:
+            self.logger.error(f"Failed to save character for player {player_id}: {e}")
+
+    def save_all_players(self):
+        """Save all connected players."""
+        for player_id, player_data in self.connected_players.items():
+            if player_data.get('character') and player_data.get('authenticated'):
+                self.save_player_character(player_id, player_data['character'])
+
+    def on_player_connected(self, data):
+        """Event handler for player connection."""
+        self.logger.debug(f"Player connected event: {data}")
+
+    def on_player_disconnected(self, data):
+        """Event handler for player disconnection."""
+        self.logger.debug(f"Player disconnected event: {data}")
+
+    def on_player_command(self, data):
+        """Event handler for player command."""
+        self.logger.debug(f"Player command event: {data}")
+
+    def get_connected_player_count(self) -> int:
+        """Get the number of connected players."""
+        return len(self.connected_players)
+
+    def get_player_info(self, player_id: int) -> Optional[Dict[str, Any]]:
+        """Get information about a connected player."""
+        return self.connected_players.get(player_id)
+
+    def get_player_data(self, player_id: int) -> Optional[Dict[str, Any]]:
+        """Get player data for a specific player ID."""
+        return self.connected_players.get(player_id)
+
+    def is_player_authenticated(self, player_id: int) -> bool:
+        """Check if a player is authenticated."""
+        player_data = self.connected_players.get(player_id)
+        return player_data.get('authenticated', False) if player_data else False
+
+    def get_player_character(self, player_id: int) -> Optional[Dict[str, Any]]:
+        """Get a player's character data."""
+        player_data = self.connected_players.get(player_id)
+        return player_data.get('character') if player_data else None
+
+    def set_player_character(self, player_id: int, character: Dict[str, Any]):
+        """Set a player's character data."""
+        if player_id in self.connected_players:
+            self.connected_players[player_id]['character'] = character
+
+    def set_player_authenticated(self, player_id: int, authenticated: bool = True):
+        """Set a player's authentication status."""
+        if player_id in self.connected_players:
+            self.connected_players[player_id]['authenticated'] = authenticated
+
+    def get_player_username(self, player_id: int) -> Optional[str]:
+        """Get a player's username."""
+        player_data = self.connected_players.get(player_id)
+        return player_data.get('username') if player_data else None
+
+    def set_player_username(self, player_id: int, username: str):
+        """Set a player's username."""
+        if player_id in self.connected_players:
+            self.connected_players[player_id]['username'] = username
+
+    def get_player_login_state(self, player_id: int) -> Optional[str]:
+        """Get a player's login state."""
+        player_data = self.connected_players.get(player_id)
+        return player_data.get('login_state') if player_data else None
+
+    def set_player_login_state(self, player_id: int, login_state: str):
+        """Set a player's login state."""
+        if player_id in self.connected_players:
+            self.connected_players[player_id]['login_state'] = login_state
+
+    def get_players_in_room(self, room_id: str, exclude_player_id: Optional[int] = None) -> list:
+        """Get all players in a specific room."""
+        players_in_room = []
+        for player_id, player_data in self.connected_players.items():
+            if (player_data.get('character') and
+                player_data['character'].get('room_id') == room_id and
+                (exclude_player_id is None or player_id != exclude_player_id)):
+                players_in_room.append({
+                    'player_id': player_id,
+                    'username': player_data.get('username', f'player_{player_id}'),
+                    'character': player_data['character']
+                })
+        return players_in_room
+
+    def is_player_connected(self, player_id: int) -> bool:
+        """Check if a player is currently connected."""
+        return player_id in self.connected_players
+
+    def get_all_connected_players(self) -> Dict[int, Any]:
+        """Get all connected players data."""
+        return self.connected_players.copy()
+
+    async def move_player(self, player_id: int, direction: str):
+        """Move a player in a direction."""
+        player_data = self.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        # Check if player is fatigued from combat
+        if self.game_engine.combat_system.is_player_fatigued(player_id):
+            fatigue_time = self.game_engine.combat_system.get_player_fatigue_remaining(player_id)
+            await self.connection_manager.send_message(player_id,
+                f"You are too exhausted from combat to move! Wait {fatigue_time:.1f} more seconds.")
+            return
+
+        character = player_data['character']
+        current_room = character['room_id']
+        exits = self.game_engine.world_manager.get_exits_from_room(current_room)
+
+        # Map short directions to full names
+        direction_map = {
+            'n': 'north', 's': 'south', 'e': 'east', 'w': 'west',
+            'ne': 'northeast', 'nw': 'northwest',
+            'se': 'southeast', 'sw': 'southwest',
+            'u': 'up', 'd': 'down'
+        }
+
+        full_direction = direction_map.get(direction, direction)
+
+        if full_direction in exits:
+            new_room = exits[full_direction]
+            username = player_data.get('username', 'Someone')
+
+            # Notify others in the current room that this player is leaving
+            await self.game_engine._notify_room_except_player(current_room, player_id, f"{username} has just gone {full_direction}.")
+
+            # Move the player
+            character['room_id'] = new_room
+            await self.connection_manager.send_message(player_id, f"You go {full_direction}.")
+
+            # Notify others in the new room that this player has arrived
+            opposite_direction = self._get_opposite_direction(full_direction)
+            if opposite_direction:
+                await self.game_engine._notify_room_except_player(new_room, player_id, f"{username} has just arrived from {opposite_direction}.")
+            else:
+                await self.game_engine._notify_room_except_player(new_room, player_id, f"{username} has just arrived.")
+
+            await self.game_engine.world_manager.send_room_description(player_id, detailed=False)
+        else:
+            available = ", ".join(exits.keys()) if exits else "none"
+            await self.connection_manager.send_message(player_id, f"You can't go {direction}. Available exits: {available}")
+
+    def _get_opposite_direction(self, direction: str) -> str:
+        """Get the opposite direction for arrival messages."""
+        opposite_map = {
+            'north': 'south', 'south': 'north',
+            'east': 'west', 'west': 'east',
+            'northeast': 'southwest', 'southwest': 'northeast',
+            'northwest': 'southeast', 'southeast': 'northwest',
+            'up': 'below', 'down': 'above',
+            'window': 'window'  # Special case for bidirectional exits
+        }
+        return opposite_map.get(direction, None)
+
+    async def notify_room_except_player(self, room_id: str, exclude_player_id: int, message: str):
+        """Send a message to all players in a room except the specified player."""
+        for player_id, player_data in self.connected_players.items():
+            if (player_id != exclude_player_id and
+                player_data.get('character') and
+                player_data['character'].get('room_id') == room_id):
+                await self.connection_manager.send_message(player_id, message)
+
+    def calculate_encumbrance(self, character: Dict[str, Any]) -> int:
+        """Calculate total encumbrance from inventory, equipped items, and gold.
+
+        Args:
+            character: The character dict
+
+        Returns:
+            Total encumbrance weight
+        """
+        total_weight = 0
+
+        # Add weight from inventory items
+        for item in character.get('inventory', []):
+            total_weight += item.get('weight', 0)
+
+        # Add weight from equipped items
+        equipped = character.get('equipped', {})
+        for slot, item in equipped.items():
+            if item:
+                total_weight += item.get('weight', 0)
+
+        # Add weight from gold (100 gold = 1 weight unit)
+        gold_weight = character.get('gold', 0) / 100.0
+
+        total_weight += gold_weight
+
+        return round(total_weight, 2)
+
+    def calculate_max_encumbrance(self, character: Dict[str, Any]) -> int:
+        """Calculate max encumbrance based on character's strength.
+
+        Args:
+            character: The character dict
+
+        Returns:
+            Maximum encumbrance capacity
+        """
+        strength = character.get('strength', 10)
+        # Base formula: Strength * 15
+        # A character with 10 strength can carry 150 weight
+        # A character with 20 strength can carry 300 weight
+        return strength * 15
+
+    def update_encumbrance(self, character: Dict[str, Any]):
+        """Update the character's encumbrance value based on current inventory.
+
+        Args:
+            character: The character dict to update
+        """
+        character['encumbrance'] = self.calculate_encumbrance(character)
+        character['max_encumbrance'] = self.calculate_max_encumbrance(character)

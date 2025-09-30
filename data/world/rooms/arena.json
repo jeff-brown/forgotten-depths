@@ -1,0 +1,23 @@
+{
+  "id": "arena",
+  "title": "Combat Arena",
+  "description": "A large circular arena with sandy floors marked by countless battles. Ancient stone seating rises in tiers around the combat area, though it now lies empty and weathered. In the center stands a massive bronze gong, its surface green with age but still capable of producing a thunderous sound that can be heard throughout the depths. The air feels heavy with anticipation and the echoes of past conflicts.",
+  "area_id": "starter_town",
+  "is_safe": false,
+  "light_level": 0.8,
+  "special_items": [
+    {
+      "id": "bronze_gong",
+      "name": "Bronze Gong",
+      "description": "A massive bronze gong mounted on an ornate stand. Its surface is covered in ancient runes and shows the green patina of age. When struck, it produces a deep, resonant tone that seems to call forth challenges from the depths.",
+      "type": "fixture",
+      "can_take": false,
+      "keywords": ["gong", "bronze", "bronze gong"],
+      "actions": {
+        "ring": "ring_gong",
+        "strike": "ring_gong",
+        "hit": "ring_gong"
+      }
+    }
+  ]
+}

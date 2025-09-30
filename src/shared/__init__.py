@@ -1,0 +1,1 @@
+"""Shared utilities and types for the Forgotten Depths MUD."""

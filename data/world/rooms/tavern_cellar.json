@@ -1,0 +1,8 @@
+{
+  "id": "tavern_cellar",
+  "title": "Tavern Cellar",
+  "description": "A dimly lit cellar beneath the tavern, filled with barrels of ale and wine. The air is cool and musty, and you can hear the muffled sounds of revelry from above. Shadows dance in the flickering candlelight.",
+  "area_id": "starter_town",
+  "is_safe": true,
+  "light_level": 0.3
+}

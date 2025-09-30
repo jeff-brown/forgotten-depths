@@ -1,0 +1,36 @@
+# Database Configuration for Forgotten Depths MUD
+
+# SQLite Database Settings
+database:
+  type: "sqlite"
+  path: "data/mud.db"
+
+  # Connection pool settings
+  pool:
+    max_connections: 10
+    timeout: 30
+
+  # Backup settings
+  backup:
+    enabled: true
+    interval_hours: 6
+    max_backups: 10
+    backup_dir: "backups"
+
+  # Performance settings
+  performance:
+    journal_mode: "WAL"
+    synchronous: "NORMAL"
+    cache_size: 2000
+    temp_store: "MEMORY"
+
+# Data integrity settings
+integrity:
+  foreign_keys: true
+  auto_vacuum: "INCREMENTAL"
+
+# Migration settings
+migrations:
+  enabled: true
+  auto_migrate: true
+  migration_dir: "migrations"
