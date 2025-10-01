@@ -1,0 +1,12 @@
+{
+  "id": "dungeon_entrance",
+  "title": "Dungeon Entrance",
+  "description": "A dark stairway descends from the arena floor above, opening into a damp stone corridor. The walls are hewn from rough stone, glistening with moisture. Torch brackets line the walls, though most are empty or hold only charred remains. The air is thick and musty, carrying the scent of decay and forgotten things. A narrow passageway leads deeper into the dungeon to the north.",
+  "area_id": "arena_dungeon",
+  "is_safe": false,
+  "light_level": 0.3,
+  "exits": {
+    "up": "arena",
+    "north": "dungeon_hall_1"
+  }
+}

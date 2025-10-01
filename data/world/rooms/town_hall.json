@@ -4,7 +4,9 @@
   "description": "An impressive stone building that serves as the seat of local government. The spacious main hall features high vaulted ceilings, tall windows that flood the room with natural light, and polished marble floors. Official notices and proclamations hang on the walls, while a grand wooden desk sits at the far end where Mayor Thornfield conducts official business.",
   "area_id": "starter_town",
   "exits": {
-    "south": "town_square"
+    "south": "town_square",
+    "east": "temple",
+    "north": "training_hall"
   },
   "items": [
     "official_notices"

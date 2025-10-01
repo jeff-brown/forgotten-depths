@@ -1,0 +1,13 @@
+{
+  "id": "dungeon_junction",
+  "title": "Dungeon Junction",
+  "description": "The corridor opens into a small junction where three passages meet. The stone here is darker, almost black, and seems to absorb what little light penetrates this deep. Strange symbols are carved into the floor in a circular pattern, their meaning lost to time. The passage south leads back toward the entrance, while darker paths lead east and west into unexplored chambers.",
+  "area_id": "arena_dungeon",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "south": "dungeon_hall_2",
+    "east": "dungeon_crypt",
+    "west": "dungeon_cavern"
+  }
+}

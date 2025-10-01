@@ -1,0 +1,21 @@
+{
+  "id": "temple",
+  "title": "Temple of Healing",
+  "description": "A serene temple dedicated to the healing arts. Soft golden light filters through stained glass windows, casting colorful patterns on the marble floor. The scent of healing herbs fills the air. A large altar stands at the far end, adorned with symbols of restoration and life. Wooden pews line the sides, and candles flicker peacefully throughout the sacred space.",
+  "area_id": "starter_town",
+  "exits": {
+    "west": "town_hall"
+  },
+  "items": [],
+  "npcs": [
+    "brother_aldric"
+  ],
+  "features": [
+    "altar",
+    "stained_glass_windows",
+    "candles",
+    "marble_floor"
+  ],
+  "is_safe": true,
+  "light_level": "dim"
+}

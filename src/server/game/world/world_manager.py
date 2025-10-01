@@ -34,7 +34,6 @@ class WorldManager:
             rooms_data = self.world_loader.load_rooms()
             items_data = self.world_loader.load_items()
             npcs_data = self.world_loader.load_npcs()
-            connections_data = self.world_loader.load_connections()
 
             # Create room objects
             self._create_rooms(rooms_data)
@@ -42,11 +41,11 @@ class WorldManager:
             # Create area objects
             self._create_areas(areas_data)
 
-            # Setup room connections
-            self._setup_connections(connections_data)
+            # Setup room connections from room exit data
+            self._setup_connections_from_rooms(rooms_data)
 
-            # Build world graph
-            self._build_world_graph(connections_data)
+            # Build world graph from room exit data
+            self._build_world_graph_from_rooms(rooms_data)
 
             # Load items and NPCs
             self._load_items(items_data)
@@ -84,6 +83,18 @@ class WorldManager:
             if 'light_level' in room_data:
                 room.light_level = room_data['light_level']
 
+            # Set lair properties
+            if 'is_lair' in room_data:
+                room.is_lair = room_data['is_lair']
+            if 'lair_monster' in room_data:
+                room.lair_monster = room_data['lair_monster']
+            if 'respawn_time' in room_data:
+                room.respawn_time = room_data['respawn_time']
+
+            # Populate NPCs list from JSON
+            if 'npcs' in room_data:
+                room.npcs = room_data['npcs']
+
             # Store raw data for NPC and item references
             room._raw_data = room_data
 
@@ -106,53 +117,20 @@ class WorldManager:
 
             self.areas[area_id] = area
 
-    def _setup_connections(self, connections_data: Dict):
-        """Setup connections between rooms."""
-        # Process basic room connections
-        rooms_connections = connections_data.get('rooms', {})
-
-        for room_id, exits in rooms_connections.items():
+    def _setup_connections_from_rooms(self, rooms_data: Dict):
+        """Setup connections between rooms from room exit data."""
+        for room_id, room_data in rooms_data.items():
             if room_id not in self.rooms:
                 continue
 
             room = self.rooms[room_id]
+            exits = room_data.get('exits', {})
+
             for direction, target_room_id in exits.items():
                 if target_room_id in self.rooms:
                     from .exit import Exit
                     exit_obj = Exit(target_room_id, direction)
                     room.add_exit(direction, exit_obj)
-
-        # Process enhanced connections
-        enhanced_connections = connections_data.get('enhanced_connections', [])
-
-        for connection in enhanced_connections:
-            from_room_id = connection.get('from')
-            to_room_id = connection.get('to')
-            direction = connection.get('direction')
-
-            if (from_room_id in self.rooms and
-                to_room_id in self.rooms and
-                direction):
-
-                from_room = self.rooms[from_room_id]
-                from .exit import Exit
-                exit_obj = Exit(to_room_id, direction)
-
-                # Add any special properties to the exit
-                if 'type' in connection:
-                    exit_obj.connection_type = connection['type']
-                if 'weight' in connection:
-                    exit_obj.weight = connection['weight']
-                if 'locked' in connection:
-                    exit_obj.locked = connection['locked']
-                if 'key' in connection:
-                    exit_obj.key = connection['key']
-                if 'requirements' in connection:
-                    exit_obj.requirements = connection['requirements']
-                if 'description' in connection:
-                    exit_obj.description = connection['description']
-
-                from_room.add_exit(direction, exit_obj)
 
     def _load_items(self, items_data: Dict):
         """Load item definitions."""
@@ -296,18 +274,18 @@ class WorldManager:
         # - Dynamic room changes
         pass
 
-    def _build_world_graph(self, connections_data: Dict):
-        """Build the world navigation graph."""
+    def _build_world_graph_from_rooms(self, rooms_data: Dict):
+        """Build the world navigation graph from room exit data."""
         # Add all rooms to the graph
         for room_id in self.rooms:
             self.world_graph.add_room(room_id)
 
-        # Add connections as graph edges
-        rooms_connections = connections_data.get('rooms', {})
-        for room_id, exits in rooms_connections.items():
+        # Add connections as graph edges from room exits
+        for room_id, room_data in rooms_data.items():
             if room_id not in self.rooms:
                 continue
 
+            exits = room_data.get('exits', {})
             for direction, target_room_id in exits.items():
                 if target_room_id in self.rooms:
                     # Create graph edge
@@ -319,24 +297,6 @@ class WorldManager:
                         weight=1.0
                     )
                     self.world_graph.add_edge(edge)
-
-        # Check for enhanced connection data with edge types
-        if 'enhanced_connections' in connections_data:
-            enhanced = connections_data['enhanced_connections']
-            for conn in enhanced:
-                edge = GraphEdge(
-                    from_room=conn['from'],
-                    to_room=conn['to'],
-                    direction=conn.get('direction', ''),
-                    edge_type=EdgeType(conn.get('type', 'normal')),
-                    weight=conn.get('weight', 1.0),
-                    requirements=conn.get('requirements', []),
-                    is_locked=conn.get('locked', False),
-                    key_required=conn.get('key', None),
-                    hidden=conn.get('hidden', False),
-                    description=conn.get('description', '')
-                )
-                self.world_graph.add_edge(edge)
 
     def find_path(self, start: str, goal: str, character: 'Character' = None) -> Optional[List[str]]:
         """Find a path between two rooms using the world graph."""
@@ -458,10 +418,6 @@ class WorldManager:
                 # If it's a list of NPC IDs
                 room_npcs = room.npcs
 
-        # Also try to get NPCs from raw data if available
-        if hasattr(room, '_raw_data') and room._raw_data and 'npcs' in room._raw_data:
-            room_npcs.extend(room._raw_data['npcs'])
-
         # Convert NPC IDs to readable names using preloaded data
         for npc_id in room_npcs:
             # Get the proper display name from NPC data
@@ -561,7 +517,10 @@ class WorldManager:
                         else:
                             health_status = f"\n{mob['name']} is critically wounded."
 
-                    await self.game_engine.connection_manager.send_message(player_id, description + health_status)
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        description + health_status
+                    )
                     return
 
         # Check for room NPCs
@@ -654,6 +613,8 @@ class WorldManager:
             return
 
         monster = random.choice(monsters_data)
+        self.logger.info(f"[GONG DEBUG] Selected monster: {monster.get('name')}")
+        self.logger.info(f"[GONG DEBUG] Monster loot_table: {monster.get('loot_table', 'MISSING!')}")
 
         # Send atmospheric message
         await self.game_engine.connection_manager.send_message(player_id,
@@ -678,26 +639,41 @@ class WorldManager:
         if room_id not in self.game_engine.room_mobs:
             self.game_engine.room_mobs[room_id] = []
 
-        # Create a simple mob instance with the monster data
+        # Generate random stats using game engine's stat generation
+        level = monster.get('level', 1)
+        monster_type = monster.get('type', 'monster')
+        stats = self.game_engine._generate_mob_stats(level, monster_type)
+
+        # Create a mob instance with full stat block
         spawned_mob = {
             'id': monster.get('id', 'unknown'),
             'name': mob_name,
             'type': 'hostile',
             'description': monster.get('description', f'A fierce {mob_name}'),
-            'level': monster.get('level', 1),
+            'level': level,
             'health': monster.get('health', 100),
             'max_health': monster.get('health', 100),
             'damage': monster.get('damage', '1d4'),  # Dice notation or will use damage_min/damage_max
             'damage_min': monster.get('damage_min', 1),
             'damage_max': monster.get('damage_max', 4),
             'armor_class': monster.get('armor', 0),
-            'strength': monster.get('strength', 12),
-            'dexterity': monster.get('dexterity', 10),
+
+            # Full stat block
+            'strength': stats['strength'],
+            'dexterity': stats['dexterity'],
+            'constitution': stats['constitution'],
+            'intelligence': stats['intelligence'],
+            'wisdom': stats['wisdom'],
+            'charisma': stats['charisma'],
+
             'experience_reward': monster.get('experience_reward', 25),
             'gold_reward': monster.get('gold_reward', [0, 5]),
             'loot_table': monster.get('loot_table', []),
+            'experience': 0,  # Track XP gained from mob vs mob combat
+            'gold': 0,  # Track gold looted from other mobs
             'spawned_by_gong': True
         }
 
         self.game_engine.room_mobs[room_id].append(spawned_mob)
         self.logger.info(f"[ARENA] {mob_name} spawned in {room_id} by player {player_id}")
+        self.logger.info(f"[ARENA DEBUG] Spawned mob loot_table: {spawned_mob.get('loot_table', 'ERROR')}")

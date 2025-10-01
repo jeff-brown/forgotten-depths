@@ -2,23 +2,49 @@
   "items": {
     "bread": {
       "name": "Bread",
-      "type": "consumable",
+      "type": "food",
       "weight": 1,
       "base_value": 5,
-      "description": "A loaf of fresh bread that restores health when eaten.",
+      "description": "A loaf of fresh bread.",
+      "nutrition": 40,
       "properties": {
         "restore_health": 10
       }
     },
     "ale": {
       "name": "Ale",
-      "type": "consumable",
+      "type": "drink",
       "weight": 2,
       "base_value": 10,
-      "description": "A mug of hearty ale that restores mana when consumed.",
+      "description": "A mug of hearty ale.",
+      "hydration": 50,
       "properties": {
         "restore_mana": 5
       }
+    },
+    "water": {
+      "name": "Water",
+      "type": "drink",
+      "weight": 1,
+      "base_value": 2,
+      "description": "A flask of clean, refreshing water.",
+      "hydration": 60
+    },
+    "cheese": {
+      "name": "Cheese",
+      "type": "food",
+      "weight": 1,
+      "base_value": 8,
+      "description": "A wedge of aged cheese.",
+      "nutrition": 35
+    },
+    "dried_meat": {
+      "name": "Dried Meat",
+      "type": "food",
+      "weight": 1,
+      "base_value": 10,
+      "description": "Preserved meat that travels well.",
+      "nutrition": 50
     },
     "short_sword": {
       "name": "Short Sword",
@@ -127,10 +153,11 @@
     },
     "stew": {
       "name": "Hearty Stew",
-      "type": "consumable",
+      "type": "food",
       "weight": 2,
       "base_value": 12,
       "description": "A warm bowl of hearty stew with chunks of meat and vegetables.",
+      "nutrition": 60,
       "properties": {
         "restore_health": 15,
         "restore_mana": 5
@@ -138,30 +165,33 @@
     },
     "apple": {
       "name": "Apple",
-      "type": "consumable",
+      "type": "food",
       "weight": 1,
       "base_value": 2,
       "description": "A crisp, red apple that's perfect for a quick snack.",
+      "nutrition": 20,
       "properties": {
         "restore_health": 3
       }
     },
     "orange": {
       "name": "Orange",
-      "type": "consumable",
+      "type": "food",
       "weight": 1,
       "base_value": 3,
       "description": "A juicy orange that provides refreshing nourishment.",
+      "nutrition": 25,
       "properties": {
         "restore_health": 4
       }
     },
     "grapes": {
       "name": "Grapes",
-      "type": "consumable",
+      "type": "food",
       "weight": 1,
       "base_value": 5,
       "description": "A cluster of sweet grapes, perfect for travel rations.",
+      "nutrition": 30,
       "properties": {
         "restore_health": 6
       }
@@ -326,6 +356,125 @@
       "properties": {
         "cooking_ingredient": true,
         "perishable": true
+      }
+    },
+    "scroll_magic_missile": {
+      "name": "Scroll of Magic Missile",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 50,
+      "description": "A scroll inscribed with the spell Magic Missile. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "magic_missile",
+        "spell_level": 1,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_heal": {
+      "name": "Scroll of Heal",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 80,
+      "description": "A scroll inscribed with the Heal spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "heal",
+        "spell_level": 1,
+        "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_shield": {
+      "name": "Scroll of Shield",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 60,
+      "description": "A scroll inscribed with the Shield spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "shield",
+        "spell_level": 1,
+        "spell_school": "abjuration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_lightning_bolt": {
+      "name": "Scroll of Lightning Bolt",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 150,
+      "description": "A scroll inscribed with the Lightning Bolt spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "lightning_bolt",
+        "spell_level": 2,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_fireball": {
+      "name": "Scroll of Fireball",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 200,
+      "description": "A scroll inscribed with the powerful Fireball spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "fireball",
+        "spell_level": 3,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_cure_wounds": {
+      "name": "Scroll of Cure Wounds",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 70,
+      "description": "A scroll inscribed with the Cure Wounds spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "cure_wounds",
+        "spell_level": 1,
+        "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_of_murder": {
+      "name": "Scroll of Murder",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 100,
+      "description": "A dark scroll inscribed with the Murder spell. This powerful spell can oneshot anything. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "murder",
+        "spell_level": 2,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
       }
     }
   }

@@ -25,6 +25,12 @@ class ConfigManager:
         self._items_cache = None
         self._vendors_cache = None
         self._vendors_by_location = None
+        self.game_data = {}  # For storing races, classes, spells, etc.
+        self.game_settings = {}  # For storing game settings from game_settings.yaml
+
+        # Load game data on initialization
+        self._load_game_data()
+        self._load_game_settings()
 
     def load_items(self) -> Dict[str, Any]:
         """Load items configuration from JSON file."""
@@ -136,7 +142,7 @@ class ConfigManager:
         # Create item instance with appropriate value
         price = vendor_price if vendor_price is not None else item_config['base_value']
 
-        return {
+        item_instance = {
             'name': item_config['name'],
             'weight': item_config['weight'],
             'value': price,  # Use vendor price or base value
@@ -144,6 +150,14 @@ class ConfigManager:
             'description': item_config.get('description', ''),
             'properties': item_config.get('properties', {})
         }
+
+        # Include nutrition/hydration for food/drink items
+        if 'nutrition' in item_config:
+            item_instance['nutrition'] = item_config['nutrition']
+        if 'hydration' in item_config:
+            item_instance['hydration'] = item_config['hydration']
+
+        return item_instance
 
     def get_vendor_buy_price(self, vendor_id: str, item_value: int) -> int:
         """Calculate buy price for an item at a vendor."""
@@ -161,3 +175,57 @@ class ConfigManager:
         self._items_cache = None
         self._vendors_cache = None
         self._vendors_by_location = None
+        self._load_game_data()
+
+    def _load_game_data(self):
+        """Load game data files (races, classes, spells)."""
+        project_root = Path(__file__).parent.parent.parent.parent
+        data_dir = project_root / "data"
+
+        # Load races
+        races_file = data_dir / "races.json"
+        if races_file.exists():
+            with open(races_file, 'r', encoding='utf-8') as f:
+                self.game_data['races'] = json.load(f)
+
+        # Load classes
+        classes_file = data_dir / "classes.json"
+        if classes_file.exists():
+            with open(classes_file, 'r', encoding='utf-8') as f:
+                self.game_data['classes'] = json.load(f)
+
+        # Load spells
+        spells_file = data_dir / "spells.json"
+        if spells_file.exists():
+            with open(spells_file, 'r', encoding='utf-8') as f:
+                self.game_data['spells'] = json.load(f)
+
+    def _load_game_settings(self):
+        """Load game settings from game_settings.yaml."""
+        settings_file = self.config_dir / "game_settings.yaml"
+        if settings_file.exists():
+            with open(settings_file, 'r', encoding='utf-8') as f:
+                self.game_settings = yaml.safe_load(f) or {}
+        else:
+            # Use defaults if file doesn't exist
+            self.game_settings = {}
+
+    def get_setting(self, *path, default=None):
+        """Get a setting value using dot notation.
+
+        Args:
+            *path: Path components (e.g., 'player', 'hunger_thirst', 'hunger_decay_per_tick')
+            default: Default value if setting not found
+
+        Returns:
+            The setting value or default
+        """
+        value = self.game_settings
+        for key in path:
+            if isinstance(value, dict):
+                value = value.get(key)
+            else:
+                return default
+            if value is None:
+                return default
+        return value

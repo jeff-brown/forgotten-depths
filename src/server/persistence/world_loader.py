@@ -62,7 +62,11 @@ class WorldLoader:
                         for item in item_data:
                             items[item['id']] = item
                     elif isinstance(item_data, dict):
-                        items.update(item_data)
+                        # Check if this dict has an 'items' key (nested structure)
+                        if 'items' in item_data:
+                            items.update(item_data['items'])
+                        else:
+                            items.update(item_data)
 
         return items
 

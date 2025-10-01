@@ -3,6 +3,7 @@
 import asyncio
 import random
 import json
+import time
 from typing import Optional, Dict, Any, Tuple
 
 
@@ -29,6 +30,11 @@ class CommandHandler:
     async def _process_player_command(self, player_id: int, command: str, params: str):
         """Process a player command asynchronously."""
         player_data = self.game_engine.player_manager.get_player_data(player_id)
+
+        # Handle character creation (even if authenticated)
+        if player_data.get('creating_character'):
+            await self._handle_character_creation_input(player_id, command)
+            return
 
         # Handle login process
         if not player_data.get('authenticated'):
@@ -98,7 +104,29 @@ class CommandHandler:
         if 'max_mana' not in character:
             intellect = character.get('intellect', 15)
             character['max_mana'] = intellect * 3 + 3  # Base calculation
+
+        # Add hunger and thirst for old characters
+        if 'hunger' not in character:
+            character['hunger'] = 100
+            print(f"[MIGRATION] Set hunger to 100")
+
+        if 'thirst' not in character:
+            character['thirst'] = 100
+            print(f"[MIGRATION] Set thirst to 100")
             print(f"[MIGRATION] Set max_mana to {character['max_mana']}")
+
+        # Ensure spell-related fields exist
+        if 'spellbook' not in character:
+            character['spellbook'] = []
+            print(f"[MIGRATION] Initialized empty spellbook")
+
+        if 'spell_cooldowns' not in character:
+            character['spell_cooldowns'] = {}
+            print(f"[MIGRATION] Initialized empty spell_cooldowns")
+
+        if 'active_effects' not in character:
+            character['active_effects'] = []
+            print(f"[MIGRATION] Initialized empty active_effects")
 
     async def _handle_character_selection(self, player_id: int, username: str):
         """Handle character selection/creation."""
@@ -119,42 +147,154 @@ class CommandHandler:
             else:
                 print(f"[DEBUG] No existing character found for '{username}', creating new one")
 
-        # No existing character found, create a new one
+        # No existing character found, start character creation flow
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        player_data['creating_character'] = True
+        player_data['char_creation_step'] = 'race'
+
+        await self._show_race_selection(player_id)
+        return
+
+    async def _show_race_selection(self, player_id: int):
+        """Show race selection menu."""
+        races = self._load_races()
+        message = "\n=== Choose Your Race ===\n\n"
+        for i, (race_id, race_data) in enumerate(races.items(), 1):
+            message += f"{i}. {race_data['name']}\n   {race_data['description']}\n\n"
+        message += "Enter the number of your choice: "
+        await self.game_engine.connection_manager.send_message(player_id, message, add_newline=False)
+
+    async def _show_class_selection(self, player_id: int):
+        """Show class selection menu."""
+        classes = self._load_classes()
+        message = "\n=== Choose Your Class ===\n\n"
+        for i, (class_id, class_data) in enumerate(classes.items(), 1):
+            message += f"{i}. {class_data['name']}\n   {class_data['description']}\n\n"
+        message += "Enter the number of your choice: "
+        await self.game_engine.connection_manager.send_message(player_id, message, add_newline=False)
+
+    def _load_races(self):
+        """Load race definitions from JSON."""
+        import json
+        import os
+        try:
+            with open('data/races.json', 'r') as f:
+                return json.load(f)
+        except:
+            # Fallback to default
+            return {"human": {"name": "Human", "description": "Versatile humans", "base_stats": {"strength": 10, "dexterity": 10, "constitution": 10, "intellect": 10, "wisdom": 10, "charisma": 10}}}
+
+    def _load_classes(self):
+        """Load class definitions from JSON."""
+        import json
+        import os
+        try:
+            with open('data/classes.json', 'r') as f:
+                return json.load(f)
+        except:
+            # Fallback to default
+            return {"fighter": {"name": "Fighter", "description": "Martial warrior", "stat_modifiers": {}, "hp_modifier": 1.0, "mana_modifier": 1.0}}
+
+    async def _handle_character_creation_input(self, player_id: int, user_input: str):
+        """Handle input during character creation."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        step = player_data.get('char_creation_step')
+
+        if step == 'race':
+            races = self._load_races()
+            race_list = list(races.keys())
+            try:
+                choice = int(user_input) - 1
+                if 0 <= choice < len(race_list):
+                    player_data['selected_race'] = race_list[choice]
+                    player_data['char_creation_step'] = 'class'
+                    await self._show_class_selection(player_id)
+                else:
+                    await self.game_engine.connection_manager.send_message(player_id, "Invalid choice. Try again.")
+                    await self._show_race_selection(player_id)
+            except ValueError:
+                await self.game_engine.connection_manager.send_message(player_id, "Please enter a number.")
+                await self._show_race_selection(player_id)
+
+        elif step == 'class':
+            classes = self._load_classes()
+            class_list = list(classes.keys())
+            try:
+                choice = int(user_input) - 1
+                if 0 <= choice < len(class_list):
+                    player_data['selected_class'] = class_list[choice]
+                    await self._create_character_with_selection(player_id)
+                else:
+                    await self.game_engine.connection_manager.send_message(player_id, "Invalid choice. Try again.")
+                    await self._show_class_selection(player_id)
+            except ValueError:
+                await self.game_engine.connection_manager.send_message(player_id, "Please enter a number.")
+                await self._show_class_selection(player_id)
+
+    async def _create_character_with_selection(self, player_id: int):
+        """Create character with selected race and class."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        username = player_data.get('username')
+        selected_race = player_data.get('selected_race', 'human')
+        selected_class = player_data.get('selected_class', 'fighter')
+
+        races = self._load_races()
+        classes = self._load_classes()
+        race_data = races.get(selected_race, races['human'])
+        class_data = classes.get(selected_class, classes['fighter'])
+
         # Get starting room from world manager
         starting_room = self.game_engine.world_manager.get_default_starting_room()
+
+        # Roll random stats (3d6 for each stat)
+        import random
+        def roll_stat():
+            return sum(random.randint(1, 6) for _ in range(3))
+
+        base_stats = {
+            'strength': roll_stat(),
+            'dexterity': roll_stat(),
+            'constitution': roll_stat(),
+            'intellect': roll_stat(),
+            'wisdom': roll_stat(),
+            'charisma': roll_stat()
+        }
+
+        # Apply race base stats if no random (use race base instead)
+        # Apply race modifiers
+        for stat, value in race_data.get('stat_modifiers', {}).items():
+            base_stats[stat] = base_stats.get(stat, 10) + value
+
+        # Apply class modifiers
+        for stat, value in class_data.get('stat_modifiers', {}).items():
+            base_stats[stat] = base_stats.get(stat, 10) + value
 
         character = {
             'name': username,
             'room_id': starting_room,
-            'species': 'Human',  # Default race
-            'class': 'Fighter',  # Default class
+            'species': race_data['name'],
+            'class': class_data['name'],
             'level': 1,
             'experience': 0,
             'rune': 'None',
-
-            # Stats
-            'intellect': 15,
-            'wisdom': 15,
-            'strength': 15,
-            'constitution': 15,
-            'dexterity': 15,
-            'charisma': 15,
+            **base_stats
         }
 
-        # Calculate max hit points based on constitution with randomness
-        # Formula: (Constitution * 5) + random(1-10) + level bonus
-        import random
+        # Calculate max hit points with class modifier
+        # Formula: (Constitution * 5) + random(1-10) + level bonus * class HP modifier
         constitution = character['constitution']
+        hp_modifier = class_data.get('hp_modifier', 1.0)
         base_hp = constitution * 5
         random_hp = random.randint(1, 10)
-        level_bonus = (character['level'] - 1) * 5  # +5 HP per level after 1st
-        max_hp = base_hp + random_hp + level_bonus
+        level_bonus = (character['level'] - 1) * 5
+        max_hp = int((base_hp + random_hp + level_bonus) * hp_modifier)
 
-        # Calculate max mana based on intellect
+        # Calculate max mana with class modifier
         intellect = character['intellect']
+        mana_modifier = class_data.get('mana_modifier', 1.0)
         base_mana = intellect * 3
         random_mana = random.randint(1, 5)
-        max_mana = base_mana + random_mana
+        max_mana = int((base_mana + random_mana) * mana_modifier)
 
         character.update({
             # Health and Mana
@@ -167,6 +307,10 @@ class CommandHandler:
             'status': 'Healthy',
             'armor_class': 0,
 
+            # Hunger and Thirst (0-100, 100 = fully fed/hydrated)
+            'hunger': 100,
+            'thirst': 100,
+
             # Equipment slots
             'equipped': {
                 'weapon': None,      # Equipped weapon item
@@ -178,14 +322,40 @@ class CommandHandler:
             # Inventory and Currency
             'inventory': [],  # List of items
             'gold': 100,  # Starting gold
+
+            # Magic
+            'spellbook': [],  # Known spells
+            'spell_cooldowns': {},  # Spell cooldowns {spell_id: tick_remaining}
+            'active_effects': [],  # Active buffs/debuffs
         })
+
+        # Give starting spells based on class
+        class_spells = {
+            'Mage': ['magic_missile', 'shield'],
+            'Cleric': ['heal', 'cure_wounds'],
+            'Ranger': ['cure_wounds']
+        }
+        if class_data['name'] in class_spells:
+            character['spellbook'] = class_spells[class_data['name']].copy()
 
         # Calculate initial encumbrance based on starting gold and strength
         self.game_engine.player_manager.update_encumbrance(character)
 
+        # Set character and clear creation flags
         self.game_engine.player_manager.set_player_character(player_id, character)
+        player_data['creating_character'] = False
+        player_data['char_creation_step'] = None
 
-        await self.game_engine.connection_manager.send_message(player_id, f"Character '{username}' loaded successfully!")
+        # Show character stats
+        stats_msg = f"\n=== Character Created ===\n"
+        stats_msg += f"Race: {character['species']}\n"
+        stats_msg += f"Class: {character['class']}\n\n"
+        stats_msg += f"STR: {character['strength']}  DEX: {character['dexterity']}  CON: {character['constitution']}\n"
+        stats_msg += f"INT: {character['intellect']}  WIS: {character['wisdom']}  CHA: {character['charisma']}\n\n"
+        stats_msg += f"HP: {max_hp}  Mana: {max_mana}\n"
+
+        await self.game_engine.connection_manager.send_message(player_id, stats_msg)
+        await self.game_engine.connection_manager.send_message(player_id, f"Welcome to the world, {username}!")
         await self.game_engine._send_room_description(player_id, detailed=True)
 
     async def _handle_game_command(self, player_id: int, command: str, params: str):
@@ -226,9 +396,16 @@ look (l)        - Look around or examine target
 help (?)        - Show this help
 exits           - Show exits
 stats (st)      - Show character stats
+train           - Level up at a trainer
 inventory (i)   - Show inventory
+spellbook (sb)  - Show learned spells
 get <item>      - Pick up an item
 drop <item>     - Drop an item
+eat <item>      - Eat food
+drink <item>    - Drink beverage
+read <item>     - Read a scroll to learn a spell
+equip <item>    - Equip weapon or armor
+unequip <item>  - Unequip weapon or armor
 list            - Show vendor wares
 buy <item>      - Buy from vendor
 sell <item>     - Sell to vendor
@@ -236,6 +413,7 @@ sell <item>     - Sell to vendor
 Combat Commands:
 ===============
 attack <target> - Attack a target
+cast <spell>    - Cast a spell
 flee            - Try to flee from combat
 
 Movement:
@@ -260,8 +438,20 @@ quit (q)        - Quit the game
         elif command in ['stats', 'score', 'st']:
             await self._handle_stats_command(player_id, character)
 
+        elif command == 'train':
+            await self._handle_train_command(player_id, character)
+
         elif command in ['inventory', 'inv', 'i']:
             await self._handle_inventory_command(player_id, character)
+
+        elif command in ['spellbook', 'spells', 'sb']:
+            await self._handle_spellbook_command(player_id, character)
+
+        elif command in ['cast', 'c'] and params:
+            await self._handle_cast_command(player_id, character, params)
+
+        elif command in ['cast', 'c']:
+            await self.game_engine.connection_manager.send_message(player_id, "Cast what spell? Use 'spellbook' to see your spells.")
 
         elif command == 'get' and params:
             # Pick up an item from the room
@@ -278,6 +468,27 @@ quit (q)        - Quit the game
         elif command == 'drop':
             # Drop command without parameters
             await self.game_engine.connection_manager.send_message(player_id, "What would you like to drop?")
+
+        elif command in ['eat', 'consume'] and params:
+            # Eat food to restore hunger
+            await self._handle_eat_command(player_id, params)
+
+        elif command in ['eat', 'consume']:
+            await self.game_engine.connection_manager.send_message(player_id, "What would you like to eat?")
+
+        elif command in ['drink', 'quaff'] and params:
+            # Drink to restore thirst
+            await self._handle_drink_command(player_id, params)
+
+        elif command in ['drink', 'quaff']:
+            await self.game_engine.connection_manager.send_message(player_id, "What would you like to drink?")
+
+        elif command in ['read', 'study'] and params:
+            # Read a scroll to learn a spell
+            await self._handle_read_command(player_id, params)
+
+        elif command in ['read', 'study']:
+            await self.game_engine.connection_manager.send_message(player_id, "What would you like to read?")
 
         elif command in ['equip', 'eq'] and params:
             # Equip an item from inventory
@@ -303,6 +514,14 @@ quit (q)        - Quit the game
             # Show vendor inventory if in vendor room
             # Support "list" or "list <vendor_name>"
             await self._handle_list_vendor_items(player_id, params if params else None)
+
+        elif command in ['heal', 'healing'] and params:
+            # Handle healing at a temple/healer
+            await self._handle_heal_command(player_id, params)
+
+        elif command in ['heal', 'healing']:
+            # Show healing options
+            await self._handle_heal_command(player_id, "list")
 
         elif command in ['ring', 'ri'] and params:
             # Handle ring command for special items like the gong
@@ -340,12 +559,41 @@ quit (q)        - Quit the game
     async def _handle_stats_command(self, player_id: int, character: dict):
         """Display character statistics."""
         char = character
+
+        # Determine status based on hunger/thirst
+        hunger = char.get('hunger', 100)
+        thirst = char.get('thirst', 100)
+        low_threshold = self.game_engine.config_manager.get_setting('player', 'hunger_thirst', 'low_warning_threshold', default=20)
+        status_conditions = []
+
+        if hunger <= 0:
+            status_conditions.append("Starving")
+        elif hunger <= low_threshold:
+            status_conditions.append("Hungry")
+
+        if thirst <= 0:
+            status_conditions.append("Dehydrated")
+        elif thirst <= low_threshold:
+            status_conditions.append("Thirsty")
+
+        # Use existing status or build from conditions
+        if status_conditions:
+            status = ", ".join(status_conditions)
+        else:
+            status = char.get('status', 'Healthy')
+
+        # Calculate XP progress
+        current_level = char.get('level', 1)
+        current_xp = char.get('experience', 0)
+        xp_for_next = self.calculate_xp_for_level(current_level + 1)
+        xp_remaining = xp_for_next - current_xp
+
         stats_text = f"""
 Name:          {char['name']}
 Species:       {char['species']}
 Class:         {char['class']}
 Level:         {char['level']}
-Experience:    {char['experience']}
+Experience:    {char['experience']}/{xp_for_next} ({xp_remaining} to next level)
 Rune:          {char['rune']}
 
 Intellect:     {char['intellect']}
@@ -355,10 +603,10 @@ Constitution:  {char['constitution']}
 Dexterity:     {char['dexterity']}
 Charisma:      {char['charisma']}
 
-Hit Points:    {char.get('health', char.get('current_hit_points', 20))} / {char.get('max_hit_points', 20)}
-Mana:          {char.get('mana', char.get('current_mana', 10))} / {char.get('max_mana', 10)}
-Status:        {char['status']}
-Armor Class:   {char['armor_class']}
+Hit Points:    {int(char.get('health', char.get('current_hit_points', 20)))} / {int(char.get('max_hit_points', 20))}
+Mana:          {int(char.get('mana', char.get('current_mana', 10)))} / {int(char.get('max_mana', 10))}
+Status:        {status}
+Armor Class:   {self.get_effective_armor_class(char)}
 
 Weapon:        {char['equipped']['weapon']['name'] if char['equipped']['weapon'] else 'Fists'}
 Armor:         {char['equipped']['armor']['name'] if char['equipped']['armor'] else 'None'}
@@ -507,6 +755,176 @@ Gold:          {char['gold']}
         username = player_data.get('username', 'Someone')
         if room_id:
             await self.game_engine._notify_room_except_player(room_id, player_id, f"{username} drops a {dropped_item['name']}.")
+
+    async def _handle_eat_command(self, player_id: int, item_name: str):
+        """Handle eating food to restore hunger."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        inventory = character.get('inventory', [])
+
+        # Find food item
+        item_to_eat, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
+
+        if match_type == 'none':
+            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
+            return
+        elif match_type == 'multiple':
+            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
+            match_list = ", ".join(matches)
+            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
+            return
+
+        # Check if item is food
+        item_type = item_to_eat.get('type', '')
+        if item_type != 'food':
+            await self.game_engine.connection_manager.send_message(player_id, f"You can't eat {item_to_eat['name']}!")
+            return
+
+        # Get nutrition value (default 30 if not specified)
+        nutrition = item_to_eat.get('nutrition', 30)
+
+        # Restore hunger
+        current_hunger = character.get('hunger', 100)
+        new_hunger = min(100, current_hunger + nutrition)
+        character['hunger'] = new_hunger
+
+        # Remove item from inventory
+        character['inventory'].pop(item_index)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"You eat {item_to_eat['name']}. Your hunger is restored. (Hunger: {new_hunger:.0f}/100)"
+        )
+
+    async def _handle_drink_command(self, player_id: int, item_name: str):
+        """Handle drinking to restore thirst."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        inventory = character.get('inventory', [])
+
+        # Find drink item
+        item_to_drink, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
+
+        if match_type == 'none':
+            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
+            return
+        elif match_type == 'multiple':
+            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
+            match_list = ", ".join(matches)
+            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
+            return
+
+        # Check if item is a drink
+        item_type = item_to_drink.get('type', '')
+        if item_type not in ['drink', 'potion']:
+            await self.game_engine.connection_manager.send_message(player_id, f"You can't drink {item_to_drink['name']}!")
+            return
+
+        # Get hydration value (default 40 if not specified)
+        hydration = item_to_drink.get('hydration', 40)
+
+        # Restore thirst
+        current_thirst = character.get('thirst', 100)
+        new_thirst = min(100, current_thirst + hydration)
+        character['thirst'] = new_thirst
+
+        # Remove item from inventory
+        character['inventory'].pop(item_index)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"You drink {item_to_drink['name']}. Your thirst is quenched. (Thirst: {new_thirst:.0f}/100)"
+        )
+
+    async def _handle_read_command(self, player_id: int, item_name: str):
+        """Handle reading a spell scroll to learn a spell."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        inventory = character.get('inventory', [])
+
+        # Find scroll item
+        item_to_read, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
+
+        if match_type == 'none':
+            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
+            return
+        elif match_type == 'multiple':
+            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
+            match_list = ", ".join(matches)
+            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
+            return
+
+        # Check if item is a spell scroll
+        item_type = item_to_read.get('type', '')
+        if item_type != 'spell_scroll':
+            await self.game_engine.connection_manager.send_message(player_id, f"You can't read {item_to_read['name']} to learn a spell!")
+            return
+
+        # Get scroll properties
+        properties = item_to_read.get('properties', {})
+        spell_id = properties.get('spell_id')
+
+        if not spell_id:
+            await self.game_engine.connection_manager.send_message(player_id, f"This scroll doesn't contain a spell!")
+            return
+
+        # Check if player already knows the spell
+        spellbook = character.get('spellbook', [])
+        if spell_id in spellbook:
+            await self.game_engine.connection_manager.send_message(player_id, f"You already know this spell!")
+            return
+
+        # Check requirements
+        requirements = properties.get('requirements', {})
+        min_level = requirements.get('min_level', 1)
+        min_intelligence = requirements.get('min_intelligence', 0)
+
+        player_level = character.get('level', 1)
+        player_intelligence = character.get('intelligence', 10)
+
+        # Check level requirement
+        if player_level < min_level:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You must be at least level {min_level} to learn this spell! (You are level {player_level})"
+            )
+            return
+
+        # Check intelligence requirement
+        if player_intelligence < min_intelligence:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You need at least {min_intelligence} Intelligence to learn this spell! (You have {player_intelligence})"
+            )
+            return
+
+        # Learn the spell!
+        if 'spellbook' not in character:
+            character['spellbook'] = []
+
+        character['spellbook'].append(spell_id)
+
+        # Remove scroll from inventory
+        character['inventory'].pop(item_index)
+
+        # Get spell data for the message
+        spell_data = self.game_engine.config_manager.game_data.get('spells', {})
+        spell = spell_data.get(spell_id, {})
+        spell_name = spell.get('name', spell_id)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"You carefully study the scroll and learn the spell: {spell_name}!"
+        )
 
     async def _handle_equip_item(self, player_id: int, item_name: str):
         """Handle equipping an item from inventory."""
@@ -733,6 +1151,15 @@ Gold:          {char['gold']}
             'level': monster.get('level', 1),
             'health': monster.get('health', 100),
             'max_health': monster.get('health', 100),
+            'damage': monster.get('damage', '1d4'),
+            'damage_min': monster.get('damage_min', 1),
+            'damage_max': monster.get('damage_max', 4),
+            'armor_class': monster.get('armor', 0),
+            'strength': monster.get('strength', 12),
+            'dexterity': monster.get('dexterity', 10),
+            'experience_reward': monster.get('experience_reward', 25),
+            'gold_reward': monster.get('gold_reward', [0, 5]),
+            'loot_table': monster.get('loot_table', []),
             'spawned_by_gong': True
         }
 
@@ -793,46 +1220,62 @@ Gold:          {char['gold']}
         character = player_data['character']
 
         # Find the item in vendor inventory
-        item_found = None
+        item_found_id = None
         item_price = None
+        item_stock = None
         for item_entry in vendor['inventory']:
             item_id = item_entry['item_id']
             item_config = self.game_engine.config_manager.get_item(item_id)
             if item_config and item_name.lower() in item_config['name'].lower():
-                item_found = item_config
+                item_found_id = item_id
                 item_price = item_entry['price']
+                item_stock = item_entry.get('stock', -1)
                 break
 
-        if not item_found:
+        if not item_found_id:
             await self.game_engine.connection_manager.send_message(player_id, f"{vendor['name']} doesn't have {item_name} for sale.")
+            return
+
+        # Create proper item instance to get the real name
+        item_instance = self.game_engine.config_manager.create_item_instance(item_found_id, item_price)
+        if not item_instance:
+            await self.game_engine.connection_manager.send_message(player_id, "Error creating item.")
+            return
+
+        # Check if vendor has stock (stock of -1 means unlimited)
+        if item_stock == 0:
+            await self.game_engine.connection_manager.send_message(player_id, f"{vendor['name']} is out of stock of {item_instance['name']}.")
             return
 
         # Check if player has enough gold
         if character['gold'] < item_price:
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have enough gold. {item_found['name']} costs {item_price} gold.")
+            await self.game_engine.connection_manager.send_message(player_id, f"You don't have enough gold. {item_instance['name']} costs {item_price} gold.")
             return
 
         # Check encumbrance before buying
         current_encumbrance = self.game_engine.player_manager.calculate_encumbrance(character)
-        item_weight = item_found.get('weight', 0)
+        item_weight = item_instance.get('weight', 0)
         gold_weight_change = -item_price / 100.0  # Losing gold reduces weight
         max_encumbrance = self.game_engine.player_manager.calculate_max_encumbrance(character)
 
         if current_encumbrance + item_weight + gold_weight_change > max_encumbrance:
             await self.game_engine.connection_manager.send_message(
                 player_id,
-                f"You cannot carry {item_found['name']} - you are carrying too much!"
+                f"You cannot carry {item_instance['name']} - you are carrying too much!"
             )
             return
 
         # Complete the purchase
         character['gold'] -= item_price
-        character['inventory'].append(item_found.copy())
+        character['inventory'].append(item_instance)
+
+        # Reduce vendor stock (if not unlimited)
+        self.game_engine.vendor_system.reduce_vendor_stock(vendor, item_found_id, 1)
 
         # Update encumbrance (accounts for gold weight change and new item)
         self.game_engine.player_manager.update_encumbrance(character)
 
-        await self.game_engine.connection_manager.send_message(player_id, f"You buy {item_found['name']} for {item_price} gold.")
+        await self.game_engine.connection_manager.send_message(player_id, f"You buy {item_instance['name']} for {item_price} gold.")
 
         # Notify others in the room
         username = player_data.get('username', 'Someone')
@@ -953,3 +1396,644 @@ Gold:          {char['gold']}
     async def _handle_flee_command(self, player_id: int):
         """Handle flee command."""
         await self.game_engine.combat_system.handle_flee_command(player_id)
+
+    async def _handle_heal_command(self, player_id: int, params: str):
+        """Handle healing command at a temple/healer."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        character = player_data.get('character', {})
+        room_id = character.get('room_id')
+
+        # Get room object
+        room = self.game_engine.world_manager.get_room(room_id)
+        if not room:
+            await self.game_engine.connection_manager.send_message(player_id, "You are nowhere!")
+            return
+
+        # Get NPCs in the room
+        npcs_in_room = room.npcs if hasattr(room, 'npcs') else []
+        print(f"[HEAL DEBUG] Room: {room_id}, NPCs: {npcs_in_room}")
+
+        # Find a healer NPC
+        healer_npc = None
+        for npc_id in npcs_in_room:
+            npc = self.game_engine.world_manager.npcs.get(npc_id)
+            print(f"[HEAL DEBUG] Checking NPC {npc_id}: {npc}")
+            if npc:
+                print(f"[HEAL DEBUG] NPC services: {npc.get('services', [])}")
+                if 'healer' in npc.get('services', []):
+                    healer_npc = npc
+                    break
+
+        if not healer_npc:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "There is no healer here. You must find a temple or healer to receive healing."
+            )
+            return
+
+        # Show healing options if "list" or list available healing
+        if params.lower() in ['list', 'options', 'help']:
+            healing_options = healer_npc.get('healing', {})
+            if not healing_options:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"{healer_npc['name']} doesn't seem to offer healing services."
+                )
+                return
+
+            message = f"\n{healer_npc['name']} offers the following healing services:\n\n"
+            for heal_type, heal_data in healing_options.items():
+                heal_amount = heal_data.get('heal_amount', 0)
+                if heal_amount == 'full':
+                    heal_desc = "Full Health"
+                else:
+                    heal_desc = f"{heal_amount} HP"
+                message += f"  {heal_data['name']:20} - {heal_desc:12} ({heal_data['cost']} gold)\n"
+            message += f"\nUse 'heal <type>' to receive healing. Example: heal minor"
+
+            await self.game_engine.connection_manager.send_message(player_id, message)
+            return
+
+        # Find matching heal type
+        healing_options = healer_npc.get('healing', {})
+        heal_type = None
+        for key in healing_options.keys():
+            if params.lower() in key.lower() or key.lower().startswith(params.lower()):
+                heal_type = key
+                break
+
+        if not heal_type:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"I don't recognize that healing type. Use 'heal list' to see available options."
+            )
+            return
+
+        heal_data = healing_options[heal_type]
+        cost = heal_data['cost']
+        heal_amount = heal_data['heal_amount']
+
+        # Check if player has enough gold
+        player_gold = character.get('gold', 0)
+        if player_gold < cost:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You don't have enough gold. {heal_data['name']} costs {cost} gold, but you only have {player_gold} gold."
+            )
+            return
+
+        # Check if player needs healing
+        current_health = character.get('health', 0)
+        max_health = character.get('max_hit_points', current_health)
+
+        if current_health >= max_health:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "You are already at full health!"
+            )
+            return
+
+        # Apply healing
+        if heal_amount == 'full':
+            actual_heal = max_health - current_health
+            character['health'] = max_health
+        else:
+            actual_heal = min(heal_amount, max_health - current_health)
+            character['health'] = min(current_health + heal_amount, max_health)
+
+        # Deduct gold
+        character['gold'] = player_gold - cost
+
+        # Send message
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"{healer_npc['name']} channels healing energy into you. You are healed for {int(actual_heal)} HP!\nYou paid {cost} gold.\n\nHealth: {int(character['health'])} / {int(max_health)}"
+        )
+
+    async def _handle_spellbook_command(self, player_id: int, character: dict):
+        """Display the player's spellbook with all known spells."""
+        spellbook = character.get('spellbook', [])
+
+        if not spellbook:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "Your spellbook is empty. You haven't learned any spells yet."
+            )
+            return
+
+        # Load spell data
+        spell_data = self.game_engine.config_manager.game_data.get('spells', {})
+
+        # Build spellbook display
+        lines = ["=== Your Spellbook ===\n"]
+
+        for spell_id in spellbook:
+            spell = spell_data.get(spell_id)
+            if not spell:
+                continue
+
+            # Get cooldown info
+            cooldowns = character.get('spell_cooldowns', {})
+            cooldown_remaining = cooldowns.get(spell_id, 0)
+
+            # Format spell entry
+            name = spell['name']
+            level = spell['level']
+            mana = spell['mana_cost']
+            spell_type = spell['type']
+
+            # Type-specific info
+            type_info = ""
+            if spell_type == 'damage':
+                damage = spell.get('damage', '?')
+                damage_type = spell.get('damage_type', 'physical')
+                type_info = f"Damage: {damage} ({damage_type})"
+            elif spell_type == 'heal':
+                heal = spell.get('heal_amount', '?')
+                type_info = f"Healing: {heal}"
+            elif spell_type == 'buff':
+                effect = spell.get('effect', 'unknown')
+                duration = spell.get('duration', 0)
+                type_info = f"Effect: {effect} ({duration} rounds)"
+
+            cooldown_text = ""
+            if cooldown_remaining > 0:
+                cooldown_text = f" [COOLDOWN: {cooldown_remaining} rounds]"
+
+            lines.append(f"{name} (Level {level}) - {mana} mana{cooldown_text}")
+            lines.append(f"  {spell['description']}")
+            if type_info:
+                lines.append(f"  {type_info}")
+            lines.append("")
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            "\n".join(lines)
+        )
+
+    async def _handle_cast_command(self, player_id: int, character: dict, params: str):
+        """Handle casting a spell."""
+        # Parse spell name and optional target from params
+        # Format: "cast <spell_name> [target_name]"
+        parts = params.strip().split(None, 1)  # Split on first whitespace
+        spell_input = parts[0] if parts else ""
+        target_name = parts[1] if len(parts) > 1 else None
+
+        # Load spell data
+        spell_data = self.game_engine.config_manager.game_data.get('spells', {})
+        spellbook = character.get('spellbook', [])
+
+        # Find the spell
+        spell_id = None
+        spell = None
+
+        # Try exact match first (using underscore version)
+        spell_key = spell_input.lower().replace(' ', '_')
+        if spell_key in spell_data:
+            spell_id = spell_key
+            spell = spell_data[spell_id]
+        else:
+            # Try partial match on spell name
+            for sid, s in spell_data.items():
+                if spell_input.lower() in s['name'].lower():
+                    spell_id = sid
+                    spell = s
+                    break
+
+        if not spell:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"Unknown spell: {spell_input}"
+            )
+            return
+
+        # Check if player knows this spell
+        if spell_id not in spellbook:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You don't know the spell '{spell['name']}'."
+            )
+            return
+
+        # Check cooldown
+        cooldowns = character.get('spell_cooldowns', {})
+        if spell_id in cooldowns and cooldowns[spell_id] > 0:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"{spell['name']} is still on cooldown ({cooldowns[spell_id]} rounds remaining)."
+            )
+            return
+
+        # Check if player is magically fatigued (for damage spells only)
+        if spell['type'] == 'damage':
+            if self._is_spell_fatigued(player_id):
+                fatigue_time = self._get_spell_fatigue_remaining(player_id)
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You are too magically exhausted to cast offensive spells! Wait {fatigue_time:.1f} more seconds."
+                )
+                return
+
+        # Check mana
+        mana_cost = spell['mana_cost']
+        current_mana = character.get('mana', 0)
+
+        if current_mana < mana_cost:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You don't have enough mana to cast {spell['name']}. (Need {mana_cost}, have {current_mana})"
+            )
+            return
+
+        # Deduct mana
+        character['mana'] = current_mana - mana_cost
+
+        # Apply spell fatigue for damage spells
+        # Cooldown acts as a multiplier: 0 = 10s, 1 = 10s, 2 = 20s, 3 = 30s, etc.
+        if spell['type'] == 'damage':
+            cooldown = spell.get('cooldown', 0)
+            multiplier = max(1, cooldown)  # Minimum 1x for cooldown 0 or 1
+            self._apply_spell_fatigue(player_id, multiplier)
+
+        # Set cooldown (no longer used for fatigue, kept for potential future use)
+        if spell.get('cooldown', 0) > 0:
+            if 'spell_cooldowns' not in character:
+                character['spell_cooldowns'] = {}
+            character['spell_cooldowns'][spell_id] = spell['cooldown']
+
+        # Apply spell effect based on type
+        room_id = character.get('room_id')
+
+        if spell['type'] == 'damage':
+            await self._cast_damage_spell(player_id, character, spell, room_id, target_name)
+        elif spell['type'] == 'heal':
+            await self._cast_heal_spell(player_id, character, spell)
+        elif spell['type'] == 'buff':
+            await self._cast_buff_spell(player_id, character, spell)
+
+    async def _cast_damage_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a damage spell."""
+        # Check if spell requires target
+        if spell.get('requires_target', False):
+            if not target_name:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You need a target to cast {spell['name']}. Use: cast {spell['name']} <target>"
+                )
+                return
+
+            # Find target using combat system's method
+            target = await self.game_engine.combat_system.find_combat_target(room_id, target_name)
+
+            if not target:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You don't see '{target_name}' here."
+                )
+                return
+
+            # Roll damage
+            damage_roll = spell.get('damage', '1d6')
+            damage = self._roll_dice(damage_roll)
+
+            # Apply damage
+            target['health'] -= damage
+
+            # Send messages
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You cast {spell['name']}! It strikes {target['name']} for {int(damage)} {spell.get('damage_type', 'magical')} damage!"
+            )
+
+            # Notify room
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')} casts {spell['name']} at {target['name']}!"
+            )
+
+            # Check if mob died
+            if target['health'] <= 0:
+                # Send death message
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"{target['name']} has been defeated!"
+                )
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{target['name']} has been defeated!"
+                )
+
+                # Handle loot, gold, and experience
+                await self.game_engine.combat_system.handle_mob_loot_drop(player_id, target, room_id)
+
+                # Remove mob from room
+                mob_participant_id = f"mob_{target.get('id', 'unknown')}"
+                await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
+
+        else:
+            # Area spell (no specific target needed)
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You cast {spell['name']}! (Area spells not yet fully implemented)"
+            )
+
+    async def _cast_heal_spell(self, player_id: int, character: dict, spell: dict):
+        """Cast a healing spell."""
+        # Roll healing amount
+        heal_roll = spell.get('heal_amount', '1d8')
+        heal_amount = self._roll_dice(heal_roll)
+
+        # Get current and max health
+        current_health = character.get('health', 0)
+        max_health = character.get('max_hit_points', 100)
+
+        # Apply healing
+        actual_heal = min(heal_amount, max_health - current_health)
+        character['health'] = min(current_health + heal_amount, max_health)
+
+        # Send message
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"You cast {spell['name']}! You are healed for {int(actual_heal)} HP.\nHealth: {int(character['health'])} / {int(max_health)}"
+        )
+
+        # Notify room
+        room_id = character.get('room_id')
+        await self.game_engine.player_manager.notify_room_except_player(
+            room_id,
+            player_id,
+            f"{character.get('name', 'Someone')} casts {spell['name']} and glows with healing energy!"
+        )
+
+    async def _cast_buff_spell(self, player_id: int, character: dict, spell: dict):
+        """Cast a buff spell."""
+        effect = spell.get('effect', 'unknown')
+        duration = spell.get('duration', 0)
+
+        # Initialize active_effects if needed
+        if 'active_effects' not in character:
+            character['active_effects'] = []
+
+        # Add the buff
+        buff = {
+            'spell_id': spell.get('name', 'Unknown'),
+            'effect': effect,
+            'duration': duration,
+            'bonus_amount': spell.get('bonus_amount', 0)
+        }
+        character['active_effects'].append(buff)
+
+        # Send message
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"You cast {spell['name']}! {spell['description']}"
+        )
+
+        # Notify room
+        room_id = character.get('room_id')
+        await self.game_engine.player_manager.notify_room_except_player(
+            room_id,
+            player_id,
+            f"{character.get('name', 'Someone')} casts {spell['name']}!"
+        )
+
+    def _roll_dice(self, dice_string: str) -> int:
+        """Roll dice from a string like '2d6+3' or '1d8'."""
+        import re
+
+        # Parse the dice string
+        match = re.match(r'(\d+)d(\d+)([+-]\d+)?', dice_string.lower())
+        if not match:
+            return 0
+
+        num_dice = int(match.group(1))
+        die_size = int(match.group(2))
+        modifier = int(match.group(3)) if match.group(3) else 0
+
+        # Roll the dice
+        total = sum(random.randint(1, die_size) for _ in range(num_dice))
+        return total + modifier
+
+    def _is_spell_fatigued(self, player_id: int) -> bool:
+        """Check if a player is currently spell fatigued."""
+        if player_id not in self.game_engine.spell_fatigue:
+            return False
+
+        fatigue_info = self.game_engine.spell_fatigue[player_id]
+        current_time = time.time()
+
+        if 'fatigue_end_time' not in fatigue_info:
+            del self.game_engine.spell_fatigue[player_id]
+            return False
+
+        if fatigue_info['fatigue_end_time'] == 0:
+            return False
+
+        if current_time >= fatigue_info['fatigue_end_time']:
+            del self.game_engine.spell_fatigue[player_id]
+            return False
+
+        return True
+
+    def _get_spell_fatigue_remaining(self, player_id: int) -> float:
+        """Get remaining spell fatigue time in seconds."""
+        if player_id not in self.game_engine.spell_fatigue:
+            return 0.0
+
+        fatigue_info = self.game_engine.spell_fatigue[player_id]
+        if 'fatigue_end_time' not in fatigue_info:
+            return 0.0
+
+        current_time = time.time()
+        remaining = fatigue_info['fatigue_end_time'] - current_time
+        return max(0.0, remaining)
+
+    def _apply_spell_fatigue(self, player_id: int, multiplier: float = 1.0):
+        """Apply spell fatigue to a player.
+
+        Args:
+            player_id: The player ID
+            multiplier: Fatigue duration multiplier (base 10 seconds * multiplier)
+        """
+        base_duration = 10.0  # Base fatigue duration in seconds
+        duration = base_duration * multiplier
+
+        self.game_engine.spell_fatigue[player_id] = {
+            'fatigue_end_time': time.time() + duration
+        }
+
+    def get_effective_armor_class(self, character: dict) -> int:
+        """Calculate effective armor class including buffs.
+
+        Args:
+            character: The character dict
+
+        Returns:
+            Total armor class including base AC and buff bonuses
+        """
+        base_ac = character.get('armor_class', 0)
+
+        # Add bonuses from active buffs
+        active_effects = character.get('active_effects', [])
+        for effect in active_effects:
+            if effect.get('effect') == 'ac_bonus':
+                base_ac += effect.get('bonus_amount', 0)
+
+        return base_ac
+
+    def calculate_xp_for_level(self, level: int) -> int:
+        """Calculate the total XP required to reach a specific level.
+
+        Args:
+            level: The target level
+
+        Returns:
+            Total XP required to reach that level
+        """
+        if level <= 1:
+            return 0
+
+        base_xp = self.game_engine.config_manager.get_setting('player', 'leveling', 'base_xp_per_level', default=100)
+        multiplier = self.game_engine.config_manager.get_setting('player', 'leveling', 'xp_multiplier', default=1.5)
+
+        # Calculate cumulative XP: sum of XP needed for each level
+        total_xp = 0
+        for lvl in range(2, level + 1):
+            xp_for_level = int(base_xp * (multiplier ** (lvl - 2)))
+            total_xp += xp_for_level
+
+        return total_xp
+
+    def get_xp_to_next_level(self, character: dict) -> int:
+        """Calculate XP needed to reach the next level.
+
+        Args:
+            character: The character dict
+
+        Returns:
+            XP needed for next level
+        """
+        current_level = character.get('level', 1)
+        current_xp = character.get('experience', 0)
+
+        xp_for_next_level = self.calculate_xp_for_level(current_level + 1)
+        return xp_for_next_level - current_xp
+
+    async def _handle_train_command(self, player_id: int, character: dict):
+        """Handle the train command to level up."""
+        room_id = character.get('room_id')
+
+        # Check if there's a trainer in the room
+        room = self.game_engine.world_manager.get_room(room_id)
+        if not room:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "You are not in a valid room."
+            )
+            return
+
+        has_trainer = False
+        npc_ids = room.npcs if hasattr(room, 'npcs') else []
+
+        for npc_id in npc_ids:
+            npc_data = self.game_engine.world_manager.get_npc_data(npc_id)
+            if npc_data:
+                services = npc_data.get('services', [])
+                if 'trainer' in services or 'level_up' in services:
+                    has_trainer = True
+                    break
+
+        if not has_trainer:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "There is no trainer here. You must find a trainer to level up."
+            )
+            return
+
+        # Get current stats
+        current_level = character.get('level', 1)
+        current_xp = character.get('experience', 0)
+        max_level = self.game_engine.config_manager.get_setting('player', 'leveling', 'max_level', default=50)
+
+        # Check if at max level
+        if current_level >= max_level:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You have reached the maximum level of {max_level}!"
+            )
+            return
+
+        # Calculate XP needed for next level
+        xp_needed = self.calculate_xp_for_level(current_level + 1)
+        xp_remaining = xp_needed - current_xp
+
+        # Check if player has enough XP
+        if current_xp < xp_needed:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You need {xp_remaining} more experience to reach level {current_level + 1}. (Current: {current_xp}/{xp_needed})"
+            )
+            return
+
+        # Level up!
+        old_level = current_level
+        new_level = current_level + 1
+        character['level'] = new_level
+
+        # Get leveling bonuses from config
+        hp_per_level = self.game_engine.config_manager.get_setting('player', 'leveling', 'hp_per_level', default=10)
+        mana_per_level = self.game_engine.config_manager.get_setting('player', 'leveling', 'mana_per_level', default=5)
+        stat_points = self.game_engine.config_manager.get_setting('player', 'leveling', 'stat_points_per_level', default=2)
+
+        # Increase max HP
+        old_max_hp = character.get('max_hit_points', 100)
+        new_max_hp = old_max_hp + hp_per_level
+        character['max_hit_points'] = new_max_hp
+
+        # Increase max mana
+        old_max_mana = character.get('max_mana', 50)
+        new_max_mana = old_max_mana + mana_per_level
+        character['max_mana'] = new_max_mana
+
+        # Fully restore health and mana on level up
+        character['health'] = new_max_hp
+        character['mana'] = new_max_mana
+
+        # Award stat points
+        if 'unspent_stat_points' not in character:
+            character['unspent_stat_points'] = 0
+        character['unspent_stat_points'] += stat_points
+
+        # Send level up messages
+        level_up_msg = f"""
+========================================
+         LEVEL UP!
+========================================
+  Level: {old_level} -> {new_level}
+  Max HP: {old_max_hp} -> {new_max_hp}
+  Max Mana: {old_max_mana} -> {new_max_mana}
+  Stat Points: +{stat_points}
+========================================
+
+You have {character['unspent_stat_points']} unspent stat points!
+(Note: Stat allocation system coming soon)
+
+Congratulations, {character['name']}! You feel stronger and more capable!
+"""
+
+        await self.game_engine.connection_manager.send_message(player_id, level_up_msg)
+
+        # Notify room
+        await self.game_engine.player_manager.notify_room_except_player(
+            room_id,
+            player_id,
+            f"{character['name']} has gained a level! They are now level {new_level}!"
+        )
+
+        # Save character
+        if self.game_engine.player_storage:
+            username = self.game_engine.player_manager.get_player_data(player_id).get('username')
+            if username:
+                self.game_engine.player_storage.save_character(username, character)

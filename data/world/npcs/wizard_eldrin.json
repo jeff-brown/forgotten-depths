@@ -1,0 +1,43 @@
+{
+  "id": "wizard_eldrin",
+  "name": "Eldrin the Archmage",
+  "short_description": "a mysterious wizard",
+  "long_description": "Eldrin is an elderly wizard with a long silver beard that reaches his waist. His deep blue robes are embroidered with silver arcane symbols that seem to shimmer and shift in the dim light. His eyes gleam with ancient knowledge and barely contained magical power. He wears several rings on his gnarled fingers, each one pulsing with its own faint magical aura. A tall wooden staff topped with a glowing crystal leans against the counter beside him. Despite his advanced age, there's a sharp intelligence in his gaze and a hint of mischief in his smile.",
+  "level": 12,
+  "type": "npc",
+  "hostile": false,
+  "health": 80,
+  "race": "human",
+  "class": "wizard",
+  "keywords": ["eldrin", "wizard", "archmage", "mage", "spell", "magic", "merchant"],
+  "dialogue": {
+    "greeting": "Ah, welcome to the Arcane Emporium! I am Eldrin, keeper of mystical knowledge. Seek you to unlock the secrets of the arcane arts? My spell scrolls contain power beyond imagination... for the right price, of course.",
+    "default": "Magic is not merely power - it is understanding, discipline, and respect for the forces that bind our world. Each scroll here contains years of research, distilled into its purest form. Choose wisely, young one.",
+    "goodbye": "May the weave guide your spells, traveler. Return when you seek more knowledge!"
+  },
+  "services": ["vendor", "spell_scrolls", "magical_items"],
+  "shop": {
+    "type": "magic_shop",
+    "buy_rate": 0.6,
+    "sell_rate": 1.0,
+    "specialties": ["spell_scrolls", "magical_items", "arcane_knowledge"],
+    "inventory": [
+      {"item_id": "scroll_magic_missile", "price": 50, "stock": -1},
+      {"item_id": "scroll_heal", "price": 80, "stock": -1},
+      {"item_id": "scroll_shield", "price": 60, "stock": -1},
+      {"item_id": "scroll_cure_wounds", "price": 70, "stock": -1},
+      {"item_id": "scroll_lightning_bolt", "price": 150, "stock": 5},
+      {"item_id": "scroll_fireball", "price": 200, "stock": 3},
+      {"item_id": "scroll_of_murder", "price": 1, "stock": 1},
+      {"item_id": "mana_potion", "price": 35, "stock": -1}
+    ]
+  },
+  "stats": {
+    "strength": 8,
+    "dexterity": 10,
+    "constitution": 12,
+    "intelligence": 20,
+    "wisdom": 18,
+    "charisma": 14
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "arcane_square",
+  "title": "Arcane Square",
+  "description": "This mystical square serves as the heart of the town's magical district. The cobblestones here shimmer with embedded enchantments, creating faint patterns of light that shift and swirl underfoot. An ornate arcane obelisk stands at the center, its surface covered in glowing runes that pulse rhythmically. The air crackles with magical energy, and wisps of colorful mist drift lazily through the air. To the west stands the renowned Arcane Emporium, while a cobblestone path leads north back to the main town square.",
+  "area_id": "starter_town",
+  "exits": {
+    "north": "town_path",
+    "west": "magic_shop"
+  },
+  "items": [],
+  "npcs": [
+    "apprentice_mage"
+  ],
+  "features": [
+    "arcane_obelisk",
+    "enchanted_cobblestones",
+    "magical_mist",
+    "glowing_runes"
+  ],
+  "is_safe": true,
+  "light_level": "bright"
+}

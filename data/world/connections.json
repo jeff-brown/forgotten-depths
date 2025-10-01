@@ -2,15 +2,31 @@
   "rooms": {
     "town_square": {
       "north": "town_hall",
-      "south": "market_square",
+      "south": "town_path",
       "east": "inn_entrance",
-      "west": "blacksmith_shop"
+      "west": "blacksmith_shop",
+      "southwest": "market_square"
+    },
+    "town_path": {
+      "north": "town_square",
+      "south": "arcane_square"
+    },
+    "arcane_square": {
+      "north": "town_path",
+      "west": "magic_shop"
+    },
+    "magic_shop": {
+      "east": "arcane_square"
     },
     "town_hall": {
-      "south": "town_square"
+      "south": "town_square",
+      "east": "temple"
+    },
+    "temple": {
+      "west": "town_hall"
     },
     "market_square": {
-      "north": "town_square",
+      "northeast": "town_square",
       "east": "general_store",
       "west": "tavern"
     },

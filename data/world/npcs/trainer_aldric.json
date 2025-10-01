@@ -1,0 +1,27 @@
+{
+  "id": "trainer_aldric",
+  "name": "Master Aldric",
+  "short_description": "a seasoned combat trainer",
+  "long_description": "Master Aldric is a grizzled veteran with silver hair and countless scars that tell stories of battles long past. His muscular frame remains imposing despite his age, and his sharp gray eyes miss nothing. He wears simple training garb - a worn leather vest over a linen shirt, and sturdy boots. A wooden practice sword hangs at his belt. His voice carries the weight of authority earned through decades of training warriors and adventurers. Though his demeanor is stern, there's a hint of warmth in his eyes when students show dedication.",
+  "level": 20,
+  "type": "npc",
+  "hostile": false,
+  "health": 200,
+  "race": "human",
+  "class": "fighter",
+  "keywords": ["aldric", "master", "trainer", "instructor", "master aldric"],
+  "dialogue": {
+    "greeting": "Welcome to the Training Hall, adventurer. I am Master Aldric. When you've gained enough experience from your battles, speak with me and I can help you advance to the next level. Use the 'train' command when you're ready.",
+    "default": "Experience is earned through combat and overcoming challenges. When you've gathered enough, I can train you to harness that experience and grow stronger. Check your experience with the 'stats' command.",
+    "goodbye": "Train hard, fight smart, and may your blade stay sharp."
+  },
+  "services": ["trainer", "level_up"],
+  "stats": {
+    "strength": 18,
+    "dexterity": 14,
+    "constitution": 16,
+    "intelligence": 12,
+    "wisdom": 15,
+    "charisma": 13
+  }
+}

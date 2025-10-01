@@ -1,0 +1,21 @@
+{
+  "id": "magic_shop",
+  "title": "Arcane Emporium",
+  "description": "This mysterious shop is filled with the scent of incense and the crackle of magical energy. Shelves lined with ancient tomes, glowing crystals, and mysterious artifacts stretch from floor to ceiling. Arcane symbols glow faintly on the walls, pulsing with otherworldly light. A worn wooden counter sits at the center, behind which stands a mystical merchant. Strange sounds whisper from the shadows, and the very air tingles with magical potential.",
+  "area_id": "starter_town",
+  "exits": {
+    "east": "arcane_square"
+  },
+  "items": [],
+  "npcs": [
+    "wizard_eldrin"
+  ],
+  "features": [
+    "spell_shelves",
+    "glowing_crystals",
+    "arcane_symbols",
+    "magical_artifacts"
+  ],
+  "is_safe": true,
+  "light_level": "dim"
+}

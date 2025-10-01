@@ -86,5 +86,56 @@
       {"item_id": "wolf_fang", "chance": 0.3},
       {"item_id": "raw_meat", "chance": 0.5}
     ]
+  },
+  {
+    "id": "crypt_guardian",
+    "name": "Crypt Guardian",
+    "description": "An ancient skeletal guardian clad in rusted plate armor. Dark energy crackles around its form, and it carries a massive two-handed sword that still gleams despite the passage of centuries. Its eye sockets burn with unholy fire as it stands eternal watch over the burial crypt.",
+    "type": "undead",
+    "level": 6,
+    "health": 80,
+    "max_health": 80,
+    "damage_min": 8,
+    "damage_max": 15,
+    "armor": 6,
+    "experience_reward": 75,
+    "gold_reward": [15, 35],
+    "aggressive": true,
+    "speed": 0.9,
+    "resistances": ["poison", "fear", "cold"],
+    "weaknesses": ["holy", "fire"],
+    "abilities": ["heavy_strike", "necrotic_aura"],
+    "loot_table": [
+      {"item_id": "ancient_ring", "chance": 0.8},
+      {"item_id": "bone_fragment", "chance": 0.9},
+      {"item_id": "rusted_plate", "chance": 0.4},
+      {"item_id": "guardian_sword", "chance": 0.15}
+    ]
+  },
+  {
+    "id": "dungeon_champion",
+    "name": "Forgotten Champion",
+    "description": "A towering figure wreathed in shadows and crackling with dark magic. Once the greatest warrior to fight in the arena above, this cursed champion has been bound to the dungeon depths for eternity. Its armor is black as midnight, covered in glowing runes of power. It wields a massive enchanted greatsword that hums with malevolent energy. The very air around it seems to warp and twist.",
+    "type": "undead",
+    "level": 10,
+    "health": 200,
+    "max_health": 200,
+    "damage_min": 15,
+    "damage_max": 30,
+    "armor": 10,
+    "experience_reward": 250,
+    "gold_reward": [50, 150],
+    "aggressive": true,
+    "speed": 1.0,
+    "resistances": ["poison", "fear", "cold", "necrotic"],
+    "weaknesses": ["holy"],
+    "abilities": ["dark_strike", "shadow_step", "death_aura", "battle_frenzy"],
+    "loot_table": [
+      {"item_id": "enchanted_blade", "chance": 1.0},
+      {"item_id": "champion_armor", "chance": 0.7},
+      {"item_id": "dark_essence", "chance": 0.9},
+      {"item_id": "ancient_coin", "chance": 1.0},
+      {"item_id": "soul_gem", "chance": 0.3}
+    ]
   }
 ]

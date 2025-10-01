@@ -1,0 +1,53 @@
+{
+  "id": "brother_aldric",
+  "name": "Brother Aldric",
+  "short_description": "a serene temple healer",
+  "long_description": "Brother Aldric is a devoted healer who serves in the Temple of Healing. His gentle demeanor and compassionate eyes reflect years of tending to the wounded and sick. He wears simple white robes adorned with symbols of healing, and carries the faint scent of medicinal herbs. His hands, though aged, move with practiced precision.",
+  "level": 8,
+  "type": "npc",
+  "hostile": false,
+  "health": 200,
+  "race": "human",
+  "class": "cleric",
+  "keywords": ["brother", "aldric", "healer", "cleric", "priest"],
+  "dialogue": {
+    "greeting": "Blessings upon you, child. Are you in need of healing?",
+    "default": "The temple offers healing to all who seek it. My services are available for a modest donation.",
+    "goodbye": "May the light guide your path. Return if you need healing."
+  },
+  "services": ["healer", "healing"],
+  "healing": {
+    "minor_heal": {
+      "name": "Minor Healing",
+      "description": "Restores a small amount of health",
+      "heal_amount": 20,
+      "cost": 15
+    },
+    "moderate_heal": {
+      "name": "Moderate Healing",
+      "description": "Restores a moderate amount of health",
+      "heal_amount": 50,
+      "cost": 35
+    },
+    "major_heal": {
+      "name": "Major Healing",
+      "description": "Restores a large amount of health",
+      "heal_amount": 100,
+      "cost": 60
+    },
+    "full_heal": {
+      "name": "Full Restoration",
+      "description": "Restores you to full health",
+      "heal_amount": "full",
+      "cost": 100
+    }
+  },
+  "stats": {
+    "strength": 10,
+    "dexterity": 12,
+    "constitution": 14,
+    "intelligence": 16,
+    "wisdom": 18,
+    "charisma": 15
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "training_hall",
+  "title": "Training Hall",
+  "description": "A spacious training hall with high ceilings and polished wooden floors. Practice dummies line one wall, their surfaces scarred from countless strikes. Weapon racks display training weapons of all types. At the far end stands a raised platform where Master Aldric oversees the training of aspiring warriors and mages. The air smells of sweat and determination, mixed with the faint scent of healing balms. Motivational banners hang from the rafters, proclaiming 'Strength Through Discipline' and 'Knowledge is Power'.",
+  "area_id": "starter_town",
+  "is_safe": true,
+  "light_level": 0.9,
+  "exits": {
+    "south": "town_hall"
+  },
+  "npcs": ["trainer_aldric"]
+}

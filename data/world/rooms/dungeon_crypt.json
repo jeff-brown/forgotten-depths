@@ -1,0 +1,15 @@
+{
+  "id": "dungeon_crypt",
+  "title": "Burial Crypt",
+  "description": "This chamber serves as a final resting place for warriors who fell in the arena above. Stone sarcophagi line the walls, their lids carved with images of the deceased in heroic poses. Most have been disturbed, their lids askew or shattered, revealing empty interiors. The air is thick with the smell of dust and ancient decay. Dried flowers and offerings to forgotten gods lie scattered across the floor.",
+  "area_id": "arena_dungeon",
+  "is_safe": false,
+  "is_lair": true,
+  "lair_monster": "crypt_guardian",
+  "respawn_time": 300,
+  "light_level": 0.1,
+  "exits": {
+    "west": "dungeon_junction"
+  },
+  "items": ["ancient_ring"]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "dungeon_prison",
+  "title": "Prison Cell",
+  "description": "A cramped cell with rusted iron bars forming one wall. Chains hang from the walls, their manacles still closed as if waiting for new prisoners. The floor is covered in old straw that has long since rotted to a black, moldy mass. Scratches on the walls suggest previous occupants tried desperately to mark the passage of time. A skeleton lies slumped in one corner, still wearing the remnants of prisoner's rags.",
+  "area_id": "arena_dungeon",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "west": "dungeon_hall_2"
+  },
+  "items": ["prison_key"]
+}

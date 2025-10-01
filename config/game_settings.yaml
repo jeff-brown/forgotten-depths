@@ -15,6 +15,23 @@ player:
     mana: 50
     gold: 100
 
+  # Leveling Settings
+  leveling:
+    base_xp_per_level: 100           # Base XP needed for level 2
+    xp_multiplier: 1.5               # Each level requires XP = base * (multiplier ^ (level - 1))
+    stat_points_per_level: 2         # Stat points awarded per level
+    hp_per_level: 10                 # Base HP increase per level
+    mana_per_level: 5                # Base mana increase per level
+    max_level: 50                    # Maximum level cap
+
+  # Hunger and Thirst Settings
+  hunger_thirst:
+    hunger_decay_per_tick: 0.05      # Decay rate per tick (0.05 = 3/min = ~33 mins to starve)
+    thirst_decay_per_tick: 0.075     # Decay rate per tick (0.075 = 4.5/min = ~22 mins to dehydrate)
+    low_warning_threshold: 20        # Warn when hunger/thirst drops below this
+    starvation_damage_per_tick: 0.05 # HP damage per tick when starving
+    dehydration_damage_per_tick: 0.1 # HP damage per tick when dehydrated
+
   inventory:
     default_size: 20
     max_size: 100
@@ -28,6 +45,23 @@ world:
   room_capacity: 50
   weather_enabled: false
   day_night_cycle: false
+
+# Dungeon Settings
+dungeon:
+  wandering_mobs:
+    enabled: true
+    max_wandering_mobs: 5        # Maximum number of wandering mobs in dungeon
+    spawn_interval: 30            # Spawn check interval in seconds
+    spawn_chance: 0.3             # 30% chance to spawn per check
+    movement_chance: 0.2          # 20% chance to move per tick
+    area_id: "arena_dungeon"      # Area where wandering mobs spawn
+    mob_pool:                     # Mobs that can spawn as wanderers
+      - id: "rat"
+        weight: 40
+      - id: "goblin_scout"
+        weight: 35
+      - id: "skeleton_warrior"
+        weight: 25
 
 # Combat Settings
 combat:

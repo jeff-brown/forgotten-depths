@@ -417,7 +417,9 @@ class CombatSystem:
         """Process AI for all mobs in all rooms."""
         try:
             for room_id, mobs in self.game_engine.room_mobs.items():
-                for mob in mobs.copy():  # Use copy to avoid modification during iteration
+                # Filter out None values and make a copy to avoid modification during iteration
+                valid_mobs = [mob for mob in mobs if mob is not None]
+                for mob in valid_mobs:
                     await self.process_single_mob_ai(mob, room_id)
         except Exception as e:
             self.logger.error(f"Error in mob AI processing: {e}")
@@ -425,6 +427,10 @@ class CombatSystem:
     async def process_single_mob_ai(self, mob: dict, room_id: str):
         """Process AI for a single mob."""
         try:
+            # Skip if mob is None (could happen if removed during iteration)
+            if mob is None:
+                return
+
             # Skip if mob is dead
             if mob.get('health', 0) <= 0:
                 return
@@ -434,16 +440,38 @@ class CombatSystem:
             if self.is_mob_fatigued(mob_id):
                 return
 
-            # Find players in the same room
+            # Skip if not hostile
+            if mob.get('type') != 'hostile':
+                return
+
+            # Find players in the same room (prioritize players)
             target_players = []
             for player_id, player_data in self.game_engine.player_manager.connected_players.items():
                 if player_data.get('character', {}).get('room_id') == room_id:
                     target_players.append(player_id)
 
-            # Attack a random player if any are present
-            if target_players and mob.get('type') == 'hostile':
+            # Attack a random player if any are present (players take priority)
+            if target_players:
                 target_player_id = random.choice(target_players)
                 await self.execute_mob_attack(mob, mob_id, target_player_id, room_id)
+            else:
+                # No players present, look for other mobs to attack
+                other_mobs = []
+                if room_id in self.game_engine.room_mobs:
+                    for other_mob in self.game_engine.room_mobs[room_id]:
+                        # Skip None mobs
+                        if other_mob is None:
+                            continue
+                        # Don't attack self, and only attack living hostile mobs
+                        if (other_mob != mob and
+                            other_mob.get('health', 0) > 0 and
+                            other_mob.get('type') == 'hostile'):
+                            other_mobs.append(other_mob)
+
+                # Attack a random other mob if any are present
+                if other_mobs:
+                    target_mob = random.choice(other_mobs)
+                    await self.execute_mob_vs_mob_attack(mob, mob_id, target_mob, room_id)
 
         except Exception as e:
             self.logger.error(f"Error in single mob AI processing: {e}")
@@ -493,8 +521,8 @@ class CombatSystem:
             # Import damage calculator
             from .damage_calculator import DamageCalculator
 
-            # Get player's armor class
-            player_armor = character.get('armor_class', 0)
+            # Get player's effective armor class (including buffs)
+            player_armor = self.game_engine.command_handler.get_effective_armor_class(character)
 
             # Check attack outcome (miss/dodge/deflect/hit)
             outcome = DamageCalculator.check_attack_outcome(temp_mob, temp_char, player_armor)
@@ -552,17 +580,17 @@ class CombatSystem:
                 character['health'] = new_health
 
                 # Send attack message to target player
-                attack_msg = f"{mob_name} attacks you for {damage} damage"
+                attack_msg = f"{mob_name} attacks you for {int(damage)} damage"
                 if is_critical:
                     attack_msg += " (Critical Hit!)"
-                attack_msg += f"! (Health: {new_health})"
+                attack_msg += f"! (Health: {int(new_health)})"
                 await self.game_engine.connection_manager.send_message(target_player_id, attack_msg)
 
                 # Send message to other players in room
                 for player_id, pd in self.game_engine.player_manager.connected_players.items():
                     if (player_id != target_player_id and
                         pd.get('character', {}).get('room_id') == room_id):
-                        room_msg = f"{mob_name} attacks {character['name']} for {damage} damage!"
+                        room_msg = f"{mob_name} attacks {character['name']} for {int(damage)} damage!"
                         await self.game_engine.connection_manager.send_message(player_id, room_msg)
 
                 # Check if player died
@@ -572,13 +600,146 @@ class CombatSystem:
 
                     # Respawn player (simple respawn logic)
                     character['health'] = character.get('constitution', 10) * 3
-                    character['room_id'] = 'starting_room'  # Move to starting room
+
+                    # Get the actual starting room from world manager
+                    starting_room_id = self.game_engine.world_manager.get_default_starting_room()
+                    if starting_room_id:
+                        character['room_id'] = starting_room_id
+                    else:
+                        # Fallback to inn_entrance if no starting room found
+                        character['room_id'] = 'inn_entrance'
 
                     respawn_msg = "You have respawned in the starting room."
                     await self.game_engine.connection_manager.send_message(target_player_id, respawn_msg)
 
+                    # Send room description after respawn
+                    await self.game_engine.world_manager.send_room_description(target_player_id, detailed=False)
+
         except Exception as e:
             self.logger.error(f"Error in mob attack execution: {e}")
+
+    async def execute_mob_vs_mob_attack(self, attacker: dict, attacker_id: str, target: dict, room_id: str):
+        """Execute a mob vs mob attack."""
+        try:
+            # Use mob attack
+            attacker_level = attacker.get('level', 1)
+            if not self.use_mob_attack(attacker_id, attacker_level):
+                return
+
+            attacker_name = attacker.get('name', 'Unknown Mob')
+            target_name = target.get('name', 'Unknown Mob')
+
+            # Create temp entities for attack calculation
+            class TempMob:
+                def __init__(self, mob_data):
+                    self.name = mob_data.get('name', 'Unknown')
+                    self.level = mob_data.get('level', 1)
+                    self.strength = mob_data.get('strength', 12)
+                    self.dexterity = mob_data.get('dexterity', 10)
+                    self.constitution = mob_data.get('constitution', 12)
+                    self.intelligence = mob_data.get('intelligence', 8)
+                    self.wisdom = mob_data.get('wisdom', 10)
+                    self.charisma = mob_data.get('charisma', 6)
+
+            temp_attacker = TempMob(attacker)
+            temp_target = TempMob(target)
+
+            # Import damage calculator
+            from .damage_calculator import DamageCalculator
+
+            # Get target's armor class
+            target_armor = target.get('armor_class', 0)
+
+            # Check attack outcome
+            outcome = DamageCalculator.check_attack_outcome(temp_attacker, temp_target, target_armor)
+
+            if outcome['result'] == 'miss':
+                # Attacker missed
+                await self._notify_room_players(room_id, f"{attacker_name} attacks {target_name} but misses!")
+
+            elif outcome['result'] == 'dodge':
+                # Target dodged
+                await self._notify_room_players(room_id, f"{target_name} dodges {attacker_name}'s attack!")
+
+            elif outcome['result'] == 'deflect':
+                # Armor deflected
+                await self._notify_room_players(room_id, f"{target_name}'s tough hide deflects {attacker_name}'s attack!")
+
+            else:
+                # Hit - calculate damage
+                natural_attack = {
+                    'damage': attacker.get('damage'),
+                    'damage_min': attacker.get('damage_min', 1),
+                    'damage_max': attacker.get('damage_max', 4)
+                }
+                damage_info = DamageCalculator.calculate_melee_damage(temp_attacker, natural_attack=natural_attack)
+                damage = damage_info['damage']
+                is_critical = damage_info['is_critical']
+
+                # Apply damage
+                current_health = target.get('health', 100)
+                new_health = max(0, current_health - damage)
+                target['health'] = new_health
+
+                # Send attack message to room
+                attack_msg = f"{attacker_name} attacks {target_name} for {int(damage)} damage"
+                if is_critical:
+                    attack_msg += " (Critical Hit!)"
+                attack_msg += "!"
+                await self._notify_room_players(room_id, attack_msg)
+
+                # Check if target died
+                if new_health <= 0:
+                    # Award XP to attacking mob
+                    xp_reward = target.get('experience_reward', 25)
+                    if 'experience' not in attacker:
+                        attacker['experience'] = 0
+                    attacker['experience'] += xp_reward
+
+                    # Award gold to attacking mob
+                    gold_reward = target.get('gold_reward', [0, 5])
+                    if isinstance(gold_reward, list) and len(gold_reward) == 2:
+                        gold_amount = random.randint(gold_reward[0], gold_reward[1])
+                    else:
+                        gold_amount = gold_reward if isinstance(gold_reward, int) else 0
+
+                    if gold_amount > 0:
+                        if 'gold' not in attacker:
+                            attacker['gold'] = 0
+                        attacker['gold'] += gold_amount
+
+                        # Notify players in room about the loot
+                        await self._notify_room_players(room_id, f"{attacker_name} loots {gold_amount} gold from {target_name}'s corpse!")
+
+                    # Notify room of death
+                    death_msg = f"{target_name} has been slain by {attacker_name}!"
+                    await self._notify_room_players(room_id, death_msg)
+
+                    # Remove dead mob from room (don't use handle_mob_death as it awards XP to players)
+                    if room_id in self.game_engine.room_mobs:
+                        alive_mobs = []
+                        for mob in self.game_engine.room_mobs[room_id]:
+                            if mob != target:
+                                alive_mobs.append(mob)
+                        self.game_engine.room_mobs[room_id] = alive_mobs
+
+                        # If this was a lair mob, start respawn timer
+                        if target.get('is_lair_mob'):
+                            import time
+                            room = self.game_engine.world_manager.get_room(room_id)
+                            if room and hasattr(room, 'respawn_time'):
+                                respawn_time = room.respawn_time
+                                self.game_engine.lair_timers[room_id] = time.time() + respawn_time
+                                self.logger.info(f"[LAIR] {target.get('id')} killed by mob, respawn in {respawn_time}s")
+
+        except Exception as e:
+            self.logger.error(f"Error in mob vs mob attack execution: {e}")
+
+    async def _notify_room_players(self, room_id: str, message: str):
+        """Send a message to all players in a room."""
+        for player_id, player_data in self.game_engine.player_manager.connected_players.items():
+            if player_data.get('character', {}).get('room_id') == room_id:
+                await self.game_engine.connection_manager.send_message(player_id, message)
 
     async def execute_seamless_attack(self, player_id: int, target: dict, room_id: str):
         """Execute a seamless attack without combat mode."""
@@ -709,42 +870,81 @@ class CombatSystem:
 
         character = player_data['character']
 
-        # Award experience
-        exp_reward = mob.get('experience_reward', 25)
-        character['experience'] = character.get('experience', 0) + exp_reward
-        await self.game_engine.connection_manager.send_message(player_id, f"You gain {exp_reward} experience points!")
+        # Award experience (base + accumulated from mob vs mob combat)
+        base_exp = mob.get('experience_reward', 25)
+        accumulated_exp = mob.get('experience', 0)
+        total_exp = base_exp + accumulated_exp
 
-        # Award gold
+        character['experience'] = character.get('experience', 0) + total_exp
+
+        if accumulated_exp > 0:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You gain {base_exp} experience points (+{accumulated_exp} bonus from the {mob.get('name', 'creature')}'s victories)! Total: {total_exp} XP"
+            )
+        else:
+            await self.game_engine.connection_manager.send_message(player_id, f"You gain {total_exp} experience points!")
+
+        # Award gold (base + accumulated from mob vs mob combat)
         gold_reward = mob.get('gold_reward', [0, 5])
         if isinstance(gold_reward, list) and len(gold_reward) == 2:
-            gold_amount = random.randint(gold_reward[0], gold_reward[1])
+            base_gold = random.randint(gold_reward[0], gold_reward[1])
         else:
-            gold_amount = gold_reward if isinstance(gold_reward, int) else 0
+            base_gold = gold_reward if isinstance(gold_reward, int) else 0
 
-        if gold_amount > 0:
-            character['gold'] = character.get('gold', 0) + gold_amount
-            await self.game_engine.connection_manager.send_message(player_id, f"You loot {gold_amount} gold!")
+        accumulated_gold = mob.get('gold', 0)
+        total_gold = base_gold + accumulated_gold
+
+        if total_gold > 0:
+            character['gold'] = character.get('gold', 0) + total_gold
+
+            if accumulated_gold > 0:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You loot {base_gold} gold (+{accumulated_gold} from the {mob.get('name', 'creature')}'s hoard)! Total: {total_gold} gold"
+                )
+            else:
+                await self.game_engine.connection_manager.send_message(player_id, f"You loot {total_gold} gold!")
 
             # Update encumbrance for gold weight change
             self.game_engine.player_manager.update_encumbrance(character)
 
         # Process loot table
         loot_table = mob.get('loot_table', [])
+        print(f"[LOOT DEBUG] Mob '{mob.get('name')}' loot_table: {loot_table}")
+
         if loot_table:
             dropped_items = []
             for loot_entry in loot_table:
                 item_id = loot_entry.get('item_id')
                 drop_chance = loot_entry.get('chance', 0.0)
 
+                print(f"[LOOT DEBUG] Processing loot entry: item_id={item_id}, chance={drop_chance}")
+
                 # Roll for drop
-                if random.random() < drop_chance:
+                roll = random.random()
+                print(f"[LOOT DEBUG] Roll: {roll:.3f} vs chance: {drop_chance:.3f}")
+
+                if roll < drop_chance:
                     # Get item data from world loader
                     item_data = self.game_engine.world_manager.items.get(item_id)
+                    print(f"[LOOT DEBUG] Item data for '{item_id}': {item_data}")
+
                     if item_data:
                         # Create a copy of the item to drop in the room
                         dropped_item = item_data.copy()
+
+                        # Ensure 'value' is set from 'base_value' for selling
+                        if 'base_value' in dropped_item and 'value' not in dropped_item:
+                            dropped_item['value'] = dropped_item['base_value']
+
                         self.game_engine.item_manager.add_item_to_room(room_id, dropped_item)
                         dropped_items.append(dropped_item['name'])
+                        print(f"[LOOT DEBUG] Dropped item '{dropped_item['name']}' in room '{room_id}'")
+                    else:
+                        print(f"[LOOT DEBUG] WARNING: Item '{item_id}' not found in world_manager.items!")
+                else:
+                    print(f"[LOOT DEBUG] Item '{item_id}' did not drop (roll failed)")
 
             if dropped_items:
                 if len(dropped_items) == 1:
@@ -754,3 +954,7 @@ class CombatSystem:
                     items_str = ", ".join(dropped_items[:-1]) + f" and {dropped_items[-1]}"
                     await self.game_engine.connection_manager.send_message(
                         player_id, f"{mob.get('name', 'The mob')} dropped {items_str}!")
+            else:
+                print(f"[LOOT DEBUG] No items were dropped from this mob")
+        else:
+            print(f"[LOOT DEBUG] Mob has no loot_table defined")

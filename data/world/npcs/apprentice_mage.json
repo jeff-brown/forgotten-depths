@@ -1,0 +1,27 @@
+{
+  "id": "apprentice_mage",
+  "name": "Lyra Moonwhisper",
+  "short_description": "a young apprentice mage",
+  "long_description": "Lyra is a young woman in her early twenties, dressed in simple gray apprentice robes adorned with silver trim. Her auburn hair is tied back in a practical ponytail, though a few strands have escaped to frame her face. She carries a well-worn spellbook under one arm and a wand made of ash wood in her other hand. Her green eyes sparkle with enthusiasm and curiosity about magic. Scorch marks on her sleeves and a few singed spots on her robes suggest she's still learning to control her spells. Despite this, she seems eager and determined to master the arcane arts.",
+  "level": 4,
+  "type": "npc",
+  "hostile": false,
+  "health": 35,
+  "race": "human",
+  "class": "wizard",
+  "keywords": ["lyra", "moonwhisper", "apprentice", "mage", "student", "wizard"],
+  "dialogue": {
+    "greeting": "Oh, hello! Are you interested in magic too? I'm studying under Eldrin - he's an amazing teacher! His shop is just to the west if you're looking for spell scrolls.",
+    "default": "I've been practicing my spellwork all morning. Did you know that the key to a good fireball is visualization? Well... that and not setting yourself on fire. I'm still working on that second part. *nervous laugh*",
+    "goodbye": "May your spells never backfire! ...Unlike mine sometimes do. Safe travels!"
+  },
+  "services": [],
+  "stats": {
+    "strength": 8,
+    "dexterity": 12,
+    "constitution": 10,
+    "intelligence": 16,
+    "wisdom": 13,
+    "charisma": 11
+  }
+}

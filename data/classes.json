@@ -1,0 +1,72 @@
+{
+  "fighter": {
+    "name": "Fighter",
+    "description": "Masters of martial combat, fighters excel with weapons and armor.",
+    "stat_modifiers": {
+      "strength": 2,
+      "dexterity": 1,
+      "constitution": 2,
+      "intellect": 0,
+      "wisdom": 0,
+      "charisma": 0
+    },
+    "hp_modifier": 1.2,
+    "mana_modifier": 0.8
+  },
+  "mage": {
+    "name": "Mage",
+    "description": "Wielders of arcane magic, mages command devastating spells.",
+    "stat_modifiers": {
+      "strength": -1,
+      "dexterity": 0,
+      "constitution": -1,
+      "intellect": 3,
+      "wisdom": 2,
+      "charisma": 0
+    },
+    "hp_modifier": 0.7,
+    "mana_modifier": 1.5
+  },
+  "rogue": {
+    "name": "Rogue",
+    "description": "Sneaky and cunning, rogues strike from the shadows with deadly precision.",
+    "stat_modifiers": {
+      "strength": 0,
+      "dexterity": 3,
+      "constitution": 0,
+      "intellect": 1,
+      "wisdom": 0,
+      "charisma": 1
+    },
+    "hp_modifier": 0.9,
+    "mana_modifier": 1.0
+  },
+  "cleric": {
+    "name": "Cleric",
+    "description": "Holy warriors who channel divine power to heal and protect.",
+    "stat_modifiers": {
+      "strength": 1,
+      "dexterity": 0,
+      "constitution": 1,
+      "intellect": 0,
+      "wisdom": 3,
+      "charisma": 1
+    },
+    "hp_modifier": 1.0,
+    "mana_modifier": 1.3
+  },
+  "ranger": {
+    "name": "Ranger",
+    "description": "Skilled hunters and trackers, rangers are masters of survival.",
+    "stat_modifiers": {
+      "strength": 1,
+      "dexterity": 2,
+      "constitution": 1,
+      "intellect": 0,
+      "wisdom": 2,
+      "charisma": 0
+    },
+    "hp_modifier": 1.1,
+    "mana_modifier": 0.9
+  }
+}

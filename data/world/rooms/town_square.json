@@ -5,9 +5,10 @@
   "area_id": "starter_town",
   "exits": {
     "north": "town_hall",
-    "south": "market_square",
+    "south": "town_path",
     "east": "inn_entrance",
-    "west": "blacksmith_shop"
+    "west": "blacksmith_shop",
+    "southwest": "market_square"
   },
   "items": [
     "fountain_coin"

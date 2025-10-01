@@ -5,6 +5,10 @@
   "area_id": "starter_town",
   "is_safe": false,
   "light_level": 0.8,
+  "exits": {
+    "south": "tavern",
+    "down": "dungeon_entrance"
+  },
   "special_items": [
     {
       "id": "bronze_gong",
