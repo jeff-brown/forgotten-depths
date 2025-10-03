@@ -1,0 +1,12 @@
+{
+  "id": "dungeon3_124",
+  "title": "Cave",
+  "description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an eerie greenish light. The exits are to the east and west.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "east": "dungeon3_125",
+    "west": "dungeon3_123"
+  }
+}

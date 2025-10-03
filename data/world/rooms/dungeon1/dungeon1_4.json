@@ -1,0 +1,14 @@
+{
+  "id": "dungeon1_4",
+  "title": "Enormous Cavern",
+  "description": "You gape in awe at the piles of skulls in the center of this huge stone room. The walls of this room are draped with the furs and skins of many different types of animals, among which you recognize the furs of several cave bears, formidable opponents themselves. The only visible exit is back the way you came.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "northwest": "dungeon1_47"
+  },
+  "is_lair": true,
+  "lair_monster": "cave_bear",
+  "respawn_time": 300
+}

@@ -1,0 +1,15 @@
+{
+  "id": "dungeon2_52",
+  "title": "Bottom Of A Circular Stairwell",
+  "description": "You are now at the foot of a long winding stairway that leads up into the darkness. The room reeks of some odor you can't identify. The furnishings of this room, such as they are, are completely out of order. Rags and bits of straw lie strewn about the room with an occasional bone or piece of wood. To the south lies the only exit other than the spiral staircase.",
+  "area_id": "dungeon2",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "south": "dungeon2_58",
+    "up": "dungeon1_6"
+  },
+  "is_lair": true,
+  "lair_monster": "dungeon_champion",
+  "respawn_time": 300
+}

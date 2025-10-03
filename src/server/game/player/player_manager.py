@@ -243,12 +243,72 @@ class PlayerManager:
             new_room = exits[full_direction]
             username = player_data.get('username', 'Someone')
 
+            # Check if exit is locked
+            from ...utils.logger import get_logger
+            logger = get_logger()
+
+            logger.info(f"[DOOR] Player {username} attempting to move {full_direction} from {current_room} to {new_room}")
+
+            old_room = self.game_engine.world_manager.get_room(current_room)
+            unlock_message = None
+
+            if old_room:
+                logger.info(f"[DOOR] Room {current_room} locked_exits: {list(old_room.locked_exits.keys())}")
+
+                if old_room.is_exit_locked(full_direction):
+                    required_key = old_room.get_required_key(full_direction)
+                    lock_desc = old_room.locked_exits[full_direction].get('description', 'The way is locked.')
+
+                    logger.info(f"[DOOR] Exit {full_direction} IS LOCKED, required key: '{required_key}'")
+
+                    # Check if player has the required key
+                    has_key = False
+                    inventory = character.get('inventory', [])
+                    logger.info(f"[DOOR] Player inventory: {inventory}")
+
+                    inventory_ids = [item.get('id') if isinstance(item, dict) else item for item in inventory]
+                    logger.info(f"[DOOR] Extracted inventory IDs: {inventory_ids}")
+
+                    has_key = required_key in inventory_ids
+                    logger.info(f"[DOOR] Has required key '{required_key}': {has_key}")
+
+                    if not has_key:
+                        logger.info(f"[DOOR] Player does NOT have key, blocking movement")
+                        await self.connection_manager.send_message(player_id, f"{lock_desc} You need a {required_key.replace('_', ' ')} to unlock it.")
+                        return
+
+                    # Player has the key - unlock the door, consume the key, and continue movement
+                    logger.info(f"[DOOR] Player HAS key, unlocking exit '{full_direction}' and consuming key")
+
+                    # Remove the key from inventory
+                    inventory = character.get('inventory', [])
+                    for i, item in enumerate(inventory):
+                        item_id = item.get('id') if isinstance(item, dict) else item
+                        if item_id == required_key:
+                            removed_key = inventory.pop(i)
+                            logger.info(f"[DOOR] Removed key '{required_key}' from inventory")
+                            break
+
+                    # Update encumbrance after removing key
+                    self.game_engine.player_manager.update_encumbrance(character)
+
+                    old_room.unlock_exit(full_direction)
+                    unlock_message = f"You use your {required_key.replace('_', ' ')} to unlock the door. The key crumbles to dust.\n"
+                else:
+                    logger.info(f"[DOOR] Exit {full_direction} is NOT locked")
+
             # Notify others in the current room that this player is leaving
             await self.game_engine._notify_room_except_player(current_room, player_id, f"{username} has just gone {full_direction}.")
 
             # Move the player
             character['room_id'] = new_room
-            await self.connection_manager.send_message(player_id, f"You go {full_direction}.")
+
+            # Send unlock message if applicable
+            message = ""
+            if unlock_message:
+                message += unlock_message
+            message += f"You go {full_direction}."
+            await self.connection_manager.send_message(player_id, message)
 
             # Notify others in the new room that this player has arrived
             opposite_direction = self._get_opposite_direction(full_direction)

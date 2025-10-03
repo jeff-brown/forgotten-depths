@@ -26,8 +26,8 @@ player:
 
   # Hunger and Thirst Settings
   hunger_thirst:
-    hunger_decay_per_tick: 0.05      # Decay rate per tick (0.05 = 3/min = ~33 mins to starve)
-    thirst_decay_per_tick: 0.075     # Decay rate per tick (0.075 = 4.5/min = ~22 mins to dehydrate)
+    hunger_decay_per_tick: 0.005      # Decay rate per tick (0.05 = 3/min = ~33 mins to starve)
+    thirst_decay_per_tick: 0.005     # Decay rate per tick (0.075 = 4.5/min = ~22 mins to dehydrate)
     low_warning_threshold: 20        # Warn when hunger/thirst drops below this
     starvation_damage_per_tick: 0.05 # HP damage per tick when starving
     dehydration_damage_per_tick: 0.1 # HP damage per tick when dehydrated
@@ -47,14 +47,14 @@ world:
   day_night_cycle: false
 
 # Dungeon Settings
-dungeon:
-  wandering_mobs:
+# Define wandering mob configs for each dungeon area
+wandering_mobs:
+  arena_dungeon:
     enabled: true
-    max_wandering_mobs: 5        # Maximum number of wandering mobs in dungeon
+    max_wandering_mobs: 5        # Maximum number of wandering mobs in this dungeon
     spawn_interval: 30            # Spawn check interval in seconds
     spawn_chance: 0.3             # 30% chance to spawn per check
     movement_chance: 0.2          # 20% chance to move per tick
-    area_id: "arena_dungeon"      # Area where wandering mobs spawn
     mob_pool:                     # Mobs that can spawn as wanderers
       - id: "rat"
         weight: 40
@@ -62,6 +62,48 @@ dungeon:
         weight: 35
       - id: "skeleton_warrior"
         weight: 25
+
+  dungeon1:
+    enabled: true
+    max_wandering_mobs: 10       # Maximum number of wandering mobs in this dungeon
+    spawn_interval: 30            # Spawn check interval in seconds
+    spawn_chance: 0.5             # 50% chance to spawn per check
+    movement_chance: 0.3          # 30% chance to move per tick
+    mob_pool:                     # Mobs that can spawn as wanderers
+      - id: "rat"
+        weight: 40
+      - id: "goblin_scout"
+        weight: 35
+      - id: "skeleton_warrior"
+        weight: 25
+
+  dungeon2:
+    enabled: true
+    max_wandering_mobs: 12       # Maximum number of wandering mobs in this dungeon
+    spawn_interval: 25            # Spawn check interval in seconds
+    spawn_chance: 0.6             # 60% chance to spawn per check
+    movement_chance: 0.4          # 40% chance to move per tick (more active)
+    mob_pool:                     # Mobs that can spawn as wanderers (tougher mobs)
+      - id: "goblin_scout"
+        weight: 30
+      - id: "skeleton_warrior"
+        weight: 40
+      - id: "rat"
+        weight: 30
+
+  dungeon3:
+    enabled: true
+    max_wandering_mobs: 15       # Maximum number of wandering mobs in this dungeon
+    spawn_interval: 20            # Spawn check interval in seconds
+    spawn_chance: 0.7             # 70% chance to spawn per check (very dangerous)
+    movement_chance: 0.5          # 50% chance to move per tick (highly active)
+    mob_pool:                     # Mobs that can spawn as wanderers (toughest mobs)
+      - id: "skeleton_warrior"
+        weight: 50
+      - id: "goblin_scout"
+        weight: 30
+      - id: "rat"
+        weight: 20
 
 # Combat Settings
 combat:

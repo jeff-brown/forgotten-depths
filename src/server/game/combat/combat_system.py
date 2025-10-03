@@ -371,6 +371,10 @@ class CombatSystem:
 
     async def handle_mob_death(self, room_id: str, mob_participant_id: str):
         """Handle when a mob dies in combat."""
+        # Track which mob died for quest tracking
+        dead_mob = None
+        dead_mob_id = None
+
         # Remove dead mob from room
         if room_id in self.game_engine.room_mobs:
             # Find and remove the dead mob
@@ -379,16 +383,38 @@ class CombatSystem:
                 mob_id = f"mob_{mob.get('id', 'unknown')}"
                 if mob_id != mob_participant_id:
                     alive_mobs.append(mob)
+                else:
+                    # This is the dead mob
+                    dead_mob = mob
+                    dead_mob_id = mob.get('id')
             self.game_engine.room_mobs[room_id] = alive_mobs
 
-        # Award experience to players in combat
+        # Award experience to players in combat and track quest progress
         for player_id, combat_room in self.player_combats.items():
             if combat_room == room_id:
                 player_data = self.game_engine.player_manager.connected_players.get(player_id)
                 if player_data and player_data.get('character'):
+                    character = player_data['character']
+
                     # Award 25 XP for killing the mob
-                    player_data['character']['experience'] = player_data['character'].get('experience', 0) + 25
+                    character['experience'] = character.get('experience', 0) + 25
                     await self.game_engine.connection_manager.send_message(player_id, "You gain 25 experience points!")
+
+                    # Track quest progress for killing this mob
+                    if dead_mob and dead_mob_id:
+                        quest_completed = self.game_engine.quest_manager.check_objective_completion(
+                            character,
+                            'slay_the_dragon',  # Check all quests in future implementation
+                            'kill_monster',
+                            dead_mob_id,
+                            room_id
+                        )
+
+                        if quest_completed:
+                            quest = self.game_engine.quest_manager.get_quest('slay_the_dragon')
+                            if quest:
+                                completion_msg = quest.get('completed_message', 'Quest objective completed!')
+                                await self.game_engine.connection_manager.send_message(player_id, f"\n{completion_msg}\n")
 
     async def end_async_combat(self, room_id: str):
         """End async combat in a room."""
@@ -416,19 +442,27 @@ class CombatSystem:
     async def process_mob_ai(self):
         """Process AI for all mobs in all rooms."""
         try:
-            for room_id, mobs in self.game_engine.room_mobs.items():
+            for room_id, mobs in list(self.game_engine.room_mobs.items()):
+                # Skip if mobs is None or not a list
+                if mobs is None or not isinstance(mobs, list):
+                    self.logger.warning(f"[MOB_AI] Invalid mobs list in room {room_id}: {type(mobs)}")
+                    continue
+
                 # Filter out None values and make a copy to avoid modification during iteration
-                valid_mobs = [mob for mob in mobs if mob is not None]
+                valid_mobs = [mob for mob in mobs if mob is not None and isinstance(mob, dict)]
                 for mob in valid_mobs:
                     await self.process_single_mob_ai(mob, room_id)
         except Exception as e:
             self.logger.error(f"Error in mob AI processing: {e}")
+            import traceback
+            self.logger.error(f"[MOB_AI] Traceback: {traceback.format_exc()}")
 
     async def process_single_mob_ai(self, mob: dict, room_id: str):
         """Process AI for a single mob."""
         try:
             # Skip if mob is None (could happen if removed during iteration)
             if mob is None:
+                self.logger.warning(f"[MOB_AI] Skipping None mob in room {room_id}")
                 return
 
             # Skip if mob is dead
@@ -447,7 +481,8 @@ class CombatSystem:
             # Find players in the same room (prioritize players)
             target_players = []
             for player_id, player_data in self.game_engine.player_manager.connected_players.items():
-                if player_data.get('character', {}).get('room_id') == room_id:
+                character = player_data.get('character')
+                if character and character.get('room_id') == room_id:
                     target_players.append(player_id)
 
             # Attack a random player if any are present (players take priority)
@@ -474,7 +509,10 @@ class CombatSystem:
                     await self.execute_mob_vs_mob_attack(mob, mob_id, target_mob, room_id)
 
         except Exception as e:
-            self.logger.error(f"Error in single mob AI processing: {e}")
+            self.logger.error(f"Error in single mob AI processing for mob in room {room_id}: {e}")
+            self.logger.error(f"[MOB_AI] Mob object type: {type(mob)}, Mob value: {mob}")
+            import traceback
+            self.logger.error(f"[MOB_AI] Traceback: {traceback.format_exc()}")
 
     async def execute_mob_attack(self, mob: dict, mob_id: str, target_player_id: int, room_id: str):
         """Execute a mob attack against a player."""

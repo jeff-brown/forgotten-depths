@@ -147,8 +147,16 @@
       "description": "A massive bronze gong mounted on an ornate stand. Its surface is covered in ancient runes and shows the green patina of age. When struck, it produces a deep, resonant tone that seems to call forth challenges from the depths.",
       "properties": {
         "can_take": false,
-        "actions": ["ring", "strike", "hit"],
-        "keywords": ["gong", "bronze", "bronze gong"]
+        "actions": [
+          "ring",
+          "strike",
+          "hit"
+        ],
+        "keywords": [
+          "gong",
+          "bronze",
+          "bronze gong"
+        ]
       }
     },
     "stew": {
@@ -475,6 +483,1960 @@
           "min_level": 1,
           "min_intelligence": 10
         }
+      }
+    },
+    "enchanted_blade": {
+      "name": "Enchanted Blade",
+      "type": "weapon",
+      "weight": 6,
+      "base_value": 250,
+      "description": "A finely crafted sword that hums with magical energy. Its blade shimmers with an ethereal light.",
+      "properties": {
+        "damage": "2d6+3",
+        "weapon_type": "sword",
+        "material": "enchanted_steel",
+        "magical": true,
+        "enchantment": "sharpness"
+      }
+    },
+    "champion_armor": {
+      "name": "Champion's Armor",
+      "type": "armor",
+      "weight": 25,
+      "base_value": 300,
+      "description": "Masterfully forged plate armor worn by legendary champions. Its dark metal surface seems to absorb light.",
+      "properties": {
+        "armor_class": 8,
+        "armor_type": "heavy",
+        "material": "darksteel",
+        "magical": true,
+        "strength_bonus": 2
+      }
+    },
+    "dark_essence": {
+      "name": "Dark Essence",
+      "type": "reagent",
+      "weight": 0.5,
+      "base_value": 100,
+      "description": "A swirling vial of shadow energy harvested from powerful dark creatures. Used in powerful rituals and enchantments.",
+      "properties": {
+        "magical": true,
+        "crafting_material": true,
+        "essence_type": "dark"
+      }
+    },
+    "soul_gem": {
+      "name": "Soul Gem",
+      "type": "gem",
+      "weight": 0.2,
+      "base_value": 500,
+      "description": "A pristine gem that glows with an inner light. It seems to contain captured souls or pure magical essence.",
+      "properties": {
+        "magical": true,
+        "valuable": true,
+        "mana_storage": 100,
+        "gem_quality": "flawless"
+      }
+    },
+    "ancient_ring": {
+      "name": "Ancient Ring",
+      "type": "jewelry",
+      "weight": 0.1,
+      "base_value": 150,
+      "description": "A tarnished ring bearing ancient runes. It once belonged to a guardian of old.",
+      "properties": {
+        "magical": true,
+        "armor_class": 1,
+        "wisdom_bonus": 1
+      }
+    },
+    "guardian_sword": {
+      "name": "Guardian's Sword",
+      "type": "weapon",
+      "weight": 7,
+      "base_value": 180,
+      "description": "A well-preserved longsword carried by skeletal guardians. Despite its age, the blade remains sharp.",
+      "properties": {
+        "damage": "1d8+3",
+        "weapon_type": "sword",
+        "material": "ancient_steel",
+        "bonus_vs_undead": 2
+      }
+    },
+    "rusted_plate": {
+      "name": "Rusted Plate Armor",
+      "type": "armor",
+      "weight": 30,
+      "base_value": 50,
+      "description": "Heavy plate armor corroded by time. Still offers some protection despite its condition.",
+      "properties": {
+        "armor_class": 4,
+        "armor_type": "heavy",
+        "material": "rusted_iron",
+        "durability": "poor"
+      }
+    },
+    "cloak": {
+      "name": "Cloak",
+      "type": "armor",
+      "weight": 2.0,
+      "base_value": 10,
+      "description": "A simple traveler's cloak that offers minimal protection from the elements.",
+      "properties": {
+        "armor_class": 0,
+        "armor_type": "light",
+        "material": "cloth",
+        "required_level": 0
+      }
+    },
+    "robes": {
+      "name": "Robes",
+      "type": "armor",
+      "weight": 3.0,
+      "base_value": 20,
+      "description": "Plain cloth robes that provide basic protection while allowing freedom of movement.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "light",
+        "material": "cloth",
+        "required_level": 1
+      }
+    },
+    "cuirass": {
+      "name": "Leather Cuirass",
+      "type": "armor",
+      "weight": 5.0,
+      "base_value": 40,
+      "description": "A well-crafted leather cuirass that provides solid protection without restricting mobility.",
+      "properties": {
+        "armor_class": 2,
+        "armor_type": "light",
+        "material": "leather",
+        "required_level": 2
+      }
+    },
+    "breastplate": {
+      "name": "Steel Breastplate",
+      "type": "armor",
+      "weight": 20.0,
+      "base_value": 200,
+      "description": "A reinforced steel breastplate offering excellent protection for the torso.",
+      "properties": {
+        "armor_class": 4,
+        "armor_type": "medium",
+        "material": "steel",
+        "required_level": 2
+      }
+    },
+    "ringmail": {
+      "name": "Ringmail Armor",
+      "type": "armor",
+      "weight": 30.0,
+      "base_value": 250,
+      "description": "Interlocking iron rings form a flexible yet protective suit of armor.",
+      "properties": {
+        "armor_class": 5,
+        "armor_type": "medium",
+        "material": "iron",
+        "required_level": 3
+      }
+    },
+    "chainmail": {
+      "name": "Chainmail Armor",
+      "type": "armor",
+      "weight": 40.0,
+      "base_value": 300,
+      "description": "Heavy chainmail forged from iron links, offering substantial protection in battle.",
+      "properties": {
+        "armor_class": 6,
+        "armor_type": "medium",
+        "material": "iron",
+        "required_level": 3
+      }
+    },
+    "scalemail": {
+      "name": "Scalemail Armor",
+      "type": "armor",
+      "weight": 45.0,
+      "base_value": 400,
+      "description": "Overlapping steel scales create a formidable defensive barrier against attacks.",
+      "properties": {
+        "armor_class": 8,
+        "armor_type": "medium",
+        "material": "steel",
+        "required_level": 4
+      }
+    },
+    "bandmail": {
+      "name": "Banded Mail Armor",
+      "type": "armor",
+      "weight": 50.0,
+      "base_value": 500,
+      "description": "Heavy armor constructed from overlapping steel bands, providing superior protection.",
+      "properties": {
+        "armor_class": 10,
+        "armor_type": "heavy",
+        "material": "steel",
+        "required_level": 6
+      }
+    },
+    "platemail": {
+      "name": "Platemail Armor",
+      "type": "armor",
+      "weight": 60.0,
+      "base_value": 600,
+      "description": "Full suit of expertly crafted plate armor that offers exceptional protection to experienced warriors.",
+      "properties": {
+        "armor_class": 12,
+        "armor_type": "heavy",
+        "material": "steel",
+        "required_level": 8
+      }
+    },
+    "demonhide": {
+      "name": "Demonhide Armor",
+      "type": "armor",
+      "weight": 25.0,
+      "base_value": 1500,
+      "description": "Supple yet incredibly tough armor crafted from the hide of a demon. Its dark surface pulses with malevolent energy.",
+      "properties": {
+        "armor_class": 15,
+        "armor_type": "heavy",
+        "material": "leather",
+        "required_level": 10
+      }
+    },
+    "dragonscale": {
+      "name": "Dragonscale Armor",
+      "type": "armor",
+      "weight": 50.0,
+      "base_value": 1800,
+      "description": "Legendary armor crafted from the iridescent scales of an ancient dragon. Nearly impervious to damage.",
+      "properties": {
+        "armor_class": 18,
+        "armor_type": "heavy",
+        "material": "leather",
+        "required_level": 12
+      }
+    },
+    "pink_teddy": {
+      "name": "Pink Teddy",
+      "type": "armor",
+      "weight": 0.0,
+      "base_value": 0,
+      "description": "A mysteriously protective pink teddy bear outfit. Don't ask how it works - it just does.",
+      "properties": {
+        "armor_class": 15,
+        "armor_type": "heavy",
+        "material": "leather",
+        "required_level": 1000
+      }
+    },
+    "blue_robes": {
+      "name": "Blue Robes",
+      "type": "armor",
+      "weight": 0.0,
+      "base_value": 0,
+      "description": "Ethereal blue robes that shimmer with powerful protective enchantments. Only the most skilled may wear them.",
+      "properties": {
+        "armor_class": 18,
+        "armor_type": "heavy",
+        "material": "leather",
+        "required_level": 1000
+      }
+    },
+    "violet_robes": {
+      "name": "Violet Robes",
+      "type": "armor",
+      "weight": 3.0,
+      "base_value": 0,
+      "description": "Flowing violet robes imbued with ancient magics. Their true power remains hidden.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "heavy",
+        "material": "leather",
+        "required_level": 1000
+      }
+    },
+    "green_tunic": {
+      "name": "Green Tunic",
+      "type": "armor",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "A simple green tunic worn by travelers and adventurers. Provides minimal protection.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "heavy",
+        "material": "leather",
+        "required_level": 0
+      }
+    },
+    "dwarven_scalemail": {
+      "name": "Dwarven Scalemail Armor",
+      "type": "armor",
+      "weight": 55.0,
+      "base_value": 0,
+      "description": "Masterwork scalemail forged by dwarven smiths in the deep halls. Offers unparalleled protection.",
+      "properties": {
+        "armor_class": 20,
+        "armor_type": "heavy",
+        "material": "leather",
+        "required_level": 15
+      }
+    },
+    "quarterstaff": {
+      "name": "Quarterstaff",
+      "type": "weapon",
+      "weight": 4.0,
+      "base_value": 10,
+      "description": "A sturdy wooden staff useful for both offense and defense.",
+      "properties": {
+        "damage": "3d2-2",
+        "weapon_type": "staff",
+        "material": "wood",
+        "required_level": 1
+      }
+    },
+    "shortsword": {
+      "name": "Shortsword",
+      "type": "weapon",
+      "weight": 2.0,
+      "base_value": 30,
+      "description": "A versatile short blade favored by adventurers.",
+      "properties": {
+        "damage": "5d2-4",
+        "weapon_type": "sword",
+        "material": "steel",
+        "required_level": 1
+      }
+    },
+    "mace": {
+      "name": "Mace",
+      "type": "weapon",
+      "weight": 5.0,
+      "base_value": 35,
+      "description": "A heavy mace designed to crush armor and bone.",
+      "properties": {
+        "damage": "6d2-5",
+        "weapon_type": "mace",
+        "material": "iron",
+        "required_level": 1
+      }
+    },
+    "warhammer": {
+      "name": "Warhammer",
+      "type": "weapon",
+      "weight": 7.0,
+      "base_value": 40,
+      "description": "A powerful warhammer that delivers devastating blows.",
+      "properties": {
+        "damage": "6d2-4",
+        "weapon_type": "hammer",
+        "material": "iron",
+        "required_level": 1
+      }
+    },
+    "longsword": {
+      "name": "Longsword",
+      "type": "weapon",
+      "weight": 3.0,
+      "base_value": 50,
+      "description": "A well-balanced longsword with excellent reach.",
+      "properties": {
+        "damage": "8d2-6",
+        "weapon_type": "sword",
+        "material": "steel",
+        "required_level": 3
+      }
+    },
+    "battleax": {
+      "name": "Battleax",
+      "type": "weapon",
+      "weight": 5.0,
+      "base_value": 60,
+      "description": "A fearsome battle axe capable of cleaving through armor.",
+      "properties": {
+        "damage": "10d2-8",
+        "weapon_type": "axe",
+        "material": "steel",
+        "required_level": 3
+      }
+    },
+    "morningstar": {
+      "name": "Morningstar",
+      "type": "weapon",
+      "weight": 8.0,
+      "base_value": 70,
+      "description": "A spiked morningstar that inflicts brutal wounds.",
+      "properties": {
+        "damage": "12d2-10",
+        "weapon_type": "mace",
+        "material": "iron",
+        "required_level": 2
+      }
+    },
+    "broadsword": {
+      "name": "Broadsword",
+      "type": "weapon",
+      "weight": 4.0,
+      "base_value": 80,
+      "description": "A wide-bladed broadsword with deadly cutting power.",
+      "properties": {
+        "damage": "7d3-5",
+        "weapon_type": "sword",
+        "material": "steel",
+        "required_level": 3
+      }
+    },
+    "flail": {
+      "name": "Flail",
+      "type": "weapon",
+      "weight": 9.0,
+      "base_value": 90,
+      "description": "A weighted flail that strikes with unpredictable force.",
+      "properties": {
+        "damage": "5d4-2",
+        "weapon_type": "flail",
+        "material": "iron",
+        "required_level": 4
+      }
+    },
+    "halberd": {
+      "name": "Halberd",
+      "type": "weapon",
+      "weight": 12.0,
+      "base_value": 120,
+      "description": "A long polearm combining axe, spike, and hook.",
+      "properties": {
+        "damage": "9d3-3",
+        "weapon_type": "polearm",
+        "material": "steel",
+        "required_level": 6
+      }
+    },
+    "greatsword": {
+      "name": "Greatsword",
+      "type": "weapon",
+      "weight": 7.0,
+      "base_value": 150,
+      "description": "A massive two-handed sword wielded by the strongest warriors.",
+      "properties": {
+        "damage": "7d4",
+        "weapon_type": "sword",
+        "material": "steel",
+        "required_level": 6
+      }
+    },
+    "rimeax": {
+      "name": "Rimeax",
+      "type": "weapon",
+      "weight": 5.0,
+      "base_value": 900,
+      "description": "A frost-enchanted axe that unleashes a blast of frost on impact.",
+      "properties": {
+        "damage": "15d3-9",
+        "weapon_type": "axe",
+        "material": "enchanted_steel",
+        "required_level": 12,
+        "magical": true
+      }
+    },
+    "pyrehammer": {
+      "name": "Pyrehammer",
+      "type": "weapon",
+      "weight": 7.0,
+      "base_value": 750,
+      "description": "A flame-wreathed hammer that delivers a blast of flame with each strike.",
+      "properties": {
+        "damage": "5d6",
+        "weapon_type": "hammer",
+        "material": "enchanted_steel",
+        "required_level": 10,
+        "magical": true
+      }
+    },
+    "levinblade": {
+      "name": "Levinblade",
+      "type": "weapon",
+      "weight": 3.0,
+      "base_value": 1000,
+      "description": "A lightning-charged blade that releases a bolt of lightning upon hitting foes.",
+      "properties": {
+        "damage": "16d3-8",
+        "weapon_type": "sword",
+        "material": "enchanted_steel",
+        "required_level": 15,
+        "magical": true
+      }
+    },
+    "short_bow": {
+      "name": "Short Bow",
+      "type": "weapon",
+      "weight": 3.0,
+      "base_value": 30,
+      "description": "A compact bow suitable for hunting and skirmishing.",
+      "properties": {
+        "damage": "5d2-4",
+        "weapon_type": "bow",
+        "material": "wood",
+        "required_level": 1,
+        "ranged": true,
+        "min_range": 3,
+        "max_range": 60
+      }
+    },
+    "long_bow": {
+      "name": "Long Bow",
+      "type": "weapon",
+      "weight": 4.0,
+      "base_value": 50,
+      "description": "A powerful longbow with excellent range and accuracy.",
+      "properties": {
+        "damage": "8d2-6",
+        "weapon_type": "bow",
+        "material": "wood",
+        "required_level": 2,
+        "ranged": true,
+        "min_range": 5,
+        "max_range": 60
+      }
+    },
+    "crossbow": {
+      "name": "Crossbow",
+      "type": "weapon",
+      "weight": 6.0,
+      "base_value": 100,
+      "description": "A mechanical crossbow that fires deadly bolts.",
+      "properties": {
+        "damage": "8d3-4",
+        "weapon_type": "crossbow",
+        "material": "wood",
+        "required_level": 4,
+        "ranged": true,
+        "min_range": 4,
+        "max_range": 60
+      }
+    },
+    "great_bow": {
+      "name": "Great Bow",
+      "type": "weapon",
+      "weight": 5.0,
+      "base_value": 150,
+      "description": "An oversized bow requiring great strength to draw.",
+      "properties": {
+        "damage": "12d3-6",
+        "weapon_type": "bow",
+        "material": "wood",
+        "required_level": 6,
+        "ranged": true,
+        "min_range": 5,
+        "max_range": 60
+      }
+    },
+    "mithril_sword": {
+      "name": "Mithril Sword",
+      "type": "weapon",
+      "weight": 3.0,
+      "base_value": 0,
+      "description": "A legendary blade forged from gleaming mithril.",
+      "properties": {
+        "damage": "16d3-8",
+        "weapon_type": "sword",
+        "material": "mithril",
+        "required_level": 1000
+      }
+    },
+    "darksword": {
+      "name": "Darksword",
+      "type": "weapon",
+      "weight": 3.0,
+      "base_value": 0,
+      "description": "A shadowy blade that seems to absorb light.",
+      "properties": {
+        "damage": "9d3-5",
+        "weapon_type": "sword",
+        "material": "darksteel",
+        "required_level": 1000
+      }
+    },
+    "sling": {
+      "name": "Sling",
+      "type": "weapon",
+      "weight": 1.5,
+      "base_value": 10,
+      "description": "A simple leather sling for hurling stones.",
+      "properties": {
+        "damage": "3d2-2",
+        "weapon_type": "sling",
+        "material": "leather",
+        "required_level": 0,
+        "ranged": true,
+        "min_range": 3,
+        "max_range": 89
+      }
+    },
+    "blowgun": {
+      "name": "Blowgun",
+      "type": "weapon",
+      "weight": 1.0,
+      "base_value": 25,
+      "description": "A hollow tube for launching poisoned darts silently.",
+      "properties": {
+        "damage": "1d2",
+        "weapon_type": "blowgun",
+        "material": "wood",
+        "required_level": 2,
+        "ranged": true,
+        "min_range": 3,
+        "max_range": 92
+      }
+    },
+    "elven_bow": {
+      "name": "Elven Bow",
+      "type": "weapon",
+      "weight": 4.0,
+      "base_value": 1250,
+      "description": "An elegant elven bow imbued with magical energy, releasing a bolt of energy.",
+      "properties": {
+        "damage": "15d3-5",
+        "weapon_type": "bow",
+        "material": "enchanted_wood",
+        "required_level": 15,
+        "magical": true,
+        "ranged": true,
+        "min_range": 5,
+        "max_range": 60
+      }
+    },
+    "stick": {
+      "name": "Stick",
+      "type": "weapon",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "A crude wooden stick with minimal offensive capability.",
+      "properties": {
+        "damage": "1d2",
+        "weapon_type": "club",
+        "material": "wood",
+        "required_level": 0
+      }
+    },
+    "wooden_mallet": {
+      "name": "Wooden Mallet",
+      "type": "weapon",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "A simple wooden mallet used as an improvised weapon.",
+      "properties": {
+        "damage": "2d2-1",
+        "weapon_type": "hammer",
+        "material": "wood",
+        "required_level": 0
+      }
+    },
+    "dwarven_battleax": {
+      "name": "Dwarven Battleax",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A masterwork battleaxe forged in the deep halls by dwarven smiths.",
+      "properties": {
+        "damage": "20d3-10",
+        "weapon_type": "axe",
+        "material": "dwarven_steel",
+        "required_level": 15
+      }
+    },
+    "tentacle": {
+      "name": "Tentacle",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A writhing appendage that grasps and crushes.",
+      "properties": {
+        "damage": "8d2+4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "thorny_branch": {
+      "name": "Thorny Branch",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A gnarled branch covered in wicked thorns.",
+      "properties": {
+        "damage": "6d2-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "battleaxe": {
+      "name": "Battleaxe",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Battleaxe used for combat.",
+      "properties": {
+        "damage": "15d2+4",
+        "weapon_type": "axe",
+        "material": "steel",
+        "required_level": 15
+      }
+    },
+    "gnashing_teeth": {
+      "name": "Gnashing Teeth",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Sharp teeth designed for tearing flesh.",
+      "properties": {
+        "damage": "5d2-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "huge_gnashing_teeth": {
+      "name": "Huge Gnashing Teeth",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Massive fangs capable of rending armor.",
+      "properties": {
+        "damage": "10d3-6",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "big_pointy_teeth": {
+      "name": "Big Pointy Teeth",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Needle-sharp teeth that pierce deeply.",
+      "properties": {
+        "damage": "1d2",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "black_sceptre": {
+      "name": "Black Sceptre",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Black Sceptre used for combat.",
+      "properties": {
+        "damage": "5d2+6",
+        "weapon_type": "mace",
+        "material": "darksteel",
+        "required_level": 15
+      }
+    },
+    "bone_hammer": {
+      "name": "Bone Hammer",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Bone Hammer used for combat.",
+      "properties": {
+        "damage": "14d6-4",
+        "weapon_type": "hammer",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "burning_claws": {
+      "name": "Burning Claws",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Claws wreathed in hellfire.",
+      "properties": {
+        "damage": "4d12+2",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "choking_vines": {
+      "name": "Choking Vines",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Thick vines that constrict and suffocate.",
+      "properties": {
+        "damage": "3d2-2",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "demonic_claws": {
+      "name": "Demonic Claws",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Cursed talons that rend both flesh and soul.",
+      "properties": {
+        "damage": "6d2-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "shadow_claws": {
+      "name": "Shadow Claws",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Ephemeral claws formed from pure darkness.",
+      "properties": {
+        "damage": "3d2",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "claws": {
+      "name": "Claws",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Sharp claws for slashing attacks.",
+      "properties": {
+        "damage": "6d2-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "wicked_claws": {
+      "name": "Wicked Claws",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Cruelly curved claws that inflict grievous wounds.",
+      "properties": {
+        "damage": "8d3-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "razor_sharp_talons": {
+      "name": "Razor Sharp Talons",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Talons honed to a razor's edge.",
+      "properties": {
+        "damage": "6d2",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "yellowish_nails": {
+      "name": "Yellowish Nails",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Diseased nails that carry infection.",
+      "properties": {
+        "damage": "10d2-8",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "hellish_claws": {
+      "name": "Hellish Claws",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Infernal claws burning with unholy fire.",
+      "properties": {
+        "damage": "15d2+15",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "vicious_bite": {
+      "name": "Vicious Bite",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A powerful bite attack.",
+      "properties": {
+        "damage": "6d2-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "tendrils": {
+      "name": "Tendrils",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Grasping tendrils that entangle prey.",
+      "properties": {
+        "damage": "3d2-1",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "pincers": {
+      "name": "Pincers",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Crushing pincers like those of a giant crab.",
+      "properties": {
+        "damage": "4d2-2",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "gaping_mouth": {
+      "name": "Gaping Mouth",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A cavernous maw filled with teeth.",
+      "properties": {
+        "damage": "6d2-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "toothy_maw": {
+      "name": "Toothy Maw",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A tooth-lined mouth built for devouring.",
+      "properties": {
+        "damage": "4d2-2",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "mandibles": {
+      "name": "Mandibles",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Insectoid mandibles that scissor together.",
+      "properties": {
+        "damage": "10d2-8",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "curved_horns": {
+      "name": "Curved Horns",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Powerful horns for goring attacks.",
+      "properties": {
+        "damage": "8d2-6",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "wicked_bite": {
+      "name": "Wicked Bite",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A bite attack that tears deeply.",
+      "properties": {
+        "damage": "10d2-8",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "savage_bite": {
+      "name": "Savage Bite",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A ferocious bite that maims.",
+      "properties": {
+        "damage": "12d2-8",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "tusks": {
+      "name": "Tusks",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Sharp tusks for gouging.",
+      "properties": {
+        "damage": "8d2-4",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "clenched_fists": {
+      "name": "Clenched Fists",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Massive fists that pummel foes.",
+      "properties": {
+        "damage": "8d2-6",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "hooked_beak": {
+      "name": "Hooked Beak",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A sharp, hooked beak for rending.",
+      "properties": {
+        "damage": "8d2-6",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "spiked_club": {
+      "name": "Spiked Club",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Spiked Club used for combat.",
+      "properties": {
+        "damage": "9d3-7",
+        "weapon_type": "club",
+        "material": "wood",
+        "required_level": 15
+      }
+    },
+    "wicked_spear": {
+      "name": "Wicked Spear",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Wicked Spear used for combat.",
+      "properties": {
+        "damage": "10d3-6",
+        "weapon_type": "polearm",
+        "material": "steel",
+        "required_level": 15
+      }
+    },
+    "gaping_maw": {
+      "name": "Gaping Maw",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A massive mouth that swallows prey whole.",
+      "properties": {
+        "damage": "10d3-6",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "flaming_staff": {
+      "name": "Flaming Staff",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Flaming Staff used for combat.",
+      "properties": {
+        "damage": "8d2-4",
+        "weapon_type": "staff",
+        "material": "enchanted_wood",
+        "required_level": 15
+      }
+    },
+    "huge_club": {
+      "name": "Huge Club",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Huge Club used for combat.",
+      "properties": {
+        "damage": "5d6",
+        "weapon_type": "club",
+        "material": "wood",
+        "required_level": 15
+      }
+    },
+    "talons": {
+      "name": "Talons",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Sharp talons for gripping and tearing.",
+      "properties": {
+        "damage": "5d6",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "glowing_sword": {
+      "name": "Glowing Sword",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A radiant sword that emanates holy light.",
+      "properties": {
+        "damage": "10d3-6",
+        "weapon_type": "sword",
+        "material": "enchanted_steel",
+        "required_level": 15
+      }
+    },
+    "huge_talons": {
+      "name": "Huge Talons",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Enormous talons capable of seizing large prey.",
+      "properties": {
+        "damage": "8d6",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "crystalline_sword": {
+      "name": "Crystalline Sword",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A blade of pure crystal that refracts light into deadly rainbows.",
+      "properties": {
+        "damage": "15d4-10",
+        "weapon_type": "sword",
+        "material": "crystal",
+        "required_level": 15
+      }
+    },
+    "flaming_greatsword": {
+      "name": "Flaming Greatsword",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A massive greatsword wreathed in perpetual flames.",
+      "properties": {
+        "damage": "15d3-9",
+        "weapon_type": "sword",
+        "material": "enchanted_steel",
+        "required_level": 15
+      }
+    },
+    "frost_rod": {
+      "name": "Frost Rod",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Frost Rod used for combat.",
+      "properties": {
+        "damage": "15d2-10",
+        "weapon_type": "staff",
+        "material": "crystal",
+        "required_level": 15
+      }
+    },
+    "enormous_talons": {
+      "name": "Enormous Talons",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Colossal talons that can crush stone.",
+      "properties": {
+        "damage": "20d3-10",
+        "weapon_type": "natural",
+        "material": "bone",
+        "required_level": 15
+      }
+    },
+    "smouldering_great_axe": {
+      "name": "Smouldering Great Axe",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "An enormous axe that smolders with barely contained fire.",
+      "properties": {
+        "damage": "20d4",
+        "weapon_type": "axe",
+        "material": "enchanted_steel",
+        "required_level": 15
+      }
+    },
+    "smouldering_great_spear": {
+      "name": "Smouldering Great Spear",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A legendary spear crackling with volcanic heat.",
+      "properties": {
+        "damage": "32-96",
+        "weapon_type": "polearm",
+        "material": "enchanted_steel",
+        "required_level": 15
+      }
+    },
+    "crystalline_talons": {
+      "name": "Crystalline Talons",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "Razor-sharp talons formed from magical crystal.",
+      "properties": {
+        "damage": "18d6+12",
+        "weapon_type": "sword",
+        "material": "crystal",
+        "required_level": 15
+      }
+    },
+    "glowing_bardiche": {
+      "name": "Glowing Bardiche",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 0,
+      "description": "A polearm that shines with divine radiance.",
+      "properties": {
+        "damage": "40-160",
+        "weapon_type": "polearm",
+        "material": "enchanted_steel",
+        "required_level": 15
+      }
+    },
+    "huge_glowing_sabre": {
+      "name": "Huge Glowing Sabre",
+      "type": "weapon",
+      "weight": 10.0,
+      "base_value": 100,
+      "description": "An oversized sabre pulsing with magical energy.",
+      "properties": {
+        "damage": "20d10+40",
+        "weapon_type": "sword",
+        "material": "enchanted_steel",
+        "required_level": 1
+      }
+    },
+    "demon_sword": {
+      "name": "Demon Sword",
+      "type": "weapon",
+      "weight": 3.0,
+      "base_value": 100,
+      "description": "An unholy blade wreathed in poison, forged in the depths of hell.",
+      "properties": {
+        "damage": "150-500",
+        "weapon_type": "sword",
+        "material": "demonic",
+        "required_level": 1,
+        "magical": true
+      }
+    },
+    "animate_sword": {
+      "name": "Animate Sword",
+      "type": "weapon",
+      "weight": 1.5,
+      "base_value": 10,
+      "description": "A sentient blade that channels a huge blast of flame through its wielder.",
+      "properties": {
+        "damage": "100-5000",
+        "weapon_type": "sword",
+        "material": "animated",
+        "required_level": 1,
+        "magical": true
+      }
+    },
+    "ration_of_food": {
+      "name": "Ration Of Food",
+      "type": "tool",
+      "weight": 0.5,
+      "base_value": 2,
+      "description": "Preserved rations suitable for travel.",
+      "properties": {
+        "required_level": 0,
+        "nutrition": 60
+      }
+    },
+    "waterskin": {
+      "name": "Waterskin",
+      "type": "tool",
+      "weight": 1.0,
+      "base_value": 1,
+      "description": "A leather waterskin for carrying water.",
+      "properties": {
+        "required_level": 0,
+        "hydration": 60,
+        "charges": 3
+      }
+    },
+    "glowstone": {
+      "name": "Glowstone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 50,
+      "description": "A magical stone that emanates a soft, eternal light.",
+      "properties": {
+        "required_level": 0,
+        "light_radius": 30,
+        "eternal": true
+      }
+    },
+    "heartstone": {
+      "name": "Heartstone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 100,
+      "description": "A mystical stone that can recall you to safety.",
+      "properties": {
+        "required_level": 5,
+        "recall": true
+      }
+    },
+    "rue_potion": {
+      "name": "Rue Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 5,
+      "description": "A minor healing potion that restores a small amount of health.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "4-16"
+      }
+    },
+    "amaranth_potion": {
+      "name": "Amaranth Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A healing potion that restores moderate health.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "16-64"
+      }
+    },
+    "anemone_potion": {
+      "name": "Anemone Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 25,
+      "description": "A powerful healing potion that restores significant health.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "32-128"
+      }
+    },
+    "verbena_potion": {
+      "name": "Verbena Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that cures poison.",
+      "properties": {
+        "required_level": 0,
+        "cure_poison": true
+      }
+    },
+    "yarrow_potion": {
+      "name": "Yarrow Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that restores a small amount of mana.",
+      "properties": {
+        "required_level": 0,
+        "restore_mana": 10
+      }
+    },
+    "rowan_potion": {
+      "name": "Rowan Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that temporarily increases strength.",
+      "properties": {
+        "required_level": 0,
+        "boost_duration": 600,
+        "strength_bonus": 1
+      }
+    },
+    "hyssop_potion": {
+      "name": "Hyssop Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that temporarily increases dexterity.",
+      "properties": {
+        "required_level": 0,
+        "boost_duration": 600,
+        "dexterity_bonus": 1
+      }
+    },
+    "vervain_potion": {
+      "name": "Vervain Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 100,
+      "description": "A potion that grants temporary invisibility.",
+      "properties": {
+        "required_level": 0,
+        "invisibility_duration": 600
+      }
+    },
+    "horn_of_frost": {
+      "name": "Horn Of Frost",
+      "type": "magic_item",
+      "weight": 5.0,
+      "base_value": 50,
+      "description": "A magical horn that unleashes a blast of frost when sounded.",
+      "properties": {
+        "required_level": 3,
+        "charges": 15,
+        "magical": true,
+        "effect": "a blast of frost",
+        "damage": "1d21+3"
+      }
+    },
+    "wand_of_lightning": {
+      "name": "Wand Of Lightning",
+      "type": "magic_item",
+      "weight": 1.0,
+      "base_value": 100,
+      "description": "A wand that channels bolts of lightning at your foes.",
+      "properties": {
+        "required_level": 5,
+        "charges": 20,
+        "magical": true,
+        "effect": "a bolt of lightning",
+        "damage": "1d41+7"
+      }
+    },
+    "rod_of_flame": {
+      "name": "Rod Of Flame",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 200,
+      "description": "A powerful rod that projects blasts of searing flame.",
+      "properties": {
+        "required_level": 8,
+        "charges": 25,
+        "magical": true,
+        "effect": "a blast of flame",
+        "damage": "1d61+11"
+      }
+    },
+    "iron_key": {
+      "name": "Iron Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A iron key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "copper_key": {
+      "name": "Copper Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A copper key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "brass_key": {
+      "name": "Brass Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A brass key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "bronze_key": {
+      "name": "Bronze Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A bronze key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "silver_key": {
+      "name": "Silver Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A silver key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "electrum_key": {
+      "name": "Electrum Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A electrum key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "gold_key": {
+      "name": "Gold Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A gold key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "platinum_key": {
+      "name": "Platinum Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A platinum key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "pearl_key": {
+      "name": "Pearl Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A pearl key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "onyx_key": {
+      "name": "Onyx Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A onyx key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "jade_key": {
+      "name": "Jade Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A jade key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "ruby_key": {
+      "name": "Ruby Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A ruby key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "runestaff": {
+      "name": "Runestaff",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "An ancient staff inscribed with powerful runes.",
+      "properties": {
+        "required_level": 0,
+        "magical": true
+      }
+    },
+    "dart": {
+      "name": "Dart",
+      "type": "weapon",
+      "weight": 0.5,
+      "base_value": 1,
+      "description": "A small throwing dart.",
+      "properties": {
+        "required_level": 1,
+        "damage": "1d4",
+        "weapon_type": "thrown",
+        "material": "steel"
+      }
+    },
+    "knife": {
+      "name": "Knife",
+      "type": "weapon",
+      "weight": 0.7,
+      "base_value": 5,
+      "description": "A small throwing knife.",
+      "properties": {
+        "required_level": 3,
+        "damage": "1d6",
+        "weapon_type": "thrown",
+        "material": "steel"
+      }
+    },
+    "spear": {
+      "name": "Spear",
+      "type": "weapon",
+      "weight": 4.0,
+      "base_value": 10,
+      "description": "A throwing spear.",
+      "properties": {
+        "required_level": 2,
+        "damage": "1d8+1",
+        "weapon_type": "thrown",
+        "material": "steel"
+      }
+    },
+    "axe": {
+      "name": "Axe",
+      "type": "weapon",
+      "weight": 3.0,
+      "base_value": 15,
+      "description": "A throwing axe.",
+      "properties": {
+        "required_level": 5,
+        "damage": "1d10+2",
+        "weapon_type": "thrown",
+        "material": "steel"
+      }
+    },
+    "arrow": {
+      "name": "Arrow",
+      "type": "weapon",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A wooden arrow with steel tip.",
+      "properties": {
+        "required_level": 0,
+        "damage": "1d8-1",
+        "weapon_type": "ammunition",
+        "material": "steel"
+      }
+    },
+    "quiver": {
+      "name": "Quiver",
+      "type": "container",
+      "weight": 3.0,
+      "base_value": 10,
+      "description": "A leather quiver for holding arrows.",
+      "properties": {
+        "required_level": 0,
+        "capacity": 20
+      }
+    },
+    "soulstone": {
+      "name": "Soulstone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 1000,
+      "description": "A rare gem that can capture and hold souls.",
+      "properties": {
+        "required_level": 0,
+        "magical": true
+      }
+    },
+    "manastone": {
+      "name": "Manastone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 10,
+      "description": "A crystalline stone that greatly restores mana.",
+      "properties": {
+        "required_level": 0,
+        "restore_mana": 50
+      }
+    },
+    "zarynthium_potion": {
+      "name": "Zarynthium Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 50,
+      "description": "An extremely potent healing potion.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "64-256"
+      }
+    },
+    "dragon_ring": {
+      "name": "Dragon Ring",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A dragon ring that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "gome_ring": {
+      "name": "Gome Ring",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A gome ring that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "strato_ring": {
+      "name": "Strato Ring",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A strato ring that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "pink_rose": {
+      "name": "Pink Rose",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A pink rose that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "white_rose": {
+      "name": "White Rose",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A white rose that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "wynharp": {
+      "name": "Wynharp",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "A legendary musical instrument of great power.",
+      "properties": {
+        "required_level": 1000
+      }
+    },
+    "red_rose": {
+      "name": "Red Rose",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A red rose that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "black_rose": {
+      "name": "Black Rose",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 0,
+      "description": "A dark rose that emanates an aura of shadow.",
+      "properties": {
+        "required_level": 1000,
+        "charges": 1,
+        "magical": true,
+        "effect": "a dark mist",
+        "damage": "1d2"
+      }
+    },
+    "opal_key": {
+      "name": "Opal Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A opal key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "tigereye_key": {
+      "name": "Tigereye Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A tigereye key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "quartz_key": {
+      "name": "Quartz Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A quartz key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "topaz_key": {
+      "name": "Topaz Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A topaz key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "rod_of_power": {
+      "name": "Rod Of Power",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "An artifact of immense magical power.",
+      "properties": {
+        "required_level": 0,
+        "magical": true
+      }
+    },
+    "flame_crystal": {
+      "name": "Flame Crystal",
+      "type": "magic_item",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "A crystal that burns with eternal flame.",
+      "properties": {
+        "required_level": 30,
+        "magical": true,
+        "effect": "a flame storm"
+      }
+    },
+    "case": {
+      "name": "Case Of Darts",
+      "type": "container",
+      "weight": 1.5,
+      "base_value": 12,
+      "description": "A case for storing darts.",
+      "properties": {
+        "required_level": 0,
+        "capacity": 10
+      }
+    },
+    "stone": {
+      "name": "Stone",
+      "type": "weapon",
+      "weight": 0.1,
+      "base_value": 0,
+      "description": "A smooth stone suitable for slinging.",
+      "properties": {
+        "required_level": 0,
+        "damage": "1d5-1",
+        "weapon_type": "ammunition",
+        "material": "steel"
+      }
+    },
+    "pouch": {
+      "name": "Pouch Of Stones",
+      "type": "container",
+      "weight": 0.5,
+      "base_value": 2,
+      "description": "A leather pouch for carrying sling stones.",
+      "properties": {
+        "required_level": 0,
+        "capacity": 20
+      }
+    },
+    "blowdart": {
+      "name": "Blowdart",
+      "type": "tool",
+      "weight": 0.1,
+      "base_value": 0,
+      "description": "A small poisoned dart for blowguns.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "tube": {
+      "name": "Tube Of Blowdarts",
+      "type": "tool",
+      "weight": 0.5,
+      "base_value": 5,
+      "description": "A tube for storing blowdarts.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "ice_crystal": {
+      "name": "Ice Crystal",
+      "type": "magic_item",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "A crystal frozen in perpetual winter.",
+      "properties": {
+        "required_level": 25,
+        "magical": true,
+        "effect": "a frost storm"
+      }
+    },
+    "stone_key": {
+      "name": "Ornate Stone Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A ornate stone key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "small_barrel": {
+      "name": "Small Barrel",
+      "type": "tool",
+      "weight": 10.0,
+      "base_value": 10,
+      "description": "A small wooden barrel for storing water.",
+      "properties": {
+        "required_level": 0,
+        "hydration": 60,
+        "charges": 15
+      }
+    },
+    "preserved_rations": {
+      "name": "Preserved Rations",
+      "type": "tool",
+      "weight": 2.0,
+      "base_value": 10,
+      "description": "Well-preserved food suitable for long journeys.",
+      "properties": {
+        "required_level": 0,
+        "nutrition": 40,
+        "charges": 5
       }
     }
   }

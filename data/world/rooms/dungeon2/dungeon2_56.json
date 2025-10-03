@@ -1,0 +1,14 @@
+{
+  "id": "dungeon2_56",
+  "title": "Dead End Cave",
+  "description": "You've entered what is obviously home to some wild beast. Likely a bear or some subterranian predator. Old gnawed bones and claw marks on the floor and walls of this small cave tell you that much. The only visible exit lies back the way you came.",
+  "area_id": "dungeon2",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "northwest": "dungeon2_101"
+  },
+  "is_lair": true,
+  "lair_monster": "crypt_guardian",
+  "respawn_time": 300
+}

@@ -1,0 +1,1368 @@
+0:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 5
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a minor healing spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 1
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 4
+  name: motu
+  poison_effect: 0
+  target: 4
+  type: 3
+1:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 10
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a small shard of ice
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 1
+  mana_drain: 0
+  max_spell_effect: 12
+  min_spell_effect: 2
+  name: komiza
+  poison_effect: 0
+  target: 4
+  type: 1
+2:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 10
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a thorn
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 1
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 4
+  name: pakaza
+  poison_effect: 0
+  target: 4
+  type: 1
+3:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 15
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a regenerative spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 1
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 2
+  name: fadi
+  poison_effect: 0
+  target: 4
+  type: 6
+4:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 20
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a healing spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 0
+  max_spell_effect: 24
+  min_spell_effect: 8
+  name: kamotu
+  poison_effect: 0
+  target: 4
+  type: 3
+5:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 25
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a weak beam of bright energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 0
+  max_spell_effect: 16
+  min_spell_effect: 2
+  name: tami
+  poison_effect: 0
+  target: 4
+  type: 1
+6:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 20
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a small bolt of flame
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 0
+  max_spell_effect: 32
+  min_spell_effect: 4
+  name: toduza
+  poison_effect: 0
+  target: 4
+  type: 1
+7:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 25
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a minor summoning spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 0
+  max_spell_effect: 1
+  min_spell_effect: 1
+  name: muda
+  poison_effect: 0
+  target: 5
+  type: 9
+8:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 15
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a stone shard
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 0
+  max_spell_effect: 20
+  min_spell_effect: 4
+  name: toraza
+  poison_effect: 0
+  target: 4
+  type: 1
+9:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 20
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a restorative spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 0
+  max_spell_effect: 4000
+  min_spell_effect: 2000
+  name: kotari
+  poison_effect: 0
+  target: 4
+  type: 4
+10:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 30
+  cure_poison: 1
+  decrease_stat: 0
+  desc: a curative spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: dobudani
+  poison_effect: 0
+  target: 4
+  type: 7
+11:
+  armor_increase: 4
+  based_on_level: 0
+  p_class: 2
+  cost: 28
+  cure_poison: 0
+  decrease_stat: 0
+  desc: an enchantment spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: yari
+  poison_effect: 0
+  target: 4
+  type: 8
+12:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 30
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a shower of ice shards
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 64
+  min_spell_effect: 8
+  name: komizuma
+  poison_effect: 0
+  target: 4
+  type: 1
+13:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 30
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a bolt of lightning
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 40
+  min_spell_effect: 5
+  name: modoki
+  poison_effect: 0
+  target: 4
+  type: 1
+14:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 35
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a greater healing spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 60
+  min_spell_effect: 30
+  name: gimotu
+  poison_effect: 0
+  target: 4
+  type: 3
+15:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 50
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a beam of bright energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 48
+  min_spell_effect: 8
+  name: katami
+  poison_effect: 0
+  target: 4
+  type: 1
+16:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 40
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a pale bluish mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 16
+  min_spell_effect: 8
+  name: motumaru
+  poison_effect: 0
+  target: 3
+  type: 3
+17:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 60
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a summoning spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 3
+  min_spell_effect: 2
+  name: kamuda
+  poison_effect: 0
+  target: 5
+  type: 9
+18:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 50
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a shower of flame
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 96
+  min_spell_effect: 16
+  name: toduzuma
+  poison_effect: 0
+  target: 4
+  type: 1
+19:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 50
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a powerful gust of wind
+  hurt_moral: wind
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 32
+  min_spell_effect: 8
+  name: sivama
+  poison_effect: 0
+  target: 4
+  type: 1
+20:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 35
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a charm spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: novadidan
+  poison_effect: 0
+  target: 4
+  type: 2
+21:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 100
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a beam of brilliant energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 64
+  min_spell_effect: 16
+  name: gitami
+  poison_effect: 0
+  target: 4
+  type: 1
+22:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 3
+  cost: 75
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a very powerful healing spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 12
+  min_spell_effect: 6
+  name: kusamotu
+  poison_effect: 0
+  target: 4
+  type: 3
+23:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 2
+  cost: 100
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a storm of ice shards
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 6
+  min_spell_effect: 1
+  name: komizadaku
+  poison_effect: 0
+  target: 2
+  type: 1
+24:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 75
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a storm of ice shards
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 64
+  min_spell_effect: 16
+  name: komidaku
+  poison_effect: 0
+  target: 3
+  type: 1
+25:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 75
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a shower of wicked thorns
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 50
+  min_spell_effect: 10
+  name: pakazuma
+  poison_effect: 0
+  target: 4
+  type: 1
+26:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 100
+  cure_poison: 0
+  decrease_stat: 0
+  desc: an invisibility spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: novadi
+  poison_effect: 0
+  target: 4
+  type: 5
+27:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 2
+  cost: 120
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a searing ball of flame
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 6
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 2
+  name: todukar
+  poison_effect: 0
+  target: 4
+  type: 1
+28:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 150
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a devastating beam of brilliant energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 6
+  mana_drain: 0
+  max_spell_effect: 80
+  min_spell_effect: 20
+  name: kusatami
+  poison_effect: 0
+  target: 4
+  type: 1
+29:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 125
+  cure_poison: 0
+  decrease_stat: 0
+  desc: several forked bolts of lightning
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 6
+  mana_drain: 0
+  max_spell_effect: 72
+  min_spell_effect: 12
+  name: modokidan
+  poison_effect: 0
+  target: 2
+  type: 1
+30:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 150
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a greater summoning spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 6
+  mana_drain: 0
+  max_spell_effect: 5
+  min_spell_effect: 4
+  name: gimuda
+  poison_effect: 0
+  target: 5
+  type: 9
+31:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 150
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a violent windstorm
+  hurt_moral: wind
+  increase_stat: 0
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 64
+  min_spell_effect: 32
+  name: sivadaku
+  poison_effect: 0
+  target: 1
+  type: 1
+32:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 300
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a very powerful summoning spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 8
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 6
+  name: kusamuda
+  poison_effect: 0
+  target: 5
+  type: 9
+33:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 200
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a devastating firestorm
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 6
+  mana_drain: 0
+  max_spell_effect: 96
+  min_spell_effect: 32
+  name: todudaku
+  poison_effect: 0
+  target: 3
+  type: 1
+34:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 2
+  cost: 250
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a storm of fire bolts and ice shards
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 1
+  name: komasidaku
+  poison_effect: 0
+  target: 3
+  type: 1
+35:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 35
+  cure_poison: 0
+  decrease_stat: 0
+  desc: an enhancement spell
+  hurt_moral: 0
+  increase_stat: agi
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 20
+  min_spell_effect: 5
+  name: igatok
+  poison_effect: 0
+  target: 4
+  type: 8
+36:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 60
+  cure_poison: 1
+  decrease_stat: 0
+  desc: a thick greyish mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: dobudanimaru
+  poison_effect: 0
+  target: 3
+  type: 3
+37:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 35
+  cure_poison: 0
+  decrease_stat: 0
+  desc: an enhancement spell
+  hurt_moral: 0
+  increase_stat: str
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 20
+  min_spell_effect: 5
+  name: rotok
+  poison_effect: 0
+  target: 4
+  type: 8
+38:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 35
+  cure_poison: 0
+  decrease_stat: 0
+  desc: an enhancement spell
+  hurt_moral: 0
+  increase_stat: con
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 20
+  min_spell_effect: 5
+  name: tsutok
+  poison_effect: 0
+  target: 4
+  type: 8
+39:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 60
+  cure_poison: 0
+  decrease_stat: agi
+  desc: a draining spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 2
+  name: igadani
+  poison_effect: 0
+  target: 4
+  type: 8
+40:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 60
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a thin brownish mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 4000
+  min_spell_effect: 2000
+  name: kotarimaru
+  poison_effect: 0
+  target: 3
+  type: 4
+41:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 60
+  cure_poison: 0
+  decrease_stat: str
+  desc: a draining spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 2
+  name: rodani
+  poison_effect: 0
+  target: 4
+  type: 8
+42:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 60
+  cure_poison: 0
+  decrease_stat: con
+  desc: a draining spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 2
+  name: tsudani
+  poison_effect: 0
+  target: 4
+  type: 8
+43:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 6
+  cost: 100
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a shower of stone shards
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 64
+  min_spell_effect: 16
+  name: torazuma
+  poison_effect: 0
+  target: 4
+  type: 1
+44:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 125
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a curative spell
+  hurt_moral: 0
+  increase_stat: paralysis
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: takumi
+  poison_effect: 0
+  target: 4
+  type: 7
+45:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 80
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a bluish mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 32
+  min_spell_effect: 16
+  name: kamotumaru
+  poison_effect: 0
+  target: 3
+  type: 3
+46:
+  armor_increase: 2
+  based_on_level: 0
+  p_class: 2
+  cost: 125
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a bright yellow mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: yarimaru
+  poison_effect: 0
+  target: 3
+  type: 8
+47:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 280
+  cure_poison: 0
+  decrease_stat: body
+  desc: a draining spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 5
+  min_spell_effect: 1
+  name: poradani
+  poison_effect: 0
+  target: 4
+  type: 8
+48:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 260
+  cure_poison: 0
+  decrease_stat: 0
+  desc: an enhancement spell
+  hurt_moral: 0
+  increase_stat: mental
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 2
+  name: jinasutok
+  poison_effect: 0
+  target: 4
+  type: 8
+49:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 260
+  cure_poison: 0
+  decrease_stat: 0
+  desc: an enhancement spell
+  hurt_moral: 0
+  increase_stat: body
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 2
+  name: poratok
+  poison_effect: 0
+  target: 4
+  type: 8
+50:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 180
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a dark bluish mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 64
+  min_spell_effect: 32
+  name: gimotumaru
+  poison_effect: 0
+  target: 3
+  type: 3
+51:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 6
+  cost: 180
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a lightning storm
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 8
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 1
+  name: modokidaku
+  poison_effect: 0
+  target: 1
+  type: 1
+52:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 6
+  cost: 180
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a hail of huge stone shards
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 9
+  mana_drain: 0
+  max_spell_effect: 10
+  min_spell_effect: 4
+  name: toradaku
+  poison_effect: 0
+  target: 1
+  type: 1
+53:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 300
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a thick black mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 8
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: novadimaru
+  poison_effect: 0
+  target: 3
+  type: 5
+54:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 2
+  cost: 280
+  cure_poison: 0
+  decrease_stat: mental
+  desc: a draining spell
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 5
+  min_spell_effect: 1
+  name: jinasudani
+  poison_effect: 0
+  target: 4
+  type: 8
+55:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 10
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a weak beam of dark energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 1
+  mana_drain: 0
+  max_spell_effect: 16
+  min_spell_effect: 2
+  name: teka
+  poison_effect: 0
+  target: 4
+  type: 1
+56:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 3
+  cost: 270
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a very dark bluish mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 9
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 4
+  name: kusamotumaru
+  poison_effect: 0
+  target: 3
+  type: 3
+57:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 3
+  cost: 220
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a curative spell
+  hurt_moral: 0
+  increase_stat: restore
+  life_steal: 0
+  mana: 8
+  mana_drain: 0
+  max_spell_effect: 0
+  min_spell_effect: 0
+  name: ganazi
+  poison_effect: 0
+  target: 4
+  type: 7
+58:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 2
+  cost: 350
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a maelstrom of searing flame clouds and huge ice shards
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 9
+  mana_drain: 0
+  max_spell_effect: 12
+  min_spell_effect: 4
+  name: dumoti
+  poison_effect: 0
+  target: 1
+  type: 1
+59:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 20
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a beam of dark energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 64
+  min_spell_effect: 8
+  name: kateka
+  poison_effect: 0
+  target: 4
+  type: 1
+60:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 8
+  cost: 18
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a bolt of red energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 1
+  mana: 3
+  mana_drain: 0
+  max_spell_effect: 6
+  min_spell_effect: 2
+  name: yilazi
+  poison_effect: 0
+  target: 4
+  type: 1
+61:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 8
+  cost: 15
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a bolt of blue energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 1
+  max_spell_effect: 2
+  min_spell_effect: 1
+  name: kamaza
+  poison_effect: 0
+  target: 4
+  type: 1
+62:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 12
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a bolt of green energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 2
+  mana_drain: 0
+  max_spell_effect: 2
+  min_spell_effect: 1
+  name: dobuza
+  poison_effect: single_mob
+  target: 4
+  type: 1
+63:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 8
+  cost: 120
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a storm of blue energy bolts
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 1
+  max_spell_effect: 1
+  min_spell_effect: 1
+  name: kamazadaku
+  poison_effect: 0
+  target: 3
+  type: 1
+64:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 130
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a foul cloud of choking vapor
+  hurt_moral: hurt
+  increase_stat: 0
+  life_steal: 0
+  mana: 6
+  mana_drain: 0
+  max_spell_effect: 16
+  min_spell_effect: 4
+  name: timimaru
+  poison_effect: 0
+  target: 2
+  type: 1
+65:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 150
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a devastating beam of dark energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 6
+  mana_drain: 0
+  max_spell_effect: 256
+  min_spell_effect: 32
+  name: kusateka
+  poison_effect: 0
+  target: 4
+  type: 1
+66:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 8
+  cost: 225
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a torrential downpour of acid
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 7
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 4
+  name: dakidaku
+  poison_effect: 0
+  target: 1
+  type: 1
+67:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 30
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a stream of acid
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 96
+  min_spell_effect: 16
+  name: dakima
+  poison_effect: 0
+  target: 4
+  type: 1
+68:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 8
+  cost: 50
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a blast of dark energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 4
+  mana_drain: 0
+  max_spell_effect: 12
+  min_spell_effect: 4
+  name: tamikar
+  poison_effect: 0
+  target: 4
+  type: 1
+69:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 75
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a crackling beam of dark energy
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 128
+  min_spell_effect: 16
+  name: giteka
+  poison_effect: 0
+  target: 4
+  type: 1
+70:
+  armor_increase: 0
+  based_on_level: 0
+  p_class: 8
+  cost: 90
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a dark greenish mist
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 5
+  mana_drain: 0
+  max_spell_effect: 2
+  min_spell_effect: 1
+  name: dobumaru
+  poison_effect: single_player
+  target: 1
+  type: 1
+71:
+  armor_increase: 0
+  based_on_level: 1
+  p_class: 8
+  cost: 325
+  cure_poison: 0
+  decrease_stat: 0
+  desc: a torrential downpour of dark green acid
+  hurt_moral: 0
+  increase_stat: 0
+  life_steal: 0
+  mana: 8
+  mana_drain: 0
+  max_spell_effect: 8
+  min_spell_effect: 4
+  name: dobudakidaku
+  poison_effect: area_mob
+  target: 1
+  type: 1

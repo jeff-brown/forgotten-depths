@@ -1,0 +1,1426 @@
+21:
+  charges: 0
+  classes: 255
+  effect: message
+  effect_ticker: 0
+  effect_ticker_max: 240
+  equip_sub_type: light
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: a torch
+  max_value_range: 450
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: torch
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 1
+  weight: 10
+22:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: a coil of rope
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: rope
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 3
+  weight: 25
+23:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: food
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: a ration of food
+  max_value_range: 3600
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: ration of food
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 2
+  weight: 5
+24:
+  charges: 3
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: water
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: a waterskin
+  max_value_range: 1800
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: waterskin
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 1
+  weight: 10
+25:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: eternal light
+  equip_type: minor magic item
+  is_activated: false
+  level: 0
+  long: a glowstone
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: glowstone
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 50
+  weight: 5
+26:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: recall
+  equip_type: minor magic item
+  is_activated: false
+  level: 5
+  long: a heartstone
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: -96
+  range: 0
+  town: 1
+  type: heartstone
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 100
+  weight: 5
+27:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: heal
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: a rue potion
+  max_value_range: 16
+  min_value_range: 4
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: rue potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 5
+  weight: 10
+28:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: heal
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: an amaranth potion
+  max_value_range: 64
+  min_value_range: 16
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: amaranth potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 10
+29:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: heal
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: an anemone potion
+  max_value_range: 128
+  min_value_range: 32
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: anemone potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 25
+  weight: 10
+30:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: cure poison
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: a verbena potion
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: verbena potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 10
+31:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: minor mana boost
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: a yarrow potion
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: yarrow potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 10
+32:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: strength boost
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: a rowan potion
+  max_value_range: 600
+  min_value_range: 20
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: rowan potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 10
+33:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: dexterity boost
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: a hyssop potion
+  max_value_range: 600
+  min_value_range: 20
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: hyssop potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 10
+34:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: invisibility
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: a vervain potion
+  max_value_range: 600
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 2
+  type: vervain potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 100
+  weight: 10
+35:
+  charges: 15
+  classes: 2
+  effect: a blast of frost
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: wand
+  equip_type: minor magic item
+  is_activated: false
+  level: 3
+  long: a horn of frost
+  max_value_range: 24
+  min_value_range: 4
+  quest_stat: 0
+  range: 1
+  town: 1
+  type: horn of frost
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 50
+  weight: 50
+36:
+  charges: 20
+  classes: 2
+  effect: a bolt of lightning
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: wand
+  equip_type: minor magic item
+  is_activated: false
+  level: 5
+  long: a wand of lightning
+  max_value_range: 48
+  min_value_range: 8
+  quest_stat: 0
+  range: 1
+  town: 1
+  type: wand of lightning
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 100
+  weight: 10
+37:
+  charges: 25
+  classes: 2
+  effect: a blast of flame
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: wand
+  equip_type: minor magic item
+  is_activated: false
+  level: 8
+  long: a rod of flame
+  max_value_range: 72
+  min_value_range: 12
+  quest_stat: 0
+  range: 1
+  town: 1
+  type: rod of flame
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 200
+  weight: 20
+38:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: an iron key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: iron key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+39:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a copper key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: copper key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+40:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a brass key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: brass key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+41:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a bronze key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: bronze key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+42:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a silver key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: silver key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+43:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: an electrum key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: electrum key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+44:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a gold key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: gold key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+45:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a platinum key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: platinum key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+46:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a pearl key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: pearl key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+47:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: an onyx key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: onyx key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+48:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a jade key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: jade key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+49:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a ruby key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: ruby key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+50:
+  charges: 8
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: runestaff
+  equip_type: major magic item
+  is_activated: false
+  level: 0
+  long: a runestaff
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 429
+  range: 0
+  town: 0
+  type: runestaff
+  v10: 0
+  v16: 3
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 20
+56:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: supply weapon
+  is_activated: false
+  level: 1
+  long: a dart
+  max_value_range: 4
+  min_value_range: 1
+  quest_stat: 0
+  range: 3
+  town: 1
+  type: dart
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 2
+  value: 1
+  weight: 5
+57:
+  charges: 0
+  classes: 25
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: supply weapon
+  is_activated: false
+  level: 3
+  long: a knife
+  max_value_range: 6
+  min_value_range: 1
+  quest_stat: 0
+  range: 2
+  town: 1
+  type: knife
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 2
+  value: 5
+  weight: 7
+58:
+  charges: 0
+  classes: 25
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: supply weapon
+  is_activated: false
+  level: 2
+  long: a spear
+  max_value_range: 8
+  min_value_range: 2
+  quest_stat: 0
+  range: 2
+  town: 1
+  type: spear
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 2
+  value: 10
+  weight: 40
+59:
+  charges: 0
+  classes: 17
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: supply weapon
+  is_activated: false
+  level: 5
+  long: an axe
+  max_value_range: 12
+  min_value_range: 3
+  quest_stat: 0
+  range: 1
+  town: 1
+  type: axe
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 2
+  value: 15
+  weight: 30
+60:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: misc2
+  equip_type: ranged weapon ammo
+  is_activated: false
+  level: 0
+  long: an arrow
+  max_value_range: 7
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: arrow
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+61:
+  charges: 20
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: ammo
+  equip_type: ammo container
+  is_activated: false
+  level: 0
+  long: a quiver
+  max_value_range: 0
+  min_value_range: 60
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: quiver
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 30
+65:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: soulstone
+  equip_type: major magic item
+  is_activated: false
+  level: 0
+  long: a soulstone
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 2
+  type: soulstone
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 1000
+  weight: 5
+66:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: major mana boost
+  equip_type: minor magic item
+  is_activated: false
+  level: 0
+  long: a manastone
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: manastone
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 5
+67:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: heal
+  equip_type: potion
+  is_activated: false
+  level: 0
+  long: a zarynthium potion
+  max_value_range: 256
+  min_value_range: 64
+  quest_stat: 0
+  range: 0
+  town: 2
+  type: zarynthium potion
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 50
+  weight: 10
+69:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a dragon ring
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: dragon ring
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+70:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a gome ring
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: gome ring
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+71:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a strato ring
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: strato ring
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+72:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a pink rose
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: pink rose
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+73:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a white rose
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: white rose
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+77:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: reserved
+  equip_type: major magic item
+  is_activated: false
+  level: 1000
+  long: a wynharp
+  max_value_range: 128
+  min_value_range: 32
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: wynharp
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 20
+79:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a red rose
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: red rose
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+81:
+  charges: 1
+  classes: 2
+  effect: a dark mist
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: wand
+  equip_type: minor magic item
+  is_activated: false
+  level: 1000
+  long: a black rose
+  max_value_range: 2
+  min_value_range: 1
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: black rose
+  v10: 0
+  v16: 0
+  v17: 1
+  v6: 0
+  value: 0
+  weight: 5
+82:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: an opal key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: opal key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+83:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a tigereye key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: tigereye key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+84:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a quartz key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: quartz key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+85:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: a topaz key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: topaz key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+86:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: rod of power
+  equip_type: major magic item
+  is_activated: false
+  level: 0
+  long: a rod of power
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 2809
+  range: 0
+  town: 0
+  type: rod of power
+  v10: 3
+  v16: 5
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 20
+87:
+  charges: 0
+  classes: 255
+  effect: a flame storm
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: flame crystal
+  equip_type: major magic item
+  is_activated: false
+  level: 30
+  long: a flame crystal
+  max_value_range: 4
+  min_value_range: 2
+  quest_stat: 0
+  range: 1
+  town: 0
+  type: flame crystal
+  v10: 3
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 10
+88:
+  charges: 10
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: ammo
+  equip_type: thrown weapon container
+  is_activated: false
+  level: 0
+  long: a case of darts
+  max_value_range: 0
+  min_value_range: 56
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: case
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 12
+  weight: 15
+89:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: misc2
+  equip_type: ranged weapon ammo
+  is_activated: false
+  level: 0
+  long: a stone
+  max_value_range: 4
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: stone
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 1
+90:
+  charges: 20
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: ammo
+  equip_type: ammo container
+  is_activated: false
+  level: 0
+  long: a pouch of stones
+  max_value_range: 0
+  min_value_range: 89
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: pouch
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 2
+  weight: 5
+92:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: misc2
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: a blowdart
+  max_value_range: 2
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 3
+  type: blowdart
+  v10: 0
+  v16: 0
+  v17: 1
+  v6: 0
+  value: 0
+  weight: 1
+93:
+  charges: 10
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: ammo
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: a tube of blowdarts
+  max_value_range: 0
+  min_value_range: 92
+  quest_stat: 0
+  range: 0
+  town: 3
+  type: tube
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 5
+  weight: 5
+95:
+  charges: 0
+  classes: 255
+  effect: a frost storm
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: flame crystal
+  equip_type: major magic item
+  is_activated: false
+  level: 25
+  long: an ice crystal
+  max_value_range: 3
+  min_value_range: 1
+  quest_stat: 0
+  range: 1
+  town: 0
+  type: ice crystal
+  v10: 2
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 10
+97:
+  charges: 0
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: none
+  equip_type: key
+  is_activated: false
+  level: 0
+  long: an ornate stone key
+  max_value_range: 0
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 0
+  type: stone key
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 0
+  weight: 2
+98:
+  charges: 15
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: water
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: a small barrel
+  max_value_range: 1800
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: small barrel
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 100
+99:
+  charges: 5
+  classes: 255
+  effect: ''
+  effect_ticker: 0
+  effect_ticker_max: 2400
+  equip_sub_type: food
+  equip_type: supply
+  is_activated: false
+  level: 0
+  long: some preserved rations
+  max_value_range: 2400
+  min_value_range: 0
+  quest_stat: 0
+  range: 0
+  town: 1
+  type: preserved rations
+  v10: 0
+  v16: 0
+  v17: 0
+  v6: 0
+  value: 10
+  weight: 20

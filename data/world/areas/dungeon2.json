@@ -1,0 +1,10 @@
+{
+  "id": "dungeon2",
+  "name": "Dungeon Level 2",
+  "description": "A deeper, darker dungeon level with more dangerous creatures and greater treasures.",
+  "level_range": [
+    5,
+    15
+  ],
+  "is_pvp_enabled": false
+}

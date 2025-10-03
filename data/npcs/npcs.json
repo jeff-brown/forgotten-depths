@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ancient_wizard",
+    "name": "Ancient Wizard",
+    "description": "An elderly wizard with a long white beard and piercing blue eyes. He wears flowing robes adorned with mystical symbols that seem to shimmer and shift. Despite his advanced age, his eyes are sharp and his presence radiates magical power.",
+    "type": "quest_giver",
+    "dialogue": {
+      "greeting": "Greetings, adventurer. I sense great potential in you.",
+      "quest_available": "I have a task of utmost importance. A Great Dragon has made its lair deep within the third level of the dungeon, terrorizing all who dare venture there. If you can slay this beast, I will reward you with a powerful artifact - a White Rune of immense magical power.",
+      "quest_accepted": "Excellent! The dragon lairs in the deepest chambers of dungeon level 3. Be careful - it is an ancient and powerful foe. Return to me when the deed is done.",
+      "quest_in_progress": "Have you slain the Great Dragon yet? It lairs in the deepest part of dungeon level 3.",
+      "quest_complete": "You have done it! You have slain the Great Dragon! Your bravery knows no bounds. As promised, I grant you the White Rune. Its power will be with you always.",
+      "quest_completed_already": "You have already proven yourself by slaying the dragon. The White Rune's power flows through you."
+    },
+    "quests": ["slay_the_dragon"]
+  }
+]

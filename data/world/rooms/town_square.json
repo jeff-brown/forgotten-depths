@@ -8,7 +8,9 @@
     "south": "town_path",
     "east": "inn_entrance",
     "west": "blacksmith_shop",
-    "southwest": "market_square"
+    "southwest": "market_square",
+    "northwest": "wizard_tower",
+    "down": "dungeon1_1"
   },
   "items": [
     "fountain_coin"

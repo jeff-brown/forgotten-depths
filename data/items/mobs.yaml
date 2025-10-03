@@ -1,0 +1,7576 @@
+0:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 10
+  description: The strangle vine is a large bulbous plant with several writhing vines
+    sprouting from it. It moves slowly about on gnarled roots.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 4
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 0
+  name: strangle vine
+  num_attacks: 1
+  plural: strangle vines
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - choking vines
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: strangle_vine
+  weapon_types:
+  - 209
+1:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The white orchid stands about two feet tall, moving around on its thin
+    tendrils.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 4
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 0
+  name: white orchid
+  num_attacks: 1
+  plural: white orchids
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tendrils
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: white_orchid
+  weapon_types:
+  - 218
+2:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The pink orchid stands about three feet tall, moving around on its
+    thin tendrils.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 5
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 0
+  name: pink orchid
+  num_attacks: 1
+  plural: pink orchids
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tendrils
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: pink_orchid
+  weapon_types:
+  - 218
+3:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The red orchid stands over three feet tall, moving around on its thin
+    tendrils.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 0
+  name: red orchid
+  num_attacks: 1
+  plural: red orchids
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tendrils
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: red_orchid
+  weapon_types:
+  - 218
+4:
+  armor: 0
+  armor_types:
+  - 1
+  - 3
+  can_track: 0
+  combat_skill: 90
+  description: The yellow orchid stands about four feet tall, moving around on its
+    thin tendrils.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 1
+  max_attack_effect: 3
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 5
+  min_attack_effect: 1
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 0
+  name: yellow orchid
+  num_attacks: 1
+  plural: yellow orchids
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tendrils
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: yellow_orchid
+  weapon_types:
+  - 218
+5:
+  armor: 0
+  armor_types:
+  - 2
+  - 5
+  can_track: 0
+  combat_skill: 90
+  description: The black orchid stands over four feet tall, moving around on its sticky
+    tendrils.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 1
+  max_attack_effect: 5
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 2
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 0
+  name: black orchid
+  num_attacks: 2
+  plural: black orchids
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tendrils
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: black_orchid
+  weapon_types:
+  - 218
+6:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The constrictor ivy is a long snake-like vine, slithering about in
+    search of food.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 12
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 0
+  min_special_damage: 2
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 0
+  name: constrictor ivy
+  num_attacks: 1
+  plural: constrictor ivies
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - lashing ivy
+  - coiled around
+  - ''
+  special_damage:
+  - 2
+  - 12
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: constrictor_ivy
+  weapon_types:
+  - 209
+7:
+  armor: 0
+  armor_types:
+  - 1
+  - 2
+  can_track: 0
+  combat_skill: 85
+  description: The carrion creeper is a knotted mass of thorny vines which writhes
+    about chaotically. You detect the fetid odor of rotting flesh, and notice several
+    small animal carcasses tangled within this vile aberration.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 1
+  max_attack_effect: 2
+  max_special_damage: 12
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 1
+  min_special_damage: 2
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 0
+  name: carrion creeper
+  num_attacks: 1
+  plural: carrion creepers
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - thorny vines
+  - mauled
+  - ''
+  special_damage:
+  - 2
+  - 12
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: carrion_creeper
+  weapon_types:
+  - 201
+8:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The reaper shrub is a squat thorny plant, moving slowly about on thick
+    gnarled roots. Its spiney branches rustle ominously at your presence.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 16
+  max_spell: 0
+  max_weapon_damege: 8
+  min_attack_effect: 0
+  min_special_damage: 4
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 0
+  name: reaper shrub
+  num_attacks: 1
+  plural: reaper shrubs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 33
+  special_attacks:
+  - a thorny branch
+  - raked several thorny branches across
+  - ''
+  special_damage:
+  - 4
+  - 16
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: reaper_shrub
+  weapon_types:
+  - 201
+9:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The huge rat resembles rats you've seen before, except that it is about
+    two feet tall at the shoulder, and seems much more aggressive.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 50
+  name: huge rat
+  num_attacks: 1
+  plural: huge rats
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - gnashing teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 0
+  type: huge_rat
+  weapon_types:
+  - 203
+10:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 85
+  description: The imp is a tiny humanoid with pointed ears and bright red skin. It
+    stands just over two feet in height and is armed with {0}.
+  gender: 0
+  gold: 1
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 75
+  name: imp
+  num_attacks: 2
+  plural: imps
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 3
+  type: imp
+  weapon_types:
+  - 0
+  - 0
+11:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 65
+  description: The kobold is a small humanoid with doglike facial features and is
+    covered with coarse body hair. She stands just over three feet in height, is wearing
+    a filthy tunic, and is armed with {0}.
+  gender: 2
+  gold: 1
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 50
+  name: female kobold
+  num_attacks: 1
+  plural: female kobolds
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 1
+  type: female_kobold
+  weapon_types:
+  - 0
+  - 0
+12:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 75
+  description: The kobold is a small humanoid with doglike facial features and is
+    covered with coarse body hair. He stands just under four feet in height, is wearing
+    a filthy tunic, and is armed with {0}.
+  gender: 1
+  gold: 1
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 40
+  name: kobold
+  num_attacks: 1
+  plural: kobolds
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 2
+  type: kobold
+  weapon_types:
+  - 0
+  - 0
+13:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 65
+  description: The orc is a smallish humanoid with piglike facial features and is
+    covered sparsely by coarse body hair. She stands just over four feet in height,
+    is wearing a leather tunic, and is armed with {0}.
+  gender: 2
+  gold: 1
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 45
+  name: female orc
+  num_attacks: 1
+  plural: female orcs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 1
+  type: female_orc
+  weapon_types:
+  - 0
+  - 0
+14:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 75
+  description: The orc is a smallish humanoid with piglike facial features and is
+    covered sparsely by coarse body hair. He stands just under five feet in height,
+    is wearing a leather cuirass, and is armed with {0}.
+  gender: 1
+  gold: 1
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 35
+  name: orc
+  num_attacks: 1
+  plural: orcs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 3
+  type: orc
+  weapon_types:
+  - 0
+  - 0
+15:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The skeleton warrior is wearing tattered armor and mouldering bits
+    of old clothing, and is armed with {0}.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 0
+  name: skeleton warrior
+  num_attacks: 1
+  plural: skeleton warriors
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 0
+  type: skeleton_warrior
+  weapon_types:
+  - 0
+  - 1
+16:
+  armor: 1
+  armor_types:
+  - 1
+  - 2
+  can_track: 0
+  combat_skill: 70
+  description: The giant scorpion resembles a common scorpion, except that it is over
+    eight feet in length.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 2
+  max_special_damage: 9
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 1
+  min_special_damage: 3
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 20
+  name: giant scorpion
+  num_attacks: 2
+  plural: giant scorpions
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 55
+  special_attacks:
+  - tail
+  - snapped its pincers at
+  - ''
+  special_damage:
+  - 3
+  - 9
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 0
+  type: giant_scorpion
+  weapon_types:
+  - 219
+17:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The zombie has a blank expression on its face. It is wearing old soiled
+    clothing, and is armed with {0}.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 0
+  name: zombie
+  num_attacks: 1
+  plural: zombies
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 0
+  type: zombie
+  weapon_types:
+  - 0
+  - 0
+18:
+  armor: 0
+  armor_types:
+  - 1
+  - 1
+  can_track: 0
+  combat_skill: 60
+  description: The huge toad resembles a common toad, except that it is just over
+    three feet tall, and seems very aggressive.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 1
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damage: 8
+  min_attack_effect: 1
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 35
+  name: huge toad
+  num_attacks: 1
+  plural: huge toads
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - gaping mouth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 0
+  type: huge_toad
+  weapon_types:
+  - 220
+19:
+  armor: 0
+  armor_types:
+  - 1
+  - 1
+  can_track: 0
+  combat_skill: 65
+  description: The giant slug is over seven feet long and drools acidic spittle from
+    its maw.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 1
+  max_special_damage: 16
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 1
+  min_special_damage: 4
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 5
+  name: giant slug
+  num_attacks: 1
+  plural: giant slugs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - toothy maw
+  - discharged a spray of acid at
+  - ''
+  special_damage:
+  - 4
+  - 16
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 0
+  type: giant_slug
+  weapon_types:
+  - 2
+  - 6
+20:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The giant bat has a wingspan of over twelve feet and has wicked looking
+    claws and teeth.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 8
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 25
+  name: giant bat
+  num_attacks: 1
+  plural: giant bats
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - vicious bite
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 0
+  type: giant_bat
+  weapon_types:
+  - 217
+21:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The lesser demoness is a spindly bipedal humanoid with light yellowish
+    skin and wicked claws and teeth. She stands about five feet tall and fixes you
+    with a baleful stare.
+  gender: 2
+  gold: 1
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 4
+  max_weapon_damege: 8
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 25
+  name: lesser demoness
+  num_attacks: 1
+  plural: lesser demonesses
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 80
+  spell_type: 4
+  spells:
+  - 0
+  - 4
+  subtype: 0
+  terrain: 10
+  treasure: 3
+  type: lesser_demoness
+  weapon_types:
+  - 210
+22:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The lesser demon is a spindly bipedal humanoid with dark yellowish
+    skin and wicked claws and teeth. He stands about five feet tall and fixes you
+    with a baleful stare.
+  gender: 1
+  gold: 3
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 5
+  max_weapon_damege: 8
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 1
+  min_weapon_damage: 2
+  morale: 20
+  name: lesser demon
+  num_attacks: 1
+  plural: lesser demons
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 75
+  spell_type: 4
+  spells:
+  - 1
+  - 5
+  subtype: 0
+  terrain: 10
+  treasure: 4
+  type: lesser_demon
+  weapon_types:
+  - 210
+23:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The shade is a dark shadowy figure. You can tell very little about
+    it except that its eyes strongly resemble burning coals. It occasionally emits
+    a low moan and watches your movements closely.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 6
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 3
+  morale: 0
+  name: shade
+  num_attacks: 2
+  plural: shades
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: shade
+  weapon_types:
+    - 211
+24:
+  armor: 1
+  armor_types:
+  - 1
+  - 3
+  can_track: 0
+  combat_skill: 70
+  description: The giant spider's body is over six feet long, and it has thick hairy
+    legs. A thick oily liquid drips from its mandibles.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 3
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 1
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 20
+  name: giant spider
+  num_attacks: 1
+  plural: giant spiders
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - mandibles
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 0
+  type: giant_spider
+  weapon_types:
+  - 222
+25:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The ram glares at you from beneath a pair of huge curved horns.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 10
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 35
+  name: ram
+  num_attacks: 1
+  plural: rams
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - curved horns
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 3
+  treasure: 0
+  type: ram
+  weapon_types:
+  - 223
+26:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 75
+  description: The fire beetle is a huge reddish brown beetle, about four feet long,
+    with a thick shiny carapace, and strong, wickedly sharp mandibles.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 30
+  name: fire beetle
+  num_attacks: 2
+  plural: fire beetles
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - mandibles
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 8
+  treasure: 0
+  type: fire_beetle
+  weapon_types:
+  - 222
+27:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 80
+  description: The alligator watches your every move closely and snaps at you.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 8
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 2
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 15
+  name: alligator
+  num_attacks: 1
+  plural: alligators
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 35
+  special_attacks:
+  - wicked bite
+  - lashed its tail at
+  - ''
+  special_damage:
+  - 2
+  - 8
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 0
+  type: alligator
+  weapon_types:
+  - 224
+28:
+  armor: 3
+  armor_types:
+  - 2
+  - 6
+  can_track: 0
+  combat_skill: 80
+  description: The giant asp is an enormous viper over twenty feet in length. Its
+    scales are a dull tan and it's body is thicker than a large man's arm.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 6
+  max_special_damage: 16
+  max_spell: 0
+  max_weapon_damege: 8
+  min_attack_effect: 2
+  min_special_damage: 2
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 15
+  name: giant asp
+  num_attacks: 1
+  plural: giant asps
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - wicked bite
+  - coiled around
+  - ''
+  special_damage:
+  - 2
+  - 16
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 0
+  type: giant_asp
+  weapon_types:
+  - 224
+29:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 70
+  description: The anaconda is an enormous constrictor snake well over forty feet
+    in length. Its scales range in color from an emerald green to a dark blue, and
+    its body is thicker than some tree trunks you've seen.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 16
+  max_spell: 0
+  max_weapon_damege: 8
+  min_attack_effect: 0
+  min_special_damage: 2
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 20
+  name: anaconda
+  num_attacks: 1
+  plural: anacondas
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - wicked bite
+  - coiled around
+  - ''
+  special_damage:
+  - 2
+  - 16
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: anaconda
+  weapon_types:
+  - 224
+30:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The lizard woman is a five foot tall bipedal humanoid who's features
+    resemble those of a large lizard. She has greyish scaley skin, and sharp claws
+    and teeth. The lizard woman is armed with {0}.
+  gender: 2
+  gold: 3
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: lizard woman
+  num_attacks: 2
+  plural: lizard women
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 6
+  type: lizard_woman
+  weapon_types:
+  - 0
+  - 1
+31:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The lizard man is a six foot tall bipedal humanoid who's features resemble
+    those of a large lizard. He has greenish scaley skin, and sharp claws and teeth.
+    The lizard man is armed with {0}.
+  gender: 1
+  gold: 4
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 15
+  name: lizard man
+  num_attacks: 2
+  plural: lizard men
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 8
+  type: lizard_man
+  weapon_types:
+  - 0
+  - 1
+32:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The black bear has shaggy black fur run through with reddish brown
+    streaks and stands well over four feet tall at the shoulder.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 8
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 25
+  name: black bear
+  num_attacks: 2
+  plural: black bears
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: black_bear
+  weapon_types:
+  - 212
+33:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The red bear has shaggy reddish fur run through with black streaks
+    and stands just over five feet tall at the shoulder.
+  gender: 0
+  gold: 0
+  hit_dice: 3
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 10
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 15
+  name: red bear
+  num_attacks: 2
+  plural: red bears
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: red_bear
+  weapon_types:
+  - 212
+34:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 75
+  description: The gnoll is a tall humanoid with hyenalike facial features and is
+    covered by thick golden brown body hair. She stands just over six feet in height,
+    is wearing a leather cuirass and trousers, and is armed with {0}.
+  gender: 2
+  gold: 3
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 25
+  name: female gnoll
+  num_attacks: 2
+  plural: female gnolls
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 4
+  type: female_gnoll
+  weapon_types:
+  - 0
+  - 0
+35:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The gnoll is a tall humanoid with hyenalike facial features and is
+    covered by thick reddish brown body hair. He stands just under seven feet in height,
+    is wearing a chainmail shirt and trousers, and is armed with {0}.
+  gender: 1
+  gold: 4
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: gnoll
+  num_attacks: 2
+  plural: gnolls
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 6
+  type: gnoll
+  weapon_types:
+  - 0
+  - 0
+36:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 75
+  description: The hobgoblin is a squat apelike humanoid with dark skin and pointed
+    ears. She stands just under five feet tall, is wearing a leather cuirass, and
+    is armed with {0}.
+  gender: 2
+  gold: 3
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 25
+  name: female hobgoblin
+  num_attacks: 1
+  plural: female hobgoblins
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 6
+  type: female_hobgoblin
+  weapon_types:
+  - 0
+  - 2
+37:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The hobgoblin is a squat apelike humanoid with dark skin and pointed
+    ears. He stands just over five feet tall, is wearing a leather cuirass, and is
+    armed with {0}.
+  gender: 1
+  gold: 4
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: hobgoblin
+  num_attacks: 1
+  plural: hobgoblins
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 8
+  type: hobgoblin
+  weapon_types:
+  - 0
+  - 2
+38:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The brigand has the look of a common thief, and is dressed in a cheap,
+    but flashy outfit. She is also wearing leather armor and is armed with {0}.
+  gender: 2
+  gold: 2
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 80
+  name: female brigand
+  num_attacks: 2
+  plural: female brigands
+  regeneration: 0
+  special_ability: 2
+  special_attack_percentage: 20
+  special_attacks:
+  - ''
+  - ''
+  - robbed
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 4
+  type: female_brigand
+  weapon_types:
+  - 0
+  - 1
+39:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The brigand has the look of a common thief, and is dressed in a cheap,
+    but flashy outfit. He is also wearing chain armor and is armed with {0}.
+  gender: 1
+  gold: 3
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 70
+  name: brigand
+  num_attacks: 2
+  plural: brigands
+  regeneration: 0
+  special_ability: 2
+  special_attack_percentage: 20
+  special_attacks:
+  - ''
+  - ''
+  - robbed
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 5
+  type: brigand
+  weapon_types:
+  - 0
+  - 1
+40:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The leopard has luxurious looking spotted fur. It growls menacingly
+    and bares its teeth at you.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 12
+  max_spell: 0
+  max_weapon_damege: 9
+  min_attack_effect: 0
+  min_special_damage: 4
+  min_spell: 0
+  min_weapon_damage: 3
+  morale: 20
+  name: leopard
+  num_attacks: 2
+  plural: leopards
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 35
+  special_attacks:
+  - claws
+  - savagely bit
+  - ''
+  special_damage:
+  - 4
+  - 12
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: leopard
+  weapon_types:
+  - 212
+41:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The wolf is very large and has greyish fur and icey blue eyes. It growls
+    at you menacingly and bares its teeth.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 16
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 40
+  name: wolf
+  num_attacks: 2
+  plural: wolves
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - savage bite
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: wolf
+  weapon_types:
+  - 225
+42:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The wild boar has dark coarse hair and makes a low whining sound. It
+    has two sharp tusks which curve upwards from the sides of its mouth.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 30
+  name: wild boar
+  num_attacks: 1
+  plural: wild boars
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tusks
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: wild_boar
+  weapon_types:
+  - 226
+43:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The cave bear has dark brown fur and stands well over seven feet tall
+    at the shoulder. Its teeth and claws gleam like daggers as it sizes you up.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 10
+  name: cave bear
+  num_attacks: 2
+  plural: cave bears
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 0
+  treasure: 0
+  type: cave_bear
+  weapon_types:
+  - 212
+44:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The barbarian is dressed in the hides of furred animals, and is armed
+    with {0}. She has a look of great strength and cunning.
+  gender: 2
+  gold: 2
+  hit_dice: 3
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 15
+  name: female barbarian
+  num_attacks: 1
+  plural: female barbarians
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 3
+  treasure: 4
+  type: female_barbarian
+  weapon_types:
+  - 0
+  - 2
+45:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The barbarian is dressed in the hides of furred animals, and is armed
+    with {0}. He has a look of great strength and cunning.
+  gender: 1
+  gold: 3
+  hit_dice: 3
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 10
+  name: barbarian
+  num_attacks: 1
+  plural: barbarians
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 3
+  treasure: 5
+  type: barbarian
+  weapon_types:
+  - 0
+  - 2
+46:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The centaur has the body of a horse with the upper torso, arms, and
+    head of a well built woman. She has long hair which she wears in a tight braid,
+    and is armed with {0}.
+  gender: 2
+  gold: 2
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 12
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 2
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 15
+  name: female centaur
+  num_attacks: 2
+  plural: female centaurs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 20
+  special_attacks:
+  - ''
+  - flailed her hooves at
+  - ''
+  special_damage:
+  - 2
+  - 12
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 5
+  type: female_centaur
+  weapon_types:
+  - 0
+  - 2
+47:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The centaur has the body of a horse with the upper torso, arms, and
+    head of a well muscled man. He has long hair which he wears in a tight braid,
+    and is armed with {0}.
+  gender: 1
+  gold: 3
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 16
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 4
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 10
+  name: centaur
+  num_attacks: 2
+  plural: centaurs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - ''
+  - flailed his hooves at
+  - ''
+  special_damage:
+  - 4
+  - 16
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 6
+  type: centaur
+  weapon_types:
+  - 0
+  - 2
+48:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The mountain ape is nearly seven feet tall, has thick reddish brown
+    fur and looks very strong.
+  gender: 0
+  gold: 0
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 10
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 20
+  name: mountain ape
+  num_attacks: 2
+  plural: mountain apes
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - clenched fists
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 3
+  treasure: 0
+  type: mountain_ape
+  weapon_types:
+  - 227
+49:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 77
+  description: The satyr has the upper torso of well built woman, and the lower torso,
+    legs, and hooves of a goat. She is armed with {0}.
+  gender: 2
+  gold: 2
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 35
+  name: female satyr
+  num_attacks: 1
+  plural: female satyrs
+  regeneration: 0
+  special_ability: 1
+  special_attack_percentage: 10
+  special_attacks:
+  - ''
+  - ''
+  - sounds an ivory horn
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 4
+  type: female_satyr
+  weapon_types:
+  - 0
+  - 2
+50:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 87
+  description: The satyr has the upper torso of man with a lot of body hair, and the
+    lower torso, legs, and hooves of a goat. He is armed with {0}.
+  gender: 1
+  gold: 3
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 30
+  name: satyr
+  num_attacks: 1
+  plural: satyrs
+  regeneration: 0
+  special_ability: 1
+  special_attack_percentage: 10
+  special_attacks:
+  - ''
+  - ''
+  - sounds an ivory horn
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 5
+  type: satyr
+  weapon_types:
+  - 0
+  - 2
+51:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 75
+  description: The minotaur has the upper torso of a muscular woman, and the head,
+    legs, and hooves of a bull. She is wearing chainmail armor, and is armed with {0}.
+  gender: 2
+  gold: 2
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 20
+  max_spell: 0
+  max_weapon_damage: 3
+  min_attack_effect: 0
+  min_special_damage: 2
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 15
+  name: female minotaur
+  num_attacks: 1
+  plural: female minotaurs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 10
+  special_attacks:
+  - ''
+  - charged
+  - ''
+  special_damage:
+  - 2
+  - 20
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 5
+  type: female_minotaur
+  weapon_types:
+  - 0
+  - 3
+52:
+  armor: 2
+  can_track: 0
+  combat_skill: 80
+  description: The minotaur has the upper torso of a muscular man, and the head, legs,
+    and hooves of a bull. He is wearing banded mail armor, and is armed with {0}.
+  gender: 1
+  gold: 4
+  hit_dice: 2
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 24
+  max_spell: 0
+  max_weapon_damage: 3
+  min_attack_effect: 0
+  min_special_damage: 4
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 10
+  name: minotaur
+  num_attacks: 1
+  plural: minotaurs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - ''
+  - charged
+  - ''
+  special_damage:
+  - 4
+  - 24
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 6
+  type: minotaur
+  armor_types:
+    - 4
+    - 5
+    - 6
+  weapon_types:
+    - 6
+    - 8
+    - 11
+53:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The carrion crane is nearly eight feet tall, has dull grey plumage
+    and a very wicked looking hooked ebony beak.
+  gender: 0
+  gold: 0
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 18
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 3
+  morale: 30
+  name: carrion crane
+  num_attacks: 1
+  plural: carrion cranes
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - hooked beak
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 0
+  type: carrion_crane
+  weapon_types:
+  - 3
+  - 18
+54:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 80
+  description: The ogress resembles an enormous and very ugly woman. She stands over
+    seven feet tall and is very muscular. Her clothing is filthy and poorly made.
+    She is armed with {0}.
+  gender: 2
+  gold: 3
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: ogress
+  num_attacks: 1
+  plural: ogresses
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 5
+  type: ogress
+  weapon_types:
+  - 0
+  - 3
+55:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 85
+  description: The ogre resembles an enormous and very ugly man. He stands over eight
+    feet tall and is very muscular. His clothing is filthy and poorly made. He is
+    armed with {0}.
+  gender: 1
+  gold: 4
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 15
+  name: ogre
+  num_attacks: 1
+  plural: ogres
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 6
+  type: ogre
+  weapon_types:
+  - 0
+  - 3
+56:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The swordswoman has an air of confidance about her. She is wearing
+    chain armor, and is armed with a {0} which she wields skillfully.
+  gender: 2
+  gold: 2
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 16
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 40
+  name: swordswoman
+  num_attacks: 2
+  plural: swordswomen
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - rapier
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 6
+  type: swordswoman
+  weapon_types:
+  - 2
+  - 16
+57:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The swordsman has an air of confidence about him. He is wearing chain
+    armor, and is armed with a {0} which he wields skillfully.
+  gender: 1
+  gold: 3
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 18
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 35
+  name: swordsman
+  num_attacks: 2
+  plural: swordsmen
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - rapier
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 8
+  type: swordsman
+  weapon_types:
+  - 4
+  - 18
+58:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 65
+  description: The cyclops resembles a very large woman with only one eye in the center
+    of her forehead. She stands over eleven feet tall, and is armed with a {0}.
+  gender: 2
+  gold: 4
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 20
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 20
+  name: female cyclops
+  num_attacks: 1
+  plural: female cyclopes
+  regeneration: 0
+  special_ability: 5
+  special_attack_percentage: 25
+  special_attacks:
+  - spiked club
+  - ''
+  - picks up and hurls
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 8
+  type: female_cyclops
+  weapon_types:
+  - 229
+59:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 70
+  description: The cyclops resembles a very large man with only one eye in the center
+    of his forehead. He stands over twelve feet tall, and is armed with {0}.
+  gender: 1
+  gold: 5
+  hit_dice: 3
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 15
+  name: cyclops
+  num_attacks: 1
+  plural: cyclopes
+  regeneration: 0
+  special_ability: 5
+  special_attack_percentage: 35
+  special_attacks:
+  - spiked club
+  - ''
+  - picks up and hurls
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 10
+  type: cyclops
+  weapon_types:
+  - 229
+60:
+  armor: 1
+  armor_types:
+  - 2
+  - 4
+  can_track: 0
+  combat_skill: 90
+  description: The wraith is a shadowy figure with faded, nondescript features. It
+    is semi-transparent and grayish in color. It glares at you with dull yellowish
+    eyes.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 4
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 18
+  min_attack_effect: 2
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 3
+  morale: 0
+  name: wraith
+  num_attacks: 2
+  plural: wraith
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: wraith
+  weapon_types:
+  - 211
+61:
+  armor: 3
+  armor_types:
+  - 1
+  - 3
+  can_track: 0
+  combat_skill: 65
+  description: The larochess resembles a large well built woman with pale bluish skin
+    pointed ears, and a short tail. She is very muscular and stands nearly nine feet
+    tall. She is wearing leather armor, and is armed with {0}.
+  gender: 2
+  gold: 4
+  hit_dice: 3
+  level: 4
+  max_attack_effect: 3
+  max_special_damage: 36
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 1
+  min_special_damage: 6
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 30
+  name: larochess
+  num_attacks: 2
+  plural: laroche
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - wicked spear
+  - exhaled a cloud of acidic vapor at
+  - ''
+  special_damage:
+  - 6
+  - 36
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 15
+  type: larochess
+  weapon_types:
+  - 230
+62:
+  armor: 4
+  armor_types:
+  - 2
+  - 4
+  can_track: 0
+  combat_skill: 75
+  description: The larochet resembles a large well built man with dark bluish skin,
+    pointed ears, and a short tail. He is very muscular and stands over nine feet
+    tall. He is wearing a cuirass, and is armed with {0}.
+  gender: 1
+  gold: 5
+  hit_dice: 3
+  level: 4
+  max_attack_effect: 4
+  max_special_damage: 48
+  max_spell: 0
+  max_weapon_damege: 30
+  min_attack_effect: 2
+  min_special_damage: 8
+  min_spell: 0
+  min_weapon_damage: 5
+  morale: 25
+  name: larochet
+  num_attacks: 2
+  plural: larochets
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 20
+  special_attacks:
+  - wicked spear
+  - exhaled a cloud of acidic vapor at
+  - ''
+  special_damage:
+  - 8
+  - 48
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 20
+  type: larochet
+  weapon_types:
+  - 230
+63:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The cave lion is a huge black animal which stands over six feet tall
+    at the shoulder and has wicked curved claws and razor sharp teeth.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 20
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 10
+  name: cave lion
+  num_attacks: 2
+  plural: cave lions
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 1
+  treasure: 0
+  type: cave_lion
+  weapon_types:
+  - 213
+64:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 75
+  description: The troll resembles a large ugly woman with yellowish green skin and
+    wicked claws. Her skin is covered with warts and tufts of stiff greenish hair.
+  gender: 2
+  gold: 0
+  hit_dice: 3
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 3
+  morale: 25
+  name: female troll
+  num_attacks: 2
+  plural: female trolls
+  regeneration: 1
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 2
+  treasure: 3
+  type: female_troll
+  weapon_types:
+  - 213
+65:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The troll resembles a large ugly man with brownish green skin and wicked
+    claws. His skin is covered with warts and tufts of stiff greenish hair.
+  gender: 1
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 16
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 20
+  name: troll
+  num_attacks: 2
+  plural: trolls
+  regeneration: 1
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 2
+  treasure: 4
+  type: troll
+  weapon_types:
+  - 213
+66:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The skeleton lord wears a suit well kept chainmail armor, and is armed
+    with {0}.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 0
+  name: skeleton lord
+  num_attacks: 1
+  plural: skeleton lords
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 2
+  treasure: 0
+  type: skeleton_lord
+  weapon_types:
+  - 0
+  - 3
+67:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The griffon has the body of a lion, and the front feet, head, and wings
+    of an eagle. It has razor sharp talons and a large black beak.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 24
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 6
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 10
+  name: griffon
+  num_attacks: 2
+  plural: griffons
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - claws
+  - viciously bit
+  - ''
+  special_damage:
+  - 6
+  - 24
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 3
+  treasure: 5
+  type: griffon
+  weapon_types:
+  - 214
+68:
+  armor: 4
+  armor_types:
+  - 2
+  - 4
+  can_track: 0
+  combat_skill: 87
+  description: The ghoul is a lithe, though muscular humanoid with tightly drawn brownish
+    flesh and cloven hooves. Its teeth and nails are yellowish and look very sharp.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 4
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 2
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 5
+  name: ghoul
+  num_attacks: 2
+  plural: ghouls
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 20
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 6
+  type: ghoul
+  weapon_types:
+  - 215
+69:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The gargoyle is a heavily muscled, grey skinned humanoid with large
+    leathery wings and wicked claws.
+  gender: 0
+  gold: 0
+  hit_dice: 5
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 16
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 15
+  name: gargoyle
+  num_attacks: 2
+  plural: gargoyles
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - wicked claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 6
+  type: gargoyle
+  weapon_types:
+  - 213
+70:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The magmaman resembles a humanoid non-descript creature, seemingly
+    formed from molten rock. He has two thick arm-like appendages, ending in dripping
+    claws.
+  gender: 0
+  gold: 0
+  hit_dice: 5
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 50
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 6
+  morale: 0
+  name: magmaman
+  num_attacks: 2
+  plural: magmamen
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - burning claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 8
+  treasure: 0
+  type: magmaman
+  weapon_types:
+  - 208
+71:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 80
+  description: The ogress mage is wearing a steel breastplate and bracers, and is
+    armed with {0}. She is also wearing a dark red cloak.
+  gender: 2
+  gold: 5
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 3
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 25
+  name: ogress mage
+  num_attacks: 1
+  plural: ogress mages
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 65
+  spell_type: 1
+  spells:
+  - 0
+  - 3
+  subtype: 0
+  terrain: 2
+  treasure: 8
+  type: ogress_mage
+  weapon_types:
+  - 0
+  - 2
+72:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 85
+  description: The ogre mage is wearing a steel breastplate and bracers, and is armed
+    with {0}. He is also wearing a dark red cloak.
+  gender: 1
+  gold: 6
+  hit_dice: 5
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 4
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 1
+  min_weapon_damage: 0
+  morale: 20
+  name: ogre mage
+  num_attacks: 1
+  plural: ogre mages
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 60
+  spell_type: 1
+  spells:
+  - 1
+  - 4
+  subtype: 0
+  terrain: 2
+  treasure: 10
+  type: ogre_mage
+  weapon_types:
+  - 0
+  - 3
+73:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The sand worm is over fifty feet long, is covered in a hard ringed
+    carapace, it's gaping maw is filled with many rows of wickedly gleaming teeth.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 0
+  name: sand worm
+  num_attacks: 1
+  plural: sand worms
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - gaping maw
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 0
+  type: sand_worm
+  weapon_types:
+  - 231
+74:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The chimera has the body of a lion, leathery wings and two heads which
+    resemble those of a dragon. Thin streams of smoke curl upwards from its nostrils.
+  gender: 0
+  gold: 0
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 48
+  max_spell: 0
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 12
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 15
+  name: chimera
+  num_attacks: 2
+  plural: chimeras
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 35
+  special_attacks:
+  - claws
+  - breathed flames at
+  - ''
+  special_damage:
+  - 12
+  - 48
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 2
+  treasure: 10
+  type: chimera
+  weapon_types:
+  - 214
+75:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The warlock is dressed in red robes and radiates power. He wields a
+    {0}. Tattooed on his right forearm is a crimson sigil.
+  gender: 1
+  gold: 6
+  hit_dice: 5
+  level: 5
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 7
+  max_weapon_damege: 12
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 2
+  min_weapon_damage: 4
+  morale: 15
+  name: warlock
+  num_attacks: 1
+  plural: warlocks
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 40
+  special_attacks:
+  - flaming staff
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 80
+  spell_type: 1
+  spells:
+  - 2
+  - 7
+  subtype: 0
+  terrain: 2
+  treasure: 12
+  type: warlock
+  weapon_types:
+  - 232
+76:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The minotaur chieftain is a very large member of his species. He is
+    very muscular and stands nearly eight feet tall. He is wearing scalemail armor,
+    and is armed with {0}.
+  gender: 1
+  gold: 6
+  hit_dice: 5
+  level: 5
+  max_attack_effect: 0
+  max_special_damage: 48
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 8
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: minotaur chieftain
+  num_attacks: 1
+  plural: minotaur chieftains
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - ''
+  - charged
+  - ''
+  special_damage:
+  - 8
+  - 48
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 2
+  treasure: 25
+  type: minotaur_chieftain
+  weapon_types:
+  - 0
+  - 3
+77:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 70
+  description: The stone giantess resembles a huge hairless woman with light grayish
+    skin and stands nearly eighteen feet tall. She is armed with {0}.
+  gender: 2
+  gold: 4
+  hit_dice: 5
+  level: 5
+  max_attack_effect: 0
+  max_special_damage: 50
+  max_spell: 0
+  max_weapon_damege: 30
+  min_attack_effect: 0
+  min_special_damage: 5
+  min_spell: 0
+  min_weapon_damage: 5
+  morale: 25
+  name: stone giantess
+  num_attacks: 1
+  plural: stone giantesses
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 10
+  special_attacks:
+  - huge club
+  - hurled a boulder at
+  - ''
+  special_damage:
+  - 5
+  - 50
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 2
+  treasure: 10
+  type: stone_giantess
+  weapon_types:
+  - 233
+78:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 75
+  description: The stone giant resembles a huge hairless man with dark grayish skin
+    and stands nearly twenty feet tall. He is armed with {0}.
+  gender: 1
+  gold: 5
+  hit_dice: 6
+  level: 5
+  max_attack_effect: 0
+  max_special_damage: 60
+  max_spell: 0
+  max_weapon_damege: 36
+  min_attack_effect: 0
+  min_special_damage: 10
+  min_spell: 0
+  min_weapon_damage: 6
+  morale: 20
+  name: stone giant
+  num_attacks: 1
+  plural: stone giants
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - huge club
+  - hurled a boulder at
+  - ''
+  special_damage:
+  - 10
+  - 60
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 2
+  treasure: 15
+  type: stone_giant
+  weapon_types:
+  - 233
+79:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 90
+  description: The elysian dragon has metalic sky blue scales which glisten in the
+    light. Its powerful wings span some eighty feet and it is over fifty feet in length.
+  gender: 0
+  gold: 0
+  hit_dice: 7
+  level: 5
+  max_attack_effect: 0
+  max_special_damage: 50
+  max_spell: 7
+  max_weapon_damege: 30
+  min_attack_effect: 0
+  min_special_damage: 10
+  min_spell: 2
+  min_weapon_damage: 5
+  morale: 15
+  name: elysian dragon
+  num_attacks: 2
+  plural: elysian dragons
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - talons
+  - viciously bit
+  - ''
+  special_damage:
+  - 10
+  - 50
+  spell_skill: 95
+  spell_type: 1
+  spells:
+  - 2
+  - 7
+  subtype: 0
+  terrain: 10
+  treasure: 25
+  type: elysian_dragon
+  weapon_types:
+  - 234
+80:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The hydra resembles a small wingless dragon with three heads.
+  gender: 0
+  gold: 0
+  hit_dice: 6
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 80
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 8
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 10
+  name: hydra
+  num_attacks: 3
+  plural: hydras
+  regeneration: 1
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - gnashing teeth
+  - expelled a ball of fire at
+  - ''
+  special_damage:
+  - 8
+  - 80
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 22
+  type: hydra
+  weapon_types:
+    - 204
+81:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The affreet resembles a huge horned woman with reddish skin and stands
+    well over eighteen feet tall. She is armed with {0} that glows dull red.
+  gender: 2
+  gold: 6
+  hit_dice: 7
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 80
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 10
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 20
+  name: female affreet
+  num_attacks: 1
+  plural: female affreeti
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - glowing sword
+  - discharged a cloud of flame at
+  - ''
+  special_damage:
+  - 10
+  - 80
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 8
+  treasure: 10
+  type: female_affreet
+  weapon_types:
+  - 235
+82:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 90
+  description: The affreet resembles a huge horned man with reddish skin and stands
+    well over twenty feet tall. He is armed with {0} that glows dull red.
+  gender: 1
+  gold: 8
+  hit_dice: 8
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 100
+  max_spell: 0
+  max_weapon_damege: 30
+  min_attack_effect: 0
+  min_special_damage: 20
+  min_spell: 0
+  min_weapon_damage: 5
+  morale: 15
+  name: affreet
+  num_attacks: 1
+  plural: affreeti
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - glowing sword
+  - discharged a cloud of flame at
+  - ''
+  special_damage:
+  - 20
+  - 100
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 8
+  treasure: 15
+  type: affreet
+  weapon_types:
+  - 235
+83:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The magma worm is over seventy feet long, is covered in a hard ringed
+    carapace that glows a dull reddish color, and it's gaping maw is filled with many
+    rows of wicked teeth.
+  gender: 0
+  gold: 0
+  hit_dice: 7
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 36
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 6
+  morale: 0
+  name: magma worm
+  num_attacks: 2
+  plural: magma worms
+  regeneration: 1
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - gaping maw
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 8
+  treasure: 0
+  type: magma_worm
+  weapon_types:
+  - 231
+84:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The stygian dragon has dull brown scales and is without wings. It is
+    well over eighty feet in length. Its talons are as large and probably as sharp
+    as a sword.
+  gender: 0
+  gold: 0
+  hit_dice: 9
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 72
+  max_spell: 8
+  max_weapon_damege: 48
+  min_attack_effect: 0
+  min_special_damage: 12
+  min_spell: 2
+  min_weapon_damage: 8
+  morale: 10
+  name: stygian dragon
+  num_attacks: 2
+  plural: stygian dragons
+  regeneration: 0
+  special_ability: 6
+  special_attack_percentage: 45
+  special_attacks:
+  - talons
+  - viciously bit
+  - lashed out with its tail
+  special_damage:
+  - 12
+  - 72
+  spell_skill: 95
+  spell_type: 1
+  spells:
+  - 2
+  - 8
+  subtype: 0
+  terrain: 8
+  treasure: 40
+  type: stygian_dragon
+  weapon_types:
+  - 236
+85:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 80
+  description: The ice giantess resembles a huge woman with bone white skin, and long
+    flowing white hair. She stands over nineteen feet tall, and is armed with {0}.
+  gender: 2
+  gold: 6
+  hit_dice: 9
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 60
+  max_spell: 0
+  max_weapon_damege: 50
+  min_attack_effect: 0
+  min_special_damage: 10
+  min_spell: 0
+  min_weapon_damage: 5
+  morale: 20
+  name: ice giantess
+  num_attacks: 1
+  plural: ice giantesses
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - huge sword
+  - exhaled a blast of frost at
+  - ''
+  special_damage:
+  - 10
+  - 60
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 15
+  type: ice_giantess
+  weapon_types:
+  - 237
+86:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 85
+  description: The ice giant resembles a huge man with bone white skin, white hair,
+    and a long white beard. He stands over twenty feet tall, and is armed with {0].
+  gender: 1
+  gold: 8
+  hit_dice: 10
+  level: 7
+  max_attack_effect: 0
+  max_special_damage: 80
+  max_spell: 0
+  max_weapon_damege: 60
+  min_attack_effect: 0
+  min_special_damage: 20
+  min_spell: 0
+  min_weapon_damage: 10
+  morale: 15
+  name: ice giant
+  num_attacks: 1
+  plural: ice giants
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 25
+  special_attacks:
+  - huge sword
+  - exhaled a blast of frost at
+  - ''
+  special_damage:
+  - 20
+  - 80
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 22
+  type: ice_giant
+  weapon_types:
+  - 237
+87:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The octopod is a huge dark green bulbous plant standing nearly five
+    feet tall, and has eight rubbery greenish tentacles.
+  gender: 0
+  gold: 0
+  hit_dice: 9
+  level: 7
+  max_attack_effect: 0
+  max_special_damage: 60
+  max_spell: 0
+  max_weapon_damege: 20
+  min_attack_effect: 0
+  min_special_damage: 12
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 0
+  name: octopod
+  num_attacks: 3
+  plural: octopods
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - a tentacle
+  - lashed several tentacles at
+  - ''
+  special_damage:
+  - 12
+  - 60
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: octopod
+  weapon_types:
+  - 200
+88:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The skeleton giant stands nearly twenty feet tall, is armed with 
+    {0}, and is wearing an enormous suit of tattered chainmail.
+  gender: 0
+  gold: 0
+  hit_dice: 10
+  level: 7
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 80
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 10
+  morale: 0
+  name: skeleton giant
+  num_attacks: 1
+  plural: skeleton giants
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - bone hammer
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: skeleton_giant
+  weapon_types:
+  - 207
+89:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The greater demoness emanates power and malevolence. She has bright
+    blue skin and stands over eight feet tall. She wields {0} and
+    wears an armband engraved with runes.
+  gender: 2
+  gold: 6
+  hit_dice: 10
+  level: 7
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 7
+  max_weapon_damege: 30
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 3
+  min_weapon_damage: 5
+  morale: 15
+  name: greater demoness
+  num_attacks: 2
+  plural: greater demonesses
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 25
+  special_attacks:
+  - flaming sword
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 85
+  spell_type: 4
+  spells:
+  - 3
+  - 7
+  subtype: 0
+  terrain: 10
+  treasure: 25
+  type: greater_demoness
+  weapon_types:
+  - 238
+90:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The greater demon emanates power and malevolence. He has dull blue
+    skin and stands over nine feet tall. He wields {0} and wears
+    an armband engraved with runes.
+  gender: 1
+  gold: 10
+  hit_dice: 12
+  level: 8
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 7
+  max_weapon_damege: 36
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 3
+  min_weapon_damage: 6
+  morale: 10
+  name: greater demon
+  num_attacks: 2
+  plural: greater demons
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 25
+  special_attacks:
+  - flaming sword
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 80
+  spell_type: 4
+  spells:
+  - 3
+  - 7
+  subtype: 0
+  terrain: 10
+  treasure: 40
+  type: greater_demon
+  weapon_types:
+  - 238
+91:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The sorceress is dressed in indigo robes and radiates power. She wields
+    a rod tipped with magical frost. Inscribed on her forehead is a blue rune.
+  gender: 2
+  gold: 10
+  hit_dice: 10
+  level: 8
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 8
+  max_weapon_damege: 20
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 3
+  min_weapon_damage: 5
+  morale: 20
+  name: sorceress
+  num_attacks: 2
+  plural: sorceresses
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 40
+  special_attacks:
+  - frost rod
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 85
+  spell_type: 1
+  spells:
+  - 3
+  - 8
+  subtype: 0
+  terrain: 10
+  treasure: 32
+  type: sorceress
+  weapon_types:
+  - 239
+92:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The sorceror is dressed in indigo robes and radiates power. He wields
+    a rod shrouded with magical flame. Inscribed on his forehead is a violet rune.
+  gender: 1
+  gold: 15
+  hit_dice: 12
+  level: 9
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 9
+  max_weapon_damege: 30
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 3
+  min_weapon_damage: 6
+  morale: 15
+  name: sorceror
+  num_attacks: 2
+  plural: sorcerors
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - flaming staff
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 90
+  spell_type: 1
+  spells:
+  - 3
+  - 9
+  subtype: 0
+  terrain: 10
+  treasure: 58
+  type: sorceror
+  weapon_types:
+  - 239
+93:
+  armor: 8
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 97
+  description: The apollyon dragon has crimson scales and powerful leathery wings.
+    It is without a doubt one of the most enormous creatures you have ever seen, being
+    well over one hundred feet in length. Its talons and teeth are jet black, and
+    smoke curls upwards from its nostrils.
+  gender: 0
+  gold: 0
+  hit_dice: 15
+  level: 10
+  max_attack_effect: 0
+  max_special_damage: 200
+  max_spell: 9
+  max_weapon_damege: 50
+  min_attack_effect: 0
+  min_special_damage: 50
+  min_spell: 2
+  min_weapon_damage: 10
+  morale: 10
+  name: apollyon dragon
+  num_attacks: 2
+  plural: apollyon dragons
+  regeneration: 0
+  special_ability: 6
+  special_attack_percentage: 25
+  special_attacks:
+  - talons
+  - breathed flames at
+  - lashed out with its tail
+  special_damage:
+  - 50
+  - 200
+  spell_skill: 95
+  spell_type: 1
+  spells:
+  - 2
+  - 9
+  subtype: 0
+  terrain: 9
+  treasure: 100
+  type: apollyon_dragon
+  weapon_types:
+  - 10
+  - 50
+94:
+  armor: 9
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The flame giantess resembles a huge woman with ruddy skin and bright
+    red hair. She stands over twenty five feet tall, is armed with {0}, and wears dragonscale armor. She regards you malignantly
+    with her smouldering red eyes, and smiles cruelly.
+  gender: 2
+  gold: 6
+  hit_dice: 18
+  level: 11
+  max_attack_effect: 0
+  max_special_damage: 360
+  max_spell: 0
+  max_weapon_damege: 60
+  min_attack_effect: 0
+  min_special_damage: 80
+  min_spell: 0
+  min_weapon_damage: 10
+  morale: 15
+  name: flame giantess
+  num_attacks: 1
+  plural: flame giantesses
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - great axe
+  - exhaled a blast of flame at
+  - ''
+  special_damage:
+  - 80
+  - 360
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 9
+  treasure: 22
+  type: flame_giantess
+  weapon_types:
+  - 241
+95:
+  armor: 12
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The flame giant resembles a huge man with ruddy skin, bright red hair,
+    and a coarse red beard. He stands nearly thirty feet tall, is armed with a great
+    axe made of a dull black metal, and wears dragonscale armor. He regards you malevolently
+    with his smouldering red eyes, and grins wickedly.
+  gender: 1
+  gold: 10
+  hit_dice: 20
+  level: 12
+  max_attack_effect: 0
+  max_special_damage: 400
+  max_spell: 0
+  max_weapon_damege: 80
+  min_attack_effect: 0
+  min_special_damage: 100
+  min_spell: 0
+  min_weapon_damage: 20
+  morale: 10
+  name: flame giant
+  num_attacks: 1
+  plural: flame giants
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 15
+  special_attacks:
+  - great axe
+  - exhaled a blast of flame at
+  - ''
+  special_damage:
+  - 100
+  - 400
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 9
+  treasure: 32
+  type: flame_giant
+  weapon_types:
+  - 241
+96:
+  armor: 14
+  armor_types:
+  - 10
+  - 60
+  can_track: 0
+  combat_skill: 95
+  description: The flame giant resembles a huge man with ruddy skin, bright red hair,
+    and a coarse red beard. He stands nearly thirty feet tall, is armed with {0} made of a dark black metal that glows with a dull reddish light at the head.
+    He wears armor of fine workmanship made from overlapping scales of a dark metallic
+    blue. You sense great wisdom in his stern gaze.
+  gender: 1
+  gold: 15
+  hit_dice: 25
+  level: 15
+  max_attack_effect: 60
+  max_special_damage: 240
+  max_spell: 0
+  max_weapon_damege: 96
+  min_attack_effect: 10
+  min_special_damage: 120
+  min_spell: 0
+  min_weapon_damage: 32
+  morale: 20
+  name: flame giant warlord
+  num_attacks: 2
+  plural: flame giant warlords
+  regeneration: 0
+  special_ability: 3
+  special_attack_percentage: 25
+  special_attacks:
+  - great spear
+  - exhaled a blast of flame at
+  - quaffed a potion
+  special_damage:
+  - 120
+  - 240
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 63
+  type: flame_giant_warlord
+  weapon_types:
+  - 242
+97:
+  armor: 16
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 97
+  description: The balneal dragon has silvery blue scales and a powerfully built serpentine
+    body. It is over one hundred fifty feet in length. Its talons and teeth are of
+    a clear bluish crystalline substance, and steam rises from its nostrils.
+  gender: 0
+  gold: 0
+  hit_dice: 30
+  level: 15
+  max_attack_effect: 0
+  max_special_damage: 240
+  max_spell: 9
+  max_weapon_damege: 120
+  min_attack_effect: 0
+  min_special_damage: 60
+  min_spell: 2
+  min_weapon_damage: 30
+  morale: 10
+  name: balneal dragon
+  num_attacks: 2
+  plural: balneal dragons
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 35
+  special_attacks:
+  - talons
+  - viciously bit
+  - ''
+  special_damage:
+  - 60
+  - 240
+  spell_skill: 95
+  spell_type: 1
+  spells:
+  - 2
+  - 9
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: balneal_dragon
+  weapon_types:
+  - 243
+98:
+  armor: 15
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 90
+  description: The arch demoness emanates awesome power and malevolence. She has bright
+    red skin and stands over twelve feet tall. She wields {0} and wears
+    an armband engraved with runes.
+  gender: 2
+  gold: 10
+  hit_dice: 35
+  level: 17
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 8
+  max_weapon_damege: 100
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 3
+  min_weapon_damage: 20
+  morale: 15
+  name: arch demoness
+  num_attacks: 2
+  plural: arch demonesses
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 35
+  special_attacks:
+  - huge bardiche
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 90
+  spell_type: 4
+  spells:
+  - 3
+  - 8
+  subtype: 0
+  terrain: 10
+  treasure: 40
+  type: arch_demoness
+  weapon_types:
+  - 244
+99:
+  armor: 16
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 95
+  description: The arch demon emanates awesome power and malevolence. He has dull
+    blue skin and stands over fifteen feet tall. He wields a glowing bardiche and
+    wears an armband engraved with runes.
+  gender: 1
+  gold: 15
+  hit_dice: 40
+  level: 18
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 8
+  max_weapon_damege: 160
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 3
+  min_weapon_damage: 40
+  morale: 10
+  name: arch demon
+  num_attacks: 2
+  plural: arch demons
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 35
+  special_attacks:
+  - huge bardiche
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 85
+  spell_type: 4
+  spells:
+  - 3
+  - 8
+  subtype: 0
+  terrain: 10
+  treasure: 90
+  type: arch_demon
+  weapon_types:
+  - 244
+100:
+  armor: 20
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 99
+  description: The demon king emanates incredible power and horrific malevolence.
+    He has dull black skin and stands over thirty feet tall. He wields {0} nearly fifteen feet long and wears a dull grey crown engraved with runes.
+  gender: 1
+  gold: 25
+  hit_dice: 60
+  level: 20
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 14
+  max_weapon_damege: 240
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 3
+  min_weapon_damage: 60
+  morale: 20
+  name: demon king
+  num_attacks: 2
+  plural: demon kings
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 65
+  special_attacks:
+  - glowing sabre
+  - discharged a blast of dark energy at
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 90
+  spell_type: 4
+  spells:
+  - 3
+  - 14
+  subtype: 0
+  terrain: 10
+  treasure: 200
+  type: demon_king
+  weapon_types:
+  - 245
+101:
+  armor: 30
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 99
+  description: The great dragon has grayish scales and powerful leathery wings. It
+    is without a doubt the most enormous creature you have ever seen, being well over
+    two hundred feet in length. Its talons and teeth are yellowish white, and smoke
+    curls upward from its nostrils as it regards you with amusement.
+  gender: 0
+  gold: 0
+  hit_dice: 120
+  level: 30
+  max_attack_effect: 0
+  max_special_damage: 960
+  max_spell: 10
+  max_weapon_damege: 360
+  min_attack_effect: 0
+  min_special_damage: 320
+  min_spell: 6
+  min_weapon_damage: 120
+  morale: 35
+  name: great dragon
+  num_attacks: 0
+  plural: great dragons
+  regeneration: 1
+  special_ability: 7
+  special_attack_percentage: 65
+  special_attacks:
+  - huge talons
+  - cruely bit
+  - breathed flames in a great arc
+  special_damage:
+  - 320
+  - 960
+  spell_skill: 95
+  spell_type: 1
+  spells:
+  - 6
+  - 10
+  subtype: 0
+  terrain: 10
+  treasure: 200
+  type: great_dragon
+  weapon_types:
+  - 120
+  - 360
+102:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The white rabbit is large and fluffy with floppy ears and big brown
+    eyes.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 1
+  morale: 60
+  name: white rabbit
+  num_attacks: 2
+  plural: white rabbits
+  regeneration: 0
+  special_ability: 1
+  special_attack_percentage: 33
+  special_attacks:
+  - dull teeth
+  - ''
+  - emits a shrill screech
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: white_rabbit
+  weapon_types:
+  - 1
+  - 2
+103:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The black rabbit is large and fluffy with floppy ears and big brown
+    eyes.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 1
+  morale: 60
+  name: black rabbit
+  num_attacks: 2
+  plural: black rabbits
+  regeneration: 0
+  special_ability: 1
+  special_attack_percentage: 33
+  special_attacks:
+  - dull teeth
+  - ''
+  - emits a shrill screech
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: black_rabbit
+  weapon_types:
+  - 1
+  - 2
+104:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The pink bunny is small and fluffy with perky ears and big blue eyes.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 60
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 20
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 95
+  name: pink bunny
+  num_attacks: 2
+  plural: pink bunnies
+  regeneration: 0
+  special_ability: 6
+  special_attack_percentage: 33
+  special_attacks:
+  - daring nibble
+  - gnashed its big pointy teeth at
+  - becomes a berzerk flurry of gnashing teeth
+  special_damage:
+  - 20
+  - 60
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: pink_bunny
+  weapon_types:
+  - 1
+  - 2
+105:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The lizard is small and brown and moves very quickly.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 100
+  name: lizard
+  num_attacks: 0
+  plural: lizards
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tiny teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 0
+  type: lizard
+  weapon_types:
+  - 1
+  - 1
+106:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The monkey is quick and playful and watches you warily.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 4
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 100
+  name: monkey
+  num_attacks: 0
+  plural: monkeys
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - clinched fists
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: monkey
+  weapon_types:
+  - 2
+  - 4
+107:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The owl is perched in a nearby tree watching you intently.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 100
+  name: owl
+  num_attacks: 0
+  plural: owls
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - talons
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: owl
+  weapon_types:
+  - 1
+  - 3
+108:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The squirrel sits in a nearby tree and chitters at you.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 100
+  name: squirrel
+  num_attacks: 0
+  plural: squirrels
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - sharp teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: squirrel
+  weapon_types:
+  - 1
+  - 3
+109:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The frog is small and green and appears to be a good jumper.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 1
+  morale: 100
+  name: frog
+  num_attacks: 0
+  plural: frogs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tiny teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 5
+  treasure: 0
+  type: frog
+  weapon_types:
+  - 1
+  - 1
+110:
+  armor: 0
+  armor_types:
+  - 1
+  - 3
+  can_track: 0
+  combat_skill: 90
+  description: The lizard is small and purple and moves very quickly.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 3
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 1
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 1
+  morale: 100
+  name: lizard
+  num_attacks: 1
+  plural: lizards
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - tiny teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 0
+  type: lizard
+  weapon_types:
+  - 1
+  - 3
+111:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The fox hides in the nearby brush and seems very skittish.
+  gender: 0
+  gold: 0
+  hit_dice: 1
+  level: 1
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 4
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 100
+  name: fox
+  num_attacks: 1
+  plural: foxes
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - sharp teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 4
+  treasure: 0
+  type: fox
+  weapon_types:
+  - 2
+  - 4
+112:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The hyena looks ravenous and extremely viscious. It snarls menacingly
+    and bares its teeth at you.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 40
+  name: hyena
+  num_attacks: 1
+  plural: hyenas
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - wicked teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 0
+  type: hyena
+  weapon_types:
+  - 4
+  - 24
+113:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The tiger has luxurious looking striped fur. It growls menacingly and
+    bares its teeth at you.
+  gender: 0
+  gold: 0
+  hit_dice: 5
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 36
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 12
+  min_spell: 0
+  min_weapon_damage: 8
+  morale: 30
+  name: tiger
+  num_attacks: 2
+  plural: tigers
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 35
+  special_attacks:
+  - wicked claws
+  - savagely bit
+  - ''
+  special_damage:
+  - 12
+  - 36
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 7
+  treasure: 0
+  type: tiger
+  weapon_types:
+  - 213
+114:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The mountain lion has dark brown spotted fur. It growls menacingly
+    and bares its teeth at you.
+  gender: 0
+  gold: 0
+  hit_dice: 3
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 18
+  max_spell: 0
+  max_weapon_damege: 8
+  min_attack_effect: 0
+  min_special_damage: 6
+  min_spell: 0
+  min_weapon_damage: 2
+  morale: 20
+  name: mountain lion
+  num_attacks: 2
+  plural: mountain lions
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 35
+  special_attacks:
+  - claws
+  - savagely bit
+  - ''
+  special_damage:
+  - 6
+  - 18
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 3
+  treasure: 0
+  type: mountain_lion
+  weapon_types:
+  - 212
+115:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The nomad has dark skin and the look of someone hardened by the harsh
+    environment in which she lives. She is wearing dark linen clothing and is armed
+    with a scimitar.
+  gender: 2
+  gold: 2
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 15
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 5
+  morale: 25
+  name: female nomad
+  num_attacks: 1
+  plural: female nomads
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - scimitar
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 4
+  type: female_nomad
+  weapon_types:
+  - 5
+  - 15
+116:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The nomad has dark skin and the look of someone hardened by the harsh
+    environment in which he lives. He is wearing dark linen clothing and is armed
+    with a scimitar.
+  gender: 1
+  gold: 3
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 18
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 6
+  morale: 20
+  name: nomad
+  num_attacks: 1
+  plural: nomads
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - scimitar
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 5
+  type: nomad
+  weapon_types:
+  - 6
+  - 18
+117:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The bandit has the look of an accomplished rogue, and is dressed in
+    an expensive silk tunic and pants of a rich red color. She is also wearing a chainmail
+    jerkin and is armed with a wicked looking sabre.
+  gender: 2
+  gold: 6
+  hit_dice: 2
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 48
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 8
+  min_spell: 0
+  min_weapon_damage: 4
+  morale: 50
+  name: female bandit
+  num_attacks: 2
+  plural: female bandits
+  regeneration: 0
+  special_ability: 2
+  special_attack_percentage: 12
+  special_attacks:
+  - sabre
+  - skillfully slashed
+  - robbed
+  special_damage:
+  - 8
+  - 48
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 25
+  type: female_bandit
+  weapon_types:
+  - 4
+  - 24
+118:
+  armor: 8
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The bandit has the look of an accomplished rogue, and is dressed in
+    an expensive silk tunic and pants of a deep blue color. He is also wearing a chainmail
+    jerkin and is armed with a wicked looking sabre.
+  gender: 1
+  gold: 10
+  hit_dice: 2
+  level: 7
+  max_attack_effect: 0
+  max_special_damage: 72
+  max_spell: 0
+  max_weapon_damege: 36
+  min_attack_effect: 0
+  min_special_damage: 12
+  min_spell: 0
+  min_weapon_damage: 6
+  morale: 40
+  name: bandit
+  num_attacks: 2
+  plural: bandits
+  regeneration: 0
+  special_ability: 2
+  special_attack_percentage: 15
+  special_attacks:
+  - sabre
+  - skillfully slashed
+  - robbed
+  special_damage:
+  - 12
+  - 72
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 40
+  type: bandit
+  weapon_types:
+  - 6
+  - 36
+119:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The forest giantess resembles a huge woman with brown skin and stands
+    nearly fifteen feet tall. Her clothing is of woven vines and leaves. She is armed
+    with a huge spear.
+  gender: 2
+  gold: 4
+  hit_dice: 7
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 20
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 5
+  morale: 35
+  name: forest giantess
+  num_attacks: 2
+  plural: forest giantesses
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - huge spear
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 10
+  type: forest_giantess
+  weapon_types:
+  - 5
+  - 20
+120:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The forest giant resembles a huge man with dark brown skin and stands
+    nearly eighteen feet tall. His clothing is of woven vines and leaves. He is armed
+    with a huge spear.
+  gender: 1
+  gold: 5
+  hit_dice: 8
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 24
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 6
+  morale: 30
+  name: forest giant
+  num_attacks: 2
+  plural: forest giants
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - huge spear
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 15
+  type: forest_giant
+  weapon_types:
+  - 6
+  - 24
+121:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The jackal looks extremely viscious. It snarls menacingly and bares
+    its teeth at you.
+  gender: 0
+  gold: 0
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 18
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 3
+  morale: 40
+  name: jackal
+  num_attacks: 1
+  plural: jackal
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - wicked teeth
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 6
+  treasure: 0
+  type: jackal
+  weapon_types:
+  - 3
+  - 18
+122:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 99
+  description: The ice elemental is a titanic humanoid formed of ice.
+  gender: 0
+  gold: 0
+  hit_dice: 100
+  level: 30
+  max_attack_effect: 0
+  max_special_damage: 600
+  max_spell: 1
+  max_weapon_damege: 300
+  min_attack_effect: 0
+  min_special_damage: 300
+  min_spell: 0
+  min_weapon_damage: 150
+  morale: 0
+  name: ice elemental
+  num_attacks: 2
+  plural: ice elementals
+  regeneration: 5
+  special_ability: 6
+  special_attack_percentage: 35
+  special_attacks:
+  - a spear of ice
+  - discharged a shower of ice shards at
+  - unleashed a storm of elemental ice
+  special_damage:
+  - 300
+  - 600
+  spell_skill: 0
+  spell_type: 1
+  spells:
+  - 0
+  - 1
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: ice_elemental
+  weapon_types:
+  - 150
+  - 300
+123:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 99
+  description: The flame elemental is a titanic humanoid formed of flame.
+  gender: 0
+  gold: 0
+  hit_dice: 150
+  level: 40
+  max_attack_effect: 0
+  max_special_damage: 800
+  max_spell: 0
+  max_weapon_damege: 400
+  min_attack_effect: 0
+  min_special_damage: 400
+  min_spell: 0
+  min_weapon_damage: 200
+  morale: 0
+  name: flame elemental
+  num_attacks: 2
+  plural: flame elementals
+  regeneration: 5
+  special_ability: 6
+  special_attack_percentage: 35
+  special_attacks:
+  - a bolt of flame
+  - discharged a cloud of flames at
+  - unleashed a storm of elemental flame
+  special_damage:
+  - 400
+  - 800
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: flame_elemental
+  weapon_types:
+  - 200
+  - 400
+124:
+  armor: 50
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 99
+  description: The stone elemental is a titanic humanoid formed of stone.
+  gender: 0
+  gold: 0
+  hit_dice: 200
+  level: 50
+  max_attack_effect: 0
+  max_special_damage: 1000
+  max_spell: 0
+  max_weapon_damege: 500
+  min_attack_effect: 0
+  min_special_damage: 500
+  min_spell: 0
+  min_weapon_damage: 250
+  morale: 0
+  name: stone elemental
+  num_attacks: 2
+  plural: stone elementals
+  regeneration: 5
+  special_ability: 6
+  special_attack_percentage: 35
+  special_attacks:
+  - huge stone fist
+  - stepped on
+  - unleashed an earthquake
+  special_damage:
+  - 500
+  - 1000
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: stone_elemental
+  weapon_types:
+  - 250
+  - 500
+125:
+  armor: 50
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 99
+  description: The mystic knight has the look of a well seasoned warrior who has seen
+    many a battle in his time. His gear and clothing are the finest available. He
+    is wearing glowing dragonscale armor and wielding a jeweled claymore. Somehow
+    you are aware that he could easily defeat you.
+  gender: 1
+  gold: 0
+  hit_dice: 250
+  level: 60
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 600
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 100
+  morale: 0
+  name: mystic knight
+  num_attacks: 6
+  plural: mystic knights
+  regeneration: 5
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - jeweled claymore
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 1
+  terrain: 10
+  treasure: 0
+  type: mystic_knight
+  weapon_types:
+  - 100
+  - 600
+126:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 80
+  description: The orc warrior is a smallish humanoid with piglike facial features
+    and is covered sparsely by coarse body hair. He stands just over five feet in
+    height, is wearing chainmail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 3
+  hit_dice: 2
+  level: 2
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 1
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 25
+  name: orc warrior
+  num_attacks: 2
+  plural: orc warriors
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 5
+  type: orc_warrior
+  weapon_types:
+  - 0
+  - 1
+127:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 85
+  description: The orc subchief is a smallish humanoid with piglike facial features
+    and is covered sparsely by coarse body hair. He stands over five feet in height,
+    is wearing chainmail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 4
+  hit_dice: 3
+  level: 50
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 30
+  name: orc subchief
+  num_attacks: 2
+  plural: orc subchiefs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 8
+  type: orc_subchief
+  weapon_types:
+  - 0
+  - 2
+128:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 90
+  description: The orc chieftain is a smallish humanoid with piglike facial features
+    and is covered sparsely by coarse body hair. He stands well over five feet in
+    height, is wearing chainmail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 5
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 35
+  name: orc chieftain
+  num_attacks: 2
+  plural: orc chieftains
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 10
+  type: orc_chieftain
+  weapon_types:
+  - 0
+  - 2
+129:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 80
+  description: The orc shaman is a smallish humanoid with piglike facial features
+    and is covered sparsely by coarse body hair. She stands just under five feet in
+    height, is wearing robes, and is armed with {0} {1}.
+  gender: 2
+  gold: 3
+  hit_dice: 2
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 4
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 1
+  min_weapon_damage: 0
+  morale: 25
+  name: orc shaman
+  num_attacks: 1
+  plural: orc shaman
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 85
+  spell_type: 4
+  spells:
+  - 1
+  - 4
+  subtype: 0
+  terrain: 10
+  treasure: 7
+  type: orc_shaman
+  weapon_types:
+  - 0
+  - 0
+130:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 95
+  description: The orc warlord is an average sized humanoid with piglike facial features
+    and is covered sparsely by coarse body hair. He stands just under six feet in
+    height, is wearing gleaming chainmail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 10
+  hit_dice: 5
+  level: 6
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 35
+  name: orc warlord
+  num_attacks: 2
+  plural: orc warlords
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 20
+  type: orc_warlord
+  weapon_types:
+  - 0
+  - 3
+131:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The gnoll warrior is a tall humanoid with hyenalike facial features
+    and is covered by thick reddish brown body hair. He stands just under seven feet
+    in height, is wearing chainmail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 4
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 10
+  name: gnoll warrior
+  num_attacks: 2
+  plural: gnoll warriors
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 8
+  type: gnoll_warrior
+  weapon_types:
+  - 0
+  - 2
+132:
+  armor: 8
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The gnoll subchief is a tall humanoid with hyenalike facial features
+    and is covered by thick reddish brown body hair. He stands just over seven feet
+    in height, is wearing scalemail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 5
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 15
+  name: gnoll subchief
+  num_attacks: 2
+  plural: gnoll subchiefs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 10
+  type: gnoll_subchief
+  weapon_types:
+  - 0
+  - 3
+133:
+  armor: 8
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The gnoll chieftain is a tall humanoid with hyenalike facial features
+    and is covered by thick reddish brown body hair. He stands just over seven feet
+    in height, is wearing scalemail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 6
+  hit_dice: 5
+  level: 5
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: gnoll chieftain
+  num_attacks: 2
+  plural: gnoll chieftains
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 12
+  type: gnoll_chieftain
+  weapon_types:
+  - 0
+  - 3
+134:
+  armor: 10
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The gnoll warlord is a tall humanoid with hyenalike facial features
+    and is covered by thick reddish brown body hair. He stands well over seven feet
+    in height, is wearing gleaming bandmail armor, and is armed with {0} {1}.
+  gender: 1
+  gold: 12
+  hit_dice: 7
+  level: 7
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: gnoll warlord
+  num_attacks: 2
+  plural: gnoll warlord
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 24
+  type: gnoll_warlord
+  weapon_types:
+  - 0
+  - 3
+135:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 85
+  description: The gnoll shaman is a tall humanoid with hyenalike facial features
+    and is covered by thick golden brown body hair. She stands just over six feet
+    in height, is wearing robes, and is armed with {0} {1}.
+  gender: 2
+  gold: 4
+  hit_dice: 3
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 4
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 1
+  min_weapon_damage: 0
+  morale: 25
+  name: gnoll shaman
+  num_attacks: 1
+  plural: gnoll shaman
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 80
+  spell_type: 3
+  spells:
+  - 1
+  - 4
+  subtype: 0
+  terrain: 10
+  treasure: 8
+  type: gnoll_shaman
+  weapon_types:
+  - 0
+  - 0
+136:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The lizard warrior is a six foot tall bipedal humanoid who's features
+    resemble those of a large lizard. He has greenish scaley skin, and sharp claws
+    and teeth. He is armed with {0} {1}.
+  gender: 1
+  gold: 5
+  hit_dice: 3
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 10
+  name: lizard warrior
+  num_attacks: 2
+  plural: lizard warriors
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 10
+  type: lizard_warrior
+  weapon_types:
+  - 0
+  - 3
+137:
+  armor: 3
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The lizard subchief is a six foot tall bipedal humanoid who's features
+    resemble those of a large lizard. He has greenish scaley skin, and sharp claws
+    and teeth. He is armed with {0} {1}.
+  gender: 1
+  gold: 6
+  hit_dice: 4
+  level: 4
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 15
+  name: lizard subchief
+  num_attacks: 2
+  plural: lizard subchiefs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 12
+  type: lizard_subchief
+  weapon_types:
+  - 0
+  - 2
+138:
+  armor: 5
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The lizard chieftain is a six foot tall bipedal humanoid who's features
+    resemble those of a large lizard. He has greenish scaley skin, and sharp claws
+    and teeth. He is wearing ringmail armor and is armed with {0} {1}.
+  gender: 1
+  gold: 7
+  hit_dice: 5
+  level: 5
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 2
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: lizard chieftain
+  num_attacks: 2
+  plural: lizard chieftains
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 14
+  type: lizard_chieftain
+  weapon_types:
+  - 0
+  - 2
+139:
+  armor: 8
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: The lizard warlord is a six foot tall bipedal humanoid who's features
+    resemble those of a large lizard. He has greenish scaley skin, and sharp claws
+    and teeth. He is wearing scalemail armor and is armed with {0} {1}.
+  gender: 1
+  gold: 14
+  hit_dice: 7
+  level: 7
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 3
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 0
+  morale: 20
+  name: lizard warlord
+  num_attacks: 2
+  plural: lizard warlords
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 28
+  type: lizard_warlord
+  weapon_types:
+  - 0
+  - 3
+140:
+  armor: 1
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 80
+  description: The lizard shaman is a five foot tall bipedal humanoid who's features
+    resemble those of a large lizard. She has greyish scaley skin, and sharp claws
+    and teeth. She is wearing robes and is armed with {0} {1}.
+  gender: 2
+  gold: 4
+  hit_dice: 2
+  level: 3
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 3
+  max_weapon_damege: 0
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 1
+  min_weapon_damage: 0
+  morale: 25
+  name: lizard shaman
+  num_attacks: 2
+  plural: lizard shaman
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 30
+  special_attacks:
+  - ''
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 75
+  spell_type: 1
+  spells:
+  - 1
+  - 3
+  subtype: 0
+  terrain: 10
+  treasure: 8
+  type: lizard_shaman
+  weapon_types:
+  - 0
+  - 0
+141:
+  armor: 20
+  armor_types:
+  - 2
+  - 4
+  can_track: 0
+  combat_skill: 90
+  description: The stone warrior is skillfully crafted and resembles a heavily muscled
+    warrior in full plate armor and stands nearly twenty feet high. It is armed with
+    a huge stone axe.
+  gender: 0
+  gold: 0
+  hit_dice: 60
+  level: 25
+  max_attack_effect: 4
+  max_special_damage: 400
+  max_spell: 0
+  max_weapon_damege: 200
+  min_attack_effect: 2
+  min_special_damage: 200
+  min_spell: -1
+  min_weapon_damage: 100
+  morale: 0
+  name: stone warrior
+  num_attacks: 2
+  plural: stone warrior
+  regeneration: 0
+  special_ability: 4
+  special_attack_percentage: 35
+  special_attacks:
+  - stone axe
+  - kicks
+  - swings its axe in a wide arc
+  special_damage:
+  - 200
+  - 400
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: stone_warrior
+  weapon_types:
+  - 100
+  - 200
+142:
+  armor: 25
+  armor_types:
+  - 25
+  - 50
+  can_track: 0
+  combat_skill: 85
+  description: The stone scorpion is skillfully crafted and resembles a common scorpion,
+    except that it is nearly twenty feet in length and it's carapace has the color
+    and texture of stone.
+  gender: 0
+  gold: 0
+  hit_dice: 75
+  level: 25
+  max_attack_effect: 50
+  max_special_damage: 500
+  max_spell: 1
+  max_weapon_damege: 250
+  min_attack_effect: 25
+  min_special_damage: 250
+  min_spell: 0
+  min_weapon_damage: 125
+  morale: 0
+  name: stone scorpion
+  num_attacks: 2
+  plural: stone scorpions
+  regeneration: 0
+  special_ability: 3
+  special_attack_percentage: 65
+  special_attacks:
+  - tail
+  - snaps its pincers at
+  - is suddenly surrounded by a pale blue light
+  special_damage:
+  - 250
+  - 500
+  spell_skill: 0
+  spell_type: 1
+  spells:
+  - 0
+  - 1
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: stone_scorpion
+  weapon_types:
+  - 125
+  - 250
+143:
+  armor: 15
+  armor_types:
+  - 25
+  - 50
+  can_track: 0
+  combat_skill: 80
+  description: The stone wizard is skillfully crafted and resembles a gaunt sorceror
+    in flowing robes covered with runes and sigils. It is armed with a stone sceptre
+    topped with a glowing crystal and stands nearly twenty feet high.
+  gender: 0
+  gold: 0
+  hit_dice: 50
+  level: 25
+  max_attack_effect: 50
+  max_special_damage: 500
+  max_spell: 10
+  max_weapon_damege: 100
+  min_attack_effect: 25
+  min_special_damage: 250
+  min_spell: 6
+  min_weapon_damage: 50
+  morale: 0
+  name: stone wizard
+  num_attacks: 2
+  plural: stone wizard
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 65
+  special_attacks:
+  - stone sceptre
+  - discharged its sceptre at
+  - ''
+  special_damage:
+  - 250
+  - 500
+  spell_skill: 90
+  spell_type: 1
+  spells:
+  - 6
+  - 10
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: stone_wizard
+  weapon_types:
+  - 50
+  - 100
+144:
+  armor: 0
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The guard is of obvious dwarven blood. He looks very tough and battle
+    hardened. He wears scale mail armor of a design you're unfamiliar with and wields
+    a battleax.
+  gender: 1
+  gold: 5
+  hit_dice: 50
+  level: 25
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 34
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 19
+  morale: 20
+  name: dwarven guard
+  num_attacks: 5
+  plural: dwarven guards
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - battleax
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 5
+  type: dwarven_guard
+  weapon_types:
+  - 202
+145:
+  armor: 8
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 95
+  description: This guard closely resembles his lesser brethren, however his equipment
+    is of a finer quality and he appears more agressive and well disciplined. He wears
+    brushed steel scale mail armor and wields a huge battleax engraved with runes
+    along the edge of the blade.
+  gender: 1
+  gold: 25
+  hit_dice: 60
+  level: 30
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 42
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 27
+  morale: 10
+  name: elite dwarven guard
+  num_attacks: 5
+  plural: elite dwarven guards
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - battleax
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 25
+  type: elite_dwarven_guard
+  weapon_types:
+  - 27
+  - 42
+146:
+  armor: 12
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 97
+  description: This grim warrior appears to have seen more than his share of battle,
+    and seems utterly fearless. His dwarven mail is of fine quality and each scale
+    has finely engraved runic designs. He wields a battleax with a haft easily four
+    feet long and a blade blacker than night.
+  gender: 1
+  gold: 50
+  hit_dice: 80
+  level: 40
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 53
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 38
+  morale: 5
+  name: dwarven captain
+  num_attacks: 5
+  plural: dwarven captains
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - battleax
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 50
+  type: dwarven_captain
+  weapon_types:
+  - 38
+  - 53
+147:
+  armor: 2
+  armor_types:
+  - 1
+  - 6
+  can_track: 0
+  combat_skill: 80
+  description: The dwarven sorceror has an obvious callousness about his expression,
+    and appears no one to be trifled with. He radiates confidence and power. He wears
+    robes of a deep reddish brown, similar to the hue of the stone in the walls of
+    his home. He carries a black sceptre topped with some sort of softly glowing crystal.
+  gender: 1
+  gold: 10
+  hit_dice: 40
+  level: 25
+  max_attack_effect: 6
+  max_special_damage: 0
+  max_spell: 8
+  max_weapon_damege: 16
+  min_attack_effect: 1
+  min_special_damage: 0
+  min_spell: 6
+  min_weapon_damage: 11
+  morale: 30
+  name: dwarven sorceror
+  num_attacks: 5
+  plural: dwarven sorcerors
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 60
+  special_attacks:
+  - black sceptre
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 90
+  spell_type: 1
+  spells:
+  - 6
+  - 8
+  subtype: 0
+  terrain: 10
+  treasure: 10
+  type: dwarven_sorceror
+  weapon_types:
+  - 206
+148:
+  armor: 6
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The dwarven warhound is a huge beast, nearly four feet at the shoulder.
+    It resembles  a wolf with glossy black fur. Its eyes and teeth are crimson. Its
+    hackles raise and it snarls menacingly as you look its way.
+  gender: 0
+  gold: 0
+  hit_dice: 20
+  level: 20
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 30
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 10
+  morale: 0
+  name: dwarven warhound
+  num_attacks: 1
+  plural: dwarven warhounds
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - vicious bite
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 0
+  type: dwarven_warhound
+  weapon_types:
+  - 10
+  - 30
+149:
+  armor: 15
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: This dwarven officer wears scale armor of the finest quality and brandishes
+    a huge battleaxe of fine make with an extraordinarily keen edge. He seems very
+    dignified and confidant.
+  gender: 1
+  gold: 100
+  hit_dice: 90
+  level: 45
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 66
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 41
+  morale: 10
+  name: dwarven leutenant
+  num_attacks: 5
+  plural: dwarven leutenants
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - battleax
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 100
+  type: dwarven_leutenant
+  weapon_types:
+  - 41
+  - 66
+150:
+  armor: 20
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 97
+  description: This ruthless dwarven battle chief is dressed in heavy scale armor
+    made of a dull bluish metal that seems to absorb light. The weapon in his hands
+    is an enormous battleax with a haft of dark grey wood and a head forged of the
+    same strange metal as his armor. Dimly glowing runes adorn the head of his axe
+    along the edges of the blades.
+  gender: 1
+  gold: 150
+  hit_dice: 100
+  level: 50
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 83
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 43
+  morale: 5
+  name: dwarven warlord
+  num_attacks: 5
+  plural: dwarven warlords
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - battleax
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 150
+  type: dwarven_warlord
+  weapon_types:
+  - 43
+  - 83
+151:
+  armor: 2
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: This dwarven smith is heavily muscled, his leather apron smeared with
+    sweat and soot. He is very alert and has an expression of great calm and peace
+    of mind. His eyes harden as he notices your intense stare, and he hefts the weight
+    of his great hammer.
+  gender: 1
+  gold: 10
+  hit_dice: 40
+  level: 20
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 50
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 20
+  morale: 20
+  name: smith
+  num_attacks: 0
+  plural: smiths
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - great hammer
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 10
+  type: smith
+  weapon_types:
+  - 20
+  - 50
+152:
+  armor: 4
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: This older dwarf is gnarled and bulging with muscle. His leathers smeared
+    with grime and sweat. He seems very calm and at one with his surrounds. The great
+    hammer he cradles in his arms is forged of a dull bluish metal, and almost seems
+    to glow dimly.
+  gender: 1
+  gold: 25
+  hit_dice: 80
+  level: 40
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 100
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: -1
+  min_weapon_damage: 40
+  morale: 10
+  name: master smith
+  num_attacks: 0
+  plural: master smiths
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - great hammer
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - -1
+  - 0
+  subtype: 0
+  terrain: 10
+  treasure: 25
+  type: master_smith
+  weapon_types:
+  - 40
+  - 100
+153:
+  armor: 1
+  armor_types:
+  - 2
+  - 12
+  can_track: 0
+  combat_skill: 90
+  description: The dwarven archmage has an obvious callousness about his expression,
+    and appears no one to be trifled with. He radiates incredible power. He wears
+    robes of a deep purple hue. He carries a black sceptre topped with some sort of
+    brightly glowing crystal.
+  gender: 1
+  gold: 100
+  hit_dice: 60
+  level: 50
+  max_attack_effect: 12
+  max_special_damage: 0
+  max_spell: 10
+  max_weapon_damege: 26
+  min_attack_effect: 2
+  min_special_damage: 0
+  min_spell: 6
+  min_weapon_damage: 21
+  morale: 10
+  name: dwarven archmage
+  num_attacks: 5
+  plural: dwarven archmagi
+  regeneration: 0
+  special_ability: 7
+  special_attack_percentage: 60
+  special_attacks:
+  - black sceptre
+  - discharges his sceptre at
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 95
+  spell_type: 1
+  spells:
+  - 6
+  - 10
+  subtype: 0
+  terrain: 10
+  treasure: 100
+  type: dwarven_archmage
+  weapon_types:
+  - 21
+  - 26
+154:
+  armor: 14
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 90
+  description: The hellhound is a large wolf-type creature that dwells in the firey
+    depths of the volcano.  It glares at you with devilish red eyes, mentally feeding
+    you to its young.  It moves with a certain strut that airs its pride and seems
+    to taunt you with its vicious grin.
+  gender: 1
+  gold: 4
+  hit_dice: 40
+  level: 28
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 45
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 30
+  morale: 35
+  name: hellhound
+  num_attacks: 4
+  plural: hellhounds
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - claws
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 11
+  treasure: 10
+  type: hellhound
+  weapon_types:
+  - 216
+155:
+  armor: 18
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 70
+  description: The magma slug is a gigantic slug that is covered in magma.  Its maw
+    rumbles with fury as it looks to burn you alive with its own magma.
+  gender: 1
+  gold: 45
+  hit_dice: 50
+  level: 35
+  max_attack_effect: 0
+  max_special_damage: 200
+  max_spell: 0
+  max_weapon_damege: 115
+  min_attack_effect: 0
+  min_special_damage: 150
+  min_spell: 0
+  min_weapon_damage: 80
+  morale: 25
+  name: magma slug
+  num_attacks: 1
+  plural: magma slugs
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 65
+  special_attacks:
+  - maw
+  - unloaded a wad of magma
+  - ''
+  special_damage:
+  - 150
+  - 200
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 11
+  treasure: 115
+  type: magma_slug
+  weapon_types:
+  - 80
+  - 115
+156:
+  armor: 10
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 95
+  description: The elven scout peers at you through its forest green eyes.  The stripes
+    painted on his face warn you that he has come across and slain many an unexpecting
+    traveller.  Your doom awaits.
+  gender: 1
+  gold: 55
+  hit_dice: 30
+  level: 30
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 65
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 50
+  morale: 30
+  name: elven scout
+  num_attacks: 3
+  plural: elven scouts
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - shortsword
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 12
+  treasure: 75
+  type: elven_scout
+  weapon_types:
+  - 50
+  - 65
+157:
+  armor: 12
+  armor_types:
+  - 0
+  - 0
+  can_track: 0
+  combat_skill: 95
+  description: Despite being female, this elf resembles a modern-day war machine.
+    She moves blindingly fast, striking at any possible moment.  Though a good fight
+    is her forte, she is also amazingly beautiful, as female elves always seem to
+    be.
+  gender: 2
+  gold: 55
+  hit_dice: 35
+  level: 32
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 75
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 55
+  morale: 20
+  name: female elf
+  num_attacks: 4
+  plural: female elves
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - shortsword
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 12
+  treasure: 75
+  type: female_elf
+  weapon_types:
+  - 55
+  - 75
+158:
+  armor: 20
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 95
+  description: This elven warrior is built like a tree, and oddly enough blends in
+    with the trees as well, a warrior of a stealthy sort.  He wields an axe that must
+    have been crafted by the dwarves and enchanted by the high elves.  He is certainly
+    a force to be reckoned with.
+  gender: 1
+  gold: 75
+  hit_dice: 35
+  level: 33
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 125
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 90
+  morale: 25
+  name: elven warrior
+  num_attacks: 2
+  plural: elven warriors
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - enchanted axe
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 12
+  treasure: 75
+  type: elven_warrior
+  weapon_types:
+  - 90
+  - 125
+159:
+  armor: 25
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 95
+  description: This elven champion is built like a mountain.  There seems to be no
+    escape from this warrior of warriors, a man's man -- only an elf. He wields a
+    great sword that shines like the moons on a good night. Only the most powerful
+    elves can craft such a beast.
+  gender: 1
+  gold: 85
+  hit_dice: 45
+  level: 37
+  max_attack_effect: 0
+  max_special_damage: 0
+  max_spell: 0
+  max_weapon_damege: 155
+  min_attack_effect: 0
+  min_special_damage: 0
+  min_spell: 0
+  min_weapon_damage: 100
+  morale: 25
+  name: elven champion
+  num_attacks: 2
+  plural: elven champions
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 0
+  special_attacks:
+  - shining sword
+  - ''
+  - ''
+  special_damage:
+  - 0
+  - 0
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 12
+  treasure: 75
+  type: elven_champion
+  weapon_types:
+  - 100
+  - 155
+160:
+  armor: 30
+  armor_types:
+  - 0
+  - 0
+  can_track: 1
+  combat_skill: 99
+  description: This elven warlord is about to knock some sense into you with his warhammer.  His
+    evil eyes seem to hypnotize you into giving in to your imminent death.
+  gender: 1
+  gold: 115
+  hit_dice: 55
+  level: 44
+  max_attack_effect: 0
+  max_special_damage: 290
+  max_spell: 0
+  max_weapon_damege: 185
+  min_attack_effect: 0
+  min_special_damage: 175
+  min_spell: 0
+  min_weapon_damage: 110
+  morale: 15
+  name: elven warlord
+  num_attacks: 2
+  plural: elven warlords
+  regeneration: 0
+  special_ability: 0
+  special_attack_percentage: 40
+  special_attacks:
+  - warhammer
+  - gutted
+  - ''
+  special_damage:
+  - 175
+  - 290
+  spell_skill: 0
+  spell_type: 0
+  spells:
+  - 0
+  - 0
+  subtype: 0
+  terrain: 12
+  treasure: 235
+  type: elven_warlord
+  weapon_types:
+  - 110
+  - 185

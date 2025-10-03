@@ -1,0 +1,23 @@
+{
+  "id": "dungeon1_3",
+  "title": "Filthy Cavern",
+  "description": "You are now in a fairly large, but somewhat filthy cavern which smells of urine and excrement. Tattered rags, broken bones, as well as ruined weapons litter the floor. You get a great sense of foreboding as you realize the carnage that must have taken place here. Caves exit to the north, south, and southwest. There is also an iron door to the east.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "north": "dungeon1_21",
+    "east": "dungeon1_39",
+    "south": "dungeon1_33",
+    "southwest": "dungeon1_32"
+  },
+  "locked_exits": {
+    "east": {
+      "required_key": "brass_key",
+      "description": "The heavy iron door is locked with a brass mechanism."
+    }
+  },
+  "is_lair": true,
+  "lair_monster": "red_bear",
+  "respawn_time": 300
+}

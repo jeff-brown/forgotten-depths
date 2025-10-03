@@ -1,0 +1,23 @@
+[
+  {
+    "id": "slay_the_dragon",
+    "name": "Slay the Great Dragon",
+    "description": "The ancient wizard has asked you to slay the Great Dragon that terrorizes the deepest levels of the dungeon. The beast lairs in the depths of dungeon level 3.",
+    "giver_npc": "ancient_wizard",
+    "objectives": [
+      {
+        "type": "kill_monster",
+        "target": "great_dragon",
+        "count": 1,
+        "room": "dungeon3_181"
+      }
+    ],
+    "rewards": {
+      "experience": 1000,
+      "gold": 5000,
+      "rune": "white"
+    },
+    "level_requirement": 10,
+    "completed_message": "You have slain the Great Dragon! Return to the wizard to claim your reward."
+  }
+]

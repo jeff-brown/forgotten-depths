@@ -29,19 +29,43 @@ class WorldLoader:
         return areas
 
     def load_rooms(self) -> Dict[str, Any]:
-        """Load all room data."""
+        """Load all room data from individual JSON files and subdirectories."""
         rooms = {}
         rooms_dir = os.path.join(self.data_dir, "world", "rooms")
 
         if not os.path.exists(rooms_dir):
             return rooms
 
-        for filename in os.listdir(rooms_dir):
-            if filename.endswith('.json'):
-                room_id = filename[:-5]
-                file_path = os.path.join(rooms_dir, filename)
-                with open(file_path, 'r') as f:
-                    rooms[room_id] = json.load(f)
+        # Walk through all files and subdirectories
+        for root, dirs, files in os.walk(rooms_dir):
+            for filename in files:
+                if filename.endswith('.json'):
+                    file_path = os.path.join(root, filename)
+                    try:
+                        with open(file_path, 'r') as f:
+                            room_data = json.load(f)
+                            # Use the 'id' field from the JSON as the key
+                            room_id = room_data.get('id', filename[:-5])
+                            rooms[room_id] = room_data
+
+                            # Debug logging for locked doors
+                            if 'locked_exits' in room_data:
+                                print(f"[DOOR] WorldLoader: Found locked_exits in '{room_id}' from file {filename}")
+                                print(f"[DOOR] WorldLoader: locked_exits data: {room_data['locked_exits']}")
+                    except Exception as e:
+                        print(f"Error loading room file {file_path}: {e}")
+                        continue
+
+        print(f"[DOOR] WorldLoader: Loaded {len(rooms)} total rooms")
+        # Check if dungeon1_1 is in the rooms
+        if 'dungeon1_1' in rooms:
+            print(f"[DOOR] WorldLoader: dungeon1_1 loaded successfully")
+            if 'locked_exits' in rooms['dungeon1_1']:
+                print(f"[DOOR] WorldLoader: dungeon1_1 HAS locked_exits: {rooms['dungeon1_1']['locked_exits']}")
+            else:
+                print(f"[DOOR] WorldLoader: dungeon1_1 MISSING locked_exits!")
+        else:
+            print(f"[DOOR] WorldLoader: dungeon1_1 NOT FOUND in loaded rooms!")
 
         return rooms
 

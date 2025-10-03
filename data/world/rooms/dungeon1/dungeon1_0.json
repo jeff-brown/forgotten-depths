@@ -1,0 +1,9 @@
+{
+  "id": "dungeon1_0",
+  "title": "Inside The Dungeon Entrance",
+  "description": "You are inside the dungeon entrance.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {}
+}

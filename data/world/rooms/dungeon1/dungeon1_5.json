@@ -1,0 +1,21 @@
+{
+  "id": "dungeon1_5",
+  "title": "Huge Cavern",
+  "description": "The ceiling of this cavern is shrouded in darkness above your head. The whole room is roughly circular with the exit to the south. Though the walls and floor give away the fact that many battles have been fought here, and several of them recently, you see no sign of the slain or the equipment they may have carried. To the northeast is an unadorned bronze door.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "northeast": "dungeon1_6",
+    "south": "dungeon1_51"
+  },
+  "locked_exits": {
+    "northeast": {
+      "required_key": "copper_key",
+      "description": "The bronze door is locked with a copper mechanism."
+    }
+  },
+  "is_lair": true,
+  "lair_monster": "cave_bear",
+  "respawn_time": 300
+}

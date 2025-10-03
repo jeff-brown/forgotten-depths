@@ -11,6 +11,7 @@ class Room:
         self.title = title
         self.description = description
         self.exits: Dict[str, 'Exit'] = {}
+        self.locked_exits: Dict[str, Dict] = {}  # direction -> {required_key, description}
         self.players: List['Character'] = []
         self.npcs: List['NPC'] = []
         self.items: List['Item'] = []
@@ -102,6 +103,43 @@ class Room:
     def has_exit(self, direction: str) -> bool:
         """Check if the room has an exit in a direction."""
         return direction.lower() in [d.lower() for d in self.exits.keys()]
+
+    def is_exit_locked(self, direction: str) -> bool:
+        """Check if an exit is locked."""
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        is_locked = direction in self.locked_exits
+        logger.info(f"[DOOR] Room.is_exit_locked('{direction}') in room '{self.room_id}': {is_locked}")
+        logger.info(f"[DOOR] Current locked_exits keys: {list(self.locked_exits.keys())}")
+        return is_locked
+
+    def get_required_key(self, direction: str) -> Optional[str]:
+        """Get the key required to unlock an exit."""
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        if direction in self.locked_exits:
+            key = self.locked_exits[direction].get('required_key')
+            logger.info(f"[DOOR] Room.get_required_key('{direction}') in room '{self.room_id}': '{key}'")
+            return key
+        logger.info(f"[DOOR] Room.get_required_key('{direction}') in room '{self.room_id}': None (not locked)")
+        return None
+
+    def unlock_exit(self, direction: str):
+        """Unlock an exit (remove it from locked_exits)."""
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        logger.info(f"[DOOR] Room.unlock_exit('{direction}') called in room '{self.room_id}'")
+        logger.info(f"[DOOR] locked_exits BEFORE unlock: {list(self.locked_exits.keys())}")
+
+        if direction in self.locked_exits:
+            del self.locked_exits[direction]
+            logger.info(f"[DOOR] Exit '{direction}' unlocked successfully")
+            logger.info(f"[DOOR] locked_exits AFTER unlock: {list(self.locked_exits.keys())}")
+        else:
+            logger.info(f"[DOOR] Exit '{direction}' was not in locked_exits")
 
     def get_all_contents(self) -> Dict[str, List]:
         """Get all contents of the room."""

@@ -1,0 +1,12 @@
+{
+  "id": "dungeon2_107",
+  "title": "Top Of A Stairwell",
+  "description": "You stand in a circular shaft with a stairwell that descends around the outer wall into the darkness below. The air in this chamber is somewhat cooler than that outside.",
+  "area_id": "dungeon2",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "northwest": "dungeon2_57",
+    "down": "dungeon3_108"
+  }
+}

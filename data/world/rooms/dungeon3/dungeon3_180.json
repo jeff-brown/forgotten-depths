@@ -1,0 +1,9 @@
+{
+  "id": "dungeon3_180",
+  "title": "Pit",
+  "description": "You are at the bottom of a pit. The smooth stone walls rise some ten feet above your head. It doesn't seem likely that you could climb them unaided. The remains of those unfortunate enough to become trapped here litter the floor around you.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {}
+}

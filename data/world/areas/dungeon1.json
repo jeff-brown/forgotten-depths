@@ -1,0 +1,10 @@
+{
+  "id": "dungeon1",
+  "name": "Dungeon Level 1",
+  "description": "A dark and dangerous dungeon filled with monsters and treasure.",
+  "level_range": [
+    1,
+    10
+  ],
+  "is_pvp_enabled": false
+}

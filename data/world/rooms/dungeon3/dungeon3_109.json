@@ -1,0 +1,14 @@
+{
+  "id": "dungeon3_109",
+  "title": "Enormous cavern",
+  "description": "The ceiling of this enormous cavern is shrouded in darkness high above your head. A huge tapestry covers the northern wall from the floor to some forty feet above your head. The tapestry depicts a battle between some exceptionally large members of the race of stone giants and a great dragon with razor talons and teeth as large and sharp as sabres. The only exit lies through an archway to the northwest.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "northwest": "dungeon3_132"
+  },
+  "is_lair": true,
+  "lair_monster": "balneal_dragon",
+  "respawn_time": 300
+}

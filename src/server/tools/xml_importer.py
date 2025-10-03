@@ -388,7 +388,7 @@ def main():
 
     if len(sys.argv) != 3:
         print("Usage: python xml_importer.py <ether_area_dir> <output_dir>")
-        print("Example: python xml_importer.py /home/jeffbr/git/jeff-brown/ether/area ./data/imported_world")
+        print("Example: python xml_importer.py /path/to/ether/area ./data/imported_world")
         sys.exit(1)
 
     ether_dir = sys.argv[1]

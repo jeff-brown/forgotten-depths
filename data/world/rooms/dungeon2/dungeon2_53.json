@@ -1,0 +1,16 @@
+{
+  "id": "dungeon2_53",
+  "title": "Filthy Cave",
+  "description": "The cave in which you now stand reminds you of a stable that's not been cleaned in years. It is filthy and smells quite foul. Something about this room seems familiar, but you can't put your finger on it. Several bloodstains and other signs of mayhem put you ill at ease. The visible exits are to the northeast, northwest, and southwest.",
+  "area_id": "dungeon2",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "northeast": "dungeon2_60",
+    "southwest": "dungeon2_70",
+    "northwest": "dungeon2_61"
+  },
+  "is_lair": true,
+  "lair_monster": "apollyon_dragon",
+  "respawn_time": 300
+}

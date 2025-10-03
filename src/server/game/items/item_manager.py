@@ -83,8 +83,9 @@ class ItemManager:
             item, index = partial_matches[0]
             return item, index, 'unique'
         elif len(partial_matches) > 1:
-            # Multiple matches - return None but indicate multiple
-            return None, -1, 'multiple'
+            # Multiple matches - return the first match but indicate multiple
+            item, index = partial_matches[0]
+            return item, index, 'multiple'
         else:
             # No matches
             return None, -1, 'none'

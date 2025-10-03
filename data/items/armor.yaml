@@ -1,0 +1,176 @@
+0:
+  ac: 0
+  classes: 255
+  level: 0
+  long: a cloak
+  short: cloak
+  town: 1
+  type: cloak
+  type_num: 11
+  value: 10
+  weight: 20
+1:
+  ac: 1
+  classes: 255
+  level: 1
+  long: robes
+  short: robes
+  town: 1
+  type: robes
+  type_num: 11
+  value: 20
+  weight: 30
+2:
+  ac: 2
+  classes: 125
+  level: 2
+  long: a leather cuirass
+  short: cuirass
+  town: 1
+  type: cuirass
+  type_num: 12
+  value: 40
+  weight: 50
+3:
+  ac: 4
+  classes: 125
+  level: 2
+  long: a steel breastplate
+  short: breastplate
+  town: 1
+  type: breastplate
+  type_num: 13
+  value: 200
+  weight: 200
+4:
+  ac: 5
+  classes: 125
+  level: 3
+  long: ringmail armor
+  short: ringmail
+  town: 1
+  type: ringmail
+  type_num: 13
+  value: 250
+  weight: 300
+5:
+  ac: 6
+  classes: 125
+  level: 3
+  long: chainmail armor
+  short: chainmail
+  town: 1
+  type: chainmail
+  type_num: 13
+  value: 300
+  weight: 400
+6:
+  ac: 8
+  classes: 5
+  level: 4
+  long: scalemail armor
+  short: scalemail
+  town: 1
+  type: scalemail
+  type_num: 14
+  value: 400
+  weight: 450
+7:
+  ac: 10
+  classes: 5
+  level: 6
+  long: banded mail armor
+  short: bandmail
+  town: 1
+  type: bandmail
+  type_num: 14
+  value: 500
+  weight: 500
+8:
+  ac: 12
+  classes: 5
+  level: 8
+  long: platemail armor
+  short: platemail
+  town: 1
+  type: platemail
+  type_num: 14
+  value: 600
+  weight: 600
+9:
+  ac: 15
+  classes: 1
+  level: 10
+  long: demonhide armor
+  short: demonhide
+  town: 2
+  type: demonhide
+  type_num: 15
+  value: 1500
+  weight: 250
+10:
+  ac: 18
+  classes: 1
+  level: 12
+  long: dragonscale armor
+  short: dragonscale
+  town: 2
+  type: dragonscale
+  type_num: 16
+  value: 1800
+  weight: 500
+11:
+  ac: 15
+  classes: 5
+  level: 1000
+  long: a pink teddy
+  short: pink teddy
+  town: 0
+  type: pink teddy
+  type_num: 14
+  value: 0
+  weight: 0
+12:
+  ac: 18
+  classes: 5
+  level: 1000
+  long: blue robes
+  short: blue robes
+  town: 0
+  type: blue robes
+  type_num: 14
+  value: 0
+  weight: 0
+13:
+  ac: 1
+  classes: 255
+  level: 1000
+  long: violet robes
+  short: violet robes
+  town: 0
+  type: violet robes
+  type_num: 11
+  value: 0
+  weight: 30
+14:
+  ac: 1
+  classes: 255
+  level: 0
+  long: a green tunic
+  short: green tunic
+  town: 0
+  type: green tunic
+  type_num: 11
+  value: 0
+  weight: 10
+15:
+  ac: 20
+  classes: 125
+  level: 15
+  long: dwarven scalemail armor
+  short: dwarven scalemail
+  town: 0
+  type: dwarven scalemail
+  type_num: 13
+  value: 0
+  weight: 550

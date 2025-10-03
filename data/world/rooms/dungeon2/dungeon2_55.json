@@ -1,0 +1,15 @@
+{
+  "id": "dungeon2_55",
+  "title": "Large Cave",
+  "description": "A horrific scene lies before you in the form of a pile of mangled bones and skulls of various creatures, human and otherwise. An enormous palet of furs and skins lies on one side of the room, and by the size of it, it's likely the sleeping place of a giant. You start to think better of having ventured this deep into the ground. The only exits are east and southeast.",
+  "area_id": "dungeon2",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "east": "dungeon2_83",
+    "southeast": "dungeon2_84"
+  },
+  "is_lair": true,
+  "lair_monster": "skeleton_giant",
+  "respawn_time": 300
+}

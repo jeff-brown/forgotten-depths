@@ -1,0 +1,19 @@
+{
+  "id": "dungeon1_1",
+  "title": "Dungeon Entrance",
+  "description": "You are standing inside the entrance to the dungeon. This rounded stone and earth room bears the marks of digging tools and a number of assorted claw and hoof marks in the walls and floor. The only obvious exits are back up the stone stairway you just decended, to the west, down a plain earthen tunnel, and to the northeast through an enormous rough-hewn stone door.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "northeast": "dungeon1_13",
+    "west": "dungeon1_14",
+    "up": "town_square"
+  },
+  "locked_exits": {
+    "northeast": {
+      "required_key": "bronze_key",
+      "description": "The enormous stone door is locked with a bronze mechanism."
+    }
+  }
+}

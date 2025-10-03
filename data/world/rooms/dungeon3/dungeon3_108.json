@@ -1,0 +1,12 @@
+{
+  "id": "dungeon3_108",
+  "title": "Bottom Of A Stairwell",
+  "description": "You are now at the bottom of a long winding stair that leads up into the darkness. This room is very damp and there is a smell of fungi and rot all around you. A strange shuffling sound echoes down the passage to the north, which seems to be the only other exit to this foreboding cavern.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "north": "dungeon3_115",
+    "up": "dungeon2_107"
+  }
+}

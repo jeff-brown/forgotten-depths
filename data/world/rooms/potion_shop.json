@@ -1,0 +1,18 @@
+{
+  "id": "potion_shop",
+  "title": "The Mystic Vial",
+  "description": "This small but enchanting shop specializes in magical potions and elixirs. Shelves lining the walls hold countless glass bottles filled with liquids of every imaginable color - swirling blues, vibrant reds, shimmering golds, and mysterious purples. The air is thick with aromatic vapors and the scent of rare herbs. A skilled alchemist stands behind a wooden counter cluttered with mortar and pestles, bubbling alembics, and ingredients in labeled jars. The exit leads west back to the Arcane Square.",
+  "area_id": "starter_town",
+  "exits": {
+    "west": "arcane_square"
+  },
+  "items": [],
+  "npcs": ["potion_master"],
+  "features": [
+    "shelves_of_potions",
+    "alchemical_equipment",
+    "bubbling_cauldron"
+  ],
+  "is_safe": true,
+  "light_level": "bright"
+}

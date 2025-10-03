@@ -1,0 +1,15 @@
+{
+  "id": "dungeon2_54",
+  "title": "Smelly Cave",
+  "description": "This cave smells strongly of animals. It has the look and feel of the den of some wild beast. The rotting carcass of some animal far too mutilated and charred to identify says something of the occupant of this cavern. The obvious exits are to the north and south.",
+  "area_id": "dungeon2",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "north": "dungeon2_76",
+    "south": "dungeon2_77"
+  },
+  "is_lair": true,
+  "lair_monster": "greater_demon",
+  "respawn_time": 300
+}

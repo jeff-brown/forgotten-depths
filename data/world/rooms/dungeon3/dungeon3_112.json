@@ -1,0 +1,14 @@
+{
+  "id": "dungeon3_112",
+  "title": "Dark cavern",
+  "description": "Something about the shadows in the furthest reaches of this chamber make the light your torch casts seem feeble. The darkness in the place seems somewhat unnatural and sinister. The only apparent exit is to the east.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "east": "dungeon3_178"
+  },
+  "is_lair": true,
+  "lair_monster": "demon_king",
+  "respawn_time": 300
+}

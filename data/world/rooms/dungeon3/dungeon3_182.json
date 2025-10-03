@@ -1,0 +1,11 @@
+{
+  "id": "dungeon3_182",
+  "title": "Small cave",
+  "description": "You are in a small cave to the north of the dragon's lair. This area is rather cramped and well hidden. It looks like it might be used to conceal valuables.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "south": "dungeon3_181"
+  }
+}

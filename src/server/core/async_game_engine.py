@@ -20,6 +20,7 @@ from ..persistence.player_storage import PlayerStorage
 from ..config.config_manager import ConfigManager
 from ..utils.logger import get_logger
 from ..game.npcs.mob import Mob
+from ..game.quests.quest_manager import QuestManager
 from shared.constants.game_constants import GAME_TICK_RATE
 
 
@@ -43,6 +44,7 @@ class AsyncGameEngine:
         self.combat_system = CombatSystem(self)
         self.item_manager = ItemManager(self)
         self.player_manager = PlayerManager(self)
+        self.quest_manager = QuestManager(self)
 
         # Database and persistence
         self.database: Optional[Database] = None
@@ -201,7 +203,12 @@ class AsyncGameEngine:
             await self._check_wandering_mob_spawns()
 
             # Move wandering mobs
-            await self._move_wandering_mobs()
+            try:
+                await self._move_wandering_mobs()
+            except Exception as e:
+                self.logger.error(f"Error moving wandering mobs: {e}")
+                import traceback
+                self.logger.error(traceback.format_exc())
 
             # Regenerate health and mana
             await self._regenerate_players()
@@ -610,6 +617,7 @@ class AsyncGameEngine:
         }
 
         self.room_mobs[room_id].append(spawned_mob)
+        self.logger.info(f"[MOB_SPAWN] Spawned lair mob {mob_name} (level {level}) in room {room_id}")
 
     async def _check_lair_respawns(self):
         """Check if any lair mobs need to respawn."""
@@ -660,53 +668,55 @@ class AsyncGameEngine:
                     del self.lair_timers[room_id]
 
     async def _check_wandering_mob_spawns(self):
-        """Check if we should spawn a wandering mob."""
-        # Check if enabled
-        enabled = self.config_manager.get_setting('dungeon', 'wandering_mobs', 'enabled', default=False)
-        self.logger.info(f"[WANDERING DEBUG] Enabled setting value: {enabled}, type: {type(enabled)}")
-        self.logger.info(f"[WANDERING DEBUG] Full dungeon config: {self.config_manager.get_setting('dungeon')}")
-        if not enabled:
-            self.logger.debug(f"[WANDERING] System not enabled: {enabled}")
-            return
-
+        """Check if we should spawn wandering mobs in all configured areas."""
         current_time = time.time()
-        spawn_interval = self.config_manager.get_setting('dungeon', 'wandering_mobs', 'spawn_interval', default=30)
+
+        # Get all wandering mob configurations
+        wandering_configs = self.config_manager.get_setting('wandering_mobs', default={})
+        if not wandering_configs:
+            return
 
         # Check if it's time to try spawning
         time_since_last = current_time - self.last_wandering_spawn_check
-        self.logger.info(f"[WANDERING DEBUG] Time since last: {time_since_last:.1f}s, spawn_interval: {spawn_interval}s")
-        if time_since_last < spawn_interval:
+        if time_since_last < 30:  # Global check interval
             return
 
         self.last_wandering_spawn_check = current_time
-        self.logger.info(f"[WANDERING] Checking for spawn (interval: {spawn_interval}s)")
 
-        # Count current wandering mobs
+        # Process each area
+        for area_id, config in wandering_configs.items():
+            if not config.get('enabled', False):
+                continue
+
+            await self._check_area_spawn(area_id, config, current_time)
+
+    async def _check_area_spawn(self, area_id: str, config: dict, current_time: float):
+        """Check and spawn wandering mobs for a specific area."""
+        spawn_interval = config.get('spawn_interval', 30)
+
+        # Count current wandering mobs in this area
         wandering_count = 0
-        for room_mobs in self.room_mobs.values():
-            for mob in room_mobs:
-                if mob.get('is_wandering'):
-                    wandering_count += 1
+        for room_id, room_mobs in self.room_mobs.items():
+            room = self.world_manager.get_room(room_id)
+            if room and hasattr(room, 'area_id') and room.area_id == area_id:
+                for mob in room_mobs:
+                    if mob.get('is_wandering'):
+                        wandering_count += 1
 
-        # Check if we're at max capacity
-        max_wandering = self.config_manager.get_setting('dungeon', 'wandering_mobs', 'max_wandering_mobs', default=5)
-        self.logger.debug(f"[WANDERING] Current count: {wandering_count}/{max_wandering}")
+        # Check if we're at max capacity for this area
+        max_wandering = config.get('max_wandering_mobs', 5)
         if wandering_count >= max_wandering:
-            self.logger.debug(f"[WANDERING] At max capacity, skipping spawn")
             return
 
         # Roll for spawn chance
-        spawn_chance = self.config_manager.get_setting('dungeon', 'wandering_mobs', 'spawn_chance', default=0.3)
+        spawn_chance = config.get('spawn_chance', 0.3)
         roll = random.random()
-        self.logger.debug(f"[WANDERING] Spawn roll: {roll:.2f} (need <= {spawn_chance})")
         if roll > spawn_chance:
-            self.logger.debug(f"[WANDERING] Failed spawn roll")
             return
 
         # Select a random mob from the pool
-        mob_pool = self.config_manager.get_setting('dungeon', 'wandering_mobs', 'mob_pool', default=[])
+        mob_pool = config.get('mob_pool', [])
         if not mob_pool:
-            self.logger.debug(f"[WANDERING] No mob pool configured")
             return
 
         # Weighted random selection
@@ -722,10 +732,7 @@ class AsyncGameEngine:
                 break
 
         if not selected_mob_id:
-            self.logger.debug(f"[WANDERING] Failed to select mob from pool")
             return
-
-        self.logger.debug(f"[WANDERING] Selected mob: {selected_mob_id}")
 
         # Load monster data
         try:
@@ -737,29 +744,24 @@ class AsyncGameEngine:
             return
 
         if selected_mob_id not in monsters:
-            self.logger.debug(f"[WANDERING] Mob {selected_mob_id} not found in monsters.json")
             return
 
-        # Get all dungeon rooms
-        area_id = self.config_manager.get_setting('dungeon', 'wandering_mobs', 'area_id', default='arena_dungeon')
-        dungeon_rooms = []
+        # Get all rooms for this area
+        area_rooms = []
         for room_id, room in self.world_manager.rooms.items():
             if hasattr(room, 'area_id') and room.area_id == area_id:
-                dungeon_rooms.append(room_id)
+                area_rooms.append(room_id)
 
-        self.logger.debug(f"[WANDERING] Found {len(dungeon_rooms)} dungeon rooms for area {area_id}")
-        if not dungeon_rooms:
-            self.logger.debug(f"[WANDERING] No dungeon rooms found")
+        if not area_rooms:
             return
 
         # Select random room to spawn in
-        spawn_room = random.choice(dungeon_rooms)
+        spawn_room = random.choice(area_rooms)
 
         # Spawn the wandering mob
-        self._spawn_wandering_mob(spawn_room, selected_mob_id, monsters[selected_mob_id])
-        self.logger.info(f"[WANDERING] Spawned {selected_mob_id} in {spawn_room}")
+        self._spawn_wandering_mob(spawn_room, selected_mob_id, monsters[selected_mob_id], area_id)
 
-    def _spawn_wandering_mob(self, room_id: str, monster_id: str, monster: dict):
+    def _spawn_wandering_mob(self, room_id: str, monster_id: str, monster: dict, area_id: str = None):
         """Spawn a wandering mob in a room."""
         if room_id not in self.room_mobs:
             self.room_mobs[room_id] = []
@@ -797,14 +799,39 @@ class AsyncGameEngine:
             'loot_table': monster.get('loot_table', []),
             'experience': 0,
             'gold': 0,
-            'is_wandering': True  # Mark as wandering mob
+            'is_wandering': True,  # Mark as wandering mob
+            'spawn_area': area_id  # Track which area this mob belongs to
         }
 
         self.room_mobs[room_id].append(spawned_mob)
+        self.logger.info(f"[MOB_SPAWN] Spawned wandering {mob_name} (level {level}) in room {room_id} (area: {area_id})")
 
     async def _move_wandering_mobs(self):
         """Move wandering mobs randomly between rooms."""
-        movement_chance = self.config_manager.get_setting('dungeon', 'wandering_mobs', 'movement_chance', default=0.2)
+        # Get wandering mob configs for movement chances
+        wandering_configs = self.config_manager.get_setting('wandering_mobs', default={})
+
+        # Count total mobs and wandering mobs
+        total_mobs = 0
+        total_wandering = 0
+        total_lair = 0
+        total_gong = 0
+        total_other = 0
+
+        for room_id, room_mobs in self.room_mobs.items():
+            for mob in room_mobs:
+                if mob is None:
+                    continue
+                total_mobs += 1
+                if mob.get('is_wandering'):
+                    total_wandering += 1
+                elif mob.get('is_lair_mob'):
+                    total_lair += 1
+                elif mob.get('spawned_by_gong'):
+                    total_gong += 1
+                else:
+                    total_other += 1
+
 
         # Iterate through all rooms
         for room_id in list(self.room_mobs.keys()):
@@ -816,17 +843,35 @@ class AsyncGameEngine:
                 if not mob.get('is_wandering'):
                     continue
 
+                mob_name = mob.get('name', 'Unknown creature')
+
+                # Check if there are any players in the room - if so, don't move (stay to fight)
+                players_in_room = []
+                for player_id, player_data in self.player_manager.connected_players.items():
+                    character = player_data.get('character')
+                    if character and character.get('room_id') == room_id:
+                        players_in_room.append(player_id)
+
+                if players_in_room:
+                    continue
+
+                # Get movement chance for this mob's spawn area
+                spawn_area = mob.get('spawn_area', 'arena_dungeon')
+                area_config = wandering_configs.get(spawn_area, {})
+                movement_chance = area_config.get('movement_chance', 0.2)
+
                 # Roll for movement
-                if random.random() > movement_chance:
+                roll = random.random()
+                if roll > movement_chance:
                     continue
 
                 # Get current room
                 room = self.world_manager.get_room(room_id)
-                if not room or not hasattr(room, 'exits'):
+                if not room:
                     continue
 
                 # Get available exits
-                exits = list(room.exits.keys())
+                exits = list(room.exits.keys()) if hasattr(room, 'exits') else []
                 if not exits:
                     continue
 
@@ -838,8 +883,16 @@ class AsyncGameEngine:
                 if not exit_obj:
                     continue
 
-                destination_id = exit_obj.destination if hasattr(exit_obj, 'destination') else str(exit_obj)
+                destination_id = exit_obj.destination_room_id if hasattr(exit_obj, 'destination_room_id') else str(exit_obj)
                 if not destination_id or destination_id not in self.world_manager.rooms:
+                    continue
+
+                # Check if destination is in the same area (prevent leaving dungeon)
+                destination_room = self.world_manager.get_room(destination_id)
+                current_area = getattr(room, 'area_id', None)
+                destination_area = getattr(destination_room, 'area_id', None)
+
+                if current_area and destination_area and current_area != destination_area:
                     continue
 
                 # Move mob to new room
@@ -849,8 +902,6 @@ class AsyncGameEngine:
                 self.room_mobs[destination_id].append(mob)
 
                 # Notify players in both rooms
-                mob_name = mob.get('name', 'Unknown creature')
-
                 # Notify players in source room
                 await self._notify_room_players_sync(room_id, f"{mob_name} wanders {direction}.")
 
@@ -858,8 +909,6 @@ class AsyncGameEngine:
                 opposite_direction = self._get_opposite_direction(direction)
                 arrival_msg = f"{mob_name} wanders in from the {opposite_direction}."
                 await self._notify_room_players_sync(destination_id, arrival_msg)
-
-                self.logger.debug(f"[WANDERING] {mob_name} moved from {room_id} {direction} to {destination_id}")
 
     def _get_opposite_direction(self, direction: str) -> str:
         """Get the opposite direction."""
@@ -880,7 +929,7 @@ class AsyncGameEngine:
     async def _notify_room_players_sync(self, room_id: str, message: str):
         """Send a message to all players in a room (sync version for use in tick)."""
         for player_id, player_data in self.player_manager.connected_players.items():
-            if player_data.get('character', {}).get('room_id') == room_id:
+            if player_data and player_data.get('character', {}).get('room_id') == room_id:
                 await self.connection_manager.send_message(player_id, message)
 
 

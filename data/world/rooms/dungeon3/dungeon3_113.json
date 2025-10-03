@@ -1,0 +1,16 @@
+{
+  "id": "dungeon3_113",
+  "title": "An intersection",
+  "description": "You are standing in a large cavern at the intersection of three passages. They exit to the east, west, and north. This chamber smells strongly of the dung of some beast you've apparently never before encountered. Many crimson stains and scorch marks on the floor and walls belie the carnage that must have taken place here at one time.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "north": "dungeon3_145",
+    "east": "dungeon3_161",
+    "west": "dungeon3_144"
+  },
+  "is_lair": true,
+  "lair_monster": "smith",
+  "respawn_time": 300
+}

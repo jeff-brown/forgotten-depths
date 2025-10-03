@@ -1,0 +1,21 @@
+{
+  "id": "dungeon1_2",
+  "title": "Large Cavern",
+  "description": "You stand in a large cavern cluttered with stalagmites and stalagtites that divide the room into many smaller chambers and passages and limit vision in any direction to a few feet. The maze-like form of this cavern is somewhat unnerving, as if someone or something had used natural forces to create a very unnatural labyrinth. You have entered the lair of the minotaur. The only exits are to the north and through an iron bound oak door to the southeast.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "north": "dungeon1_18",
+    "southeast": "dungeon1_19"
+  },
+  "locked_exits": {
+    "southeast": {
+      "required_key": "iron_key",
+      "description": "The iron bound oak door is locked tight."
+    }
+  },
+  "is_lair": true,
+  "lair_monster": "female_minotaur",
+  "respawn_time": 300
+}

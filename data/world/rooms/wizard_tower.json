@@ -1,0 +1,12 @@
+{
+  "id": "wizard_tower",
+  "title": "Wizard's Tower",
+  "description": "You stand in a circular chamber at the base of a tall stone tower. Ancient tomes line the shelves, and mystical artifacts rest on pedestals. Arcane symbols glow faintly on the walls. An elderly wizard in flowing robes studies a massive spellbook at a desk covered in scrolls and crystals. The exit leads south to the town square.",
+  "area_id": "town",
+  "is_safe": true,
+  "light_level": 1.0,
+  "exits": {
+    "south": "town_square"
+  },
+  "npcs": ["ancient_wizard"]
+}

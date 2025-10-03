@@ -1,0 +1,15 @@
+{
+  "id": "dungeon2_57",
+  "title": "Grand Hall",
+  "description": "The splendor of the hall before you could have come right out of some fantasic storybook legend. Enormous ornately carved black marble columns inlaid with platinum and ivory bigger around than you are tall rise far above to the ceiling, towering some two hundred or more feet above your head. The floor and walls of this great hall are adorned with ornately carved tiles and other noteworthy architecture with a very definite origin, dwarves. The far wall of this hall is barely visible some thousand feet away. Several things about this hall lead you to believe that either it's original creators or someone or something has kept it up over the aeons. Many torches in sconces along the walls light the hall about as brightly as any underground room could be expected to be. The sheer size and elegance of this magnificent hall leaves you in awe of it's builders. The only visibile exits lie to the north through a grand archway, and to the southeast through an ornately carved stone door.",
+  "area_id": "dungeon2",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "north": "dungeon2_106",
+    "southeast": "dungeon2_107"
+  },
+  "is_lair": true,
+  "lair_monster": "apollyon_dragon",
+  "respawn_time": 300
+}

@@ -1,0 +1,10 @@
+{
+  "id": "dungeon3",
+  "name": "Dungeon Level 3",
+  "description": "The deepest and most treacherous level of the dungeon, shrouded in near-total darkness. Only the bravest adventurers dare venture here.",
+  "level_range": [
+    10,
+    20
+  ],
+  "is_pvp_enabled": false
+}

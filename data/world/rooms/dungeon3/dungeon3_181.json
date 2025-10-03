@@ -1,0 +1,15 @@
+{
+  "id": "dungeon3_181",
+  "title": "Dragon's Lair",
+  "description": "You stand in a vast cavern with a vaulted ceiling that disappears into shadow. The floor is scorched and littered with blackened bones. The acrid smell of sulfur fills the air, and deep claw marks scar the stone walls. This is clearly the lair of a great dragon. The exits are to the north and south.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "north": "dungeon3_182",
+    "south": "dungeon3_111"
+  },
+  "is_lair": true,
+  "lair_monster": "great_dragon",
+  "respawn_time": 600
+}

@@ -1,0 +1,37 @@
+{
+  "id": "potion_master",
+  "name": "Master Alchemist Vera",
+  "short_description": "a skilled alchemist",
+  "long_description": "Vera is a talented alchemist with sharp, intelligent eyes that seem to analyze everything around her. Her dark hair is tied back in a practical bun, and she wears a stained leather apron over her robes, evidence of countless hours spent brewing potions. Her fingers are nimble and precise, moving with practiced ease among vials and ingredients. The faint glow of magical residue clings to her hands, a testament to the potent elixirs she crafts. She takes great pride in her work, and her potions are known throughout the region for their quality and potency.",
+  "level": 8,
+  "type": "npc",
+  "hostile": false,
+  "health": 65,
+  "race": "human",
+  "class": "alchemist",
+  "keywords": ["vera", "alchemist", "potion", "master", "potionmaster", "brewer"],
+  "dialogue": {
+    "greeting": "Welcome to The Mystic Vial! I craft the finest potions and elixirs in all the land. Looking for something to restore your vitality, or perhaps enhance your magical power?",
+    "default": "Each potion is brewed with precision and the finest ingredients. Health potions to mend your wounds, mana potions to replenish your magical reserves, and more exotic concoctions for the discerning adventurer.",
+    "goodbye": "May your adventures be successful, and may my potions serve you well!"
+  },
+  "services": ["vendor", "potions", "alchemy"],
+  "shop": {
+    "type": "potion_shop",
+    "buy_rate": 0.4,
+    "sell_rate": 1.0,
+    "specialties": ["potions", "elixirs", "tonics", "alchemical_reagents"],
+    "inventory": [
+      {"item_id": "health_potion_small", "price": 25, "stock": -1},
+      {"item_id": "mana_potion_small", "price": 25, "stock": -1}
+    ]
+  },
+  "stats": {
+    "strength": 10,
+    "dexterity": 14,
+    "constitution": 13,
+    "intelligence": 18,
+    "wisdom": 16,
+    "charisma": 12
+  }
+}

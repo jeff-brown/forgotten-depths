@@ -1,0 +1,13 @@
+{
+  "id": "dungeon1_14",
+  "title": "Cave",
+  "description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an eerie greenish light. A small bronze key glints among the rocks. The exits are to the east and west.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "east": "dungeon1_1",
+    "west": "dungeon1_15"
+  },
+  "items": ["bronze_key"]
+}

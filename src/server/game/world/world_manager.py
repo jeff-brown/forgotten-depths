@@ -51,6 +51,12 @@ class WorldManager:
             self._load_items(items_data)
             self._load_npcs(npcs_data)
 
+            # Initialize room items (place items from room JSON into rooms)
+            self._initialize_room_items(rooms_data)
+
+            # Initialize room NPCs (place NPCs from room JSON into rooms)
+            self._initialize_room_npcs(rooms_data)
+
             # Validate graph
             issues = self.world_graph.validate_graph()
             if issues:
@@ -66,6 +72,16 @@ class WorldManager:
 
     def _create_rooms(self, rooms_data: Dict):
         """Create room objects from data."""
+        self.logger.info(f"[DOOR] WorldManager: Creating rooms from {len(rooms_data)} room data entries")
+
+        # Check if dungeon1_1 is in the data
+        if 'dungeon1_1' in rooms_data:
+            self.logger.info(f"[DOOR] WorldManager: dungeon1_1 found in rooms_data")
+            if 'locked_exits' in rooms_data['dungeon1_1']:
+                self.logger.info(f"[DOOR] WorldManager: dungeon1_1 locked_exits in data: {rooms_data['dungeon1_1']['locked_exits']}")
+            else:
+                self.logger.info(f"[DOOR] WorldManager: dungeon1_1 MISSING locked_exits in rooms_data!")
+
         for room_id, room_data in rooms_data.items():
             room = Room(
                 room_id=room_data.get('id', room_id),
@@ -91,9 +107,15 @@ class WorldManager:
             if 'respawn_time' in room_data:
                 room.respawn_time = room_data['respawn_time']
 
-            # Populate NPCs list from JSON
-            if 'npcs' in room_data:
-                room.npcs = room_data['npcs']
+            # NPCs will be populated later in _initialize_room_npcs
+            # (don't set room.npcs here, it will be replaced with actual NPC objects)
+
+            # Load locked exits
+            if 'locked_exits' in room_data:
+                room.locked_exits = room_data['locked_exits']
+                self.logger.info(f"[DOOR] Loaded locked_exits for room '{room_id}': {list(room.locked_exits.keys())}")
+                for direction, lock_info in room.locked_exits.items():
+                    self.logger.info(f"[DOOR]   - {direction}: requires '{lock_info.get('required_key')}'")
 
             # Store raw data for NPC and item references
             room._raw_data = room_data
@@ -143,6 +165,97 @@ class WorldManager:
         # Store the raw NPC data for game engine use
         self.npcs = npcs_data
         self.logger.info(f"Loaded {len(npcs_data)} NPC definitions")
+
+        # Log quest-giver NPCs
+        quest_givers = [npc_id for npc_id, npc_data in npcs_data.items() if npc_data.get('type') == 'quest_giver']
+        if quest_givers:
+            self.logger.info(f"Quest-giver NPCs: {', '.join(quest_givers)}")
+
+    def _initialize_room_items(self, rooms_data: Dict):
+        """Initialize items in rooms from room data."""
+        items_placed = 0
+
+        for room_id, room_data in rooms_data.items():
+            if 'items' not in room_data:
+                continue
+
+            item_ids = room_data['items']
+            if not item_ids:
+                continue
+
+            for item_id in item_ids:
+                # Look up the full item data
+                if item_id in self.items:
+                    item_data = self.items[item_id].copy()
+
+                    # IMPORTANT: Ensure the item has an 'id' field for inventory checking
+                    if 'id' not in item_data:
+                        item_data['id'] = item_id
+
+                    # Add item to the room through game engine's item manager
+                    if self.game_engine and hasattr(self.game_engine, 'item_manager'):
+                        self.game_engine.item_manager.add_item_to_room(room_id, item_data)
+                        items_placed += 1
+                        self.logger.info(f"[DOOR] Placed item '{item_id}' ({item_data.get('name', item_id)}) with id='{item_data.get('id')}' in room '{room_id}'")
+                    else:
+                        self.logger.warning(f"Cannot place item '{item_id}' in room '{room_id}' - item manager not available")
+                else:
+                    self.logger.warning(f"Item '{item_id}' referenced in room '{room_id}' not found in items.json")
+
+        self.logger.info(f"Initialized {items_placed} items in rooms")
+
+    def _initialize_room_npcs(self, rooms_data: Dict):
+        """Initialize NPCs in rooms from room data."""
+        from ..npcs.npc import NPC
+        npcs_placed = 0
+
+        for room_id, room_data in rooms_data.items():
+            if 'npcs' not in room_data:
+                continue
+
+            npc_ids = room_data['npcs']
+            if not npc_ids:
+                continue
+
+            room = self.rooms.get(room_id)
+            if not room:
+                continue
+
+            # Clear the string list and replace with actual NPC objects
+            room.npcs = []
+
+            for npc_id in npc_ids:
+                # Look up the full NPC data
+                if npc_id in self.npcs:
+                    npc_data = self.npcs[npc_id]
+
+                    # Get description (check long_description first, then description)
+                    description = npc_data.get('long_description') or npc_data.get('description', 'A mysterious figure.')
+
+                    # Create NPC object
+                    npc = NPC(
+                        npc_id=npc_data.get('id', npc_id),
+                        name=npc_data.get('name', 'Unknown NPC'),
+                        description=description
+                    )
+
+                    # Set additional properties
+                    npc.room_id = room_id
+                    if 'type' in npc_data:
+                        npc.npc_type = npc_data['type']
+                    if 'dialogue' in npc_data:
+                        npc.dialogue = npc_data.get('dialogue', {})
+                    if 'quests' in npc_data:
+                        npc.quests = npc_data['quests']
+
+                    # Add NPC object to room
+                    room.npcs.append(npc)
+                    npcs_placed += 1
+                    self.logger.info(f"Placed NPC '{npc_id}' ({npc.name}) in room '{room_id}'")
+                else:
+                    self.logger.warning(f"NPC '{npc_id}' referenced in room '{room_id}' not found in npcs.json")
+
+        self.logger.info(f"Initialized {npcs_placed} NPCs in rooms")
 
     def _create_default_world(self):
         """Create a minimal default world if loading fails."""
@@ -298,6 +411,20 @@ class WorldManager:
                     )
                     self.world_graph.add_edge(edge)
 
+            # IMPORTANT: Also add locked exits to the graph so they can be checked during movement
+            # The movement command will check if they're locked and handle key logic
+            locked_exits = room_data.get('locked_exits', {})
+            if locked_exits:
+                self.logger.info(f"[DOOR] Adding {len(locked_exits)} locked exits to graph for room '{room_id}'")
+                for direction in locked_exits.keys():
+                    # Get the destination from the regular exits
+                    target_room_id = exits.get(direction)
+                    if target_room_id and target_room_id in self.rooms:
+                        # Note: We already added this exit above, just logging
+                        self.logger.info(f"[DOOR]   - Locked exit '{direction}' already in graph (points to '{target_room_id}')")
+                    else:
+                        self.logger.warning(f"[DOOR]   - Locked exit '{direction}' has no matching exit in 'exits'!")
+
     def find_path(self, start: str, goal: str, character: 'Character' = None) -> Optional[List[str]]:
         """Find a path between two rooms using the world graph."""
         return self.world_graph.find_path_dijkstra(start, goal, character)
@@ -359,6 +486,7 @@ class WorldManager:
         if npc_data and 'name' in npc_data:
             return npc_data['name']
         # Fallback to converted ID if no name field
+        self.logger.warning(f"NPC {npc_id} not found in loaded NPC data")
         return npc_id.replace('_', ' ')
 
     async def send_room_description(self, player_id: int, detailed: bool = False):
@@ -601,10 +729,11 @@ class WorldManager:
 
         # Load available mobs
         try:
-            with open('/home/jeffbr/git/jeff-brown/forgotten-depths/data/npcs/monsters.json', 'r') as f:
+            with open('data/npcs/monsters.json', 'r') as f:
                 monsters_data = json.load(f)
         except Exception as e:
             await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but something went wrong with the ancient magic...")
+            self.logger.error(f"Failed to load monsters.json: {e}")
             return
 
         # Select a random monster

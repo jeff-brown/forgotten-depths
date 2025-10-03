@@ -396,6 +396,7 @@ look (l)        - Look around or examine target
 help (?)        - Show this help
 exits           - Show exits
 stats (st)      - Show character stats
+reroll          - Reroll stats (level 1, 0 XP only)
 train           - Level up at a trainer
 inventory (i)   - Show inventory
 spellbook (sb)  - Show learned spells
@@ -425,6 +426,14 @@ west (w)        - Go west
 up (u)          - Go up
 down (d)        - Go down
 quit (q)        - Quit the game
+
+Admin Commands (Debug):
+======================
+givegold <amt>  - Give yourself gold
+giveitem <id>   - Give yourself an item
+givexp <amt>    - Give yourself experience
+mobstatus       - Show all mobs and their flags
+teleport <room> - Teleport to a room (or 'teleport <player> <room>')
 """
             await self.game_engine.connection_manager.send_message(player_id, help_text)
 
@@ -437,6 +446,9 @@ quit (q)        - Quit the game
 
         elif command in ['stats', 'score', 'st']:
             await self._handle_stats_command(player_id, character)
+
+        elif command == 'reroll':
+            await self._handle_reroll_command(player_id, character)
 
         elif command == 'train':
             await self._handle_train_command(player_id, character)
@@ -476,11 +488,11 @@ quit (q)        - Quit the game
         elif command in ['eat', 'consume']:
             await self.game_engine.connection_manager.send_message(player_id, "What would you like to eat?")
 
-        elif command in ['drink', 'quaff'] and params:
+        elif command in ['drink', 'dr', 'quaff'] and params:
             # Drink to restore thirst
             await self._handle_drink_command(player_id, params)
 
-        elif command in ['drink', 'quaff']:
+        elif command in ['drink', 'dr', 'quaff']:
             await self.game_engine.connection_manager.send_message(player_id, "What would you like to drink?")
 
         elif command in ['read', 'study'] and params:
@@ -506,7 +518,7 @@ quit (q)        - Quit the game
             # Unequip command without parameters
             await self.game_engine.connection_manager.send_message(player_id, "What would you like to unequip?")
 
-        elif command in ['buy', 'sell'] and params:
+        elif command in ['buy', 'b', 'sell'] and params:
             # Handle buying/selling with vendors
             await self._handle_trade_command(player_id, command, params)
 
@@ -544,6 +556,50 @@ quit (q)        - Quit the game
                         'northeast', 'ne', 'northwest', 'nw', 'southeast', 'se',
                         'southwest', 'sw', 'up', 'u', 'down', 'd']:
             await self.game_engine._move_player(player_id, command)
+
+        # Quest commands
+        elif command in ['quest', 'quests', 'questlog']:
+            await self._handle_quest_log(player_id, character)
+
+        elif command in ['talk', 'speak'] and params:
+            await self._handle_talk_to_npc(player_id, character, params)
+
+        elif command in ['talk', 'speak']:
+            await self.game_engine.connection_manager.send_message(player_id, "Who would you like to talk to?")
+
+        elif command == 'accept' and params:
+            await self._handle_accept_quest(player_id, character, params)
+
+        elif command == 'accept':
+            await self.game_engine.connection_manager.send_message(player_id, "What quest would you like to accept?")
+
+        # Admin commands
+        elif command == 'givegold' and params:
+            await self._handle_admin_give_gold(player_id, character, params)
+
+        elif command == 'givegold':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: givegold <amount>")
+
+        elif command == 'giveitem' and params:
+            await self._handle_admin_give_item(player_id, character, params)
+
+        elif command == 'giveitem':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: giveitem <item_id>")
+
+        elif command == 'givexp' and params:
+            await self._handle_admin_give_xp(player_id, character, params)
+
+        elif command == 'givexp':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: givexp <amount>")
+
+        elif command == 'mobstatus':
+            await self._handle_admin_mob_status(player_id)
+
+        elif command == 'teleport' and params:
+            await self._handle_admin_teleport(player_id, character, params)
+
+        elif command == 'teleport':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: teleport <room_id> OR teleport <player_name> <room_id>")
 
         else:
             # Treat unknown commands as speech/chat messages
@@ -732,11 +788,8 @@ Gold:          {char['gold']}
             await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
             return
         elif match_type == 'multiple':
-            # Find the matching items for the error message
-            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
-            match_list = ", ".join(matches)
-            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
-            return
+            # If multiple matches, just drop the first one
+            pass  # item_to_drop and item_index are already set to the first match
 
         # Remove item from inventory
         dropped_item = character['inventory'].pop(item_index)
@@ -772,10 +825,8 @@ Gold:          {char['gold']}
             await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
             return
         elif match_type == 'multiple':
-            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
-            match_list = ", ".join(matches)
-            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
-            return
+            # If multiple matches, just eat the first one
+            pass  # item_to_eat and item_index are already set to the first match
 
         # Check if item is food
         item_type = item_to_eat.get('type', '')
@@ -815,10 +866,8 @@ Gold:          {char['gold']}
             await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
             return
         elif match_type == 'multiple':
-            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
-            match_list = ", ".join(matches)
-            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
-            return
+            # If multiple matches, just drink the first one
+            pass  # item_to_drink and item_index are already set to the first match
 
         # Check if item is a drink
         item_type = item_to_drink.get('type', '')
@@ -858,10 +907,8 @@ Gold:          {char['gold']}
             await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
             return
         elif match_type == 'multiple':
-            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
-            match_list = ", ".join(matches)
-            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
-            return
+            # If multiple matches, just read the first one
+            pass  # item_to_read and item_index are already set to the first match
 
         # Check if item is a spell scroll
         item_type = item_to_read.get('type', '')
@@ -942,11 +989,8 @@ Gold:          {char['gold']}
             await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name} to equip.")
             return
         elif match_type == 'multiple':
-            # Find the matching items for the error message
-            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
-            match_list = ", ".join(matches)
-            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
-            return
+            # If multiple matches, just equip the first one
+            pass  # item_to_equip and item_index are already set to the first match
 
         # Determine which slot this item goes in
         item_type = item_to_equip.get('type', 'misc')
@@ -1106,10 +1150,11 @@ Gold:          {char['gold']}
         """Ring the gong in the arena and spawn a random mob."""
         # Load available mobs
         try:
-            with open('/home/jeffbr/git/jeff-brown/forgotten-depths/data/npcs/monsters.json', 'r') as f:
+            with open('data/npcs/monsters.json', 'r') as f:
                 monsters_data = json.load(f)
         except Exception as e:
             await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but something went wrong with the ancient magic...")
+            print(f"[ERROR] Failed to load monsters.json: {e}")
             return
 
         # Select a random monster
@@ -1290,16 +1335,26 @@ Gold:          {char['gold']}
 
         # Find item in player inventory
         inventory = character.get('inventory', [])
+
+        # Debug logging
+        from server.utils.logger import get_logger
+        logger = get_logger()
+        logger.info(f"[SELL] Searching for '{item_name}' in inventory")
+        logger.info(f"[SELL] Inventory has {len(inventory)} items")
+        for i, item in enumerate(inventory):
+            logger.info(f"[SELL]   {i}: {item}")
+
         item_to_sell, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
 
-        if match_type == 'none':
+        logger.info(f"[SELL] Match result: match_type='{match_type}', item_to_sell={item_to_sell}, item_index={item_index}")
+
+        if match_type == 'none' or item_to_sell is None:
             await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name} to sell.")
             return
         elif match_type == 'multiple':
-            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
-            match_list = ", ".join(matches)
-            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
-            return
+            # If multiple matches, just sell the first one
+            # This is the standard MUD behavior - "sell bread" sells one bread if you have multiple
+            pass  # item_to_sell and item_index are already set to the first match
 
         # Calculate sell price (typically half of value)
         sell_price = max(1, item_to_sell.get('value', 10) // 2)
@@ -1368,6 +1423,15 @@ Gold:          {char['gold']}
                             health_status = " It looks near death."
 
                     await self.game_engine.connection_manager.send_message(player_id, f"You look at the {mob['name']}: {description}{health_status}")
+                    return
+
+        # Check for NPCs
+        room = self.game_engine.world_manager.get_room(room_id)
+        if room and room.npcs:
+            for npc in room.npcs:
+                if target_lower in npc.name.lower() or target_lower in npc.npc_id.lower():
+                    description = npc.description
+                    await self.game_engine.connection_manager.send_message(player_id, f"You look at {npc.name}: {description}")
                     return
 
         # Check for vendors
@@ -1921,6 +1985,130 @@ Gold:          {char['gold']}
         xp_for_next_level = self.calculate_xp_for_level(current_level + 1)
         return xp_for_next_level - current_xp
 
+    async def _handle_reroll_command(self, player_id: int, character: dict):
+        """Handle the reroll command to reroll stats for level 1 characters."""
+        # Check if character is level 1
+        if character.get('level', 1) != 1:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "You can only reroll stats at level 1!"
+            )
+            return
+
+        # Check if character has gained any experience
+        if character.get('experience', 0) > 0:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "You can only reroll stats if you haven't gained any experience yet!"
+            )
+            return
+
+        # Get race and class data
+        races = self._load_races()
+        classes = self._load_classes()
+
+        # Find race key from name
+        race_key = None
+        for key, data in races.items():
+            if data['name'] == character.get('species'):
+                race_key = key
+                break
+
+        # Find class key from name
+        class_key = None
+        for key, data in classes.items():
+            if data['name'] == character.get('class'):
+                class_key = key
+                break
+
+        if not race_key or not class_key:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "Error: Could not find your race or class data."
+            )
+            return
+
+        race_data = races[race_key]
+        class_data = classes[class_key]
+
+        # Roll new random stats (3d6 for each stat)
+        import random
+        def roll_stat():
+            return sum(random.randint(1, 6) for _ in range(3))
+
+        old_stats = {
+            'strength': character.get('strength', 10),
+            'dexterity': character.get('dexterity', 10),
+            'constitution': character.get('constitution', 10),
+            'intellect': character.get('intellect', 10),
+            'wisdom': character.get('wisdom', 10),
+            'charisma': character.get('charisma', 10)
+        }
+
+        base_stats = {
+            'strength': roll_stat(),
+            'dexterity': roll_stat(),
+            'constitution': roll_stat(),
+            'intellect': roll_stat(),
+            'wisdom': roll_stat(),
+            'charisma': roll_stat()
+        }
+
+        # Apply race modifiers
+        for stat, value in race_data.get('stat_modifiers', {}).items():
+            base_stats[stat] = base_stats.get(stat, 10) + value
+
+        # Apply class modifiers
+        for stat, value in class_data.get('stat_modifiers', {}).items():
+            base_stats[stat] = base_stats.get(stat, 10) + value
+
+        # Update character stats
+        character.update(base_stats)
+
+        # Recalculate max hit points
+        constitution = character['constitution']
+        hp_modifier = class_data.get('hp_modifier', 1.0)
+        base_hp = constitution * 5
+        random_hp = random.randint(1, 10)
+        max_hp = int((base_hp + random_hp) * hp_modifier)
+
+        # Recalculate max mana
+        intellect = character['intellect']
+        mana_modifier = class_data.get('mana_modifier', 1.0)
+        base_mana = intellect * 3
+        random_mana = random.randint(1, 5)
+        max_mana = int((base_mana + random_mana) * mana_modifier)
+
+        # Update HP and mana
+        old_max_hp = character.get('max_hit_points', 0)
+        old_max_mana = character.get('max_mana', 0)
+
+        character['max_hit_points'] = max_hp
+        character['health'] = max_hp
+        character['current_hit_points'] = max_hp
+        character['max_mana'] = max_mana
+        character['mana'] = max_mana
+        character['current_mana'] = max_mana
+
+        # Update max encumbrance based on new strength
+        self.game_engine.player_manager.update_encumbrance(character)
+
+        # Show before and after stats
+        reroll_msg = f"""
+=== Stats Rerolled! ===
+
+Old Stats:
+STR: {old_stats['strength']}  DEX: {old_stats['dexterity']}  CON: {old_stats['constitution']}
+INT: {old_stats['intellect']}  WIS: {old_stats['wisdom']}  CHA: {old_stats['charisma']}
+HP: {old_max_hp}  Mana: {old_max_mana}
+
+New Stats:
+STR: {character['strength']}  DEX: {character['dexterity']}  CON: {character['constitution']}
+INT: {character['intellect']}  WIS: {character['wisdom']}  CHA: {character['charisma']}
+HP: {max_hp}  Mana: {max_mana}
+"""
+        await self.game_engine.connection_manager.send_message(player_id, reroll_msg)
+
     async def _handle_train_command(self, player_id: int, character: dict):
         """Handle the train command to level up."""
         room_id = character.get('room_id')
@@ -1935,10 +2123,11 @@ Gold:          {char['gold']}
             return
 
         has_trainer = False
-        npc_ids = room.npcs if hasattr(room, 'npcs') else []
+        npcs = room.npcs if hasattr(room, 'npcs') else []
 
-        for npc_id in npc_ids:
-            npc_data = self.game_engine.world_manager.get_npc_data(npc_id)
+        for npc in npcs:
+            # Get NPC data from world manager using npc_id
+            npc_data = self.game_engine.world_manager.get_npc_data(npc.npc_id)
             if npc_data:
                 services = npc_data.get('services', [])
                 if 'trainer' in services or 'level_up' in services:
@@ -2037,3 +2226,450 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             username = self.game_engine.player_manager.get_player_data(player_id).get('username')
             if username:
                 self.game_engine.player_storage.save_character(username, character)
+
+    async def _handle_admin_give_gold(self, player_id: int, character: dict, params: str):
+        """Admin command to give gold to the current player."""
+        try:
+            amount = int(params.strip())
+            if amount <= 0:
+                await self.game_engine.connection_manager.send_message(player_id, "Amount must be positive.")
+                return
+
+            # Add gold to character
+            current_gold = character.get('gold', 0)
+            character['gold'] = current_gold + amount
+
+            # Update encumbrance for gold weight change
+            self.game_engine.player_manager.update_encumbrance(character)
+
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Added {amount} gold. You now have {character['gold']} gold."
+            )
+
+        except ValueError:
+            await self.game_engine.connection_manager.send_message(player_id, "Invalid amount. Usage: givegold <amount>")
+
+    async def _handle_admin_give_item(self, player_id: int, character: dict, params: str):
+        """Admin command to give an item to the current player."""
+        item_id = params.strip().lower()
+
+        # Load item from items.json
+        import json
+        try:
+            with open('data/items/items.json', 'r') as f:
+                items_data = json.load(f)
+        except Exception as e:
+            await self.game_engine.connection_manager.send_message(player_id, f"[ADMIN] Error loading items data: {e}")
+            return
+
+        # Get the items dictionary
+        items = items_data.get('items', {})
+        if not items:
+            await self.game_engine.connection_manager.send_message(player_id, "[ADMIN] No items found in items.json")
+            return
+
+        # Find the item
+        if item_id not in items:
+            await self.game_engine.connection_manager.send_message(player_id, f"[ADMIN] Item '{item_id}' not found. Available items: {', '.join(list(items.keys())[:10])}...")
+            return
+
+        item_config = items[item_id]
+
+        # Create item instance
+        import uuid
+        item_instance = {
+            'id': str(uuid.uuid4()),
+            'item_id': item_id,
+            'name': item_config.get('name', item_id),
+            'type': item_config.get('type', 'misc'),
+            'weight': item_config.get('weight', 0),
+        }
+
+        # Add item-specific properties
+        if 'damage' in item_config:
+            item_instance['damage'] = item_config['damage']
+        if 'armor_class' in item_config:
+            item_instance['armor_class'] = item_config['armor_class']
+        if 'properties' in item_config:
+            item_instance['properties'] = item_config['properties']
+
+        # Check encumbrance
+        current_encumbrance = self.game_engine.player_manager.calculate_encumbrance(character)
+        max_encumbrance = self.game_engine.player_manager.calculate_max_encumbrance(character)
+        item_weight = item_instance.get('weight', 0)
+
+        if current_encumbrance + item_weight > max_encumbrance:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Cannot add item: would exceed max encumbrance ({max_encumbrance})."
+            )
+            return
+
+        # Add to inventory
+        if 'inventory' not in character:
+            character['inventory'] = []
+        character['inventory'].append(item_instance)
+
+        # Update encumbrance
+        self.game_engine.player_manager.update_encumbrance(character)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"[ADMIN] Added {item_instance['name']} to your inventory."
+        )
+
+    async def _handle_admin_give_xp(self, player_id: int, character: dict, params: str):
+        """Admin command to give experience to the current player."""
+        try:
+            amount = int(params.strip())
+            if amount <= 0:
+                await self.game_engine.connection_manager.send_message(player_id, "Amount must be positive.")
+                return
+
+            # Add experience
+            current_xp = character.get('experience', 0)
+            character['experience'] = current_xp + amount
+
+            # Check for level up
+            current_level = character.get('level', 1)
+            xp_for_next = self.calculate_xp_for_level(current_level + 1)
+
+            if character['experience'] >= xp_for_next:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"[ADMIN] Added {amount} XP. You now have {character['experience']} XP.\nYou have enough XP to level up! Find a trainer and use 'train' command."
+                )
+            else:
+                xp_remaining = xp_for_next - character['experience']
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"[ADMIN] Added {amount} XP. You now have {character['experience']} XP. ({xp_remaining} XP until level {current_level + 1})"
+                )
+
+        except ValueError:
+            await self.game_engine.connection_manager.send_message(player_id, "Invalid amount. Usage: givexp <amount>")
+
+    async def _handle_admin_mob_status(self, player_id: int):
+        """Admin command to show all mobs and their status."""
+        total_mobs = 0
+        wandering_count = 0
+        lair_count = 0
+        gong_count = 0
+        other_count = 0
+
+        status_msg = "[ADMIN] Mob Status Report\n" + "=" * 50 + "\n\n"
+
+        for room_id, mobs in self.game_engine.room_mobs.items():
+            if not mobs:
+                continue
+
+            room_mob_count = len([m for m in mobs if m is not None])
+            if room_mob_count == 0:
+                continue
+
+            status_msg += f"Room: {room_id} ({room_mob_count} mobs)\n"
+
+            for mob in mobs:
+                if mob is None:
+                    continue
+
+                total_mobs += 1
+                mob_name = mob.get('name', 'Unknown')
+                mob_hp = mob.get('health', 0)
+                mob_max_hp = mob.get('max_health', 0)
+                mob_level = mob.get('level', 1)
+
+                flags = []
+                if mob.get('is_wandering'):
+                    flags.append('WANDERING')
+                    wandering_count += 1
+                elif mob.get('is_lair_mob'):
+                    flags.append('LAIR')
+                    lair_count += 1
+                elif mob.get('spawned_by_gong'):
+                    flags.append('GONG')
+                    gong_count += 1
+                else:
+                    flags.append('OTHER')
+                    other_count += 1
+
+                flag_str = ', '.join(flags) if flags else 'NONE'
+                status_msg += f"  - {mob_name} (Lv{mob_level}) HP:{mob_hp}/{mob_max_hp} [{flag_str}]\n"
+
+            status_msg += "\n"
+
+        status_msg += "=" * 50 + "\n"
+        status_msg += f"Total Mobs: {total_mobs}\n"
+        status_msg += f"  Wandering: {wandering_count}\n"
+        status_msg += f"  Lair: {lair_count}\n"
+        status_msg += f"  Gong-spawned: {gong_count}\n"
+        status_msg += f"  Other: {other_count}\n"
+
+        movement_chance = self.game_engine.config_manager.get_setting('dungeon', 'wandering_mobs', 'movement_chance', default=0.2)
+        enabled = self.game_engine.config_manager.get_setting('dungeon', 'wandering_mobs', 'enabled', default=False)
+        status_msg += f"\nWandering System: {'ENABLED' if enabled else 'DISABLED'}\n"
+        status_msg += f"Movement Chance: {movement_chance * 100}% per tick\n"
+
+        await self.game_engine.connection_manager.send_message(player_id, status_msg)
+
+    async def _handle_admin_teleport(self, player_id: int, character: dict, params: str):
+        """Admin command to teleport self or another player to a room.
+
+        Usage:
+            teleport <room_id>              - Teleport yourself
+            teleport <player_name> <room_id> - Teleport another player
+        """
+        parts = params.strip().split(maxsplit=1)
+
+        if len(parts) == 1:
+            # Teleport self to room
+            target_room_id = parts[0]
+            target_player_id = player_id
+            target_character = character
+            teleporter_name = character.get('name', 'Admin')
+        elif len(parts) == 2:
+            # Teleport another player to room
+            target_player_name = parts[0]
+            target_room_id = parts[1]
+
+            # Find target player
+            target_player_id = None
+            target_character = None
+
+            for pid, pdata in self.game_engine.player_manager.connected_players.items():
+                char = pdata.get('character')
+                if char and char.get('name', '').lower() == target_player_name.lower():
+                    target_player_id = pid
+                    target_character = char
+                    break
+
+            if not target_player_id:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"[ADMIN] Player '{target_player_name}' not found or not online."
+                )
+                return
+
+            teleporter_name = character.get('name', 'Admin')
+        else:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "Usage: teleport <room_id> OR teleport <player_name> <room_id>"
+            )
+            return
+
+        # Verify target room exists
+        target_room = self.game_engine.world_manager.get_room(target_room_id)
+        if not target_room:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Room '{target_room_id}' does not exist."
+            )
+            return
+
+        # Get old room
+        old_room_id = target_character.get('room_id')
+        target_name = target_character.get('name', 'Someone')
+
+        # Notify players in old room
+        if old_room_id:
+            await self.game_engine._notify_room_except_player(
+                old_room_id,
+                target_player_id,
+                f"{target_name} vanishes in a flash of light!"
+            )
+
+        # Update character's room
+        target_character['room_id'] = target_room_id
+
+        # Notify players in new room
+        await self.game_engine._notify_room_except_player(
+            target_room_id,
+            target_player_id,
+            f"{target_name} appears in a flash of light!"
+        )
+
+        # Show room description to teleported player
+        await self.game_engine.world_manager.send_room_description(target_player_id, detailed=True)
+
+        # Confirm to admin
+        if target_player_id == player_id:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Teleported to {target_room_id} ({target_room.title})"
+            )
+        else:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Teleported {target_name} to {target_room_id} ({target_room.title})"
+            )
+            await self.game_engine.connection_manager.send_message(
+                target_player_id,
+                f"[ADMIN] You have been teleported to {target_room.title} by {teleporter_name}!"
+            )
+    async def _handle_quest_log(self, player_id: int, character: dict):
+        """Show the player's quest log."""
+        quests = character.get('quests', {})
+
+        if not quests:
+            await self.game_engine.connection_manager.send_message(player_id, "You have no active quests.")
+            return
+
+        quest_list = ["=== Quest Log ===\n"]
+
+        for quest_id, quest_progress in quests.items():
+            quest = self.game_engine.quest_manager.get_quest(quest_id)
+            if not quest:
+                continue
+
+            status = "COMPLETED" if quest_progress.get('completed') else "IN PROGRESS"
+            quest_list.append(f"[{status}] {quest['name']}")
+
+            if not quest_progress.get('completed'):
+                # Show objectives
+                for i, objective in enumerate(quest.get('objectives', [])):
+                    obj_progress = quest_progress['objectives'].get(i, {})
+                    progress = obj_progress.get('progress', 0)
+                    required = obj_progress.get('required', 1)
+                    quest_list.append(f"  - {progress}/{required} {objective['type']} {objective.get('target', '')}")
+
+            quest_list.append("")
+
+        await self.game_engine.connection_manager.send_message(player_id, "\n".join(quest_list))
+
+    async def _handle_talk_to_npc(self, player_id: int, character: dict, npc_name: str):
+        """Talk to an NPC to interact with quests."""
+        room_id = character.get('room_id')
+        if not room_id:
+            return
+
+        # Get the player's current room
+        room = self.game_engine.world_manager.get_room(room_id)
+        if not room:
+            await self.game_engine.connection_manager.send_message(player_id, "You are nowhere.")
+            return
+
+        # Check if there are any NPCs in the room
+        if not room.npcs:
+            await self.game_engine.connection_manager.send_message(player_id, "There is no one here to talk to.")
+            return
+
+        # Find NPC in the current room by partial name match
+        npc_obj = None
+        npc_name_lower = npc_name.lower()
+        for npc in room.npcs:
+            if npc_name_lower in npc.name.lower() or npc_name_lower in npc.npc_id.lower():
+                npc_obj = npc
+                break
+
+        if not npc_obj:
+            await self.game_engine.connection_manager.send_message(player_id, f"There is no '{npc_name}' here.")
+            return
+
+        # Load NPC data from JSON to get quest and dialogue information
+        import json
+        import os
+        npcs_file = os.path.join('data', 'npcs', 'npcs.json')
+        if not os.path.exists(npcs_file):
+            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} has nothing to say.")
+            return
+
+        try:
+            with open(npcs_file, 'r') as f:
+                npcs = json.load(f)
+        except:
+            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} has nothing to say.")
+            return
+
+        # Find the NPC data by id
+        npc_data = None
+        for npc in npcs:
+            if npc['id'] == npc_obj.npc_id:
+                npc_data = npc
+                break
+
+        if not npc_data:
+            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} has nothing to say.")
+            return
+
+        # Check if NPC has quests
+        npc_quests = npc_data.get('quests', [])
+        if not npc_quests:
+            greeting = npc_data.get('dialogue', {}).get('greeting', f"{npc_data['name']} has nothing to say.")
+            await self.game_engine.connection_manager.send_message(player_id, greeting)
+            return
+
+        # Handle quest interaction
+        for quest_id in npc_quests:
+            quest = self.game_engine.quest_manager.get_quest(quest_id)
+            if not quest:
+                continue
+
+            # Check if player has completed the quest
+            if self.game_engine.quest_manager.is_quest_complete(character, quest_id):
+                # Check if player has already been rewarded
+                if character.get('quests', {}).get(quest_id, {}).get('rewarded'):
+                    completed_already = npc_data.get('dialogue', {}).get('quest_completed_already', "I have nothing more for you.")
+                    await self.game_engine.connection_manager.send_message(player_id, completed_already)
+                else:
+                    # Give reward
+                    quest_complete_msg = npc_data.get('dialogue', {}).get('quest_complete', "You have completed the quest!")
+                    await self.game_engine.connection_manager.send_message(player_id, quest_complete_msg)
+
+                    self.game_engine.quest_manager.give_quest_reward(character, quest_id)
+
+                    # Show rewards
+                    rewards = quest.get('rewards', {})
+                    reward_msgs = []
+                    if 'experience' in rewards:
+                        reward_msgs.append(f"You gain {rewards['experience']} experience!")
+                    if 'gold' in rewards:
+                        reward_msgs.append(f"You receive {rewards['gold']} gold!")
+                    if 'rune' in rewards:
+                        reward_msgs.append(f"You have been granted the {rewards['rune'].title()} Rune!")
+
+                    if reward_msgs:
+                        await self.game_engine.connection_manager.send_message(player_id, "\n".join(reward_msgs))
+                return
+
+            # Check if player has the quest
+            if self.game_engine.quest_manager.has_quest(character, quest_id):
+                in_progress = npc_data.get('dialogue', {}).get('quest_in_progress', "You are working on my quest.")
+                await self.game_engine.connection_manager.send_message(player_id, in_progress)
+                return
+
+            # Offer the quest
+            can_accept, reason = self.game_engine.quest_manager.can_accept_quest(character, quest_id)
+            if not can_accept:
+                await self.game_engine.connection_manager.send_message(player_id, reason)
+                return
+
+            quest_available = npc_data.get('dialogue', {}).get('quest_available', "I have a quest for you.")
+            await self.game_engine.connection_manager.send_message(player_id, quest_available)
+            await self.game_engine.connection_manager.send_message(player_id, f"\nType 'accept {quest_id}' to accept this quest.")
+            return
+
+        # No quest interaction needed
+        greeting = npc_data.get('dialogue', {}).get('greeting', f"{npc_data['name']} greets you.")
+        await self.game_engine.connection_manager.send_message(player_id, greeting)
+
+    async def _handle_accept_quest(self, player_id: int, character: dict, quest_id: str):
+        """Accept a quest."""
+        quest_id = quest_id.strip()
+        quest = self.game_engine.quest_manager.get_quest(quest_id)
+
+        if not quest:
+            await self.game_engine.connection_manager.send_message(player_id, f"Unknown quest: {quest_id}")
+            return
+
+        can_accept, reason = self.game_engine.quest_manager.can_accept_quest(character, quest_id)
+        if not can_accept:
+            await self.game_engine.connection_manager.send_message(player_id, reason)
+            return
+
+        if self.game_engine.quest_manager.accept_quest(character, quest_id):
+            await self.game_engine.connection_manager.send_message(player_id, f"Quest accepted: {quest['name']}")
+            await self.game_engine.connection_manager.send_message(player_id, f"{quest['description']}")
+        else:
+            await self.game_engine.connection_manager.send_message(player_id, "Failed to accept quest.")

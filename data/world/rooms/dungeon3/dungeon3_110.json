@@ -1,0 +1,14 @@
+{
+  "id": "dungeon3_110",
+  "title": "Large cave",
+  "description": "You've entered what is obviously home to some wild beast. Likely some subterranian predator. Old gnawed bones and claw marks on the floor and walls of this small cave tell you that, as do the bones and meat from several freshly killed humanoids of some sort. The only visible exit lies to the west.",
+  "area_id": "dungeon3",
+  "is_safe": false,
+  "light_level": 0.05,
+  "exits": {
+    "west": "dungeon3_136"
+  },
+  "is_lair": true,
+  "lair_monster": "dungeon_champion",
+  "respawn_time": 300
+}

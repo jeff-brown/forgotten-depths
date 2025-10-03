@@ -1,0 +1,1872 @@
+[
+  {
+    "id": 110,
+    "defaultDescription": "101",
+    "altDescription": "101",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "136",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "63",
+        "numberOfMobs": "2",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You are in a large cave.",
+    "altDescriptionText": "You are in a large cave.",
+    "defaultLongDescriptionText": "You've entered what is obviously home to some wild beast. Likely some\nsubterranian predator. Old gnawed bones and claw marks on the floor and\nwalls of this small cave tell you that, as do the bones and meat from\nseveral freshly killed humanoids of some sort. The only visible exit\nlies to the west.",
+    "altLongDescriptionText": "You've entered what is obviously home to some wild beast. Likely some\nsubterranian predator. Old gnawed bones and claw marks on the floor and\nwalls of this small cave tell you that, as do the bones and meat from\nseveral freshly killed humanoids of some sort. The only visible exit\nlies to the west."
+  },
+  {
+    "id": 111,
+    "defaultDescription": "103",
+    "altDescription": "103",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "181",
+        "exitDirection": "NORTH",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.ItemKeyDoor",
+          "v0": "43",
+          "v3": "5",
+          "v4": "0",
+          "v5": "3",
+          "v6": "1"
+        }
+      },
+      {
+        "toRoom": "171",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "84",
+        "numberOfMobs": "1",
+        "item": "43"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're in an enormous natural cavern.",
+    "altDescriptionText": "You're in an enormous natural cavern.",
+    "defaultLongDescriptionText": "You stare in wonder and the vastness and sheer beauty of the cavern\nbefore you. You have heard of caverns such as this, where subteranian\nstreams and thousands of years of time wear away rock and create scenery\nthat can be seen no place else. You peer into the darkness between natural\nformations including stalagtites and stalagmites, some over twenty feet\ntall. Something about this chamber unnerves you, despite the apparently\npeaceful setting. From what you can see, the only exit is to the west.",
+    "altLongDescriptionText": "You stare in wonder and the vastness and sheer beauty of the cavern\nbefore you. You have heard of caverns such as this, where subteranian\nstreams and thousands of years of time wear away rock and create scenery\nthat can be seen no place else. You peer into the darkness between natural\nformations including stalagtites and stalagmites, some over twenty feet\ntall. Something about this chamber unnerves you, despite the apparently\npeaceful setting. From what you can see, the only exit is to the west."
+  },
+  {
+    "id": 108,
+    "defaultDescription": "97",
+    "altDescription": "97",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "115",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "107",
+        "exitDirection": "UP"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You at the bottom of a stairwell.",
+    "altDescriptionText": "You at the bottom of a stairwell.",
+    "defaultLongDescriptionText": "You are now at the bottom of a long winding stair that leads up into\nthe darkness. This room is very damp and there is a smell of fungi and\nand rot all around you. A strange shuffling sound echos down the passage\nto the north, which seems to be the only other exit to this foreboding\ncavern.",
+    "altLongDescriptionText": "You are now at the bottom of a long winding stair that leads up into\nthe darkness. This room is very damp and there is a smell of fungi and\nand rot all around you. A strange shuffling sound echos down the passage\nto the north, which seems to be the only other exit to this foreboding\ncavern."
+  },
+  {
+    "id": 109,
+    "defaultDescription": "99",
+    "altDescription": "99",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "132",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "77",
+        "numberOfMobs": "2",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You are in an enormous cavern.",
+    "altDescriptionText": "You are in an enormous cavern.",
+    "defaultLongDescriptionText": "The ceiling of this enormous cavern is shrouded in darkness high above\nyour head. A huge tapestry covers the northern wall from the floor to\nsome forty feet above your head. The tapestry depicts a battle between\nsome exceptionally large members of the race of stone giants and a great\ndragon with razor talons and teeth as large and sharp as sabres. The\nonly exit lies through an archway to the northwest.",
+    "altLongDescriptionText": "The ceiling of this enormous cavern is shrouded in darkness high above\nyour head. A huge tapestry covers the northern wall from the floor to\nsome forty feet above your head. The tapestry depicts a battle between\nsome exceptionally large members of the race of stone giants and a great\ndragon with razor talons and teeth as large and sharp as sabres. The\nonly exit lies through an archway to the northwest."
+  },
+  {
+    "id": 119,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "120",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "118",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 118,
+    "defaultDescription": "55",
+    "altDescription": "55",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "119",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "117",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "137",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, southeast\nand west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, southeast\nand west."
+  },
+  {
+    "id": 117,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "116",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "118",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 116,
+    "defaultDescription": "49",
+    "altDescription": "49",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "115",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "117",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south."
+  },
+  {
+    "id": 115,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "116",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "108",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  },
+  {
+    "id": 114,
+    "defaultDescription": "109",
+    "altDescription": "109",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "139",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "138",
+        "exitDirection": "EAST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "65",
+        "numberOfMobs": "2",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're in small cavern.",
+    "altDescriptionText": "You're in small cavern.",
+    "defaultLongDescriptionText": "You are standing in a small cavern at the corner of two passages. One\nleads to the north, the other to the east. This cavern smells terrible\nand is littered with tattered rags and bits of bone.",
+    "altLongDescriptionText": "You are standing in a small cavern at the corner of two passages. One\nleads to the north, the other to the east. This cavern smells terrible\nand is littered with tattered rags and bits of bone."
+  },
+  {
+    "id": 113,
+    "defaultDescription": "107",
+    "altDescription": "107",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "145",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "161",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "144",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "69",
+        "numberOfMobs": "1",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're at an intersection.",
+    "altDescriptionText": "You're at an intersection.",
+    "defaultLongDescriptionText": "You are standing in a large cavern at the intersection of three passages.\nThey exit to the east, west, and north. This chamber smells strongly of\nthe dung of some beast you've apparently never before encountered. Many\ncrimson stains and scorch marks on the floor and walls belie the carnage\nthat must have taken place here at one time.",
+    "altLongDescriptionText": "You are standing in a large cavern at the intersection of three passages.\nThey exit to the east, west, and north. This chamber smells strongly of\nthe dung of some beast you've apparently never before encountered. Many\ncrimson stains and scorch marks on the floor and walls belie the carnage\nthat must have taken place here at one time."
+  },
+  {
+    "id": 112,
+    "defaultDescription": "105",
+    "altDescription": "105",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "178",
+        "exitDirection": "EAST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "66",
+        "numberOfMobs": "2",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a dark cavern.",
+    "altDescriptionText": "You're in a dark cavern.",
+    "defaultLongDescriptionText": "Something about the shadows in the furthest reaches of this chamber\nmake the light your torch casts seem feeble. The darkness in the place\nseems somewhat unnatural and sinister. The only apparent exit is to the\neast.",
+    "altLongDescriptionText": "Something about the shadows in the furthest reaches of this chamber\nmake the light your torch casts seem feeble. The darkness in the place\nseems somewhat unnatural and sinister. The only apparent exit is to the\neast."
+  },
+  {
+    "id": 127,
+    "defaultDescription": "81",
+    "altDescription": "81",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "126",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "129",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "128",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an\neerie greenish light. The exits are to the northeast, southeast, and\nsouthwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an\neerie greenish light. The exits are to the northeast, southeast, and\nsouthwest."
+  },
+  {
+    "id": 126,
+    "defaultDescription": "33",
+    "altDescription": "33",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "125",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "127",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest."
+  },
+  {
+    "id": 125,
+    "defaultDescription": "67",
+    "altDescription": "67",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "133",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "130",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "126",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "124",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north, south, east, and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north, south, east, and west."
+  },
+  {
+    "id": 124,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "125",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "123",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 123,
+    "defaultDescription": "29",
+    "altDescription": "29",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "124",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "122",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest."
+  },
+  {
+    "id": 122,
+    "defaultDescription": "25",
+    "altDescription": "25",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "123",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "121",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west."
+  },
+  {
+    "id": 121,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "122",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "120",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 120,
+    "defaultDescription": "45",
+    "altDescription": "45",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "121",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "119",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest."
+  },
+  {
+    "id": 137,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "118",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "138",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 136,
+    "defaultDescription": "45",
+    "altDescription": "45",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "110",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "135",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest."
+  },
+  {
+    "id": 139,
+    "defaultDescription": "49",
+    "altDescription": "49",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "114",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "140",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south."
+  },
+  {
+    "id": 138,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "137",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "114",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 141,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "142",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "140",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 140,
+    "defaultDescription": "63",
+    "altDescription": "63",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "141",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "139",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southeast."
+  },
+  {
+    "id": 143,
+    "defaultDescription": "45",
+    "altDescription": "45",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "144",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "142",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest."
+  },
+  {
+    "id": 142,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "143",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "141",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 129,
+    "defaultDescription": "15",
+    "altDescription": "15",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "127",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest."
+  },
+  {
+    "id": 128,
+    "defaultDescription": "13",
+    "altDescription": "13",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "127",
+        "exitDirection": "NORTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast."
+  },
+  {
+    "id": 131,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "132",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "130",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 130,
+    "defaultDescription": "25",
+    "altDescription": "25",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "131",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "125",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west."
+  },
+  {
+    "id": 133,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "134",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "125",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  },
+  {
+    "id": 132,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "109",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "131",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 135,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "136",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "134",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 134,
+    "defaultDescription": "21",
+    "altDescription": "21",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "135",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "133",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south."
+  },
+  {
+    "id": 152,
+    "defaultDescription": "29",
+    "altDescription": "29",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "151",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "153",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest."
+  },
+  {
+    "id": 153,
+    "defaultDescription": "53",
+    "altDescription": "53",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "154",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "152",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "156",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast, southwest\nand north.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast, southwest\nand north."
+  },
+  {
+    "id": 154,
+    "defaultDescription": "69",
+    "altDescription": "69",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "153",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "155",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the south and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the south and west."
+  },
+  {
+    "id": 155,
+    "defaultDescription": "75",
+    "altDescription": "75",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "154",
+        "exitDirection": "EAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the east.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the east."
+  },
+  {
+    "id": 156,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "153",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "157",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 157,
+    "defaultDescription": "31",
+    "altDescription": "31",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "156",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "159",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "158",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, south, and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, south, and west."
+  },
+  {
+    "id": 158,
+    "defaultDescription": "75",
+    "altDescription": "75",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "157",
+        "exitDirection": "EAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the east.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the east."
+  },
+  {
+    "id": 159,
+    "defaultDescription": "37",
+    "altDescription": "37",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "157",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "160",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast."
+  },
+  {
+    "id": 144,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "113",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "143",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 145,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "146",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "113",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  },
+  {
+    "id": 146,
+    "defaultDescription": "69",
+    "altDescription": "69",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "145",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "147",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the south and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the south and west."
+  },
+  {
+    "id": 147,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "146",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "149",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 148,
+    "defaultDescription": "71",
+    "altDescription": "71",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "149",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the south."
+  },
+  {
+    "id": 149,
+    "defaultDescription": "73",
+    "altDescription": "73",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "148",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "147",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "150",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north, east, and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north, east, and west."
+  },
+  {
+    "id": 150,
+    "defaultDescription": "45",
+    "altDescription": "45",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "149",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "151",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest."
+  },
+  {
+    "id": 151,
+    "defaultDescription": "57",
+    "altDescription": "57",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "150",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "152",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and west."
+  },
+  {
+    "id": 171,
+    "defaultDescription": "45",
+    "altDescription": "45",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "111",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "170",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest."
+  },
+  {
+    "id": 170,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "171",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "169",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 169,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "170",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "168",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 168,
+    "defaultDescription": "57",
+    "altDescription": "57",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "169",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "167",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and west."
+  },
+  {
+    "id": 175,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "174",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "176",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 174,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "173",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "175",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 173,
+    "defaultDescription": "49",
+    "altDescription": "49",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "172",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "174",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south."
+  },
+  {
+    "id": 172,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "173",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "166",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  },
+  {
+    "id": 163,
+    "defaultDescription": "79",
+    "altDescription": "79",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "164",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "162",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and west."
+  },
+  {
+    "id": 162,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "163",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "161",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 161,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "162",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "113",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 160,
+    "defaultDescription": "15",
+    "altDescription": "15",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "159",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest."
+  },
+  {
+    "id": 167,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "168",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "166",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 166,
+    "defaultDescription": "77",
+    "altDescription": "77",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "172",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "167",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "165",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north, south, and east.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north, south, and east."
+  },
+  {
+    "id": 165,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "166",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "164",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  },
+  {
+    "id": 164,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "165",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "163",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  },
+  {
+    "id": 178,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "177",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "112",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 179,
+    "defaultDescription": "111",
+    "altDescription": "111",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "76",
+        "exitDirection": "UP",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.ItemKeyDoor",
+          "v0": "22",
+          "v3": "6",
+          "v4": "0",
+          "v5": "0",
+          "v6": "1"
+        }
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a pit.",
+    "altDescriptionText": "You're in a pit.",
+    "defaultLongDescriptionText": "You are at the bottom of a pit. The smooth stone walls rise some ten\nfeet above your head. It doesn't seem likely that you could climb them\nunaided. The remains of those unfortunate enough to become trapped here\nlitter the floor around you.",
+    "altLongDescriptionText": "You are at the bottom of a pit. The smooth stone walls rise some ten\nfeet above your head. It doesn't seem likely that you could climb them\nunaided. The remains of those unfortunate enough to become trapped here\nlitter the floor around you."
+  },
+  {
+    "id": 176,
+    "defaultDescription": "59",
+    "altDescription": "59",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "175",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "177",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west."
+  },
+  {
+    "id": 177,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "176",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "178",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 182,
+    "defaultDescription": "113",
+    "altDescription": "113",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "181",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "TREASURE",
+        "v2": "4",
+        "v3": "1",
+        "v4": "0",
+        "v5": "0",
+        "v6": "1",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a small cave.",
+    "altDescriptionText": "You're in a small cave.",
+    "defaultLongDescriptionText": "You are in a small cave to the north of the dragon's lair. This area\nis rather cramped and well hidden. It looks like it might be used to\nconceal valuables.",
+    "altLongDescriptionText": "You are in a small cave to the north of the dragon's lair. This area\nis rather cramped and well hidden. It looks like it might be used to\nconceal valuables."
+  },
+  {
+    "id": 180,
+    "defaultDescription": "111",
+    "altDescription": "111",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "73",
+        "exitDirection": "UP",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.ItemKeyDoor",
+          "v0": "22",
+          "v3": "6",
+          "v4": "0",
+          "v5": "0",
+          "v6": "1"
+        }
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a pit.",
+    "altDescriptionText": "You're in a pit.",
+    "defaultLongDescriptionText": "You are at the bottom of a pit. The smooth stone walls rise some ten\nfeet above your head. It doesn't seem likely that you could climb them\nunaided. The remains of those unfortunate enough to become trapped here\nlitter the floor around you.",
+    "altLongDescriptionText": "You are at the bottom of a pit. The smooth stone walls rise some ten\nfeet above your head. It doesn't seem likely that you could climb them\nunaided. The remains of those unfortunate enough to become trapped here\nlitter the floor around you."
+  },
+  {
+    "id": 181,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON3",
+    "exits": [
+      {
+        "toRoom": "182",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "111",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "TRAP",
+        "v2": "4",
+        "v3": "0",
+        "v4": "0",
+        "v5": "0",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  }
+]

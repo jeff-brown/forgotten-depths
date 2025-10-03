@@ -5,7 +5,8 @@
   "area_id": "starter_town",
   "exits": {
     "north": "town_path",
-    "west": "magic_shop"
+    "west": "magic_shop",
+    "east": "potion_shop"
   },
   "items": [],
   "npcs": [

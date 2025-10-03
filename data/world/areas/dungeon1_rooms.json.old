@@ -1,0 +1,2782 @@
+[
+  {
+    "id": 0,
+    "defaultDescription": "0",
+    "altDescription": "0",
+    "roomFlags": "0",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [],
+    "lairs": [],
+    "triggers": [],
+    "defaultLongDescriptionText": "You are inside the dungeon entrance.",
+    "altLongDescriptionText": "You are inside the dungeon entrance."
+  },
+  {
+    "id": 1,
+    "defaultDescription": "1",
+    "altDescription": "1",
+    "roomFlags": "0",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "13",
+        "exitDirection": "NORTHEAST",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.ItemKeyDoor",
+          "v0": "38",
+          "v3": "4",
+          "v4": "1",
+          "v5": "2",
+          "v6": "1"
+        }
+      },
+      {
+        "toRoom": "14",
+        "exitDirection": "WEST"
+      },
+      {
+        "toRoom": "-98",
+        "exitDirection": "UP"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "0",
+        "numberOfMobs": "0",
+        "item": "0"
+      }
+    ],
+    "triggers": [
+      {
+        "triggerType": "NONE",
+        "v2": "0",
+        "v3": "0",
+        "v4": "0",
+        "v5": "0",
+        "v6": "0",
+        "v7": "0",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You are inside the dungeon entrance.",
+    "altDescriptionText": "You are inside the dungeon entrance.",
+    "defaultLongDescriptionText": "You are standing inside the entrance to the dungeon. This rounded\nstone and earth room bears the marks of digging tools and a number of\nassorted claw and hoof marks in the walls and floor. The only obvious\nexits are back up the stone stairway you just decended, to the west,\ndown a plain earthen tunnel, and to the northeast through an enormous\nrough-hewn stone door.",
+    "altLongDescriptionText": "You are standing inside the entrance to the dungeon. This rounded\nstone and earth room bears the marks of digging tools and a number of\nassorted claw and hoof marks in the walls and floor. The only obvious\nexits are back up the stone stairway you just decended, to the west,\ndown a plain earthen tunnel, and to the northeast through an enormous\nrough-hewn stone door."
+  },
+  {
+    "id": 2,
+    "defaultDescription": "3",
+    "altDescription": "3",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "18",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "19",
+        "exitDirection": "SOUTHEAST",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.ItemKeyDoor",
+          "v0": "39",
+          "v3": "1",
+          "v4": "1",
+          "v5": "3",
+          "v6": "1"
+        }
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "52",
+        "numberOfMobs": "1",
+        "item": "39"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You are in a large cavern.",
+    "altDescriptionText": "You are in a large cavern.",
+    "defaultLongDescriptionText": "You stand in a large cavern cluttered with stalagmites and stalagtites\nthat divide the room into many smaller chambers and passages and limit\nvision in any direction to a few feet. The maze-like form of this cavern\nis somewhat unnerving, as if someone or something had used natural forces\nto create a very unnatural labyrinth. You have entered the lair of the\nminotaur. The only exits are to the north and through an iron bound\noak door to the southeast.",
+    "altLongDescriptionText": "You stand in a large cavern cluttered with stalagmites and stalagtites\nthat divide the room into many smaller chambers and passages and limit\nvision in any direction to a few feet. The maze-like form of this cavern\nis somewhat unnerving, as if someone or something had used natural forces\nto create a very unnatural labyrinth. You have entered the lair of the\nminotaur. The only exits are to the north and through an iron bound\noak door to the southeast."
+  },
+  {
+    "id": 3,
+    "defaultDescription": "5",
+    "altDescription": "5",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "21",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "39",
+        "exitDirection": "EAST",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.ItemKeyDoor",
+          "v0": "40",
+          "v3": "2",
+          "v4": "1",
+          "v5": "3",
+          "v6": "1"
+        }
+      },
+      {
+        "toRoom": "33",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "32",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "55",
+        "numberOfMobs": "1",
+        "item": "40"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You are in a filthy cavern.",
+    "altDescriptionText": "You are in a filthy cavern.",
+    "defaultLongDescriptionText": "You are now in a fairly large, but somewhat filthy cavern which smells\nof urine and excrement. Tattered rags, broken bones, as well as ruined\nweapons litter the floor. You get a great sense of foreboding as you\nrealize the carnage that must have taken place here. Caves exit to the\nnorth, south, and southwest. There is also an iron door to the east.",
+    "altLongDescriptionText": "You are now in a fairly large, but somewhat filthy cavern which smells\nof urine and excrement. Tattered rags, broken bones, as well as ruined\nweapons litter the floor. You get a great sense of foreboding as you\nrealize the carnage that must have taken place here. Caves exit to the\nnorth, south, and southwest. There is also an iron door to the east."
+  },
+  {
+    "id": 4,
+    "defaultDescription": "7",
+    "altDescription": "7",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "47",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "58",
+        "numberOfMobs": "1",
+        "item": "38"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You are in an enormous cavern.",
+    "altDescriptionText": "You are in an enormous cavern.",
+    "defaultLongDescriptionText": "You gape in awe at the piles of skulls in the center of this huge stone\nroom. The walls of this room are draped with the furs and skins of many\ndifferent types of animals, among which you recognize the furs of several\ncave bears, formidable opponents themselves. The only visible exit is back\nthe way you came.",
+    "altLongDescriptionText": "You gape in awe at the piles of skulls in the center of this huge stone\nroom. The walls of this room are draped with the furs and skins of many\ndifferent types of animals, among which you recognize the furs of several\ncave bears, formidable opponents themselves. The only visible exit is back\nthe way you came."
+  },
+  {
+    "id": 5,
+    "defaultDescription": "9",
+    "altDescription": "9",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "6",
+        "exitDirection": "NORTHEAST",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.ItemKeyDoor",
+          "v0": "41",
+          "v3": "3",
+          "v4": "0",
+          "v5": "0",
+          "v6": "1"
+        }
+      },
+      {
+        "toRoom": "51",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "59",
+        "numberOfMobs": "2",
+        "item": "41"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You are in a huge cavern.",
+    "altDescriptionText": "You are in a huge cavern.",
+    "defaultLongDescriptionText": "The ceiling of this cavern is shrouded in darkness above your head. The\nwhole room is roughly circular with the exit to the south. Though the\nwalls and floor give away the fact that many battles have been fought\nhere, and several of them recently, you see no sign of the slain or the\nequipment they may have carried. To the northeast is an unadorned bronze\ndoor.",
+    "altLongDescriptionText": "The ceiling of this cavern is shrouded in darkness above your head. The\nwhole room is roughly circular with the exit to the south. Though the\nwalls and floor give away the fact that many battles have been fought\nhere, and several of them recently, you see no sign of the slain or the\nequipment they may have carried. To the northeast is an unadorned bronze\ndoor."
+  },
+  {
+    "id": 6,
+    "defaultDescription": "11",
+    "altDescription": "11",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "5",
+        "exitDirection": "SOUTHWEST"
+      },
+      {
+        "toRoom": "52",
+        "exitDirection": "DOWN"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're at the top of a circular stairwell.",
+    "altDescriptionText": "You're at the top of a circular stairwell.",
+    "defaultLongDescriptionText": "You stand in a circular shaft with a stairwell that decends around the\nouter wall into the darkness below. The air in this chamber is somewhat\ncooler than that outside the bronze door. From far below comes a faint\nshuffling sound that is barely audible and which you can make nothing of.",
+    "altLongDescriptionText": "You stand in a circular shaft with a stairwell that decends around the\nouter wall into the darkness below. The air in this chamber is somewhat\ncooler than that outside the bronze door. From far below comes a faint\nshuffling sound that is barely audible and which you can make nothing of."
+  },
+  {
+    "id": 7,
+    "defaultDescription": "21",
+    "altDescription": "21",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "51",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "8",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south."
+  },
+  {
+    "id": 8,
+    "defaultDescription": "33",
+    "altDescription": "33",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "7",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "9",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest."
+  },
+  {
+    "id": 9,
+    "defaultDescription": "43",
+    "altDescription": "43",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "8",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "10",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and northwest."
+  },
+  {
+    "id": 10,
+    "defaultDescription": "25",
+    "altDescription": "25",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "9",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "11",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west."
+  },
+  {
+    "id": 11,
+    "defaultDescription": "29",
+    "altDescription": "29",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "10",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "12",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest."
+  },
+  {
+    "id": 12,
+    "defaultDescription": "25",
+    "altDescription": "25",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "11",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "13",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west."
+  },
+  {
+    "id": 13,
+    "defaultDescription": "45",
+    "altDescription": "45",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "12",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest."
+  },
+  {
+    "id": 14,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "15",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 15,
+    "defaultDescription": "39",
+    "altDescription": "39",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "14",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "16",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west."
+  },
+  {
+    "id": 17,
+    "defaultDescription": "21",
+    "altDescription": "21",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "16",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "18",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south."
+  },
+  {
+    "id": 16,
+    "defaultDescription": "45",
+    "altDescription": "45",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "15",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "17",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest."
+  },
+  {
+    "id": 19,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "20",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "2",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 18,
+    "defaultDescription": "47",
+    "altDescription": "47",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "17",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "2",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south."
+  },
+  {
+    "id": 21,
+    "defaultDescription": "49",
+    "altDescription": "49",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "3",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "20",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south."
+  },
+  {
+    "id": 20,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "21",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "19",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "TRAP",
+        "v2": "0",
+        "v3": "0",
+        "v4": "0",
+        "v5": "0",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 23,
+    "defaultDescription": "23",
+    "altDescription": "23",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "24",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "26",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "22",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and east.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and east."
+  },
+  {
+    "id": 22,
+    "defaultDescription": "13",
+    "altDescription": "13",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "23",
+        "exitDirection": "NORTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast."
+  },
+  {
+    "id": 25,
+    "defaultDescription": "17",
+    "altDescription": "17",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "24",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the southwest."
+  },
+  {
+    "id": 24,
+    "defaultDescription": "21",
+    "altDescription": "21",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "25",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "26",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "23",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south."
+  },
+  {
+    "id": 27,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "28",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "26",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 26,
+    "defaultDescription": "25",
+    "altDescription": "25",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "27",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "23",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west."
+  },
+  {
+    "id": 29,
+    "defaultDescription": "31",
+    "altDescription": "31",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "32",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "30",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "28",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, south, and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, south, and west."
+  },
+  {
+    "id": 28,
+    "defaultDescription": "29",
+    "altDescription": "29",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "29",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "27",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest."
+  },
+  {
+    "id": 31,
+    "defaultDescription": "13",
+    "altDescription": "13",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "30",
+        "exitDirection": "NORTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast."
+  },
+  {
+    "id": 30,
+    "defaultDescription": "33",
+    "altDescription": "33",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "29",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "31",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest."
+  },
+  {
+    "id": 34,
+    "defaultDescription": "49",
+    "altDescription": "49",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "35",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "33",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south."
+  },
+  {
+    "id": 35,
+    "defaultDescription": "53",
+    "altDescription": "53",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "34",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "37",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "36",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast, southwest\nand north.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast, southwest\nand north."
+  },
+  {
+    "id": 32,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "3",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "29",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 33,
+    "defaultDescription": "37",
+    "altDescription": "37",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "3",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "34",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast."
+  },
+  {
+    "id": 38,
+    "defaultDescription": "15",
+    "altDescription": "15",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "37",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest."
+  },
+  {
+    "id": 39,
+    "defaultDescription": "25",
+    "altDescription": "25",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "40",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "3",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west."
+  },
+  {
+    "id": 36,
+    "defaultDescription": "13",
+    "altDescription": "13",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "35",
+        "exitDirection": "NORTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast."
+  },
+  {
+    "id": 37,
+    "defaultDescription": "27",
+    "altDescription": "27",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "38",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "35",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest."
+  },
+  {
+    "id": 42,
+    "defaultDescription": "15",
+    "altDescription": "15",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "41",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest."
+  },
+  {
+    "id": 43,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "44",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "41",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 40,
+    "defaultDescription": "29",
+    "altDescription": "29",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "41",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "39",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest."
+  },
+  {
+    "id": 41,
+    "defaultDescription": "55",
+    "altDescription": "55",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "43",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "42",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "40",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, southeast\nand west.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, southeast\nand west."
+  },
+  {
+    "id": 46,
+    "defaultDescription": "51",
+    "altDescription": "51",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "45",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "47",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "44",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, northwest\nand south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, northwest\nand south."
+  },
+  {
+    "id": 47,
+    "defaultDescription": "37",
+    "altDescription": "37",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "46",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "4",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast."
+  },
+  {
+    "id": 44,
+    "defaultDescription": "41",
+    "altDescription": "41",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "46",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "43",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and southwest."
+  },
+  {
+    "id": 45,
+    "defaultDescription": "35",
+    "altDescription": "35",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "48",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "46",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest."
+  },
+  {
+    "id": 51,
+    "defaultDescription": "33",
+    "altDescription": "33",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "5",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "7",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest."
+  },
+  {
+    "id": 50,
+    "defaultDescription": "19",
+    "altDescription": "19",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "49",
+        "exitDirection": "NORTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the north.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the north."
+  },
+  {
+    "id": 49,
+    "defaultDescription": "49",
+    "altDescription": "49",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "50",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "48",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south."
+  },
+  {
+    "id": 48,
+    "defaultDescription": "41",
+    "altDescription": "41",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "49",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "45",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a cave.",
+    "altDescriptionText": "You're in a cave.",
+    "defaultLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and southwest.",
+    "altLongDescriptionText": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and southwest."
+  },
+  {
+    "id": 1221,
+    "defaultDescription": "795",
+    "altDescription": "795",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1220",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1222",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest."
+  },
+  {
+    "id": 1220,
+    "defaultDescription": "813",
+    "altDescription": "813",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1218",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1221",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southwest."
+  },
+  {
+    "id": 1223,
+    "defaultDescription": "837",
+    "altDescription": "837",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1222",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1224",
+        "exitDirection": "EAST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "72",
+        "numberOfMobs": "1",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework chamber.",
+    "altDescriptionText": "You're in a stonework chamber.",
+    "defaultLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The northern portion of this chamber is obscured by a strange mist.\nThe only visible exit is east through a stone archway.",
+    "altLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The northern portion of this chamber is obscured by a strange mist.\nThe only visible exit is east through a stone archway."
+  },
+  {
+    "id": 1222,
+    "defaultDescription": "905",
+    "altDescription": "905",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1221",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1223",
+        "exitDirection": "SOUTH",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.PuzzleDoor",
+          "v0": "-8",
+          "v3": "0",
+          "v4": "0",
+          "v5": "0",
+          "v6": "1"
+        }
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor continues to the northeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor continues to the northeast."
+  },
+  {
+    "id": 1217,
+    "defaultDescription": "795",
+    "altDescription": "795",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1215",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1218",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest."
+  },
+  {
+    "id": 1216,
+    "defaultDescription": "835",
+    "altDescription": "835",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1240",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1215",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "72",
+        "numberOfMobs": "1",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework chamber.",
+    "altDescriptionText": "You're in a stonework chamber.",
+    "defaultLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The only visible exits are north and west through stone archways.",
+    "altLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The only visible exits are north and west through stone archways."
+  },
+  {
+    "id": 1219,
+    "defaultDescription": "805",
+    "altDescription": "805",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1218",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1202",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast."
+  },
+  {
+    "id": 1218,
+    "defaultDescription": "811",
+    "altDescription": "811",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1217",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1220",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "1219",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "TRAP",
+        "v2": "4",
+        "v3": "0",
+        "v4": "0",
+        "v5": "0",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south, northwest, and\nnortheast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south, northwest, and\nnortheast."
+  },
+  {
+    "id": 1229,
+    "defaultDescription": "791",
+    "altDescription": "791",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1230",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1228",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and northwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and northwest."
+  },
+  {
+    "id": 1228,
+    "defaultDescription": "785",
+    "altDescription": "785",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1227",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1229",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southeast."
+  },
+  {
+    "id": 1231,
+    "defaultDescription": "843",
+    "altDescription": "843",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1230",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "PUZZLE",
+        "v2": "3",
+        "v3": "15",
+        "v4": "1232",
+        "v5": "1",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A stone in the northeast wall appears to protrude\nfrom the wall slightly more than the others. The corridor continues to the\nnorthwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A stone in the northeast wall appears to protrude\nfrom the wall slightly more than the others. The corridor continues to the\nnorthwest."
+  },
+  {
+    "id": 1230,
+    "defaultDescription": "805",
+    "altDescription": "805",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1231",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1229",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast."
+  },
+  {
+    "id": 1225,
+    "defaultDescription": "801",
+    "altDescription": "801",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1226",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1224",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west."
+  },
+  {
+    "id": 1224,
+    "defaultDescription": "801",
+    "altDescription": "801",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1225",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1223",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west."
+  },
+  {
+    "id": 1227,
+    "defaultDescription": "815",
+    "altDescription": "815",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1239",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1228",
+        "exitDirection": "SOUTH"
+      },
+      {
+        "toRoom": "1226",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north, south, and west.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north, south, and west."
+  },
+  {
+    "id": 1226,
+    "defaultDescription": "801",
+    "altDescription": "801",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1227",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1225",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west."
+  },
+  {
+    "id": 1236,
+    "defaultDescription": "829",
+    "altDescription": "829",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1237",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the southwest."
+  },
+  {
+    "id": 1237,
+    "defaultDescription": "793",
+    "altDescription": "793",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1236",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1238",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and northeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and northeast."
+  },
+  {
+    "id": 1238,
+    "defaultDescription": "823",
+    "altDescription": "823",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1237",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1239",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor continues to the east and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor continues to the east and southwest."
+  },
+  {
+    "id": 1239,
+    "defaultDescription": "789",
+    "altDescription": "789",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1238",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1227",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south and northeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south and northeast."
+  },
+  {
+    "id": 1232,
+    "defaultDescription": "845",
+    "altDescription": "845",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1233",
+        "exitDirection": "EAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "PUZZLE",
+        "v2": "3",
+        "v3": "15",
+        "v4": "1236",
+        "v5": "1",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A stone in the north wall appears to protrude from\nthe wall slightly more than the others. The corridor continues to the east.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A stone in the north wall appears to protrude from\nthe wall slightly more than the others. The corridor continues to the east."
+  },
+  {
+    "id": 1233,
+    "defaultDescription": "801",
+    "altDescription": "801",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1234",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1232",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west."
+  },
+  {
+    "id": 1234,
+    "defaultDescription": "801",
+    "altDescription": "801",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1235",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1233",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west."
+  },
+  {
+    "id": 1235,
+    "defaultDescription": "821",
+    "altDescription": "821",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1234",
+        "exitDirection": "WEST"
+      },
+      {
+        "toRoom": "1247",
+        "exitDirection": "DOWN"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor continues to the west. There is a\nstone staircase here leading downward.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor continues to the west. There is a\nstone staircase here leading downward."
+  },
+  {
+    "id": 1244,
+    "defaultDescription": "827",
+    "altDescription": "827",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1242",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1245",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast."
+  },
+  {
+    "id": 1245,
+    "defaultDescription": "805",
+    "altDescription": "805",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1244",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1246",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast."
+  },
+  {
+    "id": 1246,
+    "defaultDescription": "839",
+    "altDescription": "839",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1245",
+        "exitDirection": "EAST"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "71",
+        "numberOfMobs": "2",
+        "item": "0"
+      },
+      {
+        "mob": "54",
+        "numberOfMobs": "2",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework chamber.",
+    "altDescriptionText": "You're in a stonework chamber.",
+    "defaultLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The only visible exit is east through a stone archway.",
+    "altLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The only visible exit is east through a stone archway."
+  },
+  {
+    "id": 1240,
+    "defaultDescription": "783",
+    "altDescription": "783",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1241",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1216",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and south.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and south."
+  },
+  {
+    "id": 1241,
+    "defaultDescription": "789",
+    "altDescription": "789",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1242",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1240",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south and northeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south and northeast."
+  },
+  {
+    "id": 1242,
+    "defaultDescription": "825",
+    "altDescription": "825",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1243",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1241",
+        "exitDirection": "SOUTHWEST"
+      },
+      {
+        "toRoom": "1244",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest, southeast, and\nsouthwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest, southeast, and\nsouthwest."
+  },
+  {
+    "id": 1243,
+    "defaultDescription": "843",
+    "altDescription": "843",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1242",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "PUZZLE",
+        "v2": "4",
+        "v3": "12",
+        "v4": "1222",
+        "v5": "907",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A stone in the northeast wall appears to protrude\nfrom the wall slightly more than the others. The corridor continues to the\nnorthwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A stone in the northeast wall appears to protrude\nfrom the wall slightly more than the others. The corridor continues to the\nnorthwest."
+  },
+  {
+    "id": 1195,
+    "defaultDescription": "787",
+    "altDescription": "787",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1196",
+        "exitDirection": "SOUTHWEST"
+      },
+      {
+        "toRoom": "1194",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southwest."
+  },
+  {
+    "id": 1194,
+    "defaultDescription": "785",
+    "altDescription": "785",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1193",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1195",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southeast."
+  },
+  {
+    "id": 1193,
+    "defaultDescription": "783",
+    "altDescription": "783",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1192",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1194",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and south.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and south."
+  },
+  {
+    "id": 1192,
+    "defaultDescription": "781",
+    "altDescription": "781",
+    "roomFlags": "0",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1189",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1211",
+        "exitDirection": "EAST",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.PuzzleDoor",
+          "v0": "-8",
+          "v3": "2",
+          "v4": "0",
+          "v5": "0",
+          "v6": "1"
+        }
+      },
+      {
+        "toRoom": "1193",
+        "exitDirection": "SOUTH",
+        "door": {
+          "class": "org.tdod.ether.taimpl.cosmos.doors.PuzzleDoor",
+          "v0": "-8",
+          "v3": "2",
+          "v4": "0",
+          "v5": "0",
+          "v6": "1"
+        }
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "PUZZLE",
+        "v2": "2",
+        "v3": "12",
+        "v4": "1192",
+        "v5": "841",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a stonework chamber.",
+    "altDescriptionText": "You're in a stonework chamber.",
+    "defaultLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The western wall bears this cryptic message: \"Speak the element of\nthe guardian of the temple catacombs in the language of spellcraft to gain\nentrance.\" The visible exits are south and east through stone archways\nfitted with massive iron doors. There is also a stone archway leading out\ninto the desert to the north.",
+    "altLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The western wall bears this cryptic message: \"Speak the element of\nthe guardian of the temple catacombs in the language of spellcraft to gain\nentrance.\" The visible exits are south and east through stone archways\nfitted with massive iron doors. There is also a stone archway leading out\ninto the desert to the north."
+  },
+  {
+    "id": 1199,
+    "defaultDescription": "791",
+    "altDescription": "791",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1200",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1198",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and northwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and northwest."
+  },
+  {
+    "id": 1198,
+    "defaultDescription": "785",
+    "altDescription": "785",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1197",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1199",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the north and southeast."
+  },
+  {
+    "id": 1197,
+    "defaultDescription": "833",
+    "altDescription": "833",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1196",
+        "exitDirection": "NORTH"
+      },
+      {
+        "toRoom": "1204",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1198",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [
+      {
+        "mob": "55",
+        "numberOfMobs": "2",
+        "item": "0"
+      }
+    ],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework chamber.",
+    "altDescriptionText": "You're in a stonework chamber.",
+    "defaultLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The only visible exits are north, south, and east through stone\narchways.",
+    "altLongDescriptionText": "You are standing in a stonework chamber, fitted with dull grey stone tiles.\nThe room is rectangular in shape and is roughly thirty feet by fifty feet\nacross. The only visible exits are north, south, and east through stone\narchways."
+  },
+  {
+    "id": 1196,
+    "defaultDescription": "789",
+    "altDescription": "789",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1195",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1197",
+        "exitDirection": "SOUTH"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south and northeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the south and northeast."
+  },
+  {
+    "id": 1202,
+    "defaultDescription": "797",
+    "altDescription": "797",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1219",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1201",
+        "exitDirection": "SOUTHWEST"
+      },
+      {
+        "toRoom": "1203",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east, northwest, and\nsouthwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east, northwest, and\nsouthwest."
+  },
+  {
+    "id": 1203,
+    "defaultDescription": "799",
+    "altDescription": "799",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1205",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1202",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1204",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west, northeast, and\nsoutheast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west, northeast, and\nsoutheast."
+  },
+  {
+    "id": 1200,
+    "defaultDescription": "793",
+    "altDescription": "793",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1201",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1199",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and northeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and northeast."
+  },
+  {
+    "id": 1201,
+    "defaultDescription": "795",
+    "altDescription": "795",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1202",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1200",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest."
+  },
+  {
+    "id": 1206,
+    "defaultDescription": "803",
+    "altDescription": "803",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1207",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1205",
+        "exitDirection": "SOUTHEAST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southeast."
+  },
+  {
+    "id": 1207,
+    "defaultDescription": "795",
+    "altDescription": "795",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1208",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1206",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northeast and southwest."
+  },
+  {
+    "id": 1204,
+    "defaultDescription": "801",
+    "altDescription": "801",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1203",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1197",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east and west."
+  },
+  {
+    "id": 1205,
+    "defaultDescription": "797",
+    "altDescription": "797",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1212",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1203",
+        "exitDirection": "SOUTHWEST"
+      },
+      {
+        "toRoom": "1206",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east, northwest, and\nsouthwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east, northwest, and\nsouthwest."
+  },
+  {
+    "id": 1210,
+    "defaultDescription": "827",
+    "altDescription": "827",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1209",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1211",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast."
+  },
+  {
+    "id": 1211,
+    "defaultDescription": "805",
+    "altDescription": "805",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1210",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1192",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and southeast."
+  },
+  {
+    "id": 1208,
+    "defaultDescription": "787",
+    "altDescription": "787",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1207",
+        "exitDirection": "SOUTHWEST"
+      },
+      {
+        "toRoom": "1209",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southwest."
+  },
+  {
+    "id": 1209,
+    "defaultDescription": "827",
+    "altDescription": "827",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1208",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1210",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast."
+  },
+  {
+    "id": 1214,
+    "defaultDescription": "827",
+    "altDescription": "827",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1215",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1213",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the northwest and southeast."
+  },
+  {
+    "id": 1215,
+    "defaultDescription": "797",
+    "altDescription": "797",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1216",
+        "exitDirection": "EAST"
+      },
+      {
+        "toRoom": "1217",
+        "exitDirection": "SOUTHWEST"
+      },
+      {
+        "toRoom": "1214",
+        "exitDirection": "NORTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east, northwest, and\nsouthwest.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the east, northwest, and\nsouthwest."
+  },
+  {
+    "id": 1212,
+    "defaultDescription": "793",
+    "altDescription": "793",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1213",
+        "exitDirection": "NORTHEAST"
+      },
+      {
+        "toRoom": "1205",
+        "exitDirection": "WEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and northeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. The corridor runs to the west and northeast."
+  },
+  {
+    "id": 1213,
+    "defaultDescription": "909",
+    "altDescription": "909",
+    "roomFlags": "2",
+    "serviceLevel": "0",
+    "terrain": "DUNGEON1",
+    "exits": [
+      {
+        "toRoom": "1214",
+        "exitDirection": "SOUTHEAST"
+      },
+      {
+        "toRoom": "1212",
+        "exitDirection": "SOUTHWEST"
+      }
+    ],
+    "lairs": [],
+    "triggers": [
+      {
+        "triggerType": "PUZZLE",
+        "v2": "1",
+        "v3": "9",
+        "v4": "1218",
+        "v5": "811",
+        "v6": "0",
+        "v7": "1",
+        "isTriggered": "false"
+      }
+    ],
+    "defaultDescriptionText": "You're in a stonework corridor.",
+    "altDescriptionText": "You're in a stonework corridor.",
+    "defaultLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A small lever is partially concealed in a niche in\nthe north wall. The corridor runs to the southwest and southeast.",
+    "altLongDescriptionText": "You are standing in a well kept stonework corridor. The tightly fit stone\ntiles that make up the floor and walls here bear unusal designs and are of\nvery fine craftsmanship. A small lever is partially concealed in a niche in\nthe north wall. The corridor runs to the southwest and southeast."
+  }
+]
