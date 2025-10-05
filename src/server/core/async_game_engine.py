@@ -51,6 +51,9 @@ class AsyncGameEngine:
         self.player_storage: Optional[PlayerStorage] = None
 
 
+        # Cached game data (loaded once at initialization)
+        self.monsters_data: Dict[str, Any] = {}  # Cached monster definitions
+
         # Room mob management - tracks spawned mobs in each room
         self.room_mobs: Dict[str, list] = {}
 
@@ -143,6 +146,11 @@ class AsyncGameEngine:
         try:
             # Initialize world
             self.world_manager.load_world()
+
+            # Load monsters data once (cached for later use)
+            self.logger.info("Loading world data...")
+            self.monsters_data = self._load_all_monsters()
+            self.logger.info(f"Loaded {len(self.monsters_data)} monster definitions")
 
             # Initialize lair spawns
             self._initialize_lairs()
@@ -550,17 +558,17 @@ class AsyncGameEngine:
     def _initialize_lairs(self):
         """Initialize all lair rooms with their starting mobs."""
         # Load monster data
-        monsters = self._load_all_monsters()
-        if not monsters:
-            self.logger.error("Failed to load monsters data")
+        # Use cached monsters data
+        if not self.monsters_data:
+            self.logger.error("Monsters data not loaded")
             return
 
         # Find all lair rooms and spawn their mobs
         for room_id, room in self.world_manager.rooms.items():
             if hasattr(room, 'is_lair') and room.is_lair:
                 lair_monster_id = getattr(room, 'lair_monster', None)
-                if lair_monster_id and lair_monster_id in monsters:
-                    self._spawn_lair_mob(room_id, lair_monster_id, monsters[lair_monster_id])
+                if lair_monster_id and lair_monster_id in self.monsters_data:
+                    self._spawn_lair_mob(room_id, lair_monster_id, self.monsters_data[lair_monster_id])
                     self.logger.info(f"[LAIR] Spawned {lair_monster_id} in {room_id}")
 
     def _generate_mob_stats(self, level: int, monster_type: str = 'monster') -> dict:
@@ -689,7 +697,7 @@ class AsyncGameEngine:
                     self.logger.info(f"[LAIR] {lair_monster_id} died in {room_id}, respawn in {respawn_time}s")
                 elif current_time >= self.lair_timers[room_id]:
                     # Timer expired, respawn the mob
-                    self._spawn_lair_mob(room_id, lair_monster_id, monsters[lair_monster_id])
+                    self._spawn_lair_mob(room_id, lair_monster_id, self.monsters_data[lair_monster_id])
                     del self.lair_timers[room_id]
                     self.logger.info(f"[LAIR] {lair_monster_id} respawned in {room_id}")
             else:
@@ -786,7 +794,7 @@ class AsyncGameEngine:
         spawn_room = random.choice(area_rooms)
 
         # Spawn the wandering mob
-        self._spawn_wandering_mob(spawn_room, selected_mob_id, monsters[selected_mob_id], area_id)
+        self._spawn_wandering_mob(spawn_room, selected_mob_id, self.monsters_data[selected_mob_id], area_id)
 
     def _spawn_wandering_mob(self, room_id: str, monster_id: str, monster: dict, area_id: str = None):
         """Spawn a wandering mob in a room."""

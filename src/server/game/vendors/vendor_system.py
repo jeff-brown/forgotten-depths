@@ -24,22 +24,9 @@ class VendorSystem:
     def load_vendors_and_items(self):
         """Load vendor and item data from configuration files."""
         try:
-            # Load items data (prefer JSON, fallback to YAML)
-            items_json_path = os.path.join('data', 'items', 'items.json')
-            items_yaml_path = os.path.join('config', 'items.yaml')
-
-            if os.path.exists(items_json_path):
-                with open(items_json_path, 'r') as f:
-                    items_config = json.load(f)
-                    self.items_data = items_config.get('items', {})
-                    self.logger.info(f"Loaded {len(self.items_data)} items from JSON")
-            elif os.path.exists(items_yaml_path):
-                with open(items_yaml_path, 'r') as f:
-                    items_config = yaml.safe_load(f)
-                    self.items_data = items_config.get('items', {})
-                    self.logger.info(f"Loaded {len(self.items_data)} items from YAML")
-            else:
-                self.logger.warning(f"Items config not found at {items_json_path} or {items_yaml_path}")
+            # Use cached items data from ConfigManager instead of reloading from disk
+            self.items_data = self.game_engine.config_manager.load_items()
+            self.logger.info(f"Loaded {len(self.items_data)} items from YAML")
 
             # Load vendor data from individual NPC files only
             npc_dir = os.path.join('data', 'world', 'npcs')

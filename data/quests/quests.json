@@ -19,5 +19,141 @@
     },
     "level_requirement": 10,
     "completed_message": "You have slain the Great Dragon! Return to the wizard to claim your reward."
+  },
+  {
+    "id": "welcome_quest",
+    "name": "Welcome to Millhaven",
+    "description": "The town crier has asked you to introduce yourself to the important people of Millhaven.",
+    "giver_npc": "town_crier",
+    "level_requirement": 1,
+    "objectives": [
+      {
+        "type": "talk",
+        "target": "mayor_thornfield",
+        "count": 1,
+        "description": "Speak with Mayor Thornfield at the Town Hall"
+      },
+      {
+        "type": "talk",
+        "target": "blacksmith_goran",
+        "count": 1,
+        "description": "Visit Goran at the Blacksmith Shop"
+      },
+      {
+        "type": "talk",
+        "target": "innkeeper_mary",
+        "count": 1,
+        "description": "Meet Mary at the Wanderer's Rest Inn"
+      }
+    ],
+    "rewards": {
+      "experience": 50,
+      "gold": 25,
+      "items": [
+        "health_potion_small"
+      ]
+    },
+    "completed_message": "Welcome to Millhaven! The townspeople are glad to have a new adventurer among them.",
+    "prerequisites": []
+  },
+  {
+    "id": "first_delivery",
+    "name": "First Delivery",
+    "description": "Tom the shopkeeper needs someone to deliver a package to the blacksmith.",
+    "giver_npc": "shopkeeper_tom",
+    "level_requirement": 1,
+    "objectives": [
+      {
+        "type": "item",
+        "target": "delivery_package",
+        "count": 1,
+        "description": "Pick up the package from Tom's General Store"
+      },
+      {
+        "type": "delivery",
+        "target": "blacksmith_goran",
+        "count": 1,
+        "description": "Deliver the package to Goran the Blacksmith"
+      }
+    ],
+    "rewards": {
+      "experience": 75,
+      "gold": 50,
+      "items": [
+        "iron_sword"
+      ]
+    },
+    "completed_message": "Excellent work! Goran was pleased to receive his order on time.",
+    "prerequisites": [
+      "welcome_quest"
+    ]
+  },
+  {
+    "id": "rat_problem",
+    "name": "The Rat Problem",
+    "description": "The inn's basement has been overrun with giant rats. Mary needs someone to clear them out.",
+    "giver_npc": "innkeeper_mary",
+    "level_requirement": 2,
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "rat",
+        "count": 5,
+        "description": "Eliminate 5 giant rats in the inn's basement"
+      },
+      {
+        "type": "talk",
+        "target": "innkeeper_mary",
+        "count": 1,
+        "description": "Report back to Mary when the task is complete"
+      }
+    ],
+    "rewards": {
+      "experience": 100,
+      "gold": 75,
+      "items": [
+        "leather_boots",
+        "health_potion_small",
+        "health_potion_small"
+      ]
+    },
+    "completed_message": "Thank you so much! The inn is safe once again. Please, take these as a token of my gratitude.",
+    "prerequisites": [
+      "welcome_quest"
+    ]
+  },
+  {
+    "id": "goblin_threat",
+    "name": "Goblin Scouts",
+    "description": "Goblin scouts have been spotted near the town. The mayor wants them dealt with before they report back to their tribe.",
+    "giver_npc": "mayor_thornfield",
+    "level_requirement": 3,
+    "objectives": [
+      {
+        "type": "kill",
+        "target": "goblin_scout",
+        "count": 3,
+        "description": "Eliminate 3 goblin scouts around Millhaven"
+      },
+      {
+        "type": "item",
+        "target": "goblin_ear",
+        "count": 3,
+        "description": "Collect goblin ears as proof of your success"
+      }
+    ],
+    "rewards": {
+      "experience": 200,
+      "gold": 150,
+      "items": [
+        "iron_helmet",
+        "mana_potion_small"
+      ]
+    },
+    "completed_message": "Excellent work, adventurer! With these scouts eliminated, Millhaven is safe for now.",
+    "prerequisites": [
+      "first_delivery",
+      "rat_problem"
+    ]
   }
 ]
