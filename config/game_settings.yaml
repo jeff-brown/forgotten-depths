@@ -3,12 +3,27 @@
 # Player Settings
 player:
   starting_stats:
-    strength: 10
-    dexterity: 10
-    constitution: 10
-    intelligence: 10
-    wisdom: 10
-    charisma: 10
+    strength:
+      min: 14
+      max: 22
+    dexterity:
+      min: 13
+      max: 21
+    constitution:
+      min: 14
+      max: 22
+    vitality:
+      min: 20
+      max: 34
+    intelligence:
+      min: 10
+      max: 18
+    wisdom:
+      min: 10
+      max: 18
+    charisma:
+      min: 8
+      max: 16
 
   starting_resources:
     health: 100

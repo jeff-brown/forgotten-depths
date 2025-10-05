@@ -246,18 +246,26 @@ class CommandHandler:
         # Get starting room from world manager
         starting_room = self.game_engine.world_manager.get_default_starting_room()
 
-        # Roll random stats (3d6 for each stat)
+        # Roll random stats using configured ranges from game_settings
         import random
-        def roll_stat():
+        stat_ranges = self.game_engine.config_manager.get_setting('player', 'starting_stats', default={})
+
+        def roll_stat(stat_name):
+            """Roll a stat within the configured min/max range."""
+            stat_config = stat_ranges.get(stat_name, {})
+            if isinstance(stat_config, dict) and 'min' in stat_config and 'max' in stat_config:
+                return random.randint(stat_config['min'], stat_config['max'])
+            # Fallback to 3d6 if no config
             return sum(random.randint(1, 6) for _ in range(3))
 
         base_stats = {
-            'strength': roll_stat(),
-            'dexterity': roll_stat(),
-            'constitution': roll_stat(),
-            'intellect': roll_stat(),
-            'wisdom': roll_stat(),
-            'charisma': roll_stat()
+            'strength': roll_stat('strength'),
+            'dexterity': roll_stat('dexterity'),
+            'constitution': roll_stat('constitution'),
+            'vitality': roll_stat('vitality'),
+            'intellect': roll_stat('intelligence'),
+            'wisdom': roll_stat('wisdom'),
+            'charisma': roll_stat('charisma')
         }
 
         # Apply race base stats if no random (use race base instead)
@@ -353,7 +361,7 @@ class CommandHandler:
         stats_msg = f"\n=== Character Created ===\n"
         stats_msg += f"Race: {character['species']}\n"
         stats_msg += f"Class: {character['class']}\n\n"
-        stats_msg += f"STR: {character['strength']}  DEX: {character['dexterity']}  CON: {character['constitution']}\n"
+        stats_msg += f"STR: {character['strength']}  DEX: {character['dexterity']}  CON: {character['constitution']}  VIT: {character.get('vitality', 0)}\n"
         stats_msg += f"INT: {character['intellect']}  WIS: {character['wisdom']}  CHA: {character['charisma']}\n\n"
         stats_msg += f"HP: {max_hp}  Mana: {max_mana}\n"
 
@@ -2138,27 +2146,36 @@ Gold:          {char['gold']}
         race_data = races[race_key]
         class_data = classes[class_key]
 
-        # Roll new random stats (3d6 for each stat)
+        # Roll new random stats using configured ranges
         import random
-        def roll_stat():
+        stat_ranges = self.game_engine.config_manager.get_setting('player', 'starting_stats', default={})
+
+        def roll_stat(stat_name):
+            """Roll a stat within the configured min/max range."""
+            stat_config = stat_ranges.get(stat_name, {})
+            if isinstance(stat_config, dict) and 'min' in stat_config and 'max' in stat_config:
+                return random.randint(stat_config['min'], stat_config['max'])
+            # Fallback to 3d6 if no config
             return sum(random.randint(1, 6) for _ in range(3))
 
         old_stats = {
             'strength': character.get('strength', 10),
             'dexterity': character.get('dexterity', 10),
             'constitution': character.get('constitution', 10),
+            'vitality': character.get('vitality', 10),
             'intellect': character.get('intellect', 10),
             'wisdom': character.get('wisdom', 10),
             'charisma': character.get('charisma', 10)
         }
 
         base_stats = {
-            'strength': roll_stat(),
-            'dexterity': roll_stat(),
-            'constitution': roll_stat(),
-            'intellect': roll_stat(),
-            'wisdom': roll_stat(),
-            'charisma': roll_stat()
+            'strength': roll_stat('strength'),
+            'dexterity': roll_stat('dexterity'),
+            'constitution': roll_stat('constitution'),
+            'vitality': roll_stat('vitality'),
+            'intellect': roll_stat('intelligence'),
+            'wisdom': roll_stat('wisdom'),
+            'charisma': roll_stat('charisma')
         }
 
         # Apply race modifiers
@@ -2205,12 +2222,12 @@ Gold:          {char['gold']}
 === Stats Rerolled! ===
 
 Old Stats:
-STR: {old_stats['strength']}  DEX: {old_stats['dexterity']}  CON: {old_stats['constitution']}
+STR: {old_stats['strength']}  DEX: {old_stats['dexterity']}  CON: {old_stats['constitution']}  VIT: {old_stats.get('vitality', 0)}
 INT: {old_stats['intellect']}  WIS: {old_stats['wisdom']}  CHA: {old_stats['charisma']}
 HP: {old_max_hp}  Mana: {old_max_mana}
 
 New Stats:
-STR: {character['strength']}  DEX: {character['dexterity']}  CON: {character['constitution']}
+STR: {character['strength']}  DEX: {character['dexterity']}  CON: {character['constitution']}  VIT: {character.get('vitality', 0)}
 INT: {character['intellect']}  WIS: {character['wisdom']}  CHA: {character['charisma']}
 HP: {max_hp}  Mana: {max_mana}
 """
