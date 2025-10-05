@@ -3,7 +3,7 @@
 import socket
 import threading
 import time
-from typing import Optional, Callable, Dict, Any
+from typing import Optional, Callable, Dict, Any, List
 
 from .mud import Mud
 from ..utils.logger import get_logger
@@ -209,7 +209,7 @@ class TelnetServer:
                 if exclude_player is None or player_id != exclude_player:
                     self.send_message(player_id, message)
 
-    def get_connected_players(self) -> list[int]:
+    def get_connected_players(self) -> List[int]:
         """Get list of all connected player IDs."""
         return list(self.player_sessions.keys())
 

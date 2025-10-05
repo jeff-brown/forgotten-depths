@@ -2,7 +2,7 @@
 
 import json
 import os
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Tuple
 from ...utils.logger import get_logger
 
 
@@ -18,7 +18,10 @@ class QuestManager:
 
     def load_quests(self):
         """Load all quests from quests.json."""
-        quests_file = os.path.join('data', 'quests.json')
+        # Try new location first, then fall back to old
+        quests_file = os.path.join('data', 'quests', 'quests.json')
+        if not os.path.exists(quests_file):
+            quests_file = os.path.join('data', 'quests.json')
 
         if not os.path.exists(quests_file):
             self.logger.warning(f"Quests file not found: {quests_file}")
@@ -52,7 +55,7 @@ class QuestManager:
             return False
         return quests[quest_id].get('completed', False)
 
-    def can_accept_quest(self, character: Dict, quest_id: str) -> tuple[bool, str]:
+    def can_accept_quest(self, character: Dict, quest_id: str) -> Tuple[bool, str]:
         """Check if player can accept a quest."""
         quest = self.get_quest(quest_id)
         if not quest:

@@ -1,0 +1,37 @@
+{
+  "items": {
+    "quiver": {
+      "name": "Quiver",
+      "type": "container",
+      "weight": 3.0,
+      "base_value": 10,
+      "description": "A leather quiver for holding arrows.",
+      "properties": {
+        "required_level": 0,
+        "capacity": 20
+      }
+    },
+    "case": {
+      "name": "Case Of Darts",
+      "type": "container",
+      "weight": 1.5,
+      "base_value": 12,
+      "description": "A case for storing darts.",
+      "properties": {
+        "required_level": 0,
+        "capacity": 10
+      }
+    },
+    "pouch": {
+      "name": "Pouch Of Stones",
+      "type": "container",
+      "weight": 0.5,
+      "base_value": 2,
+      "description": "A leather pouch for carrying sling stones.",
+      "properties": {
+        "required_level": 0,
+        "capacity": 20
+      }
+    }
+  }
+}

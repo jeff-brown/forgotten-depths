@@ -24,6 +24,31 @@ class CombatSystem:
         self.player_fatigue: Dict[int, Dict[str, Any]] = {}  # player_id -> fatigue info
         self.mob_fatigue: Dict[str, Dict[str, Any]] = {}  # mob_id -> fatigue info
 
+    @staticmethod
+    def get_effective_stat(char_data: dict, stat_name: str, base_value: int = 10) -> int:
+        """Get the effective stat value including bonuses from active effects.
+
+        Args:
+            char_data: Character data dictionary
+            stat_name: Name of the stat (e.g., 'strength', 'dexterity')
+            base_value: Base value to use if stat not found in char_data
+
+        Returns:
+            Effective stat value with bonuses applied
+        """
+        base_stat = char_data.get(stat_name, base_value)
+
+        # Check for active effects that boost this stat
+        active_effects = char_data.get('active_effects', [])
+        bonus = 0
+
+        for effect in active_effects:
+            effect_type = effect.get('effect', '')
+            if effect_type == f'{stat_name}_bonus':
+                bonus += effect.get('bonus_amount', 0)
+
+        return base_stat + bonus
+
     def is_player_fatigued(self, player_id: int) -> bool:
         """Check if a player is currently fatigued from combat."""
         if player_id not in self.player_fatigue:
@@ -233,6 +258,23 @@ class CombatSystem:
             mob_name = mob.get('name', '')
             if self.game_engine.world_manager._matches_target(target_name.lower(), mob_name.lower()):
                 return mob
+
+        # Check NPCs (but exclude quest-givers and non-hostile NPCs)
+        room = self.game_engine.world_manager.get_room(room_id)
+        if room and hasattr(room, 'npcs'):
+            for npc in room.npcs:
+                if self.game_engine.world_manager._matches_target(target_name.lower(), npc.name.lower()):
+                    # Get NPC data to check type
+                    npc_data = self.game_engine.world_manager.get_npc_data(npc.npc_id)
+                    if npc_data:
+                        npc_type = npc_data.get('type', '')
+                        # Block attacking quest-givers and non-hostile NPCs
+                        if npc_type in ['quest_giver', 'vendor', 'trainer']:
+                            return None
+                        # Only allow attacking if explicitly hostile
+                        if npc_data.get('hostile', False):
+                            return npc_data
+                    return None
 
         # Could also check for other players here if PvP is enabled
         return None
@@ -546,12 +588,13 @@ class CombatSystem:
                 def __init__(self, char_data):
                     self.name = char_data['name']
                     self.level = char_data.get('level', 1)
-                    self.strength = char_data.get('strength', 10)
-                    self.dexterity = char_data.get('dexterity', 10)
-                    self.constitution = char_data.get('constitution', 10)
-                    self.intelligence = char_data.get('intellect', 10)
-                    self.wisdom = char_data.get('wisdom', 10)
-                    self.charisma = char_data.get('charisma', 10)
+                    # Get effective stats with active_effects bonuses
+                    self.strength = CombatSystem.get_effective_stat(char_data, 'strength', 10)
+                    self.dexterity = CombatSystem.get_effective_stat(char_data, 'dexterity', 10)
+                    self.constitution = CombatSystem.get_effective_stat(char_data, 'constitution', 10)
+                    self.intelligence = CombatSystem.get_effective_stat(char_data, 'intellect', 10)
+                    self.wisdom = CombatSystem.get_effective_stat(char_data, 'wisdom', 10)
+                    self.charisma = CombatSystem.get_effective_stat(char_data, 'charisma', 10)
 
             temp_mob = TempMob(mob)
             temp_char = TempCharacter(character)
@@ -797,12 +840,13 @@ class CombatSystem:
             def __init__(self, char_data):
                 self.name = char_data['name']
                 self.level = char_data.get('level', 1)
-                self.strength = char_data.get('strength', 10)
-                self.dexterity = char_data.get('dexterity', 10)
-                self.constitution = char_data.get('constitution', 10)
-                self.intelligence = char_data.get('intellect', 10)
-                self.wisdom = char_data.get('wisdom', 10)
-                self.charisma = char_data.get('charisma', 10)
+                # Get effective stats with active_effects bonuses
+                self.strength = CombatSystem.get_effective_stat(char_data, 'strength', 10)
+                self.dexterity = CombatSystem.get_effective_stat(char_data, 'dexterity', 10)
+                self.constitution = CombatSystem.get_effective_stat(char_data, 'constitution', 10)
+                self.intelligence = CombatSystem.get_effective_stat(char_data, 'intellect', 10)
+                self.wisdom = CombatSystem.get_effective_stat(char_data, 'wisdom', 10)
+                self.charisma = CombatSystem.get_effective_stat(char_data, 'charisma', 10)
 
         class TempMob:
             def __init__(self, mob_data):

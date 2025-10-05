@@ -1,0 +1,69 @@
+{
+  "spells": {
+    "igadani": {
+      "name": "Igadani",
+      "description": "A draining spell",
+      "type": "damage",
+      "school": "necromancy",
+      "level": 4,
+      "mana_cost": 60,
+      "range": "ranged",
+      "cooldown": 0,
+      "requires_target": true,
+      "damage": "8d2-6",
+      "damage_type": "force"
+    },
+    "rodani": {
+      "name": "Rodani",
+      "description": "A draining spell",
+      "type": "damage",
+      "school": "necromancy",
+      "level": 4,
+      "mana_cost": 60,
+      "range": "ranged",
+      "cooldown": 0,
+      "requires_target": true,
+      "damage": "8d2-6",
+      "damage_type": "force"
+    },
+    "tsudani": {
+      "name": "Tsudani",
+      "description": "A draining spell",
+      "type": "damage",
+      "school": "necromancy",
+      "level": 4,
+      "mana_cost": 60,
+      "range": "ranged",
+      "cooldown": 0,
+      "requires_target": true,
+      "damage": "8d2-6",
+      "damage_type": "force"
+    },
+    "poradani": {
+      "name": "Poradani",
+      "description": "A draining spell",
+      "type": "damage",
+      "school": "necromancy",
+      "level": 7,
+      "mana_cost": 280,
+      "range": "ranged",
+      "cooldown": 0,
+      "requires_target": true,
+      "damage": "4d2-3",
+      "damage_type": "force"
+    },
+    "jinasudani": {
+      "name": "Jinasudani",
+      "description": "A draining spell",
+      "type": "damage",
+      "school": "necromancy",
+      "level": 7,
+      "mana_cost": 280,
+      "range": "ranged",
+      "cooldown": 0,
+      "requires_target": true,
+      "damage": "4d2-3",
+      "damage_type": "force"
+    }
+  }
+}

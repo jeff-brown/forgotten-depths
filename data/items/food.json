@@ -1,0 +1,76 @@
+{
+  "items": {
+    "bread": {
+      "name": "Bread",
+      "type": "food",
+      "weight": 1,
+      "base_value": 5,
+      "description": "A loaf of fresh bread.",
+      "nutrition": 40,
+      "properties": {
+        "restore_health": 10
+      }
+    },
+    "cheese": {
+      "name": "Cheese",
+      "type": "food",
+      "weight": 1,
+      "base_value": 8,
+      "description": "A wedge of aged cheese.",
+      "nutrition": 35
+    },
+    "dried_meat": {
+      "name": "Dried Meat",
+      "type": "food",
+      "weight": 1,
+      "base_value": 10,
+      "description": "Preserved meat that travels well.",
+      "nutrition": 50
+    },
+    "stew": {
+      "name": "Hearty Stew",
+      "type": "food",
+      "weight": 2,
+      "base_value": 12,
+      "description": "A warm bowl of hearty stew with chunks of meat and vegetables.",
+      "nutrition": 60,
+      "properties": {
+        "restore_health": 15,
+        "restore_mana": 5
+      }
+    },
+    "apple": {
+      "name": "Apple",
+      "type": "food",
+      "weight": 1,
+      "base_value": 2,
+      "description": "A crisp, red apple that's perfect for a quick snack.",
+      "nutrition": 20,
+      "properties": {
+        "restore_health": 3
+      }
+    },
+    "orange": {
+      "name": "Orange",
+      "type": "food",
+      "weight": 1,
+      "base_value": 3,
+      "description": "A juicy orange that provides refreshing nourishment.",
+      "nutrition": 25,
+      "properties": {
+        "restore_health": 4
+      }
+    },
+    "grapes": {
+      "name": "Grapes",
+      "type": "food",
+      "weight": 1,
+      "base_value": 5,
+      "description": "A cluster of sweet grapes, perfect for travel rations.",
+      "nutrition": 30,
+      "properties": {
+        "restore_health": 6
+      }
+    }
+  }
+}

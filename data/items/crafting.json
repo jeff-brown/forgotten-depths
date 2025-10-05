@@ -1,0 +1,56 @@
+{
+  "items": {
+    "rat_tail": {
+      "name": "Rat Tail",
+      "type": "crafting",
+      "weight": 0.1,
+      "base_value": 2,
+      "description": "A long, scaly tail from a giant rat. Often used in alchemy.",
+      "properties": {
+        "alchemy_ingredient": true
+      }
+    },
+    "small_bone": {
+      "name": "Small Bone",
+      "type": "crafting",
+      "weight": 0.5,
+      "base_value": 1,
+      "description": "A small animal bone that could be useful for crafting.",
+      "properties": {
+        "crafting_material": true
+      }
+    },
+    "tattered_cloth": {
+      "name": "Tattered Cloth",
+      "type": "crafting",
+      "weight": 0.3,
+      "base_value": 1,
+      "description": "A piece of worn, tattered cloth that might be useful for repairs.",
+      "properties": {
+        "crafting_material": true
+      }
+    },
+    "bone_fragment": {
+      "name": "Bone Fragment",
+      "type": "crafting",
+      "weight": 0.5,
+      "base_value": 3,
+      "description": "A fragment of bone with an eerie magical aura. Necromancers value these.",
+      "properties": {
+        "alchemy_ingredient": true,
+        "magical": true
+      }
+    },
+    "wolf_pelt": {
+      "name": "Wolf Pelt",
+      "type": "crafting",
+      "weight": 3,
+      "base_value": 12,
+      "description": "A thick, gray wolf pelt in good condition. Perfect for making warm clothing.",
+      "properties": {
+        "crafting_material": true,
+        "leather_working": true
+      }
+    }
+  }
+}

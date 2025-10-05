@@ -1,0 +1,104 @@
+{
+  "monsters": [
+    {
+      "id": "dungeon_champion",
+      "name": "Forgotten Champion",
+      "description": "A towering figure wreathed in shadows and crackling with dark magic. Once the greatest warrior to fight in the arena above, this cursed champion has been bound to the dungeon depths for eternity. Its armor is black as midnight, covered in glowing runes of power. It wields a massive enchanted greatsword that hums with malevolent energy. The very air around it seems to warp and twist.",
+      "type": "monster",
+      "level": 10,
+      "health": 200,
+      "max_health": 200,
+      "damage_min": 15,
+      "damage_max": 30,
+      "armor": 10,
+      "experience_reward": 250,
+      "gold_reward": [
+        50,
+        150
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "resistances": [
+        "poison",
+        "fear",
+        "cold",
+        "necrotic"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "abilities": [
+        "dark_strike",
+        "shadow_step",
+        "death_aura",
+        "battle_frenzy"
+      ],
+      "loot_table": [
+        {
+          "item_id": "enchanted_blade",
+          "chance": 1.0
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.7
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.9
+        },
+        {
+          "item_id": "ancient_coin",
+          "chance": 1.0
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ram",
+      "name": "Ram",
+      "description": "The ram glares at you from beneath a pair of huge curved horns.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 10,
+      "armor": 1,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "curved horns"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    }
+  ]
+}

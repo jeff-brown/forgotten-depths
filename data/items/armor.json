@@ -1,74 +1,278 @@
-[
-  {
-    "id": "cloth_robe",
-    "name": "Cloth Robe",
-    "description": "A simple robe made from coarse cloth. Provides minimal protection but allows for easy movement.",
-    "type": "armor",
-    "armor_type": "chest",
-    "defense": 2,
-    "magic_resistance": 5,
-    "weight": 1.5,
-    "value": 10,
-    "durability": 40,
-    "max_durability": 40,
-    "required_level": 1
-  },
-  {
-    "id": "leather_armor",
-    "name": "Leather Armor",
-    "description": "Sturdy leather armor that has been hardened and treated. Offers decent protection for light fighters.",
-    "type": "armor",
-    "armor_type": "chest",
-    "defense": 5,
-    "magic_resistance": 2,
-    "weight": 8.0,
-    "value": 75,
-    "durability": 100,
-    "max_durability": 100,
-    "required_level": 2
-  },
-  {
-    "id": "iron_helmet",
-    "name": "Iron Helmet",
-    "description": "A basic iron helmet that protects the head from most attacks. Simple but effective.",
-    "type": "armor",
-    "armor_type": "helmet",
-    "defense": 3,
-    "magic_resistance": 1,
-    "weight": 3.0,
-    "value": 40,
-    "durability": 80,
-    "max_durability": 80,
-    "required_level": 3
-  },
-  {
-    "id": "leather_boots",
-    "name": "Leather Boots",
-    "description": "Well-made leather boots that provide protection and comfort for long journeys.",
-    "type": "armor",
-    "armor_type": "boots",
-    "defense": 1,
-    "magic_resistance": 0,
-    "weight": 2.0,
-    "value": 20,
-    "durability": 60,
-    "max_durability": 60,
-    "required_level": 1,
-    "movement_bonus": 5
-  },
-  {
-    "id": "wooden_shield",
-    "name": "Wooden Shield",
-    "description": "A round shield made from oak planks bound with iron. Lightweight and maneuverable.",
-    "type": "armor",
-    "armor_type": "shield",
-    "defense": 4,
-    "magic_resistance": 1,
-    "weight": 4.0,
-    "value": 30,
-    "durability": 70,
-    "max_durability": 70,
-    "required_level": 1,
-    "block_chance": 0.15
+{
+  "items": {
+    "leather_armor": {
+      "name": "Leather Armor",
+      "type": "armor",
+      "weight": 10,
+      "base_value": 75,
+      "description": "Sturdy leather armor that provides basic protection.",
+      "properties": {
+        "armor_class": 2,
+        "armor_type": "light",
+        "material": "leather",
+        "required_level": 1
+      }
+    },
+    "cloth_robe": {
+      "name": "Cloth Robe",
+      "type": "armor",
+      "weight": 3,
+      "base_value": 30,
+      "description": "A simple cloth robe favored by mages and scholars.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "light",
+        "material": "cloth",
+        "mana_bonus": 5,
+        "required_level": 1
+      }
+    },
+    "champion_armor": {
+      "name": "Champion's Armor",
+      "type": "armor",
+      "weight": 25,
+      "base_value": 300,
+      "description": "Masterfully forged plate armor worn by legendary champions. Its dark metal surface seems to absorb light.",
+      "properties": {
+        "armor_class": 8,
+        "armor_type": "heavy",
+        "material": "darksteel",
+        "magical": true,
+        "strength_bonus": 2,
+        "required_level": 5
+      }
+    },
+    "rusted_plate": {
+      "name": "Rusted Plate Armor",
+      "type": "armor",
+      "weight": 30,
+      "base_value": 50,
+      "description": "Heavy plate armor corroded by time. Still offers some protection despite its condition.",
+      "properties": {
+        "armor_class": 4,
+        "armor_type": "heavy",
+        "material": "rusted_iron",
+        "durability": "poor",
+        "required_level": 3
+      }
+    },
+    "cloak": {
+      "name": "Cloak",
+      "type": "armor",
+      "weight": 2.0,
+      "base_value": 10,
+      "description": "A simple traveler's cloak that offers minimal protection from the elements.",
+      "properties": {
+        "armor_class": 0,
+        "armor_type": "light",
+        "material": "cloth",
+        "required_level": 0
+      }
+    },
+    "robes": {
+      "name": "Robes",
+      "type": "armor",
+      "weight": 3.0,
+      "base_value": 20,
+      "description": "Plain cloth robes that provide basic protection while allowing freedom of movement.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "light",
+        "material": "cloth",
+        "required_level": 1
+      }
+    },
+    "cuirass": {
+      "name": "Leather Cuirass",
+      "type": "armor",
+      "weight": 5.0,
+      "base_value": 40,
+      "description": "A well-crafted leather cuirass that provides solid protection without restricting mobility.",
+      "properties": {
+        "armor_class": 2,
+        "armor_type": "light",
+        "material": "leather",
+        "required_level": 2
+      }
+    },
+    "breastplate": {
+      "name": "Steel Breastplate",
+      "type": "armor",
+      "weight": 20.0,
+      "base_value": 200,
+      "description": "A reinforced steel breastplate offering excellent protection for the torso.",
+      "properties": {
+        "armor_class": 4,
+        "armor_type": "medium",
+        "material": "steel",
+        "required_level": 2
+      }
+    },
+    "ringmail": {
+      "name": "Ringmail Armor",
+      "type": "armor",
+      "weight": 30.0,
+      "base_value": 250,
+      "description": "Interlocking iron rings form a flexible yet protective suit of armor.",
+      "properties": {
+        "armor_class": 5,
+        "armor_type": "medium",
+        "material": "iron",
+        "required_level": 3
+      }
+    },
+    "chainmail": {
+      "name": "Chainmail Armor",
+      "type": "armor",
+      "weight": 40.0,
+      "base_value": 300,
+      "description": "Heavy chainmail forged from iron links, offering substantial protection in battle.",
+      "properties": {
+        "armor_class": 6,
+        "armor_type": "medium",
+        "material": "iron",
+        "required_level": 3
+      }
+    },
+    "scalemail": {
+      "name": "Scalemail Armor",
+      "type": "armor",
+      "weight": 45.0,
+      "base_value": 400,
+      "description": "Overlapping steel scales create a formidable defensive barrier against attacks.",
+      "properties": {
+        "armor_class": 8,
+        "armor_type": "medium",
+        "material": "steel",
+        "required_level": 4
+      }
+    },
+    "bandmail": {
+      "name": "Banded Mail Armor",
+      "type": "armor",
+      "weight": 50.0,
+      "base_value": 500,
+      "description": "Heavy armor constructed from overlapping steel bands, providing superior protection.",
+      "properties": {
+        "armor_class": 10,
+        "armor_type": "heavy",
+        "material": "steel",
+        "required_level": 6
+      }
+    },
+    "platemail": {
+      "name": "Platemail Armor",
+      "type": "armor",
+      "weight": 60.0,
+      "base_value": 600,
+      "description": "Full suit of expertly crafted plate armor that offers exceptional protection to experienced warriors.",
+      "properties": {
+        "armor_class": 12,
+        "armor_type": "heavy",
+        "material": "steel",
+        "required_level": 8
+      }
+    },
+    "demonhide": {
+      "name": "Demonhide Armor",
+      "type": "armor",
+      "weight": 25.0,
+      "base_value": 1500,
+      "description": "Supple yet incredibly tough armor crafted from the hide of a demon. Its dark surface pulses with malevolent energy.",
+      "properties": {
+        "armor_class": 15,
+        "armor_type": "medium",
+        "material": "demonhide",
+        "required_level": 10,
+        "magical": true
+      }
+    },
+    "dragonscale": {
+      "name": "Dragonscale Armor",
+      "type": "armor",
+      "weight": 50.0,
+      "base_value": 1800,
+      "description": "Legendary armor crafted from the iridescent scales of an ancient dragon. Nearly impervious to damage.",
+      "properties": {
+        "armor_class": 18,
+        "armor_type": "heavy",
+        "material": "dragonscale",
+        "required_level": 12,
+        "magical": true,
+        "fire_resistance": 50
+      }
+    },
+    "pink_teddy": {
+      "name": "Pink Teddy",
+      "type": "armor",
+      "weight": 0.0,
+      "base_value": 0,
+      "description": "A mysteriously protective pink teddy bear outfit. Don't ask how it works - it just does.",
+      "properties": {
+        "armor_class": 15,
+        "armor_type": "light",
+        "material": "magical",
+        "required_level": 1000,
+        "magical": true
+      }
+    },
+    "blue_robes": {
+      "name": "Blue Robes",
+      "type": "armor",
+      "weight": 0.0,
+      "base_value": 0,
+      "description": "Ethereal blue robes that shimmer with powerful protective enchantments. Only the most skilled may wear them.",
+      "properties": {
+        "armor_class": 18,
+        "armor_type": "cloth",
+        "material": "magical_cloth",
+        "required_level": 1000,
+        "magical": true,
+        "mana_bonus": 50
+      }
+    },
+    "violet_robes": {
+      "name": "Violet Robes",
+      "type": "armor",
+      "weight": 3.0,
+      "base_value": 0,
+      "description": "Flowing violet robes imbued with ancient magics. Their true power remains hidden.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "cloth",
+        "material": "magical_cloth",
+        "required_level": 1000,
+        "magical": true,
+        "mana_bonus": 25
+      }
+    },
+    "green_tunic": {
+      "name": "Green Tunic",
+      "type": "armor",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "A simple green tunic worn by travelers and adventurers. Provides minimal protection.",
+      "properties": {
+        "armor_class": 1,
+        "armor_type": "light",
+        "material": "cloth",
+        "required_level": 0
+      }
+    },
+    "dwarven_scalemail": {
+      "name": "Dwarven Scalemail Armor",
+      "type": "armor",
+      "weight": 55.0,
+      "base_value": 0,
+      "description": "Masterwork scalemail forged by dwarven smiths in the deep halls. Offers unparalleled protection.",
+      "properties": {
+        "armor_class": 20,
+        "armor_type": "heavy",
+        "material": "dwarven_steel",
+        "required_level": 15,
+        "magical": true,
+        "durability": "exceptional"
+      }
+    }
   }
-]
+}

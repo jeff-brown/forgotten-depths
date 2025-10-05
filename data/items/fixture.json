@@ -1,0 +1,24 @@
+{
+  "items": {
+    "bronze_gong": {
+      "name": "Bronze Gong",
+      "type": "fixture",
+      "weight": 1000,
+      "base_value": 500,
+      "description": "A massive bronze gong mounted on an ornate stand. Its surface is covered in ancient runes and shows the green patina of age. When struck, it produces a deep, resonant tone that seems to call forth challenges from the depths.",
+      "properties": {
+        "can_take": false,
+        "actions": [
+          "ring",
+          "strike",
+          "hit"
+        ],
+        "keywords": [
+          "gong",
+          "bronze",
+          "bronze gong"
+        ]
+      }
+    }
+  }
+}

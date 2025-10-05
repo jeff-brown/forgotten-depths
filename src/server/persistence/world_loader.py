@@ -98,16 +98,19 @@ class WorldLoader:
         """Load all NPC data."""
         npcs = {}
 
-        # Try data/world/npcs first (new structure)
-        npcs_dir = os.path.join(self.data_dir, "world", "npcs")
+        # Try data/npcs first (new structure)
+        npcs_dir = os.path.join(self.data_dir, "npcs")
         if not os.path.exists(npcs_dir):
-            # Fall back to data/npcs (old structure)
-            npcs_dir = os.path.join(self.data_dir, "npcs")
+            # Fall back to data/world/npcs (old structure)
+            npcs_dir = os.path.join(self.data_dir, "world", "npcs")
 
         if not os.path.exists(npcs_dir):
             return npcs
 
         for filename in os.listdir(npcs_dir):
+            # Skip monster files (they're now in data/mobs)
+            if filename.startswith('monsters'):
+                continue
             if filename.endswith('.json'):
                 file_path = os.path.join(npcs_dir, filename)
                 with open(file_path, 'r') as f:

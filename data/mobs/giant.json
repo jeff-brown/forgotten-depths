@@ -1,0 +1,775 @@
+{
+  "monsters": [
+    {
+      "id": "female_cyclops",
+      "name": "Female Cyclops",
+      "description": "The cyclops resembles a very large woman with only one eye in the center of her forehead. She stands over eleven feet tall, and is armed with a {0}.",
+      "type": "giant",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 2,
+      "damage_max": 20,
+      "armor": 3,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "spiked club",
+        "picks up and hurls"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mace",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "cyclops",
+      "name": "Cyclops",
+      "description": "The cyclops resembles a very large man with only one eye in the center of his forehead. He stands over twelve feet tall, and is armed with {0}.",
+      "type": "giant",
+      "level": 4,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "spiked club",
+        "picks up and hurls"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mace",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "stone_giantess",
+      "name": "Stone Giantess",
+      "description": "The stone giantess resembles a huge hairless woman with light grayish skin and stands nearly eighteen feet tall. She is armed with {0}.",
+      "type": "giant",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 5,
+      "experience_reward": 50,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge club",
+        "hurled a boulder at"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.4
+        },
+        {
+          "item_id": "stone",
+          "chance": 0.7
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bandmail",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "stone_giant",
+      "name": "Stone Giant",
+      "description": "The stone giant resembles a huge hairless man with dark grayish skin and stands nearly twenty feet tall. He is armed with {0}.",
+      "type": "giant",
+      "level": 5,
+      "health": 60,
+      "max_health": 60,
+      "damage_min": 6,
+      "damage_max": 36,
+      "armor": 6,
+      "experience_reward": 50,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge club",
+        "hurled a boulder at"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        },
+        {
+          "item_id": "stone",
+          "chance": 0.7
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "breastplate",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "ice_giantess",
+      "name": "Ice Giantess",
+      "description": "The ice giantess resembles a huge woman with bone white skin, and long flowing white hair. She stands over nineteen feet tall, and is armed with {0}.",
+      "type": "giant",
+      "level": 6,
+      "health": 90,
+      "max_health": 90,
+      "damage_min": 5,
+      "damage_max": 50,
+      "armor": 4,
+      "experience_reward": 60,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge sword",
+        "exhaled a blast of frost at",
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ice_crystal",
+          "chance": 0.7
+        },
+        {
+          "item_id": "frost_rod",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "ice_giant",
+      "name": "Ice Giant",
+      "description": "The ice giant resembles a huge man with bone white skin, white hair, and a long white beard. He stands over twenty feet tall, and is armed with {0].",
+      "type": "giant",
+      "level": 7,
+      "health": 100,
+      "max_health": 100,
+      "damage_min": 10,
+      "damage_max": 60,
+      "armor": 5,
+      "experience_reward": 70,
+      "gold_reward": [
+        3,
+        18
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge sword",
+        "exhaled a blast of frost at",
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ice_crystal",
+          "chance": 0.7
+        },
+        {
+          "item_id": "frost_rod",
+          "chance": 0.25
+        },
+        {
+          "item_id": "platemail",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "flame_giantess",
+      "name": "Flame Giantess",
+      "description": "The flame giantess resembles a huge woman with ruddy skin and bright red hair. She stands over twenty five feet tall, is armed with {0}, and wears dragonscale armor. She regards you malignantly with her smouldering red eyes, and smiles cruelly.",
+      "type": "giant",
+      "level": 11,
+      "health": 180,
+      "max_health": 180,
+      "damage_min": 10,
+      "damage_max": 60,
+      "armor": 9,
+      "experience_reward": 110,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "great axe",
+        "exhaled a blast of flame at"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.7
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.2
+        },
+        {
+          "item_id": "flaming_greatsword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "breastplate",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        }
+      ]
+    },
+    {
+      "id": "flame_giant",
+      "name": "Flame Giant",
+      "description": "The flame giant resembles a huge man with ruddy skin, bright red hair, and a coarse red beard. He stands nearly thirty feet tall, is armed with a great axe made of a dull black metal, and wears dragonscale armor. He regards you malevolently with his smouldering red eyes, and grins wickedly.",
+      "type": "giant",
+      "level": 12,
+      "health": 200,
+      "max_health": 200,
+      "damage_min": 20,
+      "damage_max": 80,
+      "armor": 12,
+      "experience_reward": 120,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "great axe",
+        "exhaled a blast of flame at"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.7
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.2
+        },
+        {
+          "item_id": "flaming_greatsword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "bandmail",
+          "chance": 0.25
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        }
+      ]
+    },
+    {
+      "id": "flame_giant_warlord",
+      "name": "Flame Giant Warlord",
+      "description": "The flame giant resembles a huge man with ruddy skin, bright red hair, and a coarse red beard. He stands nearly thirty feet tall, is armed with {0} made of a dark black metal that glows with a dull reddish light at the head. He wears armor of fine workmanship made from overlapping scales of a dark metallic blue. You sense great wisdom in his stern gaze.",
+      "type": "giant",
+      "level": 15,
+      "health": 250,
+      "max_health": 250,
+      "damage_min": 32,
+      "damage_max": 96,
+      "armor": 14,
+      "experience_reward": 150,
+      "gold_reward": [
+        10,
+        25
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "great spear",
+        "exhaled a blast of flame at",
+        "quaffed a potion",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.7
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.2
+        },
+        {
+          "item_id": "flaming_greatsword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "breastplate",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.4
+        },
+        {
+          "item_id": "platemail",
+          "chance": 0.35
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "stone_key",
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "id": "forest_giantess",
+      "name": "Forest Giantess",
+      "description": "The forest giantess resembles a huge woman with brown skin and stands nearly fifteen feet tall. Her clothing is of woven vines and leaves. She is armed with a huge spear.",
+      "type": "giant",
+      "level": 6,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 5,
+      "damage_max": 20,
+      "armor": 5,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge spear",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.4
+        },
+        {
+          "item_id": "choking_vines",
+          "chance": 0.5
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "breastplate",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "forest_giant",
+      "name": "Forest Giant",
+      "description": "The forest giant resembles a huge man with dark brown skin and stands nearly eighteen feet tall. His clothing is of woven vines and leaves. He is armed with a huge spear.",
+      "type": "giant",
+      "level": 6,
+      "health": 80,
+      "max_health": 80,
+      "damage_min": 6,
+      "damage_max": 24,
+      "armor": 6,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge spear",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        },
+        {
+          "item_id": "thorny_branch",
+          "chance": 0.5
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "platemail",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    }
+  ]
+}

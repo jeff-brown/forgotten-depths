@@ -1,0 +1,2176 @@
+{
+  "monsters": [
+    {
+      "id": "rat",
+      "name": "Giant Rat",
+      "description": "A large, mangy rat with yellowed teeth and beady red eyes. It looks hungry and aggressive.",
+      "type": "beast",
+      "level": 1,
+      "health": 15,
+      "max_health": 15,
+      "damage_min": 1,
+      "damage_max": 3,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        1,
+        3
+      ],
+      "aggressive": true,
+      "speed": 1.2,
+      "loot_table": [
+        {
+          "item_id": "rat_tail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "wolf",
+      "name": "Gray Wolf",
+      "description": "A fierce gray wolf with sharp fangs and intelligent eyes. It moves with predatory grace and seems ready to defend its territory.",
+      "type": "beast",
+      "level": 3,
+      "health": 35,
+      "max_health": 35,
+      "damage_min": 4,
+      "damage_max": 8,
+      "armor": 1,
+      "experience_reward": 25,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "pack_animal": true,
+      "speed": 1.3,
+      "abilities": [
+        "howl",
+        "pack_tactics"
+      ],
+      "loot_table": [
+        {
+          "item_id": "wolf_pelt",
+          "chance": 0.7
+        },
+        {
+          "item_id": "wolf_fang",
+          "chance": 0.3
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": "huge_rat",
+      "name": "Huge Rat",
+      "description": "The huge rat resembles rats you've seen before, except that it is about two feet tall at the shoulder, and seems much more aggressive.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 6,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "gnashing teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "rat_tail",
+          "chance": 0.5
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.3
+        },
+        {
+          "item_id": "gnashing_teeth",
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "id": "giant_scorpion",
+      "name": "Giant Scorpion",
+      "description": "The giant scorpion resembles a common scorpion, except that it is over eight feet in length.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 6,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tail",
+        "snapped its pincers at",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        }
+      ]
+    },
+    {
+      "id": "huge_toad",
+      "name": "Huge Toad",
+      "description": "The huge toad resembles a common toad, except that it is just over three feet tall, and seems very aggressive.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "gaping mouth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "giant_slug",
+      "name": "Giant Slug",
+      "description": "The giant slug is over seven feet long and drools acidic spittle from its maw.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 6,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "toothy maw",
+        "discharged a spray of acid at"
+      ],
+      "loot_table": [
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "preserved_rations",
+          "chance": 0.4
+        }
+      ]
+    },
+    {
+      "id": "giant_bat",
+      "name": "Giant Bat",
+      "description": "The giant bat has a wingspan of over twelve feet and has wicked looking claws and teeth.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "vicious bite"
+      ],
+      "loot_table": [
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.4
+        }
+      ]
+    },
+    {
+      "id": "giant_spider",
+      "name": "Giant Spider",
+      "description": "The giant spider's body is over six feet long, and it has thick hairy legs. A thick oily liquid drips from its mandibles.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 1,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "mandibles"
+      ],
+      "loot_table": [
+        {
+          "item_id": "pincers",
+          "chance": 0.6
+        },
+        {
+          "item_id": "mandibles",
+          "chance": 0.4
+        },
+        {
+          "item_id": "verbena_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "fire_beetle",
+      "name": "Fire Beetle",
+      "description": "The fire beetle is a huge reddish brown beetle, about four feet long, with a thick shiny carapace, and strong, wickedly sharp mandibles.",
+      "type": "beast",
+      "level": 2,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "mandibles",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "alligator",
+      "name": "Alligator",
+      "description": "The alligator watches your every move closely and snaps at you.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked bite",
+        "lashed its tail at",
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "giant_asp",
+      "name": "Giant Asp",
+      "description": "The giant asp is an enormous viper over twenty feet in length. Its scales are a dull tan and it's body is thicker than a large man's arm.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked bite",
+        "coiled around"
+      ],
+      "loot_table": [
+        {
+          "item_id": "huge_club",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "anaconda",
+      "name": "Anaconda",
+      "description": "The anaconda is an enormous constrictor snake well over forty feet in length. Its scales range in color from an emerald green to a dark blue, and its body is thicker than some tree trunks you've seen.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked bite",
+        "coiled around",
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lizard_woman",
+      "name": "Lizard Woman",
+      "description": "The lizard woman is a five foot tall bipedal humanoid who's features resemble those of a large lizard. She has greyish scaley skin, and sharp claws and teeth. The lizard woman is armed with {0}.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 1,
+      "armor": 1,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lizard_man",
+      "name": "Lizard Man",
+      "description": "The lizard man is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. The lizard man is armed with {0}.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 1,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "black_bear",
+      "name": "Black Bear",
+      "description": "The black bear has shaggy black fur run through with reddish brown streaks and stands well over four feet tall at the shoulder.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "raw_meat",
+          "chance": 0.9
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "wicked_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "red_bear",
+      "name": "Red Bear",
+      "description": "The red bear has shaggy reddish fur run through with black streaks and stands just over five feet tall at the shoulder.",
+      "type": "beast",
+      "level": 2,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 2,
+      "damage_max": 10,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "raw_meat",
+          "chance": 0.9
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "wicked_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "brass_key",
+          "chance": 1.0
+        }
+      ]
+    },
+    {
+      "id": "leopard",
+      "name": "Leopard",
+      "description": "The leopard has luxurious looking spotted fur. It growls menacingly and bares its teeth at you.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 3,
+      "damage_max": 9,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "savagely bit",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "wild_boar",
+      "name": "Wild Boar",
+      "description": "The wild boar has dark coarse hair and makes a low whining sound. It has two sharp tusks which curve upwards from the sides of its mouth.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 4,
+      "damage_max": 12,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tusks"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "cave_bear",
+      "name": "Cave Bear",
+      "description": "The cave bear has dark brown fur and stands well over seven feet tall at the shoulder. Its teeth and claws gleam like daggers as it sizes you up.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "raw_meat",
+          "chance": 0.9
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "wicked_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 1.0
+        }
+      ]
+    },
+    {
+      "id": "mountain_ape",
+      "name": "Mountain Ape",
+      "description": "The mountain ape is nearly seven feet tall, has thick reddish brown fur and looks very strong.",
+      "type": "beast",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 2,
+      "damage_max": 10,
+      "armor": 3,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "clenched fists",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "carrion_crane",
+      "name": "Carrion Crane",
+      "description": "The carrion crane is nearly eight feet tall, has dull grey plumage and a very wicked looking hooked ebony beak.",
+      "type": "beast",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 3,
+      "damage_max": 18,
+      "armor": 2,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "hooked beak"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "cave_lion",
+      "name": "Cave Lion",
+      "description": "The cave lion is a huge black animal which stands over six feet tall at the shoulder and has wicked curved claws and razor sharp teeth.",
+      "type": "beast",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 4,
+      "damage_max": 20,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "sand_worm",
+      "name": "Sand Worm",
+      "description": "The sand worm is over fifty feet long, is covered in a hard ringed carapace, it's gaping maw is filled with many rows of wickedly gleaming teeth.",
+      "type": "beast",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 5,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "gaping maw"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "magma_worm",
+      "name": "Magma Worm",
+      "description": "The magma worm is over seventy feet long, is covered in a hard ringed carapace that glows a dull reddish color, and it's gaping maw is filled with many rows of wicked teeth.",
+      "type": "beast",
+      "level": 6,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 6,
+      "damage_max": 36,
+      "armor": 5,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "gaping maw",
+        "regeneration",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "octopod",
+      "name": "Octopod",
+      "description": "The octopod is a huge dark green bulbous plant standing nearly five feet tall, and has eight rubbery greenish tentacles.",
+      "type": "beast",
+      "level": 7,
+      "health": 90,
+      "max_health": 90,
+      "damage_min": 4,
+      "damage_max": 20,
+      "armor": 6,
+      "experience_reward": 70,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "a tentacle",
+        "lashed several tentacles at",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "white_rabbit",
+      "name": "White Rabbit",
+      "description": "The white rabbit is large and fluffy with floppy ears and big brown eyes.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 2,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "dull teeth",
+        "emits a shrill screech",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "black_rabbit",
+      "name": "Black Rabbit",
+      "description": "The black rabbit is large and fluffy with floppy ears and big brown eyes.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 2,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "dull teeth",
+        "emits a shrill screech",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "pink_bunny",
+      "name": "Pink Bunny",
+      "description": "The pink bunny is small and fluffy with perky ears and big blue eyes.",
+      "type": "beast",
+      "level": 3,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 1,
+      "damage_max": 2,
+      "armor": 0,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "daring nibble",
+        "gnashed its big pointy teeth at",
+        "becomes a berzerk flurry of gnashing teeth",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lizard",
+      "name": "Lizard",
+      "description": "The lizard is small and brown and moves very quickly.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 1,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tiny teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "monkey",
+      "name": "Monkey",
+      "description": "The monkey is quick and playful and watches you warily.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 4,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "clinched fists"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "owl",
+      "name": "Owl",
+      "description": "The owl is perched in a nearby tree watching you intently.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 3,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "talons"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "squirrel",
+      "name": "Squirrel",
+      "description": "The squirrel sits in a nearby tree and chitters at you.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 3,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "sharp teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "frog",
+      "name": "Frog",
+      "description": "The frog is small and green and appears to be a good jumper.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 1,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tiny teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "lizard",
+      "name": "Lizard",
+      "description": "The lizard is small and purple and moves very quickly.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 3,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tiny teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "fox",
+      "name": "Fox",
+      "description": "The fox hides in the nearby brush and seems very skittish.",
+      "type": "beast",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 4,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "sharp teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "hyena",
+      "name": "Hyena",
+      "description": "The hyena looks ravenous and extremely viscious. It snarls menacingly and bares its teeth at you.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "tiger",
+      "name": "Tiger",
+      "description": "The tiger has luxurious looking striped fur. It growls menacingly and bares its teeth at you.",
+      "type": "beast",
+      "level": 4,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 8,
+      "damage_max": 24,
+      "armor": 2,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked claws",
+        "savagely bit",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "mountain_lion",
+      "name": "Mountain Lion",
+      "description": "The mountain lion has dark brown spotted fur. It growls menacingly and bares its teeth at you.",
+      "type": "beast",
+      "level": 4,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 2,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "savagely bit",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "jackal",
+      "name": "Jackal",
+      "description": "The jackal looks extremely viscious. It snarls menacingly and bares its teeth at you.",
+      "type": "beast",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 3,
+      "damage_max": 18,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked teeth"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lizard_warrior",
+      "name": "Lizard Warrior",
+      "description": "The lizard warrior is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is armed with {0} {1}.",
+      "type": "beast",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 3,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.3
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "scalemail",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lizard_subchief",
+      "name": "Lizard Subchief",
+      "description": "The lizard subchief is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is armed with {0} {1}.",
+      "type": "beast",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 3,
+      "experience_reward": 40,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.2
+        },
+        {
+          "item_id": "scalemail",
+          "chance": 0.15
+        },
+        {
+          "item_id": "flail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lizard_chieftain",
+      "name": "Lizard Chieftain",
+      "description": "The lizard chieftain is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is wearing ringmail armor and is armed with {0} {1}.",
+      "type": "beast",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 5,
+      "experience_reward": 50,
+      "gold_reward": [
+        2,
+        17
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.3
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "scalemail",
+          "chance": 0.15
+        },
+        {
+          "item_id": "warhammer",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "lizard_warlord",
+      "name": "Lizard Warlord",
+      "description": "The lizard warlord is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is wearing scalemail armor and is armed with {0} {1}.",
+      "type": "beast",
+      "level": 7,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 8,
+      "experience_reward": 70,
+      "gold_reward": [
+        9,
+        24
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.3
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.2
+        },
+        {
+          "item_id": "scalemail",
+          "chance": 0.15
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "lizard_shaman",
+      "name": "Lizard Shaman",
+      "description": "The lizard shaman is a five foot tall bipedal humanoid who's features resemble those of a large lizard. She has greyish scaley skin, and sharp claws and teeth. She is wearing robes and is armed with {0} {1}.",
+      "type": "beast",
+      "level": 3,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 75,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.3
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.2
+        },
+        {
+          "item_id": "scalemail",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "stone_scorpion",
+      "name": "Stone Scorpion",
+      "description": "The stone scorpion is skillfully crafted and resembles a common scorpion, except that it is nearly twenty feet in length and it's carapace has the color and texture of stone.",
+      "type": "beast",
+      "level": 25,
+      "health": 750,
+      "max_health": 750,
+      "damage_min": 125,
+      "damage_max": 250,
+      "armor": 25,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tail",
+        "snaps its pincers at",
+        "is suddenly surrounded by a pale blue light",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "stone_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "wand_of_lightning",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "dwarven_warhound",
+      "name": "Dwarven Warhound",
+      "description": "The dwarven warhound is a huge beast, nearly four feet at the shoulder. It resembles  a wolf with glossy black fur. Its eyes and teeth are crimson. Its hackles raise and it snarls menacingly as you look its way.",
+      "type": "beast",
+      "level": 20,
+      "health": 200,
+      "max_health": 200,
+      "damage_min": 10,
+      "damage_max": 30,
+      "armor": 6,
+      "experience_reward": 200,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "vicious bite"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "brass_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "magma_slug",
+      "name": "Magma Slug",
+      "description": "The magma slug is a gigantic slug that is covered in magma.  Its maw rumbles with fury as it looks to burn you alive with its own magma.",
+      "type": "beast",
+      "level": 35,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 80,
+      "damage_max": 115,
+      "armor": 18,
+      "experience_reward": 350,
+      "gold_reward": [
+        40,
+        55
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "maw",
+        "unloaded a wad of magma"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ]
+    }
+  ]
+}

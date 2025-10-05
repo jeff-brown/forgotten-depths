@@ -33,22 +33,43 @@ class ConfigManager:
         self._load_game_settings()
 
     def load_items(self) -> Dict[str, Any]:
-        """Load items configuration from JSON file."""
+        """Load items configuration from JSON files (by type)."""
         if self._items_cache is None:
-            # Try new JSON file first, fallback to YAML for compatibility
-            items_file_json = Path("data/items/items.json")
-            items_file_yaml = self.config_dir / "items.yaml"
+            items_dir = Path("data/items")
+            all_items = {}
 
-            if items_file_json.exists():
-                with open(items_file_json, 'r', encoding='utf-8') as f:
-                    config = json.load(f)
-                self._items_cache = config.get('items', {})
-            elif items_file_yaml.exists():
-                with open(items_file_yaml, 'r', encoding='utf-8') as f:
-                    config = yaml.safe_load(f)
-                self._items_cache = config.get('items', {})
-            else:
-                raise FileNotFoundError(f"Items config file not found: {items_file_json} or {items_file_yaml}")
+            # Load items from type-specific JSON files
+            if items_dir.exists():
+                for item_file in items_dir.glob("*.json"):
+                    # Skip items.json if it exists (legacy file)
+                    if item_file.name == "items.json":
+                        continue
+
+                    try:
+                        with open(item_file, 'r', encoding='utf-8') as f:
+                            config = json.load(f)
+                            type_items = config.get('items', {})
+                            all_items.update(type_items)
+                    except Exception as e:
+                        print(f"Warning: Could not load items from {item_file}: {e}")
+
+            # Fallback to legacy items.json if no type files found
+            if not all_items:
+                items_file_json = Path("data/items/items.json")
+                items_file_yaml = self.config_dir / "items.yaml"
+
+                if items_file_json.exists():
+                    with open(items_file_json, 'r', encoding='utf-8') as f:
+                        config = json.load(f)
+                    all_items = config.get('items', {})
+                elif items_file_yaml.exists():
+                    with open(items_file_yaml, 'r', encoding='utf-8') as f:
+                        config = yaml.safe_load(f)
+                    all_items = config.get('items', {})
+                else:
+                    raise FileNotFoundError(f"Items config files not found in {items_dir}")
+
+            self._items_cache = all_items
 
         return self._items_cache
 
@@ -143,8 +164,9 @@ class ConfigManager:
         price = vendor_price if vendor_price is not None else item_config['base_value']
 
         item_instance = {
+            'id': item_id,  # Include item ID for reference
             'name': item_config['name'],
-            'weight': item_config['weight'],
+            'weight': item_config.get('weight', 0),  # Default to 0 if missing
             'value': price,  # Use vendor price or base value
             'type': item_config.get('type', 'misc'),
             'description': item_config.get('description', ''),
@@ -181,24 +203,53 @@ class ConfigManager:
         """Load game data files (races, classes, spells)."""
         project_root = Path(__file__).parent.parent.parent.parent
         data_dir = project_root / "data"
+        player_dir = data_dir / "player"
 
-        # Load races
-        races_file = data_dir / "races.json"
+        # Load races (try new location first, then fall back to old)
+        races_file = player_dir / "races.json"
+        if not races_file.exists():
+            races_file = data_dir / "races.json"
         if races_file.exists():
             with open(races_file, 'r', encoding='utf-8') as f:
                 self.game_data['races'] = json.load(f)
 
-        # Load classes
-        classes_file = data_dir / "classes.json"
+        # Load classes (try new location first, then fall back to old)
+        classes_file = player_dir / "classes.json"
+        if not classes_file.exists():
+            classes_file = data_dir / "classes.json"
         if classes_file.exists():
             with open(classes_file, 'r', encoding='utf-8') as f:
                 self.game_data['classes'] = json.load(f)
 
-        # Load spells
-        spells_file = data_dir / "spells.json"
-        if spells_file.exists():
-            with open(spells_file, 'r', encoding='utf-8') as f:
-                self.game_data['spells'] = json.load(f)
+        # Load spells from school-specific JSON files
+        spells_dir = data_dir / "spells"
+        all_spells = {}
+
+        # Load spells from school-specific files
+        if spells_dir.exists():
+            for spell_file in spells_dir.glob("*.json"):
+                # Skip backup and legacy files
+                if spell_file.name in ['spells.json', 'spells.json.backup']:
+                    continue
+
+                try:
+                    with open(spell_file, 'r', encoding='utf-8') as f:
+                        config = json.load(f)
+                        school_spells = config.get('spells', {})
+                        all_spells.update(school_spells)
+                except Exception as e:
+                    print(f"Warning: Could not load spells from {spell_file}: {e}")
+
+        # Fallback to legacy spells.json if no school files found
+        if not all_spells:
+            legacy_file = spells_dir / "spells.json"
+            if not legacy_file.exists():
+                legacy_file = data_dir / "spells.json"
+            if legacy_file.exists():
+                with open(legacy_file, 'r', encoding='utf-8') as f:
+                    all_spells = json.load(f)
+
+        self.game_data['spells'] = all_spells
 
     def _load_game_settings(self):
         """Load game settings from game_settings.yaml."""

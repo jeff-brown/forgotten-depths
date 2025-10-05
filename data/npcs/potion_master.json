@@ -22,8 +22,17 @@
     "sell_rate": 1.0,
     "specialties": ["potions", "elixirs", "tonics", "alchemical_reagents"],
     "inventory": [
-      {"item_id": "health_potion_small", "price": 25, "stock": -1},
-      {"item_id": "mana_potion_small", "price": 25, "stock": -1}
+      {"item_id": "rue_potion", "price": 8, "stock": -1},
+      {"item_id": "amaranth_potion", "price": 15, "stock": -1},
+      {"item_id": "anemone_potion", "price": 35, "stock": -1},
+      {"item_id": "zarynthium_potion", "price": 75, "stock": -1},
+      {"item_id": "health_potion", "price": 30, "stock": -1},
+      {"item_id": "yarrow_potion", "price": 15, "stock": -1},
+      {"item_id": "mana_potion", "price": 30, "stock": -1},
+      {"item_id": "verbena_potion", "price": 15, "stock": -1},
+      {"item_id": "rowan_potion", "price": 15, "stock": -1},
+      {"item_id": "hyssop_potion", "price": 15, "stock": -1},
+      {"item_id": "vervain_potion", "price": 150, "stock": -1}
     ]
   },
   "stats": {

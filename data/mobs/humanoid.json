@@ -1,0 +1,4495 @@
+{
+  "monsters": [
+    {
+      "id": "goblin_scout",
+      "name": "Goblin Scout",
+      "description": "A small, green-skinned creature wearing tattered leather armor. It carries a crude dagger and looks ready for trouble.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 25,
+      "max_health": 25,
+      "damage_min": 3,
+      "damage_max": 6,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        2,
+        8
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "backstab"
+      ],
+      "loot_table": [
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_kobold",
+      "name": "Female Kobold",
+      "description": "The kobold is a small humanoid with doglike facial features and is covered with coarse body hair. She stands just over three feet in height, is wearing a filthy tunic, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        11
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.3
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "kobold",
+      "name": "Kobold",
+      "description": "The kobold is a small humanoid with doglike facial features and is covered with coarse body hair. He stands just under four feet in height, is wearing a filthy tunic, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        11
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "preserved_rations",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "female_orc",
+      "name": "Female Orc",
+      "description": "The orc is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. She stands just over four feet in height, is wearing a leather tunic, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        11
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "orc",
+      "name": "Orc",
+      "description": "The orc is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands just under five feet in height, is wearing a leather cuirass, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 2,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        11
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.3
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "female_gnoll",
+      "name": "Female Gnoll",
+      "description": "The gnoll is a tall humanoid with hyenalike facial features and is covered by thick golden brown body hair. She stands just over six feet in height, is wearing a leather cuirass and trousers, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.3
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloth_robe",
+          "chance": 0.2
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "gnoll",
+      "name": "Gnoll",
+      "description": "The gnoll is a tall humanoid with hyenalike facial features and is covered by thick reddish brown body hair. He stands just under seven feet in height, is wearing a chainmail shirt and trousers, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 4,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.25
+        },
+        {
+          "item_id": "leather_armor",
+          "chance": 0.2
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_hobgoblin",
+      "name": "Female Hobgoblin",
+      "description": "The hobgoblin is a squat apelike humanoid with dark skin and pointed ears. She stands just under five feet tall, is wearing a leather cuirass, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.2
+        },
+        {
+          "item_id": "brass_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "hobgoblin",
+      "name": "Hobgoblin",
+      "description": "The hobgoblin is a squat apelike humanoid with dark skin and pointed ears. He stands just over five feet tall, is wearing a leather cuirass, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloth_robe",
+          "chance": 0.2
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_brigand",
+      "name": "Female Brigand",
+      "description": "The brigand has the look of a common thief, and is dressed in a cheap, but flashy outfit. She is also wearing leather armor and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 1,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "robbed",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.5
+        },
+        {
+          "item_id": "brass_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "brigand",
+      "name": "Brigand",
+      "description": "The brigand has the look of a common thief, and is dressed in a cheap, but flashy outfit. He is also wearing chain armor and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 1,
+      "armor": 4,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "robbed",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.5
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_barbarian",
+      "name": "Female Barbarian",
+      "description": "The barbarian is dressed in the hides of furred animals, and is armed with {0}. She has a look of great strength and cunning.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.5
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "barbarian",
+      "name": "Barbarian",
+      "description": "The barbarian is dressed in the hides of furred animals, and is armed with {0}. He has a look of great strength and cunning.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.5
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_centaur",
+      "name": "Female Centaur",
+      "description": "The centaur has the body of a horse with the upper torso, arms, and head of a well built woman. She has long hair which she wears in a tight braid, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "flailed her hooves at",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "centaur",
+      "name": "Centaur",
+      "description": "The centaur has the body of a horse with the upper torso, arms, and head of a well muscled man. He has long hair which he wears in a tight braid, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 4,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "flailed his hooves at",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_satyr",
+      "name": "Female Satyr",
+      "description": "The satyr has the upper torso of well built woman, and the lower torso, legs, and hooves of a goat. She is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "sounds an ivory horn"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "satyr",
+      "name": "Satyr",
+      "description": "The satyr has the upper torso of man with a lot of body hair, and the lower torso, legs, and hooves of a goat. He is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "sounds an ivory horn"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_minotaur",
+      "name": "Female Minotaur",
+      "description": "The minotaur has the upper torso of a muscular woman, and the head, legs, and hooves of a bull. She is wearing chainmail armor, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "charged"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 1.0
+        }
+      ]
+    },
+    {
+      "id": "minotaur",
+      "name": "Minotaur",
+      "description": "The minotaur has the upper torso of a muscular man, and the head, legs, and hooves of a bull. He is wearing banded mail armor, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 2,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "charged"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mace",
+          "chance": 0.3
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ogress",
+      "name": "Ogress",
+      "description": "The ogress resembles an enormous and very ugly woman. She stands over seven feet tall and is very muscular. Her clothing is filthy and poorly made. She is armed with {0}.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 2,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.3
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ogre",
+      "name": "Ogre",
+      "description": "The ogre resembles an enormous and very ugly man. He stands over eight feet tall and is very muscular. His clothing is filthy and poorly made. He is armed with {0}.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 3,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "swordswoman",
+      "name": "Swordswoman",
+      "description": "The swordswoman has an air of confidance about her. She is wearing chain armor, and is armed with a {0} which she wields skillfully.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 2,
+      "damage_max": 16,
+      "armor": 4,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "rapier",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "shortsword",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ringmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "swordsman",
+      "name": "Swordsman",
+      "description": "The swordsman has an air of confidence about him. He is wearing chain armor, and is armed with a {0} which he wields skillfully.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 4,
+      "damage_max": 18,
+      "armor": 5,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "rapier",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.4
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "larochess",
+      "name": "Larochess",
+      "description": "The larochess resembles a large well built woman with pale bluish skin pointed ears, and a short tail. She is very muscular and stands nearly nine feet tall. She is wearing leather armor, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 3,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked spear",
+        "exhaled a cloud of acidic vapor at",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "larochet",
+      "name": "Larochet",
+      "description": "The larochet resembles a large well built man with dark bluish skin, pointed ears, and a short tail. He is very muscular and stands over nine feet tall. He is wearing a cuirass, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked spear",
+        "exhaled a cloud of acidic vapor at",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_troll",
+      "name": "Female Troll",
+      "description": "The troll resembles a large ugly woman with yellowish green skin and wicked claws. Her skin is covered with warts and tufts of stiff greenish hair.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 3,
+      "damage_max": 12,
+      "armor": 2,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "regeneration",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mace",
+          "chance": 0.3
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "troll",
+      "name": "Troll",
+      "description": "The troll resembles a large ugly man with brownish green skin and wicked claws. His skin is covered with warts and tufts of stiff greenish hair.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 4,
+      "damage_max": 16,
+      "armor": 2,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "regeneration",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.5
+        },
+        {
+          "item_id": "raw_meat",
+          "chance": 0.4
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.3
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "magmaman",
+      "name": "Magmaman",
+      "description": "The magmaman resembles a humanoid non-descript creature, seemingly formed from molten rock. He has two thick arm-like appendages, ending in dripping claws.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 6,
+      "damage_max": 50,
+      "armor": 5,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "burning claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ogress_mage",
+      "name": "Ogress Mage",
+      "description": "The ogress mage is wearing a steel breastplate and bracers, and is armed with {0}. She is also wearing a dark red cloak.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 3,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking"
+      ],
+      "spellcaster": true,
+      "spell_skill": 65,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.6
+        },
+        {
+          "item_id": "scroll_cure_wounds",
+          "chance": 0.5
+        },
+        {
+          "item_id": "hyssop_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "robes",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.3
+        },
+        {
+          "item_id": "scroll_fireball",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ogre_mage",
+      "name": "Ogre Mage",
+      "description": "The ogre mage is wearing a steel breastplate and bracers, and is armed with {0}. He is also wearing a dark red cloak.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking"
+      ],
+      "spellcaster": true,
+      "spell_skill": 60,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "yarrow_potion",
+          "chance": 0.6
+        },
+        {
+          "item_id": "scroll_shield",
+          "chance": 0.5
+        },
+        {
+          "item_id": "verbena_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "blue_robes",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.3
+        },
+        {
+          "item_id": "scroll_lightning_bolt",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "warlock",
+      "name": "Warlock",
+      "description": "The warlock is dressed in red robes and radiates power. He wields a {0}. Tattooed on his right forearm is a crimson sigil.",
+      "type": "humanoid",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 4,
+      "damage_max": 12,
+      "armor": 4,
+      "experience_reward": 50,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "flaming staff"
+      ],
+      "spellcaster": true,
+      "spell_skill": 80,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.6
+        },
+        {
+          "item_id": "scroll_shield",
+          "chance": 0.5
+        },
+        {
+          "item_id": "vervain_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "violet_robes",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.3
+        },
+        {
+          "item_id": "scroll_fireball",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "minotaur_chieftain",
+      "name": "Minotaur Chieftain",
+      "description": "The minotaur chieftain is a very large member of his species. He is very muscular and stands nearly eight feet tall. He is wearing scalemail armor, and is armed with {0}.",
+      "type": "humanoid",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 4,
+      "experience_reward": 50,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "charged"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mace",
+          "chance": 0.4
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "warhammer",
+          "chance": 0.35
+        },
+        {
+          "item_id": "breastplate",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "sorceress",
+      "name": "Sorceress",
+      "description": "The sorceress is dressed in indigo robes and radiates power. She wields a rod tipped with magical frost. Inscribed on her forehead is a blue rune.",
+      "type": "humanoid",
+      "level": 8,
+      "health": 100,
+      "max_health": 100,
+      "damage_min": 5,
+      "damage_max": 20,
+      "armor": 3,
+      "experience_reward": 80,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "frost rod",
+        "regeneration",
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 85,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "preserved_rations",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.2
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "sorceror",
+      "name": "Sorceror",
+      "description": "The sorceror is dressed in indigo robes and radiates power. He wields a rod shrouded with magical flame. Inscribed on his forehead is a violet rune.",
+      "type": "humanoid",
+      "level": 9,
+      "health": 120,
+      "max_health": 120,
+      "damage_min": 6,
+      "damage_max": 30,
+      "armor": 4,
+      "experience_reward": 90,
+      "gold_reward": [
+        10,
+        25
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "flaming staff",
+        "regeneration",
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 90,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.25
+        },
+        {
+          "item_id": "leather_armor",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "female_nomad",
+      "name": "Female Nomad",
+      "description": "The nomad has dark skin and the look of someone hardened by the harsh environment in which she lives. She is wearing dark linen clothing and is armed with a scimitar.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 5,
+      "damage_max": 15,
+      "armor": 2,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "scimitar"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.5
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.3
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "nomad",
+      "name": "Nomad",
+      "description": "The nomad has dark skin and the look of someone hardened by the harsh environment in which he lives. He is wearing dark linen clothing and is armed with a scimitar.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 6,
+      "damage_max": 18,
+      "armor": 3,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "scimitar"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.5
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rusty_sword",
+          "chance": 0.3
+        },
+        {
+          "item_id": "cloth_robe",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_bandit",
+      "name": "Female Bandit",
+      "description": "The bandit has the look of an accomplished rogue, and is dressed in an expensive silk tunic and pants of a rich red color. She is also wearing a chainmail jerkin and is armed with a wicked looking sabre.",
+      "type": "humanoid",
+      "level": 6,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 6,
+      "experience_reward": 60,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "sabre",
+        "skillfully slashed",
+        "robbed",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.5
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.3
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.25
+        },
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.7
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "bandit",
+      "name": "Bandit",
+      "description": "The bandit has the look of an accomplished rogue, and is dressed in an expensive silk tunic and pants of a deep blue color. He is also wearing a chainmail jerkin and is armed with a wicked looking sabre.",
+      "type": "humanoid",
+      "level": 7,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 6,
+      "damage_max": 36,
+      "armor": 8,
+      "experience_reward": 70,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "sabre",
+        "skillfully slashed",
+        "robbed",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.5
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.5
+        },
+        {
+          "item_id": "brass_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.3
+        },
+        {
+          "item_id": "cloth_robe",
+          "chance": 0.25
+        },
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.7
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "mystic_knight",
+      "name": "Mystic Knight",
+      "description": "The mystic knight has the look of a well seasoned warrior who has seen many a battle in his time. His gear and clothing are the finest available. He is wearing glowing dragonscale armor and wielding a jeweled claymore. Somehow you are aware that he could easily defeat you.",
+      "type": "humanoid",
+      "level": 60,
+      "health": 2500,
+      "max_health": 2500,
+      "damage_min": 100,
+      "damage_max": 600,
+      "armor": 50,
+      "experience_reward": 600,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "jeweled claymore",
+        "regeneration",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "knife",
+          "chance": 0.4
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.35
+        },
+        {
+          "item_id": "platemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.25
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "orc_warrior",
+      "name": "Orc Warrior",
+      "description": "The orc warrior is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands just over five feet in height, is wearing chainmail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 1,
+      "armor": 6,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.25
+        },
+        {
+          "item_id": "leather_armor",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "orc_subchief",
+      "name": "Orc Subchief",
+      "description": "The orc subchief is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands over five feet in height, is wearing chainmail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 50,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 6,
+      "experience_reward": 500,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.3
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.25
+        },
+        {
+          "item_id": "leather_armor",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ringmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "orc_chieftain",
+      "name": "Orc Chieftain",
+      "description": "The orc chieftain is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands well over five feet in height, is wearing chainmail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 6,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.3
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.2
+        },
+        {
+          "item_id": "brass_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "shortsword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.35
+        },
+        {
+          "item_id": "scalemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "orc_shaman",
+      "name": "Orc Shaman",
+      "description": "The orc shaman is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. She stands just under five feet in height, is wearing robes, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking"
+      ],
+      "spellcaster": true,
+      "spell_skill": 85,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.2
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "scroll_cure_wounds",
+          "chance": 0.4
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.3
+        },
+        {
+          "item_id": "vervain_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "orc_warlord",
+      "name": "Orc Warlord",
+      "description": "The orc warlord is an average sized humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands just under six feet in height, is wearing gleaming chainmail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 6,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 6,
+      "experience_reward": 60,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.25
+        },
+        {
+          "item_id": "leather_armor",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.35
+        },
+        {
+          "item_id": "cuirass",
+          "chance": 0.3
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "gnoll_warrior",
+      "name": "Gnoll Warrior",
+      "description": "The gnoll warrior is a tall humanoid with hyenalike facial features and is covered by thick reddish brown body hair. He stands just under seven feet in height, is wearing chainmail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 2,
+      "armor": 6,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "preserved_rations",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloth_robe",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "gnoll_subchief",
+      "name": "Gnoll Subchief",
+      "description": "The gnoll subchief is a tall humanoid with hyenalike facial features and is covered by thick reddish brown body hair. He stands just over seven feet in height, is wearing scalemail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 8,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.3
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.25
+        },
+        {
+          "item_id": "leather_armor",
+          "chance": 0.2
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rusty_sword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.35
+        },
+        {
+          "item_id": "cuirass",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "gnoll_chieftain",
+      "name": "Gnoll Chieftain",
+      "description": "The gnoll chieftain is a tall humanoid with hyenalike facial features and is covered by thick reddish brown body hair. He stands just over seven feet in height, is wearing scalemail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 8,
+      "experience_reward": 50,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.3
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloth_robe",
+          "chance": 0.2
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "mace",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ringmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "gnoll_warlord",
+      "name": "Gnoll Warlord",
+      "description": "The gnoll warlord is a tall humanoid with hyenalike facial features and is covered by thick reddish brown body hair. He stands well over seven feet in height, is wearing gleaming bandmail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 7,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 10,
+      "experience_reward": 70,
+      "gold_reward": [
+        7,
+        22
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dried_meat",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloth_robe",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.35
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "gnoll_shaman",
+      "name": "Gnoll Shaman",
+      "description": "The gnoll shaman is a tall humanoid with hyenalike facial features and is covered by thick golden brown body hair. She stands just over six feet in height, is wearing robes, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 4,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "spellcaster": true,
+      "spell_skill": 80,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bread",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "spear",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "scroll_shield",
+          "chance": 0.4
+        },
+        {
+          "item_id": "yarrow_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "vervain_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "stone_warrior",
+      "name": "Stone Warrior",
+      "description": "The stone warrior is skillfully crafted and resembles a heavily muscled warrior in full plate armor and stands nearly twenty feet high. It is armed with a huge stone axe.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 100,
+      "damage_max": 200,
+      "armor": 20,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "stone axe",
+        "kicks",
+        "swings its axe in a wide arc",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "short_sword",
+          "chance": 0.4
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "morningstar",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.3
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.25
+        },
+        {
+          "item_id": "greatsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "stone_wizard",
+      "name": "Stone Wizard",
+      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorceror in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 50,
+      "damage_max": 100,
+      "armor": 15,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "stone sceptre",
+        "discharged its sceptre at",
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 90,
+      "loot_table": [
+        {
+          "item_id": "yarrow_potion",
+          "chance": 0.6
+        },
+        {
+          "item_id": "scroll_magic_missile",
+          "chance": 0.5
+        },
+        {
+          "item_id": "vervain_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "blue_robes",
+          "chance": 0.3
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.3
+        },
+        {
+          "item_id": "scroll_lightning_bolt",
+          "chance": 0.25
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.35
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.25
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "dwarven_guard",
+      "name": "Dwarven Guard",
+      "description": "The guard is of obvious dwarven blood. He looks very tough and battle hardened. He wears scale mail armor of a design you're unfamiliar with and wields a battleax.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 19,
+      "damage_max": 34,
+      "armor": 0,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "elite_dwarven_guard",
+      "name": "Elite Dwarven Guard",
+      "description": "This guard closely resembles his lesser brethren, however his equipment is of a finer quality and he appears more agressive and well disciplined. He wears brushed steel scale mail armor and wields a huge battleax engraved with runes along the edge of the blade.",
+      "type": "humanoid",
+      "level": 30,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 27,
+      "damage_max": 42,
+      "armor": 8,
+      "experience_reward": 300,
+      "gold_reward": [
+        20,
+        35
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "dwarven_captain",
+      "name": "Dwarven Captain",
+      "description": "This grim warrior appears to have seen more than his share of battle, and seems utterly fearless. His dwarven mail is of fine quality and each scale has finely engraved runic designs. He wields a battleax with a haft easily four feet long and a blade blacker than night.",
+      "type": "humanoid",
+      "level": 40,
+      "health": 800,
+      "max_health": 800,
+      "damage_min": 38,
+      "damage_max": 53,
+      "armor": 12,
+      "experience_reward": 400,
+      "gold_reward": [
+        45,
+        60
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "ruby_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "stone_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "dwarven_sorceror",
+      "name": "Dwarven Sorceror",
+      "description": "The dwarven sorceror has an obvious callousness about his expression, and appears no one to be trifled with. He radiates confidence and power. He wears robes of a deep reddish brown, similar to the hue of the stone in the walls of his home. He carries a black sceptre topped with some sort of softly glowing crystal.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 400,
+      "max_health": 400,
+      "damage_min": 11,
+      "damage_max": 16,
+      "armor": 2,
+      "experience_reward": 250,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "black sceptre",
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 90,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.3
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.2
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "dwarven_leutenant",
+      "name": "Dwarven Leutenant",
+      "description": "This dwarven officer wears scale armor of the finest quality and brandishes a huge battleaxe of fine make with an extraordinarily keen edge. He seems very dignified and confidant.",
+      "type": "humanoid",
+      "level": 45,
+      "health": 900,
+      "max_health": 900,
+      "damage_min": 41,
+      "damage_max": 66,
+      "armor": 15,
+      "experience_reward": 450,
+      "gold_reward": [
+        95,
+        110
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "dwarven_warlord",
+      "name": "Dwarven Warlord",
+      "description": "This ruthless dwarven battle chief is dressed in heavy scale armor made of a dull bluish metal that seems to absorb light. The weapon in his hands is an enormous battleax with a haft of dark grey wood and a head forged of the same strange metal as his armor. Dimly glowing runes adorn the head of his axe along the edges of the blades.",
+      "type": "humanoid",
+      "level": 50,
+      "health": 1000,
+      "max_health": 1000,
+      "damage_min": 43,
+      "damage_max": 83,
+      "armor": 20,
+      "experience_reward": 500,
+      "gold_reward": [
+        145,
+        160
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "smith",
+      "name": "Smith",
+      "description": "This dwarven smith is heavily muscled, his leather apron smeared with sweat and soot. He is very alert and has an expression of great calm and peace of mind. His eyes harden as he notices your intense stare, and he hefts the weight of his great hammer.",
+      "type": "humanoid",
+      "level": 20,
+      "health": 400,
+      "max_health": 400,
+      "damage_min": 20,
+      "damage_max": 50,
+      "armor": 2,
+      "experience_reward": 200,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "great hammer"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "master_smith",
+      "name": "Master Smith",
+      "description": "This older dwarf is gnarled and bulging with muscle. His leathers smeared with grime and sweat. He seems very calm and at one with his surrounds. The great hammer he cradles in his arms is forged of a dull bluish metal, and almost seems to glow dimly.",
+      "type": "humanoid",
+      "level": 40,
+      "health": 800,
+      "max_health": 800,
+      "damage_min": 40,
+      "damage_max": 100,
+      "armor": 4,
+      "experience_reward": 400,
+      "gold_reward": [
+        20,
+        35
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "great hammer"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "dwarven_archmage",
+      "name": "Dwarven Archmage",
+      "description": "The dwarven archmage has an obvious callousness about his expression, and appears no one to be trifled with. He radiates incredible power. He wears robes of a deep purple hue. He carries a black sceptre topped with some sort of brightly glowing crystal.",
+      "type": "humanoid",
+      "level": 50,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 21,
+      "damage_max": 26,
+      "armor": 1,
+      "experience_reward": 500,
+      "gold_reward": [
+        95,
+        110
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "black sceptre",
+        "discharges his sceptre at",
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.4
+        },
+        {
+          "item_id": "scroll_fireball",
+          "chance": 0.35
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "vervain_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "elven_scout",
+      "name": "Elven Scout",
+      "description": "The elven scout peers at you through its forest green eyes.  The stripes painted on his face warn you that he has come across and slain many an unexpecting traveller.  Your doom awaits.",
+      "type": "humanoid",
+      "level": 30,
+      "health": 300,
+      "max_health": 300,
+      "damage_min": 50,
+      "damage_max": 65,
+      "armor": 10,
+      "experience_reward": 300,
+      "gold_reward": [
+        50,
+        65
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "shortsword",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "white_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "arrow",
+          "chance": 0.6
+        },
+        {
+          "item_id": "quiver",
+          "chance": 0.4
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "ruby_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "female_elf",
+      "name": "Female Elf",
+      "description": "Despite being female, this elf resembles a modern-day war machine. She moves blindingly fast, striking at any possible moment.  Though a good fight is her forte, she is also amazingly beautiful, as female elves always seem to be.",
+      "type": "humanoid",
+      "level": 32,
+      "health": 350,
+      "max_health": 350,
+      "damage_min": 55,
+      "damage_max": 75,
+      "armor": 12,
+      "experience_reward": 320,
+      "gold_reward": [
+        50,
+        65
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "shortsword",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "black_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "elven_warrior",
+      "name": "Elven Warrior",
+      "description": "This elven warrior is built like a tree, and oddly enough blends in with the trees as well, a warrior of a stealthy sort.  He wields an axe that must have been crafted by the dwarves and enchanted by the high elves.  He is certainly a force to be reckoned with.",
+      "type": "humanoid",
+      "level": 33,
+      "health": 350,
+      "max_health": 350,
+      "damage_min": 90,
+      "damage_max": 125,
+      "armor": 20,
+      "experience_reward": 330,
+      "gold_reward": [
+        70,
+        85
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "enchanted axe",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "black_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "warhammer",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cuirass",
+          "chance": 0.3
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stone_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "elven_champion",
+      "name": "Elven Champion",
+      "description": "This elven champion is built like a mountain.  There seems to be no escape from this warrior of warriors, a man's man -- only an elf. He wields a great sword that shines like the moons on a good night. Only the most powerful elves can craft such a beast.",
+      "type": "humanoid",
+      "level": 37,
+      "health": 450,
+      "max_health": 450,
+      "damage_min": 100,
+      "damage_max": 155,
+      "armor": 25,
+      "experience_reward": 370,
+      "gold_reward": [
+        80,
+        95
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "shining sword",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "white_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.6
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.5
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.35
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "elven_warlord",
+      "name": "Elven Warlord",
+      "description": "This elven warlord is about to knock some sense into you with his warhammer.  His evil eyes seem to hypnotize you into giving in to your imminent death.",
+      "type": "humanoid",
+      "level": 44,
+      "health": 550,
+      "max_health": 550,
+      "damage_min": 110,
+      "damage_max": 185,
+      "armor": 30,
+      "experience_reward": 440,
+      "gold_reward": [
+        110,
+        125
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "warhammer",
+        "gutted",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "black_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.5
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.45
+        },
+        {
+          "item_id": "ruby_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ]
+    }
+  ]
+}

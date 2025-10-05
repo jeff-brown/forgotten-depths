@@ -12,10 +12,34 @@ DUNGEON_LEVELS = {
     'dungeon3': (10, 20)
 }
 
+def load_all_monsters():
+    """Load all monsters from type-specific JSON files."""
+    monsters = []
+    mobs_dir = Path("data/mobs")
+
+    # Load monsters from type-specific files
+    if mobs_dir.exists():
+        for monster_file in mobs_dir.glob("*.json"):
+            try:
+                with open(monster_file, 'r', encoding='utf-8') as f:
+                    config = json.load(f)
+                    type_monsters = config.get('monsters', [])
+                    monsters.extend(type_monsters)
+            except Exception as e:
+                print(f"Warning: Could not load monsters from {monster_file}: {e}")
+
+    # Fallback to legacy monsters.json if no type files found
+    if not monsters:
+        legacy_file = Path("data/npcs/monsters.json")
+        if legacy_file.exists():
+            with open(legacy_file, 'r', encoding='utf-8') as f:
+                monsters = json.load(f)
+
+    return monsters
+
 def get_monsters_by_level():
     """Load monsters and organize by level."""
-    with open('data/npcs/monsters.json', 'r') as f:
-        monsters = json.load(f)
+    monsters = load_all_monsters()
 
     # Group monsters by level
     monsters_by_level = {}

@@ -1,0 +1,23 @@
+{
+  "items": {
+    "ale": {
+      "name": "Ale",
+      "type": "drink",
+      "weight": 2,
+      "base_value": 10,
+      "description": "A mug of hearty ale.",
+      "hydration": 50,
+      "properties": {
+        "restore_mana": 5
+      }
+    },
+    "water": {
+      "name": "Water",
+      "type": "drink",
+      "weight": 1,
+      "base_value": 2,
+      "description": "A flask of clean, refreshing water.",
+      "hydration": 60
+    }
+  }
+}

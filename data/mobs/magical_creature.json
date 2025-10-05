@@ -1,0 +1,192 @@
+{
+  "monsters": [
+    {
+      "id": "griffon",
+      "name": "Griffon",
+      "description": "The griffon has the body of a lion, and the front feet, head, and wings of an eagle. It has razor sharp talons and a large black beak.",
+      "type": "magical_creature",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 4,
+      "damage_max": 12,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "viciously bit",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "gargoyle",
+      "name": "Gargoyle",
+      "description": "The gargoyle is a heavily muscled, grey skinned humanoid with large leathery wings and wicked claws.",
+      "type": "magical_creature",
+      "level": 4,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 4,
+      "damage_max": 16,
+      "armor": 5,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "wicked claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "chimera",
+      "name": "Chimera",
+      "description": "The chimera has the body of a lion, leathery wings and two heads which resemble those of a dragon. Thin streams of smoke curl upwards from its nostrils.",
+      "type": "magical_creature",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "breathed flames at",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "hydra",
+      "name": "Hydra",
+      "description": "The hydra resembles a small wingless dragon with three heads.",
+      "type": "magical_creature",
+      "level": 6,
+      "health": 60,
+      "max_health": 60,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 4,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "gnashing teeth",
+        "expelled a ball of fire at",
+        "regeneration",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "wooden_mallet",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    }
+  ]
+}

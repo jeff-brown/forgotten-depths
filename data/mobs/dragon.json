@@ -1,0 +1,416 @@
+{
+  "monsters": [
+    {
+      "id": "elysian_dragon",
+      "name": "Elysian Dragon",
+      "description": "The elysian dragon has metalic sky blue scales which glisten in the light. Its powerful wings span some eighty feet and it is over fifty feet in length.",
+      "type": "dragon",
+      "level": 5,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 5,
+      "experience_reward": 50,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "talons",
+        "viciously bit",
+        "tracking",
+        "multiattack"
+      ],
+      "resistances": [
+        "fear"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "dragonscale",
+          "chance": 0.8
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ice_crystal",
+          "chance": 0.5
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "stygian_dragon",
+      "name": "Stygian Dragon",
+      "description": "The stygian dragon has dull brown scales and is without wings. It is well over eighty feet in length. Its talons are as large and probably as sharp as a sword.",
+      "type": "dragon",
+      "level": 6,
+      "health": 90,
+      "max_health": 90,
+      "damage_min": 8,
+      "damage_max": 48,
+      "armor": 5,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "talons",
+        "viciously bit",
+        "lashed out with its tail",
+        "multiattack"
+      ],
+      "resistances": [
+        "fear"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "dragonscale",
+          "chance": 0.8
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.5
+        },
+        {
+          "item_id": "longsword",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "apollyon_dragon",
+      "name": "Apollyon Dragon",
+      "description": "The apollyon dragon has crimson scales and powerful leathery wings. It is without a doubt one of the most enormous creatures you have ever seen, being well over one hundred feet in length. Its talons and teeth are jet black, and smoke curls upwards from its nostrils.",
+      "type": "dragon",
+      "level": 10,
+      "health": 150,
+      "max_health": 150,
+      "damage_min": 10,
+      "damage_max": 50,
+      "armor": 8,
+      "experience_reward": 100,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "talons",
+        "breathed flames at",
+        "lashed out with its tail",
+        "tracking",
+        "multiattack"
+      ],
+      "resistances": [
+        "fear"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "dragonscale",
+          "chance": 0.8
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.5
+        },
+        {
+          "item_id": "flail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.5
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        }
+      ]
+    },
+    {
+      "id": "balneal_dragon",
+      "name": "Balneal Dragon",
+      "description": "The balneal dragon has silvery blue scales and a powerfully built serpentine body. It is over one hundred fifty feet in length. Its talons and teeth are of a clear bluish crystalline substance, and steam rises from its nostrils.",
+      "type": "dragon",
+      "level": 15,
+      "health": 300,
+      "max_health": 300,
+      "damage_min": 30,
+      "damage_max": 120,
+      "armor": 16,
+      "experience_reward": 150,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "talons",
+        "viciously bit",
+        "multiattack"
+      ],
+      "resistances": [
+        "fear"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "dragonscale",
+          "chance": 0.8
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.5
+        },
+        {
+          "item_id": "halberd",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.5
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "breastplate",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "id": "great_dragon",
+      "name": "Great Dragon",
+      "description": "The great dragon has grayish scales and powerful leathery wings. It is without a doubt the most enormous creature you have ever seen, being well over two hundred feet in length. Its talons and teeth are yellowish white, and smoke curls upward from its nostrils as it regards you with amusement.",
+      "type": "dragon",
+      "level": 30,
+      "health": 1200,
+      "max_health": 1200,
+      "damage_min": 120,
+      "damage_max": 360,
+      "armor": 30,
+      "experience_reward": 300,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge talons",
+        "cruely bit",
+        "breathed flames in a great arc",
+        "regeneration"
+      ],
+      "resistances": [
+        "fear"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "dragonscale",
+          "chance": 0.8
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.5
+        },
+        {
+          "item_id": "warhammer",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.5
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.35
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ]
+    }
+  ]
+}

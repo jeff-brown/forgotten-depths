@@ -1,0 +1,127 @@
+{
+  "items": {
+    "health_potion": {
+      "name": "Health Potion",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 20,
+      "description": "A red potion that instantly restores health.",
+      "properties": {
+        "restore_health": 25,
+        "instant": true
+      }
+    },
+    "mana_potion": {
+      "name": "Mana Potion",
+      "type": "consumable",
+      "weight": 1,
+      "base_value": 20,
+      "description": "A blue potion that instantly restores mana.",
+      "properties": {
+        "restore_mana": 15,
+        "instant": true
+      }
+    },
+    "rue_potion": {
+      "name": "Rue Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 5,
+      "description": "A minor healing potion that restores a small amount of health.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "4-16"
+      }
+    },
+    "amaranth_potion": {
+      "name": "Amaranth Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A healing potion that restores moderate health.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "16-64"
+      }
+    },
+    "anemone_potion": {
+      "name": "Anemone Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 25,
+      "description": "A powerful healing potion that restores significant health.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "32-128"
+      }
+    },
+    "verbena_potion": {
+      "name": "Verbena Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that cures poison.",
+      "properties": {
+        "required_level": 0,
+        "cure_poison": true
+      }
+    },
+    "yarrow_potion": {
+      "name": "Yarrow Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that restores a small amount of mana.",
+      "properties": {
+        "required_level": 0,
+        "restore_mana": 10
+      }
+    },
+    "rowan_potion": {
+      "name": "Rowan Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that temporarily increases strength.",
+      "properties": {
+        "required_level": 0,
+        "boost_duration": 600,
+        "strength_bonus": 1
+      }
+    },
+    "hyssop_potion": {
+      "name": "Hyssop Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "A potion that temporarily increases dexterity.",
+      "properties": {
+        "required_level": 0,
+        "boost_duration": 600,
+        "dexterity_bonus": 1
+      }
+    },
+    "vervain_potion": {
+      "name": "Vervain Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 100,
+      "description": "A potion that grants temporary invisibility.",
+      "properties": {
+        "required_level": 0,
+        "invisibility_duration": 600
+      }
+    },
+    "zarynthium_potion": {
+      "name": "Zarynthium Potion",
+      "type": "consumable",
+      "weight": 1.0,
+      "base_value": 50,
+      "description": "An extremely potent healing potion.",
+      "properties": {
+        "required_level": 0,
+        "restore_health": "64-256"
+      }
+    }
+  }
+}

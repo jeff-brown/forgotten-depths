@@ -1,0 +1,234 @@
+{
+  "items": {
+    "iron_key": {
+      "name": "Iron Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A iron key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "copper_key": {
+      "name": "Copper Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A copper key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "brass_key": {
+      "name": "Brass Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A brass key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "bronze_key": {
+      "name": "Bronze Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A bronze key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "silver_key": {
+      "name": "Silver Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A silver key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "electrum_key": {
+      "name": "Electrum Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A electrum key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "gold_key": {
+      "name": "Gold Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A gold key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "platinum_key": {
+      "name": "Platinum Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A platinum key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "pearl_key": {
+      "name": "Pearl Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A pearl key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "onyx_key": {
+      "name": "Onyx Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A onyx key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "jade_key": {
+      "name": "Jade Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A jade key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "ruby_key": {
+      "name": "Ruby Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A ruby key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "dragon_ring": {
+      "name": "Dragon Ring",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A dragon ring that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "gome_ring": {
+      "name": "Gome Ring",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A gome ring that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "strato_ring": {
+      "name": "Strato Ring",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A strato ring that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "pink_rose": {
+      "name": "Pink Rose",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A pink rose that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "white_rose": {
+      "name": "White Rose",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A white rose that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "red_rose": {
+      "name": "Red Rose",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A red rose that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "opal_key": {
+      "name": "Opal Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A opal key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "tigereye_key": {
+      "name": "Tigereye Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A tigereye key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "quartz_key": {
+      "name": "Quartz Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A quartz key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "topaz_key": {
+      "name": "Topaz Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A topaz key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "stone_key": {
+      "name": "Ornate Stone Key",
+      "type": "key",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "A ornate stone key that unlocks specific doors.",
+      "properties": {
+        "required_level": 0
+      }
+    }
+  }
+}

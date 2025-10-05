@@ -45,6 +45,7 @@ world:
   room_capacity: 50
   weather_enabled: false
   day_night_cycle: false
+  map_shows_only_explored: true  # Only show rooms player has visited in map command
 
 # Dungeon Settings
 # Define wandering mob configs for each dungeon area

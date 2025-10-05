@@ -1,0 +1,161 @@
+{
+  "items": {
+    "glowstone": {
+      "name": "Glowstone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 50,
+      "description": "A magical stone that emanates a soft, eternal light.",
+      "properties": {
+        "required_level": 0,
+        "light_radius": 30,
+        "eternal": true
+      }
+    },
+    "heartstone": {
+      "name": "Heartstone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 100,
+      "description": "A mystical stone that can recall you to safety.",
+      "properties": {
+        "required_level": 5,
+        "recall": true
+      }
+    },
+    "horn_of_frost": {
+      "name": "Horn Of Frost",
+      "type": "magic_item",
+      "weight": 5.0,
+      "base_value": 50,
+      "description": "A magical horn that unleashes a blast of frost when sounded.",
+      "properties": {
+        "required_level": 3,
+        "charges": 15,
+        "magical": true,
+        "effect": "a blast of frost",
+        "damage": "1d21+3"
+      }
+    },
+    "wand_of_lightning": {
+      "name": "Wand Of Lightning",
+      "type": "magic_item",
+      "weight": 1.0,
+      "base_value": 100,
+      "description": "A wand that channels bolts of lightning at your foes.",
+      "properties": {
+        "required_level": 5,
+        "charges": 20,
+        "magical": true,
+        "effect": "a bolt of lightning",
+        "damage": "1d41+7"
+      }
+    },
+    "rod_of_flame": {
+      "name": "Rod Of Flame",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 200,
+      "description": "A powerful rod that projects blasts of searing flame.",
+      "properties": {
+        "required_level": 8,
+        "charges": 25,
+        "magical": true,
+        "effect": "a blast of flame",
+        "damage": "1d61+11"
+      }
+    },
+    "runestaff": {
+      "name": "Runestaff",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "An ancient staff inscribed with powerful runes.",
+      "properties": {
+        "required_level": 0,
+        "magical": true
+      }
+    },
+    "soulstone": {
+      "name": "Soulstone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 1000,
+      "description": "A rare gem that can capture and hold souls.",
+      "properties": {
+        "required_level": 0,
+        "magical": true
+      }
+    },
+    "manastone": {
+      "name": "Manastone",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 10,
+      "description": "A crystalline stone that greatly restores mana.",
+      "properties": {
+        "required_level": 0,
+        "restore_mana": 50
+      }
+    },
+    "wynharp": {
+      "name": "Wynharp",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "A legendary musical instrument of great power.",
+      "properties": {
+        "required_level": 1000
+      }
+    },
+    "black_rose": {
+      "name": "Black Rose",
+      "type": "magic_item",
+      "weight": 0.5,
+      "base_value": 0,
+      "description": "A dark rose that emanates an aura of shadow.",
+      "properties": {
+        "required_level": 1000,
+        "charges": 1,
+        "magical": true,
+        "effect": "a dark mist",
+        "damage": "1d2"
+      }
+    },
+    "rod_of_power": {
+      "name": "Rod Of Power",
+      "type": "magic_item",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "An artifact of immense magical power.",
+      "properties": {
+        "required_level": 0,
+        "magical": true
+      }
+    },
+    "flame_crystal": {
+      "name": "Flame Crystal",
+      "type": "magic_item",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "A crystal that burns with eternal flame.",
+      "properties": {
+        "required_level": 30,
+        "magical": true,
+        "effect": "a flame storm"
+      }
+    },
+    "ice_crystal": {
+      "name": "Ice Crystal",
+      "type": "magic_item",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "A crystal frozen in perpetual winter.",
+      "properties": {
+        "required_level": 25,
+        "magical": true,
+        "effect": "a frost storm"
+      }
+    }
+  }
+}

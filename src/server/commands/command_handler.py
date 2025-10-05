@@ -327,6 +327,9 @@ class CommandHandler:
             'spellbook': [],  # Known spells
             'spell_cooldowns': {},  # Spell cooldowns {spell_id: tick_remaining}
             'active_effects': [],  # Active buffs/debuffs
+
+            # Map exploration
+            'visited_rooms': {starting_room},  # Track visited rooms for map
         })
 
         # Give starting spells based on class
@@ -388,6 +391,10 @@ class CommandHandler:
                 # Look around the room
                 await self.game_engine._send_room_description(player_id, detailed=True)
 
+        elif command in ['map', 'worldmap']:
+            # Show map of areas and rooms
+            await self._handle_map_command(player_id, character, params)
+
         elif command in ['help', '?']:
             help_text = """
 Available Commands:
@@ -425,6 +432,7 @@ east (e)        - Go east
 west (w)        - Go west
 up (u)          - Go up
 down (d)        - Go down
+map [area]      - Show world map or detailed area map
 quit (q)        - Quit the game
 
 Admin Commands (Debug):
@@ -592,6 +600,18 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
         elif command == 'givexp':
             await self.game_engine.connection_manager.send_message(player_id, "Usage: givexp <amount>")
 
+        elif command == 'respawnnpc' and params:
+            await self._handle_admin_respawn_npc(player_id, character, params)
+
+        elif command == 'respawnnpc':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: respawnnpc <npc_id>")
+
+        elif command == 'completequest' and params:
+            await self._handle_admin_complete_quest(player_id, character, params)
+
+        elif command == 'completequest':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: completequest <quest_id>")
+
         elif command == 'mobstatus':
             await self._handle_admin_mob_status(player_id)
 
@@ -736,41 +756,8 @@ Gold:          {char['gold']}
                 await self.game_engine._notify_room_except_player(room_id, player_id, f"{username} picks up a {item['name']}.")
                 return
 
-        # If no item found on floor, try to create item from configuration
-        item_id = item_name.lower().replace(' ', '_')
-        item = self.game_engine.config_manager.create_item_instance(item_id)
-
-        if not item:
-            # Fallback to simple item creation for items not in config
-            item = {
-                'name': item_name.capitalize(),
-                'weight': 1,
-                'value': 10
-            }
-
-        # Check encumbrance before picking up
-        current_encumbrance = self.game_engine.player_manager.calculate_encumbrance(character)
-        item_weight = item.get('weight', 0)
-        max_encumbrance = self.game_engine.player_manager.calculate_max_encumbrance(character)
-
-        if current_encumbrance + item_weight > max_encumbrance:
-            await self.game_engine.connection_manager.send_message(
-                player_id,
-                f"You cannot pick up {item['name']} - you are carrying too much! ({current_encumbrance + item_weight:.1f}/{max_encumbrance})"
-            )
-            return
-
-        character['inventory'].append(item)
-
-        # Update encumbrance
-        self.game_engine.player_manager.update_encumbrance(character)
-
-        await self.game_engine.connection_manager.send_message(player_id, f"You pick up the {item['name']}.")
-
-        # Notify others in the room
-        username = player_data.get('username', 'Someone')
-        if room_id:
-            await self.game_engine._notify_room_except_player(room_id, player_id, f"{username} picks up a {item['name']}.")
+        # Item not found on floor or in config
+        await self.game_engine.connection_manager.send_message(player_id, f"You don't see a {item_name} here.")
 
     async def _handle_drop_item(self, player_id: int, item_name: str):
         """Handle dropping an item from inventory."""
@@ -851,7 +838,9 @@ Gold:          {char['gold']}
         )
 
     async def _handle_drink_command(self, player_id: int, item_name: str):
-        """Handle drinking to restore thirst."""
+        """Handle drinking to restore thirst or consume potions."""
+        import re
+
         player_data = self.game_engine.player_manager.get_player_data(player_id)
         if not player_data or not player_data.get('character'):
             return
@@ -869,26 +858,139 @@ Gold:          {char['gold']}
             # If multiple matches, just drink the first one
             pass  # item_to_drink and item_index are already set to the first match
 
-        # Check if item is a drink
+        # Check if item is a drink or consumable
         item_type = item_to_drink.get('type', '')
-        if item_type not in ['drink', 'potion']:
+        if item_type not in ['drink', 'potion', 'consumable']:
             await self.game_engine.connection_manager.send_message(player_id, f"You can't drink {item_to_drink['name']}!")
             return
 
-        # Get hydration value (default 40 if not specified)
-        hydration = item_to_drink.get('hydration', 40)
+        # Initialize messages list
+        messages = []
+        messages.append(f"You drink {item_to_drink['name']}.")
 
-        # Restore thirst
-        current_thirst = character.get('thirst', 100)
-        new_thirst = min(100, current_thirst + hydration)
-        character['thirst'] = new_thirst
+        # Get item properties
+        properties = item_to_drink.get('properties', {})
+
+        # Handle health restoration
+        if 'restore_health' in properties:
+            restore_health = properties['restore_health']
+
+            # Parse health value (can be integer or dice notation like "4-16")
+            if isinstance(restore_health, str):
+                # Handle range notation like "4-16" or "32-128"
+                if '-' in restore_health:
+                    min_val, max_val = map(int, restore_health.split('-'))
+                    import random
+                    health_amount = random.randint(min_val, max_val)
+                else:
+                    health_amount = int(restore_health)
+            else:
+                health_amount = int(restore_health)
+
+            current_health = character.get('health', character.get('current_hit_points', 0))
+            max_health = character.get('max_hit_points', 100)
+            new_health = min(max_health, current_health + health_amount)
+
+            character['health'] = new_health
+            character['current_hit_points'] = new_health
+
+            messages.append(f"You restore {health_amount} health! (HP: {new_health}/{max_health})")
+
+        # Handle mana restoration
+        if 'restore_mana' in properties:
+            restore_mana = properties['restore_mana']
+            mana_amount = int(restore_mana)
+
+            current_mana = character.get('mana', character.get('current_mana', 0))
+            max_mana = character.get('max_mana', 50)
+            new_mana = min(max_mana, current_mana + mana_amount)
+
+            character['mana'] = new_mana
+            character['current_mana'] = new_mana
+
+            messages.append(f"You restore {mana_amount} mana! (Mana: {new_mana}/{max_mana})")
+
+        # Handle cure poison
+        if properties.get('cure_poison'):
+            # Initialize active_effects if needed
+            if 'active_effects' not in character:
+                character['active_effects'] = []
+
+            # Remove poison effects
+            original_count = len(character['active_effects'])
+            character['active_effects'] = [
+                effect for effect in character['active_effects']
+                if effect.get('effect') != 'poison'
+            ]
+
+            if len(character['active_effects']) < original_count:
+                messages.append("The poison leaves your body!")
+            else:
+                messages.append("You feel cleansed, though you weren't poisoned.")
+
+        # Handle stat boost potions
+        boost_duration = properties.get('boost_duration', 0)
+        if boost_duration > 0:
+            # Initialize active_effects if needed
+            if 'active_effects' not in character:
+                character['active_effects'] = []
+
+            # Strength boost
+            if 'strength_bonus' in properties:
+                str_bonus = properties['strength_bonus']
+                buff = {
+                    'spell_id': item_to_drink.get('name', 'Strength Potion'),
+                    'effect': 'strength_bonus',
+                    'duration': boost_duration,
+                    'bonus_amount': str_bonus
+                }
+                character['active_effects'].append(buff)
+                messages.append(f"You feel stronger! (+{str_bonus} STR for {boost_duration} rounds)")
+
+            # Dexterity boost
+            if 'dexterity_bonus' in properties:
+                dex_bonus = properties['dexterity_bonus']
+                buff = {
+                    'spell_id': item_to_drink.get('name', 'Dexterity Potion'),
+                    'effect': 'dexterity_bonus',
+                    'duration': boost_duration,
+                    'bonus_amount': dex_bonus
+                }
+                character['active_effects'].append(buff)
+                messages.append(f"You feel more agile! (+{dex_bonus} DEX for {boost_duration} rounds)")
+
+        # Handle invisibility
+        if 'invisibility_duration' in properties:
+            invis_duration = properties['invisibility_duration']
+
+            # Initialize active_effects if needed
+            if 'active_effects' not in character:
+                character['active_effects'] = []
+
+            buff = {
+                'spell_id': item_to_drink.get('name', 'Invisibility Potion'),
+                'effect': 'invisibility',
+                'duration': invis_duration,
+                'bonus_amount': 1
+            }
+            character['active_effects'].append(buff)
+            messages.append(f"You fade from view! (Invisible for {invis_duration} rounds)")
+
+        # Handle hydration (for drinks)
+        hydration = item_to_drink.get('hydration', 0)
+        if hydration > 0:
+            current_thirst = character.get('thirst', 100)
+            new_thirst = min(100, current_thirst + hydration)
+            character['thirst'] = new_thirst
+            messages.append(f"Your thirst is quenched. (Thirst: {new_thirst:.0f}/100)")
 
         # Remove item from inventory
         character['inventory'].pop(item_index)
 
+        # Send all messages
         await self.game_engine.connection_manager.send_message(
             player_id,
-            f"You drink {item_to_drink['name']}. Your thirst is quenched. (Thirst: {new_thirst:.0f}/100)"
+            "\n".join(messages)
         )
 
     async def _handle_read_command(self, player_id: int, item_name: str):
@@ -1020,6 +1122,9 @@ Gold:          {char['gold']}
             armor_class = equipped_item.get('armor_class', 1)
             character['armor_class'] = armor_class
 
+        # Update encumbrance (should be same, but recalculate for consistency)
+        self.game_engine.player_manager.update_encumbrance(character)
+
         await self.game_engine.connection_manager.send_message(player_id, f"You equip the {equipped_item['name']}.")
 
         # Notify others in the room
@@ -1068,6 +1173,9 @@ Gold:          {char['gold']}
         # Update armor class if armor
         if item_to_unequip.get('type') == 'armor':
             character['armor_class'] = 0  # Reset to base armor class
+
+        # Update encumbrance
+        self.game_engine.player_manager.update_encumbrance(character)
 
         await self.game_engine.connection_manager.send_message(player_id, f"You unequip your {item_to_unequip['name']}.")
 
@@ -1149,20 +1257,19 @@ Gold:          {char['gold']}
     async def _ring_gong(self, player_id: int, room_id: str):
         """Ring the gong in the arena and spawn a random mob."""
         # Load available mobs
-        try:
-            with open('data/npcs/monsters.json', 'r') as f:
-                monsters_data = json.load(f)
-        except Exception as e:
+        monsters = self.game_engine._load_all_monsters()
+        if not monsters:
             await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but something went wrong with the ancient magic...")
-            print(f"[ERROR] Failed to load monsters.json: {e}")
+            print(f"[ERROR] Failed to load monsters")
             return
 
         # Select a random monster
-        if not monsters_data:
+        monsters_list = list(monsters.values())
+        if not monsters_list:
             await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but no creatures answer its call.")
             return
 
-        monster = random.choice(monsters_data)
+        monster = random.choice(monsters_list)
 
         # Send atmospheric message
         await self.game_engine.connection_manager.send_message(player_id,
@@ -2508,6 +2615,454 @@ Congratulations, {character['name']}! You feel stronger and more capable!
                 target_player_id,
                 f"[ADMIN] You have been teleported to {target_room.title} by {teleporter_name}!"
             )
+
+    async def _handle_admin_respawn_npc(self, player_id: int, character: dict, params: str):
+        """Admin command to respawn an NPC in its original room.
+
+        Usage: respawnnpc <npc_id>
+        """
+        npc_id = params.strip()
+
+        if not npc_id:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] Usage: respawnnpc <npc_id>"
+            )
+            return
+
+        # Check if NPC exists in the world data
+        npc_data = self.game_engine.world_manager.get_npc_data(npc_id)
+        if not npc_data:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] NPC '{npc_id}' not found in NPC data."
+            )
+            return
+
+        # Find which room this NPC should be in
+        target_room_id = None
+        for room_id, room_data in self.game_engine.world_manager.rooms_data.items():
+            if 'npcs' in room_data and npc_id in room_data['npcs']:
+                target_room_id = room_id
+                break
+
+        if not target_room_id:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Could not find original room for NPC '{npc_id}'."
+            )
+            return
+
+        # Get the target room
+        target_room = self.game_engine.world_manager.get_room(target_room_id)
+        if not target_room:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Target room '{target_room_id}' does not exist."
+            )
+            return
+
+        # Check if NPC already exists in the room
+        npc_already_exists = False
+        for npc in target_room.npcs:
+            if npc.npc_id == npc_id:
+                npc_already_exists = True
+                break
+
+        if npc_already_exists:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] NPC '{npc_data.get('name', npc_id)}' already exists in room {target_room_id}."
+            )
+            return
+
+        # Create and add the NPC
+        from ..game.npcs.npc import NPC
+
+        description = npc_data.get('long_description') or npc_data.get('description', 'A mysterious figure.')
+
+        npc = NPC(
+            npc_id=npc_data.get('id', npc_id),
+            name=npc_data.get('name', 'Unknown NPC'),
+            description=description
+        )
+
+        npc.room_id = target_room_id
+        if 'type' in npc_data:
+            npc.npc_type = npc_data['type']
+        if 'dialogue' in npc_data:
+            npc.dialogue = npc_data['dialogue']
+
+        target_room.npcs.append(npc)
+
+        # Notify admin
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"[ADMIN] Respawned NPC '{npc_data.get('name', npc_id)}' in room {target_room_id} ({target_room.title})."
+        )
+
+        # Notify players in the room
+        await self.game_engine._notify_room_except_player(
+            target_room_id,
+            player_id,
+            f"{npc_data.get('name', 'Someone')} appears in a shimmer of magical energy!"
+        )
+
+    async def _handle_map_command(self, player_id: int, character: dict, params: str):
+        """Show map of areas and rooms with their connections.
+
+        Usage: map [area_id]
+        """
+        world_manager = self.game_engine.world_manager
+
+        # If params provided, show specific area
+        if params:
+            area_id = params.strip().lower()
+            area = world_manager.areas.get(area_id)
+
+            if not area:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"Area '{area_id}' not found. Available areas: {', '.join(world_manager.areas.keys())}"
+                )
+                return
+
+            # Show detailed map for this area
+            await self._show_area_map(player_id, area)
+        else:
+            # Show overview of all areas
+            await self._show_all_areas_map(player_id)
+
+    async def _show_all_areas_map(self, player_id: int):
+        """Show overview of all areas."""
+        world_manager = self.game_engine.world_manager
+
+        lines = ["=== World Map ===\n"]
+
+        for area_id, area in sorted(world_manager.areas.items()):
+            room_count = len(area.rooms)
+            lines.append(f"{area.name} ({area_id})")
+            lines.append(f"  Description: {area.description}")
+            lines.append(f"  Rooms: {room_count}")
+            lines.append(f"  Level Range: {area.level_range[0]}-{area.level_range[1]}")
+            lines.append("")
+
+        lines.append("Use 'map <area_id>' to see detailed room connections for an area")
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            "\n".join(lines)
+        )
+
+    async def _show_area_map(self, player_id: int, area):
+        """Show detailed ASCII graphical map of an area with room connections."""
+        world_manager = self.game_engine.world_manager
+
+        lines = [f"=== {area.name} ==="]
+        lines.append(f"{area.description}\n")
+
+        # Generate ASCII map
+        ascii_map = self._generate_ascii_map(area, world_manager, player_id)
+        lines.extend(ascii_map)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            "\n".join(lines)
+        )
+
+    def _generate_ascii_map(self, area, world_manager, player_id):
+        """Generate ASCII graphical map of an area."""
+        from collections import deque
+
+        # Check if we should filter by explored rooms
+        show_only_explored = self.game_engine.config_manager.get_setting('world', 'map_shows_only_explored', default=True)
+
+        # Get player's visited rooms
+        visited_rooms = set()
+        if show_only_explored:
+            player_data = self.game_engine.player_manager.get_player_data(player_id)
+            if player_data and player_data.get('character'):
+                character = player_data['character']
+                visited_rooms = character.get('visited_rooms', set())
+                if isinstance(visited_rooms, list):
+                    visited_rooms = set(visited_rooms)
+                # Always include current room
+                current_room = character.get('room_id')
+                if current_room:
+                    visited_rooms.add(current_room)
+
+        # Direction mappings (x, y)
+        direction_offsets = {
+            'north': (0, -2),
+            'south': (0, 2),
+            'east': (3, 0),
+            'west': (-3, 0),
+            'northeast': (3, -2),
+            'northwest': (-3, -2),
+            'southeast': (3, 2),
+            'southwest': (-3, 2),
+            'up': (0, 0),  # Special handling needed
+            'down': (0, 0),  # Special handling needed
+        }
+
+        # Filter rooms based on visited status if config enabled
+        displayable_rooms = {}
+        for room_id, room in area.rooms.items():
+            if not show_only_explored or room_id in visited_rooms:
+                displayable_rooms[room_id] = room
+
+        # Layout rooms on a grid
+        room_positions = {}  # room_id -> (x, y)
+        visited = set()
+
+        # Start with first room
+        if not displayable_rooms:
+            return ["No explored rooms in this area yet. Explore to reveal the map!"]
+
+        start_room_id = list(displayable_rooms.keys())[0]
+        queue = deque([(start_room_id, 0, 0)])  # (room_id, x, y)
+        room_positions[start_room_id] = (0, 0)
+        visited.add(start_room_id)
+
+        # BFS to position all rooms
+        while queue:
+            room_id, x, y = queue.popleft()
+
+            # Get exits from raw room data
+            room_data = world_manager.rooms_data.get(room_id, {})
+            exits = room_data.get('exits', {})
+
+            for direction, dest_id in exits.items():
+                # Skip if destination not in displayable rooms
+                if dest_id not in displayable_rooms:
+                    continue
+
+                # Skip if already positioned
+                if dest_id in visited:
+                    continue
+
+                # Calculate position based on direction
+                dx, dy = direction_offsets.get(direction.lower(), (0, 0))
+                new_x, new_y = x + dx, y + dy
+
+                # Handle position conflicts
+                conflict_count = 0
+                original_pos = (new_x, new_y)
+                while (new_x, new_y) in room_positions.values() and conflict_count < 10:
+                    # Offset slightly to avoid overlap
+                    new_x = original_pos[0] + (conflict_count % 3) - 1
+                    new_y = original_pos[1] + (conflict_count // 3)
+                    conflict_count += 1
+
+                room_positions[dest_id] = (new_x, new_y)
+                visited.add(dest_id)
+                queue.append((dest_id, new_x, new_y))
+
+        # Add any unvisited rooms
+        for room_id in displayable_rooms:
+            if room_id not in room_positions:
+                # Place disconnected rooms to the side
+                room_positions[room_id] = (len(room_positions) * 3, 10)
+
+        # Find bounds
+        if not room_positions:
+            return ["No rooms to display."]
+
+        min_x = min(x for x, y in room_positions.values())
+        max_x = max(x for x, y in room_positions.values())
+        min_y = min(y for x, y in room_positions.values())
+        max_y = max(y for x, y in room_positions.values())
+
+        # Create grid (with padding)
+        width = max_x - min_x + 20
+        height = max_y - min_y + 10
+
+        grid = [[' ' for _ in range(width)] for _ in range(height)]
+
+        # Draw connections first (so they appear under rooms)
+        for room_id, (x, y) in room_positions.items():
+            gx, gy = x - min_x + 5, y - min_y + 2
+
+            # Get exits from raw room data
+            room_data = world_manager.rooms_data.get(room_id, {})
+            exits = room_data.get('exits', {})
+
+            for direction, dest_id in exits.items():
+                if dest_id not in room_positions:
+                    continue
+
+                dest_x, dest_y = room_positions[dest_id]
+                dest_gx, dest_gy = dest_x - min_x + 5, dest_y - min_y + 2
+
+                # Draw connections
+                dir_lower = direction.lower()
+
+                if dir_lower == 'north' and dest_gy < gy:
+                    for i in range(dest_gy + 1, gy):
+                        if 0 <= i < height and 0 <= gx < width:
+                            grid[i][gx] = '|'
+                elif dir_lower == 'south' and dest_gy > gy:
+                    for i in range(gy + 1, dest_gy):
+                        if 0 <= i < height and 0 <= gx < width:
+                            grid[i][gx] = '|'
+                elif dir_lower == 'east' and dest_gx > gx:
+                    for i in range(gx + 1, dest_gx):
+                        if 0 <= gy < height and 0 <= i < width:
+                            grid[gy][i] = '-'
+                elif dir_lower == 'west' and dest_gx < gx:
+                    for i in range(dest_gx + 1, gx):
+                        if 0 <= gy < height and 0 <= i < width:
+                            grid[gy][i] = '-'
+                elif dir_lower == 'northeast' and dest_gx > gx and dest_gy < gy:
+                    # Draw diagonal / going up-right
+                    steps = min(dest_gx - gx, gy - dest_gy)
+                    for i in range(1, steps):
+                        new_x = gx + i
+                        new_y = gy - i
+                        if 0 <= new_y < height and 0 <= new_x < width:
+                            grid[new_y][new_x] = '/'
+                elif dir_lower == 'southeast' and dest_gx > gx and dest_gy > gy:
+                    # Draw diagonal \ going down-right
+                    steps = min(dest_gx - gx, dest_gy - gy)
+                    for i in range(1, steps):
+                        new_x = gx + i
+                        new_y = gy + i
+                        if 0 <= new_y < height and 0 <= new_x < width:
+                            grid[new_y][new_x] = '\\'
+                elif dir_lower == 'southwest' and dest_gx < gx and dest_gy > gy:
+                    # Draw diagonal / going down-left
+                    steps = min(gx - dest_gx, dest_gy - gy)
+                    for i in range(1, steps):
+                        new_x = gx - i
+                        new_y = gy + i
+                        if 0 <= new_y < height and 0 <= new_x < width:
+                            grid[new_y][new_x] = '/'
+                elif dir_lower == 'northwest' and dest_gx < gx and dest_gy < gy:
+                    # Draw diagonal \ going up-left
+                    steps = min(gx - dest_gx, gy - dest_gy)
+                    for i in range(1, steps):
+                        new_x = gx - i
+                        new_y = gy - i
+                        if 0 <= new_y < height and 0 <= new_x < width:
+                            grid[new_y][new_x] = '\\'
+
+        # Draw rooms
+        for room_id, (x, y) in room_positions.items():
+            gx, gy = x - min_x + 5, y - min_y + 2
+            room = displayable_rooms[room_id]
+
+            # Determine room marker based on room properties
+            room_data = world_manager.rooms_data.get(room_id, {})
+            exits = room_data.get('exits', {})
+
+            # Choose marker character
+            marker = '*'
+            if hasattr(room, 'is_lair') and room.is_lair:
+                marker = 'L'
+            elif 'up' in exits or 'down' in exits:
+                marker = '^'
+
+            # Place room marker
+            if 0 <= gy < height and 0 <= gx < width:
+                grid[gy][gx] = marker
+
+        # Convert grid to lines
+        result = []
+        for row in grid:
+            line = ''.join(row).rstrip()
+            if line:  # Skip empty lines
+                result.append(line)
+
+        # Add legend
+        result.append("")
+        result.append("Legend: * = room, L = lair, ^ = stairs, | - / \\ = connections")
+        if show_only_explored:
+            result.append(f"Explored rooms: {len(displayable_rooms)} / {len(area.rooms)}")
+        else:
+            result.append(f"Total rooms: {len(displayable_rooms)}")
+
+        return result
+
+    def _generate_simple_list_map(self, area, world_manager):
+        """Fallback to simple list when area is too large for ASCII map."""
+        lines = ["Area too large for graphical map. Showing list view:\n"]
+
+        sorted_rooms = sorted(area.rooms.values(), key=lambda r: r.room_id)
+
+        for room in sorted_rooms:
+            # Get exits from raw room data
+            room_data = world_manager.rooms_data.get(room.room_id, {})
+            exits = room_data.get('exits', {})
+            locked_exits = room_data.get('locked_exits', {})
+
+            lines.append(f"  [{room.room_id}] {room.title}")
+
+            if exits:
+                exit_list = []
+                for direction, dest_id in sorted(exits.items()):
+                    dest_room = world_manager.get_room(dest_id)
+                    if dest_room:
+                        locked_marker = " (locked)" if direction in locked_exits else ""
+                        exit_list.append(f"{direction} -> {dest_room.title}{locked_marker}")
+
+                if exit_list:
+                    lines.append(f"    Exits: {', '.join(exit_list)}")
+            else:
+                lines.append("    Exits: none")
+
+            lines.append("")
+
+        return lines
+
+    async def _handle_admin_complete_quest(self, player_id: int, character: dict, params: str):
+        """Admin command to manually complete a quest and all its objectives.
+
+        Usage: completequest <quest_id>
+        """
+        quest_id = params.strip()
+
+        if not quest_id:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] Usage: completequest <quest_id>"
+            )
+            return
+
+        # Check if quest exists
+        quest = self.game_engine.quest_manager.get_quest(quest_id)
+        if not quest:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Quest '{quest_id}' not found."
+            )
+            return
+
+        # Check if player has the quest
+        if not self.game_engine.quest_manager.has_quest(character, quest_id):
+            # Auto-accept the quest first
+            self.game_engine.quest_manager.accept_quest(character, quest_id)
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Auto-accepted quest '{quest['name']}'."
+            )
+
+        # Get quest progress
+        quest_progress = character['quests'][quest_id]
+
+        # Mark all objectives as complete
+        for i, objective in enumerate(quest.get('objectives', [])):
+            if i in quest_progress['objectives']:
+                obj = quest_progress['objectives'][i]
+                obj['progress'] = obj['required']
+
+        # Mark quest as complete
+        quest_progress['completed'] = True
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"[ADMIN] Quest '{quest['name']}' marked as completed. Talk to the quest giver to claim your reward."
+        )
+
     async def _handle_quest_log(self, player_id: int, character: dict):
         """Show the player's quest log."""
         quests = character.get('quests', {})
@@ -2567,27 +3122,8 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             await self.game_engine.connection_manager.send_message(player_id, f"There is no '{npc_name}' here.")
             return
 
-        # Load NPC data from JSON to get quest and dialogue information
-        import json
-        import os
-        npcs_file = os.path.join('data', 'npcs', 'npcs.json')
-        if not os.path.exists(npcs_file):
-            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} has nothing to say.")
-            return
-
-        try:
-            with open(npcs_file, 'r') as f:
-                npcs = json.load(f)
-        except:
-            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} has nothing to say.")
-            return
-
-        # Find the NPC data by id
-        npc_data = None
-        for npc in npcs:
-            if npc['id'] == npc_obj.npc_id:
-                npc_data = npc
-                break
+        # Get NPC data from world manager
+        npc_data = self.game_engine.world_manager.get_npc_data(npc_obj.npc_id)
 
         if not npc_data:
             await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} has nothing to say.")

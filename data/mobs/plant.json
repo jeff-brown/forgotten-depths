@@ -1,0 +1,356 @@
+{
+  "monsters": [
+    {
+      "id": "strangle_vine",
+      "name": "Strangle Vine",
+      "description": "The strangle vine is a large bulbous plant with several writhing vines sprouting from it. It moves slowly about on gnarled roots.",
+      "type": "plant",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 4,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 0.8,
+      "abilities": [
+        "choking vines"
+      ],
+      "loot_table": [
+        {
+          "item_id": "thorny_branch",
+          "chance": 0.5
+        },
+        {
+          "item_id": "choking_vines",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tendrils",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "white_orchid",
+      "name": "White Orchid",
+      "description": "The white orchid stands about two feet tall, moving around on its thin tendrils.",
+      "type": "plant",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 4,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tendrils"
+      ],
+      "loot_table": [
+        {
+          "item_id": "thorny_branch",
+          "chance": 0.5
+        },
+        {
+          "item_id": "choking_vines",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tendrils",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "pink_orchid",
+      "name": "Pink Orchid",
+      "description": "The pink orchid stands about three feet tall, moving around on its thin tendrils.",
+      "type": "plant",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 5,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tendrils"
+      ],
+      "loot_table": [
+        {
+          "item_id": "thorny_branch",
+          "chance": 0.5
+        },
+        {
+          "item_id": "choking_vines",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tendrils",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "red_orchid",
+      "name": "Red Orchid",
+      "description": "The red orchid stands over three feet tall, moving around on its thin tendrils.",
+      "type": "plant",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 6,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tendrils"
+      ],
+      "loot_table": [
+        {
+          "item_id": "thorny_branch",
+          "chance": 0.5
+        },
+        {
+          "item_id": "choking_vines",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tendrils",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "yellow_orchid",
+      "name": "Yellow Orchid",
+      "description": "The yellow orchid stands about four feet tall, moving around on its thin tendrils.",
+      "type": "plant",
+      "level": 1,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 5,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tendrils"
+      ],
+      "loot_table": [
+        {
+          "item_id": "thorny_branch",
+          "chance": 0.5
+        },
+        {
+          "item_id": "choking_vines",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tendrils",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "black_orchid",
+      "name": "Black Orchid",
+      "description": "The black orchid stands over four feet tall, moving around on its sticky tendrils.",
+      "type": "plant",
+      "level": 1,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 6,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tendrils",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "thorny_branch",
+          "chance": 0.5
+        },
+        {
+          "item_id": "choking_vines",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cooking_herbs",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tendrils",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "constrictor_ivy",
+      "name": "Constrictor Ivy",
+      "description": "The constrictor ivy is a long snake-like vine, slithering about in search of food.",
+      "type": "plant",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 6,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "lashing ivy",
+        "coiled around"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "carrion_creeper",
+      "name": "Carrion Creeper",
+      "description": "The carrion creeper is a knotted mass of thorny vines which writhes about chaotically. You detect the fetid odor of rotting flesh, and notice several small animal carcasses tangled within this vile aberration.",
+      "type": "plant",
+      "level": 1,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 1,
+      "damage_max": 6,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "thorny vines",
+        "mauled"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "reaper_shrub",
+      "name": "Reaper Shrub",
+      "description": "The reaper shrub is a squat thorny plant, moving slowly about on thick gnarled roots. Its spiney branches rustle ominously at your presence.",
+      "type": "plant",
+      "level": 1,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "a thorny branch",
+        "raked several thorny branches across"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        }
+      ]
+    }
+  ]
+}

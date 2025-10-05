@@ -287,9 +287,6 @@ class VendorSystem:
             item_config = self.game_engine.config_manager.get_item(item_id)
             if item_config and item_config['name'].lower() == item_name.lower():
                 if character['gold'] >= item_entry['price']:
-                    # Player can afford it
-                    character['gold'] -= item_entry['price']
-
                     # Try to create item from config
                     created_item = self.game_engine.config_manager.create_item_instance(item_id, item_entry['price'])
 
@@ -297,12 +294,28 @@ class VendorSystem:
                         # Fallback to simple item creation
                         created_item = {
                             'name': item_config['name'],
-                            'weight': item_config['weight'],
+                            'weight': item_config.get('weight', 0),
                             'value': item_entry['price']
                         }
 
+                    # Check encumbrance before buying
+                    current_encumbrance = self.game_engine.player_manager.calculate_encumbrance(character)
+                    item_weight = created_item.get('weight', 0)
+                    max_encumbrance = self.game_engine.player_manager.calculate_max_encumbrance(character)
+
+                    if current_encumbrance + item_weight > max_encumbrance:
+                        await self.game_engine.connection_manager.send_message(
+                            player_id,
+                            f"You cannot carry {created_item['name']} - you are carrying too much! ({current_encumbrance + item_weight:.1f}/{max_encumbrance})"
+                        )
+                        return
+
+                    # Player can afford it and can carry it
+                    character['gold'] -= item_entry['price']
                     character['inventory'].append(created_item)
-                    character['encumbrance'] += created_item['weight']
+
+                    # Update encumbrance properly
+                    self.game_engine.player_manager.update_encumbrance(character)
 
                     await self.game_engine.connection_manager.send_message(player_id,
                         f"You buy a {item_config['name']} for {item_entry['price']} gold.")
@@ -329,8 +342,10 @@ class VendorSystem:
 
                 # Remove item from inventory
                 sold_item = character['inventory'].pop(i)
-                character['encumbrance'] -= sold_item['weight']
                 character['gold'] += sell_price
+
+                # Update encumbrance properly
+                self.game_engine.player_manager.update_encumbrance(character)
 
                 await self.game_engine.connection_manager.send_message(player_id,
                     f"You sell your {sold_item['name']} for {sell_price} gold.")

@@ -1,0 +1,56 @@
+{
+  "items": {
+    "cinnamon": {
+      "name": "Cinnamon",
+      "type": "ingredient",
+      "weight": 0.5,
+      "base_value": 15,
+      "description": "A small pouch of aromatic cinnamon spice.",
+      "properties": {
+        "cooking_bonus": 2
+      }
+    },
+    "saffron": {
+      "name": "Saffron",
+      "type": "ingredient",
+      "weight": 0.2,
+      "base_value": 50,
+      "description": "Precious golden saffron threads, worth their weight in gold.",
+      "properties": {
+        "cooking_bonus": 5,
+        "rare": true
+      }
+    },
+    "pepper": {
+      "name": "Black Pepper",
+      "type": "ingredient",
+      "weight": 0.5,
+      "base_value": 8,
+      "description": "A small container of freshly ground black pepper.",
+      "properties": {
+        "cooking_bonus": 1
+      }
+    },
+    "cooking_herbs": {
+      "name": "Cooking Herbs",
+      "type": "ingredient",
+      "weight": 0.5,
+      "base_value": 6,
+      "description": "A bundle of fresh herbs perfect for seasoning food.",
+      "properties": {
+        "cooking_bonus": 1
+      }
+    },
+    "raw_meat": {
+      "name": "Raw Meat",
+      "type": "ingredient",
+      "weight": 2,
+      "base_value": 4,
+      "description": "Fresh raw meat from a wild animal. Should be cooked before eating.",
+      "properties": {
+        "cooking_ingredient": true,
+        "perishable": true
+      }
+    }
+  }
+}

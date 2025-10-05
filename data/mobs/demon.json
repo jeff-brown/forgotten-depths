@@ -1,0 +1,789 @@
+{
+  "monsters": [
+    {
+      "id": "imp",
+      "name": "Imp",
+      "description": "The imp is a tiny humanoid with pointed ears and bright red skin. It stands just over two feet in height and is armed with {0}.",
+      "type": "demon",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        11
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "lesser_demoness",
+      "name": "Lesser Demoness",
+      "description": "The lesser demoness is a spindly bipedal humanoid with light yellowish skin and wicked claws and teeth. She stands about five feet tall and fixes you with a baleful stare.",
+      "type": "demon",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        11
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws"
+      ],
+      "resistances": [
+        "fire",
+        "poison"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "spellcaster": true,
+      "spell_skill": 80,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.6
+        },
+        {
+          "item_id": "demonic_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "lesser_demon",
+      "name": "Lesser Demon",
+      "description": "The lesser demon is a spindly bipedal humanoid with dark yellowish skin and wicked claws and teeth. He stands about five feet tall and fixes you with a baleful stare.",
+      "type": "demon",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 2,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws"
+      ],
+      "resistances": [
+        "fire",
+        "poison"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "spellcaster": true,
+      "spell_skill": 75,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.6
+        },
+        {
+          "item_id": "burning_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "female_affreet",
+      "name": "Female Affreet",
+      "description": "The affreet resembles a huge horned woman with reddish skin and stands well over eighteen feet tall. She is armed with {0} that glows dull red.",
+      "type": "demon",
+      "level": 6,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 4,
+      "experience_reward": 60,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "glowing sword",
+        "discharged a cloud of flame at"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "affreet",
+      "name": "Affreet",
+      "description": "The affreet resembles a huge horned man with reddish skin and stands well over twenty feet tall. He is armed with {0} that glows dull red.",
+      "type": "demon",
+      "level": 6,
+      "health": 80,
+      "max_health": 80,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 5,
+      "experience_reward": 60,
+      "gold_reward": [
+        3,
+        18
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "glowing sword",
+        "discharged a cloud of flame at",
+        "tracking"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "greater_demoness",
+      "name": "Greater Demoness",
+      "description": "The greater demoness emanates power and malevolence. She has bright blue skin and stands over eight feet tall. She wields {0} and wears an armband engraved with runes.",
+      "type": "demon",
+      "level": 7,
+      "health": 100,
+      "max_health": 100,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 5,
+      "experience_reward": 70,
+      "gold_reward": [
+        1,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "flaming sword",
+        "regeneration",
+        "multiattack"
+      ],
+      "resistances": [
+        "fire",
+        "poison"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "spellcaster": true,
+      "spell_skill": 85,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.6
+        },
+        {
+          "item_id": "demonic_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.3
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wand_of_lightning",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "greater_demon",
+      "name": "Greater Demon",
+      "description": "The greater demon emanates power and malevolence. He has dull blue skin and stands over nine feet tall. He wields {0} and wears an armband engraved with runes.",
+      "type": "demon",
+      "level": 8,
+      "health": 120,
+      "max_health": 120,
+      "damage_min": 6,
+      "damage_max": 36,
+      "armor": 6,
+      "experience_reward": 80,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "flaming sword",
+        "regeneration",
+        "multiattack"
+      ],
+      "resistances": [
+        "fire",
+        "poison"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "spellcaster": true,
+      "spell_skill": 80,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.6
+        },
+        {
+          "item_id": "hellish_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.3
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "arch_demoness",
+      "name": "Arch Demoness",
+      "description": "The arch demoness emanates awesome power and malevolence. She has bright red skin and stands over twelve feet tall. She wields {0} and wears an armband engraved with runes.",
+      "type": "demon",
+      "level": 17,
+      "health": 350,
+      "max_health": 350,
+      "damage_min": 20,
+      "damage_max": 100,
+      "armor": 15,
+      "experience_reward": 170,
+      "gold_reward": [
+        5,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge bardiche",
+        "regeneration",
+        "tracking",
+        "multiattack"
+      ],
+      "resistances": [
+        "fire",
+        "poison"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "spellcaster": true,
+      "spell_skill": 90,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.6
+        },
+        {
+          "item_id": "burning_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.3
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.3
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.2
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "demon_sword",
+          "chance": 0.15
+        },
+        {
+          "item_id": "black_sceptre",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.18
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "id": "arch_demon",
+      "name": "Arch Demon",
+      "description": "The arch demon emanates awesome power and malevolence. He has dull blue skin and stands over fifteen feet tall. He wields a glowing bardiche and wears an armband engraved with runes.",
+      "type": "demon",
+      "level": 18,
+      "health": 400,
+      "max_health": 400,
+      "damage_min": 40,
+      "damage_max": 160,
+      "armor": 16,
+      "experience_reward": 180,
+      "gold_reward": [
+        10,
+        25
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "huge bardiche",
+        "regeneration",
+        "tracking",
+        "multiattack"
+      ],
+      "resistances": [
+        "fire",
+        "poison"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "spellcaster": true,
+      "spell_skill": 85,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.6
+        },
+        {
+          "item_id": "demonic_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.3
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.3
+        },
+        {
+          "item_id": "wand_of_lightning",
+          "chance": 0.2
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "demon_sword",
+          "chance": 0.15
+        },
+        {
+          "item_id": "black_sceptre",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.18
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "id": "demon_king",
+      "name": "Demon King",
+      "description": "The demon king emanates incredible power and horrific malevolence. He has dull black skin and stands over thirty feet tall. He wields {0} nearly fifteen feet long and wears a dull grey crown engraved with runes.",
+      "type": "demon",
+      "level": 20,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 60,
+      "damage_max": 240,
+      "armor": 20,
+      "experience_reward": 200,
+      "gold_reward": [
+        20,
+        35
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "glowing sabre",
+        "discharged a blast of dark energy at",
+        "regeneration",
+        "multiattack"
+      ],
+      "resistances": [
+        "fire",
+        "poison"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "spellcaster": true,
+      "spell_skill": 90,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.6
+        },
+        {
+          "item_id": "hellish_claws",
+          "chance": 0.4
+        },
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.3
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.3
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.2
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "demon_sword",
+          "chance": 0.15
+        },
+        {
+          "item_id": "black_sceptre",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.18
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        }
+      ]
+    },
+    {
+      "id": "hellhound",
+      "name": "Hellhound",
+      "description": "The hellhound is a large wolf-type creature that dwells in the firey depths of the volcano.  It glares at you with devilish red eyes, mentally feeding you to its young.  It moves with a certain strut that airs its pride and seems to taunt you with its vicious grin.",
+      "type": "demon",
+      "level": 28,
+      "health": 400,
+      "max_health": 400,
+      "damage_min": 30,
+      "damage_max": 45,
+      "armor": 14,
+      "experience_reward": 280,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "items": {
+    "ancient_ring": {
+      "name": "Ancient Ring",
+      "type": "jewelry",
+      "weight": 0.1,
+      "base_value": 150,
+      "description": "A tarnished ring bearing ancient runes. It once belonged to a guardian of old.",
+      "properties": {
+        "magical": true,
+        "armor_class": 1,
+        "wisdom_bonus": 1
+      }
+    }
+  }
+}

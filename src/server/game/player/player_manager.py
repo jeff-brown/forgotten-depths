@@ -266,10 +266,26 @@ class PlayerManager:
                     inventory = character.get('inventory', [])
                     logger.info(f"[DOOR] Player inventory: {inventory}")
 
-                    inventory_ids = [item.get('id') if isinstance(item, dict) else item for item in inventory]
-                    logger.info(f"[DOOR] Extracted inventory IDs: {inventory_ids}")
+                    # Check for key by id, item_id, or by matching name
+                    required_key_name = required_key.replace('_', ' ').title()
+                    for item in inventory:
+                        if isinstance(item, dict):
+                            # Check id field
+                            if item.get('id') == required_key:
+                                has_key = True
+                                break
+                            # Check item_id field (for items created with old system)
+                            if item.get('item_id') == required_key:
+                                has_key = True
+                                break
+                            # Check name field
+                            if item.get('name', '').lower() == required_key_name.lower():
+                                has_key = True
+                                break
+                        elif item == required_key:
+                            has_key = True
+                            break
 
-                    has_key = required_key in inventory_ids
                     logger.info(f"[DOOR] Has required key '{required_key}': {has_key}")
 
                     if not has_key:
@@ -283,8 +299,19 @@ class PlayerManager:
                     # Remove the key from inventory
                     inventory = character.get('inventory', [])
                     for i, item in enumerate(inventory):
-                        item_id = item.get('id') if isinstance(item, dict) else item
-                        if item_id == required_key:
+                        should_remove = False
+                        if isinstance(item, dict):
+                            # Check id, item_id, or name
+                            if item.get('id') == required_key:
+                                should_remove = True
+                            elif item.get('item_id') == required_key:
+                                should_remove = True
+                            elif item.get('name', '').lower() == required_key_name.lower():
+                                should_remove = True
+                        elif item == required_key:
+                            should_remove = True
+
+                        if should_remove:
                             removed_key = inventory.pop(i)
                             logger.info(f"[DOOR] Removed key '{required_key}' from inventory")
                             break
@@ -302,6 +329,13 @@ class PlayerManager:
 
             # Move the player
             character['room_id'] = new_room
+
+            # Track visited rooms for map functionality
+            if 'visited_rooms' not in character:
+                character['visited_rooms'] = set()
+            if isinstance(character['visited_rooms'], list):
+                character['visited_rooms'] = set(character['visited_rooms'])
+            character['visited_rooms'].add(new_room)
 
             # Send unlock message if applicable
             message = ""
@@ -380,10 +414,10 @@ class PlayerManager:
             Maximum encumbrance capacity
         """
         strength = character.get('strength', 10)
-        # Base formula: Strength * 15
-        # A character with 10 strength can carry 150 weight
-        # A character with 20 strength can carry 300 weight
-        return strength * 15
+        # Base formula: Strength * 100
+        # A character with 10 strength can carry 1000 weight
+        # A character with 20 strength can carry 2000 weight
+        return strength * 100
 
     def update_encumbrance(self, character: Dict[str, Any]):
         """Update the character's encumbrance value based on current inventory.

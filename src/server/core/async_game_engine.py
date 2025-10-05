@@ -89,6 +89,42 @@ class AsyncGameEngine:
         self.event_system.subscribe('player_disconnected', self.player_manager.on_player_disconnected)
         self.event_system.subscribe('player_command', self.player_manager.on_player_command)
 
+    def _load_all_monsters(self) -> Dict[str, Any]:
+        """Load all monsters from type-specific JSON files.
+
+        Returns:
+            Dictionary mapping monster IDs to monster data
+        """
+        from pathlib import Path
+
+        monsters = {}
+        mobs_dir = Path("data/mobs")
+
+        # Load monsters from type-specific files
+        if mobs_dir.exists():
+            for monster_file in mobs_dir.glob("*.json"):
+                try:
+                    with open(monster_file, 'r', encoding='utf-8') as f:
+                        config = json.load(f)
+                        type_monsters = config.get('monsters', [])
+                        for monster in type_monsters:
+                            monsters[monster['id']] = monster
+                except Exception as e:
+                    self.logger.error(f"Failed to load monsters from {monster_file}: {e}")
+
+        # Fallback to legacy monsters.json if no type files found
+        if not monsters:
+            legacy_file = Path("data/npcs/monsters.json")
+            if legacy_file.exists():
+                try:
+                    with open(legacy_file, 'r', encoding='utf-8') as f:
+                        monsters_data = json.load(f)
+                        monsters = {m['id']: m for m in monsters_data}
+                except Exception as e:
+                    self.logger.error(f"Failed to load monsters from {legacy_file}: {e}")
+
+        return monsters
+
     def initialize_database(self, database: Database):
         """Initialize database connection."""
         self.database = database
@@ -514,12 +550,9 @@ class AsyncGameEngine:
     def _initialize_lairs(self):
         """Initialize all lair rooms with their starting mobs."""
         # Load monster data
-        try:
-            with open('data/npcs/monsters.json', 'r') as f:
-                monsters_data = json.load(f)
-            monsters = {m['id']: m for m in monsters_data}
-        except Exception as e:
-            self.logger.error(f"Failed to load monsters data: {e}")
+        monsters = self._load_all_monsters()
+        if not monsters:
+            self.logger.error("Failed to load monsters data")
             return
 
         # Find all lair rooms and spawn their mobs
@@ -624,12 +657,9 @@ class AsyncGameEngine:
         current_time = time.time()
 
         # Load monster data (cache this if performance becomes an issue)
-        try:
-            with open('data/npcs/monsters.json', 'r') as f:
-                monsters_data = json.load(f)
-            monsters = {m['id']: m for m in monsters_data}
-        except Exception as e:
-            self.logger.error(f"Failed to load monsters data for respawn: {e}")
+        monsters = self._load_all_monsters()
+        if not monsters:
+            self.logger.error("Failed to load monsters data for respawn")
             return
 
         # Check each lair room
@@ -735,12 +765,9 @@ class AsyncGameEngine:
             return
 
         # Load monster data
-        try:
-            with open('data/npcs/monsters.json', 'r') as f:
-                monsters_data = json.load(f)
-            monsters = {m['id']: m for m in monsters_data}
-        except Exception as e:
-            self.logger.error(f"Failed to load monsters data for wandering spawn: {e}")
+        monsters = self._load_all_monsters()
+        if not monsters:
+            self.logger.error("Failed to load monsters data for wandering spawn")
             return
 
         if selected_mob_id not in monsters:

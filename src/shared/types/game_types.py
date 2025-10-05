@@ -1,7 +1,7 @@
 """Common type definitions used throughout the game."""
 
 from enum import Enum
-from typing import Dict, List, Optional, Union, NamedTuple
+from typing import Dict, List, Optional, Union, NamedTuple, Tuple
 from dataclasses import dataclass
 
 class Direction(Enum):
@@ -96,4 +96,4 @@ AreaID = str
 ItemID = str
 NPCID = str
 
-Coordinates = tuple[int, int, int]
+Coordinates = Tuple[int, int, int]

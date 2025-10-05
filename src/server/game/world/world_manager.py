@@ -23,6 +23,7 @@ class WorldManager:
         self.logger = get_logger()
         self.world_loader = WorldLoader()
         self.game_engine = game_engine
+        self.rooms_data: Dict = {}  # Store raw room data for admin commands
 
     def load_world(self):
         """Load the world data from files."""
@@ -34,6 +35,9 @@ class WorldManager:
             rooms_data = self.world_loader.load_rooms()
             items_data = self.world_loader.load_items()
             npcs_data = self.world_loader.load_npcs()
+
+            # Store rooms_data for later use (e.g., admin commands)
+            self.rooms_data = rooms_data
 
             # Create room objects
             self._create_rooms(rooms_data)
@@ -131,11 +135,19 @@ class WorldManager:
                 description=area_data.get('description', 'A mysterious area.')
             )
 
-            # Add rooms to area
+            # Add rooms to area based on two methods:
+            # 1. If area_data has explicit 'rooms' list, use that
             if 'rooms' in area_data:
                 for room_id in area_data['rooms']:
                     if room_id in self.rooms:
                         area.add_room(self.rooms[room_id])
+            else:
+                # 2. Otherwise, find rooms by their area_id field
+                for room_id, room in self.rooms.items():
+                    # Get area_id from room's raw data
+                    room_area_id = getattr(room, '_raw_data', {}).get('area_id')
+                    if room_area_id == area_id:
+                        area.add_room(room)
 
             self.areas[area_id] = area
 
@@ -728,20 +740,19 @@ class WorldManager:
         import json
 
         # Load available mobs
-        try:
-            with open('data/npcs/monsters.json', 'r') as f:
-                monsters_data = json.load(f)
-        except Exception as e:
+        monsters = self.game_engine._load_all_monsters()
+        if not monsters:
             await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but something went wrong with the ancient magic...")
-            self.logger.error(f"Failed to load monsters.json: {e}")
+            self.logger.error(f"Failed to load monsters")
             return
 
         # Select a random monster
-        if not monsters_data:
+        monsters_list = list(monsters.values())
+        if not monsters_list:
             await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but no creatures answer its call.")
             return
 
-        monster = random.choice(monsters_data)
+        monster = random.choice(monsters_list)
         self.logger.info(f"[GONG DEBUG] Selected monster: {monster.get('name')}")
         self.logger.info(f"[GONG DEBUG] Monster loot_table: {monster.get('loot_table', 'MISSING!')}")
 

@@ -205,11 +205,48 @@ def convert_spell(spell_id, spell_data):
 
     return spell_id_str, spell
 
+def load_all_spells():
+    """Load all spells from school-specific JSON files."""
+    from collections import defaultdict
+
+    spells_dir = Path('data/spells')
+    all_spells = {}
+    spells_by_school = defaultdict(dict)
+
+    # Load spells from school-specific files
+    if spells_dir.exists():
+        for spell_file in spells_dir.glob("*.json"):
+            # Skip backup and legacy files
+            if spell_file.name in ['spells.json', 'spells.json.backup']:
+                continue
+
+            try:
+                with open(spell_file, 'r', encoding='utf-8') as f:
+                    config = json.load(f)
+                    school_spells = config.get('spells', {})
+                    school = spell_file.stem  # Get school from filename
+                    spells_by_school[school] = school_spells
+                    all_spells.update(school_spells)
+            except Exception as e:
+                print(f"Warning: Could not load spells from {spell_file}: {e}")
+
+    return all_spells, spells_by_school
+
+def save_spells_by_school(spells_by_school):
+    """Save spells to school-specific files."""
+    spells_dir = Path('data/spells')
+    spells_dir.mkdir(parents=True, exist_ok=True)
+
+    for school, school_spells in spells_by_school.items():
+        output_file = spells_dir / f"{school}.json"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump({"spells": school_spells}, f, indent=2, ensure_ascii=False)
+        print(f"Saved {len(school_spells)} spells to {output_file}")
+
 def main():
     """Main conversion function."""
     # Paths
     spells_yaml = Path('data/items/spells.yaml')
-    spells_json = Path('data/spells.json')
 
     # Read spells YAML
     print(f"Reading {spells_yaml}...")
@@ -218,10 +255,9 @@ def main():
 
     print(f"Found {len(spells_data)} spells")
 
-    # Read existing spells.json
-    print(f"Reading {spells_json}...")
-    with open(spells_json, 'r') as f:
-        existing_spells = json.load(f)
+    # Read existing spells from school-specific files
+    print(f"Reading existing spells from school-specific files...")
+    existing_spells, spells_by_school = load_all_spells()
 
     # Convert spell items
     converted_count = 0
@@ -236,20 +272,21 @@ def main():
             skipped_count += 1
             continue
 
-        # Add to spells
-        existing_spells[spell_id_str] = spell
+        # Add to appropriate school
+        school = spell.get('school', 'unknown')
+        spells_by_school[school][spell_id_str] = spell
         converted_count += 1
-        print(f"Added: {spell_id_str} - {spell['name']} ({spell['type']})")
+        print(f"Added: {spell_id_str} - {spell['name']} to {school} ({spell['type']})")
 
-    # Write back to spells.json
-    print(f"\nWriting updated spells to {spells_json}...")
-    with open(spells_json, 'w') as f:
-        json.dump(existing_spells, f, indent=2)
+    # Write back to school-specific files
+    print(f"\nWriting updated spells to school-specific files...")
+    save_spells_by_school(spells_by_school)
 
     print(f"\n=== Conversion Summary ===")
     print(f"Spells converted: {converted_count}")
     print(f"Spells skipped (already exist): {skipped_count}")
-    print(f"Total spells in spells.json: {len(existing_spells)}")
+    total_spells = sum(len(spells) for spells in spells_by_school.values())
+    print(f"Total spells across all schools: {total_spells}")
     print("\nConversion complete!")
 
 if __name__ == '__main__':

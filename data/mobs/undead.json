@@ -1,0 +1,389 @@
+{
+  "monsters": [
+    {
+      "id": "skeleton_warrior",
+      "name": "Skeleton Warrior",
+      "description": "The animated bones of a long-dead warrior, held together by dark magic. Its empty eye sockets glow with an eerie light.",
+      "type": "undead",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 5,
+      "damage_max": 9,
+      "armor": 3,
+      "experience_reward": 35,
+      "gold_reward": [
+        3,
+        12
+      ],
+      "aggressive": true,
+      "speed": 0.8,
+      "resistances": [
+        "poison",
+        "fear"
+      ],
+      "weaknesses": [
+        "holy",
+        "bludgeoning"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.6
+        },
+        {
+          "item_id": "rusty_sword",
+          "chance": 0.15
+        },
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": "crypt_guardian",
+      "name": "Crypt Guardian",
+      "description": "An ancient skeletal guardian clad in rusted plate armor. Dark energy crackles around its form, and it carries a massive two-handed sword that still gleams despite the passage of centuries. Its eye sockets burn with unholy fire as it stands eternal watch over the burial crypt.",
+      "type": "undead",
+      "level": 6,
+      "health": 80,
+      "max_health": 80,
+      "damage_min": 8,
+      "damage_max": 15,
+      "armor": 6,
+      "experience_reward": 75,
+      "gold_reward": [
+        15,
+        35
+      ],
+      "aggressive": true,
+      "speed": 0.9,
+      "resistances": [
+        "poison",
+        "fear",
+        "cold"
+      ],
+      "weaknesses": [
+        "holy",
+        "fire"
+      ],
+      "abilities": [
+        "heavy_strike",
+        "necrotic_aura"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.8
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.9
+        },
+        {
+          "item_id": "rusted_plate",
+          "chance": 0.4
+        },
+        {
+          "item_id": "guardian_sword",
+          "chance": 0.15
+        }
+      ]
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "description": "The zombie has a blank expression on its face. It is wearing old soiled clothing, and is armed with {0}.",
+      "type": "undead",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "resistances": [
+        "poison",
+        "fear"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.7
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.4
+        }
+      ]
+    },
+    {
+      "id": "shade",
+      "name": "Shade",
+      "description": "The shade is a dark shadowy figure. You can tell very little about it except that its eyes strongly resemble burning coals. It occasionally emits a low moan and watches your movements closely.",
+      "type": "undead",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 3,
+      "damage_max": 6,
+      "armor": 6,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "id": "wraith",
+      "name": "Wraith",
+      "description": "The wraith is a shadowy figure with faded, nondescript features. It is semi-transparent and grayish in color. It glares at you with dull yellowish eyes.",
+      "type": "undead",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 3,
+      "damage_max": 18,
+      "armor": 1,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "skeleton_lord",
+      "name": "Skeleton Lord",
+      "description": "The skeleton lord wears a suit well kept chainmail armor, and is armed with {0}.",
+      "type": "undead",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 0,
+      "damage_max": 3,
+      "armor": 3,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "resistances": [
+        "poison",
+        "fear"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.7
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.15
+        },
+        {
+          "item_id": "scroll_cure_wounds",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "ghoul",
+      "name": "Ghoul",
+      "description": "The ghoul is a lithe, though muscular humanoid with tightly drawn brownish flesh and cloven hooves. Its teeth and nails are yellowish and look very sharp.",
+      "type": "undead",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "claws",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "id": "skeleton_giant",
+      "name": "Skeleton Giant",
+      "description": "The skeleton giant stands nearly twenty feet tall, is armed with {0}, and is wearing an enormous suit of tattered chainmail.",
+      "type": "undead",
+      "level": 7,
+      "health": 100,
+      "max_health": 100,
+      "damage_min": 10,
+      "damage_max": 80,
+      "armor": 4,
+      "experience_reward": 70,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "bone hammer"
+      ],
+      "resistances": [
+        "poison",
+        "fear"
+      ],
+      "weaknesses": [
+        "holy"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.7
+        },
+        {
+          "item_id": "dark_essence",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.15
+        },
+        {
+          "item_id": "scroll_cure_wounds",
+          "chance": 0.2
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.2
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.15
+        },
+        {
+          "item_id": "black_rose",
+          "chance": 0.1
+        },
+        {
+          "item_id": "flail",
+          "chance": 0.12
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        }
+      ]
+    }
+  ]
+}

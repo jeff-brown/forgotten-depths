@@ -1,0 +1,16 @@
+{
+  "items": {
+    "dark_essence": {
+      "name": "Dark Essence",
+      "type": "reagent",
+      "weight": 0.5,
+      "base_value": 100,
+      "description": "A swirling vial of shadow energy harvested from powerful dark creatures. Used in powerful rituals and enchantments.",
+      "properties": {
+        "magical": true,
+        "crafting_material": true,
+        "essence_type": "dark"
+      }
+    }
+  }
+}

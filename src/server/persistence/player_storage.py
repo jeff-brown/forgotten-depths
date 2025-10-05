@@ -102,8 +102,11 @@ class PlayerStorage:
                 print(f"Cannot save character for {username}: database not connected")
                 return False
 
-            # Convert character data to JSON
-            character_json = json.dumps(character_data, indent=2)
+            # Convert character data to JSON (convert sets to lists for JSON serialization)
+            character_data_copy = character_data.copy()
+            if 'visited_rooms' in character_data_copy and isinstance(character_data_copy['visited_rooms'], set):
+                character_data_copy['visited_rooms'] = list(character_data_copy['visited_rooms'])
+            character_json = json.dumps(character_data_copy, indent=2)
 
             # Check if player exists
             check_query = "SELECT id FROM players WHERE name = ?"
@@ -146,7 +149,11 @@ class PlayerStorage:
             if result and len(result) > 0:
                 char_data = result[0]['character_data']
                 if char_data:
-                    return json.loads(char_data)
+                    character_data = json.loads(char_data)
+                    # Convert visited_rooms list back to set
+                    if 'visited_rooms' in character_data and isinstance(character_data['visited_rooms'], list):
+                        character_data['visited_rooms'] = set(character_data['visited_rooms'])
+                    return character_data
             return None
         except Exception as e:
             print(f"Error loading character data for {username}: {e}")

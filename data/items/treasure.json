@@ -1,0 +1,15 @@
+{
+  "items": {
+    "ancient_coin": {
+      "name": "Ancient Coin",
+      "type": "treasure",
+      "weight": 0.1,
+      "base_value": 20,
+      "description": "An old coin from a long-forgotten kingdom. Valuable to collectors and historians.",
+      "properties": {
+        "valuable": true,
+        "collectible": true
+      }
+    }
+  }
+}

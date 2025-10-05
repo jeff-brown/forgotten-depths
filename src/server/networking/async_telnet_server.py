@@ -2,7 +2,7 @@
 
 import asyncio
 import time
-from typing import Optional, Callable, Dict, Any
+from typing import Optional, Callable, Dict, Any, List
 
 from ..utils.logger import get_logger
 from ..core.event_system import EventSystem
@@ -380,7 +380,7 @@ class AsyncTelnetServer:
                 await asyncio.sleep(60)
 
     # Synchronous interface methods for compatibility
-    def get_connected_players(self) -> list[int]:
+    def get_connected_players(self) -> List[int]:
         """Get list of all connected player IDs."""
         return list(self.connections.keys())
 

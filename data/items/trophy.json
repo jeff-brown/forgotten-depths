@@ -1,0 +1,25 @@
+{
+  "items": {
+    "goblin_ear": {
+      "name": "Goblin Ear",
+      "type": "trophy",
+      "weight": 0.1,
+      "base_value": 5,
+      "description": "A leathery green ear from a goblin. Some collectors pay well for these.",
+      "properties": {
+        "trophy": true
+      }
+    },
+    "wolf_fang": {
+      "name": "Wolf Fang",
+      "type": "trophy",
+      "weight": 0.2,
+      "base_value": 6,
+      "description": "A sharp fang from a gray wolf. Could be fashioned into a necklace or charm.",
+      "properties": {
+        "trophy": true,
+        "crafting_material": true
+      }
+    }
+  }
+}

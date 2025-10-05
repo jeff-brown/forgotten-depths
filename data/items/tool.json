@@ -1,0 +1,93 @@
+{
+  "items": {
+    "rope": {
+      "name": "Rope",
+      "type": "tool",
+      "weight": 5,
+      "base_value": 10,
+      "description": "Fifty feet of sturdy hemp rope.",
+      "properties": {
+        "length": 50,
+        "material": "hemp"
+      }
+    },
+    "torch": {
+      "name": "Torch",
+      "type": "tool",
+      "weight": 1,
+      "base_value": 2,
+      "description": "A wooden torch that provides light in dark places.",
+      "properties": {
+        "light_radius": 30,
+        "burn_time": 60
+      }
+    },
+    "ration_of_food": {
+      "name": "Ration Of Food",
+      "type": "tool",
+      "weight": 0.5,
+      "base_value": 2,
+      "description": "Preserved rations suitable for travel.",
+      "properties": {
+        "required_level": 0,
+        "nutrition": 60
+      }
+    },
+    "waterskin": {
+      "name": "Waterskin",
+      "type": "tool",
+      "weight": 1.0,
+      "base_value": 1,
+      "description": "A leather waterskin for carrying water.",
+      "properties": {
+        "required_level": 0,
+        "hydration": 60,
+        "charges": 3
+      }
+    },
+    "blowdart": {
+      "name": "Blowdart",
+      "type": "tool",
+      "weight": 0.1,
+      "base_value": 0,
+      "description": "A small poisoned dart for blowguns.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "tube": {
+      "name": "Tube Of Blowdarts",
+      "type": "tool",
+      "weight": 0.5,
+      "base_value": 5,
+      "description": "A tube for storing blowdarts.",
+      "properties": {
+        "required_level": 0
+      }
+    },
+    "small_barrel": {
+      "name": "Small Barrel",
+      "type": "tool",
+      "weight": 10.0,
+      "base_value": 10,
+      "description": "A small wooden barrel for storing water.",
+      "properties": {
+        "required_level": 0,
+        "hydration": 60,
+        "charges": 15
+      }
+    },
+    "preserved_rations": {
+      "name": "Preserved Rations",
+      "type": "tool",
+      "weight": 2.0,
+      "base_value": 10,
+      "description": "Well-preserved food suitable for long journeys.",
+      "properties": {
+        "required_level": 0,
+        "nutrition": 40,
+        "charges": 5
+      }
+    }
+  }
+}

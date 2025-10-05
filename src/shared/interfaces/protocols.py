@@ -1,6 +1,6 @@
 """Protocol definitions for type hints and interfaces."""
 
-from typing import Protocol, Any, Dict, List, Optional
+from typing import Protocol, Any, Dict, List, Optional, Tuple
 from abc import abstractmethod
 
 class Saveable(Protocol):
@@ -109,7 +109,7 @@ class Combatant(Protocol):
         ...
 
     @abstractmethod
-    def get_health(self) -> tuple[int, int]:
+    def get_health(self) -> Tuple[int, int]:
         """Get current and max health."""
         ...
 

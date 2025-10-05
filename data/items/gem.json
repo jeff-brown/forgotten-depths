@@ -1,0 +1,17 @@
+{
+  "items": {
+    "soul_gem": {
+      "name": "Soul Gem",
+      "type": "gem",
+      "weight": 0.2,
+      "base_value": 500,
+      "description": "A pristine gem that glows with an inner light. It seems to contain captured souls or pure magical essence.",
+      "properties": {
+        "magical": true,
+        "valuable": true,
+        "mana_storage": 100,
+        "gem_quality": "flawless"
+      }
+    }
+  }
+}
