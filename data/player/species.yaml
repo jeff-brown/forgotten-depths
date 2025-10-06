@@ -1,0 +1,72 @@
+1:
+  cha: 1
+  con: -3
+  dex: 1
+  int: 1
+  long: an elven
+  start_gold_max: 0
+  start_gold_min: 0
+  str: -3
+  type: elven
+  vit: -1
+  wis: 3
+2:
+  cha: -1
+  con: 1
+  dex: -1
+  int: -1
+  long: a dwarven
+  start_gold_max: 0
+  start_gold_min: 0
+  str: 2
+  type: dwarven
+  vit: 0
+  wis: 0
+3:
+  cha: -2
+  con: 1
+  dex: 0
+  int: -1
+  long: a tiefling
+  start_gold_max: 0
+  start_gold_min: 0
+  str: 1
+  type: tiefling
+  vit: 0
+  wis: 1
+4:
+  cha: 0
+  con: 0
+  dex: 0
+  int: 0
+  long: a human
+  start_gold_max: 0
+  start_gold_min: 0
+  str: 0
+  type: human
+  vit: 0
+  wis: 0
+5:
+  cha: -3
+  con: 2
+  dex: 8
+  int: -2
+  long: a halfling
+  start_gold_max: 0
+  start_gold_min: 0
+  str: 0
+  type: halfling
+  vit: 0
+  wis: -2
+6:
+  cha: -4
+  con: 8
+  dex: -4
+  int: -4
+  long: a half-orc
+  start_gold_max: 0
+  start_gold_min: 0
+  str: 8
+  type: half-orc
+  vit: 2
+  wis: -4

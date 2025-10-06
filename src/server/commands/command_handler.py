@@ -178,7 +178,7 @@ class CommandHandler:
         import json
         import os
         try:
-            with open('data/races.json', 'r') as f:
+            with open('data/player/races.json', 'r') as f:
                 return json.load(f)
         except:
             # Fallback to default
@@ -189,7 +189,7 @@ class CommandHandler:
         import json
         import os
         try:
-            with open('data/classes.json', 'r') as f:
+            with open('data/player/classes.json', 'r') as f:
                 return json.load(f)
         except:
             # Fallback to default
