@@ -4,6 +4,7 @@ import asyncio
 import random
 import time
 import json
+from pathlib import Path
 from typing import Optional, Dict, Any
 
 from ..networking.async_connection_manager import AsyncConnectionManager
@@ -21,6 +22,8 @@ from ..config.config_manager import ConfigManager
 from ..utils.logger import get_logger
 from ..game.npcs.mob import Mob
 from ..game.quests.quest_manager import QuestManager
+from ..game.traps.trap_system import TrapSystem
+from ..game.abilities.class_ability_system import ClassAbilitySystem
 from shared.constants.game_constants import GAME_TICK_RATE
 
 
@@ -45,6 +48,8 @@ class AsyncGameEngine:
         self.item_manager = ItemManager(self)
         self.player_manager = PlayerManager(self)
         self.quest_manager = QuestManager(self)
+        self.trap_system = TrapSystem(self)
+        self.ability_system = ClassAbilitySystem(self)
 
         # Database and persistence
         self.database: Optional[Database] = None
@@ -62,6 +67,9 @@ class AsyncGameEngine:
 
         # Wandering mob management
         self.last_wandering_spawn_check = time.time()
+
+        # Arena gong cooldowns - tracks last gong use per room
+        self.gong_cooldowns: Dict[str, float] = {}  # room_id -> timestamp of last gong use
 
         # Combat management - tracks active combat encounters
         self.active_combats: Dict[str, AsyncCombat] = {}  # room_id -> AsyncCombat
@@ -170,7 +178,7 @@ class AsyncGameEngine:
         except asyncio.CancelledError:
             self.logger.info("Game engine cancelled")
         except Exception as e:
-            self.logger.error(f"Game engine error: {e}")
+            self.logger.error(f"Game engine error: {e}", exc_info=True)
         finally:
             await self.stop()
 
@@ -261,8 +269,17 @@ class AsyncGameEngine:
             # Update spell cooldowns
             await self._update_spell_cooldowns()
 
+            # Update light sources (burning)
+            await self._update_light_sources()
+
+            # Update trap effects (poison, burning)
+            await self.trap_system.update_trap_effects()
+
             # Update active buffs/effects
             await self._update_active_effects()
+
+            # Replenish vendor stock (every 5 minutes)
+            await self.vendor_system.replenish_vendor_stock()
 
             # Auto-save check
             current_time = time.time()
@@ -380,7 +397,7 @@ class AsyncGameEngine:
                 character['mana'] = new_mana
 
     async def _regenerate_mobs(self):
-        """Regenerate health for all mobs."""
+        """Regenerate health and mana for all mobs."""
         for room_id, mobs in self.room_mobs.items():
             for mob in mobs:
                 if not isinstance(mob, dict):
@@ -396,10 +413,21 @@ class AsyncGameEngine:
                 # Calculate regen: CON / 50 per tick (same as players)
                 health_regen = constitution / 50.0
 
-                # Apply regeneration
+                # Apply health regeneration
                 if current_health < max_health and current_health > 0:
                     new_health = min(current_health + health_regen, max_health)
                     mob['health'] = new_health
+
+                # Regenerate mana for spellcasters
+                if mob.get('spellcaster', False):
+                    mob_id = mob.get('id', f"{mob.get('name', 'unknown')}_{room_id}")
+                    # Initialize mana if needed
+                    if mob_id not in self.combat_system.spellcasting.mob_mana:
+                        mob_level = mob.get('level', 1)
+                        spell_skill = mob.get('spell_skill', 50)
+                        self.combat_system.spellcasting.initialize_mob_mana(mob_id, mob_level, spell_skill)
+                    # Regenerate mana
+                    self.combat_system.spellcasting.regenerate_mana(mob_id)
 
     async def _update_spell_cooldowns(self):
         """Update spell cooldowns for all players."""
@@ -419,6 +447,75 @@ class AsyncGameEngine:
                 if cooldowns[spell_id] <= 0:
                     del cooldowns[spell_id]
 
+    async def _update_light_sources(self):
+        """Update lit light sources - decrease burn time and remove when depleted."""
+        from ..utils.colors import announcement, error_message
+
+        for player_id, player_data in self.player_manager.connected_players.items():
+            character = player_data.get('character')
+            if not character:
+                continue
+
+            inventory = character.get('inventory', [])
+            items_to_remove = []
+
+            for i, item in enumerate(inventory):
+                # Check if item is a lit light source
+                if not item.get('is_light_source', False):
+                    continue
+                if not item.get('is_lit', False):
+                    continue
+
+                # Decrease burn time (tick_rate seconds per tick)
+                time_remaining = item.get('time_remaining', 0)
+                time_remaining -= self.tick_rate
+
+                # Check for warnings
+                if time_remaining <= 60 and item.get('_warned_60', False) is False:
+                    # 1 minute warning
+                    await self.connection_manager.send_message(
+                        player_id,
+                        announcement(f"Your {item['name']} flickers - it will burn out soon!")
+                    )
+                    item['_warned_60'] = True
+
+                if time_remaining <= 10 and item.get('_warned_10', False) is False:
+                    # 10 second warning
+                    await self.connection_manager.send_message(
+                        player_id,
+                        error_message(f"Your {item['name']} is almost out!")
+                    )
+                    item['_warned_10'] = True
+
+                # Update time remaining
+                item['time_remaining'] = time_remaining
+
+                # Check if depleted
+                if time_remaining <= 0:
+                    # Light source burned out
+                    item['is_lit'] = False
+                    await self.connection_manager.send_message(
+                        player_id,
+                        error_message(f"Your {item['name']} has burned out and is no longer providing light.")
+                    )
+
+                    # For non-reusable light sources (torches, candles), remove from inventory
+                    if not item.get('properties', {}).get('can_relight', False):
+                        items_to_remove.append(i)
+
+                        # Notify room
+                        username = player_data.get('username', 'Someone')
+                        room_id = character.get('room_id')
+                        if room_id:
+                            await self.player_manager.notify_room_except_player(
+                                room_id, player_id,
+                                f"{username}'s {item['name']} burns out completely, leaving only ash."
+                            )
+
+            # Remove depleted items (in reverse order to preserve indices)
+            for i in sorted(items_to_remove, reverse=True):
+                inventory.pop(i)
+
     async def _update_active_effects(self):
         """Update active buff/debuff effects for all players."""
         for player_id, player_data in self.player_manager.connected_players.items():
@@ -437,10 +534,11 @@ class AsyncGameEngine:
                 if effect['duration'] <= 0:
                     expired_effects.append(i)
                     # Notify player when buff expires
-                    spell_name = effect.get('spell_id', 'Unknown')
+                    # Check both 'spell_id' (for buffs/spells) and 'type' (for trap effects)
+                    effect_name = effect.get('spell_id') or effect.get('type', 'Unknown')
                     await self.connection_manager.send_message(
                         player_id,
-                        f"The {spell_name} effect has worn off."
+                        f"The {effect_name} effect has worn off."
                     )
 
             # Remove expired effects (in reverse order to preserve indices)
@@ -527,8 +625,9 @@ class AsyncGameEngine:
         # Check if the target matches "gong" or similar variations
         target_lower = target.lower()
         if target_lower in ['gong', 'g', 'bronze gong', 'bronze']:
-            # Check if player is in the arena room
-            if room_id != 'arena':
+            # Check if player is in an arena room (configured in game settings)
+            arena_config = self.config_manager.get_arena_by_room(room_id)
+            if not arena_config:
                 await self.connection_manager.send_message(player_id, "There is no gong here to ring.")
                 return
 
@@ -570,6 +669,124 @@ class AsyncGameEngine:
                 if lair_monster_id and lair_monster_id in self.monsters_data:
                     self._spawn_lair_mob(room_id, lair_monster_id, self.monsters_data[lair_monster_id])
                     self.logger.info(f"[LAIR] Spawned {lair_monster_id} in {room_id}")
+
+    def spawn_mob(self, room_id: str, monster_id: str, monster: dict, **kwargs) -> dict:
+        """Centralized mob spawning logic.
+
+        Args:
+            room_id: Room to spawn the mob in
+            monster_id: Monster ID (from monster data)
+            monster: Monster data dictionary
+            **kwargs: Additional flags to add to the mob (e.g., is_lair_mob=True, is_wandering=True, spawn_area='forest')
+
+        Returns:
+            The spawned mob dictionary
+        """
+        # Ensure room has mob list
+        if room_id not in self.room_mobs:
+            self.room_mobs[room_id] = []
+
+        # Generate random stats
+        level = monster.get('level', 1)
+        monster_type = monster.get('type', 'monster')
+        stats = self._generate_mob_stats(level, monster_type)
+
+        # Randomize HP (±20% variance)
+        base_hp = monster.get('health', 100)
+        hp_variance = int(base_hp * 0.2)
+        randomized_hp = random.randint(
+            max(1, base_hp - hp_variance),
+            base_hp + hp_variance
+        )
+
+        # Randomize XP reward (±20% variance)
+        base_xp = monster.get('experience_reward', 25)
+        xp_variance = int(base_xp * 0.2)
+        randomized_xp = random.randint(
+            max(1, base_xp - xp_variance),
+            base_xp + xp_variance
+        )
+
+        # Create mob instance with full stat block
+        mob_name = monster.get('name', 'Unknown Creature')
+        spawned_mob = {
+            'id': monster_id,
+            'name': mob_name,
+            'type': 'hostile',
+            'description': monster.get('description', f'A fierce {mob_name}'),
+            'level': level,
+            'health': randomized_hp,
+            'max_health': randomized_hp,
+            'damage': monster.get('damage', '1d4'),
+            'damage_min': monster.get('damage_min', 1),
+            'damage_max': monster.get('damage_max', 4),
+            'armor_class': monster.get('armor', 0),
+
+            # Full stat block
+            'strength': stats['strength'],
+            'dexterity': stats['dexterity'],
+            'constitution': stats['constitution'],
+            'intelligence': stats['intelligence'],
+            'wisdom': stats['wisdom'],
+            'charisma': stats['charisma'],
+
+            'experience_reward': randomized_xp,
+            'gold_reward': monster.get('gold_reward', [0, 5]),
+            'loot_table': monster.get('loot_table', []),
+            'experience': 0,  # Track XP gained from mob vs mob combat
+            'gold': 0,  # Track gold looted from other mobs
+
+            # Spellcasting fields
+            'spellcaster': monster.get('spellcaster', False),
+            'spell_skill': monster.get('spell_skill', 50),
+            'spell_list': monster.get('spell_list', 'generic_caster'),
+
+            # Special abilities
+            'abilities': monster.get('abilities', []),
+        }
+
+        # Add any additional flags passed via kwargs
+        spawned_mob.update(kwargs)
+
+        # Add to room
+        self.room_mobs[room_id].append(spawned_mob)
+
+        # Load special abilities for this mob
+        mob_instance_id = self.combat_system.get_mob_identifier(spawned_mob)
+        self.combat_system.load_mob_abilities(spawned_mob, mob_instance_id)
+
+        # Equip humanoid mobs with weapons and armor
+        if monster_type == 'humanoid':
+            self._equip_humanoid_mob(spawned_mob, monster)
+
+            # Update description if it has a weapon placeholder
+            if '{0}' in spawned_mob['description']:
+                weapon = spawned_mob.get('equipped', {}).get('weapon')
+
+                # Build weapon description with article (a/an)
+                if weapon:
+                    weapon_name = weapon['name'].lower()
+                    # Use 'an' for words starting with vowels
+                    article = 'an' if weapon_name[0] in 'aeiou' else 'a'
+                    weapon_desc = f"{article} {weapon_name}"
+                else:
+                    weapon_desc = "their fists"
+
+                # Check if description has multiple placeholders
+                if '{1}' in spawned_mob['description']:
+                    # Second placeholder is for shield/secondary weapon
+                    # For now, use "and a shield" as default for armed mobs
+                    shield_desc = "and a shield" if weapon else ""
+                    spawned_mob['description'] = spawned_mob['description'].format(weapon_desc, shield_desc)
+                else:
+                    # Single placeholder, just weapon
+                    spawned_mob['description'] = spawned_mob['description'].format(weapon_desc)
+
+        # Build log message
+        log_extras = ", ".join(f"{k}={v}" for k, v in kwargs.items()) if kwargs else "no flags"
+        self.logger.info(f"[MOB_SPAWN] Spawned {mob_name} (level {level}) in {room_id} ({log_extras})")
+
+        return spawned_mob
 
     def _generate_mob_stats(self, level: int, monster_type: str = 'monster') -> dict:
         """Generate random stats for a mob based on level and type.
@@ -616,49 +833,134 @@ class AsyncGameEngine:
 
         return stats
 
+    def _load_item_definitions(self):
+        """Load weapon and armor definitions from JSON files."""
+        if hasattr(self, '_weapons_cache') and hasattr(self, '_armor_cache'):
+            return self._weapons_cache, self._armor_cache
+
+        weapons = {}
+        armor = {}
+
+        # Load weapons
+        weapon_file = Path('data/items/weapon.json')
+        if weapon_file.exists():
+            try:
+                with open(weapon_file, 'r', encoding='utf-8') as f:
+                    weapon_data = json.load(f)
+                    weapons = weapon_data.get('items', {})
+            except Exception as e:
+                self.logger.error(f"Error loading weapon data: {e}")
+
+        # Load armor
+        armor_file = Path('data/items/armor.json')
+        if armor_file.exists():
+            try:
+                with open(armor_file, 'r', encoding='utf-8') as f:
+                    armor_data = json.load(f)
+                    armor = armor_data.get('items', {})
+            except Exception as e:
+                self.logger.error(f"Error loading armor data: {e}")
+
+        # Cache for future use
+        self._weapons_cache = weapons
+        self._armor_cache = armor
+
+        return weapons, armor
+
+    def _equip_humanoid_mob(self, spawned_mob: dict, monster_data: dict):
+        """Equip a humanoid mob with appropriate weapons and armor."""
+        mob_level = spawned_mob.get('level', 1)
+        mob_name = spawned_mob.get('name', '')
+
+        # Get mob's class from data (with fallback to fighter)
+        mob_class = monster_data.get('class', 'fighter')
+
+        # Load item definitions
+        weapons, armor = self._load_item_definitions()
+
+        # Filter weapons by level and class
+        eligible_weapons = []
+        for weapon_id, weapon_data in weapons.items():
+            props = weapon_data.get('properties', {})
+            required_level = props.get('required_level', 0)
+            allowed_classes = props.get('allowed_classes', None)
+
+            # Skip if level too high or too low (allow some variance)
+            if required_level > mob_level or required_level < max(0, mob_level - 5):
+                continue
+
+            # Skip if class restricted and mob's class not allowed
+            if allowed_classes and mob_class not in allowed_classes:
+                continue
+
+            # Skip natural weapons, ammunition, and ranged weapons
+            weapon_type = props.get('weapon_type', '')
+            is_ranged = props.get('ranged', False)
+            if weapon_type in ['natural', 'ammunition', 'thrown'] or is_ranged:
+                continue
+
+            eligible_weapons.append((weapon_id, weapon_data))
+
+        # Filter armor by level and class
+        eligible_armor = []
+        for armor_id, armor_data in armor.items():
+            props = armor_data.get('properties', {})
+            required_level = props.get('required_level', 0)
+            allowed_classes = props.get('allowed_classes', None)
+
+            # Skip if level too high or too low (allow some variance)
+            if required_level > mob_level or required_level < max(0, mob_level - 5):
+                continue
+
+            # Skip if class restricted and mob's class not allowed
+            if allowed_classes and mob_class not in allowed_classes:
+                continue
+
+            eligible_armor.append((armor_id, armor_data))
+
+        # Initialize equipped dict
+        spawned_mob['equipped'] = {}
+
+        # Always equip a weapon if available (100% chance)
+        if eligible_weapons:
+            weapon_id, weapon_data = random.choice(eligible_weapons)
+            spawned_mob['equipped']['weapon'] = {
+                'id': weapon_id,
+                'name': weapon_data['name'],
+                'type': 'weapon',
+                'weight': weapon_data.get('weight', 1),
+                'base_value': weapon_data.get('base_value', 0),
+                'description': weapon_data.get('description', ''),
+                'properties': weapon_data.get('properties', {})
+            }
+            # Update mob's damage from weapon
+            damage = weapon_data['properties'].get('damage', '1d4')
+            spawned_mob['damage'] = damage
+            self.logger.info(f"[MOB_EQUIP] {mob_name} equipped with {weapon_data['name']} ({damage} damage)")
+
+        # Always equip armor if available (100% chance)
+        if eligible_armor:
+            armor_id, armor_data = random.choice(eligible_armor)
+            spawned_mob['equipped']['armor'] = {
+                'id': armor_id,
+                'name': armor_data['name'],
+                'type': 'armor',
+                'weight': armor_data.get('weight', 1),
+                'base_value': armor_data.get('base_value', 0),
+                'description': armor_data.get('description', ''),
+                'properties': armor_data.get('properties', {})
+            }
+            # Update mob's armor class from armor
+            armor_class = armor_data['properties'].get('armor_class', 0)
+            spawned_mob['armor_class'] = armor_class
+            self.logger.info(f"[MOB_EQUIP] {mob_name} equipped with {armor_data['name']} (AC {armor_class})")
+
+        # Store mob's class for reference
+        spawned_mob['class'] = mob_class
+
     def _spawn_lair_mob(self, room_id: str, monster_id: str, monster: dict):
         """Spawn a mob in a lair room."""
-        if room_id not in self.room_mobs:
-            self.room_mobs[room_id] = []
-
-        # Generate random stats
-        level = monster.get('level', 1)
-        monster_type = monster.get('type', 'monster')
-        stats = self._generate_mob_stats(level, monster_type)
-
-        # Create mob instance with full stat block
-        mob_name = monster.get('name', 'Unknown Creature')
-        spawned_mob = {
-            'id': monster_id,
-            'name': mob_name,
-            'type': 'hostile',
-            'description': monster.get('description', f'A fierce {mob_name}'),
-            'level': level,
-            'health': monster.get('health', 100),
-            'max_health': monster.get('health', 100),
-            'damage': monster.get('damage', '1d4'),
-            'damage_min': monster.get('damage_min', 1),
-            'damage_max': monster.get('damage_max', 4),
-            'armor_class': monster.get('armor', 0),
-
-            # Full stat block
-            'strength': stats['strength'],
-            'dexterity': stats['dexterity'],
-            'constitution': stats['constitution'],
-            'intelligence': stats['intelligence'],
-            'wisdom': stats['wisdom'],
-            'charisma': stats['charisma'],
-
-            'experience_reward': monster.get('experience_reward', 25),
-            'gold_reward': monster.get('gold_reward', [0, 5]),
-            'loot_table': monster.get('loot_table', []),
-            'experience': 0,  # Track XP gained from mob vs mob combat
-            'gold': 0,  # Track gold looted from other mobs
-            'is_lair_mob': True
-        }
-
-        self.room_mobs[room_id].append(spawned_mob)
-        self.logger.info(f"[MOB_SPAWN] Spawned lair mob {mob_name} (level {level}) in room {room_id}")
+        self.spawn_mob(room_id, monster_id, monster, is_lair_mob=True)
 
     async def _check_lair_respawns(self):
         """Check if any lair mobs need to respawn."""
@@ -798,48 +1100,7 @@ class AsyncGameEngine:
 
     def _spawn_wandering_mob(self, room_id: str, monster_id: str, monster: dict, area_id: str = None):
         """Spawn a wandering mob in a room."""
-        if room_id not in self.room_mobs:
-            self.room_mobs[room_id] = []
-
-        # Generate random stats
-        level = monster.get('level', 1)
-        monster_type = monster.get('type', 'monster')
-        stats = self._generate_mob_stats(level, monster_type)
-
-        # Create mob instance
-        mob_name = monster.get('name', 'Unknown Creature')
-        spawned_mob = {
-            'id': monster_id,
-            'name': mob_name,
-            'type': 'hostile',
-            'description': monster.get('description', f'A fierce {mob_name}'),
-            'level': level,
-            'health': monster.get('health', 100),
-            'max_health': monster.get('health', 100),
-            'damage': monster.get('damage', '1d4'),
-            'damage_min': monster.get('damage_min', 1),
-            'damage_max': monster.get('damage_max', 4),
-            'armor_class': monster.get('armor', 0),
-
-            # Full stat block
-            'strength': stats['strength'],
-            'dexterity': stats['dexterity'],
-            'constitution': stats['constitution'],
-            'intelligence': stats['intelligence'],
-            'wisdom': stats['wisdom'],
-            'charisma': stats['charisma'],
-
-            'experience_reward': monster.get('experience_reward', 25),
-            'gold_reward': monster.get('gold_reward', [0, 5]),
-            'loot_table': monster.get('loot_table', []),
-            'experience': 0,
-            'gold': 0,
-            'is_wandering': True,  # Mark as wandering mob
-            'spawn_area': area_id  # Track which area this mob belongs to
-        }
-
-        self.room_mobs[room_id].append(spawned_mob)
-        self.logger.info(f"[MOB_SPAWN] Spawned wandering {mob_name} (level {level}) in room {room_id} (area: {area_id})")
+        self.spawn_mob(room_id, monster_id, monster, is_wandering=True, spawn_area=area_id)
 
     async def _move_wandering_mobs(self):
         """Move wandering mobs randomly between rooms."""
@@ -964,7 +1225,10 @@ class AsyncGameEngine:
     async def _notify_room_players_sync(self, room_id: str, message: str):
         """Send a message to all players in a room (sync version for use in tick)."""
         for player_id, player_data in self.player_manager.connected_players.items():
-            if player_data and player_data.get('character', {}).get('room_id') == room_id:
+            if not player_data:
+                continue
+            character = player_data.get('character')
+            if character and character.get('room_id') == room_id:
                 await self.connection_manager.send_message(player_id, message)
 
 

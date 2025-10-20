@@ -31,26 +31,26 @@
     },
     {
       "id": "wolf",
-      "name": "Gray Wolf",
-      "description": "A fierce gray wolf with sharp fangs and intelligent eyes. It moves with predatory grace and seems ready to defend its territory.",
+      "name": "Wolf",
+      "description": "The wolf is very large and has greyish fur and icey blue eyes. It growls at you menacingly and bares its teeth.",
       "type": "beast",
-      "level": 3,
-      "health": 35,
-      "max_health": 35,
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
       "damage_min": 4,
-      "damage_max": 8,
-      "armor": 1,
-      "experience_reward": 25,
+      "damage_max": 16,
+      "armor": 2,
+      "experience_reward": 20,
       "gold_reward": [
         0,
-        2
+        4
       ],
       "aggressive": false,
       "pack_animal": true,
-      "speed": 1.3,
+      "speed": 1.0,
       "abilities": [
-        "howl",
-        "pack_tactics"
+        "multiattack",
+        "savage bite"
       ],
       "loot_table": [
         {
@@ -65,7 +65,13 @@
           "item_id": "raw_meat",
           "chance": 0.5
         }
-      ]
+      ],
+      "vnum": 41,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 40
     },
     {
       "id": "huge_rat",
@@ -81,9 +87,9 @@
       "experience_reward": 10,
       "gold_reward": [
         0,
-        0
+        2
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
         "gnashing teeth"
@@ -101,7 +107,12 @@
           "item_id": "gnashing_teeth",
           "chance": 0.2
         }
-      ]
+      ],
+      "vnum": 9,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true,
+      "morale": 50
     },
     {
       "id": "giant_scorpion",
@@ -570,12 +581,11 @@
       "experience_reward": 20,
       "gold_reward": [
         0,
-        0
+        4
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "claws",
         "multiattack"
       ],
       "loot_table": [
@@ -599,7 +609,13 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 32,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 25
     },
     {
       "id": "red_bear",
@@ -615,12 +631,11 @@
       "experience_reward": 20,
       "gold_reward": [
         0,
-        0
+        4
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
         "multiattack"
       ],
       "loot_table": [
@@ -648,7 +663,13 @@
           "item_id": "brass_key",
           "chance": 1.0
         }
-      ]
+      ],
+      "vnum": 33,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 15
     },
     {
       "id": "leopard",
@@ -710,9 +731,9 @@
       "experience_reward": 20,
       "gold_reward": [
         0,
-        0
+        4
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
         "tusks"
@@ -738,7 +759,12 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 42,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "morale": 30
     },
     {
       "id": "cave_bear",
@@ -754,12 +780,11 @@
       "experience_reward": 20,
       "gold_reward": [
         0,
-        0
+        4
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
         "multiattack"
       ],
       "loot_table": [
@@ -787,7 +812,13 @@
           "item_id": "copper_key",
           "chance": 1.0
         }
-      ]
+      ],
+      "vnum": 43,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 10
     },
     {
       "id": "mountain_ape",
@@ -803,13 +834,13 @@
       "experience_reward": 30,
       "gold_reward": [
         0,
-        0
+        6
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "clenched fists",
-        "multiattack"
+        "multiattack",
+        "clenched fists"
       ],
       "loot_table": [
         {
@@ -832,7 +863,13 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 48,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 20
     },
     {
       "id": "carrion_crane",
@@ -892,12 +929,11 @@
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
         "multiattack"
       ],
       "loot_table": [
@@ -921,7 +957,13 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 63,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 10
     },
     {
       "id": "sand_worm",
@@ -1193,13 +1235,13 @@
     {
       "id": "lizard",
       "name": "Lizard",
-      "description": "The lizard is small and brown and moves very quickly.",
+      "description": "The lizard is small and purple and moves very quickly.",
       "type": "beast",
       "level": 1,
       "health": 10,
       "max_health": 10,
       "damage_min": 1,
-      "damage_max": 1,
+      "damage_max": 3,
       "armor": 0,
       "experience_reward": 10,
       "gold_reward": [
@@ -1221,7 +1263,7 @@
           "chance": 0.3
         },
         {
-          "item_id": "knife",
+          "item_id": "spear",
           "chance": 0.3
         }
       ]
@@ -1371,42 +1413,6 @@
       ]
     },
     {
-      "id": "lizard",
-      "name": "Lizard",
-      "description": "The lizard is small and purple and moves very quickly.",
-      "type": "beast",
-      "level": 1,
-      "health": 10,
-      "max_health": 10,
-      "damage_min": 1,
-      "damage_max": 3,
-      "armor": 0,
-      "experience_reward": 10,
-      "gold_reward": [
-        0,
-        0
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "tiny teeth"
-      ],
-      "loot_table": [
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.5
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.3
-        },
-        {
-          "item_id": "spear",
-          "chance": 0.3
-        }
-      ]
-    },
-    {
       "id": "fox",
       "name": "Fox",
       "description": "The fox hides in the nearby brush and seems very skittish.",
@@ -1500,14 +1506,13 @@
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "wicked claws",
-        "savagely bit",
-        "multiattack"
+        "multiattack",
+        "wicked claws"
       ],
       "loot_table": [
         {
@@ -1530,7 +1535,19 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 113,
+      "gender": "neuter",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "savagely bit",
+        "chance": 0.35,
+        "damage_min": 12,
+        "damage_max": 36
+      },
+      "morale": 30
     },
     {
       "id": "mountain_lion",
@@ -1538,21 +1555,19 @@
       "description": "The mountain lion has dark brown spotted fur. It growls menacingly and bares its teeth at you.",
       "type": "beast",
       "level": 4,
-      "health": 30,
-      "max_health": 30,
+      "health": 40,
+      "max_health": 40,
       "damage_min": 2,
       "damage_max": 8,
       "armor": 2,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
-        "savagely bit",
         "multiattack"
       ],
       "loot_table": [
@@ -1576,7 +1591,19 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 114,
+      "gender": "neuter",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "savagely bit",
+        "chance": 0.35,
+        "damage_min": 6,
+        "damage_max": 18
+      },
+      "morale": 20
     },
     {
       "id": "jackal",
@@ -2171,6 +2198,38 @@
           "chance": 0.1
         }
       ]
+    },
+    {
+      "id": "reaper_shrub",
+      "vnum": 8,
+      "name": "Reaper Shrub",
+      "description": "The reaper shrub is a squat thorny plant, moving slowly about on thick gnarled roots. Its spiney branches rustle ominously at your presence.",
+      "type": "beast",
+      "level": 1,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "a thorny branch"
+      ],
+      "special_attack": {
+        "description": "raked several thorny branches across",
+        "chance": 0.33,
+        "damage_min": 4,
+        "damage_max": 16
+      }
     }
   ]
 }

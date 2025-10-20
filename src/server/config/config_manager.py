@@ -179,6 +179,10 @@ class ConfigManager:
         if 'hydration' in item_config:
             item_instance['hydration'] = item_config['hydration']
 
+        # Copy light source flag if present
+        if item_config.get('is_light_source', False):
+            item_instance['is_light_source'] = True
+
         return item_instance
 
     def get_vendor_buy_price(self, vendor_id: str, item_value: int) -> int:
@@ -280,3 +284,29 @@ class ConfigManager:
             if value is None:
                 return default
         return value
+
+    def get_arena_by_room(self, room_id: str) -> Optional[Dict[str, Any]]:
+        """Get arena configuration for a specific room.
+
+        Args:
+            room_id: The room ID to check
+
+        Returns:
+            Arena configuration dict if found, None otherwise
+        """
+        arenas = self.game_settings.get('arenas', {})
+        for arena_id, arena_config in arenas.items():
+            if arena_config.get('room_id') == room_id and arena_config.get('enabled', True):
+                # Add arena_id to the config for reference
+                config = arena_config.copy()
+                config['arena_id'] = arena_id
+                return config
+        return None
+
+    def get_all_arenas(self) -> Dict[str, Any]:
+        """Get all arena configurations.
+
+        Returns:
+            Dictionary of arena configurations
+        """
+        return self.game_settings.get('arenas', {})

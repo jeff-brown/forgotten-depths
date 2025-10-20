@@ -108,7 +108,7 @@ class AsyncMoveCommand(BaseCommand):
         self.description = f"Move {direction}"
         self.usage = direction
 
-    def execute(self, player: 'Player', args: List[str]) -> str:
+    async def execute(self, player: 'Player', args: List[str]) -> str:
         """Execute the move command using graph-based navigation."""
         from ...utils.logger import get_logger
         logger = get_logger()
@@ -241,6 +241,9 @@ class AsyncMoveCommand(BaseCommand):
         player.character.room_id = destination
         new_room.add_player(player.character)
 
+        # Check if any wandering mobs should follow the player
+        await self._check_mob_following(player, current_room, destination, matched_direction)
+
         # Return the new room description
         result = ""
         if unlock_message:
@@ -250,6 +253,108 @@ class AsyncMoveCommand(BaseCommand):
 
         logger.info(f"[DOOR] === MOVEMENT CHECK END (SUCCESS) ===")
         return result
+
+    async def _check_mob_following(self, player: 'Player', old_room_id: str, new_room_id: str, direction: str):
+        """Check if any wandering mobs should follow the player.
+
+        Args:
+            player: The player who just moved
+            old_room_id: The room the player left
+            new_room_id: The room the player entered
+            direction: The direction the player moved
+        """
+        import random
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        # Get game engine
+        if not hasattr(player, '_game_engine'):
+            return
+
+        game_engine = player._game_engine
+
+        # Get follow chance from config
+        follow_chance = game_engine.config_manager.get_setting('combat', 'mob_follow', 'follow_chance', default=0.4)
+
+        logger.info(f"[FOLLOW] Checking mob following from {old_room_id} to {new_room_id}, follow_chance={follow_chance}")
+
+        # Check if there are any wandering mobs in the old room
+        if old_room_id not in game_engine.room_mobs:
+            logger.debug(f"[FOLLOW] No mobs in room {old_room_id}")
+            return
+
+        logger.info(f"[FOLLOW] Found {len(game_engine.room_mobs[old_room_id])} mobs in old room")
+
+        mobs_to_follow = []
+
+        for mob in game_engine.room_mobs[old_room_id][:]:  # Copy to avoid modification during iteration
+            # Only wandering mobs can follow
+            if not mob.get('is_wandering'):
+                logger.debug(f"[FOLLOW] {mob.get('name')} is not a wandering mob")
+                continue
+
+            # Skip if mob is dead
+            if mob.get('health', 0) <= 0:
+                continue
+
+            # Roll for follow chance
+            if random.random() >= follow_chance:
+                continue
+
+            # Get the exit from old room
+            old_room = game_engine.world_manager.get_room(old_room_id)
+            if not old_room:
+                continue
+
+            # Check if mob can follow through this exit
+            exit_obj = old_room.exits.get(direction)
+            if not exit_obj:
+                continue
+
+            # Check if exit is locked
+            if hasattr(exit_obj, 'is_locked') and exit_obj.is_locked:
+                logger.debug(f"[FOLLOW] {mob.get('name')} cannot follow - exit is locked")
+                continue
+
+            # Check if destination is a safe room
+            dest_room = game_engine.world_manager.get_room(new_room_id)
+            if dest_room and hasattr(dest_room, 'is_safe') and dest_room.is_safe:
+                logger.debug(f"[FOLLOW] {mob.get('name')} cannot follow - destination is a safe room")
+                continue
+
+            # This mob will follow
+            mobs_to_follow.append(mob)
+
+        # Move the mobs that are following
+        for mob in mobs_to_follow:
+            mob_name = mob.get('name', 'Unknown creature')
+
+            # Remove from old room
+            if old_room_id in game_engine.room_mobs:
+                game_engine.room_mobs[old_room_id] = [m for m in game_engine.room_mobs[old_room_id] if m != mob]
+
+            # Add to new room
+            if new_room_id not in game_engine.room_mobs:
+                game_engine.room_mobs[new_room_id] = []
+            game_engine.room_mobs[new_room_id].append(mob)
+
+            # Notify players in old room
+            for player_id, player_data in game_engine.player_manager.connected_players.items():
+                if player_data.get('character', {}).get('room_id') == old_room_id:
+                    await game_engine.connection_manager.send_message(
+                        player_id,
+                        f"{mob_name} follows {direction}."
+                    )
+
+            # Notify players in new room (including the player who moved)
+            for player_id, player_data in game_engine.player_manager.connected_players.items():
+                if player_data.get('character', {}).get('room_id') == new_room_id:
+                    await game_engine.connection_manager.send_message(
+                        player_id,
+                        f"{mob_name} follows you into the room!"
+                    )
+
+            logger.info(f"[FOLLOW] {mob_name} followed player from {old_room_id} to {new_room_id} via {direction}")
 
 
 # Factory function to create movement commands

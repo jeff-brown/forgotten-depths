@@ -3,7 +3,7 @@
     {
       "id": "female_cyclops",
       "name": "Female Cyclops",
-      "description": "The cyclops resembles a very large woman with only one eye in the center of her forehead. She stands over eleven feet tall, and is armed with a {0}.",
+      "description": "The cyclops resembles a very large woman with only one eye in the center of her forehead. She stands over eleven feet tall, and is armed with a spiked club.",
       "type": "giant",
       "level": 3,
       "health": 30,
@@ -14,13 +14,13 @@
       "experience_reward": 30,
       "gold_reward": [
         0,
-        14
+        10
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
         "spiked club",
-        "picks up and hurls"
+        "attack_and_tumble"
       ],
       "loot_table": [
         {
@@ -51,29 +51,34 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 58,
+      "gender": "female",
+      "combat_skill": 65,
+      "can_track": true,
+      "morale": 20
     },
     {
       "id": "cyclops",
       "name": "Cyclops",
-      "description": "The cyclops resembles a very large man with only one eye in the center of his forehead. He stands over twelve feet tall, and is armed with {0}.",
+      "description": "The cyclops resembles a very large man with only one eye in the center of his forehead. He stands over twelve feet tall, and is armed with a spiked club.",
       "type": "giant",
       "level": 4,
-      "health": 30,
-      "max_health": 30,
+      "health": 40,
+      "max_health": 40,
       "damage_min": 4,
       "damage_max": 24,
       "armor": 4,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        15
+        13
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
         "spiked club",
-        "picks up and hurls"
+        "attack_and_tumble"
       ],
       "loot_table": [
         {
@@ -104,7 +109,12 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 59,
+      "gender": "male",
+      "combat_skill": 70,
+      "can_track": true,
+      "morale": 15
     },
     {
       "id": "stone_giantess",

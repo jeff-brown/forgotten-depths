@@ -70,9 +70,9 @@
       "experience_reward": 20,
       "gold_reward": [
         0,
-        0
+        4
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
         "curved horns"
@@ -98,7 +98,1801 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
+      ],
+      "vnum": 25,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "morale": 35
+    },
+    {
+      "id": "huge_toad",
+      "vnum": 18,
+      "name": "Huge Toad",
+      "description": "The huge toad resembles a common toad, except that it is just over three feet tall, and seems very agressive.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 60,
+      "can_track": true,
+      "abilities": [
+        "gaping mouth",
+        "poison"
+      ],
+      "attack_effect": "poison",
+      "morale": 35
+    },
+    {
+      "id": "shade",
+      "vnum": 23,
+      "name": "Shade",
+      "description": "The shade is a dark shadowy figure. You can tell very little about it except that its eyes strongly resemble burning coals. It occasionally emits a low moan and watches your movements closely.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 3,
+      "damage_max": 6,
+      "armor": 6,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
       ]
+    },
+    {
+      "id": "fire_beetle",
+      "vnum": 26,
+      "name": "Fire Beetle",
+      "description": "The fire beetle is a huge reddish brown beetle, about four feet long, with a thick shiny carapace, and strong, wickedly sharp mandibles.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 75,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "mandibles"
+      ],
+      "morale": 30
+    },
+    {
+      "id": "alligator",
+      "vnum": 27,
+      "name": "Alligator",
+      "description": "The alligator watches your every move closely and snaps at you.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "abilities": [
+        "wicked bite"
+      ],
+      "special_attack": {
+        "description": "lashed its tail at",
+        "chance": 0.35,
+        "damage_min": 2,
+        "damage_max": 8
+      },
+      "morale": 15
+    },
+    {
+      "id": "anaconda",
+      "vnum": 29,
+      "name": "Anaconda",
+      "description": "The anaconda is an enormous constrictor snake well over forty feet in length. Its scales range in color from an emerald green to a dark blue, and its body is thicker than some tree trunks you've seen.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 70,
+      "abilities": [
+        "wicked bite"
+      ],
+      "special_attack": {
+        "description": "coiled around",
+        "chance": 0.25,
+        "damage_min": 2,
+        "damage_max": 16
+      },
+      "morale": 20
+    },
+    {
+      "id": "lizard_woman",
+      "vnum": 30,
+      "name": "Lizard Woman",
+      "description": "The lizard woman is a five foot tall bipedal humanoid who's features resemble those of a large lizard. She has greyish scaley skin, and sharp claws and teeth. The lizard woman is armed with {0} {1}.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        7
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "morale": 20
+    },
+    {
+      "id": "lizard_man",
+      "vnum": 31,
+      "name": "Lizard Man",
+      "description": "The lizard man is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. The lizard man is armed with {0} {1}.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        8
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "morale": 15
+    },
+    {
+      "id": "female_brigand",
+      "vnum": 38,
+      "name": "Female Brigand",
+      "description": "The brigand has the look of a common thief, and is dressed in a cheap, but flashy outfit. She is also wearing leather armor and is armed with {0} {1}.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        6
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "steal"
+      ],
+      "morale": 80
+    },
+    {
+      "id": "brigand",
+      "vnum": 39,
+      "name": "Brigand",
+      "description": "The brigand has the look of a common thief, and is dressed in a cheap, but flashy outfit. He is also wearing chain armor and is armed with {0} {1}.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 4,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        7
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "steal"
+      ],
+      "morale": 70
+    },
+    {
+      "id": "leopard",
+      "vnum": 40,
+      "name": "Leopard",
+      "description": "The leopard has luxurious looking spotted fur. It growls menacingly and bares its teeth at you.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 3,
+      "damage_max": 9,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "special_attack": {
+        "description": "savagely bit",
+        "chance": 0.35,
+        "damage_min": 4,
+        "damage_max": 12
+      },
+      "morale": 20
+    },
+    {
+      "id": "female_barbarian",
+      "vnum": 44,
+      "name": "Female Barbarian",
+      "description": "The barbarian is dressed in the hides of furred animals, and is armed with {0} {1}. She has a look of great strength and cunning.",
+      "type": "monster",
+      "level": 2,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        6
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 85,
+      "can_track": true,
+      "morale": 15
+    },
+    {
+      "id": "barbarian",
+      "vnum": 45,
+      "name": "Barbarian",
+      "description": "The barbarian is dressed in the hides of furred animals, and is armed with {0} {1}. He has a look of great strength and cunning.",
+      "type": "monster",
+      "level": 2,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        7
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "morale": 10
+    },
+    {
+      "id": "carrion_crane",
+      "vnum": 53,
+      "name": "Carrion Crane",
+      "description": "The carrion crane is nearly eight feet tall, has dull grey plumage and a very wicked looking hooked ebony beak.",
+      "type": "monster",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 3,
+      "damage_max": 18,
+      "armor": 2,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        6
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "hooked beak"
+      ],
+      "morale": 30
+    },
+    {
+      "id": "swordswoman",
+      "vnum": 56,
+      "name": "Swordswoman",
+      "description": "The swordswoman has an air of confidance about her. She is wearing chain armor, and is armed with a rapier which she wields skillfully.",
+      "type": "monster",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 2,
+      "damage_max": 16,
+      "armor": 4,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        8
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "rapier"
+      ],
+      "morale": 40
+    },
+    {
+      "id": "swordsman",
+      "vnum": 57,
+      "name": "Swordsman",
+      "description": "The swordsman has an air of confidance about him. He is wearing chain armor, and is armed with a rapier which he wields skillfully.",
+      "type": "monster",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 4,
+      "damage_max": 18,
+      "armor": 5,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        9
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "rapier"
+      ],
+      "morale": 35
+    },
+    {
+      "id": "larochess",
+      "vnum": 61,
+      "name": "Larochess",
+      "description": "The larochess resembles a large well built woman with pale bluish skin pointed ears, and a short tail. She is very muscular and stands nearly nine feet tall. She is wearing leather armor, and is armed with a wicked spear.",
+      "type": "monster",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 3,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 65,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "wicked spear",
+        "poison"
+      ],
+      "attack_effect": "poison",
+      "special_attack": {
+        "description": "exhaled a cloud of acidic vapor at",
+        "chance": 0.25,
+        "damage_min": 6,
+        "damage_max": 36
+      },
+      "morale": 30
+    },
+    {
+      "id": "larochet",
+      "vnum": 62,
+      "name": "Larochet",
+      "description": "The larochet resembles a large well built man with dark bluish skin, pointed ears, and a short tail. He is very muscular and stands over nine feet tall. He is wearing a cuirass, and is armed with a wicked spear.",
+      "type": "monster",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        13
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 75,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "wicked spear",
+        "poison"
+      ],
+      "attack_effect": "poison",
+      "special_attack": {
+        "description": "exhaled a cloud of acidic vapor at",
+        "chance": 0.2,
+        "damage_min": 8,
+        "damage_max": 48
+      },
+      "morale": 25
+    },
+    {
+      "id": "griffon",
+      "vnum": 67,
+      "name": "Griffon",
+      "description": "The griffon has the body of a lion, and the front feet, head, and wings of an eagle. It has razor sharp talons and a large black beak.",
+      "type": "monster",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 4,
+      "damage_max": 12,
+      "armor": 4,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        8
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "special_attack": {
+        "description": "viciously bit",
+        "chance": 0.25,
+        "damage_min": 6,
+        "damage_max": 24
+      },
+      "morale": 10
+    },
+    {
+      "id": "gargoyle",
+      "vnum": 69,
+      "name": "Gargoyle",
+      "description": "The gargoyle is a heavily muscled, grey skinned humanoid with large leathery wings and wicked claws.",
+      "type": "monster",
+      "level": 4,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 4,
+      "damage_max": 16,
+      "armor": 5,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        8
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "wicked claws"
+      ],
+      "morale": 15
+    },
+    {
+      "id": "magmaman",
+      "vnum": 70,
+      "name": "Magmaman",
+      "description": "The magmaman resembles a humanoid non-descript creature, seemingly formed from molten rock. He has two thick arm-like appendages, ending in dripping claws.",
+      "type": "monster",
+      "level": 4,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 6,
+      "damage_max": 50,
+      "armor": 5,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        8
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "burning claws"
+      ]
+    },
+    {
+      "id": "sand_worm",
+      "vnum": 73,
+      "name": "Sand Worm",
+      "description": "The sand worm is over fifty feet long, is covered in a hard ringed carapace, it's gaping maw is filled with many rows of wickedly gleaming teeth.",
+      "type": "monster",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 5,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        8
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "abilities": [
+        "gaping maw"
+      ]
+    },
+    {
+      "id": "warlock",
+      "vnum": 75,
+      "name": "Warlock",
+      "description": "The warlock is dressed in red robes and radiates power. He wields a staff shrouded in magical flame. Tatooed on his right forearm is a crimson sigil.",
+      "type": "monster",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 4,
+      "damage_max": 12,
+      "armor": 4,
+      "experience_reward": 50,
+      "gold_reward": [
+        0,
+        16
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 85,
+      "can_track": true,
+      "abilities": [
+        "flaming staff",
+        "spells",
+        "spellcaster"
+      ],
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 80,
+        "min_level": 2,
+        "max_level": 7
+      },
+      "morale": 15
+    },
+    {
+      "id": "hydra",
+      "vnum": 80,
+      "name": "Hydra",
+      "description": "The hydra resembles a small wingless dragon with three heads.",
+      "type": "monster",
+      "level": 6,
+      "health": 60,
+      "max_health": 60,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 4,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "regeneration": 1,
+      "num_attacks": 3,
+      "abilities": [
+        "multiattack",
+        "gnashing teeth"
+      ],
+      "special_attack": {
+        "description": "expelled a ball of fire at",
+        "chance": 0.15,
+        "damage_min": 8,
+        "damage_max": 80
+      },
+      "morale": 10
+    },
+    {
+      "id": "female_affreet",
+      "vnum": 81,
+      "name": "Female Affreet",
+      "description": "The affreet resembles a huge horned woman with reddish skin and stands well over eighteen feet tall. She is armed with a greatsword that glows dull red.",
+      "type": "monster",
+      "level": 6,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 4,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        18
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 85,
+      "can_track": true,
+      "abilities": [
+        "glowing sword"
+      ],
+      "special_attack": {
+        "description": "discharged a cloud of flame at",
+        "chance": 0.15,
+        "damage_min": 10,
+        "damage_max": 80
+      },
+      "morale": 20
+    },
+    {
+      "id": "affreet",
+      "vnum": 82,
+      "name": "Affreet",
+      "description": "The affreet resembles a huge horned man with reddish skin and stands well over twenty feet tall. He is armed with a greatsword that glows dull red.",
+      "type": "monster",
+      "level": 6,
+      "health": 80,
+      "max_health": 80,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 5,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        20
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 90,
+      "abilities": [
+        "glowing sword"
+      ],
+      "special_attack": {
+        "description": "discharged a cloud of flame at",
+        "chance": 0.15,
+        "damage_min": 20,
+        "damage_max": 100
+      },
+      "morale": 15
+    },
+    {
+      "id": "magma_worm",
+      "vnum": 83,
+      "name": "Magma Worm",
+      "description": "The magma worm is over seventy feet long, is covered in a hard ringed carapace that glows a dull reddish color, and it's gaping maw is filled with many rows of wicked teeth.",
+      "type": "monster",
+      "level": 6,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 6,
+      "damage_max": 36,
+      "armor": 5,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        12
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "regeneration": 1,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "gaping maw"
+      ]
+    },
+    {
+      "id": "octopod",
+      "vnum": 87,
+      "name": "Octopod",
+      "description": "The octopod is a huge dark green bulbus plant standing nearly five feet tall, and has eight rubbery greenish tentacles.",
+      "type": "monster",
+      "level": 7,
+      "health": 90,
+      "max_health": 90,
+      "damage_min": 4,
+      "damage_max": 20,
+      "armor": 6,
+      "experience_reward": 70,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 3,
+      "abilities": [
+        "multiattack",
+        "a tentacle"
+      ],
+      "special_attack": {
+        "description": "lashed several tentacles at",
+        "chance": 0.15,
+        "damage_min": 12,
+        "damage_max": 60
+      }
+    },
+    {
+      "id": "white_rabbit",
+      "vnum": 102,
+      "name": "White Rabbit",
+      "description": "The white rabbit is large and fluffy with floppy ears and big brown eyes.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 2,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "dull teeth",
+        "summon_aid"
+      ],
+      "morale": 60
+    },
+    {
+      "id": "black_rabbit",
+      "vnum": 103,
+      "name": "Black Rabbit",
+      "description": "The black rabbit is large and fluffy with floppy ears and big brown eyes.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 2,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "dull teeth",
+        "summon_aid"
+      ],
+      "morale": 60
+    },
+    {
+      "id": "pink_bunny",
+      "vnum": 104,
+      "name": "Pink Bunny",
+      "description": "The pink bunny is small and fluffy with perky ears and big blue eyes.",
+      "type": "monster",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 1,
+      "damage_max": 2,
+      "armor": 0,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        6
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "daring nibble",
+        "attack_all_and_tumble"
+      ],
+      "special_attack": {
+        "description": "gnashed its big pointy teeth at",
+        "chance": 0.33,
+        "damage_min": 20,
+        "damage_max": 60
+      },
+      "morale": 95
+    },
+    {
+      "id": "lizard",
+      "vnum": 110,
+      "name": "Lizard",
+      "description": "The lizard is small and purple and moves very quickly.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 3,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "tiny teeth",
+        "poison"
+      ],
+      "morale": 100,
+      "attack_effect": "poison"
+    },
+    {
+      "id": "monkey",
+      "vnum": 106,
+      "name": "Monkey",
+      "description": "The monkey is quick and playful and watches you warily.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 4,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "clinched fists"
+      ],
+      "morale": 100
+    },
+    {
+      "id": "owl",
+      "vnum": 107,
+      "name": "Owl",
+      "description": "The owl is perched in a nearby tree watching you intently.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 3,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "talons"
+      ],
+      "morale": 100
+    },
+    {
+      "id": "squirrel",
+      "vnum": 108,
+      "name": "Squirrel",
+      "description": "The squirrel sits in a nearby tree and chitters at you.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 3,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "sharp teeth"
+      ],
+      "morale": 100
+    },
+    {
+      "id": "frog",
+      "vnum": 109,
+      "name": "Frog",
+      "description": "The frog is small and green and appears to be a good jumper.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 1,
+      "damage_max": 1,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "tiny teeth"
+      ],
+      "morale": 100
+    },
+    {
+      "id": "fox",
+      "vnum": 111,
+      "name": "Fox",
+      "description": "The fox hides in the nearby brush and seems very skittish.",
+      "type": "monster",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 4,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "sharp teeth"
+      ],
+      "morale": 100
+    },
+    {
+      "id": "hyena",
+      "vnum": 112,
+      "name": "Hyena",
+      "description": "The hyena looks ravenous and extremely viscious. It snarls menacingly and bares its teeth at you.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 4,
+      "damage_max": 24,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "wicked teeth"
+      ],
+      "morale": 40
+    },
+    {
+      "id": "female_nomad",
+      "vnum": 115,
+      "name": "Female Nomad",
+      "description": "The nomad has dark skin and the look of someone hardened by the harsh environment in which she lives. She is wearing dark linen clothing and is armed with a scimitar.",
+      "type": "monster",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 5,
+      "damage_max": 15,
+      "armor": 2,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        8
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "scimitar"
+      ],
+      "morale": 25
+    },
+    {
+      "id": "nomad",
+      "vnum": 116,
+      "name": "Nomad",
+      "description": "The nomad has dark skin and the look of someone hardened by the harsh environment in which he lives. He is wearing dark linen clothing and is armed with a scimitar.",
+      "type": "monster",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 6,
+      "damage_max": 18,
+      "armor": 3,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        9
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "abilities": [
+        "scimitar"
+      ],
+      "morale": 20
+    },
+    {
+      "id": "jackal",
+      "vnum": 121,
+      "name": "Jackal",
+      "description": "The jackal looks extremely viscious. It snarls menacingly and bares its teeth at you.",
+      "type": "monster",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 3,
+      "damage_max": 18,
+      "armor": 2,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "wicked teeth"
+      ],
+      "morale": 40
+    },
+    {
+      "id": "mystic_knight",
+      "vnum": 125,
+      "name": "Mystic Knight",
+      "description": "The mystic knight has the look of a well seasoned warrior who has seen many a battle in his time. His gear and clothing are the finest available. He is wearing glowing dragonscale armor and wielding a jeweled claymore. Somehow you are aware that he could easily defeat you.",
+      "type": "monster",
+      "level": 60,
+      "health": 2500,
+      "max_health": 2500,
+      "damage_min": 100,
+      "damage_max": 600,
+      "armor": 50,
+      "experience_reward": 600,
+      "gold_reward": [
+        0,
+        120
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 99,
+      "can_track": true,
+      "regeneration": 5,
+      "num_attacks": 6,
+      "abilities": [
+        "multiattack",
+        "jeweled claymore"
+      ]
+    },
+    {
+      "id": "lizard_subchief",
+      "vnum": 137,
+      "name": "Lizard Subchief",
+      "description": "The lizard subchief is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is armed with {0} {1}.",
+      "type": "monster",
+      "level": 4,
+      "health": 40,
+      "max_health": 40,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 3,
+      "experience_reward": 40,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "morale": 15
+    },
+    {
+      "id": "lizard_chieftain",
+      "vnum": 138,
+      "name": "Lizard Chieftain",
+      "description": "The lizard chieftain is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is wearing ringmail armor and is armed with {0} {1}.",
+      "type": "monster",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 5,
+      "experience_reward": 50,
+      "gold_reward": [
+        0,
+        17
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "morale": 20
+    },
+    {
+      "id": "lizard_warlord",
+      "vnum": 139,
+      "name": "Lizard Warlord",
+      "description": "The lizard warlord is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is wearing scalemail armor and is armed with {0} {1}.",
+      "type": "monster",
+      "level": 7,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 8,
+      "experience_reward": 70,
+      "gold_reward": [
+        0,
+        28
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "morale": 20
+    },
+    {
+      "id": "lizard_shaman",
+      "vnum": 140,
+      "name": "Lizard Shaman",
+      "description": "The lizard shaman is a five foot tall bipedal humanoid who's features resemble those of a large lizard. She has greyish scaley skin, and sharp claws and teeth. She is wearing robes and is armed with {0} {1}.",
+      "type": "monster",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 1,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        10
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "spells",
+        "spellcaster"
+      ],
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 75,
+        "min_level": 1,
+        "max_level": 3
+      },
+      "morale": 25
+    },
+    {
+      "id": "stone_scorpion",
+      "vnum": 142,
+      "name": "Stone Scorpion",
+      "description": "The stone scorpion is skillfully crafted and resembles a common scorpion, except that it is nearly twenty feet in length and it's carapace has the color and texture of stone.",
+      "type": "monster",
+      "level": 25,
+      "health": 750,
+      "max_health": 750,
+      "damage_min": 125,
+      "damage_max": 250,
+      "armor": 25,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        50
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "tail",
+        "poison",
+        "heal",
+        "spellcaster"
+      ],
+      "attack_effect": "poison",
+      "special_attack": {
+        "description": "snaps its pincers at",
+        "chance": 0.65,
+        "damage_min": 250,
+        "damage_max": 500
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 0,
+        "min_level": 0,
+        "max_level": 1
+      }
+    },
+    {
+      "id": "stone_wizard",
+      "vnum": 143,
+      "name": "Stone Wizard",
+      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorceror in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
+      "type": "monster",
+      "level": 25,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 50,
+      "damage_max": 100,
+      "armor": 15,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        50
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "stone sceptre",
+        "mana drain",
+        "spells",
+        "spellcaster"
+      ],
+      "attack_effect": "mana drain",
+      "special_attack": {
+        "description": "discharged its sceptre at",
+        "chance": 0.65,
+        "damage_min": 250,
+        "damage_max": 500
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 90,
+        "min_level": 6,
+        "max_level": 10
+      }
+    },
+    {
+      "id": "dwarven_captain",
+      "vnum": 146,
+      "name": "Dwarven Captain",
+      "description": "This grim warrior appears to have seen more than his share of battle, and seems utterly fearless. His dwarven mail is of fine quality and each scale has finely engraved runic designs. He wields a battleax with a haft easily four feet long and a blade blacker than night.",
+      "type": "monster",
+      "level": 40,
+      "health": 800,
+      "max_health": 800,
+      "damage_min": 38,
+      "damage_max": 53,
+      "armor": 12,
+      "experience_reward": 400,
+      "gold_reward": [
+        0,
+        130
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 97,
+      "can_track": true,
+      "num_attacks": 5,
+      "abilities": [
+        "multiattack",
+        "battleax"
+      ],
+      "morale": 5
+    },
+    {
+      "id": "dwarven_warhound",
+      "vnum": 148,
+      "name": "Dwarven Warhound",
+      "description": "The dwarven warhound is a huge beast, nearly four feet at the shoulder. It resembles  a wolf with glossy black fur. Its eyes and teeth are crimson. Its hackles raise and it snarls menacingly as you look its way.",
+      "type": "monster",
+      "level": 20,
+      "health": 200,
+      "max_health": 200,
+      "damage_min": 10,
+      "damage_max": 30,
+      "armor": 6,
+      "experience_reward": 200,
+      "gold_reward": [
+        0,
+        40
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "vicious bite"
+      ]
+    },
+    {
+      "id": "dwarven_leutenant",
+      "vnum": 149,
+      "name": "Dwarven Leutenant",
+      "description": "This dwarven officer wears scale armor of the finest quality and brandishes a huge battleaxe of fine make with an extraordinarily keen edge. He seems very dignified and confidant.",
+      "type": "monster",
+      "level": 45,
+      "health": 900,
+      "max_health": 900,
+      "damage_min": 41,
+      "damage_max": 66,
+      "armor": 15,
+      "experience_reward": 450,
+      "gold_reward": [
+        10,
+        190
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 5,
+      "abilities": [
+        "multiattack",
+        "battleax"
+      ],
+      "morale": 10
+    },
+    {
+      "id": "dwarven_warlord",
+      "vnum": 150,
+      "name": "Dwarven Warlord",
+      "description": "This ruthless dwarven battle chief is dressed in heavy scale armor made of a dull bluish metal that seems to absorb light. The weapon in his hands is an enormous battleax with a haft of dark grey wood and a head forged of the same strange metal as his armor. Dimly glowing runes adorn the head of his axe along the edges of the blades.",
+      "type": "monster",
+      "level": 50,
+      "health": 1000,
+      "max_health": 1000,
+      "damage_min": 43,
+      "damage_max": 83,
+      "armor": 20,
+      "experience_reward": 500,
+      "gold_reward": [
+        50,
+        250
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 97,
+      "can_track": true,
+      "num_attacks": 5,
+      "abilities": [
+        "multiattack",
+        "battleax"
+      ],
+      "morale": 5
+    },
+    {
+      "id": "smith",
+      "vnum": 151,
+      "name": "Smith",
+      "description": "This dwarven smith is heavily muscled, his leather apron smeared with sweat and soot. He is very alert and has an expression of great calm and peace of mind. His eyes harden as he notices your intense stare, and he hefts the weight of his great hammer.",
+      "type": "monster",
+      "level": 20,
+      "health": 400,
+      "max_health": 400,
+      "damage_min": 20,
+      "damage_max": 50,
+      "armor": 2,
+      "experience_reward": 200,
+      "gold_reward": [
+        0,
+        50
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "great hammer"
+      ],
+      "morale": 20
+    },
+    {
+      "id": "master_smith",
+      "vnum": 152,
+      "name": "Master Smith",
+      "description": "This older dwarf is gnarled and bulging with muscle. His leathers smeared with grime and sweat. He seems very calm and at one with his surrounds. The great hammer he cradles in his arms is forged of a dull bluish metal, and almost seems to glow dimly.",
+      "type": "monster",
+      "level": 40,
+      "health": 800,
+      "max_health": 800,
+      "damage_min": 40,
+      "damage_max": 100,
+      "armor": 4,
+      "experience_reward": 400,
+      "gold_reward": [
+        0,
+        105
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "abilities": [
+        "great hammer"
+      ],
+      "morale": 10
+    },
+    {
+      "id": "dwarven_archmage",
+      "vnum": 153,
+      "name": "Dwarven Archmage",
+      "description": "The dwarven archmage has an obvious callousness about his expression, and appears no one to be trifled with. He radiates incredible power. He wears robes of a deep purple hue. He carries a black sceptre topped with some sort of brightly glowing crystal.",
+      "type": "monster",
+      "level": 50,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 21,
+      "damage_max": 26,
+      "armor": 1,
+      "experience_reward": 500,
+      "gold_reward": [
+        0,
+        200
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 5,
+      "abilities": [
+        "multiattack",
+        "black sceptre",
+        "mana drain",
+        "spells",
+        "spellcaster"
+      ],
+      "attack_effect": "mana drain",
+      "special_attack": {
+        "description": "discharges his sceptre at",
+        "chance": 0.6,
+        "damage_min": 0,
+        "damage_max": 0
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 95,
+        "min_level": 6,
+        "max_level": 10
+      },
+      "morale": 10
+    },
+    {
+      "id": "magma_slug",
+      "vnum": 155,
+      "name": "Magma Slug",
+      "description": "The magma slug is a gigantic slug that is covered in magma.  Its maw rumbles with fury as it looks to burn you alive with its own magma.",
+      "type": "monster",
+      "level": 35,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 80,
+      "damage_max": 115,
+      "armor": 18,
+      "experience_reward": 350,
+      "gold_reward": [
+        0,
+        115
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 70,
+      "can_track": true,
+      "abilities": [
+        "maw"
+      ],
+      "special_attack": {
+        "description": "unloaded a wad of magma",
+        "chance": 0.65,
+        "damage_min": 150,
+        "damage_max": 200
+      },
+      "morale": 25
+    },
+    {
+      "id": "elven_scout",
+      "vnum": 156,
+      "name": "Elven Scout",
+      "description": "The elven scout peers at you through its forest green eyes.  The stripes painted on his face warn you that he has come across and slain many an unexpecting traveller.  Your doom awaits.",
+      "type": "monster",
+      "level": 30,
+      "health": 300,
+      "max_health": 300,
+      "damage_min": 50,
+      "damage_max": 65,
+      "armor": 10,
+      "experience_reward": 300,
+      "gold_reward": [
+        0,
+        115
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "num_attacks": 3,
+      "abilities": [
+        "multiattack",
+        "shortsword"
+      ],
+      "morale": 30
+    },
+    {
+      "id": "female_elf",
+      "vnum": 157,
+      "name": "Female Elf",
+      "description": "Despite being female, this elf resembles a modern-day war machine. She moves blindingly fast, striking at any possible moment.  Though a good fight is her forte, she is also amazingly beautiful, as female elves always seem to be.",
+      "type": "monster",
+      "level": 32,
+      "health": 350,
+      "max_health": 350,
+      "damage_min": 55,
+      "damage_max": 75,
+      "armor": 12,
+      "experience_reward": 320,
+      "gold_reward": [
+        0,
+        119
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 4,
+      "abilities": [
+        "multiattack",
+        "shortsword"
+      ],
+      "morale": 20
+    },
+    {
+      "id": "elven_champion",
+      "vnum": 159,
+      "name": "Elven Champion",
+      "description": "This elven champion is built like a mountain.  There seems to be no escape from this warrior of warriors, a man's man -- only an elf. He wields a great sword that shines like the moons on a good night. Only the most powerful elves can craft such a beast.",
+      "type": "monster",
+      "level": 37,
+      "health": 450,
+      "max_health": 450,
+      "damage_min": 100,
+      "damage_max": 155,
+      "armor": 25,
+      "experience_reward": 370,
+      "gold_reward": [
+        11,
+        159
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "shining sword"
+      ],
+      "morale": 25
+    },
+    {
+      "id": "elven_warlord",
+      "vnum": 160,
+      "name": "Elven Warlord",
+      "description": "This elven warlord is about to knock some sense into you with his warhammer.  His evil eyes seem to hypnotize you into giving in to your imminent death.",
+      "type": "monster",
+      "level": 44,
+      "health": 550,
+      "max_health": 550,
+      "damage_min": 110,
+      "damage_max": 185,
+      "armor": 30,
+      "experience_reward": 440,
+      "gold_reward": [
+        27,
+        203
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 99,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "warhammer"
+      ],
+      "special_attack": {
+        "description": "gutted",
+        "chance": 0.4,
+        "damage_min": 175,
+        "damage_max": 290
+      },
+      "morale": 15
     }
   ]
 }

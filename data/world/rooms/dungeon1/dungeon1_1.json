@@ -8,7 +8,7 @@
   "exits": {
     "northeast": "dungeon1_13",
     "west": "dungeon1_14",
-    "up": "town_square"
+    "up": "arena"
   },
   "locked_exits": {
     "northeast": {

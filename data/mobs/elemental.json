@@ -14,17 +14,15 @@
       "experience_reward": 300,
       "gold_reward": [
         0,
-        0
+        60
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "a spear of ice",
-        "discharged a shower of ice shards at",
-        "unleashed a storm of elemental ice",
-        "regeneration",
-        "tracking",
-        "multiattack"
+        "attack_all_and_tumble",
+        "spellcaster"
       ],
       "loot_table": [
         {
@@ -99,7 +97,24 @@
           "item_id": "demonhide",
           "chance": 0.1
         }
-      ]
+      ],
+      "vnum": 122,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "regeneration": 5,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "discharged a shower of ice shards at",
+        "chance": 0.35,
+        "damage_min": 300,
+        "damage_max": 600
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 0,
+        "min_level": 0,
+        "max_level": 1
+      }
     },
     {
       "id": "flame_elemental",
@@ -115,16 +130,14 @@
       "experience_reward": 400,
       "gold_reward": [
         0,
-        0
+        80
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "a bolt of flame",
-        "discharged a cloud of flames at",
-        "unleashed a storm of elemental flame",
-        "regeneration",
-        "multiattack"
+        "attack_all_and_tumble"
       ],
       "loot_table": [
         {
@@ -199,7 +212,19 @@
           "item_id": "dragonscale",
           "chance": 0.1
         }
-      ]
+      ],
+      "vnum": 123,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "can_track": true,
+      "regeneration": 5,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "discharged a cloud of flames at",
+        "chance": 0.35,
+        "damage_min": 400,
+        "damage_max": 800
+      }
     },
     {
       "id": "stone_elemental",
@@ -215,16 +240,14 @@
       "experience_reward": 500,
       "gold_reward": [
         0,
-        0
+        100
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "huge stone fist",
-        "stepped on",
-        "unleashed an earthquake",
-        "regeneration",
-        "multiattack"
+        "attack_all_and_tumble"
       ],
       "loot_table": [
         {
@@ -295,7 +318,19 @@
           "item_id": "demonhide",
           "chance": 0.1
         }
-      ]
+      ],
+      "vnum": 124,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "can_track": true,
+      "regeneration": 5,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "stepped on",
+        "chance": 0.35,
+        "damage_min": 500,
+        "damage_max": 1000
+      }
     }
   ]
 }

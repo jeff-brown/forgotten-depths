@@ -22,9 +22,18 @@
     "sell_markup": 0.9,
     "specialties": ["weapons", "armor", "tools"],
     "inventory": [
-      {"item_id": "short_sword", "price": 45, "stock": 5},
-      {"item_id": "dagger", "price": 25, "stock": 8},
-      {"item_id": "leather_armor", "price": 70, "stock": 4}
+      {"item_id": "dagger", "price": 23, "stock": 8},
+      {"item_id": "quarterstaff", "price": 9, "stock": 8},
+      {"item_id": "shortsword", "price": 27, "stock": 8},
+      {"item_id": "mace", "price": 32, "stock": 5},
+      {"item_id": "warhammer", "price": 36, "stock": 5},
+      {"item_id": "longsword", "price": 45, "stock": 5},
+      {"item_id": "battleax", "price": 54, "stock": 5},
+      {"item_id": "morningstar", "price": 63, "stock": 3},
+      {"item_id": "broadsword", "price": 72, "stock": 3},
+      {"item_id": "flail", "price": 81, "stock": 3},
+      {"item_id": "halberd", "price": 108, "stock": 2},
+      {"item_id": "greatsword", "price": 135, "stock": 2}
     ]
   },
   "stats": {

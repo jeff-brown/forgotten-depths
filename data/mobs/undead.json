@@ -3,21 +3,21 @@
     {
       "id": "skeleton_warrior",
       "name": "Skeleton Warrior",
-      "description": "The animated bones of a long-dead warrior, held together by dark magic. Its empty eye sockets glow with an eerie light.",
+      "description": "The skeleton warrior is wearing tattered armor and mouldering bits of old clothing, and is armed with {0} {1}.",
       "type": "undead",
-      "level": 4,
-      "health": 40,
-      "max_health": 40,
-      "damage_min": 5,
-      "damage_max": 9,
-      "armor": 3,
-      "experience_reward": 35,
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 2,
+      "experience_reward": 10,
       "gold_reward": [
-        3,
-        12
+        0,
+        2
       ],
       "aggressive": true,
-      "speed": 0.8,
+      "speed": 1.0,
       "resistances": [
         "poison",
         "fear"
@@ -39,7 +39,11 @@
           "item_id": "ancient_coin",
           "chance": 0.1
         }
-      ]
+      ],
+      "vnum": 15,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true
     },
     {
       "id": "crypt_guardian",
@@ -94,7 +98,7 @@
     {
       "id": "zombie",
       "name": "Zombie",
-      "description": "The zombie has a blank expression on its face. It is wearing old soiled clothing, and is armed with {0}.",
+      "description": "The zombie has a blank expression on its face. It is wearing old soiled clothing, and is armed with {0} {1}.",
       "type": "undead",
       "level": 1,
       "health": 10,
@@ -105,7 +109,7 @@
       "experience_reward": 10,
       "gold_reward": [
         0,
-        0
+        2
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -129,7 +133,11 @@
           "item_id": "small_bone",
           "chance": 0.4
         }
-      ]
+      ],
+      "vnum": 17,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true
     },
     {
       "id": "shade",
@@ -171,7 +179,7 @@
     {
       "id": "wraith",
       "name": "Wraith",
-      "description": "The wraith is a shadowy figure with faded, nondescript features. It is semi-transparent and grayish in color. It glares at you with dull yellowish eyes.",
+      "description": "The wraith is a shadowy figure with faded, nondescript features. It is semi-transparent and greyish in color. It glares at you with dull yellowish eyes.",
       "type": "undead",
       "level": 4,
       "health": 40,
@@ -182,13 +190,13 @@
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
-        "multiattack"
+        "multiattack",
+        "paralysis"
       ],
       "loot_table": [
         {
@@ -211,23 +219,29 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 60,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "attack_effect": "paralysis"
     },
     {
       "id": "skeleton_lord",
       "name": "Skeleton Lord",
-      "description": "The skeleton lord wears a suit well kept chainmail armor, and is armed with {0}.",
+      "description": "The skeleton lord wears a suit well kept chainmail armor, and is armed with {0} {1}.",
       "type": "undead",
       "level": 4,
       "health": 40,
       "max_health": 40,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 3,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -263,7 +277,11 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 66,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true
     },
     {
       "id": "ghoul",
@@ -279,13 +297,13 @@
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
-        "multiattack"
+        "multiattack",
+        "mana drain"
       ],
       "loot_table": [
         {
@@ -308,12 +326,19 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 68,
+      "gender": "neuter",
+      "combat_skill": 87,
+      "can_track": true,
+      "num_attacks": 2,
+      "attack_effect": "mana drain",
+      "morale": 5
     },
     {
       "id": "skeleton_giant",
       "name": "Skeleton Giant",
-      "description": "The skeleton giant stands nearly twenty feet tall, is armed with {0}, and is wearing an enormous suit of tattered chainmail.",
+      "description": "The skeleton giant stands nearly twenty feet tall, is armed with a bone hammer, and is wearing an enormous suit of tattered chainmail.",
       "type": "undead",
       "level": 7,
       "health": 100,
@@ -324,7 +349,7 @@
       "experience_reward": 70,
       "gold_reward": [
         0,
-        0
+        14
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -383,7 +408,11 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 88,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true
     }
   ]
 }

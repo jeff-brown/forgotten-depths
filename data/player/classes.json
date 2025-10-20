@@ -1,7 +1,7 @@
 {
   "fighter": {
     "name": "Fighter",
-    "description": "a fighter",
+    "description": "Masters of martial combat, fighters are skilled warriors who excel in both offense and defense.",
     "stat_modifiers": {
       "strength": 0,
       "dexterity": 0,
@@ -13,6 +13,7 @@
     },
     "hp_modifier": 1.2,
     "mana_modifier": 0.8,
+    "uses_magic": false,
     "id": 1,
     "extra_attack_each_level": 3,
     "max_base_number_of_attacks": 4,
@@ -22,7 +23,7 @@
   },
   "sorceror": {
     "name": "Sorceror",
-    "description": "a sorceror",
+    "description": "Wielders of raw arcane power, sorcerors channel magic through innate ability rather than study.",
     "stat_modifiers": {
       "strength": -4,
       "dexterity": -3,
@@ -34,6 +35,7 @@
     },
     "hp_modifier": 0.8,
     "mana_modifier": 1.5,
+    "uses_magic": true,
     "id": 2,
     "extra_attack_each_level": 4,
     "max_base_number_of_attacks": 3,
@@ -43,7 +45,7 @@
   },
   "cleric": {
     "name": "Cleric",
-    "description": "a cleric",
+    "description": "Devoted servants of divine powers, clerics wield holy magic to heal allies and smite the wicked.",
     "stat_modifiers": {
       "strength": -4,
       "dexterity": -3,
@@ -55,6 +57,7 @@
     },
     "hp_modifier": 0.8,
     "mana_modifier": 1.5,
+    "uses_magic": true,
     "id": 4,
     "extra_attack_each_level": 4,
     "max_base_number_of_attacks": 3,
@@ -64,7 +67,7 @@
   },
   "rogue": {
     "name": "Rogue",
-    "description": "a rogue",
+    "description": "Swift and cunning, rogues rely on stealth, agility, and precision to outwit their enemies.",
     "stat_modifiers": {
       "strength": -1,
       "dexterity": 1,
@@ -76,6 +79,7 @@
     },
     "hp_modifier": 1.2,
     "mana_modifier": 0.8,
+    "uses_magic": false,
     "id": 8,
     "extra_attack_each_level": 3,
     "max_base_number_of_attacks": 4,
@@ -85,7 +89,7 @@
   },
   "ranger": {
     "name": "Ranger",
-    "description": "a ranger",
+    "description": "Skilled hunters and trackers, rangers are at home in the wilderness and deadly with bow and blade.",
     "stat_modifiers": {
       "strength": -1,
       "dexterity": 0,
@@ -97,6 +101,7 @@
     },
     "hp_modifier": 1.2,
     "mana_modifier": 0.8,
+    "uses_magic": false,
     "id": 16,
     "extra_attack_each_level": 4,
     "max_base_number_of_attacks": 4,
@@ -106,7 +111,7 @@
   },
   "druid": {
     "name": "Druid",
-    "description": "a druid",
+    "description": "Guardians of nature's balance, druids draw power from the primal forces of the natural world.",
     "stat_modifiers": {
       "strength": -4,
       "dexterity": -3,
@@ -118,6 +123,7 @@
     },
     "hp_modifier": 0.8,
     "mana_modifier": 1.5,
+    "uses_magic": true,
     "id": 32,
     "extra_attack_each_level": 4,
     "max_base_number_of_attacks": 3,
@@ -127,7 +133,7 @@
   },
   "bard": {
     "name": "Bard",
-    "description": "a bard",
+    "description": "Charismatic performers and storytellers, bards weave magic through music and inspire allies with their tales.",
     "stat_modifiers": {
       "strength": -2,
       "dexterity": 0,
@@ -139,6 +145,7 @@
     },
     "hp_modifier": 1.2,
     "mana_modifier": 0.8,
+    "uses_magic": true,
     "id": 64,
     "extra_attack_each_level": 3,
     "max_base_number_of_attacks": 4,
@@ -148,7 +155,7 @@
   },
   "warlock": {
     "name": "Warlock",
-    "description": "a warlock",
+    "description": "Bound by eldritch pacts, warlocks command dark powers granted by mysterious otherworldly patrons.",
     "stat_modifiers": {
       "strength": -4,
       "dexterity": -3,
@@ -160,6 +167,7 @@
     },
     "hp_modifier": 0.8,
     "mana_modifier": 1.5,
+    "uses_magic": true,
     "id": 128,
     "extra_attack_each_level": 4,
     "max_base_number_of_attacks": 3,

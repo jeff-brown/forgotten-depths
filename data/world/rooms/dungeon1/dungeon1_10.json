@@ -8,5 +8,12 @@
   "exits": {
     "southeast": "dungeon1_9",
     "west": "dungeon1_11"
-  }
+  },
+  "traps": [
+    {
+      "type": "poison_dart",
+      "trigger_chance": 0.4,
+      "damage_multiplier": 1.0
+    }
+  ]
 }

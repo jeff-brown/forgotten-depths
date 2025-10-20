@@ -34,12 +34,13 @@
           "item_id": "tattered_cloth",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "rogue"
     },
     {
       "id": "female_kobold",
       "name": "Female Kobold",
-      "description": "The kobold is a small humanoid with doglike facial features and is covered with coarse body hair. She stands just over three feet in height, is wearing a filthy tunic, and is armed with {0}.",
+      "description": "The kobold is a small humanoid with doglike facial features and is covered with coarse body hair. She stands just over three feet in height, is wearing a filthy tunic, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 1,
       "health": 10,
@@ -50,9 +51,9 @@
       "experience_reward": 10,
       "gold_reward": [
         0,
-        11
+        3
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "loot_table": [
         {
@@ -75,12 +76,18 @@
           "item_id": "stick",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 11,
+      "gender": "female",
+      "combat_skill": 65,
+      "can_track": true,
+      "morale": 50
     },
     {
       "id": "kobold",
       "name": "Kobold",
-      "description": "The kobold is a small humanoid with doglike facial features and is covered with coarse body hair. He stands just under four feet in height, is wearing a filthy tunic, and is armed with {0}.",
+      "description": "The kobold is a small humanoid with doglike facial features and is covered with coarse body hair. He stands just under four feet in height, is wearing a filthy tunic, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 1,
       "health": 10,
@@ -91,9 +98,9 @@
       "experience_reward": 10,
       "gold_reward": [
         0,
-        11
+        3
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "loot_table": [
         {
@@ -116,12 +123,18 @@
           "item_id": "wooden_mallet",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 12,
+      "gender": "male",
+      "combat_skill": 75,
+      "can_track": true,
+      "morale": 40
     },
     {
       "id": "female_orc",
       "name": "Female Orc",
-      "description": "The orc is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. She stands just over four feet in height, is wearing a leather tunic, and is armed with {0}.",
+      "description": "The orc is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. She stands just over four feet in height, is wearing a leather tunic, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 1,
       "health": 10,
@@ -132,9 +145,9 @@
       "experience_reward": 10,
       "gold_reward": [
         0,
-        11
+        3
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "loot_table": [
         {
@@ -157,12 +170,18 @@
           "item_id": "dagger",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 13,
+      "gender": "female",
+      "combat_skill": 65,
+      "can_track": true,
+      "morale": 45
     },
     {
       "id": "orc",
       "name": "Orc",
-      "description": "The orc is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands just under five feet in height, is wearing a leather cuirass, and is armed with {0}.",
+      "description": "The orc is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands just under five feet in height, is wearing a leather cuirass, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 1,
       "health": 10,
@@ -173,9 +192,9 @@
       "experience_reward": 10,
       "gold_reward": [
         0,
-        11
+        3
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
         "tracking"
@@ -201,12 +220,17 @@
           "item_id": "stick",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 14,
+      "gender": "male",
+      "combat_skill": 75,
+      "morale": 35
     },
     {
       "id": "female_gnoll",
       "name": "Female Gnoll",
-      "description": "The gnoll is a tall humanoid with hyenalike facial features and is covered by thick golden brown body hair. She stands just over six feet in height, is wearing a leather cuirass and trousers, and is armed with {0}.",
+      "description": "The gnoll is a tall humanoid with hyenalike facial features and is covered by thick golden brown body hair. She stands just over six feet in height, is wearing a leather cuirass and trousers, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
@@ -217,9 +241,9 @@
       "experience_reward": 20,
       "gold_reward": [
         0,
-        13
+        7
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
         "multiattack"
@@ -257,12 +281,19 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 34,
+      "gender": "female",
+      "combat_skill": 75,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 25
     },
     {
       "id": "gnoll",
       "name": "Gnoll",
-      "description": "The gnoll is a tall humanoid with hyenalike facial features and is covered by thick reddish brown body hair. He stands just under seven feet in height, is wearing a chainmail shirt and trousers, and is armed with {0}.",
+      "description": "The gnoll is a tall humanoid with hyenalike facial features and is covered by thick reddish brown body hair. He stands just under seven feet in height, is wearing a chainmail shirt and trousers, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
@@ -273,7 +304,7 @@
       "experience_reward": 20,
       "gold_reward": [
         0,
-        14
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -313,25 +344,32 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 35,
+      "gender": "male",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 20
     },
     {
       "id": "female_hobgoblin",
       "name": "Female Hobgoblin",
-      "description": "The hobgoblin is a squat apelike humanoid with dark skin and pointed ears. She stands just under five feet tall, is wearing a leather cuirass, and is armed with {0}.",
+      "description": "The hobgoblin is a squat apelike humanoid with dark skin and pointed ears. She stands just under five feet tall, is wearing a leather cuirass, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 2,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        13
+        7
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "loot_table": [
         {
@@ -366,23 +404,29 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 36,
+      "gender": "female",
+      "combat_skill": 75,
+      "can_track": true,
+      "morale": 25
     },
     {
       "id": "hobgoblin",
       "name": "Hobgoblin",
-      "description": "The hobgoblin is a squat apelike humanoid with dark skin and pointed ears. He stands just over five feet tall, is wearing a leather cuirass, and is armed with {0}.",
+      "description": "The hobgoblin is a squat apelike humanoid with dark skin and pointed ears. He stands just over five feet tall, is wearing a leather cuirass, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 3,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        14
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -419,7 +463,13 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 37,
+      "gender": "male",
+      "combat_skill": 80,
+      "can_track": true,
+      "morale": 20
     },
     {
       "id": "female_brigand",
@@ -468,7 +518,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "rogue"
     },
     {
       "id": "brigand",
@@ -517,7 +568,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "rogue"
     },
     {
       "id": "female_barbarian",
@@ -562,7 +614,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "barbarian",
@@ -607,28 +660,28 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "female_centaur",
       "name": "Female Centaur",
-      "description": "The centaur has the body of a horse with the upper torso, arms, and head of a well built woman. She has long hair which she wears in a tight braid, and is armed with {0}.",
+      "description": "The centaur has the body of a horse with the upper torso, arms, and head of a well built woman. She has long hair which she wears in a tight braid, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 3,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        12
+        6
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "flailed her hooves at",
         "multiattack"
       ],
       "loot_table": [
@@ -652,28 +705,40 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "ranger",
+      "vnum": 46,
+      "gender": "female",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "flailed her hooves at",
+        "chance": 0.2,
+        "damage_min": 2,
+        "damage_max": 12
+      },
+      "morale": 15
     },
     {
       "id": "centaur",
       "name": "Centaur",
-      "description": "The centaur has the body of a horse with the upper torso, arms, and head of a well muscled man. He has long hair which he wears in a tight braid, and is armed with {0}.",
+      "description": "The centaur has the body of a horse with the upper torso, arms, and head of a well muscled man. He has long hair which he wears in a tight braid, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 4,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        13
+        7
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "flailed his hooves at",
         "multiattack"
       ],
       "loot_table": [
@@ -697,28 +762,41 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "ranger",
+      "vnum": 47,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "flailed his hooves at",
+        "chance": 0.25,
+        "damage_min": 4,
+        "damage_max": 16
+      },
+      "morale": 10
     },
     {
       "id": "female_satyr",
       "name": "Female Satyr",
-      "description": "The satyr has the upper torso of well built woman, and the lower torso, legs, and hooves of a goat. She is armed with {0}.",
+      "description": "The satyr has the upper torso of well built woman, and the lower torso, legs, and hooves of a goat. She is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 2,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        12
+        6
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "sounds an ivory horn"
+        "summon_aid"
       ],
       "loot_table": [
         {
@@ -741,28 +819,34 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "bard",
+      "vnum": 49,
+      "gender": "female",
+      "combat_skill": 77,
+      "can_track": true,
+      "morale": 35
     },
     {
       "id": "satyr",
       "name": "Satyr",
-      "description": "The satyr has the upper torso of man with a lot of body hair, and the lower torso, legs, and hooves of a goat. He is armed with {0}.",
+      "description": "The satyr has the upper torso of man with a lot of body hair, and the lower torso, legs, and hooves of a goat. He is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 2,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        13
+        7
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "sounds an ivory horn"
+        "summon_aid"
       ],
       "loot_table": [
         {
@@ -785,23 +869,29 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "bard",
+      "vnum": 50,
+      "gender": "male",
+      "combat_skill": 87,
+      "can_track": true,
+      "morale": 30
     },
     {
       "id": "female_minotaur",
       "name": "Female Minotaur",
-      "description": "The minotaur has the upper torso of a muscular woman, and the head, legs, and hooves of a bull. She is wearing chainmail armor, and is armed with {0}.",
+      "description": "The minotaur has the upper torso of a muscular woman, and the head, legs, and hooves of a bull. She is wearing ringmail armor, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 2,
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 2,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        12
+        6
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -833,23 +923,35 @@
           "item_id": "iron_key",
           "chance": 1.0
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 51,
+      "gender": "female",
+      "combat_skill": 75,
+      "can_track": true,
+      "special_attack": {
+        "description": "charged",
+        "chance": 0.1,
+        "damage_min": 2,
+        "damage_max": 20
+      },
+      "morale": 15
     },
     {
       "id": "minotaur",
       "name": "Minotaur",
-      "description": "The minotaur has the upper torso of a muscular man, and the head, legs, and hooves of a bull. He is wearing banded mail armor, and is armed with {0}.",
+      "description": "The minotaur has the upper torso of a muscular man, and the head, legs, and hooves of a bull. He is wearing ringmail armor, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 3,
-      "health": 20,
-      "max_health": 20,
+      "health": 30,
+      "max_health": 30,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 2,
       "experience_reward": 30,
       "gold_reward": [
         0,
-        14
+        10
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -885,23 +987,35 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 52,
+      "gender": "male",
+      "combat_skill": 80,
+      "can_track": true,
+      "special_attack": {
+        "description": "charged",
+        "chance": 0.15,
+        "damage_min": 4,
+        "damage_max": 24
+      },
+      "morale": 10
     },
     {
       "id": "ogress",
       "name": "Ogress",
-      "description": "The ogress resembles an enormous and very ugly woman. She stands over seven feet tall and is very muscular. Her clothing is filthy and poorly made. She is armed with {0}.",
+      "description": "The ogress resembles an enormous and very ugly woman. She stands over seven feet tall and is very muscular. Her clothing is filthy and poorly made. She is armed with {0} {1}.",
       "type": "humanoid",
       "level": 3,
       "health": 30,
       "max_health": 30,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 2,
       "experience_reward": 30,
       "gold_reward": [
         0,
-        13
+        9
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -937,23 +1051,28 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 54,
+      "gender": "female",
+      "combat_skill": 80,
+      "morale": 20
     },
     {
       "id": "ogre",
       "name": "Ogre",
-      "description": "The ogre resembles an enormous and very ugly man. He stands over eight feet tall and is very muscular. His clothing is filthy and poorly made. He is armed with {0}.",
+      "description": "The ogre resembles an enormous and very ugly man. He stands over eight feet tall and is very muscular. His clothing is filthy and poorly made. He is armed with {0} {1}.",
       "type": "humanoid",
       "level": 3,
       "health": 30,
       "max_health": 30,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 3,
       "experience_reward": 30,
       "gold_reward": [
         0,
-        14
+        10
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -989,7 +1108,12 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 55,
+      "gender": "male",
+      "combat_skill": 85,
+      "morale": 15
     },
     {
       "id": "swordswoman",
@@ -1034,7 +1158,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "swordsman",
@@ -1079,7 +1204,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "larochess",
@@ -1129,7 +1255,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "larochet",
@@ -1179,7 +1306,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "female_troll",
@@ -1187,21 +1315,19 @@
       "description": "The troll resembles a large ugly woman with yellowish green skin and wicked claws. Her skin is covered with warts and tufts of stiff greenish hair.",
       "type": "humanoid",
       "level": 4,
-      "health": 30,
-      "max_health": 30,
+      "health": 40,
+      "max_health": 40,
       "damage_min": 3,
       "damage_max": 12,
       "armor": 2,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "claws",
-        "regeneration",
         "multiattack"
       ],
       "loot_table": [
@@ -1229,7 +1355,15 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 64,
+      "gender": "female",
+      "combat_skill": 75,
+      "can_track": true,
+      "regeneration": 1,
+      "num_attacks": 2,
+      "morale": 25
     },
     {
       "id": "troll",
@@ -1245,13 +1379,11 @@
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
-        "regeneration",
         "multiattack"
       ],
       "loot_table": [
@@ -1279,7 +1411,15 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 65,
+      "gender": "male",
+      "combat_skill": 80,
+      "can_track": true,
+      "regeneration": 1,
+      "num_attacks": 2,
+      "morale": 20
     },
     {
       "id": "magmaman",
@@ -1324,31 +1464,34 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "ogress_mage",
       "name": "Ogress Mage",
-      "description": "The ogress mage is wearing a steel breastplate and bracers, and is armed with {0}. She is also wearing a dark red cloak.",
+      "description": "The ogress mage is wearing a steel breastplate and bracers, and is armed with {0} {1}. She is also wearing a dark red cloak.",
       "type": "humanoid",
       "level": 4,
       "health": 40,
       "max_health": 40,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 3,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        15
+        13
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "tracking"
+        "spells",
+        "spellcaster"
       ],
       "spellcaster": true,
       "spell_skill": 65,
+      "spell_list": "frost_mage",
       "loot_table": [
         {
           "item_id": "ancient_coin",
@@ -1382,31 +1525,44 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "sorceror",
+      "vnum": 71,
+      "gender": "female",
+      "combat_skill": 80,
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 65,
+        "min_level": 0,
+        "max_level": 3
+      },
+      "morale": 25
     },
     {
       "id": "ogre_mage",
       "name": "Ogre Mage",
-      "description": "The ogre mage is wearing a steel breastplate and bracers, and is armed with {0}. He is also wearing a dark red cloak.",
+      "description": "The ogre mage is wearing a steel breastplate and bracers, and is armed with {0} {1}. He is also wearing a dark red cloak.",
       "type": "humanoid",
       "level": 4,
       "health": 50,
       "max_health": 50,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 4,
       "experience_reward": 40,
       "gold_reward": [
-        1,
-        16
+        0,
+        14
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "tracking"
+        "spells",
+        "spellcaster"
       ],
       "spellcaster": true,
       "spell_skill": 60,
+      "spell_list": "pyromancer",
       "loot_table": [
         {
           "item_id": "ancient_coin",
@@ -1440,7 +1596,18 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "sorceror",
+      "vnum": 72,
+      "gender": "male",
+      "combat_skill": 85,
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 60,
+        "min_level": 1,
+        "max_level": 4
+      },
+      "morale": 20
     },
     {
       "id": "warlock",
@@ -1502,22 +1669,23 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "sorceror"
     },
     {
       "id": "minotaur_chieftain",
       "name": "Minotaur Chieftain",
-      "description": "The minotaur chieftain is a very large member of his species. He is very muscular and stands nearly eight feet tall. He is wearing scalemail armor, and is armed with {0}.",
+      "description": "The minotaur chieftain is a very large member of his species. He is very muscular and stands nearly eight feet tall. He is wearing scalemail armor, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 5,
       "health": 50,
       "max_health": 50,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 4,
       "experience_reward": 50,
       "gold_reward": [
-        1,
+        0,
         16
       ],
       "aggressive": true,
@@ -1558,7 +1726,19 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 76,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "special_attack": {
+        "description": "charged",
+        "chance": 0.15,
+        "damage_min": 8,
+        "damage_max": 48
+      },
+      "morale": 20
     },
     {
       "id": "sorceress",
@@ -1573,15 +1753,16 @@
       "armor": 3,
       "experience_reward": 80,
       "gold_reward": [
-        5,
-        20
+        0,
+        26
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "frost rod",
-        "regeneration",
-        "multiattack"
+        "spells",
+        "spellcaster"
       ],
       "spellcaster": true,
       "spell_skill": 85,
@@ -1630,7 +1811,21 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 91,
+      "gender": "female",
+      "combat_skill": 85,
+      "can_track": true,
+      "regeneration": 1,
+      "num_attacks": 2,
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 85,
+        "min_level": 3,
+        "max_level": 8
+      },
+      "morale": 20
     },
     {
       "id": "sorceror",
@@ -1645,15 +1840,16 @@
       "armor": 4,
       "experience_reward": 90,
       "gold_reward": [
-        10,
-        25
+        0,
+        33
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "flaming staff",
-        "regeneration",
-        "multiattack"
+        "spells",
+        "spellcaster"
       ],
       "spellcaster": true,
       "spell_skill": 90,
@@ -1702,7 +1898,21 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 92,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "regeneration": 1,
+      "num_attacks": 2,
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 90,
+        "min_level": 3,
+        "max_level": 9
+      },
+      "morale": 15
     },
     {
       "id": "female_nomad",
@@ -1758,7 +1968,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "nomad",
@@ -1814,7 +2025,8 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "female_bandit",
@@ -1822,23 +2034,22 @@
       "description": "The bandit has the look of an accomplished rogue, and is dressed in an expensive silk tunic and pants of a rich red color. She is also wearing a chainmail jerkin and is armed with a wicked looking sabre.",
       "type": "humanoid",
       "level": 6,
-      "health": 20,
-      "max_health": 20,
+      "health": 60,
+      "max_health": 60,
       "damage_min": 4,
       "damage_max": 24,
       "armor": 6,
       "experience_reward": 60,
       "gold_reward": [
-        1,
-        16
+        0,
+        18
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "sabre",
-        "skillfully slashed",
-        "robbed",
-        "multiattack"
+        "steal"
       ],
       "loot_table": [
         {
@@ -1885,7 +2096,20 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 117,
+      "gender": "female",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "skillfully slashed",
+        "chance": 0.12,
+        "damage_min": 8,
+        "damage_max": 48
+      },
+      "morale": 50
     },
     {
       "id": "bandit",
@@ -1893,23 +2117,22 @@
       "description": "The bandit has the look of an accomplished rogue, and is dressed in an expensive silk tunic and pants of a deep blue color. He is also wearing a chainmail jerkin and is armed with a wicked looking sabre.",
       "type": "humanoid",
       "level": 7,
-      "health": 20,
-      "max_health": 20,
+      "health": 70,
+      "max_health": 70,
       "damage_min": 6,
       "damage_max": 36,
       "armor": 8,
       "experience_reward": 70,
       "gold_reward": [
-        5,
-        20
+        0,
+        24
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "sabre",
-        "skillfully slashed",
-        "robbed",
-        "multiattack"
+        "steal"
       ],
       "loot_table": [
         {
@@ -1956,7 +2179,20 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 118,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "skillfully slashed",
+        "chance": 0.15,
+        "damage_min": 12,
+        "damage_max": 72
+      },
+      "morale": 40
     },
     {
       "id": "mystic_knight",
@@ -2066,7 +2302,8 @@
           "item_id": "champion_armor",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "orc_warrior",
@@ -2077,17 +2314,16 @@
       "health": 20,
       "max_health": 20,
       "damage_min": 0,
-      "damage_max": 1,
+      "damage_max": 0,
       "armor": 6,
       "experience_reward": 20,
       "gold_reward": [
         0,
-        13
+        7
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "tracking",
         "multiattack"
       ],
       "loot_table": [
@@ -2123,7 +2359,13 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 126,
+      "gender": "male",
+      "combat_skill": 80,
+      "num_attacks": 2,
+      "morale": 25
     },
     {
       "id": "orc_subchief",
@@ -2131,20 +2373,19 @@
       "description": "The orc subchief is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands over five feet in height, is wearing chainmail armor, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 50,
-      "health": 30,
-      "max_health": 30,
+      "health": 500,
+      "max_health": 500,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 6,
       "experience_reward": 500,
       "gold_reward": [
         0,
-        14
+        104
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "tracking",
         "multiattack"
       ],
       "loot_table": [
@@ -2244,7 +2485,13 @@
           "item_id": "demonhide",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 127,
+      "gender": "male",
+      "combat_skill": 85,
+      "num_attacks": 2,
+      "morale": 30
     },
     {
       "id": "orc_chieftain",
@@ -2255,17 +2502,16 @@
       "health": 40,
       "max_health": 40,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 6,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        15
+        13
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "tracking",
         "multiattack"
       ],
       "loot_table": [
@@ -2321,7 +2567,13 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 128,
+      "gender": "male",
+      "combat_skill": 90,
+      "num_attacks": 2,
+      "morale": 35
     },
     {
       "id": "orc_shaman",
@@ -2329,20 +2581,21 @@
       "description": "The orc shaman is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. She stands just under five feet in height, is wearing robes, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 3,
-      "health": 20,
-      "max_health": 20,
+      "health": 30,
+      "max_health": 30,
       "damage_min": 0,
       "damage_max": 0,
       "armor": 1,
       "experience_reward": 30,
       "gold_reward": [
         0,
-        13
+        9
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "tracking"
+        "spells",
+        "spellcaster"
       ],
       "spellcaster": true,
       "spell_skill": 85,
@@ -2391,7 +2644,18 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 129,
+      "gender": "female",
+      "combat_skill": 80,
+      "spells": {
+        "spell_type": "necrolyte",
+        "spell_skill": 85,
+        "min_level": 1,
+        "max_level": 4
+      },
+      "morale": 25
     },
     {
       "id": "orc_warlord",
@@ -2399,20 +2663,19 @@
       "description": "The orc warlord is an average sized humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands just under six feet in height, is wearing gleaming chainmail armor, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 6,
-      "health": 50,
-      "max_health": 50,
+      "health": 60,
+      "max_health": 60,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 6,
       "experience_reward": 60,
       "gold_reward": [
-        5,
-        20
+        0,
+        22
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "tracking",
         "multiattack"
       ],
       "loot_table": [
@@ -2472,7 +2735,13 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 130,
+      "gender": "male",
+      "combat_skill": 95,
+      "num_attacks": 2,
+      "morale": 35
     },
     {
       "id": "gnoll_warrior",
@@ -2483,12 +2752,12 @@
       "health": 30,
       "max_health": 30,
       "damage_min": 0,
-      "damage_max": 2,
+      "damage_max": 0,
       "armor": 6,
       "experience_reward": 30,
       "gold_reward": [
         0,
-        14
+        10
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -2528,7 +2797,14 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 131,
+      "gender": "male",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 10
     },
     {
       "id": "gnoll_subchief",
@@ -2539,12 +2815,12 @@
       "health": 40,
       "max_health": 40,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 8,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        15
+        13
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -2604,7 +2880,14 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 132,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 15
     },
     {
       "id": "gnoll_chieftain",
@@ -2615,11 +2898,11 @@
       "health": 50,
       "max_health": 50,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 8,
       "experience_reward": 50,
       "gold_reward": [
-        1,
+        0,
         16
       ],
       "aggressive": true,
@@ -2684,7 +2967,14 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 133,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 20
     },
     {
       "id": "gnoll_warlord",
@@ -2695,12 +2985,12 @@
       "health": 70,
       "max_health": 70,
       "damage_min": 0,
-      "damage_max": 3,
+      "damage_max": 0,
       "armor": 10,
       "experience_reward": 70,
       "gold_reward": [
-        7,
-        22
+        0,
+        26
       ],
       "aggressive": true,
       "speed": 1.0,
@@ -2764,7 +3054,14 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 134,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "morale": 20
     },
     {
       "id": "gnoll_shaman",
@@ -2772,17 +3069,17 @@
       "description": "The gnoll shaman is a tall humanoid with hyenalike facial features and is covered by thick golden brown body hair. She stands just over six feet in height, is wearing robes, and is armed with {0} {1}.",
       "type": "humanoid",
       "level": 4,
-      "health": 30,
-      "max_health": 30,
+      "health": 40,
+      "max_health": 40,
       "damage_min": 0,
       "damage_max": 0,
       "armor": 1,
       "experience_reward": 40,
       "gold_reward": [
         0,
-        14
+        12
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "spellcaster": true,
       "spell_skill": 80,
@@ -2839,7 +3136,23 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 135,
+      "gender": "female",
+      "combat_skill": 85,
+      "can_track": true,
+      "abilities": [
+        "spells",
+        "spellcaster"
+      ],
+      "spells": {
+        "spell_type": "druid",
+        "spell_skill": 80,
+        "min_level": 1,
+        "max_level": 4
+      },
+      "morale": 25
     },
     {
       "id": "stone_warrior",
@@ -2855,15 +3168,15 @@
       "experience_reward": 250,
       "gold_reward": [
         0,
-        0
+        50
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "stone axe",
-        "kicks",
-        "swings its axe in a wide arc",
-        "multiattack"
+        "paralysis",
+        "unknown"
       ],
       "loot_table": [
         {
@@ -2938,7 +3251,20 @@
           "item_id": "rod_of_flame",
           "chance": 0.12
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 141,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "attack_effect": "paralysis",
+      "special_attack": {
+        "description": "kicks",
+        "chance": 0.35,
+        "damage_min": 200,
+        "damage_max": 400
+      }
     },
     {
       "id": "stone_wizard",
@@ -3042,7 +3368,8 @@
           "item_id": "rod_of_flame",
           "chance": 0.12
         }
-      ]
+      ],
+      "class": "sorceror"
     },
     {
       "id": "dwarven_guard",
@@ -3058,13 +3385,13 @@
       "experience_reward": 250,
       "gold_reward": [
         0,
-        15
+        55
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "battleax",
-        "multiattack"
+        "multiattack",
+        "battleax"
       ],
       "loot_table": [
         {
@@ -3139,7 +3466,14 @@
           "item_id": "rod_of_flame",
           "chance": 0.12
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 144,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 5,
+      "morale": 20
     },
     {
       "id": "elite_dwarven_guard",
@@ -3154,15 +3488,14 @@
       "armor": 8,
       "experience_reward": 300,
       "gold_reward": [
-        20,
-        35
+        0,
+        85
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "battleax",
-        "tracking",
-        "multiattack"
+        "multiattack",
+        "battleax"
       ],
       "loot_table": [
         {
@@ -3249,7 +3582,13 @@
           "item_id": "demonhide",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 145,
+      "gender": "male",
+      "combat_skill": 95,
+      "num_attacks": 5,
+      "morale": 10
     },
     {
       "id": "dwarven_captain",
@@ -3358,7 +3697,8 @@
           "item_id": "champion_armor",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "dwarven_sorceror",
@@ -3373,14 +3713,17 @@
       "armor": 2,
       "experience_reward": 250,
       "gold_reward": [
-        5,
-        20
+        0,
+        60
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "black sceptre",
-        "multiattack"
+        "mana drain",
+        "spells",
+        "spellcaster"
       ],
       "spellcaster": true,
       "spell_skill": 90,
@@ -3457,7 +3800,21 @@
           "item_id": "runestaff",
           "chance": 0.12
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 147,
+      "gender": "male",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 5,
+      "attack_effect": "mana drain",
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 90,
+        "min_level": 6,
+        "max_level": 8
+      },
+      "morale": 30
     },
     {
       "id": "dwarven_leutenant",
@@ -3562,7 +3919,8 @@
           "item_id": "dragonscale",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "dwarven_warlord",
@@ -3667,7 +4025,8 @@
           "item_id": "champion_armor",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "smith",
@@ -3747,7 +4106,8 @@
           "item_id": "horn_of_frost",
           "chance": 0.12
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "master_smith",
@@ -3839,7 +4199,8 @@
           "item_id": "champion_armor",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "dwarven_archmage",
@@ -3951,7 +4312,8 @@
           "item_id": "champion_armor",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "sorceror"
     },
     {
       "id": "elven_scout",
@@ -4061,7 +4423,8 @@
           "item_id": "dragonscale",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "rogue"
     },
     {
       "id": "female_elf",
@@ -4158,7 +4521,8 @@
           "item_id": "dragonscale",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "elven_warrior",
@@ -4173,15 +4537,14 @@
       "armor": 20,
       "experience_reward": 330,
       "gold_reward": [
-        70,
-        85
+        9,
+        141
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
-        "enchanted axe",
-        "tracking",
-        "multiattack"
+        "multiattack",
+        "enchanted axe"
       ],
       "loot_table": [
         {
@@ -4268,7 +4631,13 @@
           "item_id": "champion_armor",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter",
+      "vnum": 158,
+      "gender": "male",
+      "combat_skill": 95,
+      "num_attacks": 2,
+      "morale": 25
     },
     {
       "id": "elven_champion",
@@ -4378,7 +4747,8 @@
           "item_id": "dragonscale",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
     },
     {
       "id": "elven_warlord",
@@ -4489,7 +4859,491 @@
           "item_id": "demonhide",
           "chance": 0.1
         }
-      ]
+      ],
+      "class": "fighter"
+    },
+    {
+      "id": "giant_scorpion",
+      "vnum": 16,
+      "name": "Giant Scorpion",
+      "description": "The giant scorpion resembles a common scorpion, except that it is over eight feet in length.",
+      "type": "humanoid",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 6,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 70,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "tail",
+        "poison"
+      ],
+      "attack_effect": "poison",
+      "special_attack": {
+        "description": "snapped its pincers at",
+        "chance": 0.55,
+        "damage_min": 3,
+        "damage_max": 9
+      },
+      "morale": 20
+    },
+    {
+      "id": "giant_slug",
+      "vnum": 19,
+      "name": "Giant Slug",
+      "description": "The giant slug is over seven feet long and drools acidic spittle from its maw.",
+      "type": "humanoid",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 6,
+      "armor": 0,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 65,
+      "can_track": true,
+      "abilities": [
+        "toothy maw",
+        "poison"
+      ],
+      "attack_effect": "poison",
+      "special_attack": {
+        "description": "discharged a spray of acid at",
+        "chance": 0.25,
+        "damage_min": 4,
+        "damage_max": 16
+      },
+      "morale": 5
+    },
+    {
+      "id": "giant_bat",
+      "vnum": 20,
+      "name": "Giant Bat",
+      "description": "The giant bat has a wingspan of over twelve feet and has wicked looking claws and teeth.",
+      "type": "humanoid",
+      "level": 1,
+      "health": 10,
+      "max_health": 10,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 1,
+      "experience_reward": 10,
+      "gold_reward": [
+        0,
+        2
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "abilities": [
+        "vicious bite"
+      ],
+      "morale": 25
+    },
+    {
+      "id": "giant_spider",
+      "vnum": 24,
+      "name": "Giant Spider",
+      "description": "The giant spider's body is over six feet long, and it has thick hairy legs. A thick oily liquid drips from its mandibles.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 12,
+      "armor": 1,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 70,
+      "can_track": true,
+      "abilities": [
+        "mandibles",
+        "poison"
+      ],
+      "attack_effect": "poison",
+      "morale": 20
+    },
+    {
+      "id": "giant_asp",
+      "vnum": 28,
+      "name": "Giant Asp",
+      "description": "The giant asp is an enormous viper over twenty feet in length. Its scales are a dull tan and it's body is thicker than a large man's arm.",
+      "type": "humanoid",
+      "level": 2,
+      "health": 20,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 8,
+      "armor": 3,
+      "experience_reward": 20,
+      "gold_reward": [
+        0,
+        4
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "neuter",
+      "combat_skill": 80,
+      "can_track": true,
+      "abilities": [
+        "wicked bite",
+        "poison"
+      ],
+      "attack_effect": "poison",
+      "special_attack": {
+        "description": "coiled around",
+        "chance": 0.15,
+        "damage_min": 2,
+        "damage_max": 16
+      },
+      "morale": 15
+    },
+    {
+      "id": "stone_giantess",
+      "vnum": 77,
+      "name": "Stone Giantess",
+      "description": "The stone giantess resembles a huge hairless woman with light greyish skin and stands nearly eighteen feet tall. She is armed with a huge club.",
+      "type": "humanoid",
+      "level": 5,
+      "health": 50,
+      "max_health": 50,
+      "damage_min": 5,
+      "damage_max": 30,
+      "armor": 5,
+      "experience_reward": 50,
+      "gold_reward": [
+        0,
+        14
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 70,
+      "can_track": true,
+      "abilities": [
+        "huge club"
+      ],
+      "special_attack": {
+        "description": "hurled a boulder at",
+        "chance": 0.1,
+        "damage_min": 5,
+        "damage_max": 50
+      },
+      "morale": 25
+    },
+    {
+      "id": "stone_giant",
+      "vnum": 78,
+      "name": "Stone Giant",
+      "description": "The stone giant resembles a huge hairless man with dark greyish skin and stands nearly twenty feet tall. He is armed with a huge club.",
+      "type": "humanoid",
+      "level": 5,
+      "health": 60,
+      "max_health": 60,
+      "damage_min": 6,
+      "damage_max": 36,
+      "armor": 6,
+      "experience_reward": 50,
+      "gold_reward": [
+        0,
+        15
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 75,
+      "can_track": true,
+      "abilities": [
+        "huge club"
+      ],
+      "special_attack": {
+        "description": "hurled a boulder at",
+        "chance": 0.15,
+        "damage_min": 10,
+        "damage_max": 60
+      },
+      "morale": 20
+    },
+    {
+      "id": "ice_giantess",
+      "vnum": 85,
+      "name": "Ice Giantess",
+      "description": "The ice giantess resembles a huge woman with bone white skin, and long flowing white hair. She stands over nineteen feet tall, and is armed with a huge crystaline sword.",
+      "type": "humanoid",
+      "level": 6,
+      "health": 90,
+      "max_health": 90,
+      "damage_min": 5,
+      "damage_max": 50,
+      "armor": 4,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        18
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 80,
+      "abilities": [
+        "huge sword"
+      ],
+      "special_attack": {
+        "description": "exhaled a blast of frost at",
+        "chance": 0.25,
+        "damage_min": 10,
+        "damage_max": 60
+      },
+      "morale": 20
+    },
+    {
+      "id": "ice_giant",
+      "vnum": 86,
+      "name": "Ice Giant",
+      "description": "The ice giant resembles a huge man with bone white skin, white hair, and a long white beard. He stands over twenty feet tall, and is armed with a huge crystaline sword.",
+      "type": "humanoid",
+      "level": 7,
+      "health": 100,
+      "max_health": 100,
+      "damage_min": 10,
+      "damage_max": 60,
+      "armor": 5,
+      "experience_reward": 70,
+      "gold_reward": [
+        0,
+        22
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 85,
+      "abilities": [
+        "huge sword"
+      ],
+      "special_attack": {
+        "description": "exhaled a blast of frost at",
+        "chance": 0.25,
+        "damage_min": 20,
+        "damage_max": 80
+      },
+      "morale": 15
+    },
+    {
+      "id": "flame_giantess",
+      "vnum": 94,
+      "name": "Flame Giantess",
+      "description": "The flame giantess resembles a huge woman with ruddy skin and bright red hair. She stands over twenty five feet tall, is armed with a great axe made of a dull black metal, and wears dragonscale armor. She reguards you malignly with her smouldering red eyes, and smiles cruely.",
+      "type": "humanoid",
+      "level": 11,
+      "health": 180,
+      "max_health": 180,
+      "damage_min": 10,
+      "damage_max": 60,
+      "armor": 9,
+      "experience_reward": 110,
+      "gold_reward": [
+        0,
+        28
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 90,
+      "can_track": true,
+      "abilities": [
+        "great axe"
+      ],
+      "special_attack": {
+        "description": "exhaled a blast of flame at",
+        "chance": 0.15,
+        "damage_min": 80,
+        "damage_max": 360
+      },
+      "morale": 15
+    },
+    {
+      "id": "flame_giant",
+      "vnum": 95,
+      "name": "Flame Giant",
+      "description": "The flame giant resembles a huge man with ruddy skin, bright red hair, and a coarse red beard. He stands nearly thirty feet tall, is armed with a great axe made of a dull black metal, and wears dragonscale armor. He regards you malevolently with his smouldering red eyes, and grins wickedly.",
+      "type": "humanoid",
+      "level": 12,
+      "health": 200,
+      "max_health": 200,
+      "damage_min": 20,
+      "damage_max": 80,
+      "armor": 12,
+      "experience_reward": 120,
+      "gold_reward": [
+        0,
+        34
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "abilities": [
+        "great axe"
+      ],
+      "special_attack": {
+        "description": "exhaled a blast of flame at",
+        "chance": 0.15,
+        "damage_min": 100,
+        "damage_max": 400
+      },
+      "morale": 10
+    },
+    {
+      "id": "flame_giant_warlord",
+      "vnum": 96,
+      "name": "Flame Giant Warlord",
+      "description": "The flame giant resembles a huge man with ruddy skin, bright red hair, and a coarse red beard. He stands nearly thirty feet tall, is armed with a great spear made of a dark black metal that glows with a dull reddish light at the head. He wears armor of fine workmanship made from overlapping scales of a dark metallic blue. You sense great wisdom in his stern gaze.",
+      "type": "humanoid",
+      "level": 15,
+      "health": 250,
+      "max_health": 250,
+      "damage_min": 32,
+      "damage_max": 96,
+      "armor": 14,
+      "experience_reward": 150,
+      "gold_reward": [
+        0,
+        45
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "great spear",
+        "vitality drain",
+        "heal"
+      ],
+      "attack_effect": "vitality drain",
+      "special_attack": {
+        "description": "exhaled a blast of flame at",
+        "chance": 0.25,
+        "damage_min": 120,
+        "damage_max": 240
+      },
+      "morale": 20
+    },
+    {
+      "id": "forest_giantess",
+      "vnum": 119,
+      "name": "Forest Giantess",
+      "description": "The forest giantess resembles a huge woman with brown skin and stands nearly fifteen feet tall. Her clothing is of woven vines and leaves. She is armed with a huge spear.",
+      "type": "humanoid",
+      "level": 6,
+      "health": 70,
+      "max_health": 70,
+      "damage_min": 5,
+      "damage_max": 20,
+      "armor": 5,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        16
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "female",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "huge spear"
+      ],
+      "morale": 35
+    },
+    {
+      "id": "forest_giant",
+      "vnum": 120,
+      "name": "Forest Giant",
+      "description": "The forest giant resembles a huge man with dark brown skin and stands nearly eighteen feet tall. His clothing is of woven vines and leaves. He is armed with a huge spear.",
+      "type": "humanoid",
+      "level": 6,
+      "health": 80,
+      "max_health": 80,
+      "damage_min": 6,
+      "damage_max": 24,
+      "armor": 6,
+      "experience_reward": 60,
+      "gold_reward": [
+        0,
+        17
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack",
+        "huge spear"
+      ],
+      "morale": 30
+    },
+    {
+      "id": "lizard_warrior",
+      "vnum": 136,
+      "name": "Lizard Warrior",
+      "description": "The lizard warrior is a six foot tall bipedal humanoid who's features resemble those of a large lizard. He has greenish scaley skin, and sharp claws and teeth. He is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 3,
+      "health": 30,
+      "max_health": 30,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 3,
+      "experience_reward": 30,
+      "gold_reward": [
+        0,
+        11
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "abilities": [
+        "multiattack"
+      ],
+      "morale": 10
     }
   ]
 }

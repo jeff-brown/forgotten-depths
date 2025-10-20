@@ -6,7 +6,9 @@
   "exits": {
     "north": "town_path",
     "west": "magic_shop",
-    "east": "potion_shop"
+    "east": "potion_shop",
+    "south": "town_path_1",
+    "northeast": "wizard_tower"
   },
   "items": [],
   "npcs": [

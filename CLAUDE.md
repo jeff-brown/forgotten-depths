@@ -97,11 +97,12 @@ The game uses a hybrid approach: structured columns for core data, JSON blobs fo
 
 ### World Data Structure
 
-World data is stored in JSON files under `data/world/`:
-- `rooms/*.json` - Individual room definitions with exits, NPCs, items, and lair properties
-- `areas/*.json` - Area metadata grouping rooms
-- `npcs/*.json` - NPC definitions (vendors, quest givers, etc.)
-- `connections.json` - Room connections (legacy, mostly superseded by room exit data)
+World data is stored in JSON files:
+- `data/world/rooms/*.json` - Individual room definitions with exits, NPCs, items, and lair properties
+- `data/world/areas/*.json` - Area metadata grouping rooms
+- `data/npcs/*.json` - NPC definitions (vendors, quest givers, etc.) - loaded once at initialization and cached
+- `data/mobs/*.json` - Monster/mob definitions organized by type
+- `data/world/connections.json` - Room connections (legacy, mostly superseded by room exit data)
 
 Room connections form a directed graph managed by WorldGraph (`src/server/game/world/graph.py`). The graph supports:
 - Standard directional exits (north, south, east, west, up, down)

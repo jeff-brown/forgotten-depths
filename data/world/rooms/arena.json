@@ -6,8 +6,8 @@
   "is_safe": false,
   "light_level": 0.8,
   "exits": {
-    "south": "tavern",
-    "down": "dungeon_entrance"
+    "west": "market_square",
+    "down": "dungeon1_1"
   },
   "special_items": [
     {

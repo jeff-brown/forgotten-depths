@@ -5,7 +5,6 @@
   "area_id": "starter_town",
   "exits": {
     "south": "town_square",
-    "east": "temple",
     "north": "training_hall"
   },
   "items": [

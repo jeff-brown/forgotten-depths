@@ -7,13 +7,14 @@ class DamageCalculator:
     """Calculates damage for combat actions."""
 
     @staticmethod
-    def calculate_melee_damage(attacker, weapon=None, natural_attack=None) -> Dict[str, Any]:
+    def calculate_melee_damage(attacker, weapon=None, natural_attack=None, crit_multiplier=2.0) -> Dict[str, Any]:
         """Calculate melee damage.
 
         Args:
             attacker: The attacking entity with strength attribute
             weapon: Optional weapon dict with properties.damage (e.g., "1d6+2")
             natural_attack: Optional dict with damage info for mobs (damage, damage_min, damage_max)
+            crit_multiplier: Multiplier for critical hits (default 2.0)
         """
         base_damage = getattr(attacker, 'strength', 10) // 2
 
@@ -41,7 +42,39 @@ class DamageCalculator:
 
         is_critical = random.random() < 0.05
         if is_critical:
-            total_damage *= 2
+            total_damage = int(total_damage * crit_multiplier)
+
+        return {
+            'damage': max(1, total_damage),
+            'is_critical': is_critical,
+            'damage_type': 'physical'
+        }
+
+    @staticmethod
+    def calculate_ranged_damage(attacker, weapon=None, crit_multiplier=2.0) -> Dict[str, Any]:
+        """Calculate ranged damage (DEX-based).
+
+        Args:
+            attacker: The attacking entity with dexterity attribute
+            weapon: Optional ranged weapon dict with properties.damage
+            crit_multiplier: Multiplier for critical hits (default 2.0)
+        """
+        # Ranged attacks use DEX instead of STR
+        base_damage = getattr(attacker, 'dexterity', 10) // 2
+
+        if weapon:
+            # Ranged weapon damage
+            weapon_damage_str = weapon.get('properties', {}).get('damage', '1d4')
+            weapon_damage = DamageCalculator._parse_dice_damage(weapon_damage_str)
+            total_damage = base_damage + weapon_damage
+        else:
+            # No weapon (shouldn't happen for ranged, but fallback)
+            total_damage = base_damage + random.randint(1, 3)
+
+        # Same crit chance as melee
+        is_critical = random.random() < 0.05
+        if is_critical:
+            total_damage = int(total_damage * crit_multiplier)
 
         return {
             'damage': max(1, total_damage),

@@ -13,7 +13,10 @@
   "dialogue": {
     "greeting": "Welcome to our inn! Would you like a room for the night?",
     "default": "We have the most comfortable beds in town, and my stew is famous throughout the region!",
-    "goodbye": "Safe travels, and come back anytime!"
+    "goodbye": "Safe travels, and come back anytime!",
+    "rent_accept": "Wonderful! Let me show you to your room.",
+    "rent_description": "You follow the innkeeper up a creaky wooden staircase to a cozy room with a soft bed and a washbasin. The sheets are clean and the pillows are plump. You rest deeply through the night...",
+    "rent_already_rested": "You look well-rested already! Perhaps come back when you're weary."
   },
   "services": ["innkeeper", "rooms", "food", "shop"],
   "shop": {

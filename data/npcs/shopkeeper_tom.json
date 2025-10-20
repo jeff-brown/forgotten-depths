@@ -24,6 +24,9 @@
     "inventory": [
       {"item_id": "rope", "price": 15, "stock": -1},
       {"item_id": "torch", "price": 3, "stock": -1},
+      {"item_id": "lantern", "price": 30, "stock": -1},
+      {"item_id": "candle", "price": 2, "stock": -1},
+      {"item_id": "lamp_oil", "price": 8, "stock": -1},
       {"item_id": "bread", "price": 6, "stock": -1},
       {"item_id": "cheese", "price": 10, "stock": -1},
       {"item_id": "dried_meat", "price": 12, "stock": -1},

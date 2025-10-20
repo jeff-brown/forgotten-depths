@@ -4,7 +4,7 @@
   "description": "The air is thick with smoke and the rhythmic sound of hammer on anvil echoes throughout this well-equipped smithy. Weapons and armor hang from the walls in various stages of completion. The forge burns bright and hot in the corner, casting dancing shadows across the room. Goran, the master blacksmith, works tirelessly at his craft.",
   "area_id": "starter_town",
   "exits": {
-    "east": "town_square"
+    "northwest": "market_square"
   },
   "items": [
     "iron_sword",

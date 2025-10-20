@@ -14,15 +14,14 @@
       "experience_reward": 50,
       "gold_reward": [
         0,
-        0
+        10
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "talons",
-        "viciously bit",
-        "tracking",
-        "multiattack"
+        "spellcaster"
       ],
       "resistances": [
         "fear"
@@ -58,7 +57,24 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 79,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "viciously bit",
+        "chance": 0.25,
+        "damage_min": 10,
+        "damage_max": 50
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 95,
+        "min_level": 2,
+        "max_level": 7
+      },
+      "morale": 15
     },
     {
       "id": "stygian_dragon",
@@ -74,15 +90,15 @@
       "experience_reward": 60,
       "gold_reward": [
         0,
-        0
+        12
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "talons",
-        "viciously bit",
-        "lashed out with its tail",
-        "multiattack"
+        "attack_all_and_tumble",
+        "spellcaster"
       ],
       "resistances": [
         "fear"
@@ -118,7 +134,25 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 84,
+      "gender": "neuter",
+      "combat_skill": 95,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "viciously bit",
+        "chance": 0.45,
+        "damage_min": 12,
+        "damage_max": 72
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 95,
+        "min_level": 2,
+        "max_level": 8
+      },
+      "morale": 10
     },
     {
       "id": "apollyon_dragon",
@@ -134,16 +168,15 @@
       "experience_reward": 100,
       "gold_reward": [
         0,
-        0
+        20
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "talons",
-        "breathed flames at",
-        "lashed out with its tail",
-        "tracking",
-        "multiattack"
+        "attack_all_and_tumble",
+        "spellcaster"
       ],
       "resistances": [
         "fear"
@@ -199,12 +232,29 @@
           "item_id": "platinum_key",
           "chance": 0.15
         }
-      ]
+      ],
+      "vnum": 93,
+      "gender": "neuter",
+      "combat_skill": 97,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "breathed flames at",
+        "chance": 0.25,
+        "damage_min": 50,
+        "damage_max": 200
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 95,
+        "min_level": 2,
+        "max_level": 9
+      },
+      "morale": 10
     },
     {
       "id": "balneal_dragon",
       "name": "Balneal Dragon",
-      "description": "The balneal dragon has silvery blue scales and a powerfully built serpentine body. It is over one hundred fifty feet in length. Its talons and teeth are of a clear bluish crystalline substance, and steam rises from its nostrils.",
+      "description": "The balneal dragon has silvery blue scales and a powerfully built serpentine body. It is over one hundred fifty feet in length. Its talons and teeth are of a clear bluish crystaline substance, and steam rises from its nostrils.",
       "type": "dragon",
       "level": 15,
       "health": 300,
@@ -215,14 +265,14 @@
       "experience_reward": 150,
       "gold_reward": [
         0,
-        0
+        30
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
+        "multiattack",
         "talons",
-        "viciously bit",
-        "multiattack"
+        "spellcaster"
       ],
       "resistances": [
         "fear"
@@ -286,12 +336,30 @@
           "item_id": "topaz_key",
           "chance": 0.2
         }
-      ]
+      ],
+      "vnum": 97,
+      "gender": "neuter",
+      "combat_skill": 97,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "viciously bit",
+        "chance": 0.35,
+        "damage_min": 60,
+        "damage_max": 240
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 95,
+        "min_level": 2,
+        "max_level": 9
+      },
+      "morale": 10
     },
     {
       "id": "great_dragon",
       "name": "Great Dragon",
-      "description": "The great dragon has grayish scales and powerful leathery wings. It is without a doubt the most enormous creature you have ever seen, being well over two hundred feet in length. Its talons and teeth are yellowish white, and smoke curls upward from its nostrils as it regards you with amusement.",
+      "description": "The great dragon has greyish scales and powerful leathery wings. It is without a doubt the most enormous creature you have ever seen, being well over two hundred feet in length. Its talons and teeth are yellowish white, and smoke curls upward from its nostrils as it regards you with amusement.",
       "type": "dragon",
       "level": 30,
       "health": 1200,
@@ -302,15 +370,14 @@
       "experience_reward": 300,
       "gold_reward": [
         0,
-        0
+        60
       ],
-      "aggressive": true,
+      "aggressive": false,
       "speed": 1.0,
       "abilities": [
         "huge talons",
-        "cruely bit",
-        "breathed flames in a great arc",
-        "regeneration"
+        "spells",
+        "spellcaster"
       ],
       "resistances": [
         "fear"
@@ -410,7 +477,25 @@
           "item_id": "dragonscale",
           "chance": 0.1
         }
-      ]
+      ],
+      "vnum": 101,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "can_track": true,
+      "regeneration": 1,
+      "special_attack": {
+        "description": "cruely bit",
+        "chance": 0.65,
+        "damage_min": 320,
+        "damage_max": 960
+      },
+      "spells": {
+        "spell_type": "sorceror",
+        "spell_skill": 95,
+        "min_level": 6,
+        "max_level": 10
+      },
+      "morale": 35
     }
   ]
 }

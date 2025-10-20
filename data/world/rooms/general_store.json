@@ -4,7 +4,7 @@
   "description": "A well-stocked general store with shelves lined with all manner of useful goods. From basic provisions to adventuring supplies, this shop seems to have everything a traveler might need. The proprietor, Tom, stands behind a polished wooden counter, ready to assist customers with a friendly smile.",
   "area_id": "starter_town",
   "exits": {
-    "west": "market_square"
+    "southeast": "town_square"
   },
   "items": [
     "basic_supplies"

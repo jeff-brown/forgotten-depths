@@ -4,8 +4,11 @@ import json
 import yaml
 import os
 import glob
+import random
+import time
 from typing import Optional, Dict, Any, List
 from ...utils.logger import get_logger
+from ...utils.colors import service_message, error_message, info_message
 
 
 class VendorSystem:
@@ -21,28 +24,30 @@ class VendorSystem:
         self.vendor_locations: Dict[str, List[str]] = {}  # room_id -> vendor_ids
         self.items_data: Dict[str, Dict[str, Any]] = {}  # item_id -> item data
 
+        # Stock replenishment tracking
+        self.vendor_initial_stock: Dict[str, Dict[str, int]] = {}  # vendor_id -> {item_id -> initial_stock}
+        self.last_replenishment_time = time.time()
+        # Get replenishment interval from config (default 5 minutes)
+        self.replenishment_interval = self.game_engine.config_manager.get_setting(
+            'economy', 'vendor_stock_replenishment_interval', default=300.0
+        )
+
     def load_vendors_and_items(self):
-        """Load vendor and item data from configuration files."""
+        """Load vendor and item data from cached NPC data."""
         try:
             # Use cached items data from ConfigManager instead of reloading from disk
             self.items_data = self.game_engine.config_manager.load_items()
             self.logger.info(f"Loaded {len(self.items_data)} items from YAML")
 
-            # Load vendor data from individual NPC files only
-            npc_dir = os.path.join('data', 'world', 'npcs')
-            if os.path.exists(npc_dir):
-                npc_files = glob.glob(os.path.join(npc_dir, '*.json'))
-                for npc_file in npc_files:
-                    try:
-                        with open(npc_file, 'r') as f:
-                            npc_data = json.load(f)
-                            # Check if this NPC has vendor services or shop data
-                            if (npc_data.get('services') and 'shop' in npc_data.get('services', [])) or npc_data.get('shop'):
-                                self._process_npc_vendor(npc_data)
-                    except Exception as e:
-                        self.logger.error(f"Error loading NPC file {npc_file}: {e}")
-
-            self.logger.info(f"Loaded {len(self.vendors)} vendors from NPC files")
+            # Use cached NPC data from WorldManager instead of loading from files
+            if hasattr(self.game_engine, 'world_manager') and self.game_engine.world_manager.npcs:
+                for npc_id, npc_data in self.game_engine.world_manager.npcs.items():
+                    # Check if this NPC has vendor services or shop data
+                    if (npc_data.get('services') and 'shop' in npc_data.get('services', [])) or npc_data.get('shop'):
+                        self._process_npc_vendor(npc_data)
+                self.logger.info(f"Loaded {len(self.vendors)} vendors from cached NPC data")
+            else:
+                self.logger.warning("WorldManager NPCs not available, no vendors loaded")
 
             # Load vendor location mappings from world room data
             self._load_vendor_locations_from_world()
@@ -91,6 +96,15 @@ class VendorSystem:
                 'sell_markup': sell_markup
             }
 
+            # Store initial stock levels for replenishment (only for non-infinite items)
+            self.vendor_initial_stock[vendor_id] = {}
+            for item in shop_data.get('inventory', []):
+                item_id = item.get('item_id')
+                stock = item.get('stock', 0)
+                # Only track non-infinite stock (-1 means infinite)
+                if stock != -1:
+                    self.vendor_initial_stock[vendor_id][item_id] = stock
+
     def _load_vendor_locations_from_world(self):
         """Load vendor location mappings from world room data."""
         try:
@@ -104,7 +118,7 @@ class VendorSystem:
             self.logger.info(f"[VENDOR DEBUG] Looking for rooms in directory: {rooms_dir}")
 
             if os.path.exists(rooms_dir):
-                room_files = glob.glob(os.path.join(rooms_dir, '*.json'))
+                room_files = glob.glob(os.path.join(rooms_dir, '**', '*.json'), recursive=True)
                 self.logger.info(f"[VENDOR DEBUG] Found {len(room_files)} room files: {[os.path.basename(f) for f in room_files]}")
 
                 for room_file in room_files:
@@ -187,26 +201,79 @@ class VendorSystem:
         self.logger.info(f"[VENDOR DEBUG] No vendors with shops found in room '{room_id}'")
         return None
 
-    def get_item_price(self, vendor: dict, item_id: str, buying: bool = True) -> int:
-        """Get the price of an item from a vendor."""
+    def calculate_charisma_modifier(self, charisma: int, buying: bool = True) -> float:
+        """Calculate price modifier based on charisma.
+
+        Args:
+            charisma: Character's charisma stat
+            buying: True if player is buying, False if selling
+
+        Returns:
+            Price modifier (multiplier)
+        """
+        # Base charisma modifier: (charisma - 10) * 2% per point
+        # Charisma 10 = no modifier
+        # Charisma 15 = 10% better prices
+        # Charisma 20 = 20% better prices
+        # Charisma 5 = 10% worse prices
+        modifier_percent = (charisma - 10) * 0.02
+
+        if buying:
+            # When buying: higher charisma = lower prices (discount)
+            # Clamp between -20% and +30% to prevent exploits
+            modifier_percent = max(-0.30, min(0.20, modifier_percent))
+            return 1.0 - modifier_percent
+        else:
+            # When selling: higher charisma = higher prices (better sell value)
+            # Clamp between -20% and +30%
+            modifier_percent = max(-0.20, min(0.30, modifier_percent))
+            return 1.0 + modifier_percent
+
+    def get_item_price(self, vendor: dict, item_id: str, buying: bool = True, character: dict = None) -> int:
+        """Get the price of an item from a vendor.
+
+        Args:
+            vendor: Vendor data dict
+            item_id: ID of the item
+            buying: True if player is buying, False if selling
+            character: Optional character dict for charisma modifier
+
+        Returns:
+            Final price with charisma modifier applied
+        """
+        # Get base price
+        base_price = 0
+
         # Check vendor's inventory first (from YAML config)
         if 'inventory' in vendor:
             for item in vendor['inventory']:
                 if item.get('item_id') == item_id:
-                    return item.get('price', 0)
+                    base_price = item.get('price', 0)
+                    break
 
-        # Fallback to base item price with vendor markup
-        item_data = self.items_data.get(item_id, {})
-        base_value = item_data.get('base_value', 10)
+        if base_price == 0:
+            # Fallback to base item price with vendor markup
+            item_data = self.items_data.get(item_id, {})
+            base_value = item_data.get('base_value', 10)
 
-        if buying:
-            # Player is buying from vendor
-            markup = vendor.get('sell_markup', 1.2)
-            return int(base_value * markup)
-        else:
-            # Player is selling to vendor
-            buy_rate = vendor.get('buy_rate', 0.5)
-            return int(base_value * buy_rate)
+            if buying:
+                # Player is buying from vendor
+                markup = vendor.get('sell_markup', 1.2)
+                base_price = int(base_value * markup)
+            else:
+                # Player is selling to vendor
+                buy_rate = vendor.get('buy_rate', 0.5)
+                base_price = int(base_value * buy_rate)
+
+        # Apply charisma modifier if character provided
+        if character:
+            charisma = character.get('charisma', 10)
+            charisma_modifier = self.calculate_charisma_modifier(charisma, buying)
+            final_price = int(base_price * charisma_modifier)
+            # Ensure price is at least 1 gold
+            return max(1, final_price)
+
+        return base_price
 
     def vendor_has_item(self, vendor: dict, item_id: str, quantity: int = 1) -> bool:
         """Check if vendor has the specified item in sufficient quantity."""
@@ -255,7 +322,10 @@ class VendorSystem:
         # Check if there's a vendor in the room
         vendor = self.get_vendor_in_room(room_id)
         if not vendor:
-            await self.game_engine.connection_manager.send_message(player_id, "There is no vendor here to trade with.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("There is no vendor here to trade with.")
+            )
             return
 
         if action == 'buy':
@@ -273,17 +343,27 @@ class VendorSystem:
             item_id = item_entry['item_id']
             item_config = self.game_engine.config_manager.get_item(item_id)
             if item_config and item_config['name'].lower() == item_name.lower():
-                if character['gold'] >= item_entry['price']:
+                # Calculate price with charisma modifier
+                final_price = self.get_item_price(vendor, item_id, buying=True, character=character)
+
+                if character['gold'] >= final_price:
                     # Try to create item from config
-                    created_item = self.game_engine.config_manager.create_item_instance(item_id, item_entry['price'])
+                    created_item = self.game_engine.config_manager.create_item_instance(item_id, final_price)
 
                     if not created_item:
                         # Fallback to simple item creation
                         created_item = {
+                            'id': item_id,
                             'name': item_config['name'],
                             'weight': item_config.get('weight', 0),
-                            'value': item_entry['price']
+                            'value': final_price,
+                            'type': item_config.get('type', 'misc'),
+                            'description': item_config.get('description', ''),
+                            'properties': item_config.get('properties', {})
                         }
+                        # Copy light source flag if present
+                        if item_config.get('is_light_source', False):
+                            created_item['is_light_source'] = True
 
                     # Check encumbrance before buying
                     current_encumbrance = self.game_engine.player_manager.calculate_encumbrance(character)
@@ -293,26 +373,33 @@ class VendorSystem:
                     if current_encumbrance + item_weight > max_encumbrance:
                         await self.game_engine.connection_manager.send_message(
                             player_id,
-                            f"You cannot carry {created_item['name']} - you are carrying too much! ({current_encumbrance + item_weight:.1f}/{max_encumbrance})"
+                            error_message(f"You cannot carry {created_item['name']} - you are carrying too much! ({current_encumbrance + item_weight:.1f}/{max_encumbrance})")
                         )
                         return
 
                     # Player can afford it and can carry it
-                    character['gold'] -= item_entry['price']
+                    character['gold'] -= final_price
                     character['inventory'].append(created_item)
 
                     # Update encumbrance properly
                     self.game_engine.player_manager.update_encumbrance(character)
 
-                    await self.game_engine.connection_manager.send_message(player_id,
-                        f"You buy a {item_config['name']} for {item_entry['price']} gold.")
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        service_message(f"You buy a {item_config['name']} for {final_price} gold.")
+                    )
                     return
                 else:
-                    await self.game_engine.connection_manager.send_message(player_id,
-                        f"You don't have enough gold. {item_config['name']} costs {item_entry['price']} gold.")
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        error_message(f"You don't have enough gold. {item_config['name']} costs {final_price} gold.")
+                    )
                     return
 
-        await self.game_engine.connection_manager.send_message(player_id, f"The vendor doesn't have a {item_name}.")
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            error_message(f"The vendor doesn't have a {item_name}.")
+        )
 
     async def handle_sell_item(self, player_id: int, vendor: dict, item_name: str):
         """Handle selling an item to a vendor."""
@@ -322,10 +409,15 @@ class VendorSystem:
         # Find item in player inventory
         for i, item in enumerate(character['inventory']):
             if item['name'].lower() == item_name.lower():
-                # Calculate sell price using vendor's buy rate
+                # Calculate sell price using vendor's buy rate and charisma
                 item_value = item.get('value', 5)
                 buy_rate = vendor.get('buy_rate', 0.5)
-                sell_price = int(item_value * buy_rate)
+                base_sell_price = int(item_value * buy_rate)
+
+                # Apply charisma modifier
+                charisma = character.get('charisma', 10)
+                charisma_modifier = self.calculate_charisma_modifier(charisma, buying=False)
+                sell_price = max(1, int(base_sell_price * charisma_modifier))
 
                 # Remove item from inventory
                 sold_item = character['inventory'].pop(i)
@@ -334,14 +426,19 @@ class VendorSystem:
                 # Update encumbrance properly
                 self.game_engine.player_manager.update_encumbrance(character)
 
-                await self.game_engine.connection_manager.send_message(player_id,
-                    f"You sell your {sold_item['name']} for {sell_price} gold.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    service_message(f"You sell your {sold_item['name']} for {sell_price} gold.")
+                )
                 return
 
-        await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name} to sell.")
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            error_message(f"You don't have a {item_name} to sell.")
+        )
 
     async def handle_list_vendor_items(self, player_id: int):
-        """Show vendor inventory."""
+        """Show vendor inventory with charisma-adjusted prices."""
         player_data = self.game_engine.player_manager.connected_players.get(player_id)
         if not player_data or not player_data.get('character'):
             return
@@ -351,7 +448,10 @@ class VendorSystem:
 
         vendor = self.get_vendor_in_room(room_id)
         if not vendor:
-            await self.game_engine.connection_manager.send_message(player_id, "There is no vendor here.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("There is no vendor here.")
+            )
             return
 
         inventory_text = f"{vendor['name']} has the following items for sale:\n"
@@ -360,12 +460,22 @@ class VendorSystem:
             item_config = self.game_engine.config_manager.get_item(item_id)
             if item_config:
                 item_name = item_config['name']
-                price = item_entry['price']
-                inventory_text += f"  {i}. {item_name} - {price} gold\n"
+                # Calculate price with charisma modifier
+                final_price = self.get_item_price(vendor, item_id, buying=True, character=character)
+                base_price = item_entry['price']
+
+                # Show adjusted price, with indication if different from base
+                if final_price != base_price:
+                    inventory_text += f"  {i}. {item_name} - {final_price} gold (base: {base_price})\n"
+                else:
+                    inventory_text += f"  {i}. {item_name} - {final_price} gold\n"
             else:
                 inventory_text += f"  {i}. {item_id} (unknown item) - {item_entry['price']} gold\n"
 
-        await self.game_engine.connection_manager.send_message(player_id, inventory_text)
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            info_message(inventory_text)
+        )
 
     def handle_vendor_purchase(self, player, item_name: str, quantity: int, vendor_name: str = None) -> str:
         """Handle a player purchasing an item from a vendor."""
@@ -393,8 +503,10 @@ class VendorSystem:
             if not self.vendor_has_item(vendor, item_id, quantity):
                 return f"{vendor.get('name', 'The vendor')} doesn't have {quantity} {item_name}(s) in stock."
 
-            # Calculate total cost
-            item_price = self.get_item_price(vendor, item_id, buying=True)
+            # Calculate total cost with charisma modifier
+            # Convert player.character to dict if needed for get_item_price
+            character_data = player.character if isinstance(player.character, dict) else vars(player.character)
+            item_price = self.get_item_price(vendor, item_id, buying=True, character=character_data)
             total_cost = item_price * quantity
 
             # Check if player has enough gold
@@ -437,6 +549,9 @@ class VendorSystem:
                 vendors = [vendor]
 
             result = []
+            # Get character data for charisma pricing
+            character_data = player.character if isinstance(player.character, dict) else vars(player.character)
+
             for vendor in vendors:
                 vendor_display_name = vendor.get('name', 'Unknown Vendor')
                 result.append(f"\n=== {vendor_display_name} ===")
@@ -444,8 +559,11 @@ class VendorSystem:
                 if 'inventory' in vendor and vendor['inventory']:
                     for item in vendor['inventory']:
                         item_id = item.get('item_id')
-                        price = item.get('price', 0)
+                        base_price = item.get('price', 0)
                         stock = item.get('stock', 0)
+
+                        # Calculate charisma-adjusted price
+                        final_price = self.get_item_price(vendor, item_id, buying=True, character=character_data)
 
                         if item_id in self.items_data:
                             item_name = self.items_data[item_id].get('name', item_id)
@@ -455,7 +573,12 @@ class VendorSystem:
                             item_desc = ''
 
                         stock_text = "unlimited" if stock == -1 else f"{stock} in stock"
-                        result.append(f"{item_name}: {price} gold ({stock_text})")
+
+                        # Show adjusted price with base price if different
+                        if final_price != base_price:
+                            result.append(f"{item_name}: {final_price} gold (base: {base_price}) ({stock_text})")
+                        else:
+                            result.append(f"{item_name}: {final_price} gold ({stock_text})")
                         if item_desc:
                             result.append(f"  {item_desc}")
                 else:
@@ -491,9 +614,10 @@ class VendorSystem:
                 return f"You don't have '{item_name}' to sell."
 
             # Check if player has the item (simplified - would integrate with actual inventory system)
-            # For now, assume they have it and calculate sale price
+            # For now, assume they have it and calculate sale price with charisma
 
-            sale_price = self.get_item_price(vendor, item_id, buying=False)
+            character_data = player.character if isinstance(player.character, dict) else vars(player.character)
+            sale_price = self.get_item_price(vendor, item_id, buying=False, character=character_data)
             total_value = sale_price * quantity
 
             # Process the sale
@@ -525,16 +649,17 @@ class VendorSystem:
             result = [f"{item_display_name}:"]
             result.append(f"  Base value: {base_value} gold")
 
-            # Show vendor prices if there are vendors in the room
+            # Show vendor prices if there are vendors in the room (with charisma adjustment)
             room_id = player.character.room_id
             vendors = self.get_vendors_in_room(room_id)
+            character_data = player.character if isinstance(player.character, dict) else vars(player.character)
 
             if vendors:
-                result.append("  Vendor prices:")
+                result.append("  Vendor prices (with your charisma):")
                 for vendor in vendors:
                     vendor_name = vendor.get('name', 'Unknown Vendor')
-                    buy_price = self.get_item_price(vendor, item_id, buying=True)
-                    sell_price = self.get_item_price(vendor, item_id, buying=False)
+                    buy_price = self.get_item_price(vendor, item_id, buying=True, character=character_data)
+                    sell_price = self.get_item_price(vendor, item_id, buying=False, character=character_data)
                     result.append(f"    {vendor_name}: buy for {buy_price}g, sells for {sell_price}g")
 
             return "\n".join(result)
@@ -542,3 +667,110 @@ class VendorSystem:
         except Exception as e:
             self.logger.error(f"Error in item appraisal: {e}")
             return "Unable to appraise that item."
+
+    async def send_vendor_greeting(self, player_id: int, room_id: str):
+        """Send a random greeting from vendors in the room (60% chance).
+
+        Args:
+            player_id: Player entering the room
+            room_id: Room ID to check for vendors
+        """
+        # 60% chance to greet
+        if random.random() > 0.6:
+            return
+
+        vendors = self.get_vendors_in_room(room_id)
+        if not vendors:
+            return
+
+        # Pick a random vendor to greet the player
+        vendor = random.choice(vendors)
+
+        # Get greeting from NPC data via WorldManager
+        npc_id = vendor.get('id')
+        if npc_id and hasattr(self.game_engine, 'world_manager'):
+            npc_data = self.game_engine.world_manager.get_npc_data(npc_id)
+            if npc_data:
+                greeting = npc_data.get('dialogue', {}).get('greeting')
+                if greeting:
+                    vendor_name = vendor.get('name', 'The vendor')
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"\n{vendor_name} says: \"{greeting}\"\n"
+                    )
+
+    async def send_vendor_farewell(self, player_id: int, room_id: str):
+        """Send a random farewell from vendors in the room (60% chance).
+
+        Args:
+            player_id: Player leaving the room
+            room_id: Room ID to check for vendors
+        """
+        # 60% chance to say goodbye
+        if random.random() > 0.6:
+            return
+
+        vendors = self.get_vendors_in_room(room_id)
+        if not vendors:
+            return
+
+        # Pick a random vendor to bid farewell
+        vendor = random.choice(vendors)
+
+        # Get farewell from NPC data via WorldManager
+        npc_id = vendor.get('id')
+        if npc_id and hasattr(self.game_engine, 'world_manager'):
+            npc_data = self.game_engine.world_manager.get_npc_data(npc_id)
+            if npc_data:
+                farewell = npc_data.get('dialogue', {}).get('goodbye')
+                if farewell:
+                    vendor_name = vendor.get('name', 'The vendor')
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"\n{vendor_name} calls out: \"{farewell}\"\n"
+                    )
+
+    async def replenish_vendor_stock(self):
+        """Replenish vendor stock to initial levels (non-infinite items only).
+
+        This is called periodically (every 5 minutes) to restore vendor inventory.
+        Items with stock = -1 (infinite) are not affected.
+        """
+        current_time = time.time()
+
+        # Check if it's time to replenish
+        if current_time - self.last_replenishment_time < self.replenishment_interval:
+            return
+
+        # Replenish stock for all vendors
+        replenished_count = 0
+        for vendor_id, vendor_data in self.vendors.items():
+            if vendor_id not in self.vendor_initial_stock:
+                continue
+
+            initial_stock = self.vendor_initial_stock[vendor_id]
+            inventory = vendor_data.get('inventory', [])
+
+            for item in inventory:
+                item_id = item.get('item_id')
+                current_stock = item.get('stock', 0)
+
+                # Skip infinite stock items
+                if current_stock == -1:
+                    continue
+
+                # Check if this item should be replenished
+                if item_id in initial_stock:
+                    original_stock = initial_stock[item_id]
+                    if current_stock < original_stock:
+                        item['stock'] = original_stock
+                        replenished_count += 1
+                        self.logger.debug(
+                            f"Replenished {item_id} for vendor {vendor_id}: "
+                            f"{current_stock} -> {original_stock}"
+                        )
+
+        if replenished_count > 0:
+            self.logger.info(f"Replenished {replenished_count} items across all vendors")
+
+        self.last_replenishment_time = current_time

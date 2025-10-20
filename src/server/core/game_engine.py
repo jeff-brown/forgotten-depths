@@ -193,7 +193,7 @@ class GameEngine:
 
         if login_state == 'username_prompt':
             # Store username and ask for password
-            player_data['username'] = input_text.strip()
+            player_data['username'] = input_text.strip().capitalize()
             player_data['login_state'] = 'password_prompt'
             self.connection_manager.send_message(player_id, "Password: ")
 

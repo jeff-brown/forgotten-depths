@@ -105,13 +105,11 @@
       "experience_reward": 40,
       "gold_reward": [
         0,
-        0
+        8
       ],
       "aggressive": true,
       "speed": 1.0,
       "abilities": [
-        "claws",
-        "breathed flames at",
         "multiattack"
       ],
       "loot_table": [
@@ -135,7 +133,19 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 74,
+      "gender": "neuter",
+      "combat_skill": 85,
+      "can_track": true,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "breathed flames at",
+        "chance": 0.35,
+        "damage_min": 12,
+        "damage_max": 48
+      },
+      "morale": 15
     },
     {
       "id": "hydra",

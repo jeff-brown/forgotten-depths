@@ -95,14 +95,9 @@ class WorldLoader:
         return items
 
     def load_npcs(self) -> Dict[str, Any]:
-        """Load all NPC data."""
+        """Load all NPC data from data/npcs directory."""
         npcs = {}
-
-        # Try data/npcs first (new structure)
         npcs_dir = os.path.join(self.data_dir, "npcs")
-        if not os.path.exists(npcs_dir):
-            # Fall back to data/world/npcs (old structure)
-            npcs_dir = os.path.join(self.data_dir, "world", "npcs")
 
         if not os.path.exists(npcs_dir):
             return npcs

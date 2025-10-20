@@ -1,8 +1,18 @@
 {
   "id": "inn_room_1",
   "title": "Inn Room",
-  "description": "A cozy inn room with a comfortable bed, a small wooden table, and a window overlooking the town square. The room is simply furnished but clean and welcoming. A window leads out to a small balcony.",
+  "description": "A cozy inn room with a comfortable bed, a small wooden table, and a window overlooking the town square. The room is simply furnished but clean and welcoming. A full-length mirror hangs on one wall, reflecting the room's interior. A window leads out to a small balcony.",
   "area_id": "starter_town",
   "is_safe": true,
-  "light_level": 0.7
+  "light_level": 0.7,
+  "exits": {
+    "down": "inn_entrance",
+    "east": "inn_balcony"
+  },
+  "special_actions": {
+    "gaze mirror": {
+      "type": "self_inspect",
+      "message": "You gaze into the full-length mirror and see your reflection."
+    }
+  }
 }

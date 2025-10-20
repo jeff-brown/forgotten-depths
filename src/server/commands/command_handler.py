@@ -5,6 +5,11 @@ import random
 import json
 import time
 from typing import Optional, Dict, Any, Tuple
+from ..utils.colors import (
+    service_message, item_found, error_message,
+    info_message, success_message, announcement,
+    Colors, wrap_color
+)
 
 
 class CommandHandler:
@@ -56,7 +61,7 @@ class CommandHandler:
                 return
 
             # Store username and ask for password
-            player_data['username'] = input_text.strip()
+            player_data['username'] = input_text.strip().capitalize()
             player_data['login_state'] = 'password_prompt'
             await self.game_engine.connection_manager.send_message(player_id, "Password: ", add_newline=False)
 
@@ -73,7 +78,10 @@ class CommandHandler:
                 # Load character or prompt for character creation
                 await self._handle_character_selection(player_id, username)
             else:
-                await self.game_engine.connection_manager.send_message(player_id, "Invalid credentials. Try again.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("Invalid credentials. Try again.")
+                )
                 await self.game_engine.connection_manager.send_message(player_id, "Username: ")
                 player_data['login_state'] = 'username_prompt'
 
@@ -143,6 +151,11 @@ class CommandHandler:
                 self.game_engine.player_manager.set_player_character(player_id, existing_character)
                 await self.game_engine.connection_manager.send_message(player_id, f"Welcome back! Character '{username}' loaded successfully!")
                 await self.game_engine._send_room_description(player_id, detailed=True)
+
+                # Send vendor greeting if in a vendor room
+                room_id = existing_character.get('room_id')
+                if room_id and hasattr(self.game_engine, 'vendor_system'):
+                    await self.game_engine.vendor_system.send_vendor_greeting(player_id, room_id)
                 return
             else:
                 print(f"[DEBUG] No existing character found for '{username}', creating new one")
@@ -210,7 +223,10 @@ class CommandHandler:
                     player_data['char_creation_step'] = 'class'
                     await self._show_class_selection(player_id)
                 else:
-                    await self.game_engine.connection_manager.send_message(player_id, "Invalid choice. Try again.")
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        error_message("Invalid choice. Try again.")
+                    )
                     await self._show_race_selection(player_id)
             except ValueError:
                 await self.game_engine.connection_manager.send_message(player_id, "Please enter a number.")
@@ -225,7 +241,10 @@ class CommandHandler:
                     player_data['selected_class'] = class_list[choice]
                     await self._create_character_with_selection(player_id)
                 else:
-                    await self.game_engine.connection_manager.send_message(player_id, "Invalid choice. Try again.")
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        error_message("Invalid choice. Try again.")
+                    )
                     await self._show_class_selection(player_id)
             except ValueError:
                 await self.game_engine.connection_manager.send_message(player_id, "Please enter a number.")
@@ -369,6 +388,11 @@ class CommandHandler:
         await self.game_engine.connection_manager.send_message(player_id, f"Welcome to the world, {username}!")
         await self.game_engine._send_room_description(player_id, detailed=True)
 
+        # Send vendor greeting if spawned in a vendor room
+        room_id = character.get('room_id')
+        if room_id and hasattr(self.game_engine, 'vendor_system'):
+            await self.game_engine.vendor_system.send_vendor_greeting(player_id, room_id)
+
     async def _handle_game_command(self, player_id: int, command: str, params: str):
         """Handle a game command from an authenticated player."""
         player_data = self.game_engine.player_manager.get_player_data(player_id)
@@ -393,11 +417,15 @@ class CommandHandler:
 
         elif command in ['look', 'l']:
             if params:
-                # Look at specific target
-                await self._handle_look_at_target(player_id, params)
+                # Check if params is a direction first
+                await self._handle_look_command(player_id, params)
             else:
                 # Look around the room
                 await self.game_engine._send_room_description(player_id, detailed=True)
+
+        elif command == 'gaze' and params:
+            # Handle special room actions like "gaze mirror"
+            await self._handle_special_action(player_id, command, params)
 
         elif command in ['map', 'worldmap']:
             # Show map of areas and rooms
@@ -407,53 +435,120 @@ class CommandHandler:
             help_text = """
 Available Commands:
 ==================
-look (l)        - Look around or examine target
-help (?)        - Show this help
-exits           - Show exits
-stats (st)      - Show character stats
-reroll          - Reroll stats (level 1, 0 XP only)
-train           - Level up at a trainer
-inventory (i)   - Show inventory
-spellbook (sb)  - Show learned spells
-get <item>      - Pick up an item
-drop <item>     - Drop an item
-eat <item>      - Eat food
-drink <item>    - Drink beverage
-read <item>     - Read a scroll to learn a spell
-equip <item>    - Equip weapon or armor
-unequip <item>  - Unequip weapon or armor
-list            - Show vendor wares
-buy <item>      - Buy from vendor
-sell <item>     - Sell to vendor
+look (l)           - Look around or examine target
+gaze <target>      - Gaze at a target for detailed examination
+help (?)           - Show this help
+exits (ex)         - Show exits
+map [area]         - Show world map or detailed area map
+
+Character Info:
+==============
+stats (st)         - Show character stats
+health (he)        - Show hit points, mana, and status
+experience (xp)    - Show level, experience, and rune
+inventory (inv,i)  - Show inventory
+spellbook (sb)     - Show learned spells
+reroll             - Reroll stats (level 1, 0 XP only)
+train              - Level up at a trainer
+
+Items & Equipment:
+=================
+get <item>         - Pick up an item
+drop <item>        - Drop an item
+eat <item>         - Eat food
+drink <item>       - Drink beverage (dr, quaff)
+read <item>        - Read a scroll to learn a spell (study)
+equip <item>       - Equip weapon or armor (eq)
+unequip <item>     - Unequip weapon or armor
+put <item>         - Put item in container (store, stow)
+ring <item>        - Manage rings (ri)
+light <item>       - Light a torch, lantern, or candle (ignite)
+extinguish <item>  - Extinguish a light source (douse, snuff)
+fill <item>        - Fill a lantern with lamp oil (refill)
+
+Traps & Locks:
+=============
+search             - Search for traps in current room (detect)
+disarm             - Disarm a detected trap (disable)
+
+Vendors & Services:
+==================
+list               - Show vendor wares (wares)
+buy <item>         - Buy from vendor (b)
+sell <item>        - Sell to vendor
+rent/rest          - Rent a room at inn (restores HP/MP, cost scales with level)
+heal               - Receive healing from healer (if available)
 
 Combat Commands:
 ===============
-attack <target> - Attack a target
-cast <spell>    - Cast a spell
-flee            - Try to flee from combat
+attack <target>    - Attack a target (att, a, kill)
+cast <spell>       - Cast a spell (c)
+shoot <target>     - Shoot with ranged weapon (fire, sh)
+retrieve           - Retrieve spent ammunition (recover, gather)
+flee               - Try to flee from combat (run)
+
+Quests & NPCs:
+=============
+quest              - Show quest log (quests, questlog)
+talk <npc>         - Talk to an NPC (speak)
+accept <quest>     - Accept a quest from NPC
+abandon <quest>    - Abandon a quest
 
 Movement:
 =========
-north (n)       - Go north
-south (s)       - Go south
-east (e)        - Go east
-west (w)        - Go west
-up (u)          - Go up
-down (d)        - Go down
-map [area]      - Show world map or detailed area map
-quit (q)        - Quit the game
+north (n)          - Go north
+south (s)          - Go south
+east (e)           - Go east
+west (w)           - Go west
+northeast (ne)     - Go northeast
+northwest (nw)     - Go northwest
+southeast (se)     - Go southeast
+southwest (sw)     - Go southwest
+up (u)             - Go up
+down (d)           - Go down
+buy passage        - Buy passage across the great lake (requires rune, 100 gold)
+
+Class Abilities:
+===============
+Rogue:
+  picklock         - Pick a locked door
+  backstab         - Next attack deals massive damage
+  shadow_step      - Become harder to hit for a duration
+  poison_blade     - Poison your weapon for multiple attacks
+
+Fighter:
+  power_attack     - Next attack deals more damage but less accurate
+  cleave           - Attack multiple enemies at once
+  dual_wield       - Fight with two weapons
+  shield_bash      - Bash with shield to stun enemy
+  battle_cry       - Boost damage for a duration
+
+Ranger:
+  track            - Track creatures in nearby rooms
+  tame <creature>  - Tame a creature as a companion
+  pathfind <dest>  - Find path to destination
+  forage           - Search for food and supplies
+  camouflage       - Hide from enemies
+  multishot        - Fire arrows at multiple targets
+  call_of_the_wild - Summon a wild companion
+
+System:
+======
+quit (q)           - Quit the game
 
 Admin Commands (Debug):
 ======================
-givegold <amt>  - Give yourself gold
-giveitem <id>   - Give yourself an item
-givexp <amt>    - Give yourself experience
-mobstatus       - Show all mobs and their flags
-teleport <room> - Teleport to a room (or 'teleport <player> <room>')
+givegold <amt>     - Give yourself gold
+giveitem <id>      - Give yourself an item
+givexp <amt>       - Give yourself experience
+mobstatus          - Show all mobs and their flags
+teleport <room>    - Teleport to a room (or 'teleport <player> <room>')
+respawnnpc <id>    - Respawn an NPC
+completequest <id> - Mark a quest as complete
 """
             await self.game_engine.connection_manager.send_message(player_id, help_text)
 
-        elif command == 'exits':
+        elif command in ['exits', 'ex']:
             exits = self.game_engine.world_manager.get_exits_from_room(character['room_id'])
             if exits:
                 await self.game_engine.connection_manager.send_message(player_id, f"Available exits: {', '.join(exits.keys())}")
@@ -462,6 +557,12 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
 
         elif command in ['stats', 'score', 'st']:
             await self._handle_stats_command(player_id, character)
+
+        elif command in ['health', 'he']:
+            await self._handle_health_command(player_id, character)
+
+        elif command in ['experience', 'xp']:
+            await self._handle_experience_command(player_id, character)
 
         elif command == 'reroll':
             await self._handle_reroll_command(player_id, character)
@@ -534,6 +635,42 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
             # Unequip command without parameters
             await self.game_engine.connection_manager.send_message(player_id, "What would you like to unequip?")
 
+        elif command in ['light', 'ignite'] and params:
+            # Light a light source (torch, lantern, etc.)
+            await self._handle_light_command(player_id, params)
+
+        elif command in ['light', 'ignite']:
+            # Light command without parameters
+            await self.game_engine.connection_manager.send_message(player_id, "What would you like to light?")
+
+        elif command in ['extinguish', 'douse', 'snuff'] and params:
+            # Extinguish a lit light source
+            await self._handle_extinguish_command(player_id, params)
+
+        elif command in ['extinguish', 'douse', 'snuff']:
+            # Extinguish command without parameters
+            await self.game_engine.connection_manager.send_message(player_id, "What would you like to extinguish?")
+
+        elif command in ['fill', 'refill'] and params:
+            # Fill/refill a lantern with oil
+            await self._handle_fill_command(player_id, params)
+
+        elif command in ['fill', 'refill']:
+            # Fill command without parameters
+            await self.game_engine.connection_manager.send_message(player_id, "What would you like to fill?")
+
+        elif command in ['search', 'detect']:
+            # Search for traps in current room
+            await self._handle_search_traps_command(player_id, character)
+
+        elif command in ['disarm', 'disable']:
+            # Disarm a detected trap
+            await self._handle_disarm_trap_command(player_id, character)
+
+        elif command in ['buy', 'b'] and params and params.lower() in ['passage']:
+            # Handle buying passage across the great lake
+            await self._handle_buy_passage(player_id, character)
+
         elif command in ['buy', 'b', 'sell'] and params:
             # Handle buying/selling with vendors
             await self._handle_trade_command(player_id, command, params)
@@ -542,6 +679,10 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
             # Show vendor inventory if in vendor room
             # Support "list" or "list <vendor_name>"
             await self._handle_list_vendor_items(player_id, params if params else None)
+
+        elif command in ['rent', 'rest', 'sleep']:
+            # Rent a room at the inn to restore HP/MP
+            await self._handle_rent_room(player_id, character)
 
         elif command in ['heal', 'healing'] and params:
             # Handle healing at a temple/healer
@@ -558,12 +699,29 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
         elif command in ['ring', 'ri'] and not params:
             await self.game_engine.connection_manager.send_message(player_id, "What would you like to ring?")
 
+        elif command in ['put', 'store', 'stow'] and params:
+            # Put item in container
+            await self._handle_put_command(player_id, character, params)
+
+        elif command in ['put', 'store', 'stow']:
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: put <item> in <container>")
+
         # Combat commands
         elif command in ['attack', 'att', 'a', 'kill']:
             if not params:
                 await self.game_engine.connection_manager.send_message(player_id, "Attack what?")
             else:
                 await self._handle_attack_command(player_id, params)
+
+        elif command in ['shoot', 'fire', 'sh']:
+            if not params:
+                await self.game_engine.connection_manager.send_message(player_id, "Shoot what?")
+            else:
+                await self._handle_shoot_command(player_id, params)
+
+        elif command in ['retrieve', 'recover', 'gather']:
+            # Retrieve spent ammunition (arrows, bolts, etc.)
+            await self._handle_retrieve_ammo(player_id)
 
         elif command in ['flee', 'run']:
             await self._handle_flee_command(player_id)
@@ -588,6 +746,12 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
 
         elif command == 'accept':
             await self.game_engine.connection_manager.send_message(player_id, "What quest would you like to accept?")
+
+        elif command in ['abandon', 'drop'] and params:
+            await self._handle_abandon_quest(player_id, character, params)
+
+        elif command in ['abandon', 'drop']:
+            await self.game_engine.connection_manager.send_message(player_id, "What quest would you like to abandon? Usage: abandon <quest_id>")
 
         # Admin commands
         elif command == 'givegold' and params:
@@ -630,15 +794,93 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
             await self.game_engine.connection_manager.send_message(player_id, "Usage: teleport <room_id> OR teleport <player_name> <room_id>")
 
         else:
-            # Treat unknown commands as speech/chat messages
-            username = player_data.get('username', 'Someone')
-            room_id = character.get('room_id')
+            # Check if this is a class ability command
+            ability = self.game_engine.ability_system.get_ability_by_command(character, command)
+            if ability:
+                # Execute the ability
+                await self._handle_ability_command(player_id, character, ability, params)
+            else:
+                # Treat unknown commands as speech/chat messages
+                username = player_data.get('username', 'Someone')
+                room_id = character.get('room_id')
 
-            # Broadcast message to others in the room
-            await self.game_engine._notify_room_except_player(room_id, player_id, f"From {username}: {original_command}\n")
+                # Broadcast message to others in the room
+                await self.game_engine._notify_room_except_player(room_id, player_id, f"From {username}: {original_command}\n")
 
-            # Confirm to sender
-            await self.game_engine.connection_manager.send_message(player_id, "-- Message sent --")
+                # Confirm to sender
+                await self.game_engine.connection_manager.send_message(player_id, "-- Message sent --")
+
+    async def _handle_health_command(self, player_id: int, character: dict):
+        """Display health, mana, and status."""
+        char = character
+
+        # Determine status based on hunger/thirst
+        hunger = char.get('hunger', 100)
+        thirst = char.get('thirst', 100)
+        low_threshold = self.game_engine.config_manager.get_setting('player', 'hunger_thirst', 'low_warning_threshold', default=20)
+        status_conditions = []
+
+        if hunger <= 0:
+            status_conditions.append("Starving")
+        elif hunger <= low_threshold:
+            status_conditions.append("Hungry")
+
+        if thirst <= 0:
+            status_conditions.append("Dehydrated")
+        elif thirst <= low_threshold:
+            status_conditions.append("Thirsty")
+
+        # Use existing status or build from conditions
+        if status_conditions:
+            status = ", ".join(status_conditions)
+        else:
+            status = char.get('status', 'Healthy')
+
+        # Check if class uses magic
+        player_class = char.get('class', 'fighter')
+        class_uses_magic = self._class_uses_magic(player_class)
+
+        # Build mana line only if class uses magic
+        if class_uses_magic:
+            current_mana = int(char.get('mana', char.get('current_mana', 10)))
+            max_mana = int(char.get('max_mana', 10))
+            mana_value = wrap_color(f"{current_mana} / {max_mana}", Colors.BOLD_WHITE)
+            mana_line = f"{wrap_color('Mana:', Colors.BOLD_CYAN)}          {mana_value}\n"
+        else:
+            mana_line = ""
+
+        current_hp = int(char.get('health', char.get('current_hit_points', 20)))
+        max_hp = int(char.get('max_hit_points', 20))
+        hp_value = wrap_color(f"{current_hp} / {max_hp}", Colors.BOLD_WHITE)
+
+        health_text = f"""
+{wrap_color('Hit Points:', Colors.BOLD_CYAN)}    {hp_value}
+{mana_line}{wrap_color('Status:', Colors.BOLD_CYAN)}        {wrap_color(status, Colors.BOLD_WHITE)}
+{Colors.BOLD_WHITE}"""
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            health_text
+        )
+
+    async def _handle_experience_command(self, player_id: int, character: dict):
+        """Display experience, level, and rune."""
+        char = character
+
+        # Calculate XP progress
+        current_level = char.get('level', 1)
+        current_xp = char.get('experience', 0)
+        xp_for_next = self.calculate_xp_for_level(current_level + 1)
+        xp_remaining = xp_for_next - current_xp
+
+        experience_text = f"""
+{wrap_color('Level:', Colors.BOLD_CYAN)}         {wrap_color(str(char['level']), Colors.BOLD_YELLOW)}
+{wrap_color('Experience:', Colors.BOLD_CYAN)}    {wrap_color(f"{char['experience']}/{xp_for_next}", Colors.BOLD_WHITE)} ({xp_remaining} to next level)
+{wrap_color('Rune:', Colors.BOLD_CYAN)}          {wrap_color(char['rune'].title(), Colors.BOLD_WHITE)}
+{Colors.BOLD_WHITE}"""
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            experience_text
+        )
 
     async def _handle_stats_command(self, player_id: int, character: dict):
         """Display character statistics."""
@@ -672,52 +914,105 @@ teleport <room> - Teleport to a room (or 'teleport <player> <room>')
         xp_for_next = self.calculate_xp_for_level(current_level + 1)
         xp_remaining = xp_for_next - current_xp
 
+        # Check if class uses magic
+        player_class = char.get('class', 'fighter')
+        class_uses_magic = self._class_uses_magic(player_class)
+
+        # Build mana line only if class uses magic
+        if class_uses_magic:
+            current_mana = int(char.get('mana', char.get('current_mana', 10)))
+            max_mana = int(char.get('max_mana', 10))
+            mana_value = wrap_color(f"{current_mana} / {max_mana}", Colors.BOLD_WHITE)
+            mana_line = f"{wrap_color('Mana:', Colors.BOLD_CYAN)}          {mana_value}\n"
+        else:
+            mana_line = ""
+
+        # Pre-calculate HP values
+        current_hp = int(char.get('health', char.get('current_hit_points', 20)))
+        max_hp = int(char.get('max_hit_points', 20))
+        hp_value = wrap_color(f"{current_hp} / {max_hp}", Colors.BOLD_WHITE)
+
+        # Colorize stats display
         stats_text = f"""
-Name:          {char['name']}
-Species:       {char['species']}
-Class:         {char['class']}
-Level:         {char['level']}
-Experience:    {char['experience']}/{xp_for_next} ({xp_remaining} to next level)
-Rune:          {char['rune']}
+{wrap_color('Name:', Colors.BOLD_CYAN)}          {wrap_color(char['name'], Colors.BOLD_WHITE)}
+{wrap_color('Species:', Colors.BOLD_CYAN)}       {wrap_color(char['species'], Colors.BOLD_WHITE)}
+{wrap_color('Class:', Colors.BOLD_CYAN)}         {wrap_color(char['class'], Colors.BOLD_WHITE)}
+{wrap_color('Level:', Colors.BOLD_CYAN)}         {wrap_color(str(char['level']), Colors.BOLD_YELLOW)}
+{wrap_color('Experience:', Colors.BOLD_CYAN)}    {wrap_color(f"{char['experience']}/{xp_for_next}", Colors.BOLD_WHITE)} ({xp_remaining} to next level)
+{wrap_color('Rune:', Colors.BOLD_CYAN)}          {wrap_color(char['rune'].title(), Colors.BOLD_WHITE)}
 
-Intellect:     {char['intellect']}
-Wisdom:        {char['wisdom']}
-Strength:      {char['strength']}
-Constitution:  {char['constitution']}
-Dexterity:     {char['dexterity']}
-Charisma:      {char['charisma']}
+{wrap_color('Intellect:', Colors.BOLD_CYAN)}     {wrap_color(str(char['intellect']), Colors.BOLD_WHITE)}
+{wrap_color('Wisdom:', Colors.BOLD_CYAN)}        {wrap_color(str(char['wisdom']), Colors.BOLD_WHITE)}
+{wrap_color('Strength:', Colors.BOLD_CYAN)}      {wrap_color(str(char['strength']), Colors.BOLD_WHITE)}
+{wrap_color('Constitution:', Colors.BOLD_CYAN)}  {wrap_color(str(char['constitution']), Colors.BOLD_WHITE)}
+{wrap_color('Dexterity:', Colors.BOLD_CYAN)}     {wrap_color(str(char['dexterity']), Colors.BOLD_WHITE)}
+{wrap_color('Charisma:', Colors.BOLD_CYAN)}      {wrap_color(str(char['charisma']), Colors.BOLD_WHITE)}
 
-Hit Points:    {int(char.get('health', char.get('current_hit_points', 20)))} / {int(char.get('max_hit_points', 20))}
-Mana:          {int(char.get('mana', char.get('current_mana', 10)))} / {int(char.get('max_mana', 10))}
-Status:        {status}
-Armor Class:   {self.get_effective_armor_class(char)}
+{wrap_color('Hit Points:', Colors.BOLD_CYAN)}    {hp_value}
+{mana_line}{wrap_color('Status:', Colors.BOLD_CYAN)}        {wrap_color(status, Colors.BOLD_WHITE)}
+{wrap_color('Armor Class:', Colors.BOLD_CYAN)}   {wrap_color(str(self.get_effective_armor_class(char)), Colors.BOLD_WHITE)}
 
-Weapon:        {char['equipped']['weapon']['name'] if char['equipped']['weapon'] else 'Fists'}
-Armor:         {char['equipped']['armor']['name'] if char['equipped']['armor'] else 'None'}
-Encumbrance:   {char['encumbrance']} / {char['max_encumbrance']}
-Gold:          {char['gold']}
-"""
-        await self.game_engine.connection_manager.send_message(player_id, stats_text)
+{wrap_color('Weapon:', Colors.BOLD_CYAN)}        {wrap_color(char['equipped']['weapon']['name'] if char['equipped']['weapon'] else 'Fists', Colors.BOLD_WHITE)}
+{wrap_color('Armor:', Colors.BOLD_CYAN)}         {wrap_color(char['equipped']['armor']['name'] if char['equipped']['armor'] else 'None', Colors.BOLD_WHITE)}
+{wrap_color('Encumbrance:', Colors.BOLD_CYAN)}   {wrap_color(f"{char['encumbrance']} / {char['max_encumbrance']}", Colors.BOLD_WHITE)}
+{wrap_color('Gold:', Colors.BOLD_CYAN)}          {wrap_color(str(char['gold']), Colors.BOLD_YELLOW)}
+{Colors.BOLD_WHITE}"""
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            stats_text
+        )
 
     async def _handle_inventory_command(self, player_id: int, character: dict):
         """Display player inventory."""
         char = character
-        inventory_text = f"You are carrying:\n"
+        inventory_text = f"{wrap_color('You are carrying:', Colors.BOLD_CYAN)}\n"
         if char['inventory']:
             for i, item in enumerate(char['inventory'], 1):
-                inventory_text += f"  {i}. {item['name']}\n"
+                item_name = item['name']
+
+                # Add quantity if item has more than 1
+                quantity = item.get('quantity', 1)
+                if quantity > 1:
+                    item_name += f" {wrap_color(f'({quantity})', Colors.BOLD_GREEN)}"
+
+                # Add lit/unlit status for light sources
+                if item.get('is_light_source', False):
+                    if item.get('is_lit', False):
+                        time_remaining = item.get('time_remaining', 0)
+                        minutes = int(time_remaining // 60)
+                        seconds = int(time_remaining % 60)
+                        item_name += f" {wrap_color('(lit', Colors.BOLD_YELLOW)}{wrap_color(f' - {minutes}m {seconds}s', Colors.BOLD_GREEN)}{wrap_color(')', Colors.BOLD_YELLOW)}"
+                    else:
+                        item_name += f" {wrap_color('(unlit)', Colors.BOLD_WHITE)}"
+
+                # Add container contents summary
+                if item.get('type') == 'container':
+                    contents = item.get('contents', [])
+                    if contents:
+                        # Show total quantity of items in container
+                        for content_item in contents:
+                            content_quantity = content_item.get('quantity', 1)
+                            content_name = content_item.get('name', 'items')
+                            item_name += f" {wrap_color(f'({content_quantity} {content_name})', Colors.BOLD_GREEN)}"
+                    else:
+                        item_name += f" {wrap_color('(empty)', Colors.BOLD_WHITE)}"
+
+                inventory_text += f"  {wrap_color(str(i) + '.', Colors.BOLD_WHITE)} {wrap_color(item_name, Colors.BOLD_WHITE)}\n"
         else:
-            inventory_text += "  Nothing.\n"
+            inventory_text += f"  {wrap_color('Nothing.', Colors.BOLD_WHITE)}\n"
 
         # Show equipped items
-        inventory_text += "\n--- Equipped ---\n"
+        inventory_text += f"\n{wrap_color('--- Equipped ---', Colors.BOLD_YELLOW)}\n"
         weapon = char['equipped']['weapon']
         armor = char['equipped']['armor']
-        inventory_text += f"Weapon: {weapon['name'] if weapon else 'None'}\n"
-        inventory_text += f"Armor:  {armor['name'] if armor else 'None'}\n"
+        inventory_text += f"{wrap_color('Weapon:', Colors.BOLD_CYAN)} {wrap_color(weapon['name'] if weapon else 'None', Colors.BOLD_WHITE)}\n"
+        inventory_text += f"{wrap_color('Armor:', Colors.BOLD_CYAN)}  {wrap_color(armor['name'] if armor else 'None', Colors.BOLD_WHITE)}\n"
 
-        inventory_text += f"\nGold: {char['gold']}"
-        await self.game_engine.connection_manager.send_message(player_id, inventory_text)
+        inventory_text += f"\n{wrap_color('Gold:', Colors.BOLD_CYAN)} {wrap_color(str(char['gold']), Colors.BOLD_YELLOW)}{Colors.BOLD_WHITE}"
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            inventory_text
+        )
 
     async def _handle_get_item(self, player_id: int, item_name: str):
         """Handle picking up an item from the room."""
@@ -731,23 +1026,18 @@ Gold:          {char['gold']}
         # First, try to pick up an item from the room floor
         if room_id:
             item, match_type = self.game_engine.item_manager.remove_item_from_room(room_id, item_name)
-            if match_type == 'multiple':
-                # Handle multiple matches
-                room_items = self.game_engine.item_manager.get_room_items(room_id)
-                matches = [item['name'] for item in room_items if item_name.lower() in item['name'].lower()]
-                match_list = ", ".join(matches)
-                await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple items on the floor: {match_list}. Please be more specific.")
-                return
-            elif item:
+            if item:
                 # Check encumbrance before picking up
                 current_encumbrance = self.game_engine.player_manager.calculate_encumbrance(character)
                 item_weight = item.get('weight', 0)
                 max_encumbrance = self.game_engine.player_manager.calculate_max_encumbrance(character)
 
                 if current_encumbrance + item_weight > max_encumbrance:
+                    # Put the item back on the floor since we can't pick it up
+                    self.game_engine.item_manager.add_item_to_room(room_id, item)
                     await self.game_engine.connection_manager.send_message(
                         player_id,
-                        f"You cannot pick up {item['name']} - you are carrying too much! ({current_encumbrance + item_weight:.1f}/{max_encumbrance})"
+                        error_message(f"You cannot pick up {item['name']} - you are carrying too much! ({current_encumbrance + item_weight:.1f}/{max_encumbrance})")
                     )
                     return
 
@@ -757,7 +1047,10 @@ Gold:          {char['gold']}
                 # Update encumbrance
                 self.game_engine.player_manager.update_encumbrance(character)
 
-                await self.game_engine.connection_manager.send_message(player_id, f"You pick up the {item['name']}.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    item_found(f"You pick up the {item['name']}.")
+                )
 
                 # Notify others in the room
                 username = player_data.get('username', 'Someone')
@@ -765,7 +1058,10 @@ Gold:          {char['gold']}
                 return
 
         # Item not found on floor or in config
-        await self.game_engine.connection_manager.send_message(player_id, f"You don't see a {item_name} here.")
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            error_message(f"You don't see a {item_name} here.")
+        )
 
     async def _handle_drop_item(self, player_id: int, item_name: str):
         """Handle dropping an item from inventory."""
@@ -780,7 +1076,10 @@ Gold:          {char['gold']}
         item_to_drop, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
 
         if match_type == 'none':
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name}.")
+            )
             return
         elif match_type == 'multiple':
             # If multiple matches, just drop the first one
@@ -797,7 +1096,10 @@ Gold:          {char['gold']}
         # Update encumbrance
         self.game_engine.player_manager.update_encumbrance(character)
 
-        await self.game_engine.connection_manager.send_message(player_id, f"Ok, you dropped your {dropped_item['name'].lower()}.")
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"Ok, you dropped your {dropped_item['name'].lower()}.")
+        )
 
         # Notify others in the room
         username = player_data.get('username', 'Someone')
@@ -817,7 +1119,10 @@ Gold:          {char['gold']}
         item_to_eat, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
 
         if match_type == 'none':
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name}.")
+            )
             return
         elif match_type == 'multiple':
             # If multiple matches, just eat the first one
@@ -826,7 +1131,10 @@ Gold:          {char['gold']}
         # Check if item is food
         item_type = item_to_eat.get('type', '')
         if item_type != 'food':
-            await self.game_engine.connection_manager.send_message(player_id, f"You can't eat {item_to_eat['name']}!")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You can't eat {item_to_eat['name']}!")
+            )
             return
 
         # Get nutrition value (default 30 if not specified)
@@ -837,8 +1145,14 @@ Gold:          {char['gold']}
         new_hunger = min(100, current_hunger + nutrition)
         character['hunger'] = new_hunger
 
-        # Remove item from inventory
-        character['inventory'].pop(item_index)
+        # Decrement quantity or remove item from inventory
+        current_quantity = item_to_eat.get('quantity', 1)
+        if current_quantity > 1:
+            # Decrement quantity
+            item_to_eat['quantity'] = current_quantity - 1
+        else:
+            # Remove item entirely if it's the last one
+            character['inventory'].pop(item_index)
 
         await self.game_engine.connection_manager.send_message(
             player_id,
@@ -860,7 +1174,10 @@ Gold:          {char['gold']}
         item_to_drink, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
 
         if match_type == 'none':
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name}.")
+            )
             return
         elif match_type == 'multiple':
             # If multiple matches, just drink the first one
@@ -869,7 +1186,10 @@ Gold:          {char['gold']}
         # Check if item is a drink or consumable
         item_type = item_to_drink.get('type', '')
         if item_type not in ['drink', 'potion', 'consumable']:
-            await self.game_engine.connection_manager.send_message(player_id, f"You can't drink {item_to_drink['name']}!")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You can't drink {item_to_drink['name']}!")
+            )
             return
 
         # Initialize messages list
@@ -992,14 +1312,357 @@ Gold:          {char['gold']}
             character['thirst'] = new_thirst
             messages.append(f"Your thirst is quenched. (Thirst: {new_thirst:.0f}/100)")
 
-        # Remove item from inventory
-        character['inventory'].pop(item_index)
+        # Decrement quantity or remove item from inventory
+        current_quantity = item_to_drink.get('quantity', 1)
+        if current_quantity > 1:
+            # Decrement quantity
+            item_to_drink['quantity'] = current_quantity - 1
+        else:
+            # Remove item entirely if it's the last one
+            character['inventory'].pop(item_index)
 
         # Send all messages
         await self.game_engine.connection_manager.send_message(
             player_id,
             "\n".join(messages)
         )
+
+    async def _handle_light_command(self, player_id: int, item_name: str):
+        """Handle lighting a light source (torch, lantern, candle)."""
+        from ..utils.colors import success_message, error_message, announcement
+
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        inventory = character.get('inventory', [])
+
+        # Find light source in inventory
+        item_to_light, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
+
+        if match_type == 'none':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name}.")
+            )
+            return
+        elif match_type == 'multiple':
+            # Find the matching items for the error message
+            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
+            match_list = ", ".join(matches)
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
+            )
+            return
+
+        # Check if item is a light source
+        if not item_to_light.get('is_light_source', False):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You can't light {item_to_light['name']}.")
+            )
+            return
+
+        # Check if already lit
+        if item_to_light.get('is_lit', False):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"The {item_to_light['name']} is already lit!")
+            )
+            return
+
+        # Check if it's depleted
+        properties = item_to_light.get('properties', {})
+        time_remaining = item_to_light.get('time_remaining', properties.get('max_duration', 0))
+
+        if time_remaining <= 0:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"The {item_to_light['name']} has burned out and can't be lit.")
+            )
+            return
+
+        # For lanterns, check if they need oil
+        fuel_type = properties.get('fuel_type', 'none')
+        if fuel_type == 'lamp_oil':
+            fuel_charges = properties.get('fuel_charges', 0)
+            if fuel_charges <= 0:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"The {item_to_light['name']} needs oil. Use 'fill lantern' with lamp oil in your inventory.")
+                )
+                return
+
+        # Light the item
+        item_to_light['is_lit'] = True
+        if 'time_remaining' not in item_to_light:
+            item_to_light['time_remaining'] = properties.get('max_duration', 600)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You light the {item_to_light['name']}. It illuminates the area around you.")
+        )
+
+        # Notify others in the room
+        username = player_data.get('username', 'Someone')
+        room_id = character.get('room_id')
+        if room_id:
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id, player_id,
+                announcement(f"{username} lights a {item_to_light['name']}, casting light in the darkness.")
+            )
+
+    async def _handle_extinguish_command(self, player_id: int, item_name: str):
+        """Handle extinguishing a lit light source."""
+        from ..utils.colors import success_message, error_message
+
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        inventory = character.get('inventory', [])
+
+        # Find light source in inventory
+        item_to_extinguish, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
+
+        if match_type == 'none':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name}.")
+            )
+            return
+        elif match_type == 'multiple':
+            # Find the matching items for the error message
+            matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
+            match_list = ", ".join(matches)
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
+            )
+            return
+
+        # Check if item is a light source
+        if not item_to_extinguish.get('is_light_source', False):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You can't extinguish {item_to_extinguish['name']}.")
+            )
+            return
+
+        # Check if actually lit
+        if not item_to_extinguish.get('is_lit', False):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"The {item_to_extinguish['name']} isn't lit.")
+            )
+            return
+
+        # Extinguish the item
+        item_to_extinguish['is_lit'] = False
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You extinguish the {item_to_extinguish['name']}. The light fades away.")
+        )
+
+        # Notify others in the room
+        username = player_data.get('username', 'Someone')
+        room_id = character.get('room_id')
+        if room_id:
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id, player_id,
+                f"{username} extinguishes their {item_to_extinguish['name']}, plunging the area into darkness."
+            )
+
+    async def _handle_fill_command(self, player_id: int, item_name: str):
+        """Handle filling a lantern with lamp oil."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        inventory = character.get('inventory', [])
+
+        # Find lantern to fill
+        item_to_fill, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
+
+        if match_type == 'none':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name}.")
+            )
+            return
+        elif match_type == 'multiple':
+            # If multiple matches, use the first one
+            pass  # item_to_fill and item_index are already set to the first match
+
+        # Check if item is a light source that can be refilled
+        if not item_to_fill.get('is_light_source', False):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You can't fill {item_to_fill['name']}.")
+            )
+            return
+
+        properties = item_to_fill.get('properties', {})
+        fuel_type = properties.get('fuel_type', 'none')
+
+        if fuel_type == 'none':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"The {item_to_fill['name']} doesn't need fuel.")
+            )
+            return
+
+        if fuel_type != 'lamp_oil':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"The {item_to_fill['name']} requires {fuel_type}, which you don't have.")
+            )
+            return
+
+        # Find lamp oil in inventory
+        oil_item, oil_index, oil_match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, 'lamp_oil')
+
+        if oil_match_type == 'none':
+            # Try alternate names
+            oil_item, oil_index, oil_match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, 'oil')
+
+        if oil_match_type == 'none':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("You don't have any lamp oil to fill it with.")
+            )
+            return
+
+        # Check if the oil item is actually lamp oil
+        if oil_item.get('id', '') != 'lamp_oil':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("You don't have any lamp oil to fill it with.")
+            )
+            return
+
+        # Get fuel charges from the oil
+        oil_properties = oil_item.get('properties', {})
+        fuel_to_add = oil_properties.get('fuel_charges', 1800)
+
+        # Add fuel to the lantern
+        current_fuel = properties.get('fuel_charges', 0)
+        max_duration = properties.get('max_duration', 1800)
+
+        # Initialize properties dict if it doesn't exist
+        if 'properties' not in item_to_fill:
+            item_to_fill['properties'] = {}
+
+        # Add fuel (cap at max_duration)
+        new_fuel = min(current_fuel + fuel_to_add, max_duration)
+        item_to_fill['properties']['fuel_charges'] = new_fuel
+
+        # If the lantern was depleted, reset time_remaining
+        if item_to_fill.get('time_remaining', 0) <= 0:
+            item_to_fill['time_remaining'] = new_fuel
+        else:
+            # Add to existing time_remaining
+            item_to_fill['time_remaining'] = min(item_to_fill.get('time_remaining', 0) + fuel_to_add, max_duration)
+
+        # Reset warning flags
+        item_to_fill['_warned_60'] = False
+        item_to_fill['_warned_10'] = False
+
+        # Decrement quantity or remove the oil flask from inventory
+        current_quantity = oil_item.get('quantity', 1)
+        if current_quantity > 1:
+            # Decrement quantity
+            oil_item['quantity'] = current_quantity - 1
+        else:
+            # Remove item entirely if it's the last one
+            inventory.pop(oil_index)
+
+        # Calculate time in minutes
+        minutes = int(new_fuel // 60)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You fill the {item_to_fill['name']} with lamp oil. It now has {minutes} minutes of fuel.")
+        )
+
+        # Notify others in the room
+        username = player_data.get('username', 'Someone')
+        room_id = character.get('room_id')
+        if room_id:
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id, player_id,
+                f"{username} fills their {item_to_fill['name']} with lamp oil."
+            )
+
+    async def _handle_search_traps_command(self, player_id: int, character: dict):
+        """Handle searching for traps in current room."""
+        # Check if player is a rogue
+        player_class = character.get('class', '').lower()
+        if player_class != 'rogue':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Only rogues have the skills to search for traps.")
+            )
+            return
+
+        room_id = character.get('room_id')
+        if not room_id:
+            return
+
+        result = self.game_engine.trap_system.search_for_traps(player_id, room_id)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            info_message(result)
+        )
+
+        # Notify others in the room
+        username = self.game_engine.player_manager.get_player_data(player_id).get('username', 'Someone')
+        await self.game_engine.player_manager.notify_room_except_player(
+            room_id, player_id,
+            f"{username} carefully searches the area for traps."
+        )
+
+    async def _handle_disarm_trap_command(self, player_id: int, character: dict):
+        """Handle disarming a detected trap."""
+        # Check if player is a rogue
+        player_class = character.get('class', '').lower()
+        if player_class != 'rogue':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Only rogues have the skills to disarm traps.")
+            )
+            return
+
+        room_id = character.get('room_id')
+        if not room_id:
+            return
+
+        # Disarm the first detected trap
+        result = self.game_engine.trap_system.disarm_trap(player_id, room_id, 0)
+
+        # Determine message type based on result
+        if "successfully" in result:
+            msg = success_message(result)
+        elif "fumble" in result or "trigger" in result:
+            msg = error_message(result)
+        else:
+            msg = info_message(result)
+
+        await self.game_engine.connection_manager.send_message(player_id, msg)
+
+        # Notify others in the room on success
+        if "successfully" in result:
+            username = self.game_engine.player_manager.get_player_data(player_id).get('username', 'Someone')
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id, player_id,
+                f"{username} carefully disarms a trap."
+            )
 
     async def _handle_read_command(self, player_id: int, item_name: str):
         """Handle reading a spell scroll to learn a spell."""
@@ -1014,7 +1677,10 @@ Gold:          {char['gold']}
         item_to_read, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
 
         if match_type == 'none':
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name}.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name}.")
+            )
             return
         elif match_type == 'multiple':
             # If multiple matches, just read the first one
@@ -1023,7 +1689,10 @@ Gold:          {char['gold']}
         # Check if item is a spell scroll
         item_type = item_to_read.get('type', '')
         if item_type != 'spell_scroll':
-            await self.game_engine.connection_manager.send_message(player_id, f"You can't read {item_to_read['name']} to learn a spell!")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You can't read {item_to_read['name']} to learn a spell!")
+            )
             return
 
         # Get scroll properties
@@ -1096,7 +1765,10 @@ Gold:          {char['gold']}
         item_to_equip, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(inventory, item_name)
 
         if match_type == 'none':
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name} to equip.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name} to equip.")
+            )
             return
         elif match_type == 'multiple':
             # If multiple matches, just equip the first one
@@ -1109,8 +1781,35 @@ Gold:          {char['gold']}
         elif item_type == 'armor':
             slot = 'armor'
         else:
-            await self.game_engine.connection_manager.send_message(player_id, f"You cannot equip the {item_to_equip['name']}.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You cannot equip the {item_to_equip['name']}.")
+            )
             return
+
+        # Check level requirement
+        item_properties = item_to_equip.get('properties', {})
+        required_level = item_properties.get('required_level', 0)
+        character_level = character.get('level', 1)
+
+        if character_level < required_level:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You must be level {required_level} to equip the {item_to_equip['name']}. (You are level {character_level})")
+            )
+            return
+
+        # Check class requirement
+        allowed_classes = item_properties.get('allowed_classes', None)
+        if allowed_classes:
+            character_class = character.get('class', 'fighter').lower()
+            if character_class not in allowed_classes:
+                class_list = ", ".join([c.capitalize() for c in allowed_classes])
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"Only {class_list} can equip the {item_to_equip['name']}."
+                )
+                return
 
         # Check if slot is already occupied
         equipped_items = character.get('equipped', {})
@@ -1127,7 +1826,7 @@ Gold:          {char['gold']}
 
         # Update armor class if armor
         if item_type == 'armor':
-            armor_class = equipped_item.get('armor_class', 1)
+            armor_class = equipped_item.get('properties', {}).get('armor_class', 0)
             character['armor_class'] = armor_class
 
         # Update encumbrance (should be same, but recalculate for consistency)
@@ -1162,13 +1861,19 @@ Gold:          {char['gold']}
         item_to_unequip, item_index, match_type = self.game_engine.item_manager.find_item_by_partial_name(equipped_items, item_name)
 
         if match_type == 'none':
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name} equipped.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name} equipped.")
+            )
             return
         elif match_type == 'multiple':
             # Find the matching items for the error message
             matches = [item['name'] for item in equipped_items if item_name.lower() in item['name'].lower()]
             match_list = ", ".join(matches)
-            await self.game_engine.connection_manager.send_message(player_id, f"'{item_name}' matches multiple equipped items: {match_list}. Please be more specific.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"'{item_name}' matches multiple equipped items: {match_list}. Please be more specific.")
+            )
             return
 
         # Get the slot to clear
@@ -1193,11 +1898,284 @@ Gold:          {char['gold']}
         if room_id:
             await self.game_engine._notify_room_except_player(room_id, player_id, f"{username} unequips their {item_to_unequip['name']}.")
 
+    async def _handle_put_command(self, player_id: int, character: dict, params: str):
+        """Handle putting an item into a container.
+
+        Usage: put <item> in <container>
+                put all <item> in <container>
+                put <quantity> <item> in <container>
+        """
+        # Parse the command
+        if ' in ' not in params.lower():
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Usage: put <item> in <container>, put all <item> in <container>, or put <quantity> <item> in <container>")
+            )
+            return
+
+        parts = params.split(' in ', 1)
+        item_part = parts[0].strip()
+        container_name = parts[1].strip()
+
+        if not item_part or not container_name:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Usage: put <item> in <container>, put all <item> in <container>, or put <quantity> <item> in <container>")
+            )
+            return
+
+        # Check for quantity or "all" prefix
+        put_all = False
+        specific_quantity = None
+        item_name = item_part
+
+        # Check for "all" prefix
+        if item_part.lower().startswith('all '):
+            put_all = True
+            item_name = item_part[4:].strip()
+        else:
+            # Check for numeric quantity prefix (e.g., "3 arrow")
+            parts_item = item_part.split(None, 1)
+            if len(parts_item) >= 2 and parts_item[0].isdigit():
+                specific_quantity = int(parts_item[0])
+                item_name = parts_item[1]
+
+        inventory = character.get('inventory', [])
+
+        # Find the container first
+        container, container_index, container_match_type = self.game_engine.item_manager.find_item_by_partial_name(
+            inventory, container_name
+        )
+
+        if container_match_type == 'none':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {container_name}.")
+            )
+            return
+        elif container_match_type == 'multiple':
+            matches = [item['name'] for item in inventory if container_name.lower() in item['name'].lower()]
+            match_list = ", ".join(matches)
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"'{container_name}' matches multiple items: {match_list}. Please be more specific.")
+            )
+            return
+
+        # Verify it's actually a container
+        if container.get('type') != 'container':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"The {container['name']} is not a container.")
+            )
+            return
+
+        # Check container capacity
+        container_props = container.get('properties', {})
+        max_capacity = container_props.get('max_capacity', 20)
+        contents = container.get('contents', [])
+        current_capacity = sum(item.get('quantity', 1) for item in contents)
+
+        if put_all or specific_quantity:
+            # Find all matching items in inventory (by item ID for stackable items)
+            items_to_put = []
+            target_item_id = None
+
+            for i, item in enumerate(inventory):
+                if i == container_index:
+                    continue  # Skip the container itself
+
+                # Get item name and id safely
+                item_name_str = item.get('name', '')
+                item_id_str = item.get('id', '')
+
+                # Check if item matches by name or id
+                if item_name.lower() in item_name_str.lower() or item_id_str.lower() == item_name.lower():
+                    if target_item_id is None:
+                        target_item_id = item_id_str
+                    # Only match items with the same ID (so all arrows stack together)
+                    if item_id_str == target_item_id:
+                        items_to_put.append((item, i))
+
+            if not items_to_put:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"You don't have any {item_name}.")
+                )
+                return
+
+            # Calculate total quantity available
+            total_available = sum(item.get('quantity', 1) for item, _ in items_to_put)
+
+            # Determine how much to transfer
+            if specific_quantity:
+                # User specified exact amount
+                if specific_quantity > total_available:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        error_message(f"You only have {total_available} {items_to_put[0][0]['name']}, not {specific_quantity}.")
+                    )
+                    return
+                quantity_to_put = specific_quantity
+            else:
+                # User said "all"
+                quantity_to_put = total_available
+
+            # Check capacity and adjust if needed
+            space_available = max_capacity - current_capacity
+            if quantity_to_put > space_available:
+                if put_all:
+                    # Auto-adjust for "all" command
+                    quantity_to_put = space_available
+                    if quantity_to_put <= 0:
+                        await self.game_engine.connection_manager.send_message(
+                            player_id,
+                            error_message(f"The {container['name']} is full. (Capacity: {current_capacity}/{max_capacity})")
+                        )
+                        return
+                else:
+                    # User specified exact amount that won't fit
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        error_message(f"The {container['name']} only has room for {space_available} more items. (Capacity: {current_capacity}/{max_capacity})")
+                    )
+                    return
+
+            # Add to container (stack with existing if present)
+            item_id = items_to_put[0][0].get('id')
+            existing_item = None
+            for content_item in contents:
+                if content_item.get('id') == item_id:
+                    existing_item = content_item
+                    break
+
+            if existing_item:
+                # Stack with existing item
+                existing_item['quantity'] = existing_item.get('quantity', 1) + quantity_to_put
+            else:
+                # Add new item to contents
+                if 'contents' not in container:
+                    container['contents'] = []
+                new_item = items_to_put[0][0].copy()
+                new_item['quantity'] = quantity_to_put
+                container['contents'].append(new_item)
+
+            # Remove from inventory
+            remaining_to_remove = quantity_to_put
+            for item, idx in reversed(items_to_put):
+                if remaining_to_remove <= 0:
+                    break
+
+                item_qty = item.get('quantity', 1)
+
+                if item_qty <= remaining_to_remove:
+                    # Remove entire stack
+                    if idx < container_index:
+                        character['inventory'].pop(idx)
+                        container_index -= 1
+                    else:
+                        character['inventory'].pop(idx)
+                    remaining_to_remove -= item_qty
+                else:
+                    # Partial removal from stack
+                    item['quantity'] = item_qty - remaining_to_remove
+                    remaining_to_remove = 0
+
+            item_display_name = items_to_put[0][0]['name']
+            if put_all and quantity_to_put < total_available:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    success_message(f"You put {quantity_to_put} {item_display_name} in your {container['name']} ({total_available - quantity_to_put} remaining, container full).")
+                )
+            else:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    success_message(f"You put {quantity_to_put} {item_display_name} in your {container['name']}.")
+                )
+
+        else:
+            # Single item logic
+            # Find the item to put
+            item_to_put, item_index, item_match_type = self.game_engine.item_manager.find_item_by_partial_name(
+                inventory, item_name
+            )
+
+            if item_match_type == 'none':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"You don't have a {item_name}.")
+                )
+                return
+            elif item_match_type == 'multiple':
+                matches = [item['name'] for item in inventory if item_name.lower() in item['name'].lower()]
+                match_list = ", ".join(matches)
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"'{item_name}' matches multiple items: {match_list}. Please be more specific.")
+                )
+                return
+
+            # Can't put a container in itself
+            if item_index == container_index:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"You can't put something inside itself.")
+                )
+                return
+
+            item_quantity = item_to_put.get('quantity', 1)
+
+            if current_capacity + item_quantity > max_capacity:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"The {container['name']} is full. (Capacity: {current_capacity}/{max_capacity})")
+                )
+                return
+
+            # Check if container already has this item type (for stacking)
+            item_id = item_to_put.get('id')
+            existing_item = None
+            for content_item in contents:
+                if content_item.get('id') == item_id:
+                    existing_item = content_item
+                    break
+
+            if existing_item:
+                # Stack with existing item
+                existing_item['quantity'] = existing_item.get('quantity', 1) + item_quantity
+            else:
+                # Add new item to contents
+                if 'contents' not in container:
+                    container['contents'] = []
+                container['contents'].append(item_to_put.copy())
+
+            # Remove from inventory
+            if container_index < item_index:
+                character['inventory'].pop(item_index)
+            else:
+                character['inventory'].pop(item_index)
+
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                success_message(f"You put {item_quantity} {item_to_put['name']} in your {container['name']}.")
+            )
+
+        # Notify others in the room
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        username = player_data.get('username', 'Someone')
+        room_id = character.get('room_id')
+        if room_id:
+            await self.game_engine._notify_room_except_player(
+                room_id, player_id,
+                f"{username} puts something in their {container['name']}."
+            )
+
     async def _handle_trade_command(self, player_id: int, action: str, params: str):
         """Handle buy/sell commands with vendors.
 
         Supports:
         - buy <item> - buy from first vendor
+        - buy <quantity> <item> - buy multiple items
         - buy <item> from <vendor> - buy from specific vendor
         - sell <item> - sell to first vendor
         - sell <item> to <vendor> - sell to specific vendor
@@ -1212,6 +2190,7 @@ Gold:          {char['gold']}
         # Parse the command to extract item name and optional vendor name
         item_name = params
         vendor_name = None
+        quantity = 1
 
         # Check for "from <vendor>" or "to <vendor>"
         if ' from ' in params.lower():
@@ -1223,20 +2202,33 @@ Gold:          {char['gold']}
             item_name = parts[0].strip()
             vendor_name = parts[1].strip()
 
+        # Check for quantity at the beginning (e.g., "20 arrows" or "5 potions")
+        if action == 'buy':
+            parts = item_name.split(None, 1)
+            if len(parts) == 2 and parts[0].isdigit():
+                quantity = int(parts[0])
+                item_name = parts[1]
+
         # Find the vendor
         if vendor_name:
             vendor = self.game_engine.vendor_system.find_vendor_by_name(room_id, vendor_name)
             if not vendor:
-                await self.game_engine.connection_manager.send_message(player_id, f"There is no vendor named '{vendor_name}' here.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"There is no vendor named '{vendor_name}' here.")
+                )
                 return
         else:
             vendor = self.game_engine.vendor_system.get_vendor_in_room(room_id)
             if not vendor:
-                await self.game_engine.connection_manager.send_message(player_id, "There is no vendor here to trade with.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("There is no vendor here to trade with.")
+                )
                 return
 
         if action == 'buy':
-            await self._handle_buy_item(player_id, vendor, item_name)
+            await self._handle_buy_item(player_id, vendor, item_name, quantity)
         elif action == 'sell':
             await self._handle_sell_item(player_id, vendor, item_name)
 
@@ -1252,79 +2244,22 @@ Gold:          {char['gold']}
         # Check if the target matches "gong" or similar variations
         target_lower = target.lower()
         if target_lower in ['gong', 'g', 'bronze gong', 'bronze']:
-            # Check if player is in the arena room
-            if room_id != 'arena':
-                await self.game_engine.connection_manager.send_message(player_id, "There is no gong here to ring.")
+            # Check if player is in an arena room (configured in game settings)
+            arena_config = self.game_engine.config_manager.get_arena_by_room(room_id)
+            if not arena_config:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("There is no gong here to ring.")
+                )
                 return
 
-            # Ring the gong and spawn a mob
-            await self._ring_gong(player_id, room_id)
+            # Ring the gong and spawn a mob (delegates to world_manager)
+            await self.game_engine.world_manager.handle_ring_gong(player_id, room_id)
         else:
-            await self.game_engine.connection_manager.send_message(player_id, f"You cannot ring {target}.")
-
-    async def _ring_gong(self, player_id: int, room_id: str):
-        """Ring the gong in the arena and spawn a random mob."""
-        # Load available mobs
-        monsters = self.game_engine._load_all_monsters()
-        if not monsters:
-            await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but something went wrong with the ancient magic...")
-            print(f"[ERROR] Failed to load monsters")
-            return
-
-        # Select a random monster
-        monsters_list = list(monsters.values())
-        if not monsters_list:
-            await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but no creatures answer its call.")
-            return
-
-        monster = random.choice(monsters_list)
-
-        # Send atmospheric message
-        await self.game_engine.connection_manager.send_message(player_id,
-            "You strike the bronze gong with your fist. The deep, resonant tone echoes through the arena, "
-            "reverberating off the ancient stone walls. The sound seems to call forth something from the depths...")
-
-        # Add a brief delay for dramatic effect
-        await asyncio.sleep(2)
-
-        # Announce the mob spawn
-        mob_name = monster.get('name', 'Unknown Creature')
-        await self.game_engine._notify_room_except_player(room_id, player_id,
-            f"\nSudenly, a {mob_name} emerges from the shadows, drawn by the gong's call! "
-            f"It looks ready for battle!")
-
-        # Also send the message to the player who rang the gong
-        await self.game_engine.connection_manager.send_message(player_id,
-            f"\nSudenly, a {mob_name} emerges from the shadows, drawn by the gong's call! "
-            f"It looks ready for battle!")
-
-        # Actually spawn the mob in the room
-        if room_id not in self.game_engine.room_mobs:
-            self.game_engine.room_mobs[room_id] = []
-
-        # Create a simple mob instance with the monster data
-        spawned_mob = {
-            'id': monster.get('id', 'unknown'),
-            'name': mob_name,
-            'type': 'hostile',
-            'description': monster.get('description', f'A fierce {mob_name}'),
-            'level': monster.get('level', 1),
-            'health': monster.get('health', 100),
-            'max_health': monster.get('health', 100),
-            'damage': monster.get('damage', '1d4'),
-            'damage_min': monster.get('damage_min', 1),
-            'damage_max': monster.get('damage_max', 4),
-            'armor_class': monster.get('armor', 0),
-            'strength': monster.get('strength', 12),
-            'dexterity': monster.get('dexterity', 10),
-            'experience_reward': monster.get('experience_reward', 25),
-            'gold_reward': monster.get('gold_reward', [0, 5]),
-            'loot_table': monster.get('loot_table', []),
-            'spawned_by_gong': True
-        }
-
-        self.game_engine.room_mobs[room_id].append(spawned_mob)
-        self.logger.info(f"[ARENA] {mob_name} spawned in {room_id} by player {player_id}")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You cannot ring {target}.")
+            )
 
     async def _handle_list_vendor_items(self, player_id: int, vendor_name: str = None):
         """Show vendor inventory.
@@ -1344,7 +2279,10 @@ Gold:          {char['gold']}
         if vendor_name:
             vendor = self.game_engine.vendor_system.find_vendor_by_name(room_id, vendor_name)
             if not vendor:
-                await self.game_engine.connection_manager.send_message(player_id, f"There is no vendor named '{vendor_name}' here.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"There is no vendor named '{vendor_name}' here.")
+                )
                 return
         else:
             vendor = self.game_engine.vendor_system.get_vendor_in_room(room_id)
@@ -1355,10 +2293,13 @@ Gold:          {char['gold']}
                     vendor_names = [v['name'] for v in vendors]
                     await self.game_engine.connection_manager.send_message(
                         player_id,
-                        f"There are multiple vendors here: {', '.join(vendor_names)}. Use 'list <vendor name>' to see a specific vendor's wares."
+                        info_message(f"There are multiple vendors here: {', '.join(vendor_names)}. Use 'list <vendor name>' to see a specific vendor's wares.")
                     )
                     return
-                await self.game_engine.connection_manager.send_message(player_id, "There is no vendor here.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("There is no vendor here.")
+                )
                 return
 
         inventory_text = f"{vendor['name']} has the following items for sale:\n"
@@ -1367,17 +2308,37 @@ Gold:          {char['gold']}
             item_config = self.game_engine.config_manager.get_item(item_id)
             if item_config:
                 item_name = item_config['name']
-                price = item_entry['price']
+                # Calculate price from base_value and vendor's sell_markup
+                base_value = item_config.get('base_value', 0)
+                sell_markup = vendor.get('sell_markup', 1.2)
+                price = int(base_value * sell_markup)
                 inventory_text += f"  {i}. {item_name} - {price} gold\n"
             else:
-                inventory_text += f"  {i}. {item_id} (unknown item) - {item_entry['price']} gold\n"
+                # Try to get price from item_entry, fallback to 0
+                price = item_entry.get('price', 0)
+                inventory_text += f"  {i}. {item_id} (unknown item) - {price} gold\n"
 
         await self.game_engine.connection_manager.send_message(player_id, inventory_text)
 
-    async def _handle_buy_item(self, player_id: int, vendor: dict, item_name: str):
-        """Handle buying an item from a vendor."""
+    async def _handle_buy_item(self, player_id: int, vendor: dict, item_name: str, quantity: int = 1):
+        """Handle buying an item from a vendor.
+
+        Args:
+            player_id: The player making the purchase
+            vendor: The vendor dict
+            item_name: Name of the item to buy
+            quantity: Number of items to buy (default 1)
+        """
         player_data = self.game_engine.player_manager.get_player_data(player_id)
         character = player_data['character']
+
+        # Validate quantity
+        if quantity < 1:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("You must buy at least 1 item.")
+            )
+            return
 
         # Find the item in vendor inventory
         item_found_id = None
@@ -1388,54 +2349,88 @@ Gold:          {char['gold']}
             item_config = self.game_engine.config_manager.get_item(item_id)
             if item_config and item_name.lower() in item_config['name'].lower():
                 item_found_id = item_id
-                item_price = item_entry['price']
+                # Calculate price from base_value and vendor's sell_markup
+                base_value = item_config.get('base_value', 0)
+                sell_markup = vendor.get('sell_markup', 1.2)
+                item_price = int(base_value * sell_markup)
                 item_stock = item_entry.get('stock', -1)
                 break
 
         if not item_found_id:
-            await self.game_engine.connection_manager.send_message(player_id, f"{vendor['name']} doesn't have {item_name} for sale.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"{vendor['name']} doesn't have {item_name} for sale.")
+            )
             return
 
         # Create proper item instance to get the real name
         item_instance = self.game_engine.config_manager.create_item_instance(item_found_id, item_price)
         if not item_instance:
-            await self.game_engine.connection_manager.send_message(player_id, "Error creating item.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Error creating item.")
+            )
             return
 
-        # Check if vendor has stock (stock of -1 means unlimited)
-        if item_stock == 0:
-            await self.game_engine.connection_manager.send_message(player_id, f"{vendor['name']} is out of stock of {item_instance['name']}.")
+        # Check if vendor has enough stock (stock of -1 means unlimited)
+        if item_stock != -1 and item_stock < quantity:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"{vendor['name']} only has {item_stock} {item_instance['name']} in stock.")
+            )
             return
+
+        # Calculate total cost
+        total_price = item_price * quantity
 
         # Check if player has enough gold
-        if character['gold'] < item_price:
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have enough gold. {item_instance['name']} costs {item_price} gold.")
+        if character['gold'] < total_price:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have enough gold. {quantity} {item_instance['name']} costs {total_price} gold. (You have {character['gold']} gold)")
+            )
             return
 
         # Check encumbrance before buying
         current_encumbrance = self.game_engine.player_manager.calculate_encumbrance(character)
-        item_weight = item_instance.get('weight', 0)
-        gold_weight_change = -item_price / 100.0  # Losing gold reduces weight
+        item_weight = item_instance.get('weight', 0) * quantity
+        gold_weight_change = -total_price / 100.0  # Losing gold reduces weight
         max_encumbrance = self.game_engine.player_manager.calculate_max_encumbrance(character)
 
         if current_encumbrance + item_weight + gold_weight_change > max_encumbrance:
             await self.game_engine.connection_manager.send_message(
                 player_id,
-                f"You cannot carry {item_instance['name']} - you are carrying too much!"
+                error_message(f"You cannot carry {quantity} {item_instance['name']} - you are carrying too much!")
             )
             return
 
         # Complete the purchase
-        character['gold'] -= item_price
-        character['inventory'].append(item_instance)
+        character['gold'] -= total_price
+
+        # Add items to inventory (stack if possible)
+        if quantity == 1:
+            character['inventory'].append(item_instance)
+        else:
+            # Create a single item with quantity field
+            item_instance['quantity'] = quantity
+            character['inventory'].append(item_instance)
 
         # Reduce vendor stock (if not unlimited)
-        self.game_engine.vendor_system.reduce_vendor_stock(vendor, item_found_id, 1)
+        self.game_engine.vendor_system.reduce_vendor_stock(vendor, item_found_id, quantity)
 
-        # Update encumbrance (accounts for gold weight change and new item)
+        # Update encumbrance (accounts for gold weight change and new items)
         self.game_engine.player_manager.update_encumbrance(character)
 
-        await self.game_engine.connection_manager.send_message(player_id, f"You buy {item_instance['name']} for {item_price} gold.")
+        if quantity == 1:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                success_message(f"You buy {item_instance['name']} for {item_price} gold.")
+            )
+        else:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                success_message(f"You buy {quantity} {item_instance['name']} for {total_price} gold.")
+            )
 
         # Notify others in the room
         username = player_data.get('username', 'Someone')
@@ -1464,7 +2459,10 @@ Gold:          {char['gold']}
         logger.info(f"[SELL] Match result: match_type='{match_type}', item_to_sell={item_to_sell}, item_index={item_index}")
 
         if match_type == 'none' or item_to_sell is None:
-            await self.game_engine.connection_manager.send_message(player_id, f"You don't have a {item_name} to sell.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't have a {item_name} to sell.")
+            )
             return
         elif match_type == 'multiple':
             # If multiple matches, just sell the first one
@@ -1489,6 +2487,53 @@ Gold:          {char['gold']}
         if room_id:
             await self.game_engine._notify_room_except_player(room_id, player_id, f"{username} sells something to {vendor['name']}.")
 
+    async def _handle_look_command(self, player_id: int, params: str):
+        """Handle look command - check if it's a direction or a target."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        current_room = character['room_id']
+
+        # Map short directions to full names
+        direction_map = {
+            'n': 'north', 's': 'south', 'e': 'east', 'w': 'west',
+            'ne': 'northeast', 'nw': 'northwest',
+            'se': 'southeast', 'sw': 'southwest',
+            'u': 'up', 'd': 'down'
+        }
+
+        # Normalize the direction
+        target_lower = params.lower().strip()
+        full_direction = direction_map.get(target_lower, target_lower)
+
+        # Get available exits
+        exits = self.game_engine.world_manager.get_exits_from_room(current_room, character)
+
+        # Check if the params matches a direction
+        if full_direction in exits:
+            # It's a valid direction - show the adjacent room
+            destination_room_id = exits[full_direction]
+
+            # Send message about looking in that direction
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You look {full_direction}...\n"
+            )
+
+            # Show the room description for that direction
+            await self.game_engine.world_manager.send_room_description_for_room(
+                player_id,
+                destination_room_id,
+                character.get('id', player_id),
+                detailed=True
+            )
+            return
+
+        # Not a direction, treat as a target (NPC, mob, item, etc.)
+        await self._handle_look_at_target(player_id, params)
+
     async def _handle_look_at_target(self, player_id: int, target_name: str):
         """Handle looking at a specific target."""
         player_data = self.game_engine.player_manager.get_player_data(player_id)
@@ -1507,8 +2552,9 @@ Gold:          {char['gold']}
             if other_character and other_character.get('room_id') == room_id:
                 other_name = other_character.get('name', '').lower()
                 if target_lower in other_name or other_name in target_lower:
-                    # Found a player
-                    await self.game_engine.connection_manager.send_message(player_id, f"You look at {other_character['name']}.")
+                    # Found a player - generate detailed description
+                    description = self._generate_player_description(other_character)
+                    await self.game_engine.connection_manager.send_message(player_id, description)
                     await self.game_engine.connection_manager.send_message(other_player_id, f"{character['name']} looks at you.")
                     return
 
@@ -1566,15 +2612,313 @@ Gold:          {char['gold']}
                 return
 
         # Nothing found
-        await self.game_engine.connection_manager.send_message(player_id, f"You don't see {target_name} here.")
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            error_message(f"You don't see {target_name} here.")
+        )
+
+    async def _handle_special_action(self, player_id: int, command: str, params: str):
+        """Handle special room actions like 'gaze mirror'."""
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        room_id = character.get('room_id')
+
+        # Get room data
+        room = self.game_engine.world_manager.get_room(room_id)
+        if not room:
+            return
+
+        # Check if room has special_actions defined
+        room_data = self.game_engine.world_manager.rooms_data.get(room_id, {})
+        special_actions = room_data.get('special_actions', {})
+
+        # Build the full action string
+        action_key = f"{command} {params}".strip()
+
+        if action_key in special_actions:
+            action_data = special_actions[action_key]
+            action_type = action_data.get('type')
+            action_message = action_data.get('message', '')
+
+            if action_type == 'self_inspect':
+                # Show the action message first
+                if action_message:
+                    await self.game_engine.connection_manager.send_message(player_id, action_message)
+
+                # Generate and send player's own description
+                description = self._generate_player_description(character)
+                await self.game_engine.connection_manager.send_message(player_id, description)
+            else:
+                # Generic action - just show the message
+                if action_message:
+                    await self.game_engine.connection_manager.send_message(player_id, action_message)
+        else:
+            from ..utils.colors import error_message
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You can't {command} {params} here.")
+            )
+
+    def _generate_player_description(self, character: dict) -> str:
+        """Generate a detailed description of a player based on their stats, class, race, and equipment."""
+        name = character.get('name', 'Someone')
+
+        # Get stats with effective bonuses
+        from ..game.combat.combat_system import CombatSystem
+        charisma = CombatSystem.get_effective_stat(character, 'charisma', 10)
+        strength = CombatSystem.get_effective_stat(character, 'strength', 10)
+        intelligence = CombatSystem.get_effective_stat(character, 'intelligence', 10)
+        wisdom = CombatSystem.get_effective_stat(character, 'wisdom', 10)
+        dexterity = CombatSystem.get_effective_stat(character, 'dexterity', 10)
+
+        # Get species (race) and class
+        race = character.get('species', character.get('race', 'human')).capitalize()
+        char_class = character.get('class', 'fighter').capitalize()
+
+        # Build description starting with name and charisma
+        msg = f"{name} is a "
+
+        # Charisma description
+        if charisma >= 20:
+            msg += "stunningly attractive"
+        elif charisma >= 10:
+            msg += "somewhat attractive"
+        else:
+            msg += "rather plain looking"
+
+        # Strength + race + class
+        if strength >= 20:
+            msg += f" and powerfully built {race} {char_class}"
+        elif strength >= 10:
+            msg += f" and moderately built {race} {char_class}"
+        else:
+            msg += f" and slightly built {race} {char_class}"
+
+        # Wisdom
+        if wisdom >= 20:
+            msg += ", with a worldly air about them"
+        elif wisdom < 10:
+            msg += ", with an inexperienced look about them"
+        else:
+            msg += ""
+
+        msg += "."
+
+        # Dexterity
+        if dexterity >= 20:
+            msg += " You notice that their movements are very quick and agile."
+        elif dexterity < 10:
+            msg += " You notice that their movements are rather slow and clumsy."
+
+        # Intelligence
+        if intelligence >= 20:
+            msg += " They have a bright look in their eyes."
+        elif intelligence < 10:
+            msg += " They have a dull look in their eyes."
+
+        # Equipment
+        equipped = character.get('equipped', {})
+        weapon = equipped.get('weapon')
+        armor = equipped.get('armor')
+
+        weapon_name = weapon.get('name', 'their fists') if weapon else 'their fists'
+        armor_name = armor.get('name', 'plain clothes') if armor else 'plain clothes'
+
+        msg += f" They are wearing {armor_name} and are armed with {weapon_name}."
+
+        # Health status
+        health = character.get('health', character.get('max_health', 100))
+        max_health = character.get('max_health', 100)
+        health_percent = int((health / max_health) * 100)
+
+        if health_percent < 25:
+            msg += " They are sorely wounded."
+        elif health_percent < 50:
+            msg += " They seem to be moderately wounded."
+        elif health_percent < 75:
+            msg += " They appear to be wounded."
+        elif health_percent < 100:
+            msg += " They look as if they are lightly wounded."
+        else:
+            msg += " They seem to be in good physical condition."
+
+        # Add rune description (only if player has a rune)
+        rune = character.get('rune', '')
+        if rune and rune not in [None, 'None', '']:
+            rune_str = str(rune).strip()
+            if rune_str:
+                msg += f" You also notice a distinctive {rune_str.title()} rune inscribed on their forehead."
+
+        return msg
 
     async def _handle_attack_command(self, player_id: int, target_name: str):
         """Handle attack command."""
         await self.game_engine.combat_system.handle_attack_command(player_id, target_name)
 
+    async def _handle_shoot_command(self, player_id: int, params: str):
+        """Handle shoot/fire command for ranged weapons.
+
+        Supports:
+        - shoot <target> - shoot target in current room
+        - shoot <target> <direction> - shoot target in adjacent room
+        - shoot <direction> <target> - alternate syntax for cross-room
+        """
+        if not params:
+            await self.game_engine.connection_manager.send_message(player_id, "Shoot what?")
+            return
+
+        # Parse params to check for direction
+        parts = params.strip().split()
+        directions = ['north', 'n', 'south', 's', 'east', 'e', 'west', 'w',
+                     'northeast', 'ne', 'northwest', 'nw', 'southeast', 'se',
+                     'southwest', 'sw', 'up', 'u', 'down', 'd']
+
+        target_name = None
+        direction = None
+
+        # Check for "shoot <direction> <target>" format
+        if parts[0].lower() in directions:
+            direction = parts[0].lower()
+            target_name = " ".join(parts[1:]) if len(parts) > 1 else None
+        # Check for "shoot <target> <direction>" format
+        elif len(parts) > 1 and parts[-1].lower() in directions:
+            direction = parts[-1].lower()
+            target_name = " ".join(parts[:-1])
+        # Just "shoot <target>" (same room)
+        else:
+            target_name = params
+
+        if direction:
+            # Cross-room shooting
+            await self.game_engine.combat_system.handle_shoot_command_cross_room(
+                player_id, target_name, direction
+            )
+        else:
+            # Same-room shooting
+            await self.game_engine.combat_system.handle_shoot_command(player_id, target_name)
+
     async def _handle_flee_command(self, player_id: int):
         """Handle flee command."""
         await self.game_engine.combat_system.handle_flee_command(player_id)
+
+    async def _handle_buy_passage(self, player_id: int, character: dict):
+        """Handle buying passage across the great lake between docks.
+
+        Requirements:
+        1. Player must have a rune (not 'None')
+        2. Player must have enough gold (configurable cost)
+        3. Player must be at valid dock location (mhv_docks or lht_docks)
+
+        Events during voyage:
+        - Rats may eat food (configurable chance)
+        - Player may be robbed (configurable chance, random gold amount)
+        """
+        room_id = character.get('room_id')
+
+        # Define dock locations and their destinations
+        dock_routes = {
+            'mhv_docks': 'lht_docks',  # Main human village docks -> Lakeside human town docks
+            'lht_docks': 'mhv_docks'   # Lakeside human town docks -> Main human village docks
+        }
+
+        # Check if player is at a valid dock
+        if room_id not in dock_routes:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "You can only buy passage from the docks."
+            )
+            return
+
+        # Check if player has a rune
+        rune = character.get('rune', 'None')
+        if not rune or rune == 'None' or rune == '' or str(rune).lower() == 'none':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "Sorry, by decree of the guild masters, no one shall venture across the great lake who does not bear a rune upon their brow."
+            )
+            return
+
+        # Get configuration settings
+        cost = self.game_engine.config_manager.get_setting('ship_passage', 'cost', default=100)
+        rat_chance = self.game_engine.config_manager.get_setting('ship_passage', 'rat_event_chance', default=0.15)
+        robbery_chance = self.game_engine.config_manager.get_setting('ship_passage', 'robbery_event_chance', default=0.10)
+        robbery_min = self.game_engine.config_manager.get_setting('ship_passage', 'robbery_gold_min', default=10)
+        robbery_max = self.game_engine.config_manager.get_setting('ship_passage', 'robbery_gold_max', default=50)
+
+        # Check if player has enough gold
+        player_gold = character.get('gold', 0)
+        if player_gold < cost:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"Sorry, you cannot afford passage across the great lake! (Cost: {cost} gold, You have: {player_gold} gold)"
+            )
+            return
+
+        # Deduct gold
+        character['gold'] -= cost
+
+        # Notify player and others in departure room
+        player_name = character.get('name', 'Someone')
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            "You buy passage across the great lake and board a ship..."
+        )
+        await self.game_engine._notify_room_except_player(
+            room_id,
+            player_id,
+            f"{player_name} hands a small purse of coins to a ship's captain and boards a ship..."
+        )
+
+        # Random events during voyage
+        import random
+
+        # Rat event - eats food
+        if random.random() < rat_chance:
+            # Find a food item in inventory
+            inventory = character.get('inventory', [])
+            food_items = [item for item in inventory if item.get('type') == 'food']
+
+            if food_items:
+                # Remove a random food item
+                food_to_remove = random.choice(food_items)
+                inventory.remove(food_to_remove)
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"While aboard the ship your {food_to_remove.get('name', 'food')} was eaten by rats!"
+                )
+
+        # Robbery event - steal gold
+        if random.random() < robbery_chance:
+            # Calculate random amount to steal (but don't steal more than player has)
+            max_steal = min(character.get('gold', 0), robbery_max)
+            if max_steal >= robbery_min:
+                stolen_amount = random.randint(robbery_min, max_steal)
+                character['gold'] -= stolen_amount
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"While aboard the ship you seem to have been robbed! (Lost {stolen_amount} gold)"
+                )
+
+        # Teleport to destination
+        destination_room_id = dock_routes[room_id]
+        character['room_id'] = destination_room_id
+
+        # Notify players at destination
+        await self.game_engine._notify_room_except_player(
+            destination_room_id,
+            player_id,
+            f"{player_name} has just arrived on a ship from across the great lake."
+        )
+
+        # Show room description to player
+        await self.game_engine.world_manager.send_room_description(player_id, detailed=True)
+
+    async def _handle_retrieve_ammo(self, player_id: int):
+        """Handle retrieving spent ammunition from the current room."""
+        await self.game_engine.combat_system.handle_retrieve_ammo(player_id)
 
     async def _handle_heal_command(self, player_id: int, params: str):
         """Handle healing command at a temple/healer."""
@@ -1594,13 +2938,16 @@ Gold:          {char['gold']}
 
         # Find a healer NPC
         healer_npc = None
-        for npc_id in npcs_in_room:
-            npc = self.game_engine.world_manager.npcs.get(npc_id)
-            print(f"[HEAL DEBUG] Checking NPC {npc_id}: {npc}")
-            if npc:
-                print(f"[HEAL DEBUG] NPC services: {npc.get('services', [])}")
-                if 'healer' in npc.get('services', []):
-                    healer_npc = npc
+        healer_obj = None
+        for npc_obj in npcs_in_room:
+            # Get NPC data from world manager using the NPC object's ID
+            npc_data = self.game_engine.world_manager.get_npc_data(npc_obj.npc_id)
+            print(f"[HEAL DEBUG] Checking NPC {npc_obj.npc_id}: {npc_data}")
+            if npc_data:
+                print(f"[HEAL DEBUG] NPC services: {npc_data.get('services', [])}")
+                if 'healer' in npc_data.get('services', []):
+                    healer_npc = npc_data
+                    healer_obj = npc_obj
                     break
 
         if not healer_npc:
@@ -1616,11 +2963,11 @@ Gold:          {char['gold']}
             if not healing_options:
                 await self.game_engine.connection_manager.send_message(
                     player_id,
-                    f"{healer_npc['name']} doesn't seem to offer healing services."
+                    f"{healer_obj.name} doesn't seem to offer healing services."
                 )
                 return
 
-            message = f"\n{healer_npc['name']} offers the following healing services:\n\n"
+            message = f"\n{healer_obj.name} offers the following healing services:\n\n"
             for heal_type, heal_data in healing_options.items():
                 heal_amount = heal_data.get('heal_amount', 0)
                 if heal_amount == 'full':
@@ -1686,8 +3033,102 @@ Gold:          {char['gold']}
         # Send message
         await self.game_engine.connection_manager.send_message(
             player_id,
-            f"{healer_npc['name']} channels healing energy into you. You are healed for {int(actual_heal)} HP!\nYou paid {cost} gold.\n\nHealth: {int(character['health'])} / {int(max_health)}"
+            service_message(f"{healer_obj.name} channels healing energy into you. You are healed for {int(actual_heal)} HP!\nYou paid {cost} gold.\n\nHealth: {int(character['health'])} / {int(max_health)}")
         )
+
+    async def _handle_rent_room(self, player_id: int, character: dict):
+        """Handle renting a room at an inn to restore HP and mana."""
+        room_id = character.get('room_id')
+
+        # Get room object
+        room = self.game_engine.world_manager.get_room(room_id)
+        if not room:
+            await self.game_engine.connection_manager.send_message(player_id, "You are nowhere!")
+            return
+
+        # Get NPCs in the room
+        npcs_in_room = room.npcs if hasattr(room, 'npcs') else []
+
+        # Find an innkeeper NPC
+        innkeeper_npc = None
+        innkeeper_obj = None
+        for npc_obj in npcs_in_room:
+            # Get NPC data from world manager using the NPC object's ID
+            npc_data = self.game_engine.world_manager.get_npc_data(npc_obj.npc_id)
+            if npc_data:
+                # Check if NPC has innkeeper in services or is type innkeeper
+                if 'innkeeper' in npc_data.get('services', []) or 'rooms' in npc_data.get('services', []):
+                    innkeeper_npc = npc_data
+                    innkeeper_obj = npc_obj
+                    break
+
+        if not innkeeper_npc:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "There is no innkeeper here. You must find an inn to rent a room."
+            )
+            return
+
+        # Calculate room cost based on player level (base 10 gold + 5 gold per level)
+        player_level = character.get('level', 1)
+        room_cost = 10 + (player_level * 5)
+
+        # Check if player has enough gold
+        player_gold = character.get('gold', 0)
+        if player_gold < room_cost:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You don't have enough gold to rent a room. A room costs {room_cost} gold, but you only have {player_gold} gold."
+            )
+            return
+
+        # Check if player needs rest
+        current_health = character.get('health', 0)
+        max_health = character.get('max_hit_points', current_health)
+        current_mana = character.get('mana', character.get('current_mana', 0))
+        max_mana = character.get('max_mana', current_mana)
+
+        if current_health >= max_health and current_mana >= max_mana:
+            # Get already rested message from NPC dialogue
+            dialogue = innkeeper_npc.get('dialogue', {})
+            already_rested_msg = dialogue.get('rent_already_rested', "You look well-rested already! Perhaps come back when you're weary.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"{innkeeper_obj.name} says: \"{already_rested_msg}\""
+            )
+            return
+
+        # Restore HP and mana to full
+        health_restored = max_health - current_health
+        mana_restored = max_mana - current_mana
+
+        character['health'] = max_health
+        character['mana'] = max_mana
+        character['current_mana'] = max_mana  # For backward compatibility
+
+        # Deduct gold
+        character['gold'] = player_gold - room_cost
+
+        # Get dialogue from NPC data
+        dialogue = innkeeper_npc.get('dialogue', {})
+        rent_accept = dialogue.get('rent_accept', "Wonderful! Let me show you to your room.")
+        rent_description = dialogue.get('rent_description', "You follow the innkeeper up a creaky wooden staircase to a cozy room with a soft bed and a washbasin. The sheets are clean and the pillows are plump. You rest deeply through the night...")
+
+        # Send atmospheric message
+        message = f"{innkeeper_obj.name} says: \"{rent_accept}\"\n\n"
+        message += f"{rent_description}\n\n"
+
+        if health_restored > 0:
+            message += f"You wake feeling refreshed and healed! (+{int(health_restored)} HP)\n"
+        if mana_restored > 0:
+            message += f"Your magical energy has been fully restored! (+{int(mana_restored)} Mana)\n"
+
+        message += f"\nYou paid {room_cost} gold for the room.\n"
+        message += f"Health: {int(character['health'])} / {int(max_health)}\n"
+        message += f"Mana: {int(character['mana'])} / {int(max_mana)}\n"
+        message += f"Gold: {int(character['gold'])}"
+
+        await self.game_engine.connection_manager.send_message(player_id, service_message(message))
 
     async def _handle_spellbook_command(self, player_id: int, character: dict):
         """Display the player's spellbook with all known spells."""
@@ -1910,6 +3351,16 @@ Gold:          {char['gold']}
                 # Remove mob from room
                 mob_participant_id = f"mob_{target.get('id', 'unknown')}"
                 await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
+            else:
+                # Mob survived - set/update aggro on the caster
+                if 'aggro_target' not in target:
+                    target['aggro_target'] = player_id
+                    target['aggro_room'] = room_id
+                    self.game_engine.logger.debug(f"[AGGRO] {target['name']} is now aggro'd on player {player_id} (spell attack)")
+                # Update aggro timestamp if this is the current aggro target
+                if target.get('aggro_target') == player_id:
+                    import time
+                    target['aggro_last_attack'] = time.time()
 
         else:
             # Area spell (no specific target needed)
@@ -2084,6 +3535,99 @@ Gold:          {char['gold']}
             total_xp += xp_for_level
 
         return total_xp
+
+    def _class_uses_magic(self, class_name: str) -> bool:
+        """Check if a character class uses magic.
+
+        Args:
+            class_name: The name of the class (e.g., 'fighter', 'sorceror')
+
+        Returns:
+            True if the class uses magic, False otherwise
+        """
+        import json
+        from pathlib import Path
+
+        try:
+            classes_file = Path("data/player/classes.json")
+            with open(classes_file, 'r') as f:
+                classes_data = json.load(f)
+                if class_name in classes_data:
+                    return classes_data[class_name].get('uses_magic', False)
+        except Exception as e:
+            self.game_engine.logger.warning(f"Could not load class data: {e}")
+
+        # Default: assume non-magic class
+        return False
+
+    def _distribute_stat_points(self, character: dict, points_to_distribute: int) -> dict:
+        """Automatically distribute stat points across character stats up to their maximums.
+
+        Args:
+            character: The character dictionary
+            points_to_distribute: Number of stat points to distribute
+
+        Returns:
+            Dictionary of stat name -> amount increased
+        """
+        import random
+        import json
+        from pathlib import Path
+
+        # Load race data to get modifiers
+        races_file = Path("data/player/races.json")
+        race_modifiers = {}
+        try:
+            with open(races_file, 'r') as f:
+                races_data = json.load(f)
+                player_race = character.get('race', 'human')
+                if player_race in races_data:
+                    race_modifiers = races_data[player_race].get('stat_modifiers', {})
+        except Exception as e:
+            self.game_engine.logger.warning(f"Could not load race modifiers: {e}")
+
+        # Get base stat maximums from config
+        starting_stats = self.game_engine.config_manager.get_setting('player', 'starting_stats', default={})
+
+        # Define stat list (map character field names to config names)
+        stat_mapping = {
+            'strength': 'strength',
+            'dexterity': 'dexterity',
+            'constitution': 'constitution',
+            'vitality': 'vitality',
+            'intellect': 'intelligence',  # character uses 'intellect', config uses 'intelligence'
+            'wisdom': 'wisdom',
+            'charisma': 'charisma'
+        }
+
+        # Calculate max for each stat (base max + race modifier)
+        stat_maxes = {}
+        for char_stat, config_stat in stat_mapping.items():
+            base_max = starting_stats.get(config_stat, {}).get('max', 20)
+            race_mod = race_modifiers.get(config_stat, 0)
+            stat_maxes[char_stat] = base_max + race_mod
+
+        # Track increases
+        stat_increases = {stat: 0 for stat in stat_mapping.keys()}
+
+        # Distribute points randomly
+        for _ in range(points_to_distribute):
+            # Get stats that haven't reached their maximum
+            available_stats = [
+                stat for stat in stat_mapping.keys()
+                if character.get(stat, 10) < stat_maxes[stat]
+            ]
+
+            if not available_stats:
+                # All stats are at max
+                break
+
+            # Randomly pick a stat and increase it
+            chosen_stat = random.choice(available_stats)
+            character[chosen_stat] = character.get(chosen_stat, 10) + 1
+            stat_increases[chosen_stat] += 1
+
+        return stat_increases
 
     def get_xp_to_next_level(self, character: dict) -> int:
         """Calculate XP needed to reach the next level.
@@ -2305,33 +3849,43 @@ HP: {max_hp}  Mana: {max_mana}
         new_max_hp = old_max_hp + hp_per_level
         character['max_hit_points'] = new_max_hp
 
-        # Increase max mana
-        old_max_mana = character.get('max_mana', 50)
-        new_max_mana = old_max_mana + mana_per_level
-        character['max_mana'] = new_max_mana
+        # Check if class uses magic
+        player_class = character.get('class', 'fighter')
+        class_uses_magic = self._class_uses_magic(player_class)
 
-        # Fully restore health and mana on level up
+        # Increase max mana (only for magic-using classes)
+        old_max_mana = character.get('max_mana', 0)
+        new_max_mana = old_max_mana
+        if class_uses_magic:
+            new_max_mana = old_max_mana + mana_per_level
+            character['max_mana'] = new_max_mana
+
+        # Fully restore health on level up
         character['health'] = new_max_hp
-        character['mana'] = new_max_mana
 
-        # Award stat points
-        if 'unspent_stat_points' not in character:
-            character['unspent_stat_points'] = 0
-        character['unspent_stat_points'] += stat_points
+        # Fully restore mana on level up (only for magic-using classes)
+        if class_uses_magic:
+            character['mana'] = new_max_mana
+
+        # Automatically distribute stat points
+        stat_increases = self._distribute_stat_points(character, stat_points)
 
         # Send level up messages
+        stat_gains_text = "\n".join([f"  {stat.capitalize()}: +{amount}" for stat, amount in stat_increases.items() if amount > 0])
+
+        # Build mana line only if class uses magic
+        mana_line = f"  Max Mana: {old_max_mana} -> {new_max_mana}\n" if class_uses_magic else ""
+
         level_up_msg = f"""
 ========================================
          LEVEL UP!
 ========================================
   Level: {old_level} -> {new_level}
   Max HP: {old_max_hp} -> {new_max_hp}
-  Max Mana: {old_max_mana} -> {new_max_mana}
-  Stat Points: +{stat_points}
+{mana_line}
+  Stat Increases:
+{stat_gains_text}
 ========================================
-
-You have {character['unspent_stat_points']} unspent stat points!
-(Note: Stat allocation system coming soon)
 
 Congratulations, {character['name']}! You feel stronger and more capable!
 """
@@ -2349,7 +3903,7 @@ Congratulations, {character['name']}! You feel stronger and more capable!
         if self.game_engine.player_storage:
             username = self.game_engine.player_manager.get_player_data(player_id).get('username')
             if username:
-                self.game_engine.player_storage.save_character(username, character)
+                self.game_engine.player_storage.save_character_data(username, character)
 
     async def _handle_admin_give_gold(self, player_id: int, character: dict, params: str):
         """Admin command to give gold to the current player."""
@@ -2372,25 +3926,19 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             )
 
         except ValueError:
-            await self.game_engine.connection_manager.send_message(player_id, "Invalid amount. Usage: givegold <amount>")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Invalid amount. Usage: givegold <amount>")
+            )
 
     async def _handle_admin_give_item(self, player_id: int, character: dict, params: str):
         """Admin command to give an item to the current player."""
         item_id = params.strip().lower()
 
-        # Load item from items.json
-        import json
-        try:
-            with open('data/items/items.json', 'r') as f:
-                items_data = json.load(f)
-        except Exception as e:
-            await self.game_engine.connection_manager.send_message(player_id, f"[ADMIN] Error loading items data: {e}")
-            return
-
-        # Get the items dictionary
-        items = items_data.get('items', {})
+        # Load items from all JSON files in data/items/
+        items = self.game_engine.config_manager.load_items()
         if not items:
-            await self.game_engine.connection_manager.send_message(player_id, "[ADMIN] No items found in items.json")
+            await self.game_engine.connection_manager.send_message(player_id, "[ADMIN] No items found in data/items/")
             return
 
         # Find the item
@@ -2472,7 +4020,10 @@ Congratulations, {character['name']}! You feel stronger and more capable!
                 )
 
         except ValueError:
-            await self.game_engine.connection_manager.send_message(player_id, "Invalid amount. Usage: givexp <amount>")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Invalid amount. Usage: givexp <amount>")
+            )
 
     async def _handle_admin_mob_status(self, player_id: int):
         """Admin command to show all mobs and their status."""
@@ -2836,7 +4387,31 @@ Congratulations, {character['name']}! You feel stronger and more capable!
         if not displayable_rooms:
             return ["No explored rooms in this area yet. Explore to reveal the map!"]
 
-        start_room_id = list(displayable_rooms.keys())[0]
+        # Choose best starting room: player's current room, or room with most connections
+        player_data = self.game_engine.player_manager.get_player_data(player_id)
+        start_room_id = None
+
+        # Try player's current room first
+        if player_data and player_data.get('character'):
+            current_room = player_data['character'].get('room_id')
+            if current_room in displayable_rooms:
+                start_room_id = current_room
+
+        # If player not in this area, find room with most connections
+        if not start_room_id:
+            max_connections = 0
+            for room_id in displayable_rooms.keys():
+                room_data = world_manager.rooms_data.get(room_id, {})
+                exits = room_data.get('exits', {})
+                connection_count = len(exits)
+                if connection_count > max_connections:
+                    max_connections = connection_count
+                    start_room_id = room_id
+
+        # Fallback to first room if still not found
+        if not start_room_id:
+            start_room_id = list(displayable_rooms.keys())[0]
+
         queue = deque([(start_room_id, 0, 0)])  # (room_id, x, y)
         room_positions[start_room_id] = (0, 0)
         visited.add(start_room_id)
@@ -2963,6 +4538,11 @@ Congratulations, {character['name']}! You feel stronger and more capable!
                         if 0 <= new_y < height and 0 <= new_x < width:
                             grid[new_y][new_x] = '\\'
 
+        # Get player's current room for highlighting
+        current_room_id = None
+        if player_data and player_data.get('character'):
+            current_room_id = player_data['character'].get('room_id')
+
         # Draw rooms
         for room_id, (x, y) in room_positions.items():
             gx, gy = x - min_x + 5, y - min_y + 2
@@ -2973,11 +4553,15 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             exits = room_data.get('exits', {})
 
             # Choose marker character
-            marker = '*'
-            if hasattr(room, 'is_lair') and room.is_lair:
+            # Player's current room gets special '@' marker
+            if room_id == current_room_id:
+                marker = '@'
+            elif hasattr(room, 'is_lair') and room.is_lair:
                 marker = 'L'
             elif 'up' in exits or 'down' in exits:
                 marker = '^'
+            else:
+                marker = '*'
 
             # Place room marker
             if 0 <= gy < height and 0 <= gx < width:
@@ -2992,7 +4576,7 @@ Congratulations, {character['name']}! You feel stronger and more capable!
 
         # Add legend
         result.append("")
-        result.append("Legend: * = room, L = lair, ^ = stairs, | - / \\ = connections")
+        result.append("Legend: @ = you are here, * = room, L = lair, ^ = stairs, | - / \\ = connections")
         if show_only_explored:
             result.append(f"Explored rooms: {len(displayable_rooms)} / {len(area.rooms)}")
         else:
@@ -3096,7 +4680,7 @@ Congratulations, {character['name']}! You feel stronger and more capable!
                 continue
 
             status = "COMPLETED" if quest_progress.get('completed') else "IN PROGRESS"
-            quest_list.append(f"[{status}] {quest['name']}")
+            quest_list.append(f"[{status}] {quest['name']} (ID: {quest_id})")
 
             if not quest_progress.get('completed'):
                 # Show objectives
@@ -3109,6 +4693,45 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             quest_list.append("")
 
         await self.game_engine.connection_manager.send_message(player_id, "\n".join(quest_list))
+
+    async def _handle_abandon_quest(self, player_id: int, character: dict, quest_id: str):
+        """Abandon a quest."""
+        quest_id = quest_id.strip()
+
+        if not quest_id:
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: abandon <quest_id>")
+            await self.game_engine.connection_manager.send_message(player_id, "Use 'quests' to see your active quest IDs.")
+            return
+
+        # Check if quest exists
+        quest = self.game_engine.quest_manager.get_quest(quest_id)
+        if not quest:
+            await self.game_engine.connection_manager.send_message(player_id, f"Unknown quest: {quest_id}")
+            return
+
+        # Check if player has the quest
+        if not self.game_engine.quest_manager.has_quest(character, quest_id):
+            await self.game_engine.connection_manager.send_message(player_id, f"You don't have the quest '{quest['name']}'.")
+            return
+
+        # Check if quest is completed but not rewarded
+        if self.game_engine.quest_manager.is_quest_complete(character, quest_id):
+            quest_data = character['quests'][quest_id]
+            if not quest_data.get('rewarded', False):
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cannot abandon '{quest['name']}' - it's completed! Return to the quest giver to claim your reward."
+                )
+                return
+
+        # Abandon the quest
+        if self.game_engine.quest_manager.abandon_quest(character, quest_id):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You have abandoned the quest '{quest['name']}'."
+            )
+        else:
+            await self.game_engine.connection_manager.send_message(player_id, "Failed to abandon quest.")
 
     async def _handle_talk_to_npc(self, player_id: int, character: dict, npc_name: str):
         """Talk to an NPC to interact with quests."""
@@ -3124,7 +4747,10 @@ Congratulations, {character['name']}! You feel stronger and more capable!
 
         # Check if there are any NPCs in the room
         if not room.npcs:
-            await self.game_engine.connection_manager.send_message(player_id, "There is no one here to talk to.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("There is no one here to talk to.")
+            )
             return
 
         # Find NPC in the current room by partial name match
@@ -3136,21 +4762,37 @@ Congratulations, {character['name']}! You feel stronger and more capable!
                 break
 
         if not npc_obj:
-            await self.game_engine.connection_manager.send_message(player_id, f"There is no '{npc_name}' here.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"There is no '{npc_name}' here.")
+            )
             return
 
         # Get NPC data from world manager
         npc_data = self.game_engine.world_manager.get_npc_data(npc_obj.npc_id)
 
         if not npc_data:
-            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} has nothing to say.")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"{npc_obj.name} has nothing to say.")
+            )
             return
 
         # Check if NPC has quests
         npc_quests = npc_data.get('quests', [])
         if not npc_quests:
-            greeting = npc_data.get('dialogue', {}).get('greeting', f"{npc_data['name']} has nothing to say.")
-            await self.game_engine.connection_manager.send_message(player_id, greeting)
+            # For vendors and other NPCs, use default dialogue if available, otherwise greeting
+            dialogue = npc_data.get('dialogue', {})
+
+            # Check if this is a vendor (has a shop)
+            if npc_data.get('shop') or (npc_data.get('services') and 'shop' in npc_data.get('services', [])):
+                # Vendor: use default dialogue
+                response = dialogue.get('default', dialogue.get('greeting', f"{npc_data['name']} has nothing to say."))
+            else:
+                # Regular NPC: use greeting
+                response = dialogue.get('greeting', f"{npc_data['name']} has nothing to say.")
+
+            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} says: \"{response}\"")
             return
 
         # Handle quest interaction
@@ -3164,11 +4806,11 @@ Congratulations, {character['name']}! You feel stronger and more capable!
                 # Check if player has already been rewarded
                 if character.get('quests', {}).get(quest_id, {}).get('rewarded'):
                     completed_already = npc_data.get('dialogue', {}).get('quest_completed_already', "I have nothing more for you.")
-                    await self.game_engine.connection_manager.send_message(player_id, completed_already)
+                    await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} says: \"{completed_already}\"")
                 else:
                     # Give reward
                     quest_complete_msg = npc_data.get('dialogue', {}).get('quest_complete', "You have completed the quest!")
-                    await self.game_engine.connection_manager.send_message(player_id, quest_complete_msg)
+                    await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} says: \"{quest_complete_msg}\"")
 
                     self.game_engine.quest_manager.give_quest_reward(character, quest_id)
 
@@ -3189,23 +4831,24 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             # Check if player has the quest
             if self.game_engine.quest_manager.has_quest(character, quest_id):
                 in_progress = npc_data.get('dialogue', {}).get('quest_in_progress', "You are working on my quest.")
-                await self.game_engine.connection_manager.send_message(player_id, in_progress)
+                await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} says: \"{in_progress}\"")
                 return
 
             # Offer the quest
             can_accept, reason = self.game_engine.quest_manager.can_accept_quest(character, quest_id)
             if not can_accept:
-                await self.game_engine.connection_manager.send_message(player_id, reason)
+                await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} says: \"{reason}\"")
                 return
 
             quest_available = npc_data.get('dialogue', {}).get('quest_available', "I have a quest for you.")
-            await self.game_engine.connection_manager.send_message(player_id, quest_available)
+            await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} says: \"{quest_available}\"")
             await self.game_engine.connection_manager.send_message(player_id, f"\nType 'accept {quest_id}' to accept this quest.")
             return
 
-        # No quest interaction needed
-        greeting = npc_data.get('dialogue', {}).get('greeting', f"{npc_data['name']} greets you.")
-        await self.game_engine.connection_manager.send_message(player_id, greeting)
+        # No quest interaction needed - show default dialogue for quest givers as fallback
+        dialogue = npc_data.get('dialogue', {})
+        response = dialogue.get('greeting', f"{npc_data['name']} greets you.")
+        await self.game_engine.connection_manager.send_message(player_id, f"{npc_obj.name} says: \"{response}\"")
 
     async def _handle_accept_quest(self, player_id: int, character: dict, quest_id: str):
         """Accept a quest."""
@@ -3226,3 +4869,579 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             await self.game_engine.connection_manager.send_message(player_id, f"{quest['description']}")
         else:
             await self.game_engine.connection_manager.send_message(player_id, "Failed to accept quest.")
+
+    async def _handle_ability_command(self, player_id: int, character: dict, ability: dict, params: str):
+        """Handle execution of a class ability command.
+
+        Args:
+            player_id: The player ID
+            character: Character data dictionary
+            ability: The ability dictionary
+            params: Additional parameters for the ability
+        """
+        ability_id = ability['id']
+        ability_name = ability['name']
+
+        # Execute the ability through the ability system
+        result = await self.game_engine.ability_system.execute_active_ability(
+            player_id,
+            ability,
+            target_name=params if params else None
+        )
+
+        if not result['success']:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(result['message'])
+            )
+            return
+
+        # Handle specific ability types
+        ability_id = ability['id']
+
+        # Rogue abilities
+        if ability_id == 'picklock':
+            await self._execute_picklock_ability(player_id, character, ability, params)
+        elif ability_id == 'backstab':
+            await self._execute_backstab_ability(player_id, character, ability, params)
+        elif ability_id == 'shadow_step':
+            await self._execute_shadow_step_ability(player_id, character, ability)
+        elif ability_id == 'poison_blade':
+            await self._execute_poison_blade_ability(player_id, character, ability)
+        # Fighter abilities
+        elif ability_id == 'power_attack':
+            await self._execute_power_attack_ability(player_id, character, ability, params)
+        elif ability_id == 'cleave':
+            await self._execute_cleave_ability(player_id, character, ability)
+        elif ability_id == 'dual_wield':
+            await self._execute_dual_wield_ability(player_id, character, ability)
+        elif ability_id == 'shield_bash':
+            await self._execute_shield_bash_ability(player_id, character, ability, params)
+        elif ability_id == 'battle_cry':
+            await self._execute_battle_cry_ability(player_id, character, ability)
+        # Ranger abilities
+        elif ability_id == 'track':
+            await self._execute_track_ability(player_id, character, ability)
+        elif ability_id == 'tame':
+            await self._execute_tame_ability(player_id, character, ability, params)
+        elif ability_id == 'pathfind':
+            await self._execute_pathfind_ability(player_id, character, ability, params)
+        elif ability_id == 'forage':
+            await self._execute_forage_ability(player_id, character, ability)
+        elif ability_id == 'camouflage':
+            await self._execute_camouflage_ability(player_id, character, ability)
+        elif ability_id == 'multishot':
+            await self._execute_multishot_ability(player_id, character, ability)
+        elif ability_id == 'call_of_the_wild':
+            await self._execute_call_wild_ability(player_id, character, ability)
+        else:
+            # Generic ability execution
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                success_message(f"You use {ability_name}!")
+            )
+
+    async def _execute_picklock_ability(self, player_id: int, character: dict, ability: dict, params: str):
+        """Execute the picklock ability."""
+        # TODO: Implement picklock logic
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            info_message("You attempt to pick the lock... (Not yet implemented)")
+        )
+
+    async def _execute_backstab_ability(self, player_id: int, character: dict, ability: dict, params: str):
+        """Execute the backstab ability."""
+        if not params:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Backstab what? Usage: backstab <target>")
+            )
+            return
+
+        # Check if in combat
+        room_id = character.get('room_id')
+        if room_id in self.game_engine.combat_system.active_combats:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("You can't backstab while in active combat!")
+            )
+            return
+
+        # Apply backstab buff for next attack
+        if 'active_abilities' not in character:
+            character['active_abilities'] = {}
+
+        character['active_abilities']['backstab'] = {
+            'damage_multiplier': ability['effect']['value'],
+            'attacks_remaining': 1
+        }
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You prepare a devastating backstab attack!")
+        )
+
+        # Now attack the target
+        await self._handle_attack_command(player_id, params)
+
+    async def _execute_shadow_step_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the shadow step (stealth) ability."""
+        # Apply stealth effect
+        if 'active_abilities' not in character:
+            character['active_abilities'] = {}
+
+        import time
+        duration = ability['effect']['duration']
+        character['active_abilities']['shadow_step'] = {
+            'end_time': time.time() + duration,
+            'dodge_bonus': ability['effect']['dodge_bonus']
+        }
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You melt into the shadows! (+{int(ability['effect']['dodge_bonus']*100)}% dodge for {duration}s)")
+        )
+
+    async def _execute_poison_blade_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the poison blade ability."""
+        # Check for poison vial
+        inventory = character.get('inventory', [])
+        poison_vial = None
+        for item in inventory:
+            if item.get('id') == 'poison_vial':
+                poison_vial = item
+                break
+
+        if not poison_vial:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("You don't have a poison vial!")
+            )
+            return
+
+        # Remove poison vial
+        inventory.remove(poison_vial)
+
+        # Apply poison effect for next 3 attacks
+        if 'active_abilities' not in character:
+            character['active_abilities'] = {}
+
+        character['active_abilities']['poison_blade'] = {
+            'charges': ability['effect']['charges'],
+            'damage': ability['effect']['damage'],
+            'duration': ability['effect']['duration'],
+            'tick_rate': ability['effect']['tick_rate']
+        }
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You coat your weapon with deadly poison! (Next {ability['effect']['charges']} attacks)")
+        )
+
+    # Fighter Ability Handlers
+
+    async def _execute_power_attack_ability(self, player_id: int, character: dict, ability: dict, params: str):
+        """Execute the power attack ability."""
+        if not params:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Power attack what? Usage: powerattack <target>")
+            )
+            return
+
+        # Apply power attack buff for next attack
+        if 'active_abilities' not in character:
+            character['active_abilities'] = {}
+
+        character['active_abilities']['power_attack'] = {
+            'damage_multiplier': ability['effect']['value'],
+            'hit_penalty': ability['effect']['hit_penalty'],
+            'attacks_remaining': 1
+        }
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You wind up for a devastating power attack!")
+        )
+
+        # Now attack the target
+        await self._handle_attack_command(player_id, params)
+
+    async def _execute_cleave_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the cleave ability (AoE attack)."""
+        room_id = character.get('room_id')
+        if not room_id:
+            return
+
+        # Get all mobs in the room
+        mobs = self.game_engine.room_mobs.get(room_id, [])
+        if not mobs:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("There are no enemies to cleave!")
+            )
+            return
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You swing your weapon in a wide arc, attacking all enemies!")
+        )
+
+        # Attack each mob with reduced damage
+        damage_mult = ability['effect']['damage_multiplier']
+        for mob in mobs[:]:  # Copy list since we might remove mobs
+            # Apply cleave buff temporarily
+            if 'active_abilities' not in character:
+                character['active_abilities'] = {}
+
+            character['active_abilities']['cleave'] = {
+                'damage_multiplier': damage_mult,
+                'attacks_remaining': 1
+            }
+
+            # Attack this mob
+            mob_name = mob.get('name', 'creature')
+            await self._handle_attack_command(player_id, mob_name)
+
+    async def _execute_dual_wield_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the dual wield toggle ability."""
+        # Check if already dual wielding
+        current_mode = character.get('dual_wield_mode', False)
+
+        if current_mode:
+            # Turn off dual wield
+            character['dual_wield_mode'] = False
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                info_message("You return to single weapon fighting.")
+            )
+        else:
+            # Check if has two weapons equipped
+            equipped = character.get('equipped', {})
+            main_weapon = equipped.get('weapon')
+            off_weapon = equipped.get('off_hand_weapon')
+
+            if not main_weapon:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("You need a weapon equipped to dual wield!")
+                )
+                return
+
+            # For now, just enable the mode (off-hand weapon can be added later)
+            character['dual_wield_mode'] = True
+            character['dual_wield_config'] = {
+                'main_hand_mult': ability['effect']['main_hand_mult'],
+                'off_hand_mult': ability['effect']['off_hand_mult']
+            }
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                success_message(f"You ready yourself to fight with both hands! (Main: {int(ability['effect']['main_hand_mult']*100)}%, Off: {int(ability['effect']['off_hand_mult']*100)}%)")
+            )
+
+    async def _execute_shield_bash_ability(self, player_id: int, character: dict, ability: dict, params: str):
+        """Execute the shield bash ability."""
+        if not params:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Shield bash what? Usage: shieldbash <target>")
+            )
+            return
+
+        # Check for shield
+        equipped = character.get('equipped', {})
+        shield = equipped.get('shield')
+        if not shield:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("You don't have a shield equipped!")
+            )
+            return
+
+        # Apply shield bash effect
+        if 'active_abilities' not in character:
+            character['active_abilities'] = {}
+
+        character['active_abilities']['shield_bash'] = {
+            'damage': ability['effect']['damage'],
+            'stun_duration': ability['effect']['stun_duration'],
+            'attacks_remaining': 1
+        }
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You slam your shield forward!")
+        )
+
+        # Attack the target
+        await self._handle_attack_command(player_id, params)
+
+    async def _execute_battle_cry_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the battle cry buff ability."""
+        # Apply battle cry buff
+        if 'active_abilities' not in character:
+            character['active_abilities'] = {}
+
+        import time
+        duration = ability['effect']['duration']
+        character['active_abilities']['battle_cry'] = {
+            'end_time': time.time() + duration,
+            'damage_bonus': ability['effect']['damage_bonus']
+        }
+
+        room_id = character.get('room_id')
+        username = self.game_engine.player_manager.get_player_data(player_id).get('username', 'Someone')
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You release a mighty battle cry! (+{int(ability['effect']['damage_bonus']*100)}% damage for {duration}s)")
+        )
+
+        # Broadcast to room
+        await self.game_engine._notify_room_except_player(
+            room_id,
+            player_id,
+            announcement(f"{username} releases a mighty battle cry!")
+        )
+
+    # Ranger Ability Handlers
+
+    async def _execute_track_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the track ability."""
+        room_id = character.get('room_id')
+        if not room_id:
+            return
+
+        tracking_range = ability['effect']['range']
+        tracked_mobs = []
+
+        # Get current room
+        current_room = self.game_engine.world_manager.rooms.get(room_id)
+        if not current_room:
+            return
+
+        # Check current room
+        mobs_here = self.game_engine.room_mobs.get(room_id, [])
+        if mobs_here:
+            tracked_mobs.append((room_id, "here", mobs_here))
+
+        # Check adjacent rooms within range using BFS
+        visited = {room_id}
+        queue = [(room_id, 0)]  # (room_id, distance)
+
+        while queue:
+            current, distance = queue.pop(0)
+            if distance >= tracking_range:
+                continue
+
+            room = self.game_engine.world_manager.rooms.get(current)
+            if not room:
+                continue
+
+            # Check each exit
+            for direction, exit_data in room.exits.items():
+                next_room_id = exit_data.get('to_room') if isinstance(exit_data, dict) else exit_data
+                if next_room_id and next_room_id not in visited:
+                    visited.add(next_room_id)
+                    queue.append((next_room_id, distance + 1))
+
+                    # Check for mobs in this room
+                    mobs_there = self.game_engine.room_mobs.get(next_room_id, [])
+                    if mobs_there:
+                        tracked_mobs.append((next_room_id, direction, mobs_there))
+
+        if not tracked_mobs:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                info_message("You find no tracks of creatures nearby.")
+            )
+            return
+
+        # Build tracking report
+        report = info_message("You find tracks of the following creatures:\n")
+        for room_loc, direction, mobs in tracked_mobs:
+            for mob in mobs:
+                mob_name = mob.get('name', 'creature')
+                mob_level = mob.get('level', 1)
+                if direction == "here":
+                    report += f"  - {mob_name} (level {mob_level}) is in this room\n"
+                else:
+                    report += f"  - {mob_name} (level {mob_level}) tracks lead {direction}\n"
+
+        await self.game_engine.connection_manager.send_message(player_id, report)
+
+    async def _execute_tame_ability(self, player_id: int, character: dict, ability: dict, params: str):
+        """Execute the tame ability."""
+        if not params:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Tame what? Usage: tame <creature>")
+            )
+            return
+
+        # TODO: Implement full taming system
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            info_message(f"You attempt to tame {params}... (Full taming system not yet implemented)")
+        )
+
+    async def _execute_pathfind_ability(self, player_id: int, character: dict, ability: dict, params: str):
+        """Execute the pathfind ability."""
+        if not params:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Pathfind to where? Usage: pathfind <room_id>")
+            )
+            return
+
+        room_id = character.get('room_id')
+        target_room = params.strip()
+
+        # Check if target room exists
+        if target_room not in self.game_engine.world_manager.rooms:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"Unknown location: {target_room}")
+            )
+            return
+
+        # Find path using world graph
+        path = self.game_engine.world_manager.world_graph.find_path(room_id, target_room)
+
+        if not path:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                info_message(f"You can't find a path to {target_room}.")
+            )
+            return
+
+        # Convert path to directions
+        directions = []
+        for i in range(len(path) - 1):
+            current = path[i]
+            next_room = path[i + 1]
+            room = self.game_engine.world_manager.rooms.get(current)
+            if room:
+                for direction, exit_data in room.exits.items():
+                    exit_room = exit_data.get('to_room') if isinstance(exit_data, dict) else exit_data
+                    if exit_room == next_room:
+                        directions.append(direction)
+                        break
+
+        path_str = " -> ".join(directions)
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"Path to {target_room}: {path_str} ({len(directions)} rooms)")
+        )
+
+    async def _execute_forage_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the forage ability."""
+        import random
+
+        success_chance = ability['effect']['success_chance']
+        if random.random() > success_chance:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                info_message("You search the area but find nothing useful.")
+            )
+            return
+
+        # Generate a random item
+        forage_items = [
+            {'id': 'bread', 'name': 'Bread'},
+            {'id': 'apple', 'name': 'Apple'},
+            {'id': 'berries', 'name': 'Berries'},
+            {'id': 'healing_herb', 'name': 'Healing Herb'},
+        ]
+
+        item = random.choice(forage_items)
+
+        # Add to inventory
+        inventory = character.get('inventory', [])
+        inventory.append(item)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You forage and find: {item['name']}")
+        )
+
+    async def _execute_camouflage_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the camouflage ability."""
+        if 'active_abilities' not in character:
+            character['active_abilities'] = {}
+
+        import time
+        duration = ability['effect']['duration']
+        character['active_abilities']['camouflage'] = {
+            'end_time': time.time() + duration,
+            'breaks_on_attack': ability['effect']['breaks_on_attack']
+        }
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You blend into your surroundings! (Hidden for {duration}s)")
+        )
+
+    async def _execute_multishot_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the multishot ability."""
+        room_id = character.get('room_id')
+        if not room_id:
+            return
+
+        # Get all mobs in the room
+        mobs = self.game_engine.room_mobs.get(room_id, [])
+        if not mobs:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("There are no enemies to shoot!")
+            )
+            return
+
+        max_targets = ability['effect']['max_targets']
+        targets = mobs[:max_targets]  # Take up to 3 targets
+
+        # Check ammo
+        ammo_cost = ability['effect']['ammo_cost']
+        equipped_weapon = character.get('equipped', {}).get('weapon')
+        if not equipped_weapon or not equipped_weapon.get('properties', {}).get('ranged'):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("You need a ranged weapon equipped!")
+            )
+            return
+
+        # Check for ammunition (simplified - just check inventory)
+        # Full implementation would check specific ammo types
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You fire multiple arrows at {len(targets)} targets!")
+        )
+
+        # Shoot each target with reduced damage
+        damage_mult = ability['effect']['damage_multiplier']
+        for mob in targets:
+            # Apply multishot buff
+            if 'active_abilities' not in character:
+                character['active_abilities'] = {}
+
+            character['active_abilities']['multishot'] = {
+                'damage_multiplier': damage_mult,
+                'attacks_remaining': 1
+            }
+
+            # Shoot this mob
+            mob_name = mob.get('name', 'creature')
+            await self.game_engine.combat_system.handle_shoot_command(player_id, mob_name)
+
+    async def _execute_call_wild_ability(self, player_id: int, character: dict, ability: dict):
+        """Execute the call of the wild (summon pet) ability."""
+        # TODO: Implement full pet/companion system
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message("You call out to the wild! A spirit wolf appears at your side...")
+        )
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            info_message("(Full pet/companion system not yet implemented)")
+        )

@@ -4,9 +4,12 @@
   "description": "A bustling marketplace filled with colorful stalls and the voices of merchants hawking their wares. The scent of fresh bread, exotic spices, and ripe fruits fills the air. Shoppers browse the various goods on display while children dart between the stalls. To the north lies the main town square, while shops line the eastern and western edges.",
   "area_id": "starter_town",
   "exits": {
-    "northeast": "town_square",
-    "east": "general_store",
-    "west": "tavern"
+    "north": "town_path_1",
+    "east": "mountains_entrance",
+    "west": "tavern",
+    "northeast": "fletcher_shop",
+    "southeast": "blacksmith_shop",
+    "southwest": "armor_shop"
   },
   "items": [],
   "npcs": [

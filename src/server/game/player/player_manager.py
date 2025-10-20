@@ -324,6 +324,23 @@ class PlayerManager:
                 else:
                     logger.info(f"[DOOR] Exit {full_direction} is NOT locked")
 
+            # Send vendor farewell from the room being left
+            if hasattr(self.game_engine, 'vendor_system'):
+                await self.game_engine.vendor_system.send_vendor_farewell(player_id, current_room)
+
+            # Check for trap triggers when exiting the room
+            from ...utils.colors import error_message, announcement
+            trap_result = self.game_engine.trap_system.check_trap_trigger(player_id, current_room)
+            if trap_result:
+                # Trap triggered while exiting!
+                damage_msg = self.game_engine.trap_system.apply_trap_damage(player_id, trap_result)
+                await self.connection_manager.send_message(player_id, error_message(damage_msg))
+
+                # Notify others in the room
+                trap_def = trap_result['trap_def']
+                trap_msg = trap_def['trigger_message'].format(target=username)
+                await self.game_engine._notify_room_except_player(current_room, player_id, announcement(trap_msg))
+
             # Notify others in the current room that this player is leaving
             await self.game_engine._notify_room_except_player(current_room, player_id, f"{username} has just gone {full_direction}.")
 
@@ -336,6 +353,9 @@ class PlayerManager:
             if isinstance(character['visited_rooms'], list):
                 character['visited_rooms'] = set(character['visited_rooms'])
             character['visited_rooms'].add(new_room)
+
+            # Check if any wandering mobs should follow the player
+            await self._check_mob_following(player_id, current_room, new_room, full_direction)
 
             # Send unlock message if applicable
             message = ""
@@ -352,6 +372,10 @@ class PlayerManager:
                 await self.game_engine._notify_room_except_player(new_room, player_id, f"{username} has just arrived.")
 
             await self.game_engine.world_manager.send_room_description(player_id, detailed=False)
+
+            # Send vendor greeting from the room being entered
+            if hasattr(self.game_engine, 'vendor_system'):
+                await self.game_engine.vendor_system.send_vendor_greeting(player_id, new_room)
         else:
             available = ", ".join(exits.keys()) if exits else "none"
             await self.connection_manager.send_message(player_id, f"You can't go {direction}. Available exits: {available}")
@@ -367,6 +391,109 @@ class PlayerManager:
             'window': 'window'  # Special case for bidirectional exits
         }
         return opposite_map.get(direction, None)
+
+    async def _check_mob_following(self, player_id: int, old_room_id: str, new_room_id: str, direction: str):
+        """Check if any wandering mobs should follow the player.
+
+        Args:
+            player_id: The player who just moved
+            old_room_id: The room the player left
+            new_room_id: The room the player entered
+            direction: The direction the player moved
+        """
+        import random
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        # Get follow chance from config
+        follow_chance = self.game_engine.config_manager.get_setting('combat', 'mob_follow', 'follow_chance', default=0.4)
+
+        logger.info(f"[FOLLOW] Checking mob following from {old_room_id} to {new_room_id}, follow_chance={follow_chance}")
+
+        # Check if there are any mobs in the old room
+        if old_room_id not in self.game_engine.room_mobs:
+            logger.debug(f"[FOLLOW] No mobs in room {old_room_id}")
+            return
+
+        logger.info(f"[FOLLOW] Found {len(self.game_engine.room_mobs[old_room_id])} mobs in old room")
+
+        mobs_to_follow = []
+
+        for mob in self.game_engine.room_mobs[old_room_id][:]:  # Copy to avoid modification during iteration
+            # Only wandering mobs can follow
+            if not mob.get('is_wandering'):
+                logger.debug(f"[FOLLOW] {mob.get('name')} is not a wandering mob, is_wandering={mob.get('is_wandering')}")
+                continue
+
+            # Skip if mob is dead
+            if mob.get('health', 0) <= 0:
+                logger.debug(f"[FOLLOW] {mob.get('name')} is dead")
+                continue
+
+            # Roll for follow chance
+            roll = random.random()
+            if roll >= follow_chance:
+                logger.debug(f"[FOLLOW] {mob.get('name')} failed follow roll: {roll:.2f} >= {follow_chance}")
+                continue
+
+            logger.info(f"[FOLLOW] {mob.get('name')} passed follow roll: {roll:.2f} < {follow_chance}")
+
+            # Get the exit from old room
+            old_room = self.game_engine.world_manager.get_room(old_room_id)
+            if not old_room:
+                continue
+
+            # Check if mob can follow through this exit
+            exit_obj = old_room.exits.get(direction)
+            if not exit_obj:
+                logger.debug(f"[FOLLOW] No exit {direction} found in room")
+                continue
+
+            # Check if exit is locked
+            if old_room.is_exit_locked(direction):
+                logger.debug(f"[FOLLOW] {mob.get('name')} cannot follow - exit {direction} is locked")
+                continue
+
+            # Check if destination is a safe room
+            dest_room = self.game_engine.world_manager.get_room(new_room_id)
+            if dest_room and hasattr(dest_room, 'is_safe') and dest_room.is_safe:
+                logger.debug(f"[FOLLOW] {mob.get('name')} cannot follow - destination is a safe room")
+                continue
+
+            # This mob will follow
+            logger.info(f"[FOLLOW] {mob.get('name')} will follow")
+            mobs_to_follow.append(mob)
+
+        # Move the mobs that are following
+        for mob in mobs_to_follow:
+            mob_name = mob.get('name', 'Unknown creature')
+
+            # Remove from old room
+            if old_room_id in self.game_engine.room_mobs:
+                self.game_engine.room_mobs[old_room_id] = [m for m in self.game_engine.room_mobs[old_room_id] if m != mob]
+
+            # Add to new room
+            if new_room_id not in self.game_engine.room_mobs:
+                self.game_engine.room_mobs[new_room_id] = []
+            self.game_engine.room_mobs[new_room_id].append(mob)
+
+            # Notify players in old room
+            for pid, player_data in self.connected_players.items():
+                if player_data.get('character', {}).get('room_id') == old_room_id:
+                    await self.connection_manager.send_message(
+                        pid,
+                        f"{mob_name} follows {direction}."
+                    )
+
+            # Notify players in new room (including the player who moved)
+            for pid, player_data in self.connected_players.items():
+                if player_data.get('character', {}).get('room_id') == new_room_id:
+                    await self.connection_manager.send_message(
+                        pid,
+                        f"{mob_name} follows you into the room!"
+                    )
+
+            logger.info(f"[FOLLOW] {mob_name} followed player from {old_room_id} to {new_room_id} via {direction}")
 
     async def notify_room_except_player(self, room_id: str, exclude_player_id: int, message: str):
         """Send a message to all players in a room except the specified player."""

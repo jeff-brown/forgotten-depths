@@ -7,7 +7,7 @@
   "is_starting_room": true,
   "light_level": 0.8,
   "exits": {
-    "west": "town_square",
+    "southwest": "town_square",
     "up": "inn_room_1"
   },
   "npcs": ["innkeeper_mary"]

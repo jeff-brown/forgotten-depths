@@ -108,29 +108,45 @@ class QuestManager:
     def check_objective_completion(self, character: Dict, quest_id: str, objective_type: str, target: str, room_id: str = None) -> bool:
         """Check if an objective is completed and update progress."""
         if not self.has_quest(character, quest_id):
+            self.logger.debug(f"[QUEST] Player doesn't have quest {quest_id}")
             return False
 
         if self.is_quest_complete(character, quest_id):
+            self.logger.debug(f"[QUEST] Quest {quest_id} already complete")
             return False
 
         quest = self.get_quest(quest_id)
         if not quest:
+            self.logger.warning(f"[QUEST] Quest {quest_id} not found in quest data")
             return False
 
         quest_progress = character['quests'][quest_id]
         objectives_complete = True
 
+        self.logger.info(f"[QUEST] Checking quest {quest_id} objectives for {objective_type}:{target} in room {room_id}")
         for i, objective in enumerate(quest.get('objectives', [])):
+            self.logger.debug(f"[QUEST]   Objective {i}: type={objective['type']}, target={objective.get('target')}, room={objective.get('room')}")
+
+            # Initialize objective if it doesn't exist in quest progress
+            if i not in quest_progress['objectives']:
+                self.logger.warning(f"[QUEST] Objective {i} not found in quest progress for {quest_id}, initializing")
+                quest_progress['objectives'][i] = {
+                    'type': objective['type'],
+                    'progress': 0,
+                    'required': objective.get('count', 1)
+                }
+
             if objective['type'] == objective_type and objective.get('target') == target:
                 # Check room requirement if specified
                 if objective.get('room') and objective['room'] != room_id:
+                    self.logger.info(f"[QUEST]   Objective {i} room mismatch: need {objective['room']}, got {room_id}")
                     continue
 
                 # Update progress
                 obj_progress = quest_progress['objectives'][i]
                 if obj_progress['progress'] < obj_progress['required']:
                     obj_progress['progress'] += 1
-                    self.logger.info(f"Quest {quest_id} objective {i} progress: {obj_progress['progress']}/{obj_progress['required']}")
+                    self.logger.info(f"[QUEST] Quest {quest_id} objective {i} progress: {obj_progress['progress']}/{obj_progress['required']}")
 
             # Check if this objective is complete
             obj_progress = quest_progress['objectives'][i]
@@ -171,3 +187,27 @@ class QuestManager:
         # Mark as rewarded
         if 'quests' in character and quest_id in character['quests']:
             character['quests'][quest_id]['rewarded'] = True
+
+    def abandon_quest(self, character: Dict, quest_id: str) -> bool:
+        """Abandon a quest.
+
+        Args:
+            character: Player character dictionary
+            quest_id: ID of the quest to abandon
+
+        Returns:
+            True if quest was abandoned, False otherwise
+        """
+        if not self.has_quest(character, quest_id):
+            return False
+
+        # Don't allow abandoning completed but unrewarded quests
+        if self.is_quest_complete(character, quest_id):
+            quest_data = character['quests'][quest_id]
+            if not quest_data.get('rewarded', False):
+                return False
+
+        # Remove quest from character
+        del character['quests'][quest_id]
+        self.logger.info(f"Player abandoned quest: {quest_id}")
+        return True

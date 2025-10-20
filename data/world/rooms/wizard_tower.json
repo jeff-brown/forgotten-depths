@@ -6,7 +6,7 @@
   "is_safe": true,
   "light_level": 1.0,
   "exits": {
-    "south": "town_square"
+    "southwest": "arcane_square"
   },
   "npcs": ["ancient_wizard"]
 }

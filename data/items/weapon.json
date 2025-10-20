@@ -9,20 +9,40 @@
       "properties": {
         "damage": "1d6+1",
         "weapon_type": "sword",
-        "material": "steel"
+        "material": "steel",
+        "required_level": 1,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "dagger": {
       "name": "Dagger",
       "type": "weapon",
-      "weight": 2,
-      "base_value": 25,
+      "weight": 10.0,
+      "base_value": 15,
       "description": "A small, quick blade perfect for close combat.",
       "properties": {
-        "damage": "1d4+1",
+        "damage": "1d3",
         "weapon_type": "dagger",
-        "material": "steel"
-      }
+        "material": "steel",
+        "required_level": 0,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard",
+          "sorceror",
+          "cleric",
+          "druid",
+          "warlock"
+        ],
+        "weapon_type_id": 1
+      },
+      "vnum": 0
     },
     "rusty_dagger": {
       "name": "Rusty Dagger",
@@ -34,7 +54,18 @@
         "damage": "1d3",
         "weapon_type": "dagger",
         "material": "iron",
-        "condition": "poor"
+        "condition": "poor",
+        "required_level": 1,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard",
+          "sorceror",
+          "cleric",
+          "druid",
+          "warlock"
+        ]
       }
     },
     "rusty_sword": {
@@ -47,7 +78,14 @@
         "damage": "1d4+1",
         "weapon_type": "sword",
         "material": "iron",
-        "condition": "poor"
+        "condition": "poor",
+        "required_level": 0,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "enchanted_blade": {
@@ -61,7 +99,14 @@
         "weapon_type": "sword",
         "material": "enchanted_steel",
         "magical": true,
-        "enchantment": "sharpness"
+        "enchantment": "sharpness",
+        "required_level": 25,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "guardian_sword": {
@@ -74,170 +119,260 @@
         "damage": "1d8+3",
         "weapon_type": "sword",
         "material": "ancient_steel",
-        "bonus_vs_undead": 2
+        "bonus_vs_undead": 2,
+        "required_level": 25,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "cleric",
+          "bard"
+        ]
       }
     },
     "quarterstaff": {
       "name": "Quarterstaff",
       "type": "weapon",
-      "weight": 4.0,
+      "weight": 40.0,
       "base_value": 10,
       "description": "A sturdy wooden staff useful for both offense and defense.",
       "properties": {
-        "damage": "3d2-2",
+        "damage": "1d4",
         "weapon_type": "staff",
         "material": "wood",
-        "required_level": 1
-      }
+        "required_level": 1,
+        "allowed_classes": [
+          "sorceror",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ],
+        "weapon_type_id": 1
+      },
+      "vnum": 1
     },
     "shortsword": {
       "name": "Shortsword",
       "type": "weapon",
-      "weight": 2.0,
+      "weight": 20.0,
       "base_value": 30,
       "description": "A versatile short blade favored by adventurers.",
       "properties": {
-        "damage": "5d2-4",
+        "damage": "1d6",
         "weapon_type": "sword",
         "material": "steel",
-        "required_level": 1
-      }
+        "required_level": 1,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ],
+        "weapon_type_id": 3
+      },
+      "vnum": 2
     },
     "mace": {
       "name": "Mace",
       "type": "weapon",
-      "weight": 5.0,
+      "weight": 50.0,
       "base_value": 35,
       "description": "A heavy mace designed to crush armor and bone.",
       "properties": {
-        "damage": "6d2-5",
+        "damage": "2d4-1",
         "weapon_type": "mace",
         "material": "iron",
-        "required_level": 1
-      }
+        "required_level": 1,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger"
+        ],
+        "weapon_type_id": 2
+      },
+      "vnum": 3
     },
     "warhammer": {
       "name": "Warhammer",
       "type": "weapon",
-      "weight": 7.0,
+      "weight": 70.0,
       "base_value": 40,
       "description": "A powerful warhammer that delivers devastating blows.",
       "properties": {
-        "damage": "6d2-4",
+        "damage": "2d4",
         "weapon_type": "hammer",
         "material": "iron",
-        "required_level": 1
-      }
+        "required_level": 1,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger"
+        ],
+        "weapon_type_id": 2
+      },
+      "vnum": 4
     },
     "longsword": {
       "name": "Longsword",
       "type": "weapon",
-      "weight": 3.0,
+      "weight": 30.0,
       "base_value": 50,
       "description": "A well-balanced longsword with excellent reach.",
       "properties": {
-        "damage": "8d2-6",
+        "damage": "2d4+1",
         "weapon_type": "sword",
         "material": "steel",
-        "required_level": 3
-      }
+        "required_level": 3,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "bard"
+        ],
+        "weapon_type_id": 3
+      },
+      "vnum": 5
     },
     "battleax": {
       "name": "Battleax",
       "type": "weapon",
-      "weight": 5.0,
+      "weight": 50.0,
       "base_value": 60,
       "description": "A fearsome battle axe capable of cleaving through armor.",
       "properties": {
-        "damage": "10d2-8",
+        "damage": "2d6",
         "weapon_type": "axe",
         "material": "steel",
-        "required_level": 3
-      }
+        "required_level": 3,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ],
+        "weapon_type_id": 4
+      },
+      "vnum": 6
     },
     "morningstar": {
       "name": "Morningstar",
       "type": "weapon",
-      "weight": 8.0,
+      "weight": 80.0,
       "base_value": 70,
       "description": "A spiked morningstar that inflicts brutal wounds.",
       "properties": {
-        "damage": "12d2-10",
+        "damage": "4d4-2",
         "weapon_type": "mace",
         "material": "iron",
-        "required_level": 2
-      }
+        "required_level": 2,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger"
+        ],
+        "weapon_type_id": 2
+      },
+      "vnum": 7
     },
     "broadsword": {
       "name": "Broadsword",
       "type": "weapon",
-      "weight": 4.0,
+      "weight": 40.0,
       "base_value": 80,
       "description": "A wide-bladed broadsword with deadly cutting power.",
       "properties": {
-        "damage": "7d3-5",
+        "damage": "2d8",
         "weapon_type": "sword",
         "material": "steel",
-        "required_level": 3
-      }
+        "required_level": 3,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "bard",
+          "rogue"
+        ],
+        "weapon_type_id": 3
+      },
+      "vnum": 8
     },
     "flail": {
       "name": "Flail",
       "type": "weapon",
-      "weight": 9.0,
+      "weight": 90.0,
       "base_value": 90,
       "description": "A weighted flail that strikes with unpredictable force.",
       "properties": {
         "damage": "5d4-2",
         "weapon_type": "flail",
         "material": "iron",
-        "required_level": 4
-      }
+        "required_level": 4,
+        "allowed_classes": [
+          "fighter",
+          "cleric"
+        ],
+        "weapon_type_id": 2
+      },
+      "vnum": 9
     },
     "halberd": {
       "name": "Halberd",
       "type": "weapon",
-      "weight": 12.0,
+      "weight": 120.0,
       "base_value": 120,
       "description": "A long polearm combining axe, spike, and hook.",
       "properties": {
-        "damage": "9d3-3",
+        "damage": "6d4",
         "weapon_type": "polearm",
         "material": "steel",
-        "required_level": 6
-      }
+        "required_level": 6,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ],
+        "weapon_type_id": 4
+      },
+      "vnum": 10
     },
     "greatsword": {
       "name": "Greatsword",
       "type": "weapon",
-      "weight": 7.0,
+      "weight": 70.0,
       "base_value": 150,
       "description": "A massive two-handed sword wielded by the strongest warriors.",
       "properties": {
         "damage": "7d4",
         "weapon_type": "sword",
         "material": "steel",
-        "required_level": 6
-      }
+        "required_level": 6,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ],
+        "weapon_type_id": 4
+      },
+      "vnum": 11
     },
     "rimeax": {
       "name": "Rimeax",
       "type": "weapon",
-      "weight": 5.0,
+      "weight": 50.0,
       "base_value": 900,
       "description": "A frost-enchanted axe that unleashes a blast of frost on impact.",
       "properties": {
-        "damage": "15d3-9",
+        "damage": "10d4-4",
         "weapon_type": "axe",
         "material": "enchanted_steel",
         "required_level": 12,
-        "magical": true
-      }
+        "magical": true,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ],
+        "weapon_type_id": 6
+      },
+      "vnum": 51
     },
     "pyrehammer": {
       "name": "Pyrehammer",
       "type": "weapon",
-      "weight": 7.0,
+      "weight": 70.0,
       "base_value": 750,
       "description": "A flame-wreathed hammer that delivers a blast of flame with each strike.",
       "properties": {
@@ -245,133 +380,202 @@
         "weapon_type": "hammer",
         "material": "enchanted_steel",
         "required_level": 10,
-        "magical": true
-      }
+        "magical": true,
+        "allowed_classes": [
+          "fighter",
+          "cleric"
+        ],
+        "weapon_type_id": 5
+      },
+      "vnum": 52
     },
     "levinblade": {
       "name": "Levinblade",
       "type": "weapon",
-      "weight": 3.0,
+      "weight": 30.0,
       "base_value": 1000,
       "description": "A lightning-charged blade that releases a bolt of lightning upon hitting foes.",
       "properties": {
-        "damage": "16d3-8",
+        "damage": "6d4+9",
         "weapon_type": "sword",
         "material": "enchanted_steel",
         "required_level": 15,
-        "magical": true
-      }
+        "magical": true,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "bard"
+        ],
+        "weapon_type_id": 7
+      },
+      "vnum": 53
     },
     "short_bow": {
       "name": "Short Bow",
       "type": "weapon",
-      "weight": 3.0,
+      "weight": 30.0,
       "base_value": 30,
       "description": "A compact bow suitable for hunting and skirmishing.",
       "properties": {
-        "damage": "5d2-4",
+        "damage": "1d6",
         "weapon_type": "bow",
         "material": "wood",
         "required_level": 1,
         "ranged": true,
         "min_range": 3,
-        "max_range": 60
-      }
+        "max_range": 60,
+        "allowed_classes": [
+          "ranger",
+          "rogue",
+          "fighter"
+        ],
+        "weapon_type_id": 8
+      },
+      "vnum": 62
     },
     "long_bow": {
       "name": "Long Bow",
       "type": "weapon",
-      "weight": 4.0,
+      "weight": 40.0,
       "base_value": 50,
       "description": "A powerful longbow with excellent range and accuracy.",
       "properties": {
-        "damage": "8d2-6",
+        "damage": "2d4+1",
         "weapon_type": "bow",
         "material": "wood",
         "required_level": 2,
         "ranged": true,
         "min_range": 5,
-        "max_range": 60
-      }
+        "max_range": 60,
+        "allowed_classes": [
+          "ranger",
+          "rogue",
+          "fighter"
+        ],
+        "weapon_type_id": 8
+      },
+      "vnum": 63
     },
     "crossbow": {
       "name": "Crossbow",
       "type": "weapon",
-      "weight": 6.0,
+      "weight": 60.0,
       "base_value": 100,
       "description": "A mechanical crossbow that fires deadly bolts.",
       "properties": {
-        "damage": "8d3-4",
+        "damage": "2d4+7",
         "weapon_type": "crossbow",
         "material": "wood",
         "required_level": 4,
         "ranged": true,
         "min_range": 4,
-        "max_range": 60
-      }
+        "max_range": 60,
+        "allowed_classes": [
+          "ranger",
+          "rogue",
+          "fighter"
+        ],
+        "weapon_type_id": 8
+      },
+      "vnum": 64
     },
     "great_bow": {
       "name": "Great Bow",
       "type": "weapon",
-      "weight": 5.0,
+      "weight": 50.0,
       "base_value": 150,
       "description": "An oversized bow requiring great strength to draw.",
       "properties": {
-        "damage": "12d3-6",
+        "damage": "8d4-2",
         "weapon_type": "bow",
         "material": "wood",
         "required_level": 6,
         "ranged": true,
         "min_range": 5,
-        "max_range": 60
-      }
+        "max_range": 60,
+        "allowed_classes": [
+          "ranger",
+          "rogue",
+          "fighter"
+        ],
+        "weapon_type_id": 9
+      },
+      "vnum": 68
     },
     "mithril_sword": {
       "name": "Mithril Sword",
       "type": "weapon",
-      "weight": 3.0,
+      "weight": 30.0,
       "base_value": 0,
       "description": "A legendary blade forged from gleaming mithril.",
       "properties": {
-        "damage": "16d3-8",
+        "damage": "6d4+9",
         "weapon_type": "sword",
         "material": "mithril",
-        "required_level": 1000
-      }
+        "required_level": 1000,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ],
+        "weapon_type_id": 5
+      },
+      "vnum": 76
     },
     "darksword": {
       "name": "Darksword",
       "type": "weapon",
-      "weight": 3.0,
+      "weight": 30.0,
       "base_value": 0,
       "description": "A shadowy blade that seems to absorb light.",
       "properties": {
-        "damage": "9d3-5",
+        "damage": "6d4-2",
         "weapon_type": "sword",
         "material": "darksteel",
-        "required_level": 1000
-      }
+        "required_level": 1000,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ],
+        "weapon_type_id": 3
+      },
+      "vnum": 78
     },
     "sling": {
       "name": "Sling",
       "type": "weapon",
-      "weight": 1.5,
+      "weight": 15.0,
       "base_value": 10,
       "description": "A simple leather sling for hurling stones.",
       "properties": {
-        "damage": "3d2-2",
+        "damage": "1d4",
         "weapon_type": "sling",
         "material": "leather",
         "required_level": 0,
         "ranged": true,
         "min_range": 3,
-        "max_range": 89
-      }
+        "max_range": 89,
+        "allowed_classes": [
+          "ranger",
+          "rogue",
+          "fighter",
+          "bard",
+          "sorceror",
+          "cleric",
+          "druid",
+          "warlock"
+        ],
+        "weapon_type_id": 8
+      },
+      "vnum": 91
     },
     "blowgun": {
       "name": "Blowgun",
       "type": "weapon",
-      "weight": 1.0,
+      "weight": 10.0,
       "base_value": 25,
       "description": "A hollow tube for launching poisoned darts silently.",
       "properties": {
@@ -381,64 +585,97 @@
         "required_level": 2,
         "ranged": true,
         "min_range": 3,
-        "max_range": 92
-      }
+        "max_range": 92,
+        "allowed_classes": [
+          "rogue",
+          "ranger"
+        ],
+        "weapon_type_id": 8
+      },
+      "vnum": 94
     },
     "elven_bow": {
       "name": "Elven Bow",
       "type": "weapon",
-      "weight": 4.0,
+      "weight": 40.0,
       "base_value": 1250,
       "description": "An elegant elven bow imbued with magical energy, releasing a bolt of energy.",
       "properties": {
-        "damage": "15d3-5",
+        "damage": "10d4",
         "weapon_type": "bow",
         "material": "enchanted_wood",
         "required_level": 15,
         "magical": true,
         "ranged": true,
         "min_range": 5,
-        "max_range": 60
-      }
+        "max_range": 60,
+        "allowed_classes": [
+          "ranger",
+          "rogue"
+        ],
+        "weapon_type_id": 10
+      },
+      "vnum": 96
     },
     "stick": {
       "name": "Stick",
       "type": "weapon",
-      "weight": 1.0,
+      "weight": 10.0,
       "base_value": 0,
       "description": "A crude wooden stick with minimal offensive capability.",
       "properties": {
         "damage": "1d2",
         "weapon_type": "club",
         "material": "wood",
-        "required_level": 0
-      }
+        "required_level": 0,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger",
+          "druid"
+        ],
+        "weapon_type_id": 1
+      },
+      "vnum": 101
     },
     "wooden_mallet": {
       "name": "Wooden Mallet",
       "type": "weapon",
-      "weight": 2.0,
+      "weight": 20.0,
       "base_value": 0,
       "description": "A simple wooden mallet used as an improvised weapon.",
       "properties": {
-        "damage": "2d2-1",
+        "damage": "1d3",
         "weapon_type": "hammer",
         "material": "wood",
-        "required_level": 0
-      }
+        "required_level": 0,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger"
+        ],
+        "weapon_type_id": 1
+      },
+      "vnum": 102
     },
     "dwarven_battleax": {
       "name": "Dwarven Battleax",
       "type": "weapon",
-      "weight": 10.0,
+      "weight": 100.0,
       "base_value": 0,
       "description": "A masterwork battleaxe forged in the deep halls by dwarven smiths.",
       "properties": {
-        "damage": "20d3-10",
+        "damage": "8d6+2",
         "weapon_type": "axe",
         "material": "dwarven_steel",
-        "required_level": 15
-      }
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ],
+        "weapon_type_id": 4
+      },
+      "vnum": 104
     },
     "tentacle": {
       "name": "Tentacle",
@@ -476,7 +713,11 @@
         "damage": "15d2+4",
         "weapon_type": "axe",
         "material": "steel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
       }
     },
     "gnashing_teeth": {
@@ -528,7 +769,12 @@
         "damage": "5d2+6",
         "weapon_type": "mace",
         "material": "darksteel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger"
+        ]
       }
     },
     "bone_hammer": {
@@ -541,7 +787,12 @@
         "damage": "14d6-4",
         "weapon_type": "hammer",
         "material": "bone",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger"
+        ]
       }
     },
     "burning_claws": {
@@ -827,7 +1078,13 @@
         "damage": "9d3-7",
         "weapon_type": "club",
         "material": "wood",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger",
+          "druid"
+        ]
       }
     },
     "wicked_spear": {
@@ -840,7 +1097,11 @@
         "damage": "10d3-6",
         "weapon_type": "polearm",
         "material": "steel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
       }
     },
     "gaping_maw": {
@@ -866,7 +1127,14 @@
         "damage": "8d2-4",
         "weapon_type": "staff",
         "material": "enchanted_wood",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "sorceror",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
       }
     },
     "huge_club": {
@@ -879,7 +1147,13 @@
         "damage": "5d6",
         "weapon_type": "club",
         "material": "wood",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "cleric",
+          "ranger",
+          "druid"
+        ]
       }
     },
     "talons": {
@@ -905,7 +1179,13 @@
         "damage": "10d3-6",
         "weapon_type": "sword",
         "material": "enchanted_steel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "huge_talons": {
@@ -931,7 +1211,13 @@
         "damage": "15d4-10",
         "weapon_type": "sword",
         "material": "crystal",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "flaming_greatsword": {
@@ -944,7 +1230,11 @@
         "damage": "15d3-9",
         "weapon_type": "sword",
         "material": "enchanted_steel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
       }
     },
     "frost_rod": {
@@ -957,7 +1247,14 @@
         "damage": "15d2-10",
         "weapon_type": "staff",
         "material": "crystal",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "sorceror",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
       }
     },
     "enormous_talons": {
@@ -983,7 +1280,11 @@
         "damage": "20d4",
         "weapon_type": "axe",
         "material": "enchanted_steel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
       }
     },
     "smouldering_great_spear": {
@@ -993,10 +1294,14 @@
       "base_value": 0,
       "description": "A legendary spear crackling with volcanic heat.",
       "properties": {
-        "damage": "32-96",
+        "damage": "20d4+10",
         "weapon_type": "polearm",
         "material": "enchanted_steel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
       }
     },
     "crystalline_talons": {
@@ -1009,7 +1314,13 @@
         "damage": "18d6+12",
         "weapon_type": "sword",
         "material": "crystal",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "glowing_bardiche": {
@@ -1019,10 +1330,14 @@
       "base_value": 0,
       "description": "A polearm that shines with divine radiance.",
       "properties": {
-        "damage": "40-160",
+        "damage": "20d6+10",
         "weapon_type": "polearm",
         "material": "enchanted_steel",
-        "required_level": 15
+        "required_level": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
       }
     },
     "huge_glowing_sabre": {
@@ -1035,7 +1350,11 @@
         "damage": "20d10+40",
         "weapon_type": "sword",
         "material": "enchanted_steel",
-        "required_level": 1
+        "required_level": 1,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
       }
     },
     "demon_sword": {
@@ -1045,11 +1364,17 @@
       "base_value": 100,
       "description": "An unholy blade wreathed in poison, forged in the depths of hell.",
       "properties": {
-        "damage": "150-500",
+        "damage": "50d6+50",
         "weapon_type": "sword",
         "material": "demonic",
         "required_level": 1,
-        "magical": true
+        "magical": true,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "animate_sword": {
@@ -1059,11 +1384,17 @@
       "base_value": 10,
       "description": "A sentient blade that channels a huge blast of flame through its wielder.",
       "properties": {
-        "damage": "100-5000",
+        "damage": "100d20+100",
         "weapon_type": "sword",
         "material": "animated",
         "required_level": 1,
-        "magical": true
+        "magical": true,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "bard"
+        ]
       }
     },
     "dart": {
@@ -1076,7 +1407,12 @@
         "required_level": 1,
         "damage": "1d4",
         "weapon_type": "thrown",
-        "material": "steel"
+        "material": "steel",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue"
+        ]
       }
     },
     "knife": {
@@ -1089,7 +1425,12 @@
         "required_level": 3,
         "damage": "1d6",
         "weapon_type": "thrown",
-        "material": "steel"
+        "material": "steel",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue"
+        ]
       }
     },
     "spear": {
@@ -1102,7 +1443,12 @@
         "required_level": 2,
         "damage": "1d8+1",
         "weapon_type": "thrown",
-        "material": "steel"
+        "material": "steel",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue"
+        ]
       }
     },
     "axe": {
@@ -1115,7 +1461,12 @@
         "required_level": 5,
         "damage": "1d10+2",
         "weapon_type": "thrown",
-        "material": "steel"
+        "material": "steel",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue"
+        ]
       }
     },
     "arrow": {
@@ -1128,7 +1479,12 @@
         "required_level": 0,
         "damage": "1d8-1",
         "weapon_type": "ammunition",
-        "material": "steel"
+        "material": "steel",
+        "allowed_classes": [
+          "ranger",
+          "rogue",
+          "fighter"
+        ]
       }
     },
     "stone": {
@@ -1141,7 +1497,12 @@
         "required_level": 0,
         "damage": "1d5-1",
         "weapon_type": "ammunition",
-        "material": "steel"
+        "material": "steel",
+        "allowed_classes": [
+          "ranger",
+          "rogue",
+          "fighter"
+        ]
       }
     }
   }

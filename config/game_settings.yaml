@@ -62,6 +62,62 @@ world:
   day_night_cycle: false
   map_shows_only_explored: true  # Only show rooms player has visited in map command
 
+# Arena Settings
+# Configure combat arenas where players can summon mobs by ringing gongs
+arenas:
+  millhaven_arena:
+    room_id: "arena"                # Room ID where this arena is located
+    enabled: true
+    max_active_mobs: 8              # Maximum number of mobs that can be in the arena at once
+    gong_cooldown: 0                # Cooldown in seconds between gong uses (0 = no cooldown)
+    mob_pool:                       # Mobs that can be summoned
+      - id: "skeleton_warrior"
+        weight: 8
+      - id: "giant_bat"
+        weight: 8
+      - id: "skeleton_warrior"
+        weight: 8
+      - id: huge_rat
+        weight: 8
+      - id: imp
+        weight: 8
+      - id: female_kobold
+        weight: 8
+      - id: kobold
+        weight: 8
+      - id: female_orc
+        weight: 8
+      - id: orc
+        weight: 8
+      - id: skeleton_warrior
+        weight: 8
+      - id: giant_bat
+        weight: 8
+      - id: lizard_woman
+        weight: 8
+      - id: lizard_man
+        weight: 8
+      - id: female_hobgoblin
+        weight: 8
+      - id: hobgoblin
+        weight: 8
+      - id: cave_bear
+        weight: 8
+
+  # Example: Another town's arena (disabled for now)
+  # riverdale_arena:
+  #   room_id: "riverdale_arena"
+  #   enabled: true
+  #   max_active_mobs: 5
+  #   gong_cooldown: 30
+  #   mob_pool:
+  #     - id: "orc_warrior"
+  #       weight: 40
+  #     - id: "troll"
+  #       weight: 30
+  #     - id: "dire_wolf"
+  #       weight: 30
+
 # Dungeon Settings
 # Define wandering mob configs for each dungeon area
 wandering_mobs:
@@ -128,12 +184,22 @@ combat:
   damage_variance: 0.2
   armor_effectiveness: 0.1
 
+  # Mob Flee Behavior (wandering mobs only)
+  mob_flee:
+    health_threshold: 0.3     # Flee when health drops below 30%
+    flee_chance: 0.5          # 50% chance to attempt flee when below threshold
+
+  # Wandering Mob Following Behavior
+  mob_follow:
+    follow_chance: 0.4        # 40% chance for wandering mob to follow player leaving room
+
 # Economy Settings
 economy:
   vendor_buy_rate: 0.5
   vendor_sell_rate: 1.2
   tax_rate: 0.05
   inflation_rate: 0.0
+  vendor_stock_replenishment_interval: 300  # Seconds between stock replenishment (300 = 5 minutes)
 
 # Communication Settings
 communication:
@@ -166,6 +232,14 @@ death:
     experience_loss: 0.1
     item_loss: false
     stat_loss: false
+
+# Ship Passage Settings
+ship_passage:
+  cost: 100                        # Gold cost for passage across the great lake
+  rat_event_chance: 0.15           # 15% chance rats eat food during voyage
+  robbery_event_chance: 0.10       # 10% chance of being robbed during voyage
+  robbery_gold_min: 10             # Minimum gold that can be stolen
+  robbery_gold_max: 50             # Maximum gold that can be stolen
 
 # Admin Settings
 admin:

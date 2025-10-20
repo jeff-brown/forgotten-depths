@@ -10,6 +10,6 @@
     "south": "dungeon3_111"
   },
   "is_lair": true,
-  "lair_monster": "great_dragon",
+  "lair_monster": "elysian_dragon",
   "respawn_time": 600
 }

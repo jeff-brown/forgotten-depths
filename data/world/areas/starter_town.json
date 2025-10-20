@@ -10,14 +10,26 @@
     "market_square",
     "inn_entrance",
     "inn_room_1",
+    "inn_balcony",
     "blacksmith_shop",
+    "armor_shop",
     "general_store",
     "tavern",
-    "arena"
+    "tavern_cellar",
+    "arena",
+    "temple",
+    "training_hall",
+    "magic_shop",
+    "potion_shop",
+    "arcane_square",
+    "town_path",
+    "town_path_1",
+    "secret_forge"
   ],
   "notable_npcs": [
     "mayor_thornfield",
     "blacksmith_goran",
+    "armorer_helena",
     "innkeeper_mary",
     "shopkeeper_tom"
   ],

@@ -8,6 +8,10 @@ from .room import Room
 from .area import Area
 from .graph import WorldGraph, GraphEdge, EdgeType
 from ...utils.logger import get_logger
+from ...utils.colors import (
+    announcement, monster_spawn, error_message, info_message,
+    Colors, RGBColors, wrap_color, light_level_to_factor
+)
 
 
 class WorldManager:
@@ -501,6 +505,52 @@ class WorldManager:
         self.logger.warning(f"NPC {npc_id} not found in loaded NPC data")
         return npc_id.replace('_', ' ')
 
+    async def send_room_description_for_room(self, player_id: int, room_id: str, current_player_id: int, detailed: bool = False):
+        """Send the description of a specific room (for looking in a direction).
+
+        Args:
+            player_id: ID of the player to send the description to
+            room_id: ID of the room to describe
+            current_player_id: ID to use for filtering "who is here" (usually same as player_id)
+            detailed: Whether to send detailed description
+        """
+        room = self.get_room(room_id)
+
+        if room:
+            # Get effective light level (room base only, player isn't in this room)
+            light_level = self.calculate_effective_light_level(room_id)
+            dim_factor = light_level_to_factor(light_level)
+
+            if detailed:
+                # Send detailed description for look command
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"\n{wrap_color(room.description, RGBColors.BOLD_YELLOW, dim_factor)}{Colors.BOLD_WHITE}"
+                )
+            else:
+                # Send basic description - generate from room title
+                basic_desc = self._generate_basic_description(room)
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"\n{wrap_color(basic_desc, RGBColors.BOLD_YELLOW, dim_factor)}{Colors.BOLD_WHITE}"
+                )
+
+            # Generate who/what is here
+            who_here = self.generate_who_is_here(current_player_id, room_id, dim_factor)
+            await self.game_engine.connection_manager.send_message(player_id, f"{who_here}\n")
+            items_description = self.game_engine.item_manager.get_room_items_description(room_id, dim_factor)
+            await self.game_engine.connection_manager.send_message(player_id, f"{items_description}\n")
+
+            # Show spent ammunition if any
+            ammo_description = self.game_engine.combat_system.get_spent_ammo_description(room_id, dim_factor)
+            if ammo_description:
+                await self.game_engine.connection_manager.send_message(player_id, f"{ammo_description}\n")
+        else:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("\nYou can't see anything in that direction.")
+            )
+
     async def send_room_description(self, player_id: int, detailed: bool = False):
         """Send the description of the player's current room."""
         # Get player data through game engine
@@ -512,64 +562,146 @@ class WorldManager:
         room = self.get_room(character['room_id'])
 
         if room:
+            # Get effective light level (room base + player light sources)
+            room_id = character['room_id']
+            light_level = self.calculate_effective_light_level(room_id)
+            dim_factor = light_level_to_factor(light_level)
+
             if detailed:
                 # Send detailed description for look command
-                await self.game_engine.connection_manager.send_message(player_id, f"\n{room.description}")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"\n{wrap_color(room.description, RGBColors.BOLD_YELLOW, dim_factor)}{Colors.BOLD_WHITE}"
+                )
             else:
                 # Send basic description - generate from room title
                 basic_desc = self._generate_basic_description(room)
-                await self.game_engine.connection_manager.send_message(player_id, f"\n{basic_desc}\n")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"\n{wrap_color(basic_desc, RGBColors.BOLD_YELLOW, dim_factor)}{Colors.BOLD_WHITE}"
+                )
 
             # Generate who/what is here
-            who_here = self.generate_who_is_here(player_id, character['room_id'])
+            who_here = self.generate_who_is_here(player_id, character['room_id'], dim_factor)
             await self.game_engine.connection_manager.send_message(player_id, f"{who_here}\n")
-            items_description = self.game_engine.item_manager.get_room_items_description(character['room_id'])
+            items_description = self.game_engine.item_manager.get_room_items_description(character['room_id'], dim_factor)
             await self.game_engine.connection_manager.send_message(player_id, f"{items_description}\n")
+
+            # Show spent ammunition if any
+            ammo_description = self.game_engine.combat_system.get_spent_ammo_description(character['room_id'], dim_factor)
+            if ammo_description:
+                await self.game_engine.connection_manager.send_message(player_id, f"{ammo_description}\n")
         else:
             if detailed:
-                await self.game_engine.connection_manager.send_message(player_id, "\nYou are in a void...")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("\nYou are in a void...")
+                )
             else:
-                await self.game_engine.connection_manager.send_message(player_id, "\nYou are in the void.")
-            await self.game_engine.connection_manager.send_message(player_id, "There is nobody here.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("\nYou are in the void.")
+                )
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                wrap_color("There is nobody here.", Colors.MAGENTA) + Colors.BOLD_WHITE
+            )
             # In void, there are no items on floor
-            await self.game_engine.connection_manager.send_message(player_id, "There is nothing on the floor.\n")
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                wrap_color("There is nothing on the floor.", Colors.BOLD_CYAN) + "\n" + Colors.BOLD_WHITE
+            )
+
+    def calculate_effective_light_level(self, room_id: str) -> float:
+        """Calculate the effective light level in a room.
+
+        Takes into account:
+        - Base room light level
+        - Lit light sources carried by players in the room
+
+        Args:
+            room_id: The room ID
+
+        Returns:
+            Effective light level (0.0-1.0), capped at 1.0
+        """
+        room = self.get_room(room_id)
+        if not room:
+            return 1.0
+
+        # Start with base room light level
+        base_light = getattr(room, '_raw_data', {}).get('light_level', 1.0)
+        base_factor = light_level_to_factor(base_light)
+
+        # Add brightness from lit light sources
+        additional_light = 0.0
+
+        # Check all players in the room
+        for player_id, player_data in self.game_engine.player_manager.get_all_connected_players().items():
+            if (player_data.get('character') and
+                player_data['character'].get('room_id') == room_id):
+
+                # Check their inventory for lit light sources
+                inventory = player_data['character'].get('inventory', [])
+                for item in inventory:
+                    if (item.get('is_light_source', False) and
+                        item.get('is_lit', False)):
+
+                        # Add the brightness from this light source
+                        brightness = item.get('properties', {}).get('brightness', 0.5)
+                        additional_light += brightness
+
+        # Combine base and additional light, cap at 1.0
+        effective_light = min(1.0, base_factor + additional_light)
+        return effective_light
 
     def _generate_basic_description(self, room):
         """Generate a basic description from room title."""
         title = room.title.lower()
         return f"You are in the {title}."
 
-    def generate_who_is_here(self, current_player_id: int, room_id: str) -> str:
-        """Generate description of who/what is in the room."""
+    def generate_who_is_here(self, current_player_id: int, room_id: str, dim_factor: float = 1.0) -> str:
+        """Generate description of who/what is in the room.
+
+        Args:
+            current_player_id: The player viewing the room
+            room_id: The room ID
+            dim_factor: Light level dimming factor (0.0-1.0)
+        """
         npcs = []
         mobs = []
         other_players = []
 
         # Get NPCs and mobs from room data - check multiple sources
         room = self.get_room(room_id)
-        room_npcs = []
 
         # Try to get NPCs from the room object
         if room and hasattr(room, 'npcs') and room.npcs:
             # If it's a list of NPC objects
             if hasattr(room.npcs[0], 'name') if room.npcs else False:
-                room_npcs = [npc.name for npc in room.npcs]
+                # NPCs are already NPC objects with display names
+                for npc in room.npcs:
+                    display_name = npc.name
+                    # Check hostility using npc_id
+                    is_hostile = self.is_npc_hostile(npc.npc_id)
+
+                    if is_hostile:
+                        mobs.append(f"a {display_name}")
+                    else:
+                        npcs.append(display_name)
             else:
-                # If it's a list of NPC IDs
-                room_npcs = room.npcs
+                # If it's a list of NPC IDs (legacy support)
+                for npc_id in room.npcs:
+                    # Get the proper display name from NPC data
+                    display_name = self.get_npc_display_name(npc_id)
 
-        # Convert NPC IDs to readable names using preloaded data
-        for npc_id in room_npcs:
-            # Get the proper display name from NPC data
-            display_name = self.get_npc_display_name(npc_id)
+                    # Check if this NPC has data with hostility flag
+                    is_hostile = self.is_npc_hostile(npc_id)
 
-            # Check if this NPC has data with hostility flag
-            is_hostile = self.is_npc_hostile(npc_id)
-
-            if is_hostile:
-                mobs.append(f"a {display_name}")
-            else:
-                npcs.append(display_name)
+                    if is_hostile:
+                        mobs.append(f"a {display_name}")
+                    else:
+                        npcs.append(display_name)
 
         # Get other players in the same room
         for player_id, player_data in self.game_engine.player_manager.get_all_connected_players().items():
@@ -585,10 +717,10 @@ class WorldManager:
         # Add NPCs first
         if npcs:
             if len(npcs) == 1:
-                entities.append(f"{npcs[0]} is here.")
+                entities.append(wrap_color(f"{npcs[0]} is here.", RGBColors.BOLD_GREEN, dim_factor))
             else:
                 npc_list = ", ".join(npcs[:-1]) + f" and {npcs[-1]}"
-                entities.append(f"{npc_list} are here.")
+                entities.append(wrap_color(f"{npc_list} are here.", RGBColors.BOLD_GREEN, dim_factor))
 
         # Add spawned mobs from gong rings
         spawned_mobs = []
@@ -601,26 +733,27 @@ class WorldManager:
         all_mobs = mobs + spawned_mobs
         if all_mobs:
             if len(all_mobs) == 1:
-                entities.append(f"There is {all_mobs[0]} here.")
+                entities.append(wrap_color(f"There is {all_mobs[0]} here.", RGBColors.BOLD_GREEN, dim_factor))
             else:
                 mob_list = ", ".join(all_mobs[:-1]) + f" and {all_mobs[-1]}"
-                entities.append(f"There are {mob_list} here.")
+                entities.append(wrap_color(f"There are {mob_list} here.", RGBColors.BOLD_GREEN, dim_factor))
 
         # Add other players
         if other_players:
             if len(other_players) == 1:
-                entities.append(f"{other_players[0]} is here.")
+                entities.append(wrap_color(f"{other_players[0]} is here.", RGBColors.BOLD_MAGENTA, dim_factor))
             elif len(other_players) == 2:
-                entities.append(f"{other_players[0]} and {other_players[1]} are here with you.")
+                entities.append(wrap_color(f"{other_players[0]} and {other_players[1]} are here with you.", RGBColors.BOLD_MAGENTA, dim_factor))
             else:
                 player_list = ", ".join(other_players[:-1]) + f" and {other_players[-1]}"
-                entities.append(f"{player_list} are here with you.")
+                entities.append(wrap_color(f"{player_list} are here with you.", RGBColors.BOLD_MAGENTA, dim_factor))
 
         # Return combined description or default
         if entities:
-            return "\n".join(entities)
+            return "\n".join(entities) + Colors.BOLD_WHITE
         else:
-            return "There is nobody here."
+            # In very dark rooms, use dimmed magenta
+            return wrap_color("There is nobody here.", RGBColors.MAGENTA, dim_factor) + Colors.BOLD_WHITE
 
     async def handle_look_at_target(self, player_id: int, target_name: str):
         """Handle looking at specific targets like NPCs and mobs."""
@@ -735,85 +868,117 @@ class WorldManager:
         return False
 
     async def handle_ring_gong(self, player_id: int, room_id: str):
-        """Ring the gong in the arena and spawn a random mob."""
+        """Ring the gong in an arena and spawn a random mob based on arena configuration."""
         import random
         import json
+        import time
 
-        # Load available mobs
+        # Get arena configuration for this room
+        arena_config = self.game_engine.config_manager.get_arena_by_room(room_id)
+        if not arena_config:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("There is no gong here to ring.")
+            )
+            return
+
+        # Check cooldown
+        cooldown_seconds = arena_config.get('gong_cooldown', 0)
+        if cooldown_seconds > 0:
+            last_use = self.game_engine.gong_cooldowns.get(room_id, 0)
+            time_since_last = time.time() - last_use
+            if time_since_last < cooldown_seconds:
+                remaining = int(cooldown_seconds - time_since_last)
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"The gong is still resonating from its last use. Wait {remaining} more seconds.")
+                )
+                return
+
+        # Check max active mobs in arena
+        max_mobs = arena_config.get('max_active_mobs', 3)
+        current_mobs = len(self.game_engine.room_mobs.get(room_id, []))
+        if current_mobs >= max_mobs:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"The arena is already crowded with {current_mobs} creatures. Defeat some before summoning more!")
+            )
+            return
+
+        # Get mob pool from arena configuration
+        mob_pool = arena_config.get('mob_pool', [])
+        if not mob_pool:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("The gong rings out, but no creatures answer its call.")
+            )
+            self.logger.error(f"[ARENA] Arena {arena_config.get('arena_id')} has no mob pool configured")
+            return
+
+        # Select a random mob from the pool using weights
+        total_weight = sum(entry.get('weight', 1) for entry in mob_pool)
+        roll = random.uniform(0, total_weight)
+        cumulative = 0
+        selected_mob_id = None
+
+        for entry in mob_pool:
+            cumulative += entry.get('weight', 1)
+            if roll <= cumulative:
+                selected_mob_id = entry['id']
+                break
+
+        if not selected_mob_id:
+            selected_mob_id = mob_pool[0]['id']  # Fallback to first
+
+        # Load the monster data
         monsters = self.game_engine._load_all_monsters()
-        if not monsters:
-            await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but something went wrong with the ancient magic...")
-            self.logger.error(f"Failed to load monsters")
+        if not monsters or selected_mob_id not in monsters:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("The gong rings out, but something went wrong with the ancient magic...")
+            )
+            self.logger.error(f"[ARENA] Monster {selected_mob_id} not found in monster data")
             return
 
-        # Select a random monster
-        monsters_list = list(monsters.values())
-        if not monsters_list:
-            await self.game_engine.connection_manager.send_message(player_id, "The gong rings out, but no creatures answer its call.")
-            return
-
-        monster = random.choice(monsters_list)
-        self.logger.info(f"[GONG DEBUG] Selected monster: {monster.get('name')}")
-        self.logger.info(f"[GONG DEBUG] Monster loot_table: {monster.get('loot_table', 'MISSING!')}")
+        monster = monsters[selected_mob_id]
+        self.logger.info(f"[ARENA] Selected {monster.get('name')} from pool of {len(mob_pool)} options")
 
         # Send atmospheric message
-        await self.game_engine.connection_manager.send_message(player_id,
-            "You strike the bronze gong with your fist. The deep, resonant tone echoes through the arena, "
-            "reverberating off the ancient stone walls. The sound seems to call forth something from the depths...")
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            info_message("You strike the bronze gong with your fist. The deep, resonant tone echoes through the arena, "
+                        "reverberating off the ancient stone walls. The sound seems to call forth something from the depths...")
+        )
 
         # Add a brief delay for dramatic effect
         await asyncio.sleep(2)
 
         # Announce the mob spawn
         mob_name = monster.get('name', 'Unknown Creature')
-        await self.game_engine.player_manager.notify_room_except_player(room_id, player_id,
-            f"\nSudenly, a {mob_name} emerges from the shadows, drawn by the gong's call! "
-            f"It looks ready for battle!")
+        await self.game_engine.player_manager.notify_room_except_player(
+            room_id, player_id,
+            monster_spawn(f"\nSuddenly, a {mob_name} emerges from the shadows, drawn by the gong's call! "
+                         f"It looks ready for battle!")
+        )
 
         # Also send the message to the player who rang the gong
-        await self.game_engine.connection_manager.send_message(player_id,
-            f"\nSudenly, a {mob_name} emerges from the shadows, drawn by the gong's call! "
-            f"It looks ready for battle!")
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            monster_spawn(f"\nSuddenly, a {mob_name} emerges from the shadows, drawn by the gong's call! "
+                         f"It looks ready for battle!")
+        )
 
-        # Actually spawn the mob in the room
-        if room_id not in self.game_engine.room_mobs:
-            self.game_engine.room_mobs[room_id] = []
+        # Use centralized spawn logic
+        spawned_mob = self.game_engine.spawn_mob(
+            room_id,
+            monster.get('id', 'unknown'),
+            monster,
+            spawned_by_gong=True,
+            arena_id=arena_config.get('arena_id')
+        )
 
-        # Generate random stats using game engine's stat generation
-        level = monster.get('level', 1)
-        monster_type = monster.get('type', 'monster')
-        stats = self.game_engine._generate_mob_stats(level, monster_type)
+        # Record cooldown timestamp
+        self.game_engine.gong_cooldowns[room_id] = time.time()
 
-        # Create a mob instance with full stat block
-        spawned_mob = {
-            'id': monster.get('id', 'unknown'),
-            'name': mob_name,
-            'type': 'hostile',
-            'description': monster.get('description', f'A fierce {mob_name}'),
-            'level': level,
-            'health': monster.get('health', 100),
-            'max_health': monster.get('health', 100),
-            'damage': monster.get('damage', '1d4'),  # Dice notation or will use damage_min/damage_max
-            'damage_min': monster.get('damage_min', 1),
-            'damage_max': monster.get('damage_max', 4),
-            'armor_class': monster.get('armor', 0),
-
-            # Full stat block
-            'strength': stats['strength'],
-            'dexterity': stats['dexterity'],
-            'constitution': stats['constitution'],
-            'intelligence': stats['intelligence'],
-            'wisdom': stats['wisdom'],
-            'charisma': stats['charisma'],
-
-            'experience_reward': monster.get('experience_reward', 25),
-            'gold_reward': monster.get('gold_reward', [0, 5]),
-            'loot_table': monster.get('loot_table', []),
-            'experience': 0,  # Track XP gained from mob vs mob combat
-            'gold': 0,  # Track gold looted from other mobs
-            'spawned_by_gong': True
-        }
-
-        self.game_engine.room_mobs[room_id].append(spawned_mob)
-        self.logger.info(f"[ARENA] {mob_name} spawned in {room_id} by player {player_id}")
+        self.logger.info(f"[ARENA] {mob_name} spawned in {room_id} by player {player_id} (arena: {arena_config.get('arena_id')})")
         self.logger.info(f"[ARENA DEBUG] Spawned mob loot_table: {spawned_mob.get('loot_table', 'ERROR')}")

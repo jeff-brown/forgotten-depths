@@ -16,6 +16,13 @@
     }
   },
   "is_lair": true,
-  "lair_monster": "cave_bear",
-  "respawn_time": 300
+  "lair_monster": "ogre_mage",
+  "respawn_time": 300,
+  "traps": [
+    {
+      "type": "pit",
+      "trigger_chance": 1.0,
+      "damage_multiplier": 1.0
+    }
+  ]
 }

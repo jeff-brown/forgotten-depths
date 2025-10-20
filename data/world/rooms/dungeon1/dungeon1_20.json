@@ -8,5 +8,12 @@
   "exits": {
     "southeast": "dungeon1_21",
     "northwest": "dungeon1_19"
-  }
+  },
+  "traps": [
+    {
+      "type": "flame",
+      "trigger_chance": 0.35,
+      "damage_multiplier": 1.2
+    }
+  ]
 }

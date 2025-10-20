@@ -16,10 +16,52 @@
       "type": "tool",
       "weight": 1,
       "base_value": 2,
-      "description": "A wooden torch that provides light in dark places.",
+      "description": "A wooden torch wrapped in oil-soaked cloth. Burns for about 10 minutes.",
+      "is_light_source": true,
       "properties": {
-        "light_radius": 30,
-        "burn_time": 60
+        "brightness": 0.6,
+        "max_duration": 600,
+        "can_relight": false,
+        "fuel_type": "none"
+      }
+    },
+    "lantern": {
+      "name": "Lantern",
+      "type": "tool",
+      "weight": 3,
+      "base_value": 25,
+      "description": "A sturdy metal lantern with glass panels. Requires oil to burn.",
+      "is_light_source": true,
+      "properties": {
+        "brightness": 0.8,
+        "max_duration": 1800,
+        "can_relight": true,
+        "fuel_type": "lamp_oil",
+        "fuel_charges": 0
+      }
+    },
+    "candle": {
+      "name": "Candle",
+      "type": "tool",
+      "weight": 0.1,
+      "base_value": 1,
+      "description": "A small wax candle. Burns for about 5 minutes.",
+      "is_light_source": true,
+      "properties": {
+        "brightness": 0.3,
+        "max_duration": 300,
+        "can_relight": false,
+        "fuel_type": "none"
+      }
+    },
+    "lamp_oil": {
+      "name": "Flask of Lamp Oil",
+      "type": "tool",
+      "weight": 1,
+      "base_value": 5,
+      "description": "A flask of refined oil for lanterns. Provides 30 minutes of light.",
+      "properties": {
+        "fuel_charges": 1800
       }
     },
     "ration_of_food": {

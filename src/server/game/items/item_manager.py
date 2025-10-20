@@ -1,6 +1,7 @@
 """Item management system for handling room items and item operations."""
 
 from typing import Dict, List, Tuple, Any, Optional
+from ...utils.colors import Colors, RGBColors, wrap_color
 
 
 class ItemManager:
@@ -32,6 +33,8 @@ class ItemManager:
     def remove_item_from_room(self, room_id: str, item_name: str) -> Tuple[Optional[Dict[str, Any]], str]:
         """Remove and return an item from a room's floor by name using partial matching.
 
+        When multiple items match, picks up the first one.
+
         Returns:
             Tuple of (item, match_type) where:
             - item: The removed item dict or None
@@ -40,7 +43,7 @@ class ItemManager:
         room_items = self.get_room_items(room_id)
         item, index, match_type = self.find_item_by_partial_name(room_items, item_name)
 
-        if match_type in ['exact', 'unique'] and item:
+        if match_type in ['exact', 'unique', 'multiple'] and item:
             return room_items.pop(index), match_type
         else:
             return None, match_type
@@ -90,24 +93,33 @@ class ItemManager:
             # No matches
             return None, -1, 'none'
 
-    def get_room_items_description(self, room_id: str) -> str:
-        """Get description of items on the floor in a room."""
+    def get_room_items_description(self, room_id: str, dim_factor: float = 1.0) -> str:
+        """Get description of items on the floor in a room.
+
+        Args:
+            room_id: The room ID
+            dim_factor: Light level dimming factor (0.0-1.0)
+        """
         room_items = self.get_room_items(room_id)
         if not room_items:
-            return "There is nothing on the floor."
+            return f"{wrap_color('There is nothing on the floor.', RGBColors.BOLD_CYAN, dim_factor)}{Colors.BOLD_WHITE}"
 
         if len(room_items) == 1:
             item = room_items[0]
             article = "an" if item['name'][0].lower() in 'aeiou' else "a"
-            return f"There is {article} {item['name'].lower()} lying on the floor."
+            item_name = item['name'].lower()
+            message = f"There is {article} {item_name} lying on the floor."
+            return f"{wrap_color(message, RGBColors.BOLD_CYAN, dim_factor)}{Colors.BOLD_WHITE}"
         else:
             # Multiple items
             item_names = [item['name'].lower() for item in room_items]
             if len(item_names) == 2:
-                return f"There are {item_names[0]} and {item_names[1]} lying on the floor."
+                message = f"There are {item_names[0]} and {item_names[1]} lying on the floor."
+                return f"{wrap_color(message, RGBColors.BOLD_CYAN, dim_factor)}{Colors.BOLD_WHITE}"
             else:
                 items_str = ", ".join(item_names[:-1]) + f" and {item_names[-1]}"
-                return f"There are {items_str} lying on the floor."
+                message = f"There are {items_str} lying on the floor."
+                return f"{wrap_color(message, RGBColors.BOLD_CYAN, dim_factor)}{Colors.BOLD_WHITE}"
 
     async def handle_drop_item(self, player_id: int, item_name: str) -> None:
         """Handle dropping an item from inventory."""
