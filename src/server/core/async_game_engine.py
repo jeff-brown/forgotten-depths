@@ -664,11 +664,24 @@ class AsyncGameEngine:
 
         # Find all lair rooms and spawn their mobs
         for room_id, room in self.world_manager.rooms.items():
+            # Support old format: is_lair + lair_monster
             if hasattr(room, 'is_lair') and room.is_lair:
                 lair_monster_id = getattr(room, 'lair_monster', None)
                 if lair_monster_id and lair_monster_id in self.monsters_data:
                     self._spawn_lair_mob(room_id, lair_monster_id, self.monsters_data[lair_monster_id])
                     self.logger.info(f"[LAIR] Spawned {lair_monster_id} in {room_id}")
+
+            # Support new format: lairs array
+            elif hasattr(room, 'lairs') and room.lairs:
+                for lair in room.lairs:
+                    mob_id = lair.get('mob_id')
+                    max_mobs = lair.get('max_mobs', 1)
+
+                    if mob_id and mob_id in self.monsters_data:
+                        # Spawn up to max_mobs
+                        for i in range(max_mobs):
+                            self._spawn_lair_mob(room_id, mob_id, self.monsters_data[mob_id])
+                        self.logger.info(f"[LAIR] Spawned {max_mobs}x {mob_id} in {room_id}")
 
     def spawn_mob(self, room_id: str, monster_id: str, monster: dict, **kwargs) -> dict:
         """Centralized mob spawning logic.
@@ -974,38 +987,77 @@ class AsyncGameEngine:
 
         # Check each lair room
         for room_id, room in self.world_manager.rooms.items():
-            if not (hasattr(room, 'is_lair') and room.is_lair):
-                continue
+            # Support old format: is_lair + lair_monster
+            if hasattr(room, 'is_lair') and room.is_lair:
+                lair_monster_id = getattr(room, 'lair_monster', None)
+                if not lair_monster_id or lair_monster_id not in monsters:
+                    continue
 
-            lair_monster_id = getattr(room, 'lair_monster', None)
-            if not lair_monster_id or lair_monster_id not in monsters:
-                continue
+                # Check if mob is alive in the room
+                room_has_mob = False
+                if room_id in self.room_mobs:
+                    for mob in self.room_mobs[room_id]:
+                        if mob.get('id') == lair_monster_id and mob.get('is_lair_mob'):
+                            room_has_mob = True
+                            break
 
-            # Check if mob is alive in the room
-            room_has_mob = False
-            if room_id in self.room_mobs:
-                for mob in self.room_mobs[room_id]:
-                    if mob.get('id') == lair_monster_id and mob.get('is_lair_mob'):
-                        room_has_mob = True
-                        break
+                # If mob is dead and respawn timer has passed, respawn it
+                if not room_has_mob:
+                    # Check if we have a timer set for this room
+                    if room_id not in self.lair_timers:
+                        # No timer set, set one now
+                        respawn_time = getattr(room, 'respawn_time', 300)
+                        self.lair_timers[room_id] = current_time + respawn_time
+                        self.logger.info(f"[LAIR] {lair_monster_id} died in {room_id}, respawn in {respawn_time}s")
+                    elif current_time >= self.lair_timers[room_id]:
+                        # Timer expired, respawn the mob
+                        self._spawn_lair_mob(room_id, lair_monster_id, self.monsters_data[lair_monster_id])
+                        del self.lair_timers[room_id]
+                        self.logger.info(f"[LAIR] {lair_monster_id} respawned in {room_id}")
+                else:
+                    # Mob is alive, clear any existing timer
+                    if room_id in self.lair_timers:
+                        del self.lair_timers[room_id]
 
-            # If mob is dead and respawn timer has passed, respawn it
-            if not room_has_mob:
-                # Check if we have a timer set for this room
-                if room_id not in self.lair_timers:
-                    # No timer set, set one now
-                    respawn_time = getattr(room, 'respawn_time', 300)
-                    self.lair_timers[room_id] = current_time + respawn_time
-                    self.logger.info(f"[LAIR] {lair_monster_id} died in {room_id}, respawn in {respawn_time}s")
-                elif current_time >= self.lair_timers[room_id]:
-                    # Timer expired, respawn the mob
-                    self._spawn_lair_mob(room_id, lair_monster_id, self.monsters_data[lair_monster_id])
-                    del self.lair_timers[room_id]
-                    self.logger.info(f"[LAIR] {lair_monster_id} respawned in {room_id}")
-            else:
-                # Mob is alive, clear any existing timer
-                if room_id in self.lair_timers:
-                    del self.lair_timers[room_id]
+            # Support new format: lairs array
+            elif hasattr(room, 'lairs') and room.lairs:
+                for lair in room.lairs:
+                    mob_id = lair.get('mob_id')
+                    max_mobs = lair.get('max_mobs', 1)
+                    respawn_time = lair.get('respawn_time', 300)
+
+                    if not mob_id or mob_id not in monsters:
+                        continue
+
+                    # Count how many of this mob type are alive in the room
+                    alive_count = 0
+                    if room_id in self.room_mobs:
+                        for mob in self.room_mobs[room_id]:
+                            if mob.get('id') == mob_id and mob.get('is_lair_mob'):
+                                alive_count += 1
+
+                    # Calculate how many we need to spawn
+                    needed = max_mobs - alive_count
+
+                    if needed > 0:
+                        # Use a unique key for this specific lair spawn
+                        timer_key = f"{room_id}:{mob_id}"
+
+                        if timer_key not in self.lair_timers:
+                            # No timer set, set one now
+                            self.lair_timers[timer_key] = current_time + respawn_time
+                            self.logger.info(f"[LAIR] {mob_id} died in {room_id}, respawn in {respawn_time}s")
+                        elif current_time >= self.lair_timers[timer_key]:
+                            # Timer expired, respawn the mob(s)
+                            for i in range(needed):
+                                self._spawn_lair_mob(room_id, mob_id, self.monsters_data[mob_id])
+                            del self.lair_timers[timer_key]
+                            self.logger.info(f"[LAIR] {needed}x {mob_id} respawned in {room_id}")
+                    else:
+                        # All mobs alive, clear any existing timer
+                        timer_key = f"{room_id}:{mob_id}"
+                        if timer_key in self.lair_timers:
+                            del self.lair_timers[timer_key]
 
     async def _check_wandering_mob_spawns(self):
         """Check if we should spawn wandering mobs in all configured areas."""

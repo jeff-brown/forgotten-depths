@@ -1562,6 +1562,8 @@
       ],
       "spellcaster": true,
       "spell_skill": 60,
+      "min_spell_level": 1,
+      "max_spell_level": 4,
       "spell_list": "pyromancer",
       "loot_table": [
         {
@@ -1766,6 +1768,8 @@
       ],
       "spellcaster": true,
       "spell_skill": 85,
+      "min_spell_level": 3,
+      "max_spell_level": 8,
       "loot_table": [
         {
           "item_id": "ancient_coin",

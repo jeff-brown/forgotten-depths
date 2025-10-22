@@ -28,6 +28,8 @@
       ],
       "spellcaster": true,
       "spell_skill": 95,
+      "min_spell_level": 2,
+      "max_spell_level": 7,
       "loot_table": [
         {
           "item_id": "dragonscale",

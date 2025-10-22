@@ -73,9 +73,9 @@ class CommandHandler:
             if self.game_engine.player_manager.authenticate_player(username, password):
                 player_data['authenticated'] = True
                 player_data['login_state'] = 'authenticated'
-                await self.game_engine.connection_manager.send_message(player_id, f"Welcome back, {username}!")
 
                 # Load character or prompt for character creation
+                # (welcome message will be sent in _handle_character_selection)
                 await self._handle_character_selection(player_id, username)
             else:
                 await self.game_engine.connection_manager.send_message(
@@ -164,6 +164,35 @@ class CommandHandler:
         player_data = self.game_engine.player_manager.get_player_data(player_id)
         player_data['creating_character'] = True
         player_data['char_creation_step'] = 'race'
+
+        # Welcome new players with intro text
+        username = player_data.get('username', 'Adventurer')
+        await self.game_engine.connection_manager.send_message(player_id, f"\nWelcome, {username}!\n")
+
+        # Send intro text for new players
+        intro_text = """
+The world ended in fire and shadow.
+
+One thousand years ago, something ancient stirred in the depths beneath the world.
+The Ending, they call it now - though few remember the true name of what crawled
+up from below. Cities fell in days. Kingdoms burned. Magic itself twisted and broke.
+
+The old world is gone. Only ruins remain.
+
+But humanity endures. In fortified settlements and guarded towns, life continues
+under the watchful eye of the Tower. The Sorceress keeps the darkness at bay,
+they say. Her soldiers patrol the roads. Her law keeps order.
+
+You are a survivor in this broken world. Whether you seek glory, revenge, knowledge,
+or simply another day of life, your path begins here - in Haven's Edge, a frontier
+town on the border between civilization and the wild wastes beyond.
+
+The depths still hunger. The Tower still watches.
+
+What will you become?
+"""
+        await self.game_engine.connection_manager.send_message(player_id, intro_text)
+        await self.game_engine.connection_manager.send_message(player_id, "\nLet's create your character.\n")
 
         await self._show_race_selection(player_id)
         return
@@ -256,6 +285,10 @@ class CommandHandler:
         username = player_data.get('username')
         selected_race = player_data.get('selected_race', 'human')
         selected_class = player_data.get('selected_class', 'fighter')
+
+        # Clear creation flags IMMEDIATELY to prevent race conditions
+        player_data['creating_character'] = False
+        player_data['char_creation_step'] = None
 
         races = self._load_races()
         classes = self._load_classes()
@@ -371,10 +404,8 @@ class CommandHandler:
         # Calculate initial encumbrance based on starting gold and strength
         self.game_engine.player_manager.update_encumbrance(character)
 
-        # Set character and clear creation flags
+        # Set character
         self.game_engine.player_manager.set_player_character(player_id, character)
-        player_data['creating_character'] = False
-        player_data['char_creation_step'] = None
 
         # Show character stats
         stats_msg = f"\n=== Character Created ===\n"
@@ -385,13 +416,17 @@ class CommandHandler:
         stats_msg += f"HP: {max_hp}  Mana: {max_mana}\n"
 
         await self.game_engine.connection_manager.send_message(player_id, stats_msg)
-        await self.game_engine.connection_manager.send_message(player_id, f"Welcome to the world, {username}!")
+        await self.game_engine.connection_manager.send_message(player_id, f"\nYour journey begins now!\n")
         await self.game_engine._send_room_description(player_id, detailed=True)
 
         # Send vendor greeting if spawned in a vendor room
         room_id = character.get('room_id')
         if room_id and hasattr(self.game_engine, 'vendor_system'):
             await self.game_engine.vendor_system.send_vendor_greeting(player_id, room_id)
+
+        # Save the new character to database
+        if self.game_engine.player_storage:
+            self.game_engine.player_storage.save_character_data(username, character)
 
     async def _handle_game_command(self, player_id: int, command: str, params: str):
         """Handle a game command from an authenticated player."""

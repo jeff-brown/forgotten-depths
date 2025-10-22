@@ -107,13 +107,18 @@ class WorldManager:
             if 'light_level' in room_data:
                 room.light_level = room_data['light_level']
 
-            # Set lair properties
+            # Set lair properties - support both old and new formats
+            # Old format: is_lair, lair_monster, respawn_time
             if 'is_lair' in room_data:
                 room.is_lair = room_data['is_lair']
             if 'lair_monster' in room_data:
                 room.lair_monster = room_data['lair_monster']
             if 'respawn_time' in room_data:
                 room.respawn_time = room_data['respawn_time']
+
+            # New format: lairs array with multiple spawns
+            if 'lairs' in room_data:
+                room.lairs = room_data['lairs']
 
             # NPCs will be populated later in _initialize_room_npcs
             # (don't set room.npcs here, it will be replaced with actual NPC objects)
