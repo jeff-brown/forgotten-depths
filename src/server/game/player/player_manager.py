@@ -18,6 +18,7 @@ class PlayerManager:
 
         # Player management
         self.connected_players: Dict[int, Any] = {}
+        self.logged_in_usernames: Dict[str, int] = {}  # username -> player_id mapping
 
     @property
     def player_storage(self) -> Optional[PlayerStorage]:
@@ -66,6 +67,11 @@ class PlayerManager:
                 if room_id:
                     await self.game_engine._notify_room_except_player(room_id, player_id, f"{username} has left the game.")
 
+                # Remove from logged in users
+                if username in self.logged_in_usernames:
+                    del self.logged_in_usernames[username]
+                    self.logger.info(f"User '{username}' logged out")
+
             # Save character if authenticated
             if player_data.get('character') and player_data.get('authenticated'):
                 self.save_player_character(player_id, player_data['character'])
@@ -73,18 +79,40 @@ class PlayerManager:
             # Clean up
             del self.connected_players[player_id]
 
+    def is_user_already_logged_in(self, username: str) -> bool:
+        """Check if a user is already logged in."""
+        return username in self.logged_in_usernames
+
     def authenticate_player(self, username: str, password: str) -> bool:
-        """Authenticate a player."""
-        # Development mode: allow any non-empty username
-        if username and len(username.strip()) > 0:
-            return True
+        """Authenticate a player or create new account.
 
-        # Legacy authentication for production
+        Returns True if authentication successful or new account created.
+        Returns False if wrong password for existing account.
+        """
         if not self.player_storage:
+            # No database - allow anyone
             return True
 
-        player_id = self.player_storage.authenticate_player(username, password)
-        return player_id is not None
+        # Check if player exists
+        existing_char = self.player_storage.load_character_data(username)
+
+        if existing_char is not None:
+            # Player exists - verify password
+            player_id = self.player_storage.authenticate_player(username, password)
+            if player_id is None:
+                # Wrong password
+                self.logger.warning(f"Failed login attempt for user '{username}'")
+                return False
+            return True
+        else:
+            # New player - create account with this password
+            try:
+                self.player_storage.create_player(username, password)
+                self.logger.info(f"Created new player account: {username}")
+                return True
+            except Exception as e:
+                self.logger.error(f"Failed to create player {username}: {e}")
+                return False
 
     def save_player_character(self, player_id: int, character: Dict[str, Any]):
         """Save a player's character to the database.

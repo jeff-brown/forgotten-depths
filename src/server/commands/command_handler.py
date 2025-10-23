@@ -70,9 +70,23 @@ class CommandHandler:
             username = player_data.get('username', '')
             password = input_text.strip()
 
+            # Check if user is already logged in
+            if self.game_engine.player_manager.is_user_already_logged_in(username):
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"User '{username}' is already logged in!")
+                )
+                await self.game_engine.connection_manager.send_message(player_id, "\nUsername: ", add_newline=False)
+                player_data['login_state'] = 'username_prompt'
+                return
+
             if self.game_engine.player_manager.authenticate_player(username, password):
                 player_data['authenticated'] = True
                 player_data['login_state'] = 'authenticated'
+
+                # Track this user as logged in
+                self.game_engine.player_manager.logged_in_usernames[username] = player_id
+                self.game_engine.logger.info(f"User '{username}' logged in successfully")
 
                 # Load character or prompt for character creation
                 # (welcome message will be sent in _handle_character_selection)
@@ -82,7 +96,7 @@ class CommandHandler:
                     player_id,
                     error_message("Invalid credentials. Try again.")
                 )
-                await self.game_engine.connection_manager.send_message(player_id, "Username: ")
+                await self.game_engine.connection_manager.send_message(player_id, "\nUsername: ", add_newline=False)
                 player_data['login_state'] = 'username_prompt'
 
     def _migrate_character_data(self, character: dict):
