@@ -93,26 +93,38 @@ class PlayerManager:
             # No database - allow anyone
             return True
 
-        # Check if player exists
+        # Try to authenticate against existing account
+        self.logger.debug(f"Attempting to authenticate user '{username}'")
+        player_id = self.player_storage.authenticate_player(username, password)
+
+        if player_id is not None:
+            # Authentication successful
+            self.logger.info(f"User '{username}' authenticated successfully (player_id={player_id})")
+            return True
+
+        self.logger.debug(f"Authentication failed for '{username}', checking if user exists")
+
+        # Authentication failed - check if this is a new user or wrong password
+        # Try to load character data to see if user exists
         existing_char = self.player_storage.load_character_data(username)
 
         if existing_char is not None:
-            # Player exists - verify password
-            player_id = self.player_storage.authenticate_player(username, password)
-            if player_id is None:
-                # Wrong password
-                self.logger.warning(f"Failed login attempt for user '{username}'")
-                return False
+            # User exists but wrong password
+            self.logger.warning(f"Failed login attempt for user '{username}' - wrong password")
+            return False
+
+        self.logger.debug(f"User '{username}' doesn't exist, creating new account")
+
+        # User doesn't exist - create new account
+        try:
+            new_player_id = self.player_storage.create_player(username, password)
+            self.logger.info(f"Created new player account: {username} (id={new_player_id})")
             return True
-        else:
-            # New player - create account with this password
-            try:
-                self.player_storage.create_player(username, password)
-                self.logger.info(f"Created new player account: {username}")
-                return True
-            except Exception as e:
-                self.logger.error(f"Failed to create player {username}: {e}")
-                return False
+        except Exception as e:
+            self.logger.error(f"Failed to create player {username}: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
 
     def save_player_character(self, player_id: int, character: Dict[str, Any]):
         """Save a player's character to the database.

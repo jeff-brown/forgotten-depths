@@ -15,14 +15,18 @@
       "description": "The bronze door is locked with a copper mechanism."
     }
   },
-  "is_lair": true,
-  "lair_monster": "ogre_mage",
-  "respawn_time": 300,
   "traps": [
     {
       "type": "pit",
       "trigger_chance": 1.0,
       "damage_multiplier": 1.0
+    }
+  ],
+  "lairs": [
+    {
+      "mob_id": "cyclops",
+      "respawn_time": 300,
+      "max_mobs": 2
     }
   ]
 }

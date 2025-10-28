@@ -10,7 +10,11 @@
     "southwest": "dungeon2_70",
     "northwest": "dungeon2_61"
   },
-  "is_lair": true,
-  "lair_monster": "apollyon_dragon",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "apollyon_dragon",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

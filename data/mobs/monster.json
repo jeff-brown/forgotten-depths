@@ -754,7 +754,7 @@
         "spellcaster"
       ],
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 80,
         "min_level": 2,
         "max_level": 7
@@ -1435,7 +1435,7 @@
         "spellcaster"
       ],
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 75,
         "min_level": 1,
         "max_level": 3
@@ -1480,7 +1480,7 @@
         "damage_max": 500
       },
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 0,
         "min_level": 0,
         "max_level": 1
@@ -1490,7 +1490,7 @@
       "id": "stone_wizard",
       "vnum": 143,
       "name": "Stone Wizard",
-      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorceror in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
+      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorcerer in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
       "type": "monster",
       "level": 25,
       "health": 500,
@@ -1524,7 +1524,7 @@
         "damage_max": 500
       },
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 90,
         "min_level": 6,
         "max_level": 10
@@ -1735,7 +1735,7 @@
         "damage_max": 0
       },
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 95,
         "min_level": 6,
         "max_level": 10

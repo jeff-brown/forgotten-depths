@@ -17,7 +17,11 @@
       "description": "The heavy iron door is locked with a brass mechanism."
     }
   },
-  "is_lair": true,
-  "lair_monster": "red_bear",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "red_bear",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

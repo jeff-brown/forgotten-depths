@@ -15,7 +15,12 @@
       "description": "The iron bound oak door is locked tight."
     }
   },
-  "is_lair": true,
-  "lair_monster": "female_minotaur",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "minotaur",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ],
+  "lair_loot": ["iron_key"]
 }

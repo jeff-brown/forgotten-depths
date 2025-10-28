@@ -24,6 +24,46 @@ class CommandHandler:
         self.game_engine = game_engine
         self.logger = game_engine.logger
 
+    def _get_stamina_hp_bonus(self, stamina: int) -> int:
+        """Get HP bonus based on stamina (constitution) value.
+
+        Args:
+            stamina: The character's stamina/constitution stat
+
+        Returns:
+            HP bonus value
+        """
+        # More generous scaling: constitution directly contributes to HP
+        # This ensures even low-con characters get decent HP gains
+        if stamina >= 50:
+            return 25
+        elif stamina >= 45:
+            return 22
+        elif stamina >= 40:
+            return 20
+        elif stamina >= 35:
+            return 18
+        elif stamina >= 30:
+            return 15
+        elif stamina >= 25:
+            return 13
+        elif stamina >= 20:
+            return 11
+        elif stamina >= 18:
+            return 10
+        elif stamina >= 16:
+            return 9
+        elif stamina >= 14:
+            return 8
+        elif stamina >= 12:
+            return 7
+        elif stamina >= 10:
+            return 6
+        elif stamina >= 8:
+            return 5
+        else:
+            return 4
+
     async def handle_player_command(self, player_id: int, command: str, params: str):
         """Handle a command from a player."""
         if not self.game_engine.player_manager.is_player_connected(player_id):
@@ -105,15 +145,16 @@ class CommandHandler:
         Args:
             character: Character dict to migrate (modified in place)
         """
-        # Sync health field from current_hit_points if missing
-        if 'health' not in character and 'current_hit_points' in character:
-            character['health'] = character['current_hit_points']
-            print(f"[MIGRATION] Set health to {character['health']}")
+        # Migration: Sync current_hit_points from legacy health field if missing
+        if 'current_hit_points' not in character and 'health' in character:
+            character['current_hit_points'] = character['current_hit_points']
+            del character['current_hit_points']  # Remove old field
+            print(f"[MIGRATION] Set current_hit_points to {character['current_hit_points']}")
 
         # Sync mana field from current_mana if missing
         if 'mana' not in character and 'current_mana' in character:
-            character['mana'] = character['current_mana']
-            print(f"[MIGRATION] Set mana to {character['mana']}")
+            character['current_mana'] = character['current_mana']
+            print(f"[MIGRATION] Set mana to {character['current_mana']}")
 
         # Ensure max_hit_points exists
         if 'max_hit_points' not in character:
@@ -206,7 +247,6 @@ The depths still hunger. The Tower still watches.
 What will you become?
 """
         await self.game_engine.connection_manager.send_message(player_id, intro_text)
-        await self.game_engine.connection_manager.send_message(player_id, "\nLet's create your character.\n")
 
         await self._show_race_selection(player_id)
         return
@@ -354,14 +394,23 @@ What will you become?
             **base_stats
         }
 
-        # Calculate max hit points with class modifier
-        # Formula: (Constitution * 5) + random(1-10) + level bonus * class HP modifier
+        # Calculate max hit points using vitality formula
+        # Formula: baseVitality + raceModifier + classModifier + staminaBonus
+        # Base vitality roll (8-20)
+        base_vitality = random.randint(8, 20)
+
+        # Race vitality modifier
+        race_vitality_mod = race_data.get('stat_modifiers', {}).get('vitality', 0)
+
+        # Class vitality modifier
+        class_vitality_mod = class_data.get('stat_modifiers', {}).get('vitality', 0)
+
+        # Stamina (constitution) HP bonus lookup table
         constitution = character['constitution']
-        hp_modifier = class_data.get('hp_modifier', 1.0)
-        base_hp = constitution * 5
-        random_hp = random.randint(1, 10)
-        level_bonus = (character['level'] - 1) * 5
-        max_hp = int((base_hp + random_hp + level_bonus) * hp_modifier)
+        stamina_hp_bonus = self._get_stamina_hp_bonus(constitution)
+
+        # Final calculation (minimum 8 HP)
+        max_hp = max(8, base_vitality + race_vitality_mod + class_vitality_mod + stamina_hp_bonus)
 
         # Calculate max mana with class modifier
         intellect = character['intellect']
@@ -373,11 +422,9 @@ What will you become?
         character.update({
             # Health and Mana
             'max_hit_points': max_hp,
-            'health': max_hp,  # Use 'health' for combat system compatibility
-            'current_hit_points': max_hp,  # Keep for backward compatibility
+            'current_hit_points': max_hp,
             'max_mana': max_mana,
-            'mana': max_mana,  # Use 'mana' for combat system compatibility
-            'current_mana': max_mana,  # Keep for backward compatibility
+            'current_mana': max_mana,
             'status': 'Healthy',
             'armor_class': 0,
 
@@ -497,6 +544,7 @@ health (he)        - Show hit points, mana, and status
 experience (xp)    - Show level, experience, and rune
 inventory (inv,i)  - Show inventory
 spellbook (sb)     - Show learned spells
+unlearn <spell>    - Remove a spell from your spellbook (forget)
 reroll             - Reroll stats (level 1, 0 XP only)
 train              - Level up at a trainer
 
@@ -590,6 +638,11 @@ Admin Commands (Debug):
 givegold <amt>     - Give yourself gold
 giveitem <id>      - Give yourself an item
 givexp <amt>       - Give yourself experience
+setstat <stat> <n> - Set a stat (str/dex/con/vit/int/wis/cha)
+setlevel <level>   - Set your level (auto-adjusts HP/mana)
+sethealth <hp>     - Set health (or 'sethealth full')
+setmana <mana>     - Set mana (or 'setmana full')
+godmode            - Toggle god mode (99 stats, level 50, 9999 HP/mana)
 mobstatus          - Show all mobs and their flags
 teleport <room>    - Teleport to a room (or 'teleport <player> <room>')
 respawnnpc <id>    - Respawn an NPC
@@ -624,6 +677,12 @@ completequest <id> - Mark a quest as complete
 
         elif command in ['spellbook', 'spells', 'sb']:
             await self._handle_spellbook_command(player_id, character)
+
+        elif command in ['unlearn', 'forget'] and params:
+            await self._handle_unlearn_spell_command(player_id, character, params)
+
+        elif command in ['unlearn', 'forget']:
+            await self.game_engine.connection_manager.send_message(player_id, "Unlearn what spell? Use 'spellbook' to see your spells.")
 
         elif command in ['cast', 'c'] and params:
             await self._handle_cast_command(player_id, character, params)
@@ -842,6 +901,33 @@ completequest <id> - Mark a quest as complete
         elif command == 'teleport':
             await self.game_engine.connection_manager.send_message(player_id, "Usage: teleport <room_id> OR teleport <player_name> <room_id>")
 
+        elif command == 'setstat' and params:
+            await self._handle_admin_set_stat(player_id, character, params)
+
+        elif command == 'setstat':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: setstat <stat_name> <value>\nStats: strength, dexterity, constitution, vitality, intellect, wisdom, charisma")
+
+        elif command == 'setlevel' and params:
+            await self._handle_admin_set_level(player_id, character, params)
+
+        elif command == 'setlevel':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: setlevel <level>")
+
+        elif command == 'setmana' and params:
+            await self._handle_admin_set_mana(player_id, character, params)
+
+        elif command == 'setmana':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: setmana <current> [max] OR setmana full")
+
+        elif command == 'sethealth' and params:
+            await self._handle_admin_set_health(player_id, character, params)
+
+        elif command == 'sethealth':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: sethealth <current> [max] OR sethealth full")
+
+        elif command in ['godmode', 'god']:
+            await self._handle_admin_god_mode(player_id, character)
+
         else:
             # Check if this is a class ability command
             ability = self.game_engine.ability_system.get_ability_by_command(character, command)
@@ -891,14 +977,14 @@ completequest <id> - Mark a quest as complete
 
         # Build mana line only if class uses magic
         if class_uses_magic:
-            current_mana = int(char.get('mana', char.get('current_mana', 10)))
+            current_mana = int(char.get('current_mana', char.get('current_mana', 10)))
             max_mana = int(char.get('max_mana', 10))
             mana_value = wrap_color(f"{current_mana} / {max_mana}", Colors.BOLD_WHITE)
             mana_line = f"{wrap_color('Mana:', Colors.BOLD_CYAN)}          {mana_value}\n"
         else:
             mana_line = ""
 
-        current_hp = int(char.get('health', char.get('current_hit_points', 20)))
+        current_hp = int(char.get('current_hit_points', 20))
         max_hp = int(char.get('max_hit_points', 20))
         hp_value = wrap_color(f"{current_hp} / {max_hp}", Colors.BOLD_WHITE)
 
@@ -969,7 +1055,7 @@ completequest <id> - Mark a quest as complete
 
         # Build mana line only if class uses magic
         if class_uses_magic:
-            current_mana = int(char.get('mana', char.get('current_mana', 10)))
+            current_mana = int(char.get('current_mana', char.get('current_mana', 10)))
             max_mana = int(char.get('max_mana', 10))
             mana_value = wrap_color(f"{current_mana} / {max_mana}", Colors.BOLD_WHITE)
             mana_line = f"{wrap_color('Mana:', Colors.BOLD_CYAN)}          {mana_value}\n"
@@ -977,7 +1063,7 @@ completequest <id> - Mark a quest as complete
             mana_line = ""
 
         # Pre-calculate HP values
-        current_hp = int(char.get('health', char.get('current_hit_points', 20)))
+        current_hp = int(char.get('current_hit_points', 20))
         max_hp = int(char.get('max_hit_points', 20))
         hp_value = wrap_color(f"{current_hp} / {max_hp}", Colors.BOLD_WHITE)
 
@@ -1264,11 +1350,10 @@ completequest <id> - Mark a quest as complete
             else:
                 health_amount = int(restore_health)
 
-            current_health = character.get('health', character.get('current_hit_points', 0))
+            current_health = character.get('current_hit_points', 0)
             max_health = character.get('max_hit_points', 100)
             new_health = min(max_health, current_health + health_amount)
 
-            character['health'] = new_health
             character['current_hit_points'] = new_health
 
             messages.append(f"You restore {health_amount} health! (HP: {new_health}/{max_health})")
@@ -1278,11 +1363,11 @@ completequest <id> - Mark a quest as complete
             restore_mana = properties['restore_mana']
             mana_amount = int(restore_mana)
 
-            current_mana = character.get('mana', character.get('current_mana', 0))
+            current_mana = character.get('current_mana', character.get('current_mana', 0))
             max_mana = character.get('max_mana', 50)
             new_mana = min(max_mana, current_mana + mana_amount)
 
-            character['mana'] = new_mana
+            character['current_mana'] = new_mana
             character['current_mana'] = new_mana
 
             messages.append(f"You restore {mana_amount} mana! (Mana: {new_mana}/{max_mana})")
@@ -1764,7 +1849,7 @@ completequest <id> - Mark a quest as complete
         min_intelligence = requirements.get('min_intelligence', 0)
 
         player_level = character.get('level', 1)
-        player_intelligence = character.get('intelligence', 10)
+        player_intelligence = character.get('intellect', 10)
 
         # Check level requirement
         if player_level < min_level:
@@ -1782,6 +1867,43 @@ completequest <id> - Mark a quest as complete
             )
             return
 
+        # Get spell data to check class restrictions
+        spell_data = self.game_engine.config_manager.game_data.get('spells', {})
+        spell = spell_data.get(spell_id, {})
+
+        if not spell:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"Error: Spell data not found for {spell_id}!"
+            )
+            return
+
+        # Check class restriction
+        player_class = character.get('class', '').lower()
+        spell_class_restriction = spell.get('class_restriction', '').lower()
+
+        if spell_class_restriction and spell_class_restriction != player_class:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"Only {spell_class_restriction}s can learn {spell.get('name', spell_id)}!"
+            )
+            return
+
+        # Check spell level restrictions based on class
+        spell_level = spell.get('level', 1)
+
+        # Get max spell level from class data
+        classes_data = self.game_engine.config_manager.game_data.get('classes', {})
+        class_info = classes_data.get(player_class, {})
+        max_spell_level = class_info.get('max_spell_level', 99)  # Default to 99 (no restriction)
+
+        if max_spell_level > 0 and spell_level > max_spell_level:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"As a {character.get('class', 'adventurer')}, you can only learn spells up to level {max_spell_level}. {spell.get('name', spell_id)} is level {spell_level}."
+            )
+            return
+
         # Learn the spell!
         if 'spellbook' not in character:
             character['spellbook'] = []
@@ -1791,9 +1913,7 @@ completequest <id> - Mark a quest as complete
         # Remove scroll from inventory
         character['inventory'].pop(item_index)
 
-        # Get spell data for the message
-        spell_data = self.game_engine.config_manager.game_data.get('spells', {})
-        spell = spell_data.get(spell_id, {})
+        # Send success message (spell data already loaded above)
         spell_name = spell.get('name', spell_id)
 
         await self.game_engine.connection_manager.send_message(
@@ -2621,7 +2741,7 @@ completequest <id> - Mark a quest as complete
                 if target_lower in mob['name'].lower():
                     description = mob.get('description', f"A {mob['name'].lower()}.")
                     health_status = ""
-                    if mob.get('health', 100) < mob.get('max_health', 100):
+                    if mob.get('current_hit_points', 100) < mob.get('max_health', 100):
                         health_percent = (mob['health'] / mob['max_health']) * 100
                         if health_percent > 75:
                             health_status = " It looks slightly wounded."
@@ -2779,7 +2899,7 @@ completequest <id> - Mark a quest as complete
         msg += f" They are wearing {armor_name} and are armed with {weapon_name}."
 
         # Health status
-        health = character.get('health', character.get('max_health', 100))
+        health = character.get('current_hit_points', character.get('max_health', 100))
         max_health = character.get('max_health', 100)
         health_percent = int((health / max_health) * 100)
 
@@ -3058,7 +3178,7 @@ completequest <id> - Mark a quest as complete
             return
 
         # Check if player needs healing
-        current_health = character.get('health', 0)
+        current_health = character.get('current_hit_points', 0)
         max_health = character.get('max_hit_points', current_health)
 
         if current_health >= max_health:
@@ -3071,10 +3191,10 @@ completequest <id> - Mark a quest as complete
         # Apply healing
         if heal_amount == 'full':
             actual_heal = max_health - current_health
-            character['health'] = max_health
+            character['current_hit_points'] = max_health
         else:
             actual_heal = min(heal_amount, max_health - current_health)
-            character['health'] = min(current_health + heal_amount, max_health)
+            character['current_hit_points'] = min(current_health + heal_amount, max_health)
 
         # Deduct gold
         character['gold'] = player_gold - cost
@@ -3082,7 +3202,7 @@ completequest <id> - Mark a quest as complete
         # Send message
         await self.game_engine.connection_manager.send_message(
             player_id,
-            service_message(f"{healer_obj.name} channels healing energy into you. You are healed for {int(actual_heal)} HP!\nYou paid {cost} gold.\n\nHealth: {int(character['health'])} / {int(max_health)}")
+            service_message(f"{healer_obj.name} channels healing energy into you. You are healed for {int(actual_heal)} HP!\nYou paid {cost} gold.\n\nHealth: {int(character['current_hit_points'])} / {int(max_health)}")
         )
 
     async def _handle_rent_room(self, player_id: int, character: dict):
@@ -3132,9 +3252,9 @@ completequest <id> - Mark a quest as complete
             return
 
         # Check if player needs rest
-        current_health = character.get('health', 0)
+        current_health = character.get('current_hit_points', 0)
         max_health = character.get('max_hit_points', current_health)
-        current_mana = character.get('mana', character.get('current_mana', 0))
+        current_mana = character.get('current_mana', character.get('current_mana', 0))
         max_mana = character.get('max_mana', current_mana)
 
         if current_health >= max_health and current_mana >= max_mana:
@@ -3151,8 +3271,8 @@ completequest <id> - Mark a quest as complete
         health_restored = max_health - current_health
         mana_restored = max_mana - current_mana
 
-        character['health'] = max_health
-        character['mana'] = max_mana
+        character['current_hit_points'] = max_health
+        character['current_mana'] = max_mana
         character['current_mana'] = max_mana  # For backward compatibility
 
         # Deduct gold
@@ -3173,8 +3293,8 @@ completequest <id> - Mark a quest as complete
             message += f"Your magical energy has been fully restored! (+{int(mana_restored)} Mana)\n"
 
         message += f"\nYou paid {room_cost} gold for the room.\n"
-        message += f"Health: {int(character['health'])} / {int(max_health)}\n"
-        message += f"Mana: {int(character['mana'])} / {int(max_mana)}\n"
+        message += f"Health: {int(character['current_hit_points'])} / {int(max_health)}\n"
+        message += f"Mana: {int(character['current_mana'])} / {int(max_mana)}\n"
         message += f"Gold: {int(character['gold'])}"
 
         await self.game_engine.connection_manager.send_message(player_id, service_message(message))
@@ -3199,17 +3319,20 @@ completequest <id> - Mark a quest as complete
         for spell_id in spellbook:
             spell = spell_data.get(spell_id)
             if not spell:
+                self.game_engine.logger.warning(f"Spell '{spell_id}' not found in spell_data for spellbook display")
+                lines.append(f"{spell_id} (spell data not found)")
+                lines.append("")
                 continue
 
             # Get cooldown info
             cooldowns = character.get('spell_cooldowns', {})
             cooldown_remaining = cooldowns.get(spell_id, 0)
 
-            # Format spell entry
-            name = spell['name']
-            level = spell['level']
-            mana = spell['mana_cost']
-            spell_type = spell['type']
+            # Format spell entry - with safe defaults
+            name = spell.get('name', spell_id)
+            level = spell.get('level', '?')
+            mana = spell.get('mana_cost', '?')
+            spell_type = spell.get('type', 'unknown')
 
             # Type-specific info
             type_info = ""
@@ -3238,6 +3361,84 @@ completequest <id> - Mark a quest as complete
         await self.game_engine.connection_manager.send_message(
             player_id,
             "\n".join(lines)
+        )
+
+    async def _handle_unlearn_spell_command(self, player_id: int, character: dict, spell_input: str):
+        """Handle unlearning/forgetting a spell."""
+        from ..utils.colors import error_message, success_message
+
+        spellbook = character.get('spellbook', [])
+
+        if not spellbook:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message("Your spellbook is empty. You don't know any spells to unlearn.")
+            )
+            return
+
+        # Load spell data
+        spell_data = self.game_engine.config_manager.game_data.get('spells', {})
+
+        # Find the spell by matching spell_input against spell IDs or spell names
+        spell_id = None
+        spell_name = None
+        spell_input_lower = spell_input.lower()
+
+        # First, try exact match on spell ID
+        if spell_input_lower in spellbook:
+            spell_id = spell_input_lower
+            spell = spell_data.get(spell_id, {})
+            spell_name = spell.get('name', spell_id)
+        else:
+            # Try partial match on spell name or ID
+            matches = []
+            for sid in spellbook:
+                spell = spell_data.get(sid, {})
+                sname = spell.get('name', sid)
+
+                # Check if input matches spell ID or name (case insensitive, partial match)
+                if spell_input_lower in sid.lower() or spell_input_lower in sname.lower():
+                    matches.append((sid, sname))
+
+            if len(matches) == 0:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"You don't know a spell called '{spell_input}'. Use 'spellbook' to see your spells.")
+                )
+                return
+            elif len(matches) == 1:
+                spell_id, spell_name = matches[0]
+            else:
+                # Multiple matches - show options
+                lines = [error_message(f"Multiple spells match '{spell_input}':")]
+                for sid, sname in matches:
+                    lines.append(f"  - {sname} ({sid})")
+                lines.append("Please be more specific.")
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    "\n".join(lines)
+                )
+                return
+
+        # Remove the spell from spellbook
+        character['spellbook'].remove(spell_id)
+
+        # Also remove any active cooldown for this spell
+        if 'spell_cooldowns' in character and spell_id in character['spell_cooldowns']:
+            del character['spell_cooldowns'][spell_id]
+
+        # Send success message
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            success_message(f"You have forgotten the spell: {spell_name}")
+        )
+
+        # Notify room
+        room_id = character.get('room_id')
+        await self.game_engine.player_manager.notify_room_except_player(
+            room_id,
+            player_id,
+            f"{character.get('name', 'Someone')} concentrates deeply, erasing knowledge of a spell from their mind."
         )
 
     async def _handle_cast_command(self, player_id: int, character: dict, params: str):
@@ -3284,6 +3485,32 @@ completequest <id> - Mark a quest as complete
             )
             return
 
+        # Check class restriction and spell level restrictions
+        player_class = character.get('class', '').lower()
+        spell_class_restriction = spell.get('class_restriction', '').lower()
+
+        if spell_class_restriction and spell_class_restriction != player_class:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"Only {spell_class_restriction}s can cast {spell['name']}."
+            )
+            return
+
+        # Check spell level restrictions based on class
+        spell_level = spell.get('level', 1)
+
+        # Get max spell level from class data
+        classes_data = self.game_engine.config_manager.game_data.get('classes', {})
+        class_info = classes_data.get(player_class, {})
+        max_spell_level = class_info.get('max_spell_level', 99)  # Default to 99 (no restriction)
+
+        if max_spell_level > 0 and spell_level > max_spell_level:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"As a {character.get('class', 'adventurer')}, you can only cast spells up to level {max_spell_level}. {spell['name']} is level {spell_level}."
+            )
+            return
+
         # Check cooldown
         cooldowns = character.get('spell_cooldowns', {})
         if spell_id in cooldowns and cooldowns[spell_id] > 0:
@@ -3305,7 +3532,7 @@ completequest <id> - Mark a quest as complete
 
         # Check mana
         mana_cost = spell['mana_cost']
-        current_mana = character.get('mana', 0)
+        current_mana = character.get('current_mana', 0)
 
         if current_mana < mana_cost:
             await self.game_engine.connection_manager.send_message(
@@ -3315,7 +3542,7 @@ completequest <id> - Mark a quest as complete
             return
 
         # Deduct mana
-        character['mana'] = current_mana - mana_cost
+        character['current_mana'] = current_mana - mana_cost
 
         # Apply spell fatigue for damage spells
         # Cooldown acts as a multiplier: 0 = 10s, 1 = 10s, 2 = 20s, 3 = 30s, etc.
@@ -3330,14 +3557,40 @@ completequest <id> - Mark a quest as complete
                 character['spell_cooldowns'] = {}
             character['spell_cooldowns'][spell_id] = spell['cooldown']
 
+        # Check for spell failure
+        caster_level = character.get('level', 1)
+        caster_intelligence = character.get('intellect', 10)
+        spell_min_level = spell.get('level', 1)
+
+        failure_chance = self._calculate_player_spell_failure_chance(
+            caster_level, caster_intelligence, spell_min_level
+        )
+
+        if random.random() < failure_chance:
+            # Spell failed!
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You attempt to cast {spell['name']}, but the spell fizzles and fails!"
+            )
+            room_id = character.get('room_id')
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')}'s spell fizzles and fails!"
+            )
+            # Note: Mana was already consumed and fatigue already applied
+            return
+
         # Apply spell effect based on type
         room_id = character.get('room_id')
 
         if spell['type'] == 'damage':
             await self._cast_damage_spell(player_id, character, spell, room_id, target_name)
         elif spell['type'] == 'heal':
-            await self._cast_heal_spell(player_id, character, spell)
-        elif spell['type'] == 'buff':
+            await self._cast_heal_spell(player_id, character, spell, room_id, target_name)
+        elif spell['type'] == 'drain':
+            await self._cast_drain_spell(player_id, character, spell, room_id, target_name)
+        elif spell['type'] in ['buff', 'enhancement', 'debuff']:
             await self._cast_buff_spell(player_id, character, spell)
 
     async def _cast_damage_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
@@ -3361,17 +3614,119 @@ completequest <id> - Mark a quest as complete
                 )
                 return
 
-            # Roll damage
+            # Create temporary entities for hit calculation
+            class TempCharacter:
+                def __init__(self, char_data):
+                    self.name = char_data['name']
+                    self.level = char_data.get('level', 1)
+                    self.strength = char_data.get('strength', 10)
+                    self.dexterity = char_data.get('dexterity', 10)
+                    self.constitution = char_data.get('constitution', 10)
+                    self.intelligence = char_data.get('intellect', 10)
+                    self.wisdom = char_data.get('wisdom', 10)
+                    self.charisma = char_data.get('charisma', 10)
+
+            class TempMob:
+                def __init__(self, mob_data):
+                    self.name = mob_data.get('name', 'Unknown')
+                    self.level = mob_data.get('level', 1)
+                    self.strength = 12
+                    self.dexterity = 10
+                    self.constitution = 12
+                    self.intelligence = 8
+                    self.wisdom = 10
+                    self.charisma = 6
+
+            temp_char = TempCharacter(character)
+            temp_mob = TempMob(target)
+
+            # Import damage calculator
+            from ..game.combat.damage_calculator import DamageCalculator
+
+            # Check spell hit (spells use INT for accuracy instead of DEX)
+            mob_armor = target.get('armor_class', 0)
+            base_hit_chance = self.game_engine.config_manager.get_setting('combat', 'base_hit_chance', default=0.50)
+
+            # For spells, swap INT/WIS for DEX in hit calculation
+            saved_dex = temp_char.dexterity
+            temp_char.dexterity = temp_char.intelligence  # Use INT for spell accuracy
+
+            outcome = DamageCalculator.check_attack_outcome(temp_char, temp_mob, mob_armor, base_hit_chance)
+
+            # Restore original DEX
+            temp_char.dexterity = saved_dex
+
+            if outcome['result'] == 'miss':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']}, but it misses {target['name']}!"
+                )
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{character.get('name', 'Someone')}'s {spell['name']} misses {target['name']}!"
+                )
+                return
+            elif outcome['result'] == 'dodge':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']}, but {target['name']} dodges it!"
+                )
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{target['name']} dodges {character.get('name', 'Someone')}'s {spell['name']}!"
+                )
+                return
+            elif outcome['result'] == 'deflect':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']}, but {target['name']}'s defenses deflect it!"
+                )
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{target['name']}'s defenses deflect {character.get('name', 'Someone')}'s {spell['name']}!"
+                )
+                return
+
+            # Spell hit! Roll damage
             damage_roll = spell.get('damage', '1d6')
-            damage = self._roll_dice(damage_roll)
+            base_damage = self._roll_dice(damage_roll)
+
+            # Apply level scaling if spell supports it
+            caster_level = character.get('level', 1)
+            damage = self._calculate_scaled_spell_value(base_damage, spell, caster_level)
 
             # Apply damage
             target['health'] -= damage
 
+            # Apply poison DOT if damage type is poison
+            damage_type = spell.get('damage_type', 'magical')
+            poison_message = ""
+            if damage_type == 'poison':
+                poison_duration = spell.get('poison_duration', 5)
+                poison_damage = spell.get('poison_damage', '1d2')
+
+                # Initialize poison_effects if needed
+                if 'poison_effects' not in target:
+                    target['poison_effects'] = []
+
+                # Add poison effect
+                target['poison_effects'].append({
+                    'duration': poison_duration,
+                    'damage': poison_damage,
+                    'caster_id': player_id,
+                    'spell_name': spell['name']
+                })
+                poison_message = f" {target['name']} is poisoned!"
+
             # Send messages
+            from ..utils.colors import spell_cast
+            spell_msg = f"You cast {spell['name']}! It strikes {target['name']} for {int(damage)} {damage_type} damage!{poison_message}"
             await self.game_engine.connection_manager.send_message(
                 player_id,
-                f"You cast {spell['name']}! It strikes {target['name']} for {int(damage)} {spell.get('damage_type', 'magical')} damage!"
+                spell_cast(spell_msg, damage_type=damage_type, spell_type=spell.get('type'))
             )
 
             # Notify room
@@ -3398,7 +3753,7 @@ completequest <id> - Mark a quest as complete
                 await self.game_engine.combat_system.handle_mob_loot_drop(player_id, target, room_id)
 
                 # Remove mob from room
-                mob_participant_id = f"mob_{target.get('id', 'unknown')}"
+                mob_participant_id = self.game_engine.combat_system.get_mob_identifier(target)
                 await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
             else:
                 # Mob survived - set/update aggro on the caster
@@ -3412,63 +3767,469 @@ completequest <id> - Mark a quest as complete
                     target['aggro_last_attack'] = time.time()
 
         else:
-            # Area spell (no specific target needed)
+            # Area spell (no specific target needed) - hits all mobs in the room
+            mobs_in_room = self.game_engine.room_mobs.get(room_id, [])
+
+            if not mobs_in_room:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']}, but there are no enemies to affect!"
+                )
+                return
+
+            # Roll damage once for the spell
+            damage_roll = spell.get('damage', '1d6')
+            base_damage = self._roll_dice(damage_roll)
+
+            # Apply level scaling if spell supports it
+            caster_level = character.get('level', 1)
+            damage = self._calculate_scaled_spell_value(base_damage, spell, caster_level)
+
+            # Send cast message to caster
+            from ..utils.colors import spell_cast
+            damage_type = spell.get('damage_type', 'magical')
+            spell_msg = f"You cast {spell['name']}! A wave of {damage_type} energy fills the room!"
             await self.game_engine.connection_manager.send_message(
                 player_id,
-                f"You cast {spell['name']}! (Area spells not yet fully implemented)"
+                spell_cast(spell_msg, damage_type=damage_type, spell_type=spell.get('type'))
             )
 
-    async def _cast_heal_spell(self, player_id: int, character: dict, spell: dict):
+            # Notify room
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')} casts {spell['name']}! A wave of {spell.get('damage_type', 'magical')} energy fills the room!"
+            )
+
+            # Track defeated mobs to remove after loop
+            defeated_mobs = []
+
+            # Apply damage to all mobs
+            for mob in mobs_in_room[:]:  # Create copy to avoid modification during iteration
+                # Apply damage
+                mob['health'] -= damage
+
+                # Apply poison DOT if damage type is poison
+                poison_message = ""
+                if damage_type == 'poison':
+                    poison_duration = spell.get('poison_duration', 5)
+                    poison_damage = spell.get('poison_damage', '1d2')
+
+                    # Initialize poison_effects if needed
+                    if 'poison_effects' not in mob:
+                        mob['poison_effects'] = []
+
+                    # Add poison effect
+                    mob['poison_effects'].append({
+                        'duration': poison_duration,
+                        'damage': poison_damage,
+                        'caster_id': player_id,
+                        'spell_name': spell['name']
+                    })
+                    poison_message = " (poisoned!)"
+
+                # Send damage message
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"  {mob['name']} takes {int(damage)} {spell.get('damage_type', 'magical')} damage!{poison_message}"
+                )
+
+                # Check if mob died
+                if mob['health'] <= 0:
+                    defeated_mobs.append(mob)
+                else:
+                    # Mob survived - set aggro on the caster
+                    if 'aggro_target' not in mob:
+                        mob['aggro_target'] = player_id
+                        mob['aggro_room'] = room_id
+                        self.game_engine.logger.debug(f"[AGGRO] {mob['name']} is now aggro'd on player {player_id} (AOE spell)")
+                    # Update aggro timestamp
+                    if mob.get('aggro_target') == player_id:
+                        import time
+                        mob['aggro_last_attack'] = time.time()
+
+            # Handle defeated mobs
+            for mob in defeated_mobs:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"  {mob['name']} has been defeated!"
+                )
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"  {mob['name']} has been defeated!"
+                )
+
+                # Handle loot, gold, and experience
+                await self.game_engine.combat_system.handle_mob_loot_drop(player_id, mob, room_id)
+
+                # Remove mob from room
+                mob_participant_id = self.game_engine.combat_system.get_mob_identifier(mob)
+                await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
+
+    async def _cast_heal_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
         """Cast a healing spell."""
+        from ..utils.colors import spell_cast
+
         # Roll healing amount
         heal_roll = spell.get('heal_amount', '1d8')
-        heal_amount = self._roll_dice(heal_roll)
+        base_heal = self._roll_dice(heal_roll)
 
-        # Get current and max health
-        current_health = character.get('health', 0)
-        max_health = character.get('max_hit_points', 100)
+        # Apply level scaling if spell supports it
+        caster_level = character.get('level', 1)
+        heal_amount = self._calculate_scaled_spell_value(base_heal, spell, caster_level)
 
-        # Apply healing
-        actual_heal = min(heal_amount, max_health - current_health)
-        character['health'] = min(current_health + heal_amount, max_health)
+        # Check if this is an AOE heal
+        area_of_effect = spell.get('area_of_effect', 'Single')
 
-        # Send message
+        if area_of_effect == 'Area':
+            # AOE heal - heal all players in the room
+            healed_players = []
+
+            # Get all connected players
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_conn_data.get('character')
+                if not other_character:
+                    continue
+
+                # Check if player is in same room
+                if other_character.get('room_id') != room_id:
+                    continue
+
+                # Get current and max health
+                current_health = other_character.get('current_hit_points', 0)
+                max_health = other_character.get('max_hit_points', 100)
+
+                # Skip if already at full health
+                if current_health >= max_health:
+                    continue
+
+                # Apply healing
+                actual_heal = min(heal_amount, max_health - current_health)
+                other_character['current_hit_points'] = min(current_health + heal_amount, max_health)
+
+                # Send message to healed player
+                if other_player_id == player_id:
+                    heal_msg = f"You cast {spell['name']}! You are healed for {int(actual_heal)} HP.\nHealth: {int(other_character['current_hit_points'])} / {int(max_health)}"
+                else:
+                    heal_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! You are healed for {int(actual_heal)} HP.\nHealth: {int(other_character['current_hit_points'])} / {int(max_health)}"
+
+                await self.game_engine.connection_manager.send_message(
+                    other_player_id,
+                    spell_cast(heal_msg, spell_type='heal')
+                )
+
+                healed_players.append(other_character.get('name', 'Someone'))
+
+            # Notify room about the AOE heal
+            if healed_players:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, and healing energy washes over the room!"
+            else:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, but no one needs healing!"
+
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                room_msg
+            )
+
+        else:
+            # Single-target heal
+            # Determine target
+            if spell.get('requires_target', False) and target_name:
+                # Find target player by name
+                target_player_id = None
+                target_character = None
+
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    other_character = other_conn_data.get('character')
+                    if not other_character:
+                        continue
+
+                    # Check if player is in same room and name matches
+                    if other_character.get('room_id') == room_id:
+                        if other_character.get('name', '').lower() == target_name.lower():
+                            target_player_id = other_player_id
+                            target_character = other_character
+                            break
+
+                if not target_character:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You don't see '{target_name}' here."
+                    )
+                    return
+            else:
+                # Default to self-healing
+                target_player_id = player_id
+                target_character = character
+
+            # Get current and max health
+            current_health = target_character.get('current_hit_points', 0)
+            max_health = target_character.get('max_hit_points', 100)
+
+            # Check if target is already at full health
+            if current_health >= max_health:
+                if target_player_id == player_id:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']}, but you are already at full health!"
+                    )
+                else:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']} on {target_character.get('name', 'someone')}, but they are already at full health!"
+                    )
+                return
+
+            # Apply healing
+            actual_heal = min(heal_amount, max_health - current_health)
+            target_character['current_hit_points'] = min(current_health + heal_amount, max_health)
+
+            # Send messages
+            if target_player_id == player_id:
+                # Self-heal
+                heal_msg = f"You cast {spell['name']}! You are healed for {int(actual_heal)} HP.\nHealth: {int(target_character['current_hit_points'])} / {int(max_health)}"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(heal_msg, spell_type='heal')
+                )
+
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{character.get('name', 'Someone')} casts {spell['name']} and glows with healing energy!"
+                )
+            else:
+                # Healing another player
+                caster_msg = f"You cast {spell['name']} on {target_character.get('name', 'someone')}! They are healed for {int(actual_heal)} HP."
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(caster_msg, spell_type='heal')
+                )
+
+                target_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! You are healed for {int(actual_heal)} HP.\nHealth: {int(target_character['current_hit_points'])} / {int(max_health)}"
+                await self.game_engine.connection_manager.send_message(
+                    target_player_id,
+                    spell_cast(target_msg, spell_type='heal')
+                )
+
+                # Notify other players in room (exclude caster and target)
+                notify_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on {target_character.get('name', 'someone')}, who glows with healing energy!"
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    if other_player_id == player_id or other_player_id == target_player_id:
+                        continue
+                    other_character = other_conn_data.get('character')
+                    if other_character and other_character.get('room_id') == room_id:
+                        await self.game_engine.connection_manager.send_message(
+                            other_player_id,
+                            notify_msg
+                        )
+
+    async def _cast_drain_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a drain spell that does damage and drains resources or stats."""
+        from ..utils.colors import spell_cast, error_message
+
+        # Drain spells require a target
+        if not target_name:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You need a target to cast {spell['name']}. Use: cast {spell['name']} <target>")
+            )
+            return
+
+        # Find target using combat system's method
+        target = await self.game_engine.combat_system.find_combat_target(room_id, target_name)
+
+        if not target:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                error_message(f"You don't see '{target_name}' here.")
+            )
+            return
+
+        # Roll damage
+        damage_roll = spell.get('damage', '1d6')
+        base_damage = self._roll_dice(damage_roll)
+
+        # Apply level scaling if spell supports it
+        caster_level = character.get('level', 1)
+        damage = self._calculate_scaled_spell_value(base_damage, spell, caster_level)
+
+        # Get damage type
+        damage_type = spell.get('damage_type', 'force')
+        effect = spell.get('effect', 'unknown')
+
+        # Create temporary entities for hit calculation (same as damage spell)
+        class TempCharacter:
+            def __init__(self, char_data):
+                self.name = char_data['name']
+                self.level = char_data.get('level', 1)
+                self.strength = char_data.get('strength', 10)
+                self.dexterity = char_data.get('dexterity', 10)
+                self.constitution = char_data.get('constitution', 10)
+                self.intelligence = char_data.get('intellect', 10)
+                self.wisdom = char_data.get('wisdom', 10)
+                self.charisma = char_data.get('charisma', 10)
+
+        class TempMob:
+            def __init__(self, mob_data):
+                self.name = mob_data.get('name', 'Unknown')
+                self.level = mob_data.get('level', 1)
+                self.strength = 12
+                self.dexterity = 10
+                self.constitution = 12
+                self.intelligence = 8
+                self.wisdom = 10
+                self.charisma = 6
+
+        temp_char = TempCharacter(character)
+        temp_mob = TempMob(target)
+
+        # Import damage calculator
+        from ..game.combat.damage_calculator import DamageCalculator
+
+        # Check spell hit (spells use INT for accuracy)
+        mob_armor = target.get('armor_class', 0)
+        base_hit_chance = self.game_engine.config_manager.get_setting('combat', 'base_hit_chance', default=0.50)
+
+        # For spells, swap INT/WIS for DEX in hit calculation
+        saved_dex = temp_char.dexterity
+        temp_char.dexterity = temp_char.intelligence
+
+        outcome = DamageCalculator.check_attack_outcome(temp_char, temp_mob, mob_armor, base_hit_chance)
+
+        # Restore original DEX
+        temp_char.dexterity = saved_dex
+
+        if outcome['result'] == 'miss':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You cast {spell['name']}, but it misses {target['name']}!"
+            )
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')}'s {spell['name']} misses {target['name']}!"
+            )
+            return
+        elif outcome['result'] == 'dodge':
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You cast {spell['name']}, but {target['name']} dodges it!"
+            )
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{target['name']} dodges {character.get('name', 'Someone')}'s {spell['name']}!"
+            )
+            return
+
+        # Apply damage to target
+        current_health = target.get('current_hit_points', target.get('max_hit_points', 20))
+        new_health = max(0, current_health - damage)
+        target['current_hit_points'] = new_health
+
+        # Handle drain effects based on effect type
+        drain_message = ""
+
+        if effect == 'drain_mana':
+            # Roll drain amount
+            effect_amount_roll = spell.get('effect_amount', '-1d2')
+            drain_amount = abs(self._roll_dice(effect_amount_roll))
+
+            # Drain mana from target and give to caster
+            target_current_mana = target.get('current_mana', 0)
+            actual_drain = min(drain_amount, target_current_mana)
+
+            if actual_drain > 0:
+                target['current_mana'] = max(0, target_current_mana - actual_drain)
+                caster_current_mana = character.get('current_mana', 0)
+                caster_max_mana = character.get('max_mana', 50)
+                character['current_mana'] = min(caster_current_mana + actual_drain, caster_max_mana)
+                drain_message = f" You drain {int(actual_drain)} mana!"
+
+        elif effect == 'drain_health':
+            # Life steal - heal the caster for the damage dealt
+            if spell.get('life_steal', False):
+                caster_current_hp = character.get('current_hit_points', 0)
+                caster_max_hp = character.get('max_hit_points', 100)
+                heal_amount = min(damage, caster_max_hp - caster_current_hp)
+                if heal_amount > 0:
+                    character['current_hit_points'] = min(caster_current_hp + heal_amount, caster_max_hp)
+                    drain_message = f" You absorb {int(heal_amount)} HP!"
+
+        elif effect in ['drain_agility', 'drain_physique', 'drain_stamina', 'drain_mental', 'drain_body']:
+            # Stat drain effects - these would apply temporary debuffs
+            # For now, just show the effect message
+            drain_message = f" {target['name']} feels weakened!"
+
+        # Send message to caster
+        spell_msg = f"You cast {spell['name']}! It strikes {target['name']} for {int(damage)} {damage_type} damage!{drain_message}"
         await self.game_engine.connection_manager.send_message(
             player_id,
-            f"You cast {spell['name']}! You are healed for {int(actual_heal)} HP.\nHealth: {int(character['health'])} / {int(max_health)}"
+            spell_cast(spell_msg, damage_type=damage_type, spell_type='drain')
         )
 
         # Notify room
-        room_id = character.get('room_id')
         await self.game_engine.player_manager.notify_room_except_player(
             room_id,
             player_id,
-            f"{character.get('name', 'Someone')} casts {spell['name']} and glows with healing energy!"
+            f"{character.get('name', 'Someone')}'s {spell['name']} strikes {target['name']}!"
         )
+
+        # Check if mob died
+        if new_health <= 0:
+            # Handle mob death
+            mob_participant_id = self.game_engine.combat_system.get_mob_identifier(target)
+            await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
 
     async def _cast_buff_spell(self, player_id: int, character: dict, spell: dict):
         """Cast a buff spell."""
         effect = spell.get('effect', 'unknown')
         duration = spell.get('duration', 0)
+        spell_type = spell.get('type', 'buff')
 
         # Initialize active_effects if needed
         if 'active_effects' not in character:
             character['active_effects'] = []
+
+        # Calculate effect amount for enhancement spells
+        effect_amount = 0
+        if spell_type == 'enhancement':
+            effect_amount_roll = spell.get('effect_amount', '0')
+            if effect_amount_roll and effect_amount_roll != '0':
+                effect_amount = self._roll_dice(effect_amount_roll)
+            else:
+                effect_amount = spell.get('bonus_amount', 0)
 
         # Add the buff
         buff = {
             'spell_id': spell.get('name', 'Unknown'),
             'effect': effect,
             'duration': duration,
-            'bonus_amount': spell.get('bonus_amount', 0)
+            'bonus_amount': spell.get('bonus_amount', 0),
+            'effect_amount': effect_amount
         }
         character['active_effects'].append(buff)
 
-        # Send message
-        await self.game_engine.connection_manager.send_message(
-            player_id,
-            f"You cast {spell['name']}! {spell['description']}"
-        )
+        # Apply immediate effect for enhancements
+        from ..utils.colors import spell_cast
+        if spell_type == 'enhancement' and effect_amount > 0:
+            effect_msg = self._apply_enhancement_effect(character, effect, effect_amount)
+            if effect_msg:
+                spell_msg = f"You cast {spell['name']}! {effect_msg}"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(spell_msg, spell_type='enhancement')
+                )
+        else:
+            # Send message for regular buffs
+            spell_msg = f"You cast {spell['name']}! {spell['description']}"
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                spell_cast(spell_msg, spell_type=spell_type)
+            )
 
         # Notify room
         room_id = character.get('room_id')
@@ -3477,6 +4238,39 @@ completequest <id> - Mark a quest as complete
             player_id,
             f"{character.get('name', 'Someone')} casts {spell['name']}!"
         )
+
+    def _apply_enhancement_effect(self, character: dict, effect: str, amount: int) -> str:
+        """Apply an enhancement effect to a character's stats.
+
+        Args:
+            character: The character dictionary
+            effect: The enhancement effect type
+            amount: The amount to enhance by
+
+        Returns:
+            A message describing the effect
+        """
+        effect_map = {
+            'enhance_agility': ('dexterity', 'agility'),
+            'enhance_strength': ('strength', 'strength'),
+            'enhance_constitution': ('constitution', 'constitution'),
+            'enhance_vitality': ('vitality', 'vitality'),
+            'enhance_intelligence': ('intellect', 'intelligence'),
+            'enhance_wisdom': ('wisdom', 'wisdom'),
+            'enhance_charisma': ('charisma', 'charisma')
+        }
+
+        if effect in effect_map:
+            stat_key, stat_name = effect_map[effect]
+            old_value = character.get(stat_key, 10)
+            character[stat_key] = old_value + amount
+            return f"Your {stat_name} increases by {amount}! ({old_value} -> {character[stat_key]})"
+        elif effect == 'ac_bonus':
+            return f"A magical barrier surrounds you, increasing your armor class by {amount}!"
+        elif effect == 'invisible':
+            return "You fade from view, becoming invisible!"
+
+        return f"You feel the power of the spell course through you!"
 
     def _roll_dice(self, dice_string: str) -> int:
         """Roll dice from a string like '2d6+3' or '1d8'."""
@@ -3494,6 +4288,60 @@ completequest <id> - Mark a quest as complete
         # Roll the dice
         total = sum(random.randint(1, die_size) for _ in range(num_dice))
         return total + modifier
+
+    def _calculate_scaled_spell_value(self, base_value: int, spell: dict, caster_level: int) -> int:
+        """Calculate scaled spell damage or healing based on caster level.
+
+        Args:
+            base_value: The base rolled damage or healing value
+            spell: The spell data dictionary
+            caster_level: The caster's character level
+
+        Returns:
+            The scaled value
+        """
+        scales_with_level = spell.get('scales_with_level', 'No')
+
+        if scales_with_level not in ['Yes', 'yes', True]:
+            return base_value
+
+        # Multiplicative scaling: base damage × caster level
+        # Example: Level 18 caster with 8 base damage = 8 × 18 = 144 damage
+        scaled_value = base_value * caster_level
+
+        return scaled_value
+
+    def _calculate_player_spell_failure_chance(self, caster_level: int, caster_intelligence: int, spell_min_level: int) -> float:
+        """Calculate the chance that a player's spell cast will fail.
+
+        Args:
+            caster_level: Level of the caster
+            caster_intelligence: Intelligence stat of the caster
+            spell_min_level: Minimum level required for the spell
+
+        Returns:
+            Float between 0.0 and 0.50 representing failure chance (0.10 = 10% chance to fail)
+        """
+        # Base failure rate: 5%
+        base_failure = 0.05
+
+        # Level difference penalty: +10% per level if spell is above caster's level
+        level_penalty = 0.0
+        if spell_min_level > caster_level:
+            level_penalty = (spell_min_level - caster_level) * 0.10
+
+        # Intelligence bonus: reduce failure based on intelligence modifier
+        # D&D style: (stat - 10) / 2 = modifier
+        intelligence_modifier = (caster_intelligence - 10) / 2
+        intelligence_bonus = intelligence_modifier * 0.01  # 1% per modifier point
+
+        # Calculate final failure chance
+        failure_chance = base_failure + level_penalty - intelligence_bonus
+
+        # Clamp between 0% and 50% (players are generally more skilled than mobs)
+        failure_chance = max(0.0, min(0.50, failure_chance))
+
+        return failure_chance
 
     def _is_spell_fatigued(self, player_id: int) -> bool:
         """Check if a player is currently spell fatigued."""
@@ -3589,7 +4437,7 @@ completequest <id> - Mark a quest as complete
         """Check if a character class uses magic.
 
         Args:
-            class_name: The name of the class (e.g., 'fighter', 'sorceror')
+            class_name: The name of the class (e.g., 'fighter', 'sorcerer')
 
         Returns:
             True if the class uses magic, False otherwise
@@ -3601,8 +4449,9 @@ completequest <id> - Mark a quest as complete
             classes_file = Path("data/player/classes.json")
             with open(classes_file, 'r') as f:
                 classes_data = json.load(f)
-                if class_name in classes_data:
-                    return classes_data[class_name].get('uses_magic', False)
+                class_key = class_name.lower()
+                if class_key in classes_data:
+                    return classes_data[class_key].get('uses_magic', False)
         except Exception as e:
             self.game_engine.logger.warning(f"Could not load class data: {e}")
 
@@ -3782,12 +4631,25 @@ completequest <id> - Mark a quest as complete
         # Update character stats
         character.update(base_stats)
 
-        # Recalculate max hit points
+        # This is the REROLL command - should reset HP from scratch
+        # Formula: baseVitality + raceModifier + classModifier + staminaBonus
+        old_max_hp = character.get('max_hit_points', 0)
+
+        # New base vitality roll (8-20)
+        base_vitality = random.randint(8, 20)
+
+        # Race vitality modifier
+        race_vitality_mod = race_data.get('stat_modifiers', {}).get('vitality', 0)
+
+        # Class vitality modifier
+        class_vitality_mod = class_data.get('stat_modifiers', {}).get('vitality', 0)
+
+        # Stamina (constitution) HP bonus lookup table
         constitution = character['constitution']
-        hp_modifier = class_data.get('hp_modifier', 1.0)
-        base_hp = constitution * 5
-        random_hp = random.randint(1, 10)
-        max_hp = int((base_hp + random_hp) * hp_modifier)
+        stamina_hp_bonus = self._get_stamina_hp_bonus(constitution)
+
+        # Final calculation (minimum 8 HP) - resets to new value
+        max_hp = max(8, base_vitality + race_vitality_mod + class_vitality_mod + stamina_hp_bonus)
 
         # Recalculate max mana
         intellect = character['intellect']
@@ -3797,14 +4659,11 @@ completequest <id> - Mark a quest as complete
         max_mana = int((base_mana + random_mana) * mana_modifier)
 
         # Update HP and mana
-        old_max_hp = character.get('max_hit_points', 0)
         old_max_mana = character.get('max_mana', 0)
 
         character['max_hit_points'] = max_hp
-        character['health'] = max_hp
         character['current_hit_points'] = max_hp
         character['max_mana'] = max_mana
-        character['mana'] = max_mana
         character['current_mana'] = max_mana
 
         # Update max encumbrance based on new strength
@@ -3889,13 +4748,37 @@ HP: {max_hp}  Mana: {max_mana}
         character['level'] = new_level
 
         # Get leveling bonuses from config
-        hp_per_level = self.game_engine.config_manager.get_setting('player', 'leveling', 'hp_per_level', default=10)
         mana_per_level = self.game_engine.config_manager.get_setting('player', 'leveling', 'mana_per_level', default=5)
         stat_points = self.game_engine.config_manager.get_setting('player', 'leveling', 'stat_points_per_level', default=2)
 
-        # Increase max HP
+        # Load race and class data for modifiers
+        races = self._load_races()
+        classes = self._load_classes()
+        player_race = character.get('species', 'human').lower()
+        player_class = character.get('class', 'fighter').lower()
+        race_data = races.get(player_race, races.get('human', {}))
+        class_data = classes.get(player_class, classes.get('fighter', {}))
+
+        # Increase max HP using vitality formula (same as training)
+        # Formula: oldMaxVitality + newRoll + raceModifier + classModifier + staminaBonus
         old_max_hp = character.get('max_hit_points', 100)
-        new_max_hp = old_max_hp + hp_per_level
+
+        # New base vitality roll (8-20)
+        new_vitality_roll = random.randint(8, 20)
+
+        # Race vitality modifier
+        race_vitality_mod = race_data.get('stat_modifiers', {}).get('vitality', 0)
+
+        # Class vitality modifier
+        class_vitality_mod = class_data.get('stat_modifiers', {}).get('vitality', 0)
+
+        # Stamina (constitution) HP bonus lookup table
+        constitution = character.get('constitution', 10)
+        stamina_hp_bonus = self._get_stamina_hp_bonus(constitution)
+
+        # Final calculation: old max + new roll + modifiers + stamina bonus (minimum 8 HP gain)
+        hp_gain = new_vitality_roll + race_vitality_mod + class_vitality_mod + stamina_hp_bonus
+        new_max_hp = old_max_hp + max(8, hp_gain)
         character['max_hit_points'] = new_max_hp
 
         # Check if class uses magic
@@ -3910,11 +4793,11 @@ HP: {max_hp}  Mana: {max_mana}
             character['max_mana'] = new_max_mana
 
         # Fully restore health on level up
-        character['health'] = new_max_hp
+        character['current_hit_points'] = new_max_hp
 
         # Fully restore mana on level up (only for magic-using classes)
         if class_uses_magic:
-            character['mana'] = new_max_mana
+            character['current_mana'] = new_max_mana
 
         # Automatically distribute stat points
         stat_increases = self._distribute_stat_points(character, stat_points)
@@ -4100,7 +4983,7 @@ Congratulations, {character['name']}! You feel stronger and more capable!
 
                 total_mobs += 1
                 mob_name = mob.get('name', 'Unknown')
-                mob_hp = mob.get('health', 0)
+                mob_hp = mob.get('current_hit_points', 0)
                 mob_max_hp = mob.get('max_health', 0)
                 mob_level = mob.get('level', 1)
 
@@ -5494,3 +6377,232 @@ Congratulations, {character['name']}! You feel stronger and more capable!
             player_id,
             info_message("(Full pet/companion system not yet implemented)")
         )
+
+    # ==================== ADMIN STAT COMMANDS ====================
+
+    async def _handle_admin_set_stat(self, player_id: int, character: dict, params: str):
+        """Admin command to set a character stat.
+
+        Usage: setstat <stat_name> <value>
+        Stats: strength, dexterity, constitution, vitality, intellect, wisdom, charisma
+        """
+        parts = params.strip().split()
+        if len(parts) != 2:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] Usage: setstat <stat_name> <value>\nStats: strength, dexterity, constitution, vitality, intellect, wisdom, charisma"
+            )
+            return
+
+        stat_name = parts[0].lower()
+        try:
+            value = int(parts[1])
+        except ValueError:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] Error: Value must be a number"
+            )
+            return
+
+        # Map stat names to character keys
+        stat_map = {
+            'str': 'strength',
+            'strength': 'strength',
+            'dex': 'dexterity',
+            'dexterity': 'dexterity',
+            'con': 'constitution',
+            'constitution': 'constitution',
+            'vit': 'vitality',
+            'vitality': 'vitality',
+            'int': 'intellect',
+            'intellect': 'intellect',
+            'intelligence': 'intellect',
+            'wis': 'wisdom',
+            'wisdom': 'wisdom',
+            'cha': 'charisma',
+            'charisma': 'charisma'
+        }
+
+        stat_key = stat_map.get(stat_name)
+        if not stat_key:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Error: Unknown stat '{stat_name}'\nValid stats: strength, dexterity, constitution, vitality, intellect, wisdom, charisma"
+            )
+            return
+
+        # Clamp value between 1 and 99
+        value = max(1, min(99, value))
+
+        old_value = character.get(stat_key, 10)
+        character[stat_key] = value
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"[ADMIN] {stat_key.capitalize()} set: {old_value} -> {value}"
+        )
+
+    async def _handle_admin_set_level(self, player_id: int, character: dict, params: str):
+        """Admin command to set character level.
+
+        Usage: setlevel <level>
+        """
+        try:
+            level = int(params.strip())
+        except ValueError:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] Error: Level must be a number"
+            )
+            return
+
+        # Clamp level between 1 and 50
+        level = max(1, min(50, level))
+
+        old_level = character.get('level', 1)
+        character['level'] = level
+
+        # Update max HP and mana based on new level
+        # Base HP: 100 + (level * 10)
+        # Base Mana: 50 + (level * 5)
+        max_hp = 100 + (level * 10)
+        max_mana = 50 + (level * 5)
+
+        character['max_hit_points'] = max_hp
+        character['max_mana'] = max_mana
+        character['current_hit_points'] = max_hp
+        character['current_mana'] = max_mana
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"[ADMIN] Level set: {old_level} -> {level}\nMax HP: {max_hp}, Max Mana: {max_mana}\nHealth and mana restored to full."
+        )
+
+    async def _handle_admin_set_mana(self, player_id: int, character: dict, params: str):
+        """Admin command to set character mana.
+
+        Usage: setmana <current> [max] OR setmana full
+        """
+        parts = params.strip().split()
+
+        if parts[0].lower() == 'full':
+            max_mana = character.get('max_mana', 50)
+            character['current_mana'] = max_mana
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Mana restored to full: {max_mana}"
+            )
+            return
+
+        try:
+            current = int(parts[0])
+        except (ValueError, IndexError):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] Usage: setmana <current> [max] OR setmana full"
+            )
+            return
+
+        # If max value provided, set it
+        if len(parts) > 1:
+            try:
+                max_mana = int(parts[1])
+                character['max_mana'] = max(1, max_mana)
+            except ValueError:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    "[ADMIN] Error: Max mana must be a number"
+                )
+                return
+
+        character['current_mana'] = max(0, current)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"[ADMIN] Mana set: {character['current_mana']} / {character.get('max_mana', 50)}"
+        )
+
+    async def _handle_admin_set_health(self, player_id: int, character: dict, params: str):
+        """Admin command to set character health.
+
+        Usage: sethealth <current> [max] OR sethealth full
+        """
+        parts = params.strip().split()
+
+        if parts[0].lower() == 'full':
+            max_hp = character.get('max_hit_points', 100)
+            character['current_hit_points'] = max_hp
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"[ADMIN] Health restored to full: {max_hp}"
+            )
+            return
+
+        try:
+            current = int(parts[0])
+        except (ValueError, IndexError):
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] Usage: sethealth <current> [max] OR sethealth full"
+            )
+            return
+
+        # If max value provided, set it
+        if len(parts) > 1:
+            try:
+                max_hp = int(parts[1])
+                character['max_hit_points'] = max(1, max_hp)
+            except ValueError:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    "[ADMIN] Error: Max health must be a number"
+                )
+                return
+
+        character['current_hit_points'] = max(1, current)
+
+        await self.game_engine.connection_manager.send_message(
+            player_id,
+            f"[ADMIN] Health set: {character['current_hit_points']} / {character.get('max_hit_points', 100)}"
+        )
+
+    async def _handle_admin_god_mode(self, player_id: int, character: dict):
+        """Admin command to toggle god mode (invincibility + max stats).
+
+        Usage: godmode OR god
+        """
+        # Toggle god mode flag
+        current_god_mode = character.get('god_mode', False)
+        character['god_mode'] = not current_god_mode
+
+        if character['god_mode']:
+            # Enable god mode - set all stats to 99
+            character['strength'] = 99
+            character['dexterity'] = 99
+            character['constitution'] = 99
+            character['vitality'] = 99
+            character['intellect'] = 99
+            character['wisdom'] = 99
+            character['charisma'] = 99
+
+            # Set level to 50
+            character['level'] = 50
+            character['max_hit_points'] = 9999
+            character['max_mana'] = 9999
+            character['current_hit_points'] = 9999
+            character['current_mana'] = 9999
+
+            # Give lots of gold
+            character['gold'] = character.get('gold', 0) + 100000
+
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] GOD MODE ENABLED!\nAll stats set to 99, Level 50, HP/Mana 9999, +100,000 gold"
+            )
+        else:
+            # Disable god mode
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "[ADMIN] God mode disabled. Use 'setstat' and 'setlevel' to adjust stats manually."
+            )
+

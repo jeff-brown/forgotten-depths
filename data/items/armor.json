@@ -32,7 +32,7 @@
         "mana_bonus": 5,
         "required_level": 1,
         "allowed_classes": [
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",
@@ -93,7 +93,7 @@
           "fighter",
           "ranger",
           "rogue",
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",
@@ -115,7 +115,7 @@
         "material": "cloth",
         "required_level": 1,
         "allowed_classes": [
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",
@@ -326,7 +326,7 @@
           "fighter",
           "ranger",
           "rogue",
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",
@@ -350,7 +350,7 @@
         "magical": true,
         "mana_bonus": 50,
         "allowed_classes": [
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock"
@@ -373,7 +373,7 @@
         "magical": true,
         "mana_bonus": 25,
         "allowed_classes": [
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",
@@ -398,7 +398,7 @@
           "fighter",
           "ranger",
           "rogue",
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",

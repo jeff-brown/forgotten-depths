@@ -9,7 +9,11 @@
     "north": "dungeon3_139",
     "east": "dungeon3_138"
   },
-  "is_lair": true,
-  "lair_monster": "dungeon_champion",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "dungeon_champion",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

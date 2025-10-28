@@ -89,8 +89,10 @@ class Database:
         cursor = self.connection.cursor()
         cursor.execute(query, params)
         self.connection.commit()
+        # Store lastrowid for get_last_insert_id()
+        self._last_insert_id = cursor.lastrowid
         return cursor.rowcount
 
     def get_last_insert_id(self) -> int:
         """Get the last inserted row ID."""
-        return self.connection.lastrowid
+        return getattr(self, '_last_insert_id', None)

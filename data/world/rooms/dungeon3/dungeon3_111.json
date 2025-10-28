@@ -9,7 +9,11 @@
     "north": "dungeon3_181",
     "west": "dungeon3_171"
   },
-  "is_lair": true,
-  "lair_monster": "apollyon_dragon",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "apollyon_dragon",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

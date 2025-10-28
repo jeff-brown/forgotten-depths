@@ -9,7 +9,11 @@
     "north": "dungeon3_182",
     "south": "dungeon3_111"
   },
-  "is_lair": true,
-  "lair_monster": "elysian_dragon",
-  "respawn_time": 600
+  "lairs": [
+    {
+      "mob_id": "elysian_dragon",
+      "respawn_time": 600,
+      "max_mobs": 1
+    }
+  ]
 }

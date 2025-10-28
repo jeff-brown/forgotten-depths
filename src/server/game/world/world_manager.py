@@ -780,8 +780,9 @@ class WorldManager:
                     # Add health status for hostile mobs
                     health_status = ""
                     if mob.get('type') == 'hostile':
-                        health = mob.get('health', 100)
-                        max_health = mob.get('max_health', 100)
+                        # Try current_hit_points first, fallback to health for compatibility
+                        health = mob.get('current_hit_points', mob.get('health', 100))
+                        max_health = mob.get('max_hit_points', mob.get('max_health', 100))
                         health_percent = (health / max_health) * 100
 
                         if health_percent >= 90:

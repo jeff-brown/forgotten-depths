@@ -35,7 +35,7 @@
           "ranger",
           "rogue",
           "bard",
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock"
@@ -61,7 +61,7 @@
           "ranger",
           "rogue",
           "bard",
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock"
@@ -141,7 +141,7 @@
         "material": "wood",
         "required_level": 1,
         "allowed_classes": [
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",
@@ -563,7 +563,7 @@
           "rogue",
           "fighter",
           "bard",
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock"
@@ -1129,7 +1129,7 @@
         "material": "enchanted_wood",
         "required_level": 15,
         "allowed_classes": [
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",
@@ -1249,7 +1249,7 @@
         "material": "crystal",
         "required_level": 15,
         "allowed_classes": [
-          "sorceror",
+          "sorcerer",
           "cleric",
           "druid",
           "warlock",

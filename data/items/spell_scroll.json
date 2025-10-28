@@ -1,15 +1,32 @@
 {
   "items": {
-    "scroll_magic_missile": {
-      "name": "Scroll of Magic Missile",
+    "scroll_cure_wounds": {
+      "name": "Scroll of Cure Wounds",
       "type": "spell_scroll",
       "weight": 0.1,
-      "base_value": 50,
-      "description": "A scroll inscribed with the spell Magic Missile. Reading it will teach you the spell permanently.",
+      "base_value": 73,
+      "description": "A scroll inscribed with the Cure Wounds spell. Touch heals wounds through divine grace.. Reading it will teach you the spell permanently.",
       "properties": {
-        "spell_id": "magic_missile",
-        "spell_level": 1,
-        "spell_school": "evocation",
+        "spell_id": "cure_wounds",
+        "spell_level": 2,
+        "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_fadi": {
+      "name": "Scroll of Fadi",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 77,
+      "description": "A scroll inscribed with the Fadi spell. A regenerative spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "fadi",
+        "spell_level": 2,
+        "spell_school": "restoration",
         "consumable": true,
         "requirements": {
           "min_level": 1,
@@ -21,12 +38,80 @@
       "name": "Scroll of Heal",
       "type": "spell_scroll",
       "weight": 0.1,
-      "base_value": 80,
-      "description": "A scroll inscribed with the Heal spell. Reading it will teach you the spell permanently.",
+      "base_value": 74,
+      "description": "A scroll inscribed with the Heal spell. Channel divine energy to restore health.. Reading it will teach you the spell permanently.",
       "properties": {
         "spell_id": "heal",
-        "spell_level": 1,
+        "spell_level": 2,
         "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_komiza": {
+      "name": "Scroll of Komiza",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 75,
+      "description": "A scroll inscribed with the Komiza spell. A small shard of ice. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "komiza",
+        "spell_level": 2,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_magic_missile": {
+      "name": "Scroll of Magic Missile",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 72,
+      "description": "A scroll inscribed with the Magic Missile spell. A bolt of magical force that never misses its target.. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "magic_missile",
+        "spell_level": 2,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_motu": {
+      "name": "Scroll of Motu",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 72,
+      "description": "A scroll inscribed with the Motu spell. A minor healing spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "motu",
+        "spell_level": 2,
+        "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_pakaza": {
+      "name": "Scroll of Pakaza",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 75,
+      "description": "A scroll inscribed with the Pakaza spell. A thorn. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "pakaza",
+        "spell_level": 2,
+        "spell_school": "evocation",
         "consumable": true,
         "requirements": {
           "min_level": 1,
@@ -38,11 +123,11 @@
       "name": "Scroll of Shield",
       "type": "spell_scroll",
       "weight": 0.1,
-      "base_value": 60,
-      "description": "A scroll inscribed with the Shield spell. Reading it will teach you the spell permanently.",
+      "base_value": 73,
+      "description": "A scroll inscribed with the Shield spell. Create a magical barrier that increases armor class.. Reading it will teach you the spell permanently.",
       "properties": {
         "spell_id": "shield",
-        "spell_level": 1,
+        "spell_level": 2,
         "spell_school": "abjuration",
         "consumable": true,
         "requirements": {
@@ -51,15 +136,32 @@
         }
       }
     },
-    "scroll_lightning_bolt": {
-      "name": "Scroll of Lightning Bolt",
+    "scroll_teka": {
+      "name": "Scroll of Teka",
       "type": "spell_scroll",
       "weight": 0.1,
-      "base_value": 150,
-      "description": "A scroll inscribed with the Lightning Bolt spell. Reading it will teach you the spell permanently.",
+      "base_value": 75,
+      "description": "A scroll inscribed with the Teka spell. A weak beam of dark energy. Reading it will teach you the spell permanently.",
       "properties": {
-        "spell_id": "lightning_bolt",
+        "spell_id": "teka",
         "spell_level": 2,
+        "spell_school": "transmutation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 1,
+          "min_intelligence": 10
+        }
+      }
+    },
+    "scroll_dobuza": {
+      "name": "Scroll of Dobuza",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 196,
+      "description": "A scroll inscribed with the Dobuza spell. A bolt of green energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dobuza",
+        "spell_level": 4,
         "spell_school": "evocation",
         "consumable": true,
         "requirements": {
@@ -68,15 +170,202 @@
         }
       }
     },
-    "scroll_fireball": {
-      "name": "Scroll of Fireball",
+    "scroll_frost_nova": {
+      "name": "Scroll of Frost Nova",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 196,
+      "description": "A scroll inscribed with the Frost Nova spell. Freeze nearby enemies with a burst of cold.. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "frost_nova",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_invisibility": {
+      "name": "Scroll of Invisibility",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 196,
+      "description": "A scroll inscribed with the Invisibility spell. Become invisible to enemies.. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "invisibility",
+        "spell_level": 4,
+        "spell_school": "illusion",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_kamaza": {
+      "name": "Scroll of Kamaza",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 197,
+      "description": "A scroll inscribed with the Kamaza spell. A bolt of blue energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kamaza",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_kamotu": {
+      "name": "Scroll of Kamotu",
       "type": "spell_scroll",
       "weight": 0.1,
       "base_value": 200,
-      "description": "A scroll inscribed with the powerful Fireball spell. Reading it will teach you the spell permanently.",
+      "description": "A scroll inscribed with the Kamotu spell. A healing spell. Reading it will teach you the spell permanently.",
       "properties": {
-        "spell_id": "fireball",
-        "spell_level": 3,
+        "spell_id": "kamotu",
+        "spell_level": 4,
+        "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_kotari": {
+      "name": "Scroll of Kotari",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 200,
+      "description": "A scroll inscribed with the Kotari spell. A restorative spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kotari",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_lightning_bolt": {
+      "name": "Scroll of Lightning Bolt",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 195,
+      "description": "A scroll inscribed with the Lightning Bolt spell. A stroke of lightning arcs toward a target.. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "lightning_bolt",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_muda": {
+      "name": "Scroll of Muda",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 202,
+      "description": "A scroll inscribed with the Muda spell. A minor summoning spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "muda",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_murder": {
+      "name": "Scroll of Murder",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 196,
+      "description": "A scroll inscribed with the Murder spell. Murder oneshots anything.. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "murder",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_tami": {
+      "name": "Scroll of Tami",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 202,
+      "description": "A scroll inscribed with the Tami spell. A weak beam of bright energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "tami",
+        "spell_level": 4,
+        "spell_school": "transmutation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_toduza": {
+      "name": "Scroll of Toduza",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 200,
+      "description": "A scroll inscribed with the Toduza spell. A small bolt of flame. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "toduza",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_toraza": {
+      "name": "Scroll of Toraza",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 197,
+      "description": "A scroll inscribed with the Toraza spell. A stone shard. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "toraza",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
+    "scroll_dobudani": {
+      "name": "Scroll of Dobudani",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 405,
+      "description": "A scroll inscribed with the Dobudani spell. A curative spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dobudani",
+        "spell_level": 6,
         "spell_school": "evocation",
         "consumable": true,
         "requirements": {
@@ -85,37 +374,1006 @@
         }
       }
     },
-    "scroll_cure_wounds": {
-      "name": "Scroll of Cure Wounds",
+    "scroll_fireball": {
+      "name": "Scroll of Fireball",
       "type": "spell_scroll",
       "weight": 0.1,
-      "base_value": 70,
-      "description": "A scroll inscribed with the Cure Wounds spell. Reading it will teach you the spell permanently.",
+      "base_value": 397,
+      "description": "A scroll inscribed with the Fireball spell. A blazing sphere of flame that explodes on impact.. Reading it will teach you the spell permanently.",
       "properties": {
-        "spell_id": "cure_wounds",
-        "spell_level": 1,
-        "spell_school": "restoration",
-        "consumable": true,
-        "requirements": {
-          "min_level": 1,
-          "min_intelligence": 10
-        }
-      }
-    },
-    "scroll_of_murder": {
-      "name": "Scroll of Murder",
-      "type": "spell_scroll",
-      "weight": 0.1,
-      "base_value": 100,
-      "description": "A dark scroll inscribed with the Murder spell. This powerful spell can oneshot anything. Reading it will teach you the spell permanently.",
-      "properties": {
-        "spell_id": "murder",
-        "spell_level": 2,
+        "spell_id": "fireball",
+        "spell_level": 6,
         "spell_school": "evocation",
         "consumable": true,
         "requirements": {
-          "min_level": 1,
-          "min_intelligence": 10
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_igatok": {
+      "name": "Scroll of Igatok",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 407,
+      "description": "A scroll inscribed with the Igatok spell. An enhancement spell that boosts the target's agility, increasing their dexterity by 5-20 points. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "igatok",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_kateka": {
+      "name": "Scroll of Kateka",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 400,
+      "description": "A scroll inscribed with the Kateka spell. A beam of dark energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kateka",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_komizuma": {
+      "name": "Scroll of Komizuma",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 405,
+      "description": "A scroll inscribed with the Komizuma spell. A shower of ice shards. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "komizuma",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_modoki": {
+      "name": "Scroll of Modoki",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 405,
+      "description": "A scroll inscribed with the Modoki spell. A bolt of lightning. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "modoki",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_rotok": {
+      "name": "Scroll of Rotok",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 407,
+      "description": "A scroll inscribed with the Rotok spell. An enhancement spell that strengthens the target's physique, increasing their constitution by 5-20 points. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "rotok",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_takumi": {
+      "name": "Scroll of Takumi",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 452,
+      "description": "A scroll inscribed with the Takumi spell. A curative spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "takumi",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_tsutok": {
+      "name": "Scroll of Tsutok",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 407,
+      "description": "A scroll inscribed with the Tsutok spell. An enhancement spell that bolsters the target's stamina, increasing their vitality by 5-20 points. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "tsutok",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_yari": {
+      "name": "Scroll of Yari",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 404,
+      "description": "A scroll inscribed with the Yari spell. A protective enchantment that strengthens the target's defenses, granting +4 armor class. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "yari",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_yilazi": {
+      "name": "Scroll of Yilazi",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 399,
+      "description": "A scroll inscribed with the Yilazi spell. A bolt of red energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "yilazi",
+        "spell_level": 6,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 5,
+          "min_intelligence": 14
+        }
+      }
+    },
+    "scroll_dakima": {
+      "name": "Scroll of Dakima",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 685,
+      "description": "A scroll inscribed with the Dakima spell. A stream of acid. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dakima",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_dobudanimaru": {
+      "name": "Scroll of Dobudanimaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 700,
+      "description": "A scroll inscribed with the Dobudanimaru spell. A thick greyish mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dobudanimaru",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_gimotu": {
+      "name": "Scroll of Gimotu",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 687,
+      "description": "A scroll inscribed with the Gimotu spell. A greater healing spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "gimotu",
+        "spell_level": 8,
+        "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_igadani": {
+      "name": "Scroll of Igadani",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 700,
+      "description": "A scroll inscribed with the Igadani spell. A dark spell that drains the target's agility, reducing their dexterity by 2-10 points. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "igadani",
+        "spell_level": 8,
+        "spell_school": "necromancy",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_kamuda": {
+      "name": "Scroll of Kamuda",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 700,
+      "description": "A scroll inscribed with the Kamuda spell. A summoning spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kamuda",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_katami": {
+      "name": "Scroll of Katami",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 695,
+      "description": "A scroll inscribed with the Katami spell. A beam of bright energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "katami",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_motumaru": {
+      "name": "Scroll of Motumaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 690,
+      "description": "A scroll inscribed with the Motumaru spell. A pale bluish mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "motumaru",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_novadidan": {
+      "name": "Scroll of Novadidan",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 687,
+      "description": "A scroll inscribed with the Novadidan spell. A charm spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "novadidan",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_rodani": {
+      "name": "Scroll of Rodani",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 700,
+      "description": "A scroll inscribed with the Rodani spell. A dark spell that drains the target's physique, reducing their constitution by 2-10 points. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "rodani",
+        "spell_level": 8,
+        "spell_school": "necromancy",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_sivama": {
+      "name": "Scroll of Sivama",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 695,
+      "description": "A scroll inscribed with the Sivama spell. A powerful gust of wind. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "sivama",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_tamikar": {
+      "name": "Scroll of Tamikar",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 695,
+      "description": "A scroll inscribed with the Tamikar spell. A blast of dark energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "tamikar",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_toduzuma": {
+      "name": "Scroll of Toduzuma",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 695,
+      "description": "A scroll inscribed with the Toduzuma spell. A shower of flame. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "toduzuma",
+        "spell_level": 8,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_tsudani": {
+      "name": "Scroll of Tsudani",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 700,
+      "description": "A scroll inscribed with the Tsudani spell. A dark spell that drains the target's stamina, reducing their vitality by 2-10 points. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "tsudani",
+        "spell_level": 8,
+        "spell_school": "necromancy",
+        "consumable": true,
+        "requirements": {
+          "min_level": 7,
+          "min_intelligence": 16
+        }
+      }
+    },
+    "scroll_dobumaru": {
+      "name": "Scroll of Dobumaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1075,
+      "description": "A scroll inscribed with the Dobumaru spell. A dark greenish mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dobumaru",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_gitami": {
+      "name": "Scroll of Gitami",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1080,
+      "description": "A scroll inscribed with the Gitami spell. A beam of brilliant energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "gitami",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_giteka": {
+      "name": "Scroll of Giteka",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1067,
+      "description": "A scroll inscribed with the Giteka spell. A crackling beam of dark energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "giteka",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_kamazadaku": {
+      "name": "Scroll of Kamazadaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1090,
+      "description": "A scroll inscribed with the Kamazadaku spell. A storm of blue energy bolts. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kamazadaku",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_kamotumaru": {
+      "name": "Scroll of Kamotumaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1070,
+      "description": "A scroll inscribed with the Kamotumaru spell. A bluish mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kamotumaru",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_komidaku": {
+      "name": "Scroll of Komidaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1067,
+      "description": "A scroll inscribed with the Komidaku spell. A storm of ice shards. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "komidaku",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_komizadaku": {
+      "name": "Scroll of Komizadaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1080,
+      "description": "A scroll inscribed with the Komizadaku spell. A storm of ice shards. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "komizadaku",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_kotarimaru": {
+      "name": "Scroll of Kotarimaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1060,
+      "description": "A scroll inscribed with the Kotarimaru spell. A thin brownish mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kotarimaru",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_kusamotu": {
+      "name": "Scroll of Kusamotu",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1067,
+      "description": "A scroll inscribed with the Kusamotu spell. A very powerful healing spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kusamotu",
+        "spell_level": 10,
+        "spell_school": "restoration",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_novadi": {
+      "name": "Scroll of Novadi",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1080,
+      "description": "A scroll inscribed with the Novadi spell. An invisibility spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "novadi",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_pakazuma": {
+      "name": "Scroll of Pakazuma",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1067,
+      "description": "A scroll inscribed with the Pakazuma spell. A shower of wicked thorns. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "pakazuma",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_torazuma": {
+      "name": "Scroll of Torazuma",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1080,
+      "description": "A scroll inscribed with the Torazuma spell. A shower of stone shards. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "torazuma",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_yarimaru": {
+      "name": "Scroll of Yarimaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1092,
+      "description": "A scroll inscribed with the Yarimaru spell. A bright yellow mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "yarimaru",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_gimuda": {
+      "name": "Scroll of Gimuda",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1545,
+      "description": "A scroll inscribed with the Gimuda spell. A greater summoning spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "gimuda",
+        "spell_level": 12,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 11,
+          "min_intelligence": 20
+        }
+      }
+    },
+    "scroll_kusatami": {
+      "name": "Scroll of Kusatami",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1545,
+      "description": "A scroll inscribed with the Kusatami spell. A devastating beam of brilliant energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kusatami",
+        "spell_level": 12,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 11,
+          "min_intelligence": 20
+        }
+      }
+    },
+    "scroll_kusateka": {
+      "name": "Scroll of Kusateka",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1545,
+      "description": "A scroll inscribed with the Kusateka spell. A devastating beam of dark energy. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kusateka",
+        "spell_level": 12,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 11,
+          "min_intelligence": 20
+        }
+      }
+    },
+    "scroll_modokidan": {
+      "name": "Scroll of Modokidan",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1532,
+      "description": "A scroll inscribed with the Modokidan spell. Several forked bolts of lightning. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "modokidan",
+        "spell_level": 12,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 11,
+          "min_intelligence": 20
+        }
+      }
+    },
+    "scroll_timimaru": {
+      "name": "Scroll of Timimaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1535,
+      "description": "A scroll inscribed with the Timimaru spell. A foul cloud of choking vapor. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "timimaru",
+        "spell_level": 12,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 11,
+          "min_intelligence": 20
+        }
+      }
+    },
+    "scroll_todudaku": {
+      "name": "Scroll of Todudaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1570,
+      "description": "A scroll inscribed with the Todudaku spell. A devastating firestorm. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "todudaku",
+        "spell_level": 12,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 11,
+          "min_intelligence": 20
+        }
+      }
+    },
+    "scroll_todukar": {
+      "name": "Scroll of Todukar",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1530,
+      "description": "A scroll inscribed with the Todukar spell. A searing ball of flame. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "todukar",
+        "spell_level": 12,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 11,
+          "min_intelligence": 20
+        }
+      }
+    },
+    "scroll_dakidaku": {
+      "name": "Scroll of Dakidaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2102,
+      "description": "A scroll inscribed with the Dakidaku spell. A torrential downpour of acid. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dakidaku",
+        "spell_level": 14,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_gimotumaru": {
+      "name": "Scroll of Gimotumaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2080,
+      "description": "A scroll inscribed with the Gimotumaru spell. A dark bluish mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "gimotumaru",
+        "spell_level": 14,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_jinasudani": {
+      "name": "Scroll of Jinasudani",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2130,
+      "description": "A scroll inscribed with the Jinasudani spell. A powerful dark spell that drains the target's mental faculties, reducing intelligence, wisdom, and charisma by 1-5 points each. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "jinasudani",
+        "spell_level": 14,
+        "spell_school": "necromancy",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_jinasutok": {
+      "name": "Scroll of Jinasutok",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2120,
+      "description": "A scroll inscribed with the Jinasutok spell. A powerful enhancement spell that greatly sharpens the target's mental faculties, increasing intelligence, wisdom, and charisma by 2-10 points each. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "jinasutok",
+        "spell_level": 14,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_komasidaku": {
+      "name": "Scroll of Komasidaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2115,
+      "description": "A scroll inscribed with the Komasidaku spell. A storm of fire bolts and ice shards. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "komasidaku",
+        "spell_level": 14,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_poradani": {
+      "name": "Scroll of Poradani",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2130,
+      "description": "A scroll inscribed with the Poradani spell. A powerful dark spell that drains the target's physical strength, reducing strength, dexterity, and constitution by 1-5 points each. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "poradani",
+        "spell_level": 14,
+        "spell_school": "necromancy",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_poratok": {
+      "name": "Scroll of Poratok",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2120,
+      "description": "A scroll inscribed with the Poratok spell. A powerful enhancement spell that greatly strengthens the target's physical prowess, increasing strength, dexterity, and constitution by 2-10 points each. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "poratok",
+        "spell_level": 14,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_sivadaku": {
+      "name": "Scroll of Sivadaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2065,
+      "description": "A scroll inscribed with the Sivadaku spell. A violent windstorm. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "sivadaku",
+        "spell_level": 14,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
+        }
+      }
+    },
+    "scroll_dobudakidaku": {
+      "name": "Scroll of Dobudakidaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2752,
+      "description": "A scroll inscribed with the Dobudakidaku spell. A torrential downpour of dark green acid. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dobudakidaku",
+        "spell_level": 16,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 15,
+          "min_intelligence": 24
+        }
+      }
+    },
+    "scroll_ganazi": {
+      "name": "Scroll of Ganazi",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2700,
+      "description": "A scroll inscribed with the Ganazi spell. A curative spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "ganazi",
+        "spell_level": 16,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 15,
+          "min_intelligence": 24
+        }
+      }
+    },
+    "scroll_kusamuda": {
+      "name": "Scroll of Kusamuda",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2740,
+      "description": "A scroll inscribed with the Kusamuda spell. A very powerful summoning spell. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kusamuda",
+        "spell_level": 16,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 15,
+          "min_intelligence": 24
+        }
+      }
+    },
+    "scroll_modokidaku": {
+      "name": "Scroll of Modokidaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2680,
+      "description": "A scroll inscribed with the Modokidaku spell. A lightning storm. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "modokidaku",
+        "spell_level": 16,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 15,
+          "min_intelligence": 24
+        }
+      }
+    },
+    "scroll_novadimaru": {
+      "name": "Scroll of Novadimaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 2740,
+      "description": "A scroll inscribed with the Novadimaru spell. A thick black mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "novadimaru",
+        "spell_level": 16,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 15,
+          "min_intelligence": 24
+        }
+      }
+    },
+    "scroll_dumoti": {
+      "name": "Scroll of Dumoti",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 3445,
+      "description": "A scroll inscribed with the Dumoti spell. A maelstrom of searing flame clouds and huge ice shards. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "dumoti",
+        "spell_level": 18,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 17,
+          "min_intelligence": 26
+        }
+      }
+    },
+    "scroll_kusamotumaru": {
+      "name": "Scroll of Kusamotumaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 3405,
+      "description": "A scroll inscribed with the Kusamotumaru spell. A very dark bluish mist. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "kusamotumaru",
+        "spell_level": 18,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 17,
+          "min_intelligence": 26
+        }
+      }
+    },
+    "scroll_toradaku": {
+      "name": "Scroll of Toradaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 3360,
+      "description": "A scroll inscribed with the Toradaku spell. A hail of huge stone shards. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "toradaku",
+        "spell_level": 18,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 17,
+          "min_intelligence": 26
         }
       }
     }

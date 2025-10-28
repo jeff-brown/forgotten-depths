@@ -9,7 +9,11 @@
     "north": "dungeon2_76",
     "south": "dungeon2_77"
   },
-  "is_lair": true,
-  "lair_monster": "greater_demon",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "greater_demon",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

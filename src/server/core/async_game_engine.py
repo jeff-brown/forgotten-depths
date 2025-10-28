@@ -278,6 +278,9 @@ class AsyncGameEngine:
             # Update active buffs/effects
             await self._update_active_effects()
 
+            # Update poison DOT effects
+            await self._update_poison_effects()
+
             # Replenish vendor stock (every 5 minutes)
             await self.vendor_system.replenish_vendor_stock()
 
@@ -312,9 +315,9 @@ class AsyncGameEngine:
             intellect = character.get('intellect', 10)
 
             # Get current and max values
-            current_health = character.get('health', 0)
+            current_health = character.get('current_hit_points', 0)
             max_health = character.get('max_hit_points', 100)
-            current_mana = character.get('mana', 0)
+            current_mana = character.get('current_mana', 0)
             max_mana = character.get('max_mana', 50)
 
             # Hunger and thirst decay (configurable from game_settings.yaml)
@@ -379,7 +382,7 @@ class AsyncGameEngine:
 
             # Apply damage (but can't die from hunger/thirst - minimum 1 HP)
             if damage_taken > 0:
-                character['health'] = max(1, current_health - damage_taken)
+                character['current_hit_points'] = max(1, current_health - damage_taken)
 
             # Calculate regen amounts
             # Health regen: CON / 50 per tick (e.g., 15 CON = 0.3 HP/tick = 18 HP/min)
@@ -390,11 +393,11 @@ class AsyncGameEngine:
             # Apply regeneration (only if not starving/dehydrated)
             if current_health < max_health and hunger > 0 and thirst > 0:
                 new_health = min(current_health + health_regen, max_health)
-                character['health'] = new_health
+                character['current_hit_points'] = new_health
 
             if current_mana < max_mana:
                 new_mana = min(current_mana + mana_regen, max_mana)
-                character['mana'] = new_mana
+                character['current_mana'] = new_mana
 
     async def _regenerate_mobs(self):
         """Regenerate health and mana for all mobs."""
@@ -536,6 +539,12 @@ class AsyncGameEngine:
                     # Notify player when buff expires
                     # Check both 'spell_id' (for buffs/spells) and 'type' (for trap effects)
                     effect_name = effect.get('spell_id') or effect.get('type', 'Unknown')
+
+                    # Remove stat enhancements when they expire
+                    effect_amount = effect.get('effect_amount', 0)
+                    if effect_amount > 0:
+                        self._remove_enhancement_effect(character, effect.get('effect', ''), effect_amount)
+
                     await self.connection_manager.send_message(
                         player_id,
                         f"The {effect_name} effect has worn off."
@@ -544,6 +553,116 @@ class AsyncGameEngine:
             # Remove expired effects (in reverse order to preserve indices)
             for i in reversed(expired_effects):
                 active_effects.pop(i)
+
+    async def _update_poison_effects(self):
+        """Update poison DOT effects for all mobs."""
+        import random
+
+        # Process poison effects on mobs
+        for room_id, mobs in self.room_mobs.items():
+            for mob in mobs[:]:  # Copy list to avoid modification issues
+                poison_effects = mob.get('poison_effects', [])
+                if not poison_effects:
+                    continue
+
+                # Process each poison effect
+                expired_effects = []
+                for i, poison in enumerate(poison_effects):
+                    # Roll poison damage
+                    poison_damage_roll = poison.get('damage', '1d2')
+                    # Parse dice notation
+                    if 'd' in poison_damage_roll:
+                        parts = poison_damage_roll.split('d')
+                        num_dice = int(parts[0])
+                        dice_value = int(parts[1].split('+')[0].split('-')[0])
+                        modifier = 0
+                        if '+' in parts[1]:
+                            modifier = int(parts[1].split('+')[1])
+                        elif '-' in parts[1]:
+                            modifier = -int(parts[1].split('-')[1])
+
+                        damage = sum(random.randint(1, dice_value) for _ in range(num_dice)) + modifier
+                    else:
+                        damage = int(poison_damage_roll)
+
+                    # Apply poison damage
+                    current_health = mob.get('current_hit_points', mob.get('health', mob.get('max_hit_points', 20)))
+                    new_health = max(0, current_health - damage)
+
+                    # Update both health fields for compatibility
+                    if 'current_hit_points' in mob:
+                        mob['current_hit_points'] = new_health
+                    if 'health' in mob:
+                        mob['health'] = new_health
+
+                    # Notify caster if they're online
+                    caster_id = poison.get('caster_id')
+                    if caster_id and caster_id in self.player_manager.connected_players:
+                        caster_data = self.player_manager.connected_players[caster_id]
+                        caster_char = caster_data.get('character')
+                        # Only notify if caster is in the same room
+                        if caster_char and caster_char.get('room_id') == room_id:
+                            await self.connection_manager.send_message(
+                                caster_id,
+                                f"{mob['name']} takes {int(damage)} poison damage!"
+                            )
+
+                    # Reduce duration
+                    poison['duration'] -= 1
+                    if poison['duration'] <= 0:
+                        expired_effects.append(i)
+
+                    # Check if mob died from poison
+                    if new_health <= 0:
+                        # Handle mob death
+                        mob_participant_id = self.combat_system.get_mob_identifier(mob)
+
+                        # Notify all players in the room
+                        for player_id, player_data in self.player_manager.connected_players.items():
+                            player_char = player_data.get('character')
+                            if player_char and player_char.get('room_id') == room_id:
+                                await self.connection_manager.send_message(
+                                    player_id,
+                                    f"{mob['name']} succumbs to poison!"
+                                )
+
+                        # Always award loot (gold goes to caster if online, items drop in room)
+                        if caster_id:
+                            await self.combat_system.handle_mob_loot_drop(caster_id, mob, room_id)
+                        else:
+                            # No caster (shouldn't happen, but handle it)
+                            # Just drop items with no player_id
+                            await self.combat_system.handle_mob_loot_drop(0, mob, room_id)
+
+                        await self.combat_system.handle_mob_death(room_id, mob_participant_id)
+                        break  # Exit poison loop since mob is dead
+
+                # Remove expired poison effects (in reverse order)
+                for i in reversed(expired_effects):
+                    poison_effects.pop(i)
+
+    def _remove_enhancement_effect(self, character: dict, effect: str, amount: int):
+        """Remove an enhancement effect from a character's stats.
+
+        Args:
+            character: The character dictionary
+            effect: The enhancement effect type
+            amount: The amount to remove
+        """
+        effect_map = {
+            'enhance_agility': 'dexterity',
+            'enhance_strength': 'strength',
+            'enhance_constitution': 'constitution',
+            'enhance_vitality': 'vitality',
+            'enhance_intelligence': 'intellect',
+            'enhance_wisdom': 'wisdom',
+            'enhance_charisma': 'charisma'
+        }
+
+        if effect in effect_map:
+            stat_key = effect_map[effect]
+            current_value = character.get(stat_key, 10)
+            character[stat_key] = max(1, current_value - amount)  # Don't go below 1
 
     async def _auto_save_players(self):
         """Auto-save all connected players with characters."""

@@ -9,7 +9,11 @@
     "south": "dungeon2_58",
     "up": "dungeon1_6"
   },
-  "is_lair": true,
-  "lair_monster": "dungeon_champion",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "dungeon_champion",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

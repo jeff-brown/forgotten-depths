@@ -9,7 +9,11 @@
     "east": "dungeon2_83",
     "southeast": "dungeon2_84"
   },
-  "is_lair": true,
-  "lair_monster": "skeleton_giant",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "skeleton_giant",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

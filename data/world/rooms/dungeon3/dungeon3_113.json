@@ -10,7 +10,11 @@
     "east": "dungeon3_161",
     "west": "dungeon3_144"
   },
-  "is_lair": true,
-  "lair_monster": "smith",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "smith",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

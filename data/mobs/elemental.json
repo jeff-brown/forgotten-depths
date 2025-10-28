@@ -110,7 +110,7 @@
         "damage_max": 600
       },
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 0,
         "min_level": 0,
         "max_level": 1

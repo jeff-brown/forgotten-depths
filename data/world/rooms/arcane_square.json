@@ -8,7 +8,8 @@
     "west": "magic_shop",
     "east": "potion_shop",
     "south": "town_path_1",
-    "northeast": "wizard_tower"
+    "northeast": "wizard_tower",
+    "southeast": "mystic_plaza"
   },
   "items": [],
   "npcs": [

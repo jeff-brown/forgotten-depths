@@ -149,14 +149,33 @@ class DamageCalculator:
         return max(1, int(final_damage))
 
     @staticmethod
-    def calculate_hit_chance(attacker, target) -> float:
-        """Calculate the chance to hit a target."""
-        base_chance = 0.75
+    def calculate_hit_chance(attacker, target, base_hit_chance: float = 0.50) -> float:
+        """Calculate the chance to hit a target.
+
+        Base hit chance: Configurable (default 50%)
+        DEX difference: ±2% per point
+        Level difference: ±3% per level (attacking higher = harder, lower = easier)
+        Min: 5%, Max: 95%
+
+        Args:
+            attacker: Entity making the attack
+            target: Entity being attacked
+            base_hit_chance: Base probability to hit (0.0 to 1.0), default 0.50
+        """
+        base_chance = base_hit_chance
+
+        # DEX modifier
         attacker_skill = getattr(attacker, 'dexterity', 10)
         target_defense = getattr(target, 'dexterity', 10)
+        dex_modifier = (attacker_skill - target_defense) * 0.02
 
-        skill_modifier = (attacker_skill - target_defense) * 0.02
-        return max(0.05, min(0.95, base_chance + skill_modifier))
+        # Level modifier - makes it easier to hit lower level targets, harder to hit higher
+        attacker_level = getattr(attacker, 'level', 1)
+        target_level = getattr(target, 'level', 1)
+        level_modifier = (attacker_level - target_level) * 0.03
+
+        total_chance = base_chance + dex_modifier + level_modifier
+        return max(0.05, min(0.95, total_chance))
 
     @staticmethod
     def calculate_dodge_chance(target) -> float:
@@ -178,13 +197,19 @@ class DamageCalculator:
         return min(0.30, deflect_chance)  # Max 30% deflect
 
     @staticmethod
-    def check_attack_outcome(attacker, target, armor_class: int = 0) -> Dict[str, Any]:
+    def check_attack_outcome(attacker, target, armor_class: int = 0, base_hit_chance: float = 0.50) -> Dict[str, Any]:
         """Check if an attack hits, is dodged, or is deflected.
+
+        Args:
+            attacker: Entity making the attack
+            target: Entity being attacked
+            armor_class: Target's armor class
+            base_hit_chance: Base probability to hit (0.0 to 1.0), default 0.50
 
         Returns:
             Dict with keys: 'result' ('hit', 'miss', 'dodge', 'deflect'), 'hit_chance', 'dodge_chance', 'deflect_chance'
         """
-        hit_chance = DamageCalculator.calculate_hit_chance(attacker, target)
+        hit_chance = DamageCalculator.calculate_hit_chance(attacker, target, base_hit_chance)
         dodge_chance = DamageCalculator.calculate_dodge_chance(target)
         deflect_chance = DamageCalculator.calculate_armor_deflect_chance(target, armor_class)
 

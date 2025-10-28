@@ -8,7 +8,11 @@
   "exits": {
     "west": "dungeon3_136"
   },
-  "is_lair": true,
-  "lair_monster": "dungeon_champion",
-  "respawn_time": 300
+  "lairs": [
+    {
+      "mob_id": "dungeon_champion",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
 }

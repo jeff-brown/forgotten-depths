@@ -1526,12 +1526,12 @@
           "chance": 0.3
         }
       ],
-      "class": "sorceror",
+      "class": "sorcerer",
       "vnum": 71,
       "gender": "female",
       "combat_skill": 80,
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 65,
         "min_level": 0,
         "max_level": 3
@@ -1599,12 +1599,12 @@
           "chance": 0.3
         }
       ],
-      "class": "sorceror",
+      "class": "sorcerer",
       "vnum": 72,
       "gender": "male",
       "combat_skill": 85,
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 60,
         "min_level": 1,
         "max_level": 4
@@ -1672,7 +1672,7 @@
           "chance": 0.25
         }
       ],
-      "class": "sorceror"
+      "class": "sorcerer"
     },
     {
       "id": "minotaur_chieftain",
@@ -1824,7 +1824,7 @@
       "regeneration": 1,
       "num_attacks": 2,
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 85,
         "min_level": 3,
         "max_level": 8
@@ -1832,9 +1832,9 @@
       "morale": 20
     },
     {
-      "id": "sorceror",
+      "id": "sorcerer",
       "name": "Sorceror",
-      "description": "The sorceror is dressed in indigo robes and radiates power. He wields a rod shrouded with magical flame. Inscribed on his forehead is a violet rune.",
+      "description": "The sorcerer is dressed in indigo robes and radiates power. He wields a rod shrouded with magical flame. Inscribed on his forehead is a violet rune.",
       "type": "humanoid",
       "level": 9,
       "health": 120,
@@ -1911,7 +1911,7 @@
       "regeneration": 1,
       "num_attacks": 2,
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 90,
         "min_level": 3,
         "max_level": 9
@@ -3273,7 +3273,7 @@
     {
       "id": "stone_wizard",
       "name": "Stone Wizard",
-      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorceror in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
+      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorcerer in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
       "type": "humanoid",
       "level": 25,
       "health": 500,
@@ -3373,7 +3373,7 @@
           "chance": 0.12
         }
       ],
-      "class": "sorceror"
+      "class": "sorcerer"
     },
     {
       "id": "dwarven_guard",
@@ -3705,9 +3705,9 @@
       "class": "fighter"
     },
     {
-      "id": "dwarven_sorceror",
+      "id": "dwarven_sorcerer",
       "name": "Dwarven Sorceror",
-      "description": "The dwarven sorceror has an obvious callousness about his expression, and appears no one to be trifled with. He radiates confidence and power. He wears robes of a deep reddish brown, similar to the hue of the stone in the walls of his home. He carries a black sceptre topped with some sort of softly glowing crystal.",
+      "description": "The dwarven sorcerer has an obvious callousness about his expression, and appears no one to be trifled with. He radiates confidence and power. He wears robes of a deep reddish brown, similar to the hue of the stone in the walls of his home. He carries a black sceptre topped with some sort of softly glowing crystal.",
       "type": "humanoid",
       "level": 25,
       "health": 400,
@@ -3813,7 +3813,7 @@
       "num_attacks": 5,
       "attack_effect": "mana drain",
       "spells": {
-        "spell_type": "sorceror",
+        "spell_type": "sorcerer",
         "spell_skill": 90,
         "min_level": 6,
         "max_level": 8
@@ -4317,7 +4317,7 @@
           "chance": 0.1
         }
       ],
-      "class": "sorceror"
+      "class": "sorcerer"
     },
     {
       "id": "elven_scout",

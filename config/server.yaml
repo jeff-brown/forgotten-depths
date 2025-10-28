@@ -26,6 +26,7 @@ game:
 # Combat Settings
 combat:
   base_damage: 5
+  base_hit_chance: 0.50
   critical_chance: 0.05
   critical_multiplier: 2.0
   flee_chance: 0.7
