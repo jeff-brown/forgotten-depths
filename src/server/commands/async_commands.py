@@ -123,6 +123,23 @@ class AsyncMoveCommand(BaseCommand):
             logger.info(f"[DOOR] No room_id, returning early")
             return "You are nowhere, so you can't move anywhere."
 
+        # Check if player is paralyzed (handle both dict and object)
+        active_effects = []
+        if isinstance(player.character, dict):
+            active_effects = player.character.get('active_effects', [])
+        elif hasattr(player.character, 'active_effects'):
+            active_effects = player.character.active_effects or []
+
+        logger.info(f"[PARALYSIS] Checking paralysis. Character type: {type(player.character)}, active_effects: {active_effects}")
+
+        for effect in active_effects:
+            effect_type = effect.get('type') if isinstance(effect, dict) else getattr(effect, 'type', None)
+            effect_effect = effect.get('effect') if isinstance(effect, dict) else getattr(effect, 'effect', None)
+            logger.info(f"[PARALYSIS] Checking effect: type={effect_type}, effect={effect_effect}")
+            if effect_type in ['paralyze', 'paralyzed'] or effect_effect in ['paralyze', 'paralyzed', 'movement_disabled']:
+                logger.info(f"[PARALYSIS] BLOCKING MOVEMENT - Player is paralyzed!")
+                return "You are paralyzed and cannot move!"
+
         # Get world manager from game engine
         from server.core.async_game_engine import AsyncGameEngine
         if not hasattr(player, '_game_engine'):

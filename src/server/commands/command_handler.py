@@ -189,7 +189,6 @@ class CommandHandler:
 
         if 'active_effects' not in character:
             character['active_effects'] = []
-            print(f"[MIGRATION] Initialized empty active_effects")
 
     async def _handle_character_selection(self, player_id: int, username: str):
         """Handle character selection/creation."""
@@ -202,7 +201,7 @@ class CommandHandler:
                 self._migrate_character_data(existing_character)
 
                 # Load existing character
-                print(f"[DEBUG] Character loaded for '{username}': level {existing_character.get('level')}, gold {existing_character.get('gold')}")
+                print(f"[DEBUG] Player {player_id} - Character loaded for '{username}': level {existing_character.get('level')}, gold {existing_character.get('gold')}")
                 self.game_engine.player_manager.set_player_character(player_id, existing_character)
                 await self.game_engine.connection_manager.send_message(player_id, f"Welcome back! Character '{username}' loaded successfully!")
                 await self.game_engine._send_room_description(player_id, detailed=True)
@@ -643,6 +642,7 @@ setlevel <level>   - Set your level (auto-adjusts HP/mana)
 sethealth <hp>     - Set health (or 'sethealth full')
 setmana <mana>     - Set mana (or 'setmana full')
 godmode            - Toggle god mode (99 stats, level 50, 9999 HP/mana)
+condition <type>   - Apply condition: poison, hungry, thirsty, starving, dehydrated, paralyzed
 mobstatus          - Show all mobs and their flags
 teleport <room>    - Teleport to a room (or 'teleport <player> <room>')
 respawnnpc <id>    - Respawn an NPC
@@ -928,6 +928,12 @@ completequest <id> - Mark a quest as complete
         elif command in ['godmode', 'god']:
             await self._handle_admin_god_mode(player_id, character)
 
+        elif command == 'condition' and params:
+            await self._handle_admin_condition_command(player_id, character, params)
+
+        elif command == 'condition':
+            await self.game_engine.connection_manager.send_message(player_id, "Usage: condition <type>\nTypes: poison, hungry, thirsty, starving, dehydrated, paralyzed")
+
         else:
             # Check if this is a class ability command
             ability = self.game_engine.ability_system.get_ability_by_command(character, command)
@@ -964,6 +970,25 @@ completequest <id> - Mark a quest as complete
             status_conditions.append("Dehydrated")
         elif thirst <= low_threshold:
             status_conditions.append("Thirsty")
+
+        # Check for active effects (debuffs/DOT effects)
+        active_effects = char.get('active_effects', [])
+        for effect in active_effects:
+            effect_type = effect.get('type', effect.get('effect', ''))
+            if effect_type == 'poison':
+                status_conditions.append("Poisoned")
+            elif effect_type == 'burning':
+                status_conditions.append("Burning")
+            elif effect_type == 'bleeding':
+                status_conditions.append("Bleeding")
+            elif effect_type == 'acid':
+                status_conditions.append("Acid Burned")
+            elif effect_type == 'paralyze':
+                status_conditions.append("Paralyzed")
+            elif effect_type == 'charm':
+                status_conditions.append("Charmed")
+            elif effect_type == 'stat_drain':
+                status_conditions.append("Drained")
 
         # Use existing status or build from conditions
         if status_conditions:
@@ -1036,6 +1061,25 @@ completequest <id> - Mark a quest as complete
             status_conditions.append("Dehydrated")
         elif thirst <= low_threshold:
             status_conditions.append("Thirsty")
+
+        # Check for active effects (debuffs/DOT effects)
+        active_effects = char.get('active_effects', [])
+        for effect in active_effects:
+            effect_type = effect.get('type', effect.get('effect', ''))
+            if effect_type == 'poison':
+                status_conditions.append("Poisoned")
+            elif effect_type == 'burning':
+                status_conditions.append("Burning")
+            elif effect_type == 'bleeding':
+                status_conditions.append("Bleeding")
+            elif effect_type == 'acid':
+                status_conditions.append("Acid Burned")
+            elif effect_type == 'paralyze':
+                status_conditions.append("Paralyzed")
+            elif effect_type == 'charm':
+                status_conditions.append("Charmed")
+            elif effect_type == 'stat_drain':
+                status_conditions.append("Drained")
 
         # Use existing status or build from conditions
         if status_conditions:
@@ -2509,14 +2553,20 @@ completequest <id> - Mark a quest as complete
             )
             return
 
-        # Find the item in vendor inventory
+        # Find the item in vendor inventory using multi-pass approach:
+        # Pass 1: Try exact match on full name
+        # Pass 2: Try matching on individual words (for "Scroll of X" items)
+        # Pass 3: Try word boundary partial match (word starts with search term)
+        # Pass 4: Fall back to substring match as last resort
         item_found_id = None
         item_price = None
         item_stock = None
+
+        # First pass: Look for exact match
         for item_entry in vendor['inventory']:
             item_id = item_entry['item_id']
             item_config = self.game_engine.config_manager.get_item(item_id)
-            if item_config and item_name.lower() in item_config['name'].lower():
+            if item_config and item_name.lower() == item_config['name'].lower():
                 item_found_id = item_id
                 # Calculate price from base_value and vendor's sell_markup
                 base_value = item_config.get('base_value', 0)
@@ -2524,6 +2574,50 @@ completequest <id> - Mark a quest as complete
                 item_price = int(base_value * sell_markup)
                 item_stock = item_entry.get('stock', -1)
                 break
+
+        # Second pass: Try matching individual words (exact word match)
+        if not item_found_id:
+            for item_entry in vendor['inventory']:
+                item_id = item_entry['item_id']
+                item_config = self.game_engine.config_manager.get_item(item_id)
+                if item_config:
+                    item_words = item_config['name'].lower().split()
+                    if item_name.lower() in item_words:
+                        item_found_id = item_id
+                        base_value = item_config.get('base_value', 0)
+                        sell_markup = vendor.get('sell_markup', 1.2)
+                        item_price = int(base_value * sell_markup)
+                        item_stock = item_entry.get('stock', -1)
+                        break
+
+        # Third pass: Try word boundary match (word starts with search term)
+        if not item_found_id:
+            for item_entry in vendor['inventory']:
+                item_id = item_entry['item_id']
+                item_config = self.game_engine.config_manager.get_item(item_id)
+                if item_config:
+                    item_words = item_config['name'].lower().split()
+                    if any(word.startswith(item_name.lower()) for word in item_words):
+                        item_found_id = item_id
+                        base_value = item_config.get('base_value', 0)
+                        sell_markup = vendor.get('sell_markup', 1.2)
+                        item_price = int(base_value * sell_markup)
+                        item_stock = item_entry.get('stock', -1)
+                        break
+
+        # Fourth pass: Substring match as last resort
+        if not item_found_id:
+            for item_entry in vendor['inventory']:
+                item_id = item_entry['item_id']
+                item_config = self.game_engine.config_manager.get_item(item_id)
+                if item_config and item_name.lower() in item_config['name'].lower():
+                    item_found_id = item_id
+                    # Calculate price from base_value and vendor's sell_markup
+                    base_value = item_config.get('base_value', 0)
+                    sell_markup = vendor.get('sell_markup', 1.2)
+                    item_price = int(base_value * sell_markup)
+                    item_stock = item_entry.get('stock', -1)
+                    break
 
         if not item_found_id:
             await self.game_engine.connection_manager.send_message(
@@ -2721,7 +2815,20 @@ completequest <id> - Mark a quest as complete
             if other_character and other_character.get('room_id') == room_id:
                 other_name = other_character.get('name', '').lower()
                 if target_lower in other_name or other_name in target_lower:
-                    # Found a player - generate detailed description
+                    # Check if the target player is invisible
+                    active_effects = other_character.get('active_effects', [])
+                    is_invisible = any(
+                        effect.get('effect') in ['invisible', 'invisibility']
+                        for effect in active_effects
+                    )
+                    if is_invisible:
+                        # Can't see invisible players
+                        await self.game_engine.connection_manager.send_message(
+                            player_id,
+                            error_message("You don't see that here.")
+                        )
+                        return
+                    # Found a visible player - generate detailed description
                     description = self._generate_player_description(other_character)
                     await self.game_engine.connection_manager.send_message(player_id, description)
                     await self.game_engine.connection_manager.send_message(other_player_id, f"{character['name']} looks at you.")
@@ -2741,8 +2848,14 @@ completequest <id> - Mark a quest as complete
                 if target_lower in mob['name'].lower():
                     description = mob.get('description', f"A {mob['name'].lower()}.")
                     health_status = ""
-                    if mob.get('current_hit_points', 100) < mob.get('max_health', 100):
-                        health_percent = (mob['health'] / mob['max_health']) * 100
+
+                    # Get current and max health (mobs use 'health' and 'max_health')
+                    current_health = mob.get('health', mob.get('current_hit_points', 100))
+                    max_health = mob.get('max_health', mob.get('max_hit_points', 100))
+
+                    # Show health status if mob is damaged
+                    if current_health < max_health:
+                        health_percent = (current_health / max_health) * 100
                         if health_percent > 75:
                             health_status = " It looks slightly wounded."
                         elif health_percent > 50:
@@ -3340,13 +3453,107 @@ completequest <id> - Mark a quest as complete
                 damage = spell.get('damage', '?')
                 damage_type = spell.get('damage_type', 'physical')
                 type_info = f"Damage: {damage} ({damage_type})"
+                # Add area of effect if applicable
+                aoe = spell.get('area_of_effect', 'Single')
+                if aoe == 'Area':
+                    type_info += " [AOE]"
             elif spell_type == 'heal':
-                heal = spell.get('heal_amount', '?')
-                type_info = f"Healing: {heal}"
+                effect = spell.get('effect', 'heal_hit_points')
+                if effect == 'heal_hit_points':
+                    heal = spell.get('heal_amount', '?')
+                    type_info = f"Healing: {heal} HP"
+                elif effect == 'cure_poison':
+                    type_info = "Cures poison"
+                elif effect == 'cure_hunger':
+                    type_info = "Cures hunger"
+                elif effect == 'cure_thirst':
+                    type_info = "Quenches thirst"
+                elif effect == 'cure_paralysis':
+                    type_info = "Cures paralysis"
+                elif effect == 'cure_drain':
+                    type_info = "Restores drained stats"
+                elif effect == 'regeneration':
+                    type_info = "Regeneration over time"
+                # Add area of effect if applicable
+                aoe = spell.get('area_of_effect', 'Single')
+                if aoe == 'Area':
+                    type_info += " [AOE]"
             elif spell_type == 'buff':
                 effect = spell.get('effect', 'unknown')
                 duration = spell.get('duration', 0)
-                type_info = f"Effect: {effect} ({duration} rounds)"
+                bonus = spell.get('bonus_amount', 0)
+                if effect == 'ac_bonus':
+                    type_info = f"Armor Class +{bonus} ({duration} seconds)"
+                elif effect == 'invisible':
+                    type_info = f"Invisibility ({duration} seconds)"
+                else:
+                    type_info = f"Effect: {effect} ({duration} seconds)"
+                # Add area of effect if applicable
+                aoe = spell.get('area_of_effect', 'Single')
+                if aoe == 'Area':
+                    type_info += " [AOE]"
+            elif spell_type == 'enhancement':
+                effect = spell.get('effect', 'unknown')
+                effect_amount = spell.get('effect_amount', '?')
+                effect_map = {
+                    'enhance_agility': 'Dexterity',
+                    'enhance_dexterity': 'Dexterity',
+                    'enhance_strength': 'Strength',
+                    'enhance_constitution': 'Constitution',
+                    'enhance_physique': 'Constitution',
+                    'enhance_vitality': 'Vitality',
+                    'enhance_stamina': 'Vitality',
+                    'enhance_mental': 'INT/WIS/CHA',
+                    'enhance_body': 'STR/DEX/CON'
+                }
+                stat_name = effect_map.get(effect, effect)
+                type_info = f"Enhances {stat_name} by {effect_amount}"
+                # Add area of effect if applicable
+                aoe = spell.get('area_of_effect', 'Single')
+                if aoe == 'Area':
+                    type_info += " [AOE]"
+            elif spell_type == 'drain':
+                damage = spell.get('damage', '?')
+                damage_type = spell.get('damage_type', 'force')
+                effect = spell.get('effect', None)
+                type_info = f"Damage: {damage} ({damage_type})"
+                if effect:
+                    effect_amount = spell.get('effect_amount', '?')
+                    duration = spell.get('effect_duration', '?')
+                    effect_map = {
+                        'drain_mana': 'Mana',
+                        'drain_health': 'Health',
+                        'drain_agility': 'Dexterity',
+                        'drain_physique': 'Constitution',
+                        'drain_stamina': 'Vitality',
+                        'drain_mental': 'INT/WIS/CHA',
+                        'drain_body': 'STR/DEX/CON'
+                    }
+                    drain_name = effect_map.get(effect, effect)
+                    type_info += f" + Drains {drain_name} by {effect_amount} ({duration} rounds)"
+                # Add area of effect if applicable
+                aoe = spell.get('area_of_effect', 'Single')
+                if aoe == 'Area':
+                    type_info += " [AOE]"
+            elif spell_type == 'debuff':
+                effect = spell.get('effect', 'unknown')
+                duration = spell.get('effect_duration', '?')
+                damage = spell.get('damage', None)
+                if effect == 'paralyze':
+                    type_info = f"Paralyzes target ({duration} rounds)"
+                elif effect == 'charm':
+                    type_info = f"Charms target, preventing attacks ({duration} rounds)"
+                else:
+                    type_info = f"Effect: {effect} ({duration} rounds)"
+                if damage:
+                    damage_type = spell.get('damage_type', 'force')
+                    type_info += f" + Damage: {damage} ({damage_type})"
+                # Add area of effect if applicable
+                aoe = spell.get('area_of_effect', 'Single')
+                if aoe == 'Area':
+                    type_info += " [AOE]"
+            elif spell_type == 'summon':
+                type_info = "Summons a creature"
 
             cooldown_text = ""
             if cooldown_remaining > 0:
@@ -3511,6 +3718,16 @@ completequest <id> - Mark a quest as complete
             )
             return
 
+        # Check if player is paralyzed
+        active_effects = character.get('active_effects', [])
+        for effect in active_effects:
+            if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    "You are paralyzed and cannot cast spells!"
+                )
+                return
+
         # Check cooldown
         cooldowns = character.get('spell_cooldowns', {})
         if spell_id in cooldowns and cooldowns[spell_id] > 0:
@@ -3520,15 +3737,60 @@ completequest <id> - Mark a quest as complete
             )
             return
 
-        # Check if player is magically fatigued (for damage spells only)
-        if spell['type'] == 'damage':
-            if self._is_spell_fatigued(player_id):
-                fatigue_time = self._get_spell_fatigue_remaining(player_id)
+        # Check if player is magically fatigued (all spell types cause fatigue)
+        if self._is_spell_fatigued(player_id):
+            fatigue_time = self._get_spell_fatigue_remaining(player_id)
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"You are too magically exhausted to cast spells! Wait {fatigue_time:.1f} more seconds."
+            )
+            return
+
+        # Validate target BEFORE consuming resources (mana and fatigue)
+        # This prevents wasting resources on invalid targets
+        if spell.get('requires_target', False):
+            if not target_name:
                 await self.game_engine.connection_manager.send_message(
                     player_id,
-                    f"You are too magically exhausted to cast offensive spells! Wait {fatigue_time:.1f} more seconds."
+                    f"You need a target to cast {spell['name']}. Use: cast {spell['name']} <target>"
                 )
                 return
+
+            # Check if target exists
+            room_id = character.get('room_id')
+            target = await self.game_engine.combat_system.find_combat_target(room_id, target_name)
+
+            if not target:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You don't see '{target_name}' here."
+                )
+                return
+
+        # Check for duplicate buff/enhancement (before mana consumption)
+        if spell['type'] in ['buff', 'enhancement']:
+            # For self-cast buffs (no target specified and not AOE)
+            area_of_effect = spell.get('area_of_effect', 'Single')
+            if not target_name and area_of_effect != 'Area':
+                spell_name = spell.get('name', 'Unknown')
+                effect = spell.get('effect', 'unknown')
+
+                # Initialize active_effects if it doesn't exist
+                if 'active_effects' not in character:
+                    character['active_effects'] = []
+
+                active_effects = character['active_effects']
+
+                for existing_effect in active_effects:
+                    existing_spell_id = existing_effect.get('spell_id')
+                    existing_effect_name = existing_effect.get('effect')
+
+                    if existing_spell_id == spell_name or existing_effect_name == effect:
+                        await self.game_engine.connection_manager.send_message(
+                            player_id,
+                            f"You are already under the effect of {spell_name}!"
+                        )
+                        return
 
         # Check mana
         mana_cost = spell['mana_cost']
@@ -3544,12 +3806,11 @@ completequest <id> - Mark a quest as complete
         # Deduct mana
         character['current_mana'] = current_mana - mana_cost
 
-        # Apply spell fatigue for damage spells
+        # Apply spell fatigue for ALL spell types (prevents spam casting)
         # Cooldown acts as a multiplier: 0 = 10s, 1 = 10s, 2 = 20s, 3 = 30s, etc.
-        if spell['type'] == 'damage':
-            cooldown = spell.get('cooldown', 0)
-            multiplier = max(1, cooldown)  # Minimum 1x for cooldown 0 or 1
-            self._apply_spell_fatigue(player_id, multiplier)
+        cooldown = spell.get('cooldown', 0)
+        multiplier = max(1, cooldown)  # Minimum 1x for cooldown 0 or 1
+        self._apply_spell_fatigue(player_id, multiplier)
 
         # Set cooldown (no longer used for fatigue, kept for potential future use)
         if spell.get('cooldown', 0) > 0:
@@ -3590,8 +3851,10 @@ completequest <id> - Mark a quest as complete
             await self._cast_heal_spell(player_id, character, spell, room_id, target_name)
         elif spell['type'] == 'drain':
             await self._cast_drain_spell(player_id, character, spell, room_id, target_name)
-        elif spell['type'] in ['buff', 'enhancement', 'debuff']:
-            await self._cast_buff_spell(player_id, character, spell)
+        elif spell['type'] == 'debuff':
+            await self._cast_debuff_spell(player_id, character, spell, room_id, target_name)
+        elif spell['type'] in ['buff', 'enhancement']:
+            await self._cast_buff_spell(player_id, character, spell, room_id, target_name)
 
     async def _cast_damage_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
         """Cast a damage spell."""
@@ -3868,9 +4131,41 @@ completequest <id> - Mark a quest as complete
                 await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
 
     async def _cast_heal_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
-        """Cast a healing spell."""
+        """Cast a healing spell or status cure spell."""
         from ..utils.colors import spell_cast
 
+        # Check if this is a status cure spell instead of HP healing
+        effect = spell.get('effect', 'heal_hit_points')
+
+        if effect == 'cure_poison':
+            # This is a cure poison spell, not a healing spell
+            await self._cast_cure_poison_spell(player_id, character, spell, room_id, target_name)
+            return
+        elif effect == 'cure_hunger':
+            # Cure hunger spell
+            await self._cast_cure_hunger_spell(player_id, character, spell, room_id, target_name)
+            return
+        elif effect == 'cure_thirst':
+            # Cure thirst spell
+            await self._cast_cure_thirst_spell(player_id, character, spell, room_id, target_name)
+            return
+        elif effect == 'cure_paralysis':
+            # Cure paralysis spell
+            await self._cast_cure_paralysis_spell(player_id, character, spell, room_id, target_name)
+            return
+        elif effect == 'cure_drain':
+            # Cure drain spell
+            await self._cast_cure_drain_spell(player_id, character, spell, room_id, target_name)
+            return
+        elif effect in ['cure_sleep', 'cure_blind']:
+            # Other status cure effects - implement later if needed
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"The {effect} effect is not yet implemented."
+            )
+            return
+
+        # This is a regular HP healing spell
         # Roll healing amount
         heal_roll = spell.get('heal_amount', '1d8')
         base_heal = self._roll_dice(heal_roll)
@@ -4026,6 +4321,654 @@ completequest <id> - Mark a quest as complete
                             notify_msg
                         )
 
+    async def _cast_cure_poison_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a cure poison spell - removes poison DOT effects from target(s)."""
+        from ..utils.colors import spell_cast
+
+        # Check if this is an AOE cure
+        area_of_effect = spell.get('area_of_effect', 'Single')
+
+        if area_of_effect == 'Area':
+            # AOE cure poison - cure all players in the room
+            cured_players = []
+
+            # Get all connected players in the room
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_conn_data.get('character')
+                if not other_character:
+                    continue
+
+                # Check if player is in same room
+                if other_character.get('room_id') != room_id:
+                    continue
+
+                # Check if player has poison effects
+                if 'poison_effects' in other_character and other_character['poison_effects']:
+                    # Clear all poison effects
+                    poison_count = len(other_character['poison_effects'])
+                    other_character['poison_effects'] = []
+                    cured_players.append(other_character.get('name', 'Someone'))
+
+                    # Notify the cured player
+                    if other_player_id == player_id:
+                        cure_msg = f"You cast {spell['name']}! You are cured of {poison_count} poison effect(s)!"
+                    else:
+                        cure_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! You are cured of {poison_count} poison effect(s)!"
+
+                    await self.game_engine.connection_manager.send_message(
+                        other_player_id,
+                        spell_cast(cure_msg, spell_type='heal')
+                    )
+
+            # Notify room
+            if cured_players:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, and a purifying mist washes over the room!"
+            else:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, but no one is poisoned!"
+
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                room_msg
+            )
+
+        else:
+            # Single-target cure poison
+            # Determine target
+            if spell.get('requires_target', False) and target_name:
+                # Find target player by name
+                target_player_id = None
+                target_character = None
+
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    other_character = other_conn_data.get('character')
+                    if not other_character:
+                        continue
+
+                    # Check if player is in same room and name matches
+                    if other_character.get('room_id') == room_id:
+                        if other_character.get('name', '').lower() == target_name.lower():
+                            target_player_id = other_player_id
+                            target_character = other_character
+                            break
+
+                if not target_character:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You don't see '{target_name}' here."
+                    )
+                    return
+            else:
+                # Default to self-curing
+                target_player_id = player_id
+                target_character = character
+
+            # Check if target has poison effects
+            if 'poison_effects' not in target_character or not target_character['poison_effects']:
+                if target_player_id == player_id:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']}, but you are not poisoned!"
+                    )
+                else:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']} on {target_character.get('name', 'someone')}, but they are not poisoned!"
+                    )
+                return
+
+            # Clear poison effects
+            poison_count = len(target_character['poison_effects'])
+            target_character['poison_effects'] = []
+
+            # Send messages
+            if target_player_id == player_id:
+                # Self-cure
+                cure_msg = f"You cast {spell['name']}! You are cured of {poison_count} poison effect(s)!"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(cure_msg, spell_type='heal')
+                )
+
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{character.get('name', 'Someone')} casts {spell['name']} and a green aura surrounds them!"
+                )
+            else:
+                # Curing another player
+                caster_msg = f"You cast {spell['name']} on {target_character.get('name', 'someone')}! They are cured of {poison_count} poison effect(s)!"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(caster_msg, spell_type='heal')
+                )
+
+                target_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! You are cured of {poison_count} poison effect(s)!"
+                await self.game_engine.connection_manager.send_message(
+                    target_player_id,
+                    spell_cast(target_msg, spell_type='heal')
+                )
+
+                # Notify other players in room (exclude caster and target)
+                notify_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on {target_character.get('name', 'someone')}, who is cured of poison!"
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    if other_player_id == player_id or other_player_id == target_player_id:
+                        continue
+                    other_character = other_conn_data.get('character')
+                    if other_character and other_character.get('room_id') == room_id:
+                        await self.game_engine.connection_manager.send_message(
+                            other_player_id,
+                            notify_msg
+                        )
+
+    async def _cast_cure_hunger_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a cure hunger spell - restores hunger to full for target(s)."""
+        from ..utils.colors import spell_cast
+
+        # Check if this is an AOE cure
+        area_of_effect = spell.get('area_of_effect', 'Single')
+
+        if area_of_effect == 'Area':
+            # AOE cure hunger - cure all players in the room
+            cured_players = []
+
+            # Get all connected players in the room
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_conn_data.get('character')
+                if not other_character:
+                    continue
+
+                # Check if player is in same room
+                if other_character.get('room_id') != room_id:
+                    continue
+
+                # Restore hunger to full
+                current_hunger = other_character.get('hunger', 100)
+                if current_hunger < 100:
+                    other_character['hunger'] = 100
+                    cured_players.append(other_character.get('name', 'Someone'))
+
+                    # Notify the cured player
+                    if other_player_id == player_id:
+                        cure_msg = f"You cast {spell['name']}! Your hunger is completely satisfied!"
+                    else:
+                        cure_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! Your hunger is completely satisfied!"
+
+                    await self.game_engine.connection_manager.send_message(
+                        other_player_id,
+                        spell_cast(cure_msg, spell_type='heal')
+                    )
+
+            # Notify room
+            if cured_players:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, and a brownish mist fills the room!"
+            else:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, but no one is hungry!"
+
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                room_msg
+            )
+
+        else:
+            # Single-target cure hunger
+            # Determine target
+            if spell.get('requires_target', False) and target_name:
+                # Find target player by name
+                target_player_id = None
+                target_character = None
+
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    other_character = other_conn_data.get('character')
+                    if not other_character:
+                        continue
+
+                    # Check if player is in same room and name matches
+                    if other_character.get('room_id') == room_id:
+                        if other_character.get('name', '').lower() == target_name.lower():
+                            target_player_id = other_player_id
+                            target_character = other_character
+                            break
+
+                if not target_character:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You don't see '{target_name}' here."
+                    )
+                    return
+            else:
+                # Default to self-curing
+                target_player_id = player_id
+                target_character = character
+
+            # Check if target is hungry
+            current_hunger = target_character.get('hunger', 100)
+            if current_hunger >= 100:
+                if target_player_id == player_id:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']}, but you are not hungry!"
+                    )
+                else:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']} on {target_character.get('name', 'someone')}, but they are not hungry!"
+                    )
+                return
+
+            # Restore hunger to full
+            target_character['hunger'] = 100
+
+            # Send messages
+            if target_player_id == player_id:
+                # Self-cure
+                cure_msg = f"You cast {spell['name']}! Your hunger is completely satisfied!"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(cure_msg, spell_type='heal')
+                )
+
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{character.get('name', 'Someone')} casts {spell['name']} and a brownish aura surrounds them!"
+                )
+            else:
+                # Curing another player
+                caster_msg = f"You cast {spell['name']} on {target_character.get('name', 'someone')}! Their hunger is completely satisfied!"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(caster_msg, spell_type='heal')
+                )
+
+                target_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! Your hunger is completely satisfied!"
+                await self.game_engine.connection_manager.send_message(
+                    target_player_id,
+                    spell_cast(target_msg, spell_type='heal')
+                )
+
+                # Notify other players in room (exclude caster and target)
+                notify_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on {target_character.get('name', 'someone')}, satisfying their hunger!"
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    if other_player_id == player_id or other_player_id == target_player_id:
+                        continue
+                    other_character = other_conn_data.get('character')
+                    if other_character and other_character.get('room_id') == room_id:
+                        await self.game_engine.connection_manager.send_message(
+                            other_player_id,
+                            notify_msg
+                        )
+
+    async def _cast_cure_thirst_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a cure thirst spell - restores thirst to full for target(s)."""
+        from ..utils.colors import spell_cast
+
+        # Check if this is an AOE cure
+        area_of_effect = spell.get('area_of_effect', 'Single')
+
+        if area_of_effect == 'Area':
+            # AOE cure thirst - cure all players in the room
+            cured_players = []
+
+            # Get all connected players in the room
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_conn_data.get('character')
+                if not other_character:
+                    continue
+
+                # Check if player is in same room
+                if other_character.get('room_id') != room_id:
+                    continue
+
+                # Restore thirst to full
+                current_thirst = other_character.get('thirst', 100)
+                if current_thirst < 100:
+                    other_character['thirst'] = 100
+                    cured_players.append(other_character.get('name', 'Someone'))
+
+                    # Notify the cured player
+                    if other_player_id == player_id:
+                        cure_msg = f"You cast {spell['name']}! Your thirst is completely quenched!"
+                    else:
+                        cure_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! Your thirst is completely quenched!"
+
+                    await self.game_engine.connection_manager.send_message(
+                        other_player_id,
+                        spell_cast(cure_msg, spell_type='heal')
+                    )
+
+            # Notify room
+            if cured_players:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, and a cool blue mist fills the room!"
+            else:
+                room_msg = f"{character.get('name', 'Someone')} casts {spell['name']}, but no one is thirsty!"
+
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                room_msg
+            )
+
+        else:
+            # Single-target cure thirst
+            # Determine target
+            if spell.get('requires_target', False) and target_name:
+                # Find target player by name
+                target_player_id = None
+                target_character = None
+
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    other_character = other_conn_data.get('character')
+                    if not other_character:
+                        continue
+
+                    # Check if player is in same room and name matches
+                    if other_character.get('room_id') == room_id:
+                        if other_character.get('name', '').lower() == target_name.lower():
+                            target_player_id = other_player_id
+                            target_character = other_character
+                            break
+
+                if not target_character:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You don't see '{target_name}' here."
+                    )
+                    return
+            else:
+                # Default to self-curing
+                target_player_id = player_id
+                target_character = character
+
+            # Check if target is thirsty
+            current_thirst = target_character.get('thirst', 100)
+            if current_thirst >= 100:
+                if target_player_id == player_id:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']}, but you are not thirsty!"
+                    )
+                else:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        f"You cast {spell['name']} on {target_character.get('name', 'someone')}, but they are not thirsty!"
+                    )
+                return
+
+            # Restore thirst to full
+            target_character['thirst'] = 100
+
+            # Send messages
+            if target_player_id == player_id:
+                # Self-cure
+                cure_msg = f"You cast {spell['name']}! Your thirst is completely quenched!"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(cure_msg, spell_type='heal')
+                )
+
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{character.get('name', 'Someone')} casts {spell['name']} and a cool blue aura surrounds them!"
+                )
+            else:
+                # Curing another player
+                caster_msg = f"You cast {spell['name']} on {target_character.get('name', 'someone')}! Their thirst is completely quenched!"
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(caster_msg, spell_type='heal')
+                )
+
+                target_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! Your thirst is completely quenched!"
+                await self.game_engine.connection_manager.send_message(
+                    target_player_id,
+                    spell_cast(target_msg, spell_type='heal')
+                )
+
+                # Notify other players in room (exclude caster and target)
+                notify_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on {target_character.get('name', 'someone')}, quenching their thirst!"
+                for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                    if other_player_id == player_id or other_player_id == target_player_id:
+                        continue
+                    other_character = other_conn_data.get('character')
+                    if other_character and other_character.get('room_id') == room_id:
+                        await self.game_engine.connection_manager.send_message(
+                            other_player_id,
+                            notify_msg
+                        )
+
+    async def _cast_cure_paralysis_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a cure paralysis spell - removes paralysis effects from target."""
+        from ..utils.colors import spell_cast, error_message
+
+        # Determine target
+        if spell.get('requires_target', False) and target_name:
+            # Find target player by name
+            target_player_id = None
+            target_character = None
+
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_conn_data.get('character')
+                if not other_character:
+                    continue
+
+                # Check if player is in same room and name matches
+                if other_character.get('room_id') == room_id:
+                    if other_character.get('name', '').lower() == target_name.lower():
+                        target_player_id = other_player_id
+                        target_character = other_character
+                        break
+
+            if not target_character:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"You don't see '{target_name}' here.")
+                )
+                return
+        else:
+            # Default to self-curing
+            target_player_id = player_id
+            target_character = character
+
+        # Check if target has paralysis effects
+        if 'active_effects' not in target_character:
+            target_character['active_effects'] = []
+
+        # Remove paralysis effects (check both 'paralyze' and 'paralyzed')
+        original_count = len(target_character['active_effects'])
+        target_character['active_effects'] = [
+            effect for effect in target_character['active_effects']
+            if effect.get('type') not in ['paralyze', 'paralyzed'] and effect.get('effect') not in ['paralyze', 'paralyzed']
+        ]
+        effects_removed = original_count - len(target_character['active_effects'])
+
+        if effects_removed == 0:
+            # Target is not paralyzed
+            if target_player_id == player_id:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']}, but you are not paralyzed!"
+                )
+            else:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']} on {target_character.get('name', 'someone')}, but they are not paralyzed!"
+                )
+            return
+
+        # Send messages
+        if target_player_id == player_id:
+            # Self-cure
+            cure_msg = f"You cast {spell['name']}! You can move freely again!"
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                spell_cast(cure_msg, spell_type='heal')
+            )
+
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')} casts {spell['name']} and their paralysis fades!"
+            )
+        else:
+            # Curing another player
+            caster_msg = f"You cast {spell['name']} on {target_character.get('name', 'someone')}! They can move freely again!"
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                spell_cast(caster_msg, spell_type='heal')
+            )
+
+            target_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! You can move freely again!"
+            await self.game_engine.connection_manager.send_message(
+                target_player_id,
+                spell_cast(target_msg, spell_type='heal')
+            )
+
+            # Notify other players in room (exclude caster and target)
+            notify_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on {target_character.get('name', 'someone')}, freeing them from paralysis!"
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                if other_player_id == player_id or other_player_id == target_player_id:
+                    continue
+                other_character = other_conn_data.get('character')
+                if other_character and other_character.get('room_id') == room_id:
+                    await self.game_engine.connection_manager.send_message(
+                        other_player_id,
+                        notify_msg
+                    )
+
+    async def _cast_cure_drain_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a cure drain spell - removes stat drain effects from target."""
+        from ..utils.colors import spell_cast, error_message
+
+        # Determine target
+        if spell.get('requires_target', False) and target_name:
+            # Find target player by name
+            target_player_id = None
+            target_character = None
+
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_conn_data.get('character')
+                if not other_character:
+                    continue
+
+                # Check if player is in same room and name matches
+                if other_character.get('room_id') == room_id:
+                    if other_character.get('name', '').lower() == target_name.lower():
+                        target_player_id = other_player_id
+                        target_character = other_character
+                        break
+
+            if not target_character:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message(f"You don't see '{target_name}' here.")
+                )
+                return
+        else:
+            # Default to self-curing
+            target_player_id = player_id
+            target_character = character
+
+        # Check if target has drain effects
+        if 'active_effects' not in target_character:
+            target_character['active_effects'] = []
+
+        # Remove drain effects and restore stats
+        original_count = len(target_character['active_effects'])
+        drained_effects = [
+            effect for effect in target_character['active_effects']
+            if effect.get('type') == 'stat_drain' or 'drain' in effect.get('effect', '')
+        ]
+
+        # Restore drained stats
+        for drain_effect in drained_effects:
+            effect_type = drain_effect.get('effect', '')
+            drain_amount = drain_effect.get('effect_amount', 0)
+
+            # Restore the stats that were drained
+            if 'drain' in effect_type:
+                # Map drain effects to stats and restore them
+                if effect_type == 'drain_agility':
+                    target_character['dexterity'] = target_character.get('dexterity', 10) + drain_amount
+                elif effect_type == 'drain_physique':
+                    target_character['constitution'] = target_character.get('constitution', 10) + drain_amount
+                elif effect_type == 'drain_stamina':
+                    target_character['vitality'] = target_character.get('vitality', 10) + drain_amount
+                elif effect_type == 'drain_mental':
+                    # Restore all mental stats
+                    target_character['intelligence'] = target_character.get('intelligence', 10) + drain_amount
+                    target_character['intellect'] = target_character.get('intellect', 10) + drain_amount
+                    target_character['wisdom'] = target_character.get('wisdom', 10) + drain_amount
+                    target_character['charisma'] = target_character.get('charisma', 10) + drain_amount
+                elif effect_type == 'drain_body':
+                    # Restore all physical stats
+                    target_character['strength'] = target_character.get('strength', 10) + drain_amount
+                    target_character['dexterity'] = target_character.get('dexterity', 10) + drain_amount
+                    target_character['constitution'] = target_character.get('constitution', 10) + drain_amount
+
+        # Remove all drain effects
+        target_character['active_effects'] = [
+            effect for effect in target_character['active_effects']
+            if effect.get('type') != 'stat_drain' and 'drain' not in effect.get('effect', '')
+        ]
+        effects_removed = len(drained_effects)
+
+        if effects_removed == 0:
+            # Target has no drain effects
+            if target_player_id == player_id:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']}, but you have no drained stats!"
+                )
+            else:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You cast {spell['name']} on {target_character.get('name', 'someone')}, but they have no drained stats!"
+                )
+            return
+
+        # Send messages
+        if target_player_id == player_id:
+            # Self-cure
+            cure_msg = f"You cast {spell['name']}! Your drained stats are restored!"
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                spell_cast(cure_msg, spell_type='heal')
+            )
+
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')} casts {spell['name']} and their strength returns!"
+            )
+        else:
+            # Curing another player
+            caster_msg = f"You cast {spell['name']} on {target_character.get('name', 'someone')}! Their drained stats are restored!"
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                spell_cast(caster_msg, spell_type='heal')
+            )
+
+            target_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on you! Your drained stats are restored!"
+            await self.game_engine.connection_manager.send_message(
+                target_player_id,
+                spell_cast(target_msg, spell_type='heal')
+            )
+
+            # Notify other players in room (exclude caster and target)
+            notify_msg = f"{character.get('name', 'Someone')} casts {spell['name']} on {target_character.get('name', 'someone')}, restoring their vitality!"
+            for other_player_id, other_conn_data in self.game_engine.player_manager.connected_players.items():
+                if other_player_id == player_id or other_player_id == target_player_id:
+                    continue
+                other_character = other_conn_data.get('character')
+                if other_character and other_character.get('room_id') == room_id:
+                    await self.game_engine.connection_manager.send_message(
+                        other_player_id,
+                        notify_msg
+                    )
+
     async def _cast_drain_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
         """Cast a drain spell that does damage and drains resources or stats."""
         from ..utils.colors import spell_cast, error_message
@@ -4160,9 +5103,27 @@ completequest <id> - Mark a quest as complete
                     drain_message = f" You absorb {int(heal_amount)} HP!"
 
         elif effect in ['drain_agility', 'drain_physique', 'drain_stamina', 'drain_mental', 'drain_body']:
-            # Stat drain effects - these would apply temporary debuffs
-            # For now, just show the effect message
-            drain_message = f" {target['name']} feels weakened!"
+            # Stat drain effects - apply debuff that reduces stats over time
+            effect_amount_roll = spell.get('effect_amount', '-1d5')
+            drain_amount = abs(self._roll_dice(effect_amount_roll))
+
+            # Initialize active_effects if needed
+            if 'active_effects' not in target:
+                target['active_effects'] = []
+
+            # Add drain debuff (lasts for duration, reducing stats)
+            drain_duration = spell.get('effect_duration', 10)  # Default 10 ticks
+            target['active_effects'].append({
+                'type': 'stat_drain',
+                'effect': effect,
+                'duration': drain_duration,
+                'effect_amount': drain_amount,
+                'caster_id': player_id
+            })
+
+            # Apply immediate stat reduction
+            self._apply_drain_effect(target, effect, drain_amount)
+            drain_message = f" {target['name']}'s stats are drained by {drain_amount}!"
 
         # Send message to caster
         spell_msg = f"You cast {spell['name']}! It strikes {target['name']} for {int(damage)} {damage_type} damage!{drain_message}"
@@ -4180,64 +5141,371 @@ completequest <id> - Mark a quest as complete
 
         # Check if mob died
         if new_health <= 0:
-            # Handle mob death
+            # Send death message
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"{target['name']} has been defeated!"
+            )
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{target['name']} has been defeated!"
+            )
+
+            # Handle loot, gold, and experience (must be called before handle_mob_death)
+            await self.game_engine.combat_system.handle_mob_loot_drop(player_id, target, room_id)
+
+            # Remove mob from room
             mob_participant_id = self.game_engine.combat_system.get_mob_identifier(target)
             await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
+        else:
+            # Mob survived - set/update aggro on the caster
+            if 'aggro_target' not in target:
+                target['aggro_target'] = player_id
+                target['aggro_room'] = room_id
+                self.game_engine.logger.debug(f"[AGGRO] {target['name']} is now aggro'd on player {player_id} (drain spell)")
+            # Update aggro timestamp if this is the current aggro target
+            if target.get('aggro_target') == player_id:
+                import time
+                target['aggro_last_attack'] = time.time()
 
-    async def _cast_buff_spell(self, player_id: int, character: dict, spell: dict):
-        """Cast a buff spell."""
+    async def _cast_debuff_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a debuff spell (paralyze, slow, etc.) on target(s)."""
+        from ..utils.colors import spell_cast
+
+        effect = spell.get('effect', 'unknown')
+        effect_duration = spell.get('effect_duration', 5)
+        area_of_effect = spell.get('area_of_effect', 'Single')
+
+        # Check if spell requires target
+        if spell.get('requires_target', False) and not target_name:
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                "You must specify a target for this spell."
+            )
+            return
+
+        # Roll damage if the spell has a damage component
+        damage = 0
+        damage_type = spell.get('damage_type', 'force')
+        if 'damage' in spell:
+            damage_roll = spell.get('damage', '0')
+            damage = self._roll_dice(damage_roll)
+
+        targets_affected = []
+
+        if area_of_effect == 'Area':
+            # AOE debuff - affect all mobs in the room
+            mobs = self.game_engine.room_mobs.get(room_id, [])
+
+            for mob in mobs:
+                # Apply damage if any
+                if damage > 0:
+                    current_health = mob.get('current_hit_points', mob.get('health', mob.get('max_hit_points', 20)))
+                    new_health = max(0, current_health - damage)
+
+                    if 'current_hit_points' in mob:
+                        mob['current_hit_points'] = new_health
+                    if 'health' in mob:
+                        mob['health'] = new_health
+
+                # Apply debuff effect
+                if 'active_effects' not in mob:
+                    mob['active_effects'] = []
+
+                mob['active_effects'].append({
+                    'type': effect,
+                    'duration': effect_duration,
+                    'effect': effect,
+                    'effect_amount': spell.get('effect_amount', 0),
+                    'caster_id': player_id
+                })
+
+                targets_affected.append(mob['name'])
+
+                # Check if mob died from damage
+                if damage > 0 and new_health <= 0:
+                    mob_participant_id = self.game_engine.combat_system.get_mob_identifier(mob)
+                    await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
+
+            if targets_affected:
+                effect_name = effect.replace('_', ' ').title()
+                damage_msg = f" dealing {damage} damage" if damage > 0 else ""
+                spell_msg = f"You cast {spell['name']}! {effect_name} affects all enemies{damage_msg}!"
+
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(spell_msg, spell_type='debuff')
+                )
+
+                # Notify room
+                await self.game_engine.player_manager.notify_room_except_player(
+                    room_id,
+                    player_id,
+                    f"{character.get('name', 'Someone')} casts {spell['name']}! {', '.join(targets_affected)} are affected!"
+                )
+            else:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    "There are no targets in range."
+                )
+
+        else:
+            # Single target debuff
+            if not target_name:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    "You must specify a target."
+                )
+                return
+
+            # Find the target mob
+            target = None
+            mobs = self.game_engine.room_mobs.get(room_id, [])
+
+            for mob in mobs:
+                if target_name.lower() in mob.get('name', '').lower():
+                    target = mob
+                    break
+
+            if not target:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You don't see {target_name} here."
+                )
+                return
+
+            # Apply damage if any
+            if damage > 0:
+                current_health = target.get('current_hit_points', target.get('health', target.get('max_hit_points', 20)))
+                max_health = target.get('max_hit_points', target.get('max_health', 20))
+                new_health = max(0, current_health - damage)
+
+                if 'current_hit_points' in target:
+                    target['current_hit_points'] = new_health
+                if 'health' in target:
+                    target['health'] = new_health
+
+            # Apply debuff effect
+            if 'active_effects' not in target:
+                target['active_effects'] = []
+
+            target['active_effects'].append({
+                'type': effect,
+                'duration': effect_duration,
+                'effect': effect,
+                'effect_amount': spell.get('effect_amount', 0),
+                'caster_id': player_id
+            })
+
+            effect_name = effect.replace('_', ' ').title()
+            damage_msg = ""
+            if damage > 0:
+                damage_msg = f" dealing {damage} {damage_type} damage and"
+
+            spell_msg = f"You cast {spell['name']} on {target['name']}!{damage_msg} {effect_name}!"
+
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                spell_cast(spell_msg, spell_type='debuff')
+            )
+
+            # Notify room
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')}'s {spell['name']} strikes {target['name']}!"
+            )
+
+            # Check if mob died from damage
+            if damage > 0 and new_health <= 0:
+                mob_participant_id = self.game_engine.combat_system.get_mob_identifier(target)
+                await self.game_engine.combat_system.handle_mob_death(room_id, mob_participant_id)
+
+    async def _cast_buff_spell(self, player_id: int, character: dict, spell: dict, room_id: str, target_name: str = None):
+        """Cast a buff/enhancement spell on self or target player(s)."""
+        from ..utils.colors import spell_cast, error_message
+
         effect = spell.get('effect', 'unknown')
         duration = spell.get('duration', 0)
         spell_type = spell.get('type', 'buff')
-
-        # Initialize active_effects if needed
-        if 'active_effects' not in character:
-            character['active_effects'] = []
+        area_of_effect = spell.get('area_of_effect', 'Single')
+        spell_name = spell.get('name', 'Unknown')
 
         # Calculate effect amount for enhancement spells
         effect_amount = 0
         if spell_type == 'enhancement':
             effect_amount_roll = spell.get('effect_amount', '0')
             if effect_amount_roll and effect_amount_roll != '0':
-                effect_amount = self._roll_dice(effect_amount_roll)
+                # Strip leading + or - sign if present
+                effect_amount_roll_str = str(effect_amount_roll).lstrip('+')
+                effect_amount = self._roll_dice(effect_amount_roll_str)
             else:
                 effect_amount = spell.get('bonus_amount', 0)
+        else:
+            effect_amount = spell.get('bonus_amount', 0)
 
-        # Add the buff
-        buff = {
-            'spell_id': spell.get('name', 'Unknown'),
-            'effect': effect,
-            'duration': duration,
-            'bonus_amount': spell.get('bonus_amount', 0),
-            'effect_amount': effect_amount
-        }
-        character['active_effects'].append(buff)
+        # Determine targets
+        targets = []
 
-        # Apply immediate effect for enhancements
-        from ..utils.colors import spell_cast
-        if spell_type == 'enhancement' and effect_amount > 0:
-            effect_msg = self._apply_enhancement_effect(character, effect, effect_amount)
-            if effect_msg:
-                spell_msg = f"You cast {spell['name']}! {effect_msg}"
+        if area_of_effect == 'Area':
+            # AOE buff - affect all players in the room (including caster)
+            for other_player_id, other_player_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_player_data.get('character')
+                if other_character and other_character.get('room_id') == room_id:
+                    targets.append((other_player_id, other_character, other_player_data.get('username', 'Someone')))
+        elif target_name:
+            # Single target buff on another player
+            target_found = False
+            for other_player_id, other_player_data in self.game_engine.player_manager.connected_players.items():
+                other_character = other_player_data.get('character')
+                if other_character and other_character.get('room_id') == room_id:
+                    other_username = other_player_data.get('username', '')
+                    if target_name.lower() in other_username.lower():
+                        targets.append((other_player_id, other_character, other_username))
+                        target_found = True
+                        break
+
+            if not target_found:
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    f"You don't see '{target_name}' here."
+                )
+                return
+        else:
+            # Self-buff
+            targets.append((player_id, character, character.get('name', 'You')))
+
+        # Apply buff to all targets
+        for target_id, target_char, target_name_str in targets:
+            # Initialize active_effects if needed
+            if 'active_effects' not in target_char:
+                target_char['active_effects'] = []
+
+            # Check if target already has this buff/enhancement active
+            already_has_buff = False
+            for existing_effect in target_char['active_effects']:
+                if existing_effect.get('spell_id') == spell_name or existing_effect.get('effect') == effect:
+                    already_has_buff = True
+                    break
+
+            if already_has_buff:
+                # Notify caster that target already has this buff
+                if target_id == player_id:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        error_message(f"You are already under the effect of {spell_name}!")
+                    )
+                else:
+                    await self.game_engine.connection_manager.send_message(
+                        player_id,
+                        error_message(f"{target_name_str} is already under the effect of {spell_name}!")
+                    )
+                continue  # Skip this target
+
+            # Add the buff
+            buff = {
+                'spell_id': spell_name,
+                'effect': effect,
+                'duration': duration,
+                'bonus_amount': spell.get('bonus_amount', 0),
+                'effect_amount': effect_amount
+            }
+            target_char['active_effects'].append(buff)
+
+            # Apply immediate effect for enhancements
+            if spell_type == 'enhancement' and effect_amount > 0:
+                effect_msg = self._apply_enhancement_effect(target_char, effect, effect_amount)
+
+                # Message to caster
+                if target_id == player_id:
+                    spell_msg = f"You cast {spell['name']}! {effect_msg}"
+                else:
+                    spell_msg = f"You cast {spell['name']} on {target_name_str}! {effect_msg}"
+
                 await self.game_engine.connection_manager.send_message(
                     player_id,
                     spell_cast(spell_msg, spell_type='enhancement')
                 )
-        else:
-            # Send message for regular buffs
-            spell_msg = f"You cast {spell['name']}! {spell['description']}"
-            await self.game_engine.connection_manager.send_message(
-                player_id,
-                spell_cast(spell_msg, spell_type=spell_type)
-            )
+
+                # Message to target (if different from caster)
+                if target_id != player_id:
+                    await self.game_engine.connection_manager.send_message(
+                        target_id,
+                        spell_cast(f"{character.get('name', 'Someone')} casts {spell['name']} on you! {effect_msg}", spell_type='enhancement')
+                    )
+            else:
+                # Regular buff message
+                if target_id == player_id:
+                    spell_msg = f"You cast {spell['name']}! {spell.get('description', '')}"
+                else:
+                    spell_msg = f"You cast {spell['name']} on {target_name_str}!"
+
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    spell_cast(spell_msg, spell_type=spell_type)
+                )
+
+                # Message to target (if different from caster)
+                if target_id != player_id:
+                    await self.game_engine.connection_manager.send_message(
+                        target_id,
+                        spell_cast(f"{character.get('name', 'Someone')} casts {spell['name']} on you!", spell_type=spell_type)
+                    )
 
         # Notify room
-        room_id = character.get('room_id')
-        await self.game_engine.player_manager.notify_room_except_player(
-            room_id,
-            player_id,
-            f"{character.get('name', 'Someone')} casts {spell['name']}!"
-        )
+        if area_of_effect == 'Area':
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')} casts {spell['name']}, affecting everyone in the area!"
+            )
+        elif len(targets) > 0 and targets[0][0] != player_id:
+            # Notify other players except caster and target
+            for other_player_id, other_player_data in self.game_engine.player_manager.connected_players.items():
+                if other_player_id != player_id and other_player_id != targets[0][0]:
+                    other_character = other_player_data.get('character')
+                    if other_character and other_character.get('room_id') == room_id:
+                        await self.game_engine.connection_manager.send_message(
+                            other_player_id,
+                            f"{character.get('name', 'Someone')} casts {spell['name']} on {targets[0][2]}!"
+                        )
+        else:
+            await self.game_engine.player_manager.notify_room_except_player(
+                room_id,
+                player_id,
+                f"{character.get('name', 'Someone')} casts {spell['name']}!"
+            )
+
+    def _apply_drain_effect(self, target: dict, effect: str, amount: int):
+        """Apply a drain effect to reduce a target's stats.
+
+        Args:
+            target: The target (mob or character) dictionary
+            effect: The drain effect type
+            amount: The amount to drain (reduce)
+        """
+        drain_map = {
+            'drain_agility': 'dexterity',
+            'drain_physique': 'constitution',
+            'drain_stamina': 'vitality'
+        }
+
+        if effect in drain_map:
+            stat_key = drain_map[effect]
+            current_value = target.get(stat_key, 10)
+            target[stat_key] = max(1, current_value - amount)
+        elif effect == 'drain_mental':
+            # Drain all mental stats (INT, WIS, CHA)
+            target['intelligence'] = max(1, target.get('intelligence', target.get('intellect', 10)) - amount)
+            target['intellect'] = max(1, target.get('intellect', 10) - amount)
+            target['wisdom'] = max(1, target.get('wisdom', 10) - amount)
+            target['charisma'] = max(1, target.get('charisma', 10) - amount)
+        elif effect == 'drain_body':
+            # Drain all physical stats (STR, DEX, CON)
+            target['strength'] = max(1, target.get('strength', 10) - amount)
+            target['dexterity'] = max(1, target.get('dexterity', 10) - amount)
+            target['constitution'] = max(1, target.get('constitution', 10) - amount)
 
     def _apply_enhancement_effect(self, character: dict, effect: str, amount: int) -> str:
         """Apply an enhancement effect to a character's stats.
@@ -4252,12 +5520,16 @@ completequest <id> - Mark a quest as complete
         """
         effect_map = {
             'enhance_agility': ('dexterity', 'agility'),
+            'enhance_dexterity': ('dexterity', 'dexterity'),
             'enhance_strength': ('strength', 'strength'),
             'enhance_constitution': ('constitution', 'constitution'),
             'enhance_vitality': ('vitality', 'vitality'),
             'enhance_intelligence': ('intellect', 'intelligence'),
             'enhance_wisdom': ('wisdom', 'wisdom'),
-            'enhance_charisma': ('charisma', 'charisma')
+            'enhance_charisma': ('charisma', 'charisma'),
+            # Aliases for compatibility
+            'enhance_physique': ('constitution', 'constitution'),
+            'enhance_stamina': ('vitality', 'vitality')
         }
 
         if effect in effect_map:
@@ -4265,6 +5537,24 @@ completequest <id> - Mark a quest as complete
             old_value = character.get(stat_key, 10)
             character[stat_key] = old_value + amount
             return f"Your {stat_name} increases by {amount}! ({old_value} -> {character[stat_key]})"
+        elif effect == 'enhance_mental':
+            # Enhance all mental stats (INT, WIS, CHA)
+            int_old = character.get('intellect', 10)
+            wis_old = character.get('wisdom', 10)
+            cha_old = character.get('charisma', 10)
+            character['intellect'] = int_old + amount
+            character['wisdom'] = wis_old + amount
+            character['charisma'] = cha_old + amount
+            return f"Your mental faculties sharpen! INT +{amount}, WIS +{amount}, CHA +{amount}"
+        elif effect == 'enhance_body':
+            # Enhance all physical stats (STR, DEX, CON)
+            str_old = character.get('strength', 10)
+            dex_old = character.get('dexterity', 10)
+            con_old = character.get('constitution', 10)
+            character['strength'] = str_old + amount
+            character['dexterity'] = dex_old + amount
+            character['constitution'] = con_old + amount
+            return f"Your body surges with power! STR +{amount}, DEX +{amount}, CON +{amount}"
         elif effect == 'ac_bonus':
             return f"A magical barrier surrounds you, increasing your armor class by {amount}!"
         elif effect == 'invisible':
@@ -4273,8 +5563,14 @@ completequest <id> - Mark a quest as complete
         return f"You feel the power of the spell course through you!"
 
     def _roll_dice(self, dice_string: str) -> int:
-        """Roll dice from a string like '2d6+3' or '1d8'."""
+        """Roll dice from a string like '2d6+3', '1d8', or '-1d5' (negative)."""
         import re
+
+        # Handle negative dice notation (e.g., '-1d5') by stripping the leading minus
+        # and making the result negative after rolling
+        is_negative = dice_string.strip().startswith('-')
+        if is_negative:
+            dice_string = dice_string.strip()[1:]  # Remove the leading minus
 
         # Parse the dice string
         match = re.match(r'(\d+)d(\d+)([+-]\d+)?', dice_string.lower())
@@ -4287,7 +5583,10 @@ completequest <id> - Mark a quest as complete
 
         # Roll the dice
         total = sum(random.randint(1, die_size) for _ in range(num_dice))
-        return total + modifier
+        result = total + modifier
+
+        # Apply negative if original string was negative
+        return -result if is_negative else result
 
     def _calculate_scaled_spell_value(self, base_value: int, spell: dict, caster_level: int) -> int:
         """Calculate scaled spell damage or healing based on caster level.
@@ -6605,4 +7904,59 @@ Congratulations, {character['name']}! You feel stronger and more capable!
                 player_id,
                 "[ADMIN] God mode disabled. Use 'setstat' and 'setlevel' to adjust stats manually."
             )
+
+    async def _handle_admin_condition_command(self, player_id: int, character: dict, params: str):
+        """Admin command to apply various conditions to the player for testing.
+
+        Usage: condition <type>
+        Types: poison, hungry, thirsty, paralyzed
+        """
+        condition = params.strip().lower()
+
+        if condition == 'poison':
+            # Add poison effect
+            if 'poison_effects' not in character:
+                character['poison_effects'] = []
+
+            character['poison_effects'].append({
+                'duration': 10,
+                'damage': '2d3',
+                'caster_id': player_id,
+                'spell_name': 'Admin Poison'
+            })
+            message = "[ADMIN] You have been poisoned! (10 ticks, 2d3 damage per tick)"
+
+        elif condition == 'hungry':
+            character['hunger'] = 10
+            message = "[ADMIN] You are now very hungry! (Hunger set to 10)"
+
+        elif condition == 'thirsty':
+            character['thirst'] = 10
+            message = "[ADMIN] You are now very thirsty! (Thirst set to 10)"
+
+        elif condition == 'paralyzed':
+            # Add paralysis effect to active_effects
+            if 'active_effects' not in character:
+                character['active_effects'] = []
+
+            character['active_effects'].append({
+                'type': 'paralyzed',
+                'duration': 5,
+                'effect': 'movement_disabled',
+                'effect_amount': 0
+            })
+            message = "[ADMIN] You have been paralyzed! (5 ticks, movement disabled)"
+
+        elif condition == 'starving':
+            character['hunger'] = 0
+            message = "[ADMIN] You are now starving! (Hunger set to 0, will take damage)"
+
+        elif condition == 'dehydrated':
+            character['thirst'] = 0
+            message = "[ADMIN] You are now dehydrated! (Thirst set to 0, will take damage)"
+
+        else:
+            message = f"[ADMIN] Unknown condition: {condition}\nValid types: poison, hungry, thirsty, paralyzed, starving, dehydrated"
+
+        await self.game_engine.connection_manager.send_message(player_id, message)
 

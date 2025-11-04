@@ -207,10 +207,13 @@ class AsyncGameEngine:
             except asyncio.CancelledError:
                 pass
 
-        # Stop connection manager
+        # Stop connection manager (this will trigger player disconnects which save characters)
         await self.connection_manager.stop_server()
 
-        # Disconnect database
+        # Give a moment for any pending disconnect saves to complete
+        await asyncio.sleep(0.1)
+
+        # Disconnect database LAST (after all saves are complete)
         if self.database:
             try:
                 self.database.disconnect()
@@ -345,30 +348,57 @@ class AsyncGameEngine:
             dehydration_damage = self.config_manager.get_setting('player', 'hunger_thirst', 'dehydration_damage_per_tick', default=1.0)
             low_threshold = self.config_manager.get_setting('player', 'hunger_thirst', 'low_warning_threshold', default=20)
 
-            # Apply hunger/thirst damage if starving/dehydrated
+            # Apply hunger/thirst damage with tiered severity
             damage_taken = 0
+
+            # Hunger damage - tiered based on severity
             if hunger <= 0:
-                # Starvation damage per tick (configurable)
+                # Starving (0): Full damage
                 damage_taken += starvation_damage
                 # Remind player every 60 seconds
                 last_starving_warning = warnings.get('starving', 0)
                 if current_time - last_starving_warning >= 60:
                     await self.connection_manager.send_message(player_id, "You are starving! Find food soon!")
                     warnings['starving'] = current_time
+            elif hunger <= 5:
+                # Very hungry (1-5): 75% damage
+                damage_taken += starvation_damage * 0.75
+                warnings['starving'] = 0
+            elif hunger <= 10:
+                # Hungry (6-10): 50% damage
+                damage_taken += starvation_damage * 0.5
+                warnings['starving'] = 0
+            elif hunger <= 15:
+                # Getting hungry (11-15): 25% damage
+                damage_taken += starvation_damage * 0.25
+                warnings['starving'] = 0
             else:
-                # Reset timestamp when hunger is restored above 0
+                # Reset timestamp when hunger is healthy
                 warnings['starving'] = 0
 
+            # Thirst damage - tiered based on severity (more dangerous than hunger)
             if thirst <= 0:
-                # Dehydration damage per tick (configurable, more dangerous than starvation)
+                # Dehydrated (0): Full damage
                 damage_taken += dehydration_damage
                 # Remind player every 60 seconds
                 last_dehydrated_warning = warnings.get('dehydrated', 0)
                 if current_time - last_dehydrated_warning >= 60:
                     await self.connection_manager.send_message(player_id, "You are severely dehydrated! Find water immediately!")
                     warnings['dehydrated'] = current_time
+            elif thirst <= 5:
+                # Very thirsty (1-5): 75% damage
+                damage_taken += dehydration_damage * 0.75
+                warnings['dehydrated'] = 0
+            elif thirst <= 10:
+                # Thirsty (6-10): 50% damage
+                damage_taken += dehydration_damage * 0.5
+                warnings['dehydrated'] = 0
+            elif thirst <= 15:
+                # Getting thirsty (11-15): 25% damage
+                damage_taken += dehydration_damage * 0.25
+                warnings['dehydrated'] = 0
             else:
-                # Reset timestamp when thirst is restored above 0
+                # Reset timestamp when thirst is healthy
                 warnings['dehydrated'] = 0
 
             # Warnings at low levels (much less frequent - 0.5% = ~1 warning per 200 ticks = ~3 mins)
@@ -536,14 +566,22 @@ class AsyncGameEngine:
                 effect['duration'] -= 1
                 if effect['duration'] <= 0:
                     expired_effects.append(i)
-                    # Notify player when buff expires
+                    # Notify player when buff/debuff expires
                     # Check both 'spell_id' (for buffs/spells) and 'type' (for trap effects)
                     effect_name = effect.get('spell_id') or effect.get('type', 'Unknown')
 
-                    # Remove stat enhancements when they expire
+                    # Handle stat restoration based on effect type
                     effect_amount = effect.get('effect_amount', 0)
-                    if effect_amount > 0:
-                        self._remove_enhancement_effect(character, effect.get('effect', ''), effect_amount)
+                    effect_type = effect.get('type', '')
+                    effect_name_check = effect.get('effect', '')
+
+                    # Check if this is an enhancement effect (by checking if effect name starts with 'enhance_')
+                    if effect_name_check and effect_name_check.startswith('enhance_') and effect_amount > 0:
+                        # Enhancement effects - remove bonuses
+                        self._remove_enhancement_effect(character, effect_name_check, effect_amount)
+                    elif effect_type == 'stat_drain' and effect_amount > 0:
+                        # Drain effects - restore drained stats
+                        self._restore_drain_effect(character, effect_name_check, effect_amount)
 
                     await self.connection_manager.send_message(
                         player_id,
@@ -555,8 +593,73 @@ class AsyncGameEngine:
                 active_effects.pop(i)
 
     async def _update_poison_effects(self):
-        """Update poison DOT effects for all mobs."""
+        """Update poison DOT effects for all players and mobs."""
         import random
+
+        # Process poison effects on players
+        for player_id, player_data in self.player_manager.connected_players.items():
+            character = player_data.get('character')
+            if not character:
+                continue
+
+            poison_effects = character.get('poison_effects', [])
+            if not poison_effects:
+                continue
+
+            # Process each poison effect
+            expired_effects = []
+            for i, poison in enumerate(poison_effects):
+                # Roll poison damage
+                poison_damage_roll = poison.get('damage', '1d2')
+                # Parse dice notation
+                if 'd' in poison_damage_roll:
+                    parts = poison_damage_roll.split('d')
+                    num_dice = int(parts[0])
+                    dice_value = int(parts[1].split('+')[0].split('-')[0])
+                    modifier = 0
+                    if '+' in parts[1]:
+                        modifier = int(parts[1].split('+')[1])
+                    elif '-' in parts[1]:
+                        modifier = -int(parts[1].split('-')[1])
+
+                    damage = sum(random.randint(1, dice_value) for _ in range(num_dice)) + modifier
+                else:
+                    damage = int(poison_damage_roll)
+
+                # Apply poison damage to player
+                current_health = character.get('current_hit_points', 0)
+                max_health = character.get('max_hit_points', 100)
+                new_health = max(0, current_health - damage)
+                character['current_hit_points'] = new_health
+
+                # Notify the poisoned player
+                await self.connection_manager.send_message(
+                    player_id,
+                    f"You take {int(damage)} poison damage! Health: {int(new_health)}/{int(max_health)}"
+                )
+
+                # Reduce duration
+                poison['duration'] -= 1
+                if poison['duration'] <= 0:
+                    expired_effects.append(i)
+                    await self.connection_manager.send_message(
+                        player_id,
+                        "The poison has run its course."
+                    )
+
+                # Check if player died from poison
+                if new_health <= 0:
+                    await self.connection_manager.send_message(
+                        player_id,
+                        "You have succumbed to poison!"
+                    )
+                    # Handle player death
+                    await self.combat_system.handle_player_death(player_id, character)
+                    break  # Exit poison loop since player is dead
+
+            # Remove expired poison effects (in reverse order)
+            for i in reversed(expired_effects):
+                poison_effects.pop(i)
 
         # Process poison effects on mobs
         for room_id, mobs in self.room_mobs.items():
@@ -651,18 +754,61 @@ class AsyncGameEngine:
         """
         effect_map = {
             'enhance_agility': 'dexterity',
+            'enhance_dexterity': 'dexterity',
             'enhance_strength': 'strength',
             'enhance_constitution': 'constitution',
             'enhance_vitality': 'vitality',
             'enhance_intelligence': 'intellect',
             'enhance_wisdom': 'wisdom',
-            'enhance_charisma': 'charisma'
+            'enhance_charisma': 'charisma',
+            # Aliases for compatibility
+            'enhance_physique': 'constitution',
+            'enhance_stamina': 'vitality'
         }
 
         if effect in effect_map:
             stat_key = effect_map[effect]
             current_value = character.get(stat_key, 10)
             character[stat_key] = max(1, current_value - amount)  # Don't go below 1
+        elif effect == 'enhance_mental':
+            # Remove mental stat enhancements (INT, WIS, CHA)
+            character['intellect'] = max(1, character.get('intellect', 10) - amount)
+            character['wisdom'] = max(1, character.get('wisdom', 10) - amount)
+            character['charisma'] = max(1, character.get('charisma', 10) - amount)
+        elif effect == 'enhance_body':
+            # Remove physical stat enhancements (STR, DEX, CON)
+            character['strength'] = max(1, character.get('strength', 10) - amount)
+            character['dexterity'] = max(1, character.get('dexterity', 10) - amount)
+            character['constitution'] = max(1, character.get('constitution', 10) - amount)
+
+    def _restore_drain_effect(self, character: dict, effect: str, amount: int):
+        """Restore stats that were drained by a drain spell.
+
+        Args:
+            character: The character dictionary
+            effect: The drain effect type
+            amount: The amount to restore
+        """
+        drain_map = {
+            'drain_agility': 'dexterity',
+            'drain_physique': 'constitution',
+            'drain_stamina': 'vitality'
+        }
+
+        if effect in drain_map:
+            stat_key = drain_map[effect]
+            current_value = character.get(stat_key, 10)
+            character[stat_key] = current_value + amount
+        elif effect == 'drain_mental':
+            # Restore all mental stats (INT, WIS, CHA)
+            character['intellect'] = character.get('intellect', 10) + amount
+            character['wisdom'] = character.get('wisdom', 10) + amount
+            character['charisma'] = character.get('charisma', 10) + amount
+        elif effect == 'drain_body':
+            # Restore all physical stats (STR, DEX, CON)
+            character['strength'] = character.get('strength', 10) + amount
+            character['dexterity'] = character.get('dexterity', 10) + amount
+            character['constitution'] = character.get('constitution', 10) + amount
 
     async def _auto_save_players(self):
         """Auto-save all connected players with characters."""
@@ -1320,6 +1466,17 @@ class AsyncGameEngine:
                         players_in_room.append(player_id)
 
                 if players_in_room:
+                    continue
+
+                # Check if mob is paralyzed
+                active_effects = mob.get('active_effects', [])
+                is_paralyzed = False
+                for effect in active_effects:
+                    if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
+                        is_paralyzed = True
+                        break
+
+                if is_paralyzed:
                     continue
 
                 # Get movement chance for this mob's spawn area

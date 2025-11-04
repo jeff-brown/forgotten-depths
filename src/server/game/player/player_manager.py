@@ -266,6 +266,14 @@ class PlayerManager:
             return
 
         character = player_data['character']
+
+        # Check if player is paralyzed
+        active_effects = character.get('active_effects', [])
+        for effect in active_effects:
+            if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
+                await self.connection_manager.send_message(player_id,
+                    "You are paralyzed and cannot move!")
+                return
         current_room = character['room_id']
         exits = self.game_engine.world_manager.get_exits_from_room(current_room)
 

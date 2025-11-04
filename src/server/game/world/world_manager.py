@@ -708,13 +708,22 @@ class WorldManager:
                     else:
                         npcs.append(display_name)
 
-        # Get other players in the same room
+        # Get other players in the same room (exclude invisible players)
         for player_id, player_data in self.game_engine.player_manager.get_all_connected_players().items():
             if (player_id != current_player_id and
                 player_data.get('character') and
                 player_data['character'].get('room_id') == room_id):
-                username = player_data.get('username', f'player_{player_id}')
-                other_players.append(username)
+                # Check if player is invisible
+                character = player_data['character']
+                active_effects = character.get('active_effects', [])
+                is_invisible = any(
+                    effect.get('effect') in ['invisible', 'invisibility']
+                    for effect in active_effects
+                )
+                # Only show player if they're not invisible
+                if not is_invisible:
+                    username = player_data.get('username', f'player_{player_id}')
+                    other_players.append(username)
 
         # Build the description
         entities = []

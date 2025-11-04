@@ -255,6 +255,23 @@
         }
       }
     },
+    "scroll_watari": {
+      "name": "Scroll of Watari",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 200,
+      "description": "A scroll inscribed with the Watari spell. A refreshing spell that quenches thirst. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "watari",
+        "spell_level": 4,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 3,
+          "min_intelligence": 12
+        }
+      }
+    },
     "scroll_lightning_bolt": {
       "name": "Scroll of Lightning Bolt",
       "type": "spell_scroll",
@@ -901,6 +918,23 @@
         }
       }
     },
+    "scroll_watarimaru": {
+      "name": "Scroll of Watarimaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 1060,
+      "description": "A scroll inscribed with the Watarimaru spell. A cool blue mist that quenches the thirst of all allies. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "watarimaru",
+        "spell_level": 10,
+        "spell_school": "evocation",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
     "scroll_kusamotu": {
       "name": "Scroll of Kusamotu",
       "type": "spell_scroll",
@@ -1374,6 +1408,40 @@
         "requirements": {
           "min_level": 17,
           "min_intelligence": 26
+        }
+      }
+    },
+    "scroll_takumaru": {
+      "name": "Scroll of Takumaru",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 350,
+      "description": "A scroll inscribed with the Takumaru spell. A bolt of dark violet energy that paralyzes the target. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "takumaru",
+        "spell_level": 10,
+        "spell_school": "necromancy",
+        "consumable": true,
+        "requirements": {
+          "min_level": 9,
+          "min_intelligence": 18
+        }
+      }
+    },
+    "scroll_takumarudaku": {
+      "name": "Scroll of Takumarudaku",
+      "type": "spell_scroll",
+      "weight": 0.1,
+      "base_value": 600,
+      "description": "A scroll inscribed with the Takumarudaku spell. A wave of dark violet energy that paralyzes all enemies. Reading it will teach you the spell permanently.",
+      "properties": {
+        "spell_id": "takumarudaku",
+        "spell_level": 14,
+        "spell_school": "necromancy",
+        "consumable": true,
+        "requirements": {
+          "min_level": 13,
+          "min_intelligence": 22
         }
       }
     }

@@ -295,14 +295,42 @@ class VendorSystem:
                     break
 
     def find_item_by_name(self, item_name: str) -> str:
-        """Find an item ID by searching item names."""
+        """Find an item ID by searching item names.
+
+        Uses a multi-pass approach:
+        1. Try exact match on item ID
+        2. Try exact match on display name
+        3. Try exact word match (for "Scroll of X" style names)
+        4. Try word boundary match (word starts with search term)
+        5. Fall back to substring match as last resort
+        """
         item_name_lower = item_name.lower()
 
-        # First try exact match on item ID
+        # First pass: Try exact match on item ID
         if item_name_lower in self.items_data:
             return item_name_lower
 
-        # Then try partial match on display names
+        # Second pass: Try exact match on display names
+        for item_id, item_data in self.items_data.items():
+            display_name = item_data.get('name', item_id).lower()
+            if item_name_lower == display_name:
+                return item_id
+
+        # Third pass: Try exact word match (for "Scroll of Novadi" matching "novadi")
+        for item_id, item_data in self.items_data.items():
+            display_name = item_data.get('name', item_id).lower()
+            words = display_name.split()
+            if item_name_lower in words:
+                return item_id
+
+        # Fourth pass: Try word boundary match (word starts with search term)
+        for item_id, item_data in self.items_data.items():
+            display_name = item_data.get('name', item_id).lower()
+            words = display_name.split()
+            if any(word.startswith(item_name_lower) for word in words):
+                return item_id
+
+        # Fifth pass: Substring match as last resort
         for item_id, item_data in self.items_data.items():
             display_name = item_data.get('name', item_id).lower()
             if item_name_lower in display_name or display_name in item_name_lower:

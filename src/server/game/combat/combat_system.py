@@ -572,6 +572,22 @@ class CombatSystem:
             )
             return
 
+        # Check if player is paralyzed or charmed
+        active_effects = character.get('active_effects', [])
+        for effect in active_effects:
+            if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("You are paralyzed and cannot attack!")
+                )
+                return
+            if effect.get('type') == 'charm' or effect.get('effect') == 'charm':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("You are charmed and cannot attack!")
+                )
+                return
+
         # Check if player has attacks remaining
         attacks_remaining = self.get_player_attacks_remaining(player_id)
         if attacks_remaining <= 0:
@@ -649,6 +665,22 @@ class CombatSystem:
                 error_message(f"You are too exhausted to shoot! Wait {fatigue_time:.1f} more seconds.")
             )
             return
+
+        # Check if player is paralyzed or charmed
+        active_effects = character.get('active_effects', [])
+        for effect in active_effects:
+            if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("You are paralyzed and cannot shoot!")
+                )
+                return
+            if effect.get('type') == 'charm' or effect.get('effect') == 'charm':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("You are charmed and cannot shoot!")
+                )
+                return
 
         # Check if player has attacks remaining
         attacks_remaining = self.get_player_attacks_remaining(player_id)
@@ -733,6 +765,22 @@ class CombatSystem:
                 error_message(f"You are too exhausted to shoot! Wait {fatigue_time:.1f} more seconds.")
             )
             return
+
+        # Check if player is paralyzed or charmed
+        active_effects = character.get('active_effects', [])
+        for effect in active_effects:
+            if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("You are paralyzed and cannot shoot!")
+                )
+                return
+            if effect.get('type') == 'charm' or effect.get('effect') == 'charm':
+                await self.game_engine.connection_manager.send_message(
+                    player_id,
+                    error_message("You are charmed and cannot shoot!")
+                )
+                return
 
         # Check if player has attacks remaining
         attacks_remaining = self.get_player_attacks_remaining(player_id)
@@ -1241,6 +1289,12 @@ class CombatSystem:
             if self.is_mob_fatigued(mob_id):
                 return
 
+            # Skip if mob is paralyzed
+            active_effects = mob.get('active_effects', [])
+            for effect in active_effects:
+                if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
+                    return
+
             # Skip if not hostile
             if mob.get('type') != 'hostile':
                 return
@@ -1301,12 +1355,20 @@ class CombatSystem:
                     if fled:
                         return  # Mob fled, don't attack
 
-            # Find players in the same room (prioritize players)
+            # Find players in the same room (prioritize players, exclude invisible)
             target_players = []
             for player_id, player_data in self.game_engine.player_manager.connected_players.items():
                 character = player_data.get('character')
                 if character and character.get('room_id') == room_id:
-                    target_players.append(player_id)
+                    # Check if player is invisible
+                    active_effects = character.get('active_effects', [])
+                    is_invisible = any(
+                        effect.get('effect') in ['invisible', 'invisibility']
+                        for effect in active_effects
+                    )
+                    # Only target visible players
+                    if not is_invisible:
+                        target_players.append(player_id)
 
             # Determine target (player or mob)
             target = None
@@ -2557,7 +2619,10 @@ class CombatSystem:
     async def _notify_room_players(self, room_id: str, message: str):
         """Send a message to all players in a room."""
         for player_id, player_data in self.game_engine.player_manager.connected_players.items():
-            if player_data and player_data.get('character', {}).get('room_id') == room_id:
+            if not player_data:
+                continue
+            character = player_data.get('character')
+            if character and character.get('room_id') == room_id:
                 await self.game_engine.connection_manager.send_message(player_id, message)
 
     async def execute_seamless_attack(self, player_id: int, target: dict, room_id: str):
