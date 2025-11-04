@@ -1,0 +1,28 @@
+{
+  "town_name": "Lakeside Human Town",
+  "room_count": 21,
+  "room_ids": [
+    "lht_a_path",
+    "lht_a_path_1",
+    "lht_a_path_2",
+    "lht_a_path_3",
+    "lht_a_path_4",
+    "lht_a_path_5",
+    "lht_a_path_6",
+    "lht_a_path_7",
+    "lht_a_path_8",
+    "lht_a_path_9",
+    "lht_arena",
+    "lht_armor_shop",
+    "lht_docks",
+    "lht_east_plaza",
+    "lht_equipment_shop",
+    "lht_inn",
+    "lht_magic_shop",
+    "lht_north_plaza",
+    "lht_south_plaza",
+    "lht_temple",
+    "lht_weapon_shop"
+  ],
+  "source": "Ether MUD Engine - Town Area"
+}

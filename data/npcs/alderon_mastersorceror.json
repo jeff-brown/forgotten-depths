@@ -1,0 +1,36 @@
+{
+  "id": "alderon_mastersorcerer",
+  "name": "Master Alderon",
+  "short_description": "a master sorcerer",
+  "long_description": "The master sorcerer wears shimering silver robes and bracers adorned with magical sigils and runes of power. His eyes betray his great wisdom. He has the mannerisms of one who is kind and gentle.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "sorcerer",
+  "keywords": [
+    "master",
+    "alderon",
+    "master",
+    "sorcerer"
+  ],
+  "legacy_npc_id": 7,
+  "dialogue": {
+    "greeting": "Welcome to the guild hall. Are you here for training?",
+    "default": "Mastery of the arcane arts requires dedication and study.",
+    "goodbye": "Practice your skills well."
+  },
+  "services": [
+    "trainer",
+    "guild"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "dut_equipment_shop",
+  "title": "The Equipment Shop.",
+  "description": "You are now inside the equipment shop, where one may purchase supplies and provisions essential to survival in the dungeons or the wilderness. The shop keeper sits on a tall stool behind a counter along the west wall, eyeing you warily. A stone archway lies to the to the southeast.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "southeast": "dut_an_underground_plaza_3"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "gimble_tinkertop"
+  ],
+  "shop_type": "equipment",
+  "service_level": 2,
+  "terrain": "town",
+  "legacy_room_id": -56
+}

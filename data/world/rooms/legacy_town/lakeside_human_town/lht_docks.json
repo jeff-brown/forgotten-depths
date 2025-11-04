@@ -1,0 +1,17 @@
+{
+  "id": "lht_docks",
+  "title": "The Docks.",
+  "description": "You are standing on the docks. The water from the lake laps quietly against the docks making the peaceful scene on the lake all that more serene. A path leads towards a large open plaza to the northwest.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "northwest": "lht_a_path"
+  },
+  "is_safe": true,
+  "is_docks": true,
+  "light_level": "bright",
+  "npcs": [
+    "captain_blackbeard"
+  ],
+  "terrain": "town",
+  "legacy_room_id": -88
+}

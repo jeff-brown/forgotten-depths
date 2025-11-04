@@ -1,0 +1,37 @@
+{
+  "id": "sister_lumina",
+  "name": "Sister Lumina",
+  "description": "An elderly human cleric with kind eyes and silver hair pulled back in a simple braid. She wears pristine white and gold robes adorned with holy symbols. A soft golden aura surrounds her, and her presence brings a sense of peace and comfort to all who enter the chapel.",
+  "level": 18,
+  "type": "vendor",
+  "faction": "Order of the Divine Light",
+  "dialogue": {
+    "greeting": "Blessings upon you, child. I am Sister Lumina, keeper of sacred knowledge. The divine has guided you here for a reason. How may I help you on your spiritual journey?",
+    "browse": "These scrolls contain the holy magics granted by the divine - spells of healing, protection, and righteous fury against the wicked. Each has been blessed at the altar.",
+    "buy": "May this sacred knowledge serve you well in your quest to aid those in need. Use it with wisdom and compassion.",
+    "sell": "I appreciate the offering, but I only deal in divine scrolls blessed by the faith.",
+    "farewell": "Walk in the light, and may your path be ever guided by divine grace."
+  },
+  "services": ["shop"],
+  "shop": {
+    "type": "cleric_scrolls",
+    "specialties": ["restoration", "cleric_spells"],
+    "buy_rate": 0.45,
+    "sell_markup": 1.4,
+    "inventory": [
+      {"item_id": "scroll_motu", "price": 100, "stock": 6},
+      {"item_id": "scroll_kamotu", "price": 250, "stock": 5},
+      {"item_id": "scroll_tami", "price": 300, "stock": 4},
+      {"item_id": "scroll_dobudanimaru", "price": 700, "stock": 3},
+      {"item_id": "scroll_gimotu", "price": 700, "stock": 3},
+      {"item_id": "scroll_katami", "price": 900, "stock": 3},
+      {"item_id": "scroll_motumaru", "price": 800, "stock": 2},
+      {"item_id": "scroll_gitami", "price": 1800, "stock": 2},
+      {"item_id": "scroll_kamotumaru", "price": 1800, "stock": 2},
+      {"item_id": "scroll_kusamotu", "price": 1500, "stock": 2},
+      {"item_id": "scroll_kusatami", "price": 2800, "stock": 1},
+      {"item_id": "scroll_gimotumaru", "price": 3500, "stock": 1},
+      {"item_id": "scroll_kusamotumaru", "price": 5500, "stock": 1}
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "dut_town_square",
+  "title": "The Town Square.",
+  "description": "You are standing in the midst of a large open square in a subterranean cavern. The vaulted ceiling rises high above your head into near dark. The light from oil lamps spaced evenly about the square affords adequate light. Plain stone benches of good workmanship line the outer edges of the square. To the four primary compass points stand smooth stone walls carved with detailed scenes depicting various aspects of dwarven life. To the northeast, southeast, southwest, and northeast lie open plazas surrounding ornate stone fountains.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "northeast": "dut_an_underground_plaza",
+    "southeast": "dut_an_underground_plaza_2",
+    "southwest": "dut_an_underground_plaza_3",
+    "northwest": "dut_an_underground_plaza_1",
+    "east": "room_1457"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -65
+}

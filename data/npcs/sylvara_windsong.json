@@ -1,0 +1,36 @@
+{
+  "id": "sylvara_windsong",
+  "name": "Sylvara",
+  "short_description": "a elven barmaid",
+  "long_description": "The barmaid is an elven wench wearing a low cut lacey green blouse, brown bodice, and yellow skirts. She has curly red hair and clear grey eyes. You notice quite a few of the inn's male patrons eyeing her.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "elf",
+  "class": "hospitality",
+  "keywords": [
+    "sylvara",
+    "elven",
+    "barmaid"
+  ],
+  "legacy_npc_id": 14,
+  "dialogue": {
+    "greeting": "Hello there! Can I bring you something?",
+    "default": "We have fresh bread and hearty stew today!",
+    "goodbye": "Safe travels!"
+  },
+  "services": [
+    "vendor",
+    "tavern",
+    "food_and_drink"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

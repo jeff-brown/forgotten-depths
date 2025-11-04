@@ -1,0 +1,37 @@
+{
+  "id": "garth_thegiant",
+  "name": "Garth the Giant",
+  "short_description": "a barkeep",
+  "long_description": "The barkeep is a giant of a man. He stands nearly seven feet tall and looks as though he might have a bit of ogre blood in him. He wears a pair of iron armbands and a leather tunic. The tavern's patrons seem to reguard him with respect if not fear.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "half-ogre",
+  "class": "hospitality",
+  "keywords": [
+    "garth",
+    "the",
+    "giant",
+    "barkeep"
+  ],
+  "legacy_npc_id": 9,
+  "dialogue": {
+    "greeting": "Welcome! What can I get you to drink?",
+    "default": "We serve the finest ale and spirits this side of the mountains.",
+    "goodbye": "Come back anytime, friend!"
+  },
+  "services": [
+    "vendor",
+    "tavern",
+    "food_and_drink"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "fletcher_aelwyn",
+  "name": "Aelwyn the Fletcher",
+  "short_description": "a skilled fletcher",
+  "long_description": "Aelwyn is a slender elf with nimble fingers and sharp eyes that miss nothing. Her long auburn hair is tied back to keep it away from her work. She moves with practiced grace between her workbench and the bow racks, testing the tension of bowstrings and checking the straightness of arrows. Her workshop is a testament to her dedication to the craft of bow-making and arrow-fletching.",
+  "level": 12,
+  "type": "npc",
+  "hostile": false,
+  "health": 150,
+  "race": "elf",
+  "class": "artisan",
+  "keywords": ["aelwyn", "fletcher", "bowyer", "craftsman", "elf"],
+  "dialogue": {
+    "greeting": "Welcome to my shop! Whether you prefer the longbow or crossbow, I have what you need.",
+    "default": "A good bow is more than wood and string - it's an extension of the archer's will. Every arrow I craft flies true.",
+    "goodbye": "May your arrows fly straight and find their mark!"
+  },
+  "services": ["fletcher", "bowyer", "arrow_crafter"],
+  "shop": {
+    "type": "fletcher",
+    "buy_rate": 0.6,
+    "sell_markup": 0.9,
+    "specialties": ["bows", "crossbows", "arrows", "bolts"],
+    "inventory": [
+      {"item_id": "short_bow", "price": 27, "stock": 5},
+      {"item_id": "long_bow", "price": 45, "stock": 5},
+      {"item_id": "crossbow", "price": 90, "stock": 3},
+      {"item_id": "great_bow", "price": 135, "stock": 2},
+      {"item_id": "quiver", "price": 9, "stock": 10},
+      {"item_id": "arrow", "price": 1, "stock": 200},
+      {"item_id": "sling", "price": 9, "stock": 8},
+      {"item_id": "pouch", "price": 2, "stock": 10},
+      {"item_id": "stone", "price": 1, "stock": 100},
+      {"item_id": "blowgun", "price": 23, "stock": 3},
+      {"item_id": "case", "price": 11, "stock": 10},
+      {"item_id": "dart", "price": 1, "stock": 100},
+      {"item_id": "knife", "price": 5, "stock": 15},
+      {"item_id": "spear", "price": 9, "stock": 10},
+      {"item_id": "axe", "price": 14, "stock": 8}
+    ]
+  },
+  "stats": {
+    "strength": 12,
+    "dexterity": 20,
+    "constitution": 14,
+    "intelligence": 15,
+    "wisdom": 16,
+    "charisma": 13
+  }
+}

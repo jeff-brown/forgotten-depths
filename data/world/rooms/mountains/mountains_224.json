@@ -1,0 +1,18 @@
+{
+  "id": "mountains_224",
+  "title": "You are in a large cave.",
+  "description": "This cave is very large and smells slightly of offal. It has the look of the den of some wild beast. The floor of the cave is covered with straw and other litter. The only exit is to the southeast.",
+  "area_id": "mountains",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "southeast": "mountains_223"
+  },
+  "lairs": [
+    {
+      "mob_id": "griffon",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
+}

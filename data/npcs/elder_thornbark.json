@@ -1,0 +1,34 @@
+{
+  "id": "elder_thornbark",
+  "name": "Elder Thornbark",
+  "description": "An ancient druid whose weathered features seem carved from oak itself. His long beard is entwined with living moss, small flowers, and even a few mushrooms. He moves with the slow deliberation of the forest, and his voice carries the rustle of leaves and the whisper of wind through trees. Small animals occasionally peek out from his robes.",
+  "level": 19,
+  "type": "vendor",
+  "faction": "Circle of the Eternal Grove",
+  "dialogue": {
+    "greeting": "The forest speaks of your arrival, friend. I am Elder Thornbark, guardian of natural magics. The old ways call to you, do they not? Come, let me share the wisdom of the wild.",
+    "browse": "These scrolls contain the primal magics of nature - spells of growth, decay, transformation, and the raw power of the elements as nature intended. Each is inscribed on bark or leaf, alive with natural energy.",
+    "buy": "The forest provides for those who respect it. May this knowledge help you walk in harmony with the natural world.",
+    "sell": "I seek only natural magics, friend. The  manufactured spells of civilization hold no interest for me.",
+    "farewell": "May the roots run deep beneath you and the canopy shelter you, wanderer."
+  },
+  "services": ["shop"],
+  "shop": {
+    "type": "druid_scrolls",
+    "specialties": ["nature", "druid_spells"],
+    "buy_rate": 0.45,
+    "sell_markup": 1.4,
+    "inventory": [
+      {"item_id": "scroll_pakaza", "price": 150, "stock": 5},
+      {"item_id": "scroll_toraza", "price": 250, "stock": 5},
+      {"item_id": "scroll_modoki", "price": 400, "stock": 4},
+      {"item_id": "scroll_sivama", "price": 600, "stock": 4},
+      {"item_id": "scroll_pakazuma", "price": 1000, "stock": 3},
+      {"item_id": "scroll_torazuma", "price": 1200, "stock": 3},
+      {"item_id": "scroll_modokidan", "price": 1800, "stock": 2},
+      {"item_id": "scroll_sivadaku", "price": 2200, "stock": 2},
+      {"item_id": "scroll_modokidaku", "price": 2800, "stock": 2},
+      {"item_id": "scroll_toradaku", "price": 3500, "stock": 1}
+    ]
+  }
+}

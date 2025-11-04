@@ -1,0 +1,39 @@
+{
+  "id": "grunk_ironhide",
+  "name": "Grunk Ironhide",
+  "short_description": "a half-ogre weapon and armor smith",
+  "long_description": "The shop keeper is an enormous half-ogre smith wearing heavy leather apron. He has coarse black hair, and a black beard and moustache. His facial features betray great strength and self assurance.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "elf",
+  "class": "artisan",
+  "keywords": [
+    "grunk",
+    "ironhide",
+    "half-ogre",
+    "armor",
+    "shopkeeper"
+  ],
+  "legacy_npc_id": 4,
+  "dialogue": {
+    "greeting": "Welcome! Need a weapon or armor?",
+    "default": "I craft both fine weapons and sturdy armor. My work is some of the best you'll find.",
+    "goodbye": "May your gear serve you well!"
+  },
+  "services": [
+    "vendor",
+    "weapon_shop",
+    "armor_shop",
+    "repair"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

@@ -1,0 +1,1423 @@
+{
+  "equipment": {
+    "torch": {
+      "name": "A Torch",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 1,
+      "description": "a torch",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "LIGHT",
+        "min_effect": 0,
+        "max_effect": 450,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 21
+    },
+    "rope": {
+      "name": "A Coil Of Rope",
+      "type": "equipment",
+      "weight": 2.5,
+      "base_value": 3,
+      "description": "a coil of rope",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 22
+    },
+    "ration_of_food": {
+      "name": "A Ration Of Food",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 2,
+      "description": "a ration of food",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "FOOD",
+        "min_effect": 0,
+        "max_effect": 3600,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 23
+    },
+    "waterskin": {
+      "name": "A Waterskin",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 1,
+      "description": "a waterskin",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "WATER",
+        "min_effect": 0,
+        "max_effect": 1800,
+        "charges": 3,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 24
+    },
+    "glowstone": {
+      "name": "A Glowstone",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 50,
+      "description": "a glowstone",
+      "properties": {
+        "equipment_type": "MINOR_MAGIC_ITEM",
+        "equipment_subtype": "ETERNAL_LIGHT",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 25
+    },
+    "heartstone": {
+      "name": "A Heartstone",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 100,
+      "description": "a heartstone",
+      "properties": {
+        "equipment_type": "MINOR_MAGIC_ITEM",
+        "equipment_subtype": "RECALL",
+        "required_level": 5,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 26
+    },
+    "rue_potion": {
+      "name": "A Rue Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 5,
+      "description": "a rue potion",
+      "properties": {
+        "equipment_type": "POTION",
+        "equipment_subtype": "HEAL",
+        "min_effect": 4,
+        "max_effect": 16,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 27
+    },
+    "amaranth_potion": {
+      "name": "An Amaranth Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "an amaranth potion",
+      "properties": {
+        "equipment_type": "POTION",
+        "equipment_subtype": "HEAL",
+        "min_effect": 16,
+        "max_effect": 64,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 28
+    },
+    "anemone_potion": {
+      "name": "An Anemone Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 25,
+      "description": "an anemone potion",
+      "properties": {
+        "equipment_type": "POTION",
+        "equipment_subtype": "HEAL",
+        "min_effect": 32,
+        "max_effect": 128,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 29
+    },
+    "verbena_potion": {
+      "name": "A Verbena Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "a verbena potion",
+      "properties": {
+        "equipment_type": "POTION",
+        "equipment_subtype": "CURE_POISON",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 30
+    },
+    "yarrow_potion": {
+      "name": "A Yarrow Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "a yarrow potion",
+      "properties": {
+        "equipment_type": "POTION",
+        "equipment_subtype": "MINOR_MANA_BOOST",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 31
+    },
+    "rowan_potion": {
+      "name": "A Rowan Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "a rowan potion",
+      "properties": {
+        "equipment_type": "POTION",
+        "equipment_subtype": "PHYSIQUE_BOOST",
+        "min_effect": 20,
+        "max_effect": 600,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 32
+    },
+    "hyssop_potion": {
+      "name": "A Hyssop Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 10,
+      "description": "a hyssop potion",
+      "properties": {
+        "equipment_type": "POTION",
+        "equipment_subtype": "AGILITY_BOOST",
+        "min_effect": 20,
+        "max_effect": 600,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 33
+    },
+    "vervain_potion": {
+      "name": "A Vervain Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 100,
+      "description": "a vervain potion",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "INVISIBILITY",
+        "min_effect": 0,
+        "max_effect": 600,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 34
+    },
+    "horn_of_frost": {
+      "name": "A Horn Of Frost",
+      "type": "equipment",
+      "weight": 5.0,
+      "base_value": 50,
+      "description": "a horn of frost",
+      "properties": {
+        "equipment_type": "MINOR_MAGIC_ITEM",
+        "equipment_subtype": "WAND",
+        "min_effect": 4,
+        "max_effect": 24,
+        "charges": 15,
+        "range": 1,
+        "required_level": 3,
+        "allowed_classes": [
+          "sorcerer"
+        ]
+      },
+      "vnum": 35,
+      "attack_message": "a blast of frost"
+    },
+    "wand_of_lightning": {
+      "name": "A Wand Of Lightning",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 100,
+      "description": "a wand of lightning",
+      "properties": {
+        "equipment_type": "MINOR_MAGIC_ITEM",
+        "equipment_subtype": "WAND",
+        "min_effect": 8,
+        "max_effect": 48,
+        "charges": 20,
+        "range": 1,
+        "required_level": 5,
+        "allowed_classes": [
+          "sorcerer"
+        ]
+      },
+      "vnum": 36,
+      "attack_message": "a bolt of lightning"
+    },
+    "rod_of_flame": {
+      "name": "A Rod Of Flame",
+      "type": "equipment",
+      "weight": 2.0,
+      "base_value": 200,
+      "description": "a rod of flame",
+      "properties": {
+        "equipment_type": "MINOR_MAGIC_ITEM",
+        "equipment_subtype": "WAND",
+        "min_effect": 12,
+        "max_effect": 72,
+        "charges": 25,
+        "range": 1,
+        "required_level": 8,
+        "allowed_classes": [
+          "sorcerer"
+        ]
+      },
+      "vnum": 37,
+      "attack_message": "a blast of flame"
+    },
+    "iron_key": {
+      "name": "An Iron Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "an iron key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 38
+    },
+    "copper_key": {
+      "name": "A Copper Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a copper key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 39
+    },
+    "brass_key": {
+      "name": "A Brass Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a brass key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 40
+    },
+    "bronze_key": {
+      "name": "A Bronze Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a bronze key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 41
+    },
+    "silver_key": {
+      "name": "A Silver Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a silver key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 42
+    },
+    "electrum_key": {
+      "name": "An Electrum Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "an electrum key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 43
+    },
+    "gold_key": {
+      "name": "A Gold Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a gold key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 44
+    },
+    "platinum_key": {
+      "name": "A Platinum Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a platinum key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 45
+    },
+    "pearl_key": {
+      "name": "A Pearl Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a pearl key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 46
+    },
+    "onyx_key": {
+      "name": "An Onyx Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "an onyx key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 47
+    },
+    "jade_key": {
+      "name": "A Jade Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a jade key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 48
+    },
+    "ruby_key": {
+      "name": "A Ruby Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a ruby key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 49
+    },
+    "runestaff": {
+      "name": "A Runestaff",
+      "type": "equipment",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "a runestaff",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "RUNESTAFF",
+        "charges": 8,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 50
+    },
+    "dart": {
+      "name": "A Dart",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 1,
+      "description": "a dart",
+      "properties": {
+        "equipment_type": "SUPPLY_WEAPON",
+        "equipment_subtype": "NONE",
+        "min_effect": 1,
+        "max_effect": 4,
+        "range": 3,
+        "required_level": 1,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 56
+    },
+    "knife": {
+      "name": "A Knife",
+      "type": "equipment",
+      "weight": 0.7,
+      "base_value": 5,
+      "description": "a knife",
+      "properties": {
+        "equipment_type": "SUPPLY_WEAPON",
+        "equipment_subtype": "NONE",
+        "min_effect": 1,
+        "max_effect": 6,
+        "range": 2,
+        "required_level": 3,
+        "allowed_classes": [
+          "fighter",
+          "rogue",
+          "ranger"
+        ]
+      },
+      "vnum": 57
+    },
+    "spear": {
+      "name": "A Spear",
+      "type": "equipment",
+      "weight": 4.0,
+      "base_value": 10,
+      "description": "a spear",
+      "properties": {
+        "equipment_type": "SUPPLY_WEAPON",
+        "equipment_subtype": "NONE",
+        "min_effect": 2,
+        "max_effect": 8,
+        "range": 2,
+        "required_level": 2,
+        "allowed_classes": [
+          "fighter",
+          "rogue",
+          "ranger"
+        ]
+      },
+      "vnum": 58
+    },
+    "axe": {
+      "name": "An Axe",
+      "type": "equipment",
+      "weight": 3.0,
+      "base_value": 15,
+      "description": "an axe",
+      "properties": {
+        "equipment_type": "SUPPLY_WEAPON",
+        "equipment_subtype": "NONE",
+        "min_effect": 3,
+        "max_effect": 12,
+        "range": 1,
+        "required_level": 5,
+        "allowed_classes": [
+          "fighter",
+          "ranger"
+        ]
+      },
+      "vnum": 59
+    },
+    "arrow": {
+      "name": "An Arrow",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "an arrow",
+      "properties": {
+        "equipment_type": "RANGED_WEAPON_AMMO",
+        "equipment_subtype": "MISC2",
+        "min_effect": 0,
+        "max_effect": 7,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 60
+    },
+    "quiver": {
+      "name": "A Quiver",
+      "type": "equipment",
+      "weight": 3.0,
+      "base_value": 10,
+      "description": "a quiver",
+      "properties": {
+        "equipment_type": "AMMO_CONTAINER",
+        "equipment_subtype": "AMMO",
+        "min_effect": 60,
+        "max_effect": 0,
+        "charges": 20,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 61
+    },
+    "soulstone": {
+      "name": "A Soulstone",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 1000,
+      "description": "a soulstone",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "SOULSTONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 65
+    },
+    "manastone": {
+      "name": "A Manastone",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 10,
+      "description": "a manastone",
+      "properties": {
+        "equipment_type": "MINOR_MAGIC_ITEM",
+        "equipment_subtype": "MAJOR_MANA_BOOST",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 66
+    },
+    "zarynthium_potion": {
+      "name": "A Zarynthium Potion",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 50,
+      "description": "a zarynthium potion",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "HEAL",
+        "min_effect": 64,
+        "max_effect": 256,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 67
+    },
+    "dragon_ring": {
+      "name": "A Dragon Ring",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a dragon ring",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 69
+    },
+    "gome_ring": {
+      "name": "A Gome Ring",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a gome ring",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 70
+    },
+    "strato_ring": {
+      "name": "A Strato Ring",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a strato ring",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 71
+    },
+    "pink_rose": {
+      "name": "A Pink Rose",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a pink rose",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 72
+    },
+    "white_rose": {
+      "name": "A White Rose",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a white rose",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 73
+    },
+    "wynharp": {
+      "name": "A Wynharp",
+      "type": "equipment",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "a wynharp",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "RESERVED",
+        "min_effect": 32,
+        "max_effect": 128,
+        "required_level": 1000,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 77
+    },
+    "red_rose": {
+      "name": "A Red Rose",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a red rose",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 79
+    },
+    "black_rose": {
+      "name": "A Black Rose",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 0,
+      "description": "a black rose",
+      "properties": {
+        "equipment_type": "MINOR_MAGIC_ITEM",
+        "equipment_subtype": "WAND",
+        "min_effect": 1,
+        "max_effect": 2,
+        "charges": 1,
+        "required_level": 1000,
+        "allowed_classes": [
+          "sorcerer"
+        ]
+      },
+      "vnum": 81,
+      "attack_message": "a dark mist"
+    },
+    "opal_key": {
+      "name": "An Opal Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "an opal key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 82
+    },
+    "tigereye_key": {
+      "name": "A Tigereye Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a tigereye key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 83
+    },
+    "quartz_key": {
+      "name": "A Quartz Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a quartz key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 84
+    },
+    "topaz_key": {
+      "name": "A Topaz Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "a topaz key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 85
+    },
+    "rod_of_power": {
+      "name": "A Rod Of Power",
+      "type": "equipment",
+      "weight": 2.0,
+      "base_value": 0,
+      "description": "a rod of power",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "ROD_OF_POWER",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 86
+    },
+    "flame_crystal": {
+      "name": "A Flame Crystal",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "a flame crystal",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "FLAME_CRYSTAL",
+        "min_effect": 2,
+        "max_effect": 4,
+        "range": 1,
+        "required_level": 30,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 87,
+      "attack_message": "a flame storm"
+    },
+    "case": {
+      "name": "A Case Of Darts",
+      "type": "equipment",
+      "weight": 1.5,
+      "base_value": 12,
+      "description": "a case of darts",
+      "properties": {
+        "equipment_type": "THROWN_WEAPON_CONTAINER",
+        "equipment_subtype": "AMMO",
+        "min_effect": 56,
+        "max_effect": 0,
+        "charges": 10,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 88
+    },
+    "stone": {
+      "name": "A Stone",
+      "type": "equipment",
+      "weight": 0.1,
+      "base_value": 0,
+      "description": "a stone",
+      "properties": {
+        "equipment_type": "RANGED_WEAPON_AMMO",
+        "equipment_subtype": "MISC2",
+        "min_effect": 0,
+        "max_effect": 4,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 89
+    },
+    "pouch": {
+      "name": "A Pouch Of Stones",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 2,
+      "description": "a pouch of stones",
+      "properties": {
+        "equipment_type": "AMMO_CONTAINER",
+        "equipment_subtype": "AMMO",
+        "min_effect": 89,
+        "max_effect": 0,
+        "charges": 20,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 90
+    },
+    "blowdart": {
+      "name": "A Blowdart",
+      "type": "equipment",
+      "weight": 0.1,
+      "base_value": 0,
+      "description": "a blowdart",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "MISC2",
+        "min_effect": 0,
+        "max_effect": 2,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 92
+    },
+    "tube": {
+      "name": "A Tube Of Blowdarts",
+      "type": "equipment",
+      "weight": 0.5,
+      "base_value": 5,
+      "description": "a tube of blowdarts",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "AMMO",
+        "min_effect": 92,
+        "max_effect": 0,
+        "charges": 10,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 93
+    },
+    "ice_crystal": {
+      "name": "An Ice Crystal",
+      "type": "equipment",
+      "weight": 1.0,
+      "base_value": 0,
+      "description": "an ice crystal",
+      "properties": {
+        "equipment_type": "MAJOR_MAGIC_ITEM",
+        "equipment_subtype": "FLAME_CRYSTAL",
+        "min_effect": 1,
+        "max_effect": 3,
+        "range": 1,
+        "required_level": 25,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 95,
+      "attack_message": "a frost storm"
+    },
+    "stone_key": {
+      "name": "An Ornate Stone Key",
+      "type": "equipment",
+      "weight": 0.2,
+      "base_value": 0,
+      "description": "an ornate stone key",
+      "properties": {
+        "equipment_type": "KEY",
+        "equipment_subtype": "NONE",
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 97
+    },
+    "small_barrel": {
+      "name": "A Small Barrel",
+      "type": "equipment",
+      "weight": 10.0,
+      "base_value": 10,
+      "description": "a small barrel",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "WATER",
+        "min_effect": 0,
+        "max_effect": 1800,
+        "charges": 15,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 98
+    },
+    "preserved_rations": {
+      "name": "Some Preserved Rations",
+      "type": "equipment",
+      "weight": 2.0,
+      "base_value": 10,
+      "description": "some preserved rations",
+      "properties": {
+        "equipment_type": "SUPPLY",
+        "equipment_subtype": "FOOD",
+        "min_effect": 0,
+        "max_effect": 2400,
+        "charges": 5,
+        "allowed_classes": [
+          "fighter",
+          "ranger",
+          "rogue",
+          "sorcerer",
+          "cleric",
+          "druid",
+          "warlock",
+          "bard"
+        ]
+      },
+      "vnum": 99
+    }
+  }
+}

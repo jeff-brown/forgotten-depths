@@ -1,0 +1,14 @@
+{
+  "id": "ett_a_catwalk_5",
+  "title": "A Catwalk.",
+  "description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues to the north and east.",
+  "area_id": "legacy_elven_tree",
+  "exits": {
+    "north": "ett_a_catwalk_1",
+    "east": "ett_a_catwalk_16"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -49
+}

@@ -1,0 +1,40 @@
+{
+  "id": "silvanus_leafwhisper",
+  "name": "Silvanus Leafwhisper",
+  "short_description": "an elven general merchant and armorer",
+  "long_description": "The shop keeper is an lithe elf wearing a bright green tunic and trousers, He has whispy blonde hair and no facial hair. He smiles broadly at you as you look him over.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "elf",
+  "class": "merchant",
+  "keywords": [
+    "silvanus",
+    "leafwhisper",
+    "elven",
+    "equipment",
+    "shopkeeper"
+  ],
+  "legacy_npc_id": 3,
+  "dialogue": {
+    "greeting": "Greetings, traveler. How may I serve you?",
+    "default": "I offer a wide variety of goods - equipment, weapons, and armor crafted by elven hands.",
+    "goodbye": "Walk in harmony with nature, friend."
+  },
+  "services": [
+    "vendor",
+    "general_store",
+    "weapon_shop",
+    "armor_shop",
+    "repair"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

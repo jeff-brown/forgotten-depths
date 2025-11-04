@@ -1,0 +1,19 @@
+{
+  "id": "dut_armor_shop",
+  "title": "The Armor Shop.",
+  "description": "You are now inside the armor shop, where you may aquire different sorts of armor and protective gear to guard yourself against the blows of your opponents. The shop keeper sits on a high behind a worn counter along the west wall, eyeing you warily. A stone archway lies to the to the northeast.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "northeast": "dut_an_underground_plaza_3"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "thorin_ironbeard"
+  ],
+  "shop_type": "armor",
+  "service_level": 2,
+  "terrain": "town",
+  "legacy_room_id": -55
+}

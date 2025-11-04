@@ -1,0 +1,34 @@
+{
+  "id": "master_pyrus_frostweaver",
+  "name": "Master Pyrus Frostweaver",
+  "description": "A tall sorcerer with silver hair streaked with crimson and icy blue. His robes shimmer with elemental energy, flames dancing along one sleeve while frost crystals grow on the other. His eyes alternate between fiery orange and glacial blue, reflecting his mastery of both fire and ice evocation.",
+  "level": 20,
+  "type": "vendor",
+  "faction": "Sorcerer's Guild",
+  "dialogue": {
+    "greeting": "Ah, a seeker of elemental power! I am Master Pyrus Frostweaver, master of fire and ice. My scrolls contain the most devastating evocation spells known to sorcery. Are you prepared to wield such power?",
+    "browse": "Behold my collection of evocation scrolls. From simple ice shards to devastating firestorms, I have it all. Each spell has been personally crafted and tested.",
+    "buy": "An excellent choice. Remember, with great power comes the responsibility to use it wisely. Or at least spectacularly.",
+    "sell": "I'm afraid I only deal in sorcerous evocation magic. Perhaps try the Arcane Emporium for general goods.",
+    "farewell": "May your flames burn bright and your ice never thaw, young sorcerer!"
+  },
+  "services": ["shop"],
+  "shop": {
+    "type": "sorcerer_scrolls",
+    "specialties": ["evocation", "sorcerer_spells"],
+    "buy_rate": 0.4,
+    "sell_markup": 1.5,
+    "inventory": [
+      {"item_id": "scroll_komiza", "price": 150, "stock": 5},
+      {"item_id": "scroll_toduza", "price": 300, "stock": 4},
+      {"item_id": "scroll_komizuma", "price": 500, "stock": 3},
+      {"item_id": "scroll_toduzuma", "price": 900, "stock": 3},
+      {"item_id": "scroll_komidaku", "price": 1500, "stock": 2},
+      {"item_id": "scroll_komizadaku", "price": 2000, "stock": 2},
+      {"item_id": "scroll_todudaku", "price": 3500, "stock": 1},
+      {"item_id": "scroll_todukar", "price": 2500, "stock": 2},
+      {"item_id": "scroll_komasidaku", "price": 4500, "stock": 1},
+      {"item_id": "scroll_dumoti", "price": 7000, "stock": 1}
+    ]
+  }
+}

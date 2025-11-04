@@ -1,0 +1,37 @@
+{
+  "id": "finnian_oakbrew",
+  "name": "Finnian Oakbrew",
+  "short_description": "a elven barkeep",
+  "long_description": "The barkeep is a lively old elf. He stands nearly six feet tall and looks as though he's seen his fair share of adventure in his younger days. He wears a leather tunic and buskins. The tavern's patrons seem to reguard him with a great deal of respect.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "elf",
+  "class": "hospitality",
+  "keywords": [
+    "finnian",
+    "oakbrew",
+    "elven",
+    "barkeep"
+  ],
+  "legacy_npc_id": 15,
+  "dialogue": {
+    "greeting": "Welcome! What can I get you to drink?",
+    "default": "We serve the finest ale and spirits this side of the mountains.",
+    "goodbye": "Come back anytime, friend!"
+  },
+  "services": [
+    "vendor",
+    "tavern",
+    "food_and_drink"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

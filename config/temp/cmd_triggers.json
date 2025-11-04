@@ -1,0 +1,147 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine - Command Triggers",
+    "original_file": "data/cmd_triggers.xml",
+    "description": "Command triggers for puzzle-type room triggers",
+    "export_date": "2025-10-13T19:33:15.576627",
+    "total_triggers": 16
+  },
+  "_documentation": {
+    "description": "Command triggers are activated by PUZZLE-type triggers in rooms. When a player executes a specific command (e.g., 'say komi', 'pull lever'), the game checks if the room has a PUZZLE trigger with a matching command trigger ID. If found, the player sees the player_message and others in the room see the room_message.",
+    "fields": {
+      "trigger_id": "Unique identifier for this command trigger (referenced by room trigger v2 field)",
+      "command": "The exact command that triggers this (e.g., 'say komi', 'pull lever')",
+      "player_message": "Message displayed to the player executing the command. {0} is replaced with player name.",
+      "room_message": "Message displayed to other players in the room. {0} is replaced with triggering player name."
+    },
+    "usage": {
+      "room_trigger_linkage": "Room triggers with triggerType=PUZZLE reference these via the v2 field",
+      "command_matching": "Commands are matched case-insensitively with the exact phrase",
+      "message_formatting": "{0} placeholder is replaced with the triggering player's name"
+    }
+  },
+  "_statistics": {
+    "total_triggers": 16,
+    "trigger_id_range": {
+      "min": 1,
+      "max": 16
+    },
+    "command_types": {
+      "pull": 2,
+      "say": 5,
+      "push": 2,
+      "embrace": 1,
+      "move": 1,
+      "turn": 2,
+      "lower": 1,
+      "close": 1,
+      "straighten": 1
+    },
+    "command_breakdown": {
+      "say_commands": 5,
+      "pull_commands": 2,
+      "push_commands": 2,
+      "move_commands": 1,
+      "other_commands": 6
+    }
+  },
+  "command_triggers": [
+    {
+      "trigger_id": 1,
+      "command": "pull lever",
+      "player_message": "You pulled the lever.",
+      "room_message": "You notice {0} doing something out of the corner of your eye."
+    },
+    {
+      "trigger_id": 2,
+      "command": "say komi",
+      "player_message": "As the answer passes your lips, you feel the floor vibrate faintly.",
+      "room_message": "{0} whispers something, and you feel the floor vibrate faintly."
+    },
+    {
+      "trigger_id": 3,
+      "command": "push stone",
+      "player_message": "You push the protruding stone into it's recess...",
+      "room_message": null
+    },
+    {
+      "trigger_id": 4,
+      "command": "push stone",
+      "player_message": "As you push the protruding stone into it's recess, you feel the floor vibrate\nfaintly.",
+      "room_message": "You notice {0} doing something out of the corner of your eye, and feel the\nfloor vibrate faintly."
+    },
+    {
+      "trigger_id": 5,
+      "command": "say arok",
+      "player_message": "As the answer passes your lips, the northern wall slides silently into the\nceiling.",
+      "room_message": "{0} whispers something, and you feel the floor vibrate faintly."
+    },
+    {
+      "trigger_id": 6,
+      "command": "embrace princess",
+      "player_message": "You kiss the princess and her eyes flutter open. She springs from the bed,\ntakes a quick look around, and flees the room!",
+      "room_message": "You notice {0} doing something out of the corner of your eye. The princess\nsuddenly springs from the bed, takes a quick look around, and flees the\nroom!"
+    },
+    {
+      "trigger_id": 7,
+      "command": "pull lever",
+      "player_message": "As you pull the lever, a trap door opens up beneath you!",
+      "room_message": "{0} has just fallen into a trap door in the floor!"
+    },
+    {
+      "trigger_id": 8,
+      "command": "say cinders",
+      "player_message": "As the answer passes your lips a voice in your mind says: \"Correct...\nNow complete the riddle to gain passage...\"",
+      "room_message": "{0} whispers something, then pauses for a moment as if in deep thought..."
+    },
+    {
+      "trigger_id": 9,
+      "command": "say ether",
+      "player_message": "As the answer passes your lips, your surroundings fade...",
+      "room_message": "{0} whispers something, and vanishes!"
+    },
+    {
+      "trigger_id": 10,
+      "command": "move tapestry",
+      "player_message": "You pull the tapestry aside...",
+      "room_message": "You notice {0} doing something out of the corner of your eye."
+    },
+    {
+      "trigger_id": 11,
+      "command": "say dwarflord",
+      "player_message": "As the answer passes your lips, you hear a faint clicking sound.",
+      "room_message": "{0} whispers something..."
+    },
+    {
+      "trigger_id": 12,
+      "command": "turn anvil",
+      "player_message": "After a quarter turn clockwise, the anvil returns to it's previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye."
+    },
+    {
+      "trigger_id": 13,
+      "command": "lower arm",
+      "player_message": "After pulling down the arm of the statue, it returns to it's previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye."
+    },
+    {
+      "trigger_id": 14,
+      "command": "turn sceptre",
+      "player_message": "After rotating the statues' sceptre, it returns to its previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye."
+    },
+    {
+      "trigger_id": 15,
+      "command": "close jaws",
+      "player_message": "After closing the jaws of the statue of the statue, they return to their\nprevious position following a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye."
+    },
+    {
+      "trigger_id": 16,
+      "command": "straighten shield",
+      "player_message": "After straightening the shield, it returns to its previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye."
+    }
+  ]
+}

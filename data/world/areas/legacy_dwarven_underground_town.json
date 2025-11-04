@@ -1,0 +1,32 @@
+{
+  "id": "legacy_dwarven_underground_town",
+  "name": "Dwarven Underground Town",
+  "description": "Carved deep within the mountain halls, this underground dwarven settlement is a marvel of stonework and engineering. Glowing crystals illuminate the cavern streets, and the constant sound of hammers on anvils echoes through the stone passages.",
+  "level_range": [5, 15],
+  "climate": "underground",
+  "rooms": [
+    "dut_an_underground_plaza",
+    "dut_an_underground_plaza_1",
+    "dut_an_underground_plaza_2",
+    "dut_an_underground_plaza_3",
+    "dut_arena",
+    "dut_armor_shop",
+    "dut_equipment_shop",
+    "dut_guild_hall",
+    "dut_magic_shop",
+    "dut_tavern",
+    "dut_temple",
+    "dut_town_square",
+    "dut_weapon_shop"
+  ],
+  "notable_npcs": [
+    "gimble_tinkertop",
+    "grunk_ironhide",
+    "thorin_ironbeard",
+    "kael_crimsonmage",
+    "alderon_mastersorcerer",
+    "father_stoneheart",
+    "garth_thegiant"
+  ],
+  "quests": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "marcus_steelhand",
+  "name": "Marcus Steelhand",
+  "short_description": "a weapon shopkeeper",
+  "long_description": "The shop keeper is a small, but powerfully built man. He has light brown hair and a thich moustache. He has the manerisms of one who would be calm and relaxed in just about any situation.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "artisan",
+  "keywords": [
+    "marcus",
+    "steelhand",
+    "weapon",
+    "shopkeeper"
+  ],
+  "legacy_npc_id": 5,
+  "dialogue": {
+    "greeting": "Welcome to my weapon shop! Looking for a fine blade?",
+    "default": "Every weapon here is crafted with care and designed to serve you well in battle.",
+    "goodbye": "May your blade stay sharp!"
+  },
+  "services": [
+    "vendor",
+    "weapon_shop",
+    "repair"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

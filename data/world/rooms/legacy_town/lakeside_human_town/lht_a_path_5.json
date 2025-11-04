@@ -1,0 +1,14 @@
+{
+  "id": "lht_a_path_5",
+  "title": "A Path.",
+  "description": "You are standing on a path that leads into an equipment shop to the west, and to the town's northern plaza to the east. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "east": "lht_north_plaza",
+    "west": "lht_equipment_shop"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -79
+}

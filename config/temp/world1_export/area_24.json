@@ -1,0 +1,639 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine - World1 Area",
+    "area_id": 24,
+    "original_file": "area/world1.xml",
+    "description": "World1 area 24 with fully decoded flags, descriptions, and door parameters"
+  },
+  "_enumerations": {
+    "room_flags": {
+      "description": "Room flag bit vector meanings",
+      "flags": {
+        "1": "safe",
+        "2": "dark",
+        "4": "arena",
+        "8": "tavern",
+        "16": "private",
+        "32": "docks",
+        "64": "guild hall",
+        "128": "vault",
+        "256": "equipment shop",
+        "512": "temple",
+        "1024": "armor shop",
+        "2048": "weapon shop",
+        "4096": "magic shop",
+        "16384": "inn",
+        "32768": "permanent darkness"
+      }
+    },
+    "terrain_types": {
+      "description": "Terrain type definitions",
+      "types": {
+        "DUNGEON1": {
+          "index": 0,
+          "description": "Dungeon level 1"
+        },
+        "DUNGEON2": {
+          "index": 1,
+          "description": "Dungeon level 2"
+        },
+        "DUNGEON3": {
+          "index": 2,
+          "description": "Dungeon level 3"
+        },
+        "FIRE1": {
+          "index": 3,
+          "description": "Fire area level 1"
+        },
+        "FIRE2": {
+          "index": 4,
+          "description": "Fire area level 2"
+        },
+        "FOREST": {
+          "index": 5,
+          "description": "Forest"
+        },
+        "MOUNTAINS": {
+          "index": 6,
+          "description": "Mountains"
+        },
+        "SNOW": {
+          "index": 7,
+          "description": "Snow"
+        },
+        "SWAMP": {
+          "index": 8,
+          "description": "Swamp"
+        },
+        "ICE": {
+          "index": 9,
+          "description": "Ice"
+        },
+        "DESERT": {
+          "index": 10,
+          "description": "Desert"
+        },
+        "TOWN": {
+          "index": 11,
+          "description": "Town"
+        },
+        "JUNGLE": {
+          "index": 12,
+          "description": "Jungle"
+        },
+        "INVALID": {
+          "index": 13,
+          "description": "Invalid terrain"
+        },
+        "UNKNOWN": {
+          "index": 14,
+          "description": "Unknown terrain"
+        }
+      }
+    },
+    "service_levels": {
+      "description": "Shop quality levels",
+      "levels": {
+        "0": "none",
+        "1": "basic",
+        "2": "standard",
+        "3": "premium"
+      }
+    },
+    "runes": {
+      "description": "Rune progression system (player advancement)",
+      "progression": {
+        "0": "None",
+        "1": "White",
+        "2": "Yellow",
+        "3": "Green",
+        "4": "Blue",
+        "5": "Violet",
+        "6": "Red",
+        "7": "Orange",
+        "8": "Gold"
+      }
+    },
+    "exit_directions": {
+      "description": "Valid exit directions",
+      "directions": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest",
+        "up",
+        "down"
+      ]
+    },
+    "door_types": {
+      "description": "Door type documentation with parameter meanings",
+      "types": {
+        "HasRuneDoor": {
+          "description": "Requires player to have a specific rune to pass through",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Required rune index (must match exactly)",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "MinimumRuneDoor": {
+          "description": "Requires player to have at least a minimum rune level",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Minimum rune index required",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "PrivateRoomDoor": {
+          "description": "Limits number of players allowed in target room",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Logic type (0=equal, 1=less, 2=greater)",
+            "__v5": "Maximum number of players allowed",
+            "__v6": "Target room number"
+          }
+        },
+        "ItemKeyDoor": {
+          "description": "Requires player to have a specific item to pass",
+          "parameters": {
+            "__v0": "Key item VNUM (required to unlock)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Consume flag (0=keep key, 1=consume key)",
+            "__v5": "Message index for locked door",
+            "__v6": "Message index for unlocked door"
+          }
+        },
+        "LevelDoor": {
+          "description": "Requires player to be a specific level",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Required player level",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "ClassDoor": {
+          "description": "Requires player to be a specific class",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Required class index",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        }
+      }
+    },
+    "trigger_types": {
+      "description": "Room trigger type definitions",
+      "types": {
+        "NONE": {
+          "index": 0,
+          "description": "No trigger"
+        },
+        "TREASURE": {
+          "index": 1,
+          "description": "Treasure trigger (gold/items/runes)"
+        },
+        "TRAP": {
+          "index": 2,
+          "description": "Trap trigger (damages player)"
+        },
+        "TELEPORT": {
+          "index": 3,
+          "description": "Teleporter (moves player to another room)"
+        },
+        "PUZZLE": {
+          "index": 4,
+          "description": "Puzzle trigger (command-based interaction)"
+        },
+        "Invalid": {
+          "index": -1,
+          "description": "Invalid trigger type"
+        }
+      }
+    }
+  },
+  "_statistics": {
+    "total_rooms": 8,
+    "room_id_range": {
+      "min": 3171,
+      "max": 3178
+    },
+    "total_npcs": 0,
+    "total_lairs": 0,
+    "total_doors": 0,
+    "total_triggers": 4,
+    "terrain_breakdown": {
+      "UNKNOWN": 8
+    },
+    "rooms_by_flag": {
+      "permanent darkness": 8
+    },
+    "triggers_by_type": {
+      "PUZZLE": 1,
+      "TELEPORT": 3
+    }
+  },
+  "area_type": "World1Area",
+  "area_name": "World1 Area 24",
+  "rooms": [
+    {
+      "room_id": 3171,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an eerie greenish light. The exits are to the east and west. There is light to the east.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3172,
+          "direction": "north"
+        },
+        {
+          "to_room": 3178,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 11,
+            "v4": 3174,
+            "v5": 1731,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 11,
+            "v4": 3174,
+            "v5": 1731,
+            "v6": 0,
+            "is_active": true
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 3172,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're at the corner of a stone passage leading north and east. On the wall nearby is a small lever marked with a symbol you don't recognize.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3173,
+          "direction": "north"
+        },
+        {
+          "to_room": 3171,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3173,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're in a stone passage leading north and south.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3174,
+          "direction": "east"
+        },
+        {
+          "to_room": 3172,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3174,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're at the corner of a stone passage leading east and south.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3175,
+          "direction": "east"
+        },
+        {
+          "to_room": 3173,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TELEPORT",
+            "index": 3,
+            "description": "Teleporter (moves player to another room)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 3179,
+            "v3": 4,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "target_room": 3179,
+            "teleporter_id": 4,
+            "is_enabled": false
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "TELEPORT",
+            "index": 3,
+            "description": "Teleporter (moves player to another room)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 3121,
+            "v3": 4,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "target_room": 3121,
+            "teleporter_id": 4,
+            "is_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 3175,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're in a stone passage leading east and west.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3176,
+          "direction": "south"
+        },
+        {
+          "to_room": 3174,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3176,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're at the corner of a stone passage leading north and east. On the wall nearby is a small lever marked with a symbol you don't recognize.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3175,
+          "direction": "north"
+        },
+        {
+          "to_room": 3177,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TELEPORT",
+            "index": 3,
+            "description": "Teleporter (moves player to another room)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 3121,
+            "v3": 4,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "target_room": 3121,
+            "teleporter_id": 4,
+            "is_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 3177,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're at the corner of a stone passage leading south and west.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3176,
+          "direction": "north"
+        },
+        {
+          "to_room": 3178,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3178,
+      "short_description": "You're in a stone passage.",
+      "long_description": "You're at the corner of a stone passage leading east and south.",
+      "room_flags": {
+        "raw_value": 32768,
+        "decoded_flags": [
+          "permanent darkness"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3177,
+          "direction": "east"
+        },
+        {
+          "to_room": 3171,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ]
+}

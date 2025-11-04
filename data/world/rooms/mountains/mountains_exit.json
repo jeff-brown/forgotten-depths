@@ -1,0 +1,17 @@
+{
+  "id": "mountains_exit",
+  "title": "Mountain Pass Exit",
+  "description": "The steep mountain trail levels out here as it descends toward civilization. To the south, you can see the impressive North Plaza of the Main Human Village, with its ornate temple and bustling guild hall. Behind you to the north, the rocky mountain path climbs back into the peaks. The transition from wild mountain terrain to the well-maintained plaza is stark and welcoming.",
+  "area_id": "mountains",
+  "is_safe": true,
+  "light_level": 0.8,
+  "exits": {
+    "north": "mountains_233",
+    "south": "mhv_north_plaza"
+  },
+  "features": [
+    "mountain_trail",
+    "rocky_ground",
+    "vista_point"
+  ]
+}

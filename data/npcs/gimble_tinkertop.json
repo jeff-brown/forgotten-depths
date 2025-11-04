@@ -1,0 +1,60 @@
+{
+  "id": "gimble_tinkertop",
+  "name": "Gimble Tinkertop",
+  "short_description": "a gnome equipment shopkeeper",
+  "long_description": "The shop keeper is an old gnome wearing a dark green tunic and trousers, and a grimy leather apron. He has a white beard and bushy white eyebrows from beneath which a pair of deep set brown eyes peer out at you.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "gnome",
+  "class": "merchant",
+  "keywords": [
+    "gimble",
+    "tinkertop",
+    "gnome",
+    "equipment",
+    "shopkeeper"
+  ],
+  "legacy_npc_id": 0,
+  "dialogue": {
+    "greeting": "Welcome! How can I help you today?",
+    "default": "We carry everything an adventurer needs - supplies, provisions, and more.",
+    "goodbye": "Come back soon!"
+  },
+  "services": [
+    "vendor",
+    "general_store"
+  ],
+  "shop": {
+    "type": "general_store",
+    "buy_rate": 0.5,
+    "sell_rate": 1.0,
+    "specialties": ["adventuring_gear", "camping_supplies", "provisions", "tools"],
+    "inventory": [
+      {"item_id": "rope", "price": 15, "stock": -1},
+      {"item_id": "torch", "price": 3, "stock": -1},
+      {"item_id": "lantern", "price": 30, "stock": -1},
+      {"item_id": "candle", "price": 2, "stock": -1},
+      {"item_id": "lamp_oil", "price": 8, "stock": -1},
+      {"item_id": "backpack", "price": 25, "stock": -1},
+      {"item_id": "waterskin", "price": 12, "stock": -1},
+      {"item_id": "bedroll", "price": 18, "stock": -1},
+      {"item_id": "tinderbox", "price": 10, "stock": -1},
+      {"item_id": "rations", "price": 8, "stock": -1},
+      {"item_id": "bread", "price": 6, "stock": -1},
+      {"item_id": "cheese", "price": 10, "stock": -1},
+      {"item_id": "dried_meat", "price": 12, "stock": -1},
+      {"item_id": "apple", "price": 3, "stock": -1},
+      {"item_id": "orange", "price": 4, "stock": -1}
+    ]
+  },
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "lht_north_plaza",
+  "title": "The North Plaza.",
+  "description": "You are standing in a large open plaza at the north end of town surrounded by shade trees. A path to the east leads to a plaza in the eastern end of town. To the west, a well trodden path leads to town's equipment shop. A third path to the south leads to a plaza in the southern end of town, and a fourth path leads to an inn to the southwest.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "north": "lht_a_path_7",
+    "east": "lht_a_path_4",
+    "south": "lht_a_path_6",
+    "southwest": "lht_a_path_3",
+    "west": "lht_a_path_5"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -82
+}

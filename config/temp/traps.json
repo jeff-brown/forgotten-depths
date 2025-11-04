@@ -1,0 +1,97 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine",
+    "original_file": "data/traps.dat",
+    "description": "Trap definitions with damage and messages"
+  },
+  "_documentation": {
+    "trap_id": "Unique identifier for the trap",
+    "message": "Message shown when trap is triggered",
+    "min_damage": "Minimum damage dealt by trap",
+    "max_damage": "Maximum damage dealt by trap",
+    "difficulty": "Difficulty to detect/disarm the trap"
+  },
+  "traps": [
+    {
+      "trap_id": 0,
+      "message": "A spiked trap catches your foot and pain shoots up your leg!",
+      "min_damage": 10,
+      "max_damage": 30,
+      "difficulty": 0,
+      "description": "Trap that deals 10-30 damage (difficulty 0)"
+    },
+    {
+      "trap_id": 1,
+      "message": "Several crossbow bolts fire from holes in the walls, striking you!",
+      "min_damage": 20,
+      "max_damage": 60,
+      "difficulty": 10,
+      "description": "Trap that deals 20-60 damage (difficulty 10)"
+    },
+    {
+      "trap_id": 2,
+      "message": "You fall to the ground with an agonizing impact!",
+      "min_damage": 30,
+      "max_damage": 90,
+      "difficulty": 0,
+      "description": "Trap that deals 30-90 damage (difficulty 0)"
+    },
+    {
+      "trap_id": 3,
+      "message": "A scything blade slices into your stomach!",
+      "min_damage": 40,
+      "max_damage": 120,
+      "difficulty": 10,
+      "description": "Trap that deals 40-120 damage (difficulty 10)"
+    },
+    {
+      "trap_id": 4,
+      "message": "Several large stones fall on you from above!",
+      "min_damage": 50,
+      "max_damage": 150,
+      "difficulty": 20,
+      "description": "Trap that deals 50-150 damage (difficulty 20)"
+    },
+    {
+      "trap_id": 5,
+      "message": "A ball of flame explodes from an opening in the wall and engulfs you!",
+      "min_damage": 60,
+      "max_damage": 180,
+      "difficulty": 30,
+      "description": "Trap that deals 60-180 damage (difficulty 30)"
+    },
+    {
+      "trap_id": 6,
+      "message": "A huge stone block slams down on you from above!",
+      "min_damage": 70,
+      "max_damage": 210,
+      "difficulty": 40,
+      "description": "Trap that deals 70-210 damage (difficulty 40)"
+    },
+    {
+      "trap_id": 7,
+      "message": "The walls slam together, nearly maiming you!",
+      "min_damage": 250,
+      "max_damage": 500,
+      "difficulty": 50,
+      "description": "Trap that deals 250-500 damage (difficulty 50)"
+    },
+    {
+      "trap_id": 8,
+      "message": "Rotating bladed poles tear your flesh!",
+      "min_damage": 50,
+      "max_damage": 150,
+      "difficulty": 60,
+      "description": "Trap that deals 50-150 damage (difficulty 60)"
+    },
+    {
+      "trap_id": 9,
+      "message": "Huge stone wheels roll over you from slots in the walls!",
+      "min_damage": 100,
+      "max_damage": 300,
+      "difficulty": 60,
+      "description": "Trap that deals 100-300 damage (difficulty 60)"
+    }
+  ]
+}

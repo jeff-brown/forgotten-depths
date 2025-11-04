@@ -1,0 +1,37 @@
+{
+  "id": "kael_crimsonmage",
+  "name": "Kael the Crimson",
+  "short_description": "a crimson mage",
+  "long_description": "The mage wears red robes and radiates an aura of power and confidence. He has flowing white hair and a long white beard, though his face does not appear to show the age he would have to be to have such. Tatooed upon his right forearm is a crimson sigil which looks like a crecent moon.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "sorcerer",
+  "keywords": [
+    "kael",
+    "the",
+    "crimson",
+    "crimson",
+    "mage"
+  ],
+  "legacy_npc_id": 6,
+  "dialogue": {
+    "greeting": "Welcome, seeker of arcane knowledge. What magical wares interest you?",
+    "default": "These items are imbued with powerful enchantments. Handle them with care.",
+    "goodbye": "May the weave guide you safely."
+  },
+  "services": [
+    "vendor",
+    "magic_shop"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mountains_219",
+  "title": "You're in a cave.",
+  "description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an eerie greenish light. The exits are to the north, northwest, and southeast.",
+  "area_id": "mountains",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "north": "mountains_3015",
+    "southeast": "mountains_218",
+    "northwest": "mountains_220"
+  }
+}

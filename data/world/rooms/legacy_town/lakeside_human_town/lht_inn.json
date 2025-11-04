@@ -1,0 +1,20 @@
+{
+  "id": "lht_inn",
+  "title": "The Inn.",
+  "description": "You are in the town's inn. The smoke from the many oil lamps decrease visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the inn's patrons eat, drink, and generally enjoy themselves. The bar stands along the north wall and a door to the kitchen lies to the southwest, and a staircase leads up to the inn's rooms. The only visibile exit lies to the northeast.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "northeast": "lht_a_path_3"
+  },
+  "is_safe": true,
+  "is_tavern": true,
+  "light_level": "bright",
+  "npcs": [
+    "garth_thegiant",
+    "elara_darkhair"
+  ],
+  "shop_type": "inn",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -80
+}

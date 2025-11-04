@@ -1,0 +1,36 @@
+{
+  "id": "captain_blackbeard",
+  "name": "Captain Blackbeard",
+  "short_description": "a ship's captain",
+  "long_description": "The ship's captain is a grizzly old sailor with many a scar, several tatoos and an unkempt manner about him. His worn clothes appear to have seen just about every port there could possibly be, and he smells of stale sweat and cheap rum.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "sailor",
+  "keywords": [
+    "captain",
+    "blackbeard",
+    "ships",
+    "captain"
+  ],
+  "legacy_npc_id": 12,
+  "dialogue": {
+    "greeting": "Ahoy! Looking for passage?",
+    "default": "I've sailed every sea from here to the frozen north. Name your destination.",
+    "goodbye": "Fair winds and following seas!"
+  },
+  "services": [
+    "transport",
+    "ferry"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

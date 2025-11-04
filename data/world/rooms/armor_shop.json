@@ -1,0 +1,26 @@
+{
+  "id": "armor_shop",
+  "title": "Helena's Armory",
+  "description": "This well-organized armory displays an impressive array of protective gear. Suits of armor stand at attention along the walls, ranging from simple leather cuirasses to gleaming platemail. The scent of leather oil and metal polish fills the air. Helena, the skilled armorer, examines each piece with a critical eye, ensuring only the finest protection leaves her shop.",
+  "area_id": "starter_town",
+  "exits": {
+    "northeast": "market_square"
+  },
+  "items": [],
+  "npcs": [
+    "armorer_helena"
+  ],
+  "features": [
+    "armor_stands",
+    "workbench",
+    "polishing_station",
+    "leather_rack"
+  ],
+  "is_safe": true,
+  "light_level": "bright",
+  "shop": {
+    "type": "armorer",
+    "buy_rate": 0.5,
+    "sell_rate": 1.0
+  }
+}

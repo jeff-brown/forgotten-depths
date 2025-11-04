@@ -1,0 +1,126 @@
+{
+  "abilities": [
+    {
+      "id": "eldritch_power",
+      "name": "Eldritch Power",
+      "type": "passive",
+      "min_level": 1,
+      "description": "Spell damage increased by 15%.",
+      "trigger": "on_spell_damage",
+      "effect": {
+        "type": "spell_damage_bonus",
+        "value": 0.15
+      }
+    },
+    {
+      "id": "dark_resilience",
+      "name": "Dark Resilience",
+      "type": "passive",
+      "min_level": 5,
+      "description": "Gain 5 damage resistance (reduce all damage by 5).",
+      "trigger": "on_take_damage",
+      "effect": {
+        "type": "flat_damage_reduction",
+        "value": 5
+      }
+    },
+    {
+      "id": "souls_harvest",
+      "name": "Soul's Harvest",
+      "type": "passive",
+      "min_level": 8,
+      "description": "Killing enemies restores 10% of your max HP.",
+      "trigger": "on_kill_mob",
+      "effect": {
+        "type": "heal_on_kill",
+        "value": 0.1
+      }
+    },
+    {
+      "id": "eldritch_blast",
+      "name": "Eldritch Blast",
+      "type": "active",
+      "command": "blast",
+      "aliases": [
+        "eb"
+      ],
+      "min_level": 1,
+      "cooldown": 3,
+      "description": "Fire a beam of crackling energy for 3d6 force damage.",
+      "requirements": {
+        "stat": "intellect",
+        "min_value": 12
+      },
+      "effect": {
+        "type": "spell_attack",
+        "damage": "3d6",
+        "damage_type": "force",
+        "mana_cost": 5
+      }
+    },
+    {
+      "id": "hex",
+      "name": "Hex",
+      "type": "active",
+      "command": "hex",
+      "aliases": [
+        "curse"
+      ],
+      "min_level": 3,
+      "cooldown": 30,
+      "description": "Curse a target, causing them to take +25% damage for 20 seconds.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 14
+      },
+      "effect": {
+        "type": "debuff",
+        "damage_vulnerability": 0.25,
+        "duration": 20,
+        "mana_cost": 10
+      }
+    },
+    {
+      "id": "summon_demon",
+      "name": "Summon Demon",
+      "type": "active",
+      "command": "summondemon",
+      "aliases": [
+        "demon",
+        "summon"
+      ],
+      "min_level": 8,
+      "cooldown": 300,
+      "description": "Summon a lesser demon to fight for you for 90 seconds.",
+      "requirements": {
+        "stat": "intellect",
+        "min_value": 18
+      },
+      "effect": {
+        "type": "summon_pet",
+        "pet_type": "lesser_demon",
+        "duration": 90,
+        "pet_level_mult": 0.8,
+        "mana_cost": 30
+      }
+    },
+    {
+      "id": "dark_pact",
+      "name": "Dark Pact",
+      "type": "active",
+      "command": "darkpact",
+      "aliases": [
+        "pact"
+      ],
+      "min_level": 12,
+      "cooldown": 180,
+      "description": "Sacrifice 30% of your HP to gain +50% spell damage for 25 seconds.",
+      "effect": {
+        "type": "sacrifice_buff",
+        "hp_cost_percent": 0.3,
+        "spell_damage_bonus": 0.5,
+        "duration": 25
+      }
+    }
+  ]
+}

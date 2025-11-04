@@ -1,0 +1,46 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine",
+    "original_file": "data/teleporters.dat",
+    "description": "Teleporter effects and messages"
+  },
+  "_documentation": {
+    "teleporter_id": "Unique identifier for the teleporter",
+    "player_message": "Message shown to teleporting player",
+    "arrive_message": "Message shown to others when player arrives (may contain {0} for player name)",
+    "depart_message": "Message shown to others when player departs (may contain {0} for player name)"
+  },
+  "teleporters": [
+    {
+      "teleporter_id": 0,
+      "player_message": "You just fell through a trap door in the floor!",
+      "arrive_message": "{0} has just fallen into the room through a trap door in the ceiling!",
+      "depart_message": "{0} has just fallen through a trap door in the floor!"
+    },
+    {
+      "teleporter_id": 1,
+      "player_message": "A sudden flash of light momentarily blinds you!",
+      "arrive_message": "{0} has just appeared in a blinding flash of light!",
+      "depart_message": "{0} has just vanished in a blinding flash of light!"
+    },
+    {
+      "teleporter_id": 2,
+      "player_message": "A cloud of thick black smoke suddenly engulfs you!",
+      "arrive_message": "{0} has just appeared in a puff of thick black smoke!",
+      "depart_message": "{0} has just vanished in a puff of thick black smoke!"
+    },
+    {
+      "teleporter_id": 3,
+      "player_message": "A spring loaded pressure plate rapidly lifts you through the ceiling!",
+      "arrive_message": "{0} just appeared suddenly through an aperature in the floor!",
+      "depart_message": "{0} was just lifted rapidly through the ceiling on a column of stone!"
+    },
+    {
+      "teleporter_id": 4,
+      "player_message": "Your surroundings momentarily blur...",
+      "arrive_message": "{0} just faded into view...",
+      "depart_message": "{0} just faded from view..."
+    }
+  ]
+}

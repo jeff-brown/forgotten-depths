@@ -1,0 +1,15 @@
+{
+  "source_file": "area_03_mountains.json",
+  "total_rooms": 51,
+  "rooms_with_lairs": 3,
+  "rooms_with_locked_exits": 0,
+  "rooms_with_triggers": 0,
+  "area_id": "mountains",
+  "terrain": "MOUNTAINS",
+  "notes": [
+    "All mob_vnums need to be mapped to actual mob IDs",
+    "All item_vnums need to be mapped to actual item IDs",
+    "Key vnums in locked doors need to be mapped to item IDs",
+    "Room connections may reference other zones"
+  ]
+}

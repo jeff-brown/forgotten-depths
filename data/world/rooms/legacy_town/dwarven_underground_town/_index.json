@@ -1,0 +1,20 @@
+{
+  "town_name": "Dwarven Underground Town",
+  "room_count": 13,
+  "room_ids": [
+    "dut_an_underground_plaza",
+    "dut_an_underground_plaza_1",
+    "dut_an_underground_plaza_2",
+    "dut_an_underground_plaza_3",
+    "dut_arena",
+    "dut_armor_shop",
+    "dut_equipment_shop",
+    "dut_guild_hall",
+    "dut_magic_shop",
+    "dut_tavern",
+    "dut_temple",
+    "dut_town_square",
+    "dut_weapon_shop"
+  ],
+  "source": "Ether MUD Engine - Town Area"
+}

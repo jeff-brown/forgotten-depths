@@ -1,0 +1,169 @@
+{
+  "abilities": [
+    {
+      "id": "natures_blessing",
+      "name": "Nature's Blessing",
+      "type": "passive",
+      "min_level": 1,
+      "description": "Healing spells restore 20% more HP.",
+      "trigger": "on_heal_spell",
+      "effect": {
+        "type": "healing_bonus",
+        "value": 0.2
+      }
+    },
+    {
+      "id": "bark_skin",
+      "name": "Bark Skin",
+      "type": "passive",
+      "min_level": 5,
+      "description": "Your skin hardens like tree bark, granting +3 armor class.",
+      "trigger": "on_armor_calculation",
+      "effect": {
+        "type": "armor_bonus",
+        "value": 3
+      }
+    },
+    {
+      "id": "rejuvenation",
+      "name": "Rejuvenation",
+      "type": "passive",
+      "min_level": 8,
+      "description": "Regenerate 2% HP every 10 seconds while out of combat.",
+      "trigger": "on_tick",
+      "requirement": {
+        "in_combat": false
+      },
+      "effect": {
+        "type": "health_regen",
+        "value": 0.02,
+        "tick_rate": 10
+      }
+    },
+    {
+      "id": "entangle",
+      "name": "Entangle",
+      "type": "active",
+      "command": "entangle",
+      "aliases": [
+        "root",
+        "snare"
+      ],
+      "min_level": 1,
+      "cooldown": 30,
+      "description": "Summon vines to root an enemy in place for 2 rounds.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 14
+      },
+      "effect": {
+        "type": "root",
+        "duration": 2,
+        "mana_cost": 15
+      }
+    },
+    {
+      "id": "wild_shape",
+      "name": "Wild Shape",
+      "type": "active",
+      "command": "wildshape",
+      "aliases": [
+        "shapeshift",
+        "bear",
+        "wolf",
+        "cat"
+      ],
+      "min_level": 6,
+      "cooldown": 120,
+      "description": "Transform into an animal form for 60 seconds. Bear: +50% HP, +25% damage. Wolf: +30% speed, +15% crit. Cat: +40% dodge.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 16
+      },
+      "effect": {
+        "type": "shapeshift",
+        "duration": 60,
+        "forms": {
+          "bear": {
+            "hp_bonus": 0.5,
+            "damage_bonus": 0.25
+          },
+          "wolf": {
+            "speed_bonus": 0.3,
+            "crit_bonus": 0.15
+          },
+          "cat": {
+            "dodge_bonus": 0.4
+          }
+        }
+      }
+    },
+    {
+      "id": "moonfire",
+      "name": "Moonfire",
+      "type": "active",
+      "command": "moonfire",
+      "aliases": [
+        "mf"
+      ],
+      "min_level": 3,
+      "cooldown": 10,
+      "description": "Blast the target with lunar energy for 2d8 damage, then burn for 1d4 per round for 3 rounds.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 12
+      },
+      "effect": {
+        "type": "damage_over_time",
+        "initial_damage": "2d8",
+        "dot_damage": "1d4",
+        "dot_duration": 3,
+        "mana_cost": 20
+      }
+    },
+    {
+      "id": "natures_fury",
+      "name": "Nature's Fury",
+      "type": "active",
+      "command": "naturesfury",
+      "aliases": [
+        "fury",
+        "wrath"
+      ],
+      "min_level": 10,
+      "cooldown": 90,
+      "description": "Call upon nature's wrath to attack all enemies in the room with thorns and lightning for 3d6 damage each.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 20
+      },
+      "effect": {
+        "type": "aoe_spell",
+        "damage": "3d6",
+        "damage_type": "nature",
+        "targets": "all_enemies",
+        "mana_cost": 40
+      }
+    },
+    {
+      "id": "tranquility",
+      "name": "Tranquility",
+      "type": "active",
+      "command": "tranquility",
+      "aliases": [
+        "peace"
+      ],
+      "min_level": 12,
+      "cooldown": 180,
+      "description": "Channel nature's peace to heal yourself for 50% of max HP over 6 seconds. Breaks if you attack or take damage.",
+      "effect": {
+        "type": "channeled_heal",
+        "hp_percent": 0.5,
+        "duration": 6,
+        "breaks_on_damage": true,
+        "breaks_on_attack": true,
+        "mana_cost": 50
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "mhv_docks",
+  "title": "The Docks.",
+  "description": "You are standing on the docks. The water from the lake laps quietly against the docks making the peaceful scene on the lake all that more serene. An ornately carved marble archway exits through the town wall to the south into the guild hall.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "south": "mhv_guild_hall"
+  },
+  "is_safe": true,
+  "is_docks": true,
+  "light_level": "bright",
+  "npcs": [
+    "captain_blackbeard"  
+  ],
+  "terrain": "town",
+  "legacy_room_id": -89
+}

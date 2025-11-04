@@ -1,0 +1,101 @@
+{
+  "id": "thorin_ironbeard",
+  "name": "Thorin Ironbeard",
+  "short_description": "a dwarven armor shopkeeper",
+  "long_description": "The shop keeper is a tough looking dwarf wearing a fine suit of chainmail. He has a thick head of unruly brown hair and an unkempt beard. He seems to be very direct and has a brusque manner about him.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "dwarf",
+  "class": "artisan",
+  "keywords": [
+    "thorin",
+    "ironbeard",
+    "dwarven",
+    "armor",
+    "shopkeeper"
+  ],
+  "legacy_npc_id": 2,
+  "dialogue": {
+    "greeting": "Welcome! Need some quality armor to protect yourself?",
+    "default": "Good armor can mean the difference between life and death. Take your time choosing.",
+    "goodbye": "Stay safe out there!"
+  },
+  "services": [
+    "vendor",
+    "armor_shop",
+    "repair"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  },
+  "shop": {
+    "type": "armor_shop",
+    "buy_rate": 0.4,
+    "sell_markup": 1.5,
+    "inventory": [
+      {
+        "item_id": "cloak",
+        "stock": -1
+      },
+      {
+        "item_id": "green_tunic",
+        "stock": -1
+      },
+      {
+        "item_id": "leather_armor",
+        "stock": -1
+      },
+      {
+        "item_id": "cloth_robe",
+        "stock": -1
+      },
+      {
+        "item_id": "robes",
+        "stock": -1
+      },
+      {
+        "item_id": "cuirass",
+        "stock": -1
+      },
+      {
+        "item_id": "breastplate",
+        "stock": -1
+      },
+      {
+        "item_id": "rusted_plate",
+        "stock": -1
+      },
+      {
+        "item_id": "ringmail",
+        "stock": -1
+      },
+      {
+        "item_id": "chainmail",
+        "stock": -1
+      },
+      {
+        "item_id": "scalemail",
+        "stock": -1
+      },
+      {
+        "item_id": "champion_armor",
+        "stock": -1
+      },
+      {
+        "item_id": "bandmail",
+        "stock": -1
+      },
+      {
+        "item_id": "platemail",
+        "stock": -1
+      }
+    ]
+  }
+}

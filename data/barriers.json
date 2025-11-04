@@ -1,0 +1,100 @@
+{
+  "barriers": {
+    "oak_door": {
+      "barrier_id": 1,
+      "name": "Oak Door",
+      "type": "locked_door",
+      "locked_message": "The locked oak door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the oak door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the oak door.",
+      "difficulty": 0,
+      "material": "oak"
+    },
+    "iron_door": {
+      "barrier_id": 2,
+      "name": "Iron Door",
+      "type": "locked_door",
+      "locked_message": "The locked iron door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the iron door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the iron door.",
+      "difficulty": 35,
+      "material": "iron"
+    },
+    "bronze_door": {
+      "barrier_id": 3,
+      "name": "Bronze Door",
+      "type": "locked_door",
+      "locked_message": "The locked bronze door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the bronze door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the bronze door.",
+      "difficulty": 25,
+      "material": "bronze"
+    },
+    "stone_door": {
+      "barrier_id": 4,
+      "name": "Stone Door",
+      "type": "locked_door",
+      "locked_message": "The locked stone door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the stone door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the stone door.",
+      "difficulty": 15,
+      "material": "stone"
+    },
+    "brass_door": {
+      "barrier_id": 5,
+      "name": "Brass Door",
+      "type": "locked_door",
+      "locked_message": "The locked brass door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the brass door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the brass door.",
+      "difficulty": 20,
+      "material": "brass"
+    },
+    "pit": {
+      "barrier_id": 6,
+      "name": "Pit",
+      "type": "obstacle",
+      "locked_message": "The walls of this pit are too steep to climb unaided.",
+      "unlocked_message": "You climb out of the pit using your {0}.",
+      "rogue_message": "Your rogue abilities allow you to climb out of the pit.",
+      "difficulty": 0
+    },
+    "chasm": {
+      "barrier_id": 7,
+      "name": "Chasm",
+      "type": "obstacle",
+      "locked_message": "The wide chasm prevents your exit in that direction.",
+      "unlocked_message": "",
+      "rogue_message": "",
+      "difficulty": 0
+    },
+    "mystical_force": {
+      "barrier_id": 8,
+      "name": "Mystical Force",
+      "type": "magical_barrier",
+      "locked_message": "A mystical force prevents your exit in that direction.",
+      "unlocked_message": "",
+      "rogue_message": "",
+      "difficulty": 0
+    },
+    "level_barrier": {
+      "barrier_id": 9,
+      "name": "Level Barrier",
+      "type": "progression_barrier",
+      "locked_message": "You have progressed beyond the need to go there.",
+      "unlocked_message": "",
+      "rogue_message": "",
+      "difficulty": 0
+    },
+    "ironwood_door": {
+      "barrier_id": 10,
+      "name": "Ironwood Door",
+      "type": "locked_door",
+      "locked_message": "The locked ironwood door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the ironwood door and allows you to pass!",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the ironwood door!",
+      "difficulty": 60,
+      "material": "ironwood"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "father_stoneheart",
+  "name": "Father Stoneheart",
+  "short_description": "a grey robed priest",
+  "long_description": "The dwarven priest wears grey robes. He has an air of peace and assurance about him. Around his neck he wears a heavy chain which supports a large iron talisman.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "dwarf",
+  "class": "cleric",
+  "keywords": [
+    "father",
+    "stoneheart",
+    "grey",
+    "robed",
+    "priest"
+  ],
+  "legacy_npc_id": 13,
+  "dialogue": {
+    "greeting": "Blessings upon you, traveler. How may I serve you today?",
+    "default": "The divine light watches over all who walk in righteousness.",
+    "goodbye": "May the gods guide your path."
+  },
+  "services": [
+    "temple",
+    "healing",
+    "resurrection"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

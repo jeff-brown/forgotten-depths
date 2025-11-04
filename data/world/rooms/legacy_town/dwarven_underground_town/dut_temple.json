@@ -1,0 +1,19 @@
+{
+  "id": "dut_temple",
+  "title": "The Temple.",
+  "description": "You are now in the main entry hall of a great temple. Huge reddish stone columns stretch to the ceiling some 50' overhead. The stone floor is made up of intricately engraved flagstones. Heavy cloth tapestries depicting various scenes of dwarven religious cerimonies block your view into the other areas of the temple. Grey robed priests and acolytes move here and there going about their daily duties. An ornate archway exits to the west.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "west": "dut_an_underground_plaza"
+  },
+  "is_safe": true,
+  "is_temple": true,
+  "light_level": "bright",
+  "npcs": [
+    "father_stoneheart"
+  ],
+  "shop_type": "temple",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -59
+}

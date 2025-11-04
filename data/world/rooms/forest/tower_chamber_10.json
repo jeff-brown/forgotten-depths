@@ -1,0 +1,24 @@
+{
+  "id": "tower_chamber_10",
+  "title": "You're in a vaulted chamber.",
+  "description": "You are standing in a vaulted chamber adorned with black marble columns and arches. The archway exits to the south.",
+  "area_id": "forest",
+  "exits": {
+    "south": "tower_hallway_58"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 1087,
+  "lairs": [
+    {
+      "mob_id": "griffon",
+      "respawn_time": 300,
+      "max_mobs": 1
+    },
+    {
+      "mob_id": "sorceress",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
+}

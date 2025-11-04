@@ -1,0 +1,19 @@
+{
+  "id": "mhv_temple",
+  "title": "The Temple.",
+  "description": "You are now in the main entry hall of a great temple. Huge black marble columns veined with platinum stretch to the ceiling some 100' overhead. The paterns in the tile floor are so ornate and complex as to be nearly impossible to follow or comprehend. Many black silk tapestries depicting various scenes of a religious or magical nature block your view into the many other areas of the temple. Blue robed priests and acolytes move here and there going about their daily duties. The exit is to the east.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "east": "mhv_north_plaza"
+  },
+  "is_safe": true,
+  "is_temple": true,
+  "light_level": "bright",
+  "npcs": [
+    "brother_elias"
+  ],
+  "shop_type": "temple",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -96
+}

@@ -1,0 +1,13 @@
+{
+  "id": "tower_hallway_36",
+  "title": "You're in a marble hallway.",
+  "description": "You are standing in a marble hallway. The walls here are of dull black stone, while the floor is of black marble run through with swirls of silver. The hallway continues to the north and south.",
+  "area_id": "forest",
+  "exits": {
+    "north": "tower_hallway_35",
+    "south": "tower_hallway_37"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 1063
+}

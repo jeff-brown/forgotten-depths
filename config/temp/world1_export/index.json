@@ -1,0 +1,250 @@
+{
+  "world_name": "World1",
+  "total_areas": 27,
+  "total_rooms": 4065,
+  "areas": [
+    {
+      "area_id": 1,
+      "file": "area_01.json",
+      "room_count": 1,
+      "room_id_range": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "area_id": 2,
+      "file": "area_02.json",
+      "room_count": 182,
+      "room_id_range": {
+        "min": 1,
+        "max": 182
+      }
+    },
+    {
+      "area_id": 3,
+      "file": "area_03.json",
+      "room_count": 649,
+      "room_id_range": {
+        "min": 183,
+        "max": 4064
+      }
+    },
+    {
+      "area_id": 4,
+      "file": "area_04.json",
+      "room_count": 13,
+      "room_id_range": {
+        "min": 485,
+        "max": 497
+      }
+    },
+    {
+      "area_id": 5,
+      "file": "area_05.json",
+      "room_count": 30,
+      "room_id_range": {
+        "min": 553,
+        "max": 677
+      }
+    },
+    {
+      "area_id": 6,
+      "file": "area_06.json",
+      "room_count": 11,
+      "room_id_range": {
+        "min": 564,
+        "max": 574
+      }
+    },
+    {
+      "area_id": 7,
+      "file": "area_07.json",
+      "room_count": 46,
+      "room_id_range": {
+        "min": 575,
+        "max": 622
+      }
+    },
+    {
+      "area_id": 8,
+      "file": "area_08.json",
+      "room_count": 1,
+      "room_id_range": {
+        "min": 604,
+        "max": 604
+      }
+    },
+    {
+      "area_id": 9,
+      "file": "area_09.json",
+      "room_count": 18,
+      "room_id_range": {
+        "min": 623,
+        "max": 641
+      }
+    },
+    {
+      "area_id": 10,
+      "file": "area_10.json",
+      "room_count": 19,
+      "room_id_range": {
+        "min": 642,
+        "max": 660
+      }
+    },
+    {
+      "area_id": 11,
+      "file": "area_11.json",
+      "room_count": 46,
+      "room_id_range": {
+        "min": 678,
+        "max": 723
+      }
+    },
+    {
+      "area_id": 12,
+      "file": "area_12.json",
+      "room_count": 31,
+      "room_id_range": {
+        "min": 724,
+        "max": 800
+      }
+    },
+    {
+      "area_id": 13,
+      "file": "area_13.json",
+      "room_count": 89,
+      "room_id_range": {
+        "min": 754,
+        "max": 843
+      }
+    },
+    {
+      "area_id": 14,
+      "file": "area_14.json",
+      "room_count": 330,
+      "room_id_range": {
+        "min": 844,
+        "max": 1246
+      }
+    },
+    {
+      "area_id": 15,
+      "file": "area_15.json",
+      "room_count": 216,
+      "room_id_range": {
+        "min": 1232,
+        "max": 1458
+      }
+    },
+    {
+      "area_id": 16,
+      "file": "area_16.json",
+      "room_count": 1575,
+      "room_id_range": {
+        "min": 1464,
+        "max": 3120
+      }
+    },
+    {
+      "area_id": 17,
+      "file": "area_17.json",
+      "room_count": 2,
+      "room_id_range": {
+        "min": 3121,
+        "max": 3122
+      }
+    },
+    {
+      "area_id": 18,
+      "file": "area_18.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3123,
+        "max": 3130
+      }
+    },
+    {
+      "area_id": 19,
+      "file": "area_19.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3131,
+        "max": 3138
+      }
+    },
+    {
+      "area_id": 20,
+      "file": "area_20.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3139,
+        "max": 3146
+      }
+    },
+    {
+      "area_id": 21,
+      "file": "area_21.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3147,
+        "max": 3154
+      }
+    },
+    {
+      "area_id": 22,
+      "file": "area_22.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3155,
+        "max": 3162
+      }
+    },
+    {
+      "area_id": 23,
+      "file": "area_23.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3163,
+        "max": 3170
+      }
+    },
+    {
+      "area_id": 24,
+      "file": "area_24.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3171,
+        "max": 3178
+      }
+    },
+    {
+      "area_id": 25,
+      "file": "area_25.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3179,
+        "max": 3186
+      }
+    },
+    {
+      "area_id": 26,
+      "file": "area_26.json",
+      "room_count": 8,
+      "room_id_range": {
+        "min": 3187,
+        "max": 3194
+      }
+    },
+    {
+      "area_id": 27,
+      "file": "area_27.json",
+      "room_count": 734,
+      "room_id_range": {
+        "min": 3195,
+        "max": 3928
+      }
+    }
+  ]
+}

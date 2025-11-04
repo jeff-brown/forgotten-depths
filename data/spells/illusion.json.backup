@@ -1,0 +1,17 @@
+{
+  "spells": {
+    "invisibility": {
+      "name": "Invisibility",
+      "description": "Become invisible to enemies.",
+      "type": "buff",
+      "school": "illusion",
+      "level": 2,
+      "mana_cost": 12,
+      "effect": "invisible",
+      "duration": 6,
+      "range": "self",
+      "cooldown": 5,
+      "requires_target": false
+    }
+  }
+}

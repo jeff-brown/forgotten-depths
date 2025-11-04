@@ -1,0 +1,35 @@
+{
+  "id": "rosalie_goldenhair",
+  "name": "Rosalie",
+  "short_description": "a barmaid",
+  "long_description": "The barmaid is a lovely wench wearing a low cut lacey white blouse, beige bodice, and cream colored skirts. She has long blonde hair and deep blue eyes. You notice quite a few of the tavern's male patrons eyeing her with mouths agape.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "hospitality",
+  "keywords": [
+    "rosalie",
+    "barmaid"
+  ],
+  "legacy_npc_id": 10,
+  "dialogue": {
+    "greeting": "Hello there! Can I bring you something?",
+    "default": "We have fresh bread and hearty stew today!",
+    "goodbye": "Safe travels!"
+  },
+  "services": [
+    "vendor",
+    "tavern",
+    "food_and_drink"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

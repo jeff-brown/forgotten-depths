@@ -1,0 +1,180 @@
+{
+  "spells": {
+    "magic_missile": {
+      "name": "Magic Missile",
+      "damage": "2d4+2",
+      "damage_type": "force",
+      "mana_cost": 10,
+      "cooldown": 8.0,
+      "cast_message": "{caster} launches glowing darts of magical force at {target}!",
+      "hit_message": "The magic missiles strike unerringly for {damage} force damage!",
+      "min_level": 1,
+      "spell_school": "evocation",
+      "description": "Unerring darts of magical force that always hit their target."
+    },
+    "fireball": {
+      "name": "Fireball",
+      "damage": "6d6",
+      "damage_type": "fire",
+      "mana_cost": 30,
+      "cooldown": 15.0,
+      "cast_message": "{caster} hurls a ball of flame at {target}!",
+      "hit_message": "The fireball explodes for {damage} fire damage!",
+      "min_level": 5,
+      "spell_school": "evocation",
+      "description": "A massive ball of roaring flame that explodes on impact."
+    },
+    "lightning_bolt": {
+      "name": "Lightning Bolt",
+      "damage": "5d8",
+      "damage_type": "lightning",
+      "mana_cost": 25,
+      "cooldown": 12.0,
+      "cast_message": "{caster} calls down a bolt of lightning on {target}!",
+      "hit_message": "The lightning bolt strikes for {damage} lightning damage!",
+      "min_level": 3,
+      "spell_school": "evocation",
+      "description": "A crackling bolt of electricity from the heavens."
+    },
+    "frost_ray": {
+      "name": "Frost Ray",
+      "damage": "3d6",
+      "damage_type": "cold",
+      "mana_cost": 15,
+      "cooldown": 10.0,
+      "cast_message": "{caster} fires a freezing ray at {target}!",
+      "hit_message": "The frost ray freezes {target} for {damage} cold damage!",
+      "min_level": 2,
+      "spell_school": "evocation",
+      "description": "A beam of freezing cold energy."
+    },
+    "acid_splash": {
+      "name": "Acid Splash",
+      "damage": "2d6",
+      "damage_type": "acid",
+      "mana_cost": 8,
+      "cooldown": 6.0,
+      "cast_message": "{caster} conjures a burst of acid at {target}!",
+      "hit_message": "The acid burns for {damage} acid damage!",
+      "min_level": 1,
+      "spell_school": "conjuration",
+      "description": "A splash of corrosive acid."
+    },
+    "shadow_bolt": {
+      "name": "Shadow Bolt",
+      "damage": "4d6",
+      "damage_type": "necrotic",
+      "mana_cost": 20,
+      "cooldown": 10.0,
+      "cast_message": "{caster} releases a bolt of shadowy energy at {target}!",
+      "hit_message": "The shadow bolt drains life force for {damage} necrotic damage!",
+      "min_level": 3,
+      "spell_school": "necromancy",
+      "description": "A bolt of life-draining shadow energy."
+    },
+    "heal": {
+      "name": "Heal",
+      "damage": "-3d8",
+      "damage_type": "healing",
+      "mana_cost": 20,
+      "cooldown": 15.0,
+      "cast_message": "{caster} channels healing energy!",
+      "hit_message": "{caster} heals for {damage} hit points!",
+      "min_level": 2,
+      "spell_school": "restoration",
+      "description": "Restores health with divine or arcane energy.",
+      "target_self": true
+    },
+    "cure_wounds": {
+      "name": "Cure Wounds",
+      "damage": "-2d8",
+      "damage_type": "healing",
+      "mana_cost": 12,
+      "cooldown": 12.0,
+      "cast_message": "{caster} channels healing energy!",
+      "hit_message": "{caster} heals for {damage} hit points!",
+      "min_level": 1,
+      "spell_school": "restoration",
+      "description": "Restores a moderate amount of health.",
+      "target_self": true
+    },
+    "poison_spray": {
+      "name": "Poison Spray",
+      "damage": "1d12",
+      "damage_type": "poison",
+      "mana_cost": 5,
+      "cooldown": 5.0,
+      "cast_message": "{caster} sprays a cloud of toxic fumes at {target}!",
+      "hit_message": "The poison cloud deals {damage} poison damage!",
+      "min_level": 1,
+      "spell_school": "conjuration",
+      "description": "A noxious cloud of poisonous gas."
+    },
+    "eldritch_blast": {
+      "name": "Eldritch Blast",
+      "damage": "3d10",
+      "damage_type": "force",
+      "mana_cost": 10,
+      "cooldown": 8.0,
+      "cast_message": "{caster} fires a beam of crackling eldritch energy at {target}!",
+      "hit_message": "The eldritch blast strikes for {damage} force damage!",
+      "min_level": 2,
+      "spell_school": "evocation",
+      "description": "A beam of pure magical force."
+    },
+    "sacred_flame": {
+      "name": "Sacred Flame",
+      "damage": "2d8",
+      "damage_type": "radiant",
+      "mana_cost": 10,
+      "cooldown": 8.0,
+      "cast_message": "{caster} calls down holy fire on {target}!",
+      "hit_message": "Sacred flames burn for {damage} radiant damage!",
+      "min_level": 1,
+      "spell_school": "evocation",
+      "description": "Divine flames that burn the wicked."
+    }
+  },
+  "mob_spell_lists": {
+    "necromancer": {
+      "spells": ["shadow_bolt", "poison_spray", "magic_missile"],
+      "heal_threshold": 0.3,
+      "aggression": 0.8
+    },
+    "pyromancer": {
+      "spells": ["fireball", "acid_splash", "magic_missile"],
+      "heal_threshold": 0.25,
+      "aggression": 0.9
+    },
+    "frost_mage": {
+      "spells": ["frost_ray", "magic_missile", "lightning_bolt"],
+      "heal_threshold": 0.3,
+      "aggression": 0.7
+    },
+    "storm_caller": {
+      "spells": ["lightning_bolt", "frost_ray", "magic_missile"],
+      "heal_threshold": 0.35,
+      "aggression": 0.75
+    },
+    "dark_cultist": {
+      "spells": ["shadow_bolt", "eldritch_blast", "poison_spray"],
+      "heal_threshold": 0.4,
+      "aggression": 0.85
+    },
+    "priest": {
+      "spells": ["sacred_flame", "cure_wounds", "magic_missile"],
+      "heal_threshold": 0.5,
+      "aggression": 0.4
+    },
+    "warlock": {
+      "spells": ["eldritch_blast", "shadow_bolt", "poison_spray"],
+      "heal_threshold": 0.3,
+      "aggression": 0.8
+    },
+    "generic_caster": {
+      "spells": ["magic_missile", "frost_ray", "acid_splash"],
+      "heal_threshold": 0.3,
+      "aggression": 0.6
+    }
+  }
+}

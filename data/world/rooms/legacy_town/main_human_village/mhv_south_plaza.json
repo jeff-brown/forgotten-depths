@@ -1,0 +1,17 @@
+{
+  "id": "mhv_south_plaza",
+  "title": "The South Plaza.",
+  "description": "You are standing at the south end of a large open plaza surrounded by shade trees as well as assorted flowering shrubs and hedges who's scent wafts through the warm, dry air. To the west stands the town's armor shop. The weapon shop lies to the east. There is a magic shop to the south. To the north lies the other half of the plaza and to the southwest lies the town's outer gate.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "north": "mhv_north_plaza",
+    "east": "mhv_weapon_shop",
+    "south": "mhv_magic_shop",
+    "west": "mhv_armor_shop",
+    "southwest": "mountains_183"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -90
+}

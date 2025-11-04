@@ -1,0 +1,14 @@
+{
+  "id": "lht_arena",
+  "title": "The Arena.",
+  "description": "You now stand inside the gates of the town's arena. The charred and stained stone walls and scattered bits of bone, armor, and weaponry lying among the debris on the packed earthen floor. A huge bronze gong hangs at the center of the arena suspended on a framework made of the bones of some of the less fortunate of the arena's combatants. The exit through the arena gates is to the south.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "south": "lht_a_path_2"
+  },
+  "is_arena": true,
+  "light_level": "bright",
+  "service_level": 2,
+  "terrain": "town",
+  "legacy_room_id": -72
+}

@@ -1,0 +1,34 @@
+{
+  "id": "legacy_main_human_village",
+  "name": "Main Human Village",
+  "description": "The largest human settlement in the region, this bustling village serves as a central hub for trade and adventure. Wide plazas connect various shops and establishments, where merchants and craftsmen offer their wares to brave adventurers.",
+  "level_range": [1, 10],
+  "climate": "temperate",
+  "rooms": [
+    "mhv_a_private_room",
+    "mhv_arena",
+    "mhv_armor_shop",
+    "mhv_docks",
+    "mhv_equipment_shop",
+    "mhv_guild_hall",
+    "mhv_magic_shop",
+    "mhv_north_plaza",
+    "mhv_south_plaza",
+    "mhv_tavern",
+    "mhv_temple",
+    "mhv_town_vaults",
+    "mhv_weapon_shop"
+  ],
+  "notable_npcs": [
+    "gimble_tinkertop",
+    "borin_strongarm",
+    "thorin_ironbeard",
+    "kael_crimsonmage",
+    "alderon_mastersorcerer",
+    "brother_elias",
+    "garth_thegiant",
+    "rosalie_goldenhair",
+    "captain_blackbeard"
+  ],
+  "quests": []
+}

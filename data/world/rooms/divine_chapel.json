@@ -1,0 +1,22 @@
+{
+  "id": "divine_chapel",
+  "title": "Divine Chapel of Sacred Scrolls",
+  "description": "Soft golden light fills this peaceful sanctuary, emanating from hanging censers that burn with holy flame. The walls are adorned with intricate murals depicting scenes of healing, protection, and divine intervention. Rows of pristine white shelves hold carefully organized spell scrolls, each blessed and sanctified. At the altar stands Sister Lumina, a venerable cleric whose presence radiates serenity and divine grace. The scent of incense mingles with the subtle aura of restorative magic that permeates the chapel.",
+  "area_id": "starter_town",
+  "exits": {
+    "east": "mystic_plaza"
+  },
+  "items": [],
+  "npcs": [
+    "sister_lumina"
+  ],
+  "features": [
+    "holy_altar",
+    "divine_murals",
+    "hanging_censers",
+    "white_shelves"
+  ],
+  "is_safe": true,
+  "light_level": "bright",
+  "vendor_id": "sister_lumina"
+}

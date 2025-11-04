@@ -1,0 +1,29 @@
+{
+  "id": "mhv_north_plaza",
+  "title": "The North Plaza.",
+  "description": "You are standing at the north end of a large open plaza surrounded by shade trees as well as assorted flowering shrubs and hedges whose scent wafts through the warm, dry air. To the west stands an ornate temple adorned with ornate stone and brass architecture. A quaint little shop lies to the northwest, and a dimly lit, smokey little tavern to the northeast. To the east lay the huge wrought iron gates of the arena. To north is the town guild hall. The other half of the plaza lies to the south.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "north": "mhv_guild_hall",
+    "northeast": "mhv_tavern",
+    "east": "mhv_arena",
+    "south": "mhv_south_plaza",
+    "west": "mhv_temple",
+    "northwest": "mhv_equipment_shop",
+    "up": "mhv_guild_hall"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -99,
+  "doors": {
+    "east": {
+      "door_type": "HasRuneDoor",
+      "barrier_id": 8,
+      "required_rune": {
+        "index": 0,
+        "name": "None"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ett_equipment_shop",
+  "title": "The Equipment Shop.",
+  "description": "You are now inside the equipment shop, where one may purchase supplies and provisions essential to survival in the dungeons or the wilderness. The shop keeper sits on a tall stool behind a counter along the west wall, eyeing you warily. The exit is to the east.",
+  "area_id": "legacy_elven_tree",
+  "exits": {
+    "east": "ett_a_catwalk_10"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "silvanus_leafwhisper"
+  ],
+  "shop_type": "equipment",
+  "service_level": 3,
+  "terrain": "town",
+  "legacy_room_id": -33
+}

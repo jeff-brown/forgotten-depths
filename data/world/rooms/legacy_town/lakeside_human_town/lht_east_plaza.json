@@ -1,0 +1,16 @@
+{
+  "id": "lht_east_plaza",
+  "title": "The East Plaza.",
+  "description": "You are standing in a large open plaza at the east end of town surrounded by shade trees. A well trodden path to the east leads to an armor shop. To the west, another well used path leads to an open plaza in the northern end of town. A third path to the south leads to towns temple, and a fourth path leads to the town's arena.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "north": "lht_a_path_2",
+    "east": "lht_a_path_9",
+    "south": "lht_a_path_1",
+    "west": "lht_a_path_4"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -74
+}

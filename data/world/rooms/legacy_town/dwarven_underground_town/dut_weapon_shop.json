@@ -1,0 +1,19 @@
+{
+  "id": "dut_weapon_shop",
+  "title": "The Weapon Shop.",
+  "description": "You are now inside the weapon shop, where you may purchase various weapons to use for sparring in the arena or for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the south wall. A stone archway lies to the to the northwest.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "northwest": "dut_an_underground_plaza_3"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "grunk_ironhide"
+  ],
+  "shop_type": "weapon",
+  "service_level": 2,
+  "terrain": "town",
+  "legacy_room_id": -54
+}

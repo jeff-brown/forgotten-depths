@@ -1,0 +1,13 @@
+{
+  "id": "forest_path_85",
+  "title": "You're in the forest.",
+  "description": "You are standing in a grassy area in the forest. There is a weathered stone stairway leading downward into dark catacombs, and passable vegetation to the east.",
+  "area_id": "forest",
+  "exits": {
+    "east": "forest_clearing_7",
+    "down": "forest_501"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 502
+}

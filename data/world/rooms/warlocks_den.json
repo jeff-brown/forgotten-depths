@@ -1,0 +1,22 @@
+{
+  "id": "warlocks_den",
+  "title": "Warlock's Den",
+  "description": "Shadows seem to cling to every corner of this dimly lit establishment, despite the numerous candles flickering with eldritch purple flames. The air is thick with otherworldly whispers and the scent of brimstone mixed with exotic incense. Spell scrolls float in mid-air, suspended by invisible tendrils of dark energy, their edges glowing with fel green light. Behind a counter carved from black stone covered in pulsing runes stands Malachar the Bound, his eyes glowing with power granted by his otherworldly patron. Strange symbols writhe across the walls like living things.",
+  "area_id": "starter_town",
+  "exits": {
+    "north": "mystic_plaza"
+  },
+  "items": [],
+  "npcs": [
+    "malachar_the_bound"
+  ],
+  "features": [
+    "floating_scrolls",
+    "purple_flames",
+    "runic_counter",
+    "writhing_symbols"
+  ],
+  "is_safe": true,
+  "light_level": "dim",
+  "vendor_id": "malachar_the_bound"
+}

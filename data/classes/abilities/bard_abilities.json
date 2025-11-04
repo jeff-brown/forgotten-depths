@@ -1,0 +1,126 @@
+{
+  "abilities": [
+    {
+      "id": "inspiring_presence",
+      "name": "Inspiring Presence",
+      "type": "passive",
+      "min_level": 1,
+      "description": "Your charisma grants +5% experience gain.",
+      "trigger": "on_experience_gain",
+      "effect": {
+        "type": "experience_bonus",
+        "value": 0.05
+      }
+    },
+    {
+      "id": "jack_of_all_trades",
+      "name": "Jack of All Trades",
+      "type": "passive",
+      "min_level": 5,
+      "description": "+1 to all stats.",
+      "trigger": "on_stat_calculation",
+      "effect": {
+        "type": "stat_bonus_all",
+        "value": 1
+      }
+    },
+    {
+      "id": "silver_tongue",
+      "name": "Silver Tongue",
+      "type": "passive",
+      "min_level": 8,
+      "description": "Shop prices are 15% better (buy cheaper, sell higher).",
+      "trigger": "on_vendor_transaction",
+      "effect": {
+        "type": "price_modifier",
+        "buy_discount": 0.15,
+        "sell_bonus": 0.15
+      }
+    },
+    {
+      "id": "inspire_courage",
+      "name": "Inspire Courage",
+      "type": "active",
+      "command": "inspire",
+      "aliases": [
+        "courage"
+      ],
+      "min_level": 1,
+      "cooldown": 60,
+      "description": "Play an inspiring melody that increases damage by 15% for 30 seconds.",
+      "requirements": {
+        "stat": "charisma",
+        "min_value": 14
+      },
+      "effect": {
+        "type": "buff",
+        "damage_bonus": 0.15,
+        "duration": 30
+      }
+    },
+    {
+      "id": "song_of_rest",
+      "name": "Song of Rest",
+      "type": "active",
+      "command": "songrest",
+      "aliases": [
+        "rest"
+      ],
+      "min_level": 4,
+      "cooldown": 120,
+      "description": "Play a soothing melody that restores 25% HP and MP over 10 seconds.",
+      "effect": {
+        "type": "heal_over_time",
+        "hp_percent": 0.25,
+        "mp_percent": 0.25,
+        "duration": 10
+      }
+    },
+    {
+      "id": "vicious_mockery",
+      "name": "Vicious Mockery",
+      "type": "active",
+      "command": "mock",
+      "aliases": [
+        "taunt",
+        "insult"
+      ],
+      "min_level": 6,
+      "cooldown": 20,
+      "description": "Insult an enemy, dealing 2d6 psychic damage and reducing their accuracy by 20% for 1 round.",
+      "requirements": {
+        "stat": "charisma",
+        "min_value": 16
+      },
+      "effect": {
+        "type": "debuff_attack",
+        "damage": "2d6",
+        "damage_type": "psychic",
+        "accuracy_penalty": 0.2,
+        "duration": 1
+      }
+    },
+    {
+      "id": "charm_person",
+      "name": "Charm Person",
+      "type": "active",
+      "command": "charm",
+      "aliases": [],
+      "min_level": 10,
+      "cooldown": 180,
+      "description": "Attempt to charm a humanoid target. 50% success chance.",
+      "requirements": {
+        "stat": "charisma",
+        "min_value": 18
+      },
+      "effect": {
+        "type": "charm",
+        "success_chance": 0.5,
+        "duration": 60,
+        "valid_types": [
+          "humanoid"
+        ]
+      }
+    }
+  ]
+}

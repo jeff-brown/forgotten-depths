@@ -1,0 +1,45 @@
+{
+  "traps": {
+    "poison_dart": {
+      "name": "Poison Dart Trap",
+      "damage": "2d6",
+      "damage_type": "piercing",
+      "effect": "poison",
+      "effect_state_text": "poisoned",
+      "effect_removal_text": "no longer poisoned",
+      "effect_duration": 3,
+      "effect_damage": "1d4",
+      "detection_dc": 12,
+      "disarm_dc": 14,
+      "description": "Small holes in the walls suggest hidden dart launchers.",
+      "trigger_message": "A poisoned dart shoots out from the wall and strikes {target}!",
+      "search_message": "You notice small holes in the walls - this could be a dart trap."
+    },
+    "pit": {
+      "name": "Pit Trap",
+      "damage": "3d6",
+      "damage_type": "falling",
+      "effect": "prone",
+      "detection_dc": 10,
+      "disarm_dc": 16,
+      "description": "The floor seems unstable in places.",
+      "trigger_message": "{target} falls into a concealed pit trap!",
+      "search_message": "You find a concealed pit trap in the floor!"
+    },
+    "flame": {
+      "name": "Flame Trap",
+      "damage": "4d6",
+      "damage_type": "fire",
+      "effect": "burning",
+      "effect_state_text": "on fire",
+      "effect_removal_text": "no longer burning",
+      "effect_duration": 2,
+      "effect_damage": "1d6",
+      "detection_dc": 14,
+      "disarm_dc": 15,
+      "description": "Scorch marks and the smell of oil suggest a fire hazard.",
+      "trigger_message": "Flames erupt from the floor, engulfing {target}!",
+      "search_message": "You discover a flame trap mechanism beneath the floor tiles!"
+    }
+  }
+}

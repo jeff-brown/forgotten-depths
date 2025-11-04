@@ -1,0 +1,116 @@
+{
+  "command_triggers": {
+    "pull_lever_1": {
+      "trigger_id": 1,
+      "command": "pull lever",
+      "player_message": "You pulled the lever.",
+      "room_message": "You notice {0} doing something out of the corner of your eye.",
+      "type": "puzzle"
+    },
+    "say_komi": {
+      "trigger_id": 2,
+      "command": "say komi",
+      "player_message": "As the answer passes your lips, you feel the floor vibrate faintly.",
+      "room_message": "{0} whispers something, and you feel the floor vibrate faintly.",
+      "type": "puzzle"
+    },
+    "push_stone_1": {
+      "trigger_id": 3,
+      "command": "push stone",
+      "player_message": "You push the protruding stone into it's recess...",
+      "room_message": null,
+      "type": "puzzle"
+    },
+    "push_stone_2": {
+      "trigger_id": 4,
+      "command": "push stone",
+      "player_message": "As you push the protruding stone into it's recess, you feel the floor vibrate\nfaintly.",
+      "room_message": "You notice {0} doing something out of the corner of your eye, and feel the\nfloor vibrate faintly.",
+      "type": "puzzle"
+    },
+    "say_arok": {
+      "trigger_id": 5,
+      "command": "say arok",
+      "player_message": "As the answer passes your lips, the northern wall slides silently into the\nceiling.",
+      "room_message": "{0} whispers something, and you feel the floor vibrate faintly.",
+      "type": "puzzle"
+    },
+    "embrace_princess": {
+      "trigger_id": 6,
+      "command": "embrace princess",
+      "player_message": "You kiss the princess and her eyes flutter open. She springs from the bed,\ntakes a quick look around, and flees the room!",
+      "room_message": "You notice {0} doing something out of the corner of your eye. The princess\nsuddenly springs from the bed, takes a quick look around, and flees the\nroom!",
+      "type": "puzzle"
+    },
+    "pull_lever_trap": {
+      "trigger_id": 7,
+      "command": "pull lever",
+      "player_message": "As you pull the lever, a trap door opens up beneath you!",
+      "room_message": "{0} has just fallen into a trap door in the floor!",
+      "type": "puzzle"
+    },
+    "say_cinders": {
+      "trigger_id": 8,
+      "command": "say cinders",
+      "player_message": "As the answer passes your lips a voice in your mind says: \"Correct...\nNow complete the riddle to gain passage...\"",
+      "room_message": "{0} whispers something, then pauses for a moment as if in deep thought...",
+      "type": "puzzle"
+    },
+    "say_ether": {
+      "trigger_id": 9,
+      "command": "say ether",
+      "player_message": "As the answer passes your lips, your surroundings fade...",
+      "room_message": "{0} whispers something, and vanishes!",
+      "type": "puzzle"
+    },
+    "move_tapestry": {
+      "trigger_id": 10,
+      "command": "move tapestry",
+      "player_message": "You pull the tapestry aside...",
+      "room_message": "You notice {0} doing something out of the corner of your eye.",
+      "type": "puzzle"
+    },
+    "say_dwarflord": {
+      "trigger_id": 11,
+      "command": "say dwarflord",
+      "player_message": "As the answer passes your lips, you hear a faint clicking sound.",
+      "room_message": "{0} whispers something...",
+      "type": "puzzle"
+    },
+    "turn_anvil": {
+      "trigger_id": 12,
+      "command": "turn anvil",
+      "player_message": "After a quarter turn clockwise, the anvil returns to it's previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye.",
+      "type": "puzzle"
+    },
+    "lower_arm": {
+      "trigger_id": 13,
+      "command": "lower arm",
+      "player_message": "After pulling down the arm of the statue, it returns to it's previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye.",
+      "type": "puzzle"
+    },
+    "turn_sceptre": {
+      "trigger_id": 14,
+      "command": "turn sceptre",
+      "player_message": "After rotating the statues' sceptre, it returns to its previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye.",
+      "type": "puzzle"
+    },
+    "close_jaws": {
+      "trigger_id": 15,
+      "command": "close jaws",
+      "player_message": "After closing the jaws of the statue of the statue, they return to their\nprevious position following a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye.",
+      "type": "puzzle"
+    },
+    "straighten_shield": {
+      "trigger_id": 16,
+      "command": "straighten shield",
+      "player_message": "After straightening the shield, it returns to its previous position\nfollowing a faint click.",
+      "room_message": "You notice {0} doing something out of the corner of your eye.",
+      "type": "puzzle"
+    }
+  }
+}

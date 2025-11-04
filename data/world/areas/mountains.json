@@ -1,0 +1,101 @@
+{
+  "id": "mountains",
+  "name": "Mountain Pass",
+  "description": "A treacherous mountain path that winds through rocky peaks and dangerous terrain. This natural passage connects the peaceful starter town of Millhaven to the bustling Main Human Village. Travelers must brave steep climbs, narrow ledges, and dangerous creatures that make their lairs in the mountain caves.",
+  "level_range": [3, 7],
+  "climate": "mountain",
+  "terrain": "mountains",
+  "rooms": [
+    "mountains_entrance",
+    "mountains_exit",
+    "mountains_183",
+    "mountains_184",
+    "mountains_185",
+    "mountains_186",
+    "mountains_187",
+    "mountains_188",
+    "mountains_189",
+    "mountains_190",
+    "mountains_191",
+    "mountains_192",
+    "mountains_193",
+    "mountains_194",
+    "mountains_195",
+    "mountains_196",
+    "mountains_197",
+    "mountains_198",
+    "mountains_199",
+    "mountains_200",
+    "mountains_201",
+    "mountains_202",
+    "mountains_203",
+    "mountains_204",
+    "mountains_205",
+    "mountains_206",
+    "mountains_207",
+    "mountains_208",
+    "mountains_209",
+    "mountains_210",
+    "mountains_211",
+    "mountains_212",
+    "mountains_213",
+    "mountains_214",
+    "mountains_215",
+    "mountains_216",
+    "mountains_217",
+    "mountains_218",
+    "mountains_219",
+    "mountains_220",
+    "mountains_221",
+    "mountains_222",
+    "mountains_223",
+    "mountains_224",
+    "mountains_225",
+    "mountains_226",
+    "mountains_227",
+    "mountains_228",
+    "mountains_229",
+    "mountains_230",
+    "mountains_231",
+    "mountains_232",
+    "mountains_233"
+  ],
+  "notable_npcs": [],
+  "dangerous_areas": [
+    "mountains_221",
+    "mountains_224",
+    "mountains_233"
+  ],
+  "boss_lairs": [
+    {
+      "room_id": "mountains_221",
+      "boss": "ogre_mage",
+      "difficulty": "hard"
+    },
+    {
+      "room_id": "mountains_224",
+      "boss": "griffon",
+      "difficulty": "medium"
+    },
+    {
+      "room_id": "mountains_233",
+      "boss": "mountain_ape",
+      "difficulty": "medium"
+    }
+  ],
+  "quests": [],
+  "connections": {
+    "west_entrance": {
+      "description": "Western entrance from Millhaven Market Square (Starter Town)",
+      "connects_to": "starter_town",
+      "from_room": "market_square",
+      "to_room": "mountains_entrance"
+    },
+    "south_exit": {
+      "description": "Southern exit to Main Human Village North Plaza",
+      "connects_to": "legacy_main_human_village",
+      "from_room": "mountains_exit",
+      "to_room": "mhv_north_plaza"
+    }
+  }
+}

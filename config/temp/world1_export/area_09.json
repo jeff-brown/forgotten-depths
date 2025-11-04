@@ -1,0 +1,993 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine - World1 Area",
+    "area_id": 9,
+    "original_file": "area/world1.xml",
+    "description": "World1 area 9 with fully decoded flags, descriptions, and door parameters"
+  },
+  "_enumerations": {
+    "room_flags": {
+      "description": "Room flag bit vector meanings",
+      "flags": {
+        "1": "safe",
+        "2": "dark",
+        "4": "arena",
+        "8": "tavern",
+        "16": "private",
+        "32": "docks",
+        "64": "guild hall",
+        "128": "vault",
+        "256": "equipment shop",
+        "512": "temple",
+        "1024": "armor shop",
+        "2048": "weapon shop",
+        "4096": "magic shop",
+        "16384": "inn",
+        "32768": "permanent darkness"
+      }
+    },
+    "terrain_types": {
+      "description": "Terrain type definitions",
+      "types": {
+        "DUNGEON1": {
+          "index": 0,
+          "description": "Dungeon level 1"
+        },
+        "DUNGEON2": {
+          "index": 1,
+          "description": "Dungeon level 2"
+        },
+        "DUNGEON3": {
+          "index": 2,
+          "description": "Dungeon level 3"
+        },
+        "FIRE1": {
+          "index": 3,
+          "description": "Fire area level 1"
+        },
+        "FIRE2": {
+          "index": 4,
+          "description": "Fire area level 2"
+        },
+        "FOREST": {
+          "index": 5,
+          "description": "Forest"
+        },
+        "MOUNTAINS": {
+          "index": 6,
+          "description": "Mountains"
+        },
+        "SNOW": {
+          "index": 7,
+          "description": "Snow"
+        },
+        "SWAMP": {
+          "index": 8,
+          "description": "Swamp"
+        },
+        "ICE": {
+          "index": 9,
+          "description": "Ice"
+        },
+        "DESERT": {
+          "index": 10,
+          "description": "Desert"
+        },
+        "TOWN": {
+          "index": 11,
+          "description": "Town"
+        },
+        "JUNGLE": {
+          "index": 12,
+          "description": "Jungle"
+        },
+        "INVALID": {
+          "index": 13,
+          "description": "Invalid terrain"
+        },
+        "UNKNOWN": {
+          "index": 14,
+          "description": "Unknown terrain"
+        }
+      }
+    },
+    "service_levels": {
+      "description": "Shop quality levels",
+      "levels": {
+        "0": "none",
+        "1": "basic",
+        "2": "standard",
+        "3": "premium"
+      }
+    },
+    "runes": {
+      "description": "Rune progression system (player advancement)",
+      "progression": {
+        "0": "None",
+        "1": "White",
+        "2": "Yellow",
+        "3": "Green",
+        "4": "Blue",
+        "5": "Violet",
+        "6": "Red",
+        "7": "Orange",
+        "8": "Gold"
+      }
+    },
+    "exit_directions": {
+      "description": "Valid exit directions",
+      "directions": [
+        "north",
+        "northeast",
+        "east",
+        "southeast",
+        "south",
+        "southwest",
+        "west",
+        "northwest",
+        "up",
+        "down"
+      ]
+    },
+    "door_types": {
+      "description": "Door type documentation with parameter meanings",
+      "types": {
+        "HasRuneDoor": {
+          "description": "Requires player to have a specific rune to pass through",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Required rune index (must match exactly)",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "MinimumRuneDoor": {
+          "description": "Requires player to have at least a minimum rune level",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Minimum rune index required",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "PrivateRoomDoor": {
+          "description": "Limits number of players allowed in target room",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Logic type (0=equal, 1=less, 2=greater)",
+            "__v5": "Maximum number of players allowed",
+            "__v6": "Target room number"
+          }
+        },
+        "ItemKeyDoor": {
+          "description": "Requires player to have a specific item to pass",
+          "parameters": {
+            "__v0": "Key item VNUM (required to unlock)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Consume flag (0=keep key, 1=consume key)",
+            "__v5": "Message index for locked door",
+            "__v6": "Message index for unlocked door"
+          }
+        },
+        "LevelDoor": {
+          "description": "Requires player to be a specific level",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Required player level",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "ClassDoor": {
+          "description": "Requires player to be a specific class",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Required class index",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        }
+      }
+    },
+    "trigger_types": {
+      "description": "Room trigger type definitions",
+      "types": {
+        "NONE": {
+          "index": 0,
+          "description": "No trigger"
+        },
+        "TREASURE": {
+          "index": 1,
+          "description": "Treasure trigger (gold/items/runes)"
+        },
+        "TRAP": {
+          "index": 2,
+          "description": "Trap trigger (damages player)"
+        },
+        "TELEPORT": {
+          "index": 3,
+          "description": "Teleporter (moves player to another room)"
+        },
+        "PUZZLE": {
+          "index": 4,
+          "description": "Puzzle trigger (command-based interaction)"
+        },
+        "Invalid": {
+          "index": -1,
+          "description": "Invalid trigger type"
+        }
+      }
+    }
+  },
+  "_statistics": {
+    "total_rooms": 18,
+    "room_id_range": {
+      "min": 623,
+      "max": 641
+    },
+    "total_npcs": 0,
+    "total_lairs": 3,
+    "total_doors": 0,
+    "total_triggers": 3,
+    "terrain_breakdown": {
+      "DUNGEON3": 18
+    },
+    "rooms_by_flag": {
+      "dark": 18
+    },
+    "triggers_by_type": {
+      "TRAP": 1,
+      "TELEPORT": 2
+    }
+  },
+  "area_type": "World1Area",
+  "area_name": "World1 Area 9",
+  "rooms": [
+    {
+      "room_id": 623,
+      "short_description": "You're in an enormous chamber.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 624,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 82,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 624,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the west and southeast",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 623,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 625,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 625,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the north, east, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 626,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 624,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 626,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the south, northeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 627,
+          "direction": "east"
+        },
+        {
+          "to_room": 625,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 635,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 627,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor leads to the south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 628,
+          "direction": "east"
+        },
+        {
+          "to_room": 626,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TRAP",
+            "index": 2,
+            "description": "Trap trigger (damages player)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 4,
+            "v3": 0,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "trap_id": 4
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 628,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 629,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 627,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 629,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the south and northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 630,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 628,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 630,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the south and northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 631,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 629,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 631,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 632,
+          "direction": "north"
+        },
+        {
+          "to_room": 630,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 632,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the west and northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 631,
+          "direction": "south"
+        },
+        {
+          "to_room": 633,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 633,
+      "short_description": "You're in an enormous chamber.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are northwest and southwest through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 634,
+          "direction": "north"
+        },
+        {
+          "to_room": 632,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 86,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 634,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 633,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TELEPORT",
+            "index": 3,
+            "description": "Teleporter (moves player to another room)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 678,
+            "v3": 1,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "target_room": 678,
+            "teleporter_id": 1,
+            "is_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 635,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the west and southeast",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 626,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 637,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 637,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the west and southeast",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 635,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 638,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 638,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 639,
+          "direction": "north"
+        },
+        {
+          "to_room": 637,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 639,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. There is a jagged hole in the ceiling, and rubble litters the floor.\nThe corridor leads to the south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 640,
+          "direction": "north"
+        },
+        {
+          "to_room": 638,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 640,
+      "short_description": "You're in an enormous chamber.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and southeast through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 641,
+          "direction": "north"
+        },
+        {
+          "to_room": 639,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 90,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 641,
+      "short_description": "You're in a flagstone corridor.",
+      "long_description": "You are standing in a well kept flagstone corridor. The stonework here is\nof the finest quality, and certain of the stones are engraved with a luniform\ndesign. The corridor runs to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 640,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TELEPORT",
+            "index": 3,
+            "description": "Teleporter (moves player to another room)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 662,
+            "v3": 1,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "target_room": 662,
+            "teleporter_id": 1,
+            "is_enabled": true
+          }
+        }
+      ]
+    }
+  ]
+}

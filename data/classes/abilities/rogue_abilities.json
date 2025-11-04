@@ -1,0 +1,133 @@
+{
+  "abilities": [
+    {
+      "id": "skillful_attacks",
+      "name": "Skillful Attacks",
+      "type": "passive",
+      "min_level": 1,
+      "description": "Your expertise with weapons allows critical hits to deal 50% more damage.",
+      "trigger": "on_critical_hit",
+      "effect": {
+        "type": "damage_multiplier",
+        "value": 1.5
+      }
+    },
+    {
+      "id": "trap_avoidance",
+      "name": "Trap Sense",
+      "type": "passive",
+      "min_level": 3,
+      "description": "Your keen senses give you a 70% chance to avoid triggering traps.",
+      "trigger": "on_trigger_trap",
+      "effect": {
+        "type": "avoid_chance",
+        "value": 0.7
+      }
+    },
+    {
+      "id": "extra_attack_high_dex",
+      "name": "Lightning Reflexes",
+      "type": "passive",
+      "min_level": 10,
+      "description": "When your DEX reaches 30+, you gain an extra attack per combat round.",
+      "trigger": "combat_check",
+      "requirement": {
+        "stat": "dexterity",
+        "min_value": 30
+      },
+      "effect": {
+        "type": "extra_attack",
+        "value": 1
+      }
+    },
+    {
+      "id": "picklock",
+      "name": "Pick Lock",
+      "type": "active",
+      "command": "picklock",
+      "aliases": [
+        "pick",
+        "lockpick"
+      ],
+      "min_level": 1,
+      "cooldown": 5,
+      "description": "Attempt to pick a locked door or container. Requires a lockpick.",
+      "requirements": {
+        "items": [
+          "lockpick"
+        ]
+      },
+      "effect": {
+        "type": "unlock",
+        "success_chance": 0.8
+      }
+    },
+    {
+      "id": "backstab",
+      "name": "Backstab",
+      "type": "active",
+      "command": "backstab",
+      "aliases": [
+        "bs"
+      ],
+      "min_level": 5,
+      "cooldown": 30,
+      "description": "Deal triple damage on your next melee attack. Must not be in active combat.",
+      "requirements": {
+        "stat": "dexterity",
+        "min_value": 15
+      },
+      "effect": {
+        "type": "damage_multiplier",
+        "value": 3.0,
+        "duration": 0
+      }
+    },
+    {
+      "id": "shadow_step",
+      "name": "Shadow Step",
+      "type": "active",
+      "command": "shadowstep",
+      "aliases": [
+        "ss",
+        "stealth"
+      ],
+      "min_level": 8,
+      "cooldown": 60,
+      "description": "Become invisible to enemies for 10 seconds, allowing you to move unseen or prepare an ambush.",
+      "requirements": {
+        "stat": "dexterity",
+        "min_value": 20
+      },
+      "effect": {
+        "type": "stealth",
+        "duration": 10,
+        "dodge_bonus": 0.5
+      }
+    },
+    {
+      "id": "poison_blade",
+      "name": "Poison Blade",
+      "type": "active",
+      "command": "poison",
+      "aliases": [
+        "envenom"
+      ],
+      "min_level": 12,
+      "cooldown": 90,
+      "description": "Coat your weapon with poison. Next 3 attacks deal additional damage over time.",
+      "requirements": {
+        "items": [
+          "poison_vial"
+        ]
+      },
+      "effect": {
+        "type": "dot",
+        "damage": "2d4",
+        "duration": 15,
+        "tick_rate": 3,
+        "charges": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,3191 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine - Equipment Database",
+    "original_file": "data/equipment.dat",
+    "description": "Complete equipment definitions with decoded values",
+    "export_date": "2025-10-14T17:28:28.555858",
+    "total_items": 62
+  },
+  "_enumerations": {
+    "towns": {
+      "description": "Town availability for items",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not sold in towns"
+        },
+        "1": {
+          "name": "TOWN1",
+          "description": "Town 1"
+        },
+        "2": {
+          "name": "TOWN2",
+          "description": "Town 2"
+        },
+        "3": {
+          "name": "TOWN3",
+          "description": "Town 3"
+        },
+        "4": {
+          "name": "TOWN4",
+          "description": "Town 4"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid town"
+        }
+      }
+    },
+    "player_classes": {
+      "description": "Player class system with bit flags for allowable classes",
+      "values": {
+        "0": {
+          "name": "INVALID",
+          "bit": 0,
+          "description": "Invalid class"
+        },
+        "1": {
+          "name": "FIGHTER",
+          "bit": 1,
+          "description": "Fighter"
+        },
+        "2": {
+          "name": "SORCEROR",
+          "bit": 2,
+          "description": "Sorceror"
+        },
+        "3": {
+          "name": "CLERIC",
+          "bit": 4,
+          "description": "Cleric"
+        },
+        "4": {
+          "name": "ROGUE",
+          "bit": 8,
+          "description": "Rogue"
+        },
+        "5": {
+          "name": "RANGER",
+          "bit": 16,
+          "description": "Ranger"
+        },
+        "6": {
+          "name": "DRUID",
+          "bit": 32,
+          "description": "Druid"
+        },
+        "8": {
+          "name": "NECROLYTE",
+          "bit": 128,
+          "description": "Necrolyte"
+        },
+        "9": {
+          "name": "KNIGHT",
+          "bit": 1,
+          "description": "Knight (promoted Fighter)"
+        },
+        "10": {
+          "name": "ARCH_MAGUS",
+          "bit": 2,
+          "description": "Arch Magus (promoted Sorceror)"
+        },
+        "11": {
+          "name": "HIGH_PRIEST",
+          "bit": 4,
+          "description": "High Priest (promoted Cleric)"
+        },
+        "12": {
+          "name": "BLACK_GUARD",
+          "bit": 8,
+          "description": "Black Guard (promoted Rogue)"
+        },
+        "13": {
+          "name": "BEAST_MASTER",
+          "bit": 16,
+          "description": "Beast Master (promoted Ranger)"
+        },
+        "14": {
+          "name": "ARCH_DRUID",
+          "bit": 32,
+          "description": "Arch Druid (promoted Druid)"
+        },
+        "16": {
+          "name": "NECROMANCER",
+          "bit": 128,
+          "description": "Necromancer (promoted Necrolyte)"
+        }
+      },
+      "note": "allowable_classes field uses bitwise OR of class bits (255 = all classes)"
+    },
+    "armor_types": {
+      "description": "Armor weight/material categories",
+      "values": {
+        "11": {
+          "name": "CLOTH",
+          "description": "Cloth armor (robes, cloaks)"
+        },
+        "12": {
+          "name": "LEATHER",
+          "description": "Leather armor (cuirass)"
+        },
+        "13": {
+          "name": "MEDIUM",
+          "description": "Medium armor (breastplate, ringmail, chainmail)"
+        },
+        "14": {
+          "name": "HEAVY",
+          "description": "Heavy armor (scalemail, bandmail, platemail)"
+        },
+        "15": {
+          "name": "MAGICAL",
+          "description": "Magical armor (demonhide)"
+        },
+        "16": {
+          "name": "DRAGON",
+          "description": "Dragon armor (dragonscale)"
+        },
+        "-1": {
+          "name": "UNKNOWN",
+          "description": "Unknown armor type"
+        }
+      }
+    },
+    "equipment_types": {
+      "description": "Equipment type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not equipment"
+        },
+        "14": {
+          "name": "MISC",
+          "description": "Miscellaneous"
+        },
+        "21": {
+          "name": "SUPPLY",
+          "description": "Supply equipment"
+        },
+        "22": {
+          "name": "SUPPLY_WEAPON",
+          "description": "Weapon sold by supply store"
+        },
+        "23": {
+          "name": "THROWN_WEAPON_CONTAINER",
+          "description": "Container for thrown weapons"
+        },
+        "24": {
+          "name": "RANGED_WEAPON_AMMO",
+          "description": "Ammunition for ranged weapons"
+        },
+        "25": {
+          "name": "AMMO_CONTAINER",
+          "description": "Ammunition container"
+        },
+        "31": {
+          "name": "MINOR_MAGIC_ITEM",
+          "description": "Minor magic item"
+        },
+        "32": {
+          "name": "POTION",
+          "description": "Potion"
+        },
+        "33": {
+          "name": "MAJOR_MAGIC_ITEM",
+          "description": "Major magic item"
+        },
+        "41": {
+          "name": "KEY",
+          "description": "Key"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid equipment type"
+        }
+      }
+    },
+    "equipment_subtypes": {
+      "description": "Equipment subtype classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Undefined subtype"
+        },
+        "1": {
+          "name": "FOOD",
+          "description": "Food"
+        },
+        "2": {
+          "name": "WATER",
+          "description": "Water"
+        },
+        "3": {
+          "name": "HEAL",
+          "description": "Healing item"
+        },
+        "4": {
+          "name": "CURE_POISON",
+          "description": "Cures poison"
+        },
+        "5": {
+          "name": "MINOR_MANA_BOOST",
+          "description": "Boosts mana (minor)"
+        },
+        "6": {
+          "name": "PHYSIQUE_BOOST",
+          "description": "Boosts physique"
+        },
+        "7": {
+          "name": "AGILITY_BOOST",
+          "description": "Boosts agility"
+        },
+        "8": {
+          "name": "INVISIBILITY",
+          "description": "Grants invisibility"
+        },
+        "9": {
+          "name": "RECALL",
+          "description": "Recalls to temple"
+        },
+        "10": {
+          "name": "MAJOR_MANA_BOOST",
+          "description": "Boosts mana (major)"
+        },
+        "11": {
+          "name": "RESERVED",
+          "description": "Reserved/unknown"
+        },
+        "12": {
+          "name": "WAND",
+          "description": "Wand"
+        },
+        "13": {
+          "name": "RUNESTAFF",
+          "description": "Runestaff"
+        },
+        "14": {
+          "name": "ROD_OF_POWER",
+          "description": "Rod of power"
+        },
+        "15": {
+          "name": "FLAME_CRYSTAL",
+          "description": "Flame crystal"
+        },
+        "16": {
+          "name": "LIGHT",
+          "description": "Temporary light"
+        },
+        "17": {
+          "name": "ETERNAL_LIGHT",
+          "description": "Eternal light"
+        },
+        "18": {
+          "name": "SOULSTONE",
+          "description": "Soulstone"
+        },
+        "19": {
+          "name": "AMMO",
+          "description": "Ammunition"
+        },
+        "20": {
+          "name": "MISC2",
+          "description": "Miscellaneous 2 (unknown)"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid subtype"
+        }
+      }
+    },
+    "special_weapon_functions": {
+      "description": "Special weapon functions",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No special function"
+        },
+        "12": {
+          "name": "MAGIC",
+          "description": "Magic weapon with special attack"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid function"
+        }
+      }
+    },
+    "spell_types": {
+      "description": "Spell type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No spell type"
+        },
+        "1": {
+          "name": "SORCEROR_ATTACK",
+          "description": "Sorceror attack spell"
+        },
+        "2": {
+          "name": "ACOLYTE_ATTACK",
+          "description": "Acolyte attack spell"
+        },
+        "3": {
+          "name": "DRUID_ATTACK",
+          "description": "Druid attack spell"
+        },
+        "4": {
+          "name": "NECROLYTE_ATTACK",
+          "description": "Necrolyte attack spell"
+        },
+        "11": {
+          "name": "REMOVE_CONDITION",
+          "description": "Removes status condition"
+        },
+        "12": {
+          "name": "SUSTENANCE",
+          "description": "Sustenance spell"
+        },
+        "21": {
+          "name": "HEALING",
+          "description": "Healing spell"
+        },
+        "22": {
+          "name": "REGENERATION",
+          "description": "Regeneration spell"
+        },
+        "31": {
+          "name": "SUMMONING",
+          "description": "Summoning spell"
+        },
+        "32": {
+          "name": "INVISIBILITY",
+          "description": "Invisibility spell"
+        },
+        "33": {
+          "name": "STAT_MOD",
+          "description": "Stat modification spell"
+        },
+        "41": {
+          "name": "CHARM",
+          "description": "Charm spell"
+        }
+      }
+    },
+    "spell_targets": {
+      "description": "Valid spell targets",
+      "values": {
+        "0": {
+          "name": "SPECIFIED",
+          "description": "Specified target"
+        },
+        "1": {
+          "name": "ROOM_PLAYER",
+          "description": "Player in room"
+        },
+        "2": {
+          "name": "ROOM_MOB",
+          "description": "Monster in room"
+        },
+        "3": {
+          "name": "ROOM_MOB2",
+          "description": "Monster in room (variant)"
+        },
+        "4": {
+          "name": "SUMMON",
+          "description": "Summon target"
+        },
+        "5": {
+          "name": "ROOM_PLAYER2",
+          "description": "Player in room (PVP variant)"
+        }
+      }
+    },
+    "cure_conditions": {
+      "description": "Conditions cured by spells",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "POISON"
+        }
+      }
+    },
+    "poison_targets": {
+      "description": "Poison effect targets",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "2": {
+          "name": "MOB"
+        },
+        "4": {
+          "name": "PLAYER"
+        },
+        "6": {
+          "name": "ROOM_MOB"
+        }
+      }
+    },
+    "mana_effects": {
+      "description": "Mana effect types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "DRAIN"
+        }
+      }
+    },
+    "stat_modifiers": {
+      "description": "Stat modification types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "INTELLECT"
+        },
+        "2": {
+          "name": "KNOWLEDGE"
+        },
+        "3": {
+          "name": "PHYSIQUE"
+        },
+        "4": {
+          "name": "STAMINA"
+        },
+        "5": {
+          "name": "AGILITY"
+        },
+        "6": {
+          "name": "CHARISMA"
+        },
+        "7": {
+          "name": "BODY"
+        },
+        "8": {
+          "name": "MENTAL"
+        },
+        "9": {
+          "name": "PARALYSIS"
+        },
+        "10": {
+          "name": "STAT_DRAIN"
+        }
+      }
+    },
+    "misc_target_effects": {
+      "description": "Miscellaneous target effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "MORAL"
+        },
+        "2": {
+          "name": "WIND"
+        }
+      }
+    },
+    "misc_target_effects2": {
+      "description": "Additional miscellaneous effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "LIFE_STEAL"
+        }
+      }
+    }
+  },
+  "equipment": [
+    {
+      "vnum": 21,
+      "name": "torch",
+      "long_description": "a torch",
+      "message": "",
+      "cost": 1,
+      "weight": 10,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 16,
+        "name": "LIGHT",
+        "description": "Temporary light"
+      },
+      "min_effect": 0,
+      "max_effect": 450,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 22,
+      "name": "rope",
+      "long_description": "a coil of rope",
+      "message": "",
+      "cost": 3,
+      "weight": 25,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 23,
+      "name": "ration of food",
+      "long_description": "a ration of food",
+      "message": "",
+      "cost": 2,
+      "weight": 5,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 1,
+        "name": "FOOD",
+        "description": "Food"
+      },
+      "min_effect": 0,
+      "max_effect": 3600,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 24,
+      "name": "waterskin",
+      "long_description": "a waterskin",
+      "message": "",
+      "cost": 1,
+      "weight": 10,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 2,
+        "name": "WATER",
+        "description": "Water"
+      },
+      "min_effect": 0,
+      "max_effect": 1800,
+      "charges": 3,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 25,
+      "name": "glowstone",
+      "long_description": "a glowstone",
+      "message": "",
+      "cost": 50,
+      "weight": 5,
+      "equipment_type": {
+        "id": 31,
+        "name": "MINOR_MAGIC_ITEM",
+        "description": "Minor magic item"
+      },
+      "equipment_subtype": {
+        "id": 17,
+        "name": "ETERNAL_LIGHT",
+        "description": "Eternal light"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 26,
+      "name": "heartstone",
+      "long_description": "a heartstone",
+      "message": "",
+      "cost": 100,
+      "weight": 5,
+      "equipment_type": {
+        "id": 31,
+        "name": "MINOR_MAGIC_ITEM",
+        "description": "Minor magic item"
+      },
+      "equipment_subtype": {
+        "id": 9,
+        "name": "RECALL",
+        "description": "Recalls to temple"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": -96,
+      "level": 5,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 27,
+      "name": "rue potion",
+      "long_description": "a rue potion",
+      "message": "",
+      "cost": 5,
+      "weight": 10,
+      "equipment_type": {
+        "id": 32,
+        "name": "POTION",
+        "description": "Potion"
+      },
+      "equipment_subtype": {
+        "id": 3,
+        "name": "HEAL",
+        "description": "Healing item"
+      },
+      "min_effect": 4,
+      "max_effect": 16,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 28,
+      "name": "amaranth potion",
+      "long_description": "an amaranth potion",
+      "message": "",
+      "cost": 10,
+      "weight": 10,
+      "equipment_type": {
+        "id": 32,
+        "name": "POTION",
+        "description": "Potion"
+      },
+      "equipment_subtype": {
+        "id": 3,
+        "name": "HEAL",
+        "description": "Healing item"
+      },
+      "min_effect": 16,
+      "max_effect": 64,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 29,
+      "name": "anemone potion",
+      "long_description": "an anemone potion",
+      "message": "",
+      "cost": 25,
+      "weight": 10,
+      "equipment_type": {
+        "id": 32,
+        "name": "POTION",
+        "description": "Potion"
+      },
+      "equipment_subtype": {
+        "id": 3,
+        "name": "HEAL",
+        "description": "Healing item"
+      },
+      "min_effect": 32,
+      "max_effect": 128,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 30,
+      "name": "verbena potion",
+      "long_description": "a verbena potion",
+      "message": "",
+      "cost": 10,
+      "weight": 10,
+      "equipment_type": {
+        "id": 32,
+        "name": "POTION",
+        "description": "Potion"
+      },
+      "equipment_subtype": {
+        "id": 4,
+        "name": "CURE_POISON",
+        "description": "Cures poison"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 31,
+      "name": "yarrow potion",
+      "long_description": "a yarrow potion",
+      "message": "",
+      "cost": 10,
+      "weight": 10,
+      "equipment_type": {
+        "id": 32,
+        "name": "POTION",
+        "description": "Potion"
+      },
+      "equipment_subtype": {
+        "id": 5,
+        "name": "MINOR_MANA_BOOST",
+        "description": "Boosts mana (minor)"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 32,
+      "name": "rowan potion",
+      "long_description": "a rowan potion",
+      "message": "",
+      "cost": 10,
+      "weight": 10,
+      "equipment_type": {
+        "id": 32,
+        "name": "POTION",
+        "description": "Potion"
+      },
+      "equipment_subtype": {
+        "id": 6,
+        "name": "PHYSIQUE_BOOST",
+        "description": "Boosts physique"
+      },
+      "min_effect": 20,
+      "max_effect": 600,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 33,
+      "name": "hyssop potion",
+      "long_description": "a hyssop potion",
+      "message": "",
+      "cost": 10,
+      "weight": 10,
+      "equipment_type": {
+        "id": 32,
+        "name": "POTION",
+        "description": "Potion"
+      },
+      "equipment_subtype": {
+        "id": 7,
+        "name": "AGILITY_BOOST",
+        "description": "Boosts agility"
+      },
+      "min_effect": 20,
+      "max_effect": 600,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 34,
+      "name": "vervain potion",
+      "long_description": "a vervain potion",
+      "message": "",
+      "cost": 100,
+      "weight": 10,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 8,
+        "name": "INVISIBILITY",
+        "description": "Grants invisibility"
+      },
+      "min_effect": 0,
+      "max_effect": 600,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 35,
+      "name": "horn of frost",
+      "long_description": "a horn of frost",
+      "message": "a blast of frost",
+      "cost": 50,
+      "weight": 50,
+      "equipment_type": {
+        "id": 31,
+        "name": "MINOR_MAGIC_ITEM",
+        "description": "Minor magic item"
+      },
+      "equipment_subtype": {
+        "id": 12,
+        "name": "WAND",
+        "description": "Wand"
+      },
+      "min_effect": 4,
+      "max_effect": 24,
+      "charges": 15,
+      "range": 1,
+      "quest_stat": 0,
+      "level": 3,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 2,
+        "description": "2 classes allowed",
+        "classes": [
+          "SORCEROR",
+          "ARCH_MAGUS"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 36,
+      "name": "wand of lightning",
+      "long_description": "a wand of lightning",
+      "message": "a bolt of lightning",
+      "cost": 100,
+      "weight": 10,
+      "equipment_type": {
+        "id": 31,
+        "name": "MINOR_MAGIC_ITEM",
+        "description": "Minor magic item"
+      },
+      "equipment_subtype": {
+        "id": 12,
+        "name": "WAND",
+        "description": "Wand"
+      },
+      "min_effect": 8,
+      "max_effect": 48,
+      "charges": 20,
+      "range": 1,
+      "quest_stat": 0,
+      "level": 5,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 2,
+        "description": "2 classes allowed",
+        "classes": [
+          "SORCEROR",
+          "ARCH_MAGUS"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 37,
+      "name": "rod of flame",
+      "long_description": "a rod of flame",
+      "message": "a blast of flame",
+      "cost": 200,
+      "weight": 20,
+      "equipment_type": {
+        "id": 31,
+        "name": "MINOR_MAGIC_ITEM",
+        "description": "Minor magic item"
+      },
+      "equipment_subtype": {
+        "id": 12,
+        "name": "WAND",
+        "description": "Wand"
+      },
+      "min_effect": 12,
+      "max_effect": 72,
+      "charges": 25,
+      "range": 1,
+      "quest_stat": 0,
+      "level": 8,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 2,
+        "description": "2 classes allowed",
+        "classes": [
+          "SORCEROR",
+          "ARCH_MAGUS"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 38,
+      "name": "iron key",
+      "long_description": "an iron key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 39,
+      "name": "copper key",
+      "long_description": "a copper key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 40,
+      "name": "brass key",
+      "long_description": "a brass key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 41,
+      "name": "bronze key",
+      "long_description": "a bronze key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 42,
+      "name": "silver key",
+      "long_description": "a silver key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 43,
+      "name": "electrum key",
+      "long_description": "an electrum key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 44,
+      "name": "gold key",
+      "long_description": "a gold key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 45,
+      "name": "platinum key",
+      "long_description": "a platinum key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 46,
+      "name": "pearl key",
+      "long_description": "a pearl key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 47,
+      "name": "onyx key",
+      "long_description": "an onyx key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 48,
+      "name": "jade key",
+      "long_description": "a jade key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 49,
+      "name": "ruby key",
+      "long_description": "a ruby key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 50,
+      "name": "runestaff",
+      "long_description": "a runestaff",
+      "message": "",
+      "cost": 0,
+      "weight": 20,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 13,
+        "name": "RUNESTAFF",
+        "description": "Runestaff"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 8,
+      "range": 0,
+      "quest_stat": 429,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 3,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 56,
+      "name": "dart",
+      "long_description": "a dart",
+      "message": "",
+      "cost": 1,
+      "weight": 5,
+      "equipment_type": {
+        "id": 22,
+        "name": "SUPPLY_WEAPON",
+        "description": "Weapon sold by supply store"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 1,
+      "max_effect": 4,
+      "charges": 0,
+      "range": 3,
+      "quest_stat": 0,
+      "level": 1,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 2,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 57,
+      "name": "knife",
+      "long_description": "a knife",
+      "message": "",
+      "cost": 5,
+      "weight": 7,
+      "equipment_type": {
+        "id": 22,
+        "name": "SUPPLY_WEAPON",
+        "description": "Weapon sold by supply store"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 1,
+      "max_effect": 6,
+      "charges": 0,
+      "range": 2,
+      "quest_stat": 0,
+      "level": 3,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 25,
+        "description": "6 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "ROGUE",
+          "RANGER",
+          "KNIGHT",
+          "BLACK_GUARD",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 2,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 58,
+      "name": "spear",
+      "long_description": "a spear",
+      "message": "",
+      "cost": 10,
+      "weight": 40,
+      "equipment_type": {
+        "id": 22,
+        "name": "SUPPLY_WEAPON",
+        "description": "Weapon sold by supply store"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 2,
+      "max_effect": 8,
+      "charges": 0,
+      "range": 2,
+      "quest_stat": 0,
+      "level": 2,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 25,
+        "description": "6 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "ROGUE",
+          "RANGER",
+          "KNIGHT",
+          "BLACK_GUARD",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 2,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 59,
+      "name": "axe",
+      "long_description": "an axe",
+      "message": "",
+      "cost": 15,
+      "weight": 30,
+      "equipment_type": {
+        "id": 22,
+        "name": "SUPPLY_WEAPON",
+        "description": "Weapon sold by supply store"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 3,
+      "max_effect": 12,
+      "charges": 0,
+      "range": 1,
+      "quest_stat": 0,
+      "level": 5,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 17,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "RANGER",
+          "KNIGHT",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 2,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 60,
+      "name": "arrow",
+      "long_description": "an arrow",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 24,
+        "name": "RANGED_WEAPON_AMMO",
+        "description": "Ammunition for ranged weapons"
+      },
+      "equipment_subtype": {
+        "id": 20,
+        "name": "MISC2",
+        "description": "Miscellaneous 2 (unknown)"
+      },
+      "min_effect": 0,
+      "max_effect": 7,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 61,
+      "name": "quiver",
+      "long_description": "a quiver",
+      "message": "",
+      "cost": 10,
+      "weight": 30,
+      "equipment_type": {
+        "id": 25,
+        "name": "AMMO_CONTAINER",
+        "description": "Ammunition container"
+      },
+      "equipment_subtype": {
+        "id": 19,
+        "name": "AMMO",
+        "description": "Ammunition"
+      },
+      "min_effect": 60,
+      "max_effect": 0,
+      "charges": 20,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 65,
+      "name": "soulstone",
+      "long_description": "a soulstone",
+      "message": "",
+      "cost": 1000,
+      "weight": 5,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 18,
+        "name": "SOULSTONE",
+        "description": "Soulstone"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 66,
+      "name": "manastone",
+      "long_description": "a manastone",
+      "message": "",
+      "cost": 10,
+      "weight": 5,
+      "equipment_type": {
+        "id": 31,
+        "name": "MINOR_MAGIC_ITEM",
+        "description": "Minor magic item"
+      },
+      "equipment_subtype": {
+        "id": 10,
+        "name": "MAJOR_MANA_BOOST",
+        "description": "Boosts mana (major)"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 67,
+      "name": "zarynthium potion",
+      "long_description": "a zarynthium potion",
+      "message": "",
+      "cost": 50,
+      "weight": 10,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 3,
+        "name": "HEAL",
+        "description": "Healing item"
+      },
+      "min_effect": 64,
+      "max_effect": 256,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 69,
+      "name": "dragon ring",
+      "long_description": "a dragon ring",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 70,
+      "name": "gome ring",
+      "long_description": "a gome ring",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 71,
+      "name": "strato ring",
+      "long_description": "a strato ring",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 72,
+      "name": "pink rose",
+      "long_description": "a pink rose",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 73,
+      "name": "white rose",
+      "long_description": "a white rose",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 77,
+      "name": "wynharp",
+      "long_description": "a wynharp",
+      "message": "",
+      "cost": 0,
+      "weight": 20,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 11,
+        "name": "RESERVED",
+        "description": "Reserved/unknown"
+      },
+      "min_effect": 32,
+      "max_effect": 128,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 1000,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 79,
+      "name": "red rose",
+      "long_description": "a red rose",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 81,
+      "name": "black rose",
+      "long_description": "a black rose",
+      "message": "a dark mist",
+      "cost": 0,
+      "weight": 5,
+      "equipment_type": {
+        "id": 31,
+        "name": "MINOR_MAGIC_ITEM",
+        "description": "Minor magic item"
+      },
+      "equipment_subtype": {
+        "id": 12,
+        "name": "WAND",
+        "description": "Wand"
+      },
+      "min_effect": 1,
+      "max_effect": 2,
+      "charges": 1,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 1000,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 2,
+        "description": "2 classes allowed",
+        "classes": [
+          "SORCEROR",
+          "ARCH_MAGUS"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 1
+      }
+    },
+    {
+      "vnum": 82,
+      "name": "opal key",
+      "long_description": "an opal key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 83,
+      "name": "tigereye key",
+      "long_description": "a tigereye key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 84,
+      "name": "quartz key",
+      "long_description": "a quartz key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 85,
+      "name": "topaz key",
+      "long_description": "a topaz key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 86,
+      "name": "rod of power",
+      "long_description": "a rod of power",
+      "message": "",
+      "cost": 0,
+      "weight": 20,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 14,
+        "name": "ROD_OF_POWER",
+        "description": "Rod of power"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 2809,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 3,
+        "v12": 5,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 87,
+      "name": "flame crystal",
+      "long_description": "a flame crystal",
+      "message": "a flame storm",
+      "cost": 0,
+      "weight": 10,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 15,
+        "name": "FLAME_CRYSTAL",
+        "description": "Flame crystal"
+      },
+      "min_effect": 2,
+      "max_effect": 4,
+      "charges": 0,
+      "range": 1,
+      "quest_stat": 0,
+      "level": 30,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 123,
+        "v10": 3,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 88,
+      "name": "case",
+      "long_description": "a case of darts",
+      "message": "",
+      "cost": 12,
+      "weight": 15,
+      "equipment_type": {
+        "id": 23,
+        "name": "THROWN_WEAPON_CONTAINER",
+        "description": "Container for thrown weapons"
+      },
+      "equipment_subtype": {
+        "id": 19,
+        "name": "AMMO",
+        "description": "Ammunition"
+      },
+      "min_effect": 56,
+      "max_effect": 0,
+      "charges": 10,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 89,
+      "name": "stone",
+      "long_description": "a stone",
+      "message": "",
+      "cost": 0,
+      "weight": 1,
+      "equipment_type": {
+        "id": 24,
+        "name": "RANGED_WEAPON_AMMO",
+        "description": "Ammunition for ranged weapons"
+      },
+      "equipment_subtype": {
+        "id": 20,
+        "name": "MISC2",
+        "description": "Miscellaneous 2 (unknown)"
+      },
+      "min_effect": 0,
+      "max_effect": 4,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 90,
+      "name": "pouch",
+      "long_description": "a pouch of stones",
+      "message": "",
+      "cost": 2,
+      "weight": 5,
+      "equipment_type": {
+        "id": 25,
+        "name": "AMMO_CONTAINER",
+        "description": "Ammunition container"
+      },
+      "equipment_subtype": {
+        "id": 19,
+        "name": "AMMO",
+        "description": "Ammunition"
+      },
+      "min_effect": 89,
+      "max_effect": 0,
+      "charges": 20,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 92,
+      "name": "blowdart",
+      "long_description": "a blowdart",
+      "message": "",
+      "cost": 0,
+      "weight": 1,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 20,
+        "name": "MISC2",
+        "description": "Miscellaneous 2 (unknown)"
+      },
+      "min_effect": 0,
+      "max_effect": 2,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 3,
+        "name": "TOWN3",
+        "description": "Town 3"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 1
+      }
+    },
+    {
+      "vnum": 93,
+      "name": "tube",
+      "long_description": "a tube of blowdarts",
+      "message": "",
+      "cost": 5,
+      "weight": 5,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 19,
+        "name": "AMMO",
+        "description": "Ammunition"
+      },
+      "min_effect": 92,
+      "max_effect": 0,
+      "charges": 10,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 3,
+        "name": "TOWN3",
+        "description": "Town 3"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 95,
+      "name": "ice crystal",
+      "long_description": "an ice crystal",
+      "message": "a frost storm",
+      "cost": 0,
+      "weight": 10,
+      "equipment_type": {
+        "id": 33,
+        "name": "MAJOR_MAGIC_ITEM",
+        "description": "Major magic item"
+      },
+      "equipment_subtype": {
+        "id": 15,
+        "name": "FLAME_CRYSTAL",
+        "description": "Flame crystal"
+      },
+      "min_effect": 1,
+      "max_effect": 3,
+      "charges": 0,
+      "range": 1,
+      "quest_stat": 0,
+      "level": 25,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 122,
+        "v10": 2,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 97,
+      "name": "stone key",
+      "long_description": "an ornate stone key",
+      "message": "",
+      "cost": 0,
+      "weight": 2,
+      "equipment_type": {
+        "id": 41,
+        "name": "KEY",
+        "description": "Key"
+      },
+      "equipment_subtype": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Undefined subtype"
+      },
+      "min_effect": 0,
+      "max_effect": 0,
+      "charges": 0,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 98,
+      "name": "small barrel",
+      "long_description": "a small barrel",
+      "message": "",
+      "cost": 10,
+      "weight": 100,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 2,
+        "name": "WATER",
+        "description": "Water"
+      },
+      "min_effect": 0,
+      "max_effect": 1800,
+      "charges": 15,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 99,
+      "name": "preserved rations",
+      "long_description": "some preserved rations",
+      "message": "",
+      "cost": 10,
+      "weight": 20,
+      "equipment_type": {
+        "id": 21,
+        "name": "SUPPLY",
+        "description": "Supply equipment"
+      },
+      "equipment_subtype": {
+        "id": 1,
+        "name": "FOOD",
+        "description": "Food"
+      },
+      "min_effect": 0,
+      "max_effect": 2400,
+      "charges": 5,
+      "range": 0,
+      "quest_stat": 0,
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v6": 0,
+        "v10": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    }
+  ]
+}

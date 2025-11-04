@@ -1,0 +1,38 @@
+{
+  "id": "brother_elias",
+  "name": "Brother Elias",
+  "short_description": "a blue robed priest",
+  "long_description": "The priest wears blue robes. He has an air of peace and tranquility about him. Around his neck he wears a heavy silver chain which supports a large silver ankh.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "cleric",
+  "keywords": [
+    "brother",
+    "elias",
+    "blue",
+    "robed",
+    "priest"
+  ],
+  "legacy_npc_id": 8,
+  "dialogue": {
+    "greeting": "Blessings upon you, traveler. How may I serve you today?",
+    "default": "The divine light watches over all who walk in righteousness.",
+    "goodbye": "May the gods guide your path."
+  },
+  "services": [
+    "temple",
+    "healing",
+    "resurrection"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  }
+}

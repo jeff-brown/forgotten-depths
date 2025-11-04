@@ -1,0 +1,208 @@
+{
+  "abilities": [
+    {
+      "id": "hunters_mark",
+      "name": "Hunter's Mark",
+      "type": "passive",
+      "min_level": 1,
+      "description": "Ranged attacks deal +3 bonus damage.",
+      "trigger": "on_ranged_attack",
+      "effect": {
+        "type": "damage_bonus",
+        "value": 3
+      }
+    },
+    {
+      "id": "quick_reflexes",
+      "name": "Quick Reflexes",
+      "type": "passive",
+      "min_level": 5,
+      "description": "Your agility grants +10% dodge chance.",
+      "trigger": "on_dodge_check",
+      "effect": {
+        "type": "dodge_bonus",
+        "value": 0.1
+      }
+    },
+    {
+      "id": "extra_attack_high_dex",
+      "name": "Rapid Shot",
+      "type": "passive",
+      "min_level": 10,
+      "description": "When your DEX reaches 30+, you gain an extra attack per combat round.",
+      "trigger": "combat_check",
+      "requirement": {
+        "stat": "dexterity",
+        "min_value": 30
+      },
+      "effect": {
+        "type": "extra_attack",
+        "value": 1
+      }
+    },
+    {
+      "id": "woodland_stride",
+      "name": "Woodland Stride",
+      "type": "passive",
+      "min_level": 3,
+      "description": "Move silently through nature. Reduced chance to trigger wandering mobs in wilderness.",
+      "trigger": "on_move",
+      "effect": {
+        "type": "stealth_movement",
+        "mob_detection_reduction": 0.5
+      }
+    },
+    {
+      "id": "track",
+      "name": "Track",
+      "type": "active",
+      "command": "track",
+      "aliases": [
+        "tr"
+      ],
+      "min_level": 1,
+      "cooldown": 30,
+      "description": "Track creatures in nearby rooms. Reveals type and direction of mobs.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 12
+      },
+      "effect": {
+        "type": "detection",
+        "range": 3,
+        "reveals": "mob_info"
+      }
+    },
+    {
+      "id": "tame",
+      "name": "Tame Animal",
+      "type": "active",
+      "command": "tame",
+      "aliases": [],
+      "min_level": 8,
+      "cooldown": 120,
+      "description": "Attempt to tame a beast-type creature. 40% base success chance.",
+      "requirements": {
+        "stat": "charisma",
+        "min_value": 15
+      },
+      "effect": {
+        "type": "tame_creature",
+        "success_chance": 0.4,
+        "valid_types": [
+          "beast",
+          "animal"
+        ],
+        "max_level_diff": 3
+      }
+    },
+    {
+      "id": "pathfind",
+      "name": "Pathfind",
+      "type": "active",
+      "command": "pathfind",
+      "aliases": [
+        "pf",
+        "navigate"
+      ],
+      "min_level": 4,
+      "cooldown": 60,
+      "description": "Find the shortest path to a known location.",
+      "effect": {
+        "type": "navigation",
+        "reveals": "path_to_target"
+      }
+    },
+    {
+      "id": "forage",
+      "name": "Forage",
+      "type": "active",
+      "command": "forage",
+      "aliases": [
+        "gather"
+      ],
+      "min_level": 2,
+      "cooldown": 45,
+      "description": "Search for useful items in natural areas. Find food, herbs, or basic supplies.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 10
+      },
+      "effect": {
+        "type": "item_generation",
+        "item_types": [
+          "food",
+          "herb",
+          "basic_supply"
+        ],
+        "success_chance": 0.6
+      }
+    },
+    {
+      "id": "camouflage",
+      "name": "Camouflage",
+      "type": "active",
+      "command": "camouflage",
+      "aliases": [
+        "camo",
+        "hide"
+      ],
+      "min_level": 6,
+      "cooldown": 90,
+      "description": "Blend into surroundings for 30 seconds. Mobs won't attack unless you attack first.",
+      "requirements": {
+        "stat": "dexterity",
+        "min_value": 18
+      },
+      "effect": {
+        "type": "invisibility",
+        "duration": 30,
+        "breaks_on_attack": true
+      }
+    },
+    {
+      "id": "multishot",
+      "name": "Multishot",
+      "type": "active",
+      "command": "multishot",
+      "aliases": [
+        "multi"
+      ],
+      "min_level": 12,
+      "cooldown": 45,
+      "description": "Fire arrows at up to 3 targets in the room (60% damage each).",
+      "requirements": {
+        "stat": "dexterity",
+        "min_value": 20
+      },
+      "effect": {
+        "type": "multi_target_ranged",
+        "max_targets": 3,
+        "damage_multiplier": 0.6,
+        "ammo_cost": 3
+      }
+    },
+    {
+      "id": "call_of_the_wild",
+      "name": "Call of the Wild",
+      "type": "active",
+      "command": "callwild",
+      "aliases": [
+        "summonbeast"
+      ],
+      "min_level": 15,
+      "cooldown": 300,
+      "description": "Summon a spirit wolf companion to fight alongside you for 60 seconds.",
+      "requirements": {
+        "stat": "wisdom",
+        "min_value": 18
+      },
+      "effect": {
+        "type": "summon_pet",
+        "pet_type": "spirit_wolf",
+        "duration": 60,
+        "pet_level_mult": 0.7
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mountains_221",
+  "title": "You are in a clean cave.",
+  "description": "This cave is very clean and well kept. It has the look and feel of the den of a sorcerer. The floor of the cave has no trace of dirt or other litter. There are several items of furniture, all somewhat large and very sturdy looking. The only exit is to the south.",
+  "area_id": "mountains",
+  "is_safe": false,
+  "light_level": 0.2,
+  "exits": {
+    "south": "mountains_220"
+  },
+  "lairs": [
+    {
+      "mob_id": "ogre_mage",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
+}

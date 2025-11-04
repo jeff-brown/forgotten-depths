@@ -1,0 +1,12 @@
+{
+  "id": "forest_path_59",
+  "title": "You're in the forest.",
+  "description": "You are standing at the end of a path in a dense forest. The sounds of birds and other small animals in the trees gives life to this lush green wood. The path leads off to the northwest.",
+  "area_id": "forest",
+  "exits": {
+    "northwest": "forest_path_58"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 292
+}

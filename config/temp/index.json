@@ -1,0 +1,26 @@
+{
+  "game_data_version": "1.0",
+  "source": "Ether MUD Engine",
+  "exports": {
+    "barriers": {
+      "file": "barriers.json",
+      "count": 10,
+      "description": "Barrier messages for doors and obstacles"
+    },
+    "traps": {
+      "file": "traps.json",
+      "count": 10,
+      "description": "Trap definitions with damage"
+    },
+    "teleporters": {
+      "file": "teleporters.json",
+      "count": 5,
+      "description": "Teleporter effects and messages"
+    },
+    "npcs": {
+      "file": "npcs.json",
+      "count": 16,
+      "description": "NPC definitions and descriptions"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "sorcerers_sanctum",
+  "title": "Sorcerer's Sanctum",
+  "description": "This elegant establishment radiates raw arcane power. The walls are lined with crystalline shelves holding glowing spell scrolls, each sealed with wax bearing arcane sigils. Flames dance in braziers of blue and crimson fire that require no fuel, while delicate ice crystals float through the air, never melting. The proprietor, Master Pyrus Frostweaver, stands behind a counter made of obsidian and ice, his robes shimmering with elemental energy. Scrolls of evocation magic are displayed prominently, their power barely contained by the enchanted parchment.",
+  "area_id": "starter_town",
+  "exits": {
+    "south": "mystic_plaza"
+  },
+  "items": [],
+  "npcs": [
+    "master_pyrus_frostweaver"
+  ],
+  "features": [
+    "crystalline_shelves",
+    "elemental_braziers",
+    "floating_ice_crystals",
+    "obsidian_counter"
+  ],
+  "is_safe": true,
+  "light_level": "bright",
+  "vendor_id": "pyrus_frostweaver"
+}

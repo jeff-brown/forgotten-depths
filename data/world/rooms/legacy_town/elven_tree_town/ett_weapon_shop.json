@@ -1,0 +1,19 @@
+{
+  "id": "ett_weapon_shop",
+  "title": "The Weapon Shop.",
+  "description": "You are now inside the weapon shop, where you may purchase various weapons to use for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the east wall. The exit is to the west.",
+  "area_id": "legacy_elven_tree",
+  "exits": {
+    "west": "ett_a_catwalk_7"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "silvanus_leafwhisper"
+  ],
+  "shop_type": "weapon",
+  "service_level": 3,
+  "terrain": "town",
+  "legacy_room_id": -38
+}

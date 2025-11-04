@@ -1,0 +1,2452 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine - Spells Database",
+    "original_file": "data/spells.dat",
+    "description": "Complete spell definitions with decoded values",
+    "export_date": "2025-10-14T17:28:28.569644",
+    "total_spells": 72
+  },
+  "_enumerations": {
+    "towns": {
+      "description": "Town availability for items",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not sold in towns"
+        },
+        "1": {
+          "name": "TOWN1",
+          "description": "Town 1"
+        },
+        "2": {
+          "name": "TOWN2",
+          "description": "Town 2"
+        },
+        "3": {
+          "name": "TOWN3",
+          "description": "Town 3"
+        },
+        "4": {
+          "name": "TOWN4",
+          "description": "Town 4"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid town"
+        }
+      }
+    },
+    "player_classes": {
+      "description": "Player class system with bit flags for allowable classes",
+      "values": {
+        "0": {
+          "name": "INVALID",
+          "bit": 0,
+          "description": "Invalid class"
+        },
+        "1": {
+          "name": "FIGHTER",
+          "bit": 1,
+          "description": "Fighter"
+        },
+        "2": {
+          "name": "SORCEROR",
+          "bit": 2,
+          "description": "Sorceror"
+        },
+        "3": {
+          "name": "CLERIC",
+          "bit": 4,
+          "description": "Cleric"
+        },
+        "4": {
+          "name": "ROGUE",
+          "bit": 8,
+          "description": "Rogue"
+        },
+        "5": {
+          "name": "RANGER",
+          "bit": 16,
+          "description": "Ranger"
+        },
+        "6": {
+          "name": "DRUID",
+          "bit": 32,
+          "description": "Druid"
+        },
+        "8": {
+          "name": "NECROLYTE",
+          "bit": 128,
+          "description": "Necrolyte"
+        },
+        "9": {
+          "name": "KNIGHT",
+          "bit": 1,
+          "description": "Knight (promoted Fighter)"
+        },
+        "10": {
+          "name": "ARCH_MAGUS",
+          "bit": 2,
+          "description": "Arch Magus (promoted Sorceror)"
+        },
+        "11": {
+          "name": "HIGH_PRIEST",
+          "bit": 4,
+          "description": "High Priest (promoted Cleric)"
+        },
+        "12": {
+          "name": "BLACK_GUARD",
+          "bit": 8,
+          "description": "Black Guard (promoted Rogue)"
+        },
+        "13": {
+          "name": "BEAST_MASTER",
+          "bit": 16,
+          "description": "Beast Master (promoted Ranger)"
+        },
+        "14": {
+          "name": "ARCH_DRUID",
+          "bit": 32,
+          "description": "Arch Druid (promoted Druid)"
+        },
+        "16": {
+          "name": "NECROMANCER",
+          "bit": 128,
+          "description": "Necromancer (promoted Necrolyte)"
+        }
+      },
+      "note": "allowable_classes field uses bitwise OR of class bits (255 = all classes)"
+    },
+    "armor_types": {
+      "description": "Armor weight/material categories",
+      "values": {
+        "11": {
+          "name": "CLOTH",
+          "description": "Cloth armor (robes, cloaks)"
+        },
+        "12": {
+          "name": "LEATHER",
+          "description": "Leather armor (cuirass)"
+        },
+        "13": {
+          "name": "MEDIUM",
+          "description": "Medium armor (breastplate, ringmail, chainmail)"
+        },
+        "14": {
+          "name": "HEAVY",
+          "description": "Heavy armor (scalemail, bandmail, platemail)"
+        },
+        "15": {
+          "name": "MAGICAL",
+          "description": "Magical armor (demonhide)"
+        },
+        "16": {
+          "name": "DRAGON",
+          "description": "Dragon armor (dragonscale)"
+        },
+        "-1": {
+          "name": "UNKNOWN",
+          "description": "Unknown armor type"
+        }
+      }
+    },
+    "equipment_types": {
+      "description": "Equipment type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not equipment"
+        },
+        "14": {
+          "name": "MISC",
+          "description": "Miscellaneous"
+        },
+        "21": {
+          "name": "SUPPLY",
+          "description": "Supply equipment"
+        },
+        "22": {
+          "name": "SUPPLY_WEAPON",
+          "description": "Weapon sold by supply store"
+        },
+        "23": {
+          "name": "THROWN_WEAPON_CONTAINER",
+          "description": "Container for thrown weapons"
+        },
+        "24": {
+          "name": "RANGED_WEAPON_AMMO",
+          "description": "Ammunition for ranged weapons"
+        },
+        "25": {
+          "name": "AMMO_CONTAINER",
+          "description": "Ammunition container"
+        },
+        "31": {
+          "name": "MINOR_MAGIC_ITEM",
+          "description": "Minor magic item"
+        },
+        "32": {
+          "name": "POTION",
+          "description": "Potion"
+        },
+        "33": {
+          "name": "MAJOR_MAGIC_ITEM",
+          "description": "Major magic item"
+        },
+        "41": {
+          "name": "KEY",
+          "description": "Key"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid equipment type"
+        }
+      }
+    },
+    "equipment_subtypes": {
+      "description": "Equipment subtype classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Undefined subtype"
+        },
+        "1": {
+          "name": "FOOD",
+          "description": "Food"
+        },
+        "2": {
+          "name": "WATER",
+          "description": "Water"
+        },
+        "3": {
+          "name": "HEAL",
+          "description": "Healing item"
+        },
+        "4": {
+          "name": "CURE_POISON",
+          "description": "Cures poison"
+        },
+        "5": {
+          "name": "MINOR_MANA_BOOST",
+          "description": "Boosts mana (minor)"
+        },
+        "6": {
+          "name": "PHYSIQUE_BOOST",
+          "description": "Boosts physique"
+        },
+        "7": {
+          "name": "AGILITY_BOOST",
+          "description": "Boosts agility"
+        },
+        "8": {
+          "name": "INVISIBILITY",
+          "description": "Grants invisibility"
+        },
+        "9": {
+          "name": "RECALL",
+          "description": "Recalls to temple"
+        },
+        "10": {
+          "name": "MAJOR_MANA_BOOST",
+          "description": "Boosts mana (major)"
+        },
+        "11": {
+          "name": "RESERVED",
+          "description": "Reserved/unknown"
+        },
+        "12": {
+          "name": "WAND",
+          "description": "Wand"
+        },
+        "13": {
+          "name": "RUNESTAFF",
+          "description": "Runestaff"
+        },
+        "14": {
+          "name": "ROD_OF_POWER",
+          "description": "Rod of power"
+        },
+        "15": {
+          "name": "FLAME_CRYSTAL",
+          "description": "Flame crystal"
+        },
+        "16": {
+          "name": "LIGHT",
+          "description": "Temporary light"
+        },
+        "17": {
+          "name": "ETERNAL_LIGHT",
+          "description": "Eternal light"
+        },
+        "18": {
+          "name": "SOULSTONE",
+          "description": "Soulstone"
+        },
+        "19": {
+          "name": "AMMO",
+          "description": "Ammunition"
+        },
+        "20": {
+          "name": "MISC2",
+          "description": "Miscellaneous 2 (unknown)"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid subtype"
+        }
+      }
+    },
+    "special_weapon_functions": {
+      "description": "Special weapon functions",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No special function"
+        },
+        "12": {
+          "name": "MAGIC",
+          "description": "Magic weapon with special attack"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid function"
+        }
+      }
+    },
+    "spell_types": {
+      "description": "Spell type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No spell type"
+        },
+        "1": {
+          "name": "SORCEROR_ATTACK",
+          "description": "Sorceror attack spell"
+        },
+        "2": {
+          "name": "ACOLYTE_ATTACK",
+          "description": "Acolyte attack spell"
+        },
+        "3": {
+          "name": "DRUID_ATTACK",
+          "description": "Druid attack spell"
+        },
+        "4": {
+          "name": "NECROLYTE_ATTACK",
+          "description": "Necrolyte attack spell"
+        },
+        "11": {
+          "name": "REMOVE_CONDITION",
+          "description": "Removes status condition"
+        },
+        "12": {
+          "name": "SUSTENANCE",
+          "description": "Sustenance spell"
+        },
+        "21": {
+          "name": "HEALING",
+          "description": "Healing spell"
+        },
+        "22": {
+          "name": "REGENERATION",
+          "description": "Regeneration spell"
+        },
+        "31": {
+          "name": "SUMMONING",
+          "description": "Summoning spell"
+        },
+        "32": {
+          "name": "INVISIBILITY",
+          "description": "Invisibility spell"
+        },
+        "33": {
+          "name": "STAT_MOD",
+          "description": "Stat modification spell"
+        },
+        "41": {
+          "name": "CHARM",
+          "description": "Charm spell"
+        }
+      }
+    },
+    "spell_targets": {
+      "description": "Valid spell targets",
+      "values": {
+        "0": {
+          "name": "SPECIFIED",
+          "description": "Specified target"
+        },
+        "1": {
+          "name": "ROOM_PLAYER",
+          "description": "Player in room"
+        },
+        "2": {
+          "name": "ROOM_MOB",
+          "description": "Monster in room"
+        },
+        "3": {
+          "name": "ROOM_MOB2",
+          "description": "Monster in room (variant)"
+        },
+        "4": {
+          "name": "SUMMON",
+          "description": "Summon target"
+        },
+        "5": {
+          "name": "ROOM_PLAYER2",
+          "description": "Player in room (PVP variant)"
+        }
+      }
+    },
+    "cure_conditions": {
+      "description": "Conditions cured by spells",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "POISON"
+        }
+      }
+    },
+    "poison_targets": {
+      "description": "Poison effect targets",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "2": {
+          "name": "MOB"
+        },
+        "4": {
+          "name": "PLAYER"
+        },
+        "6": {
+          "name": "ROOM_MOB"
+        }
+      }
+    },
+    "mana_effects": {
+      "description": "Mana effect types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "DRAIN"
+        }
+      }
+    },
+    "stat_modifiers": {
+      "description": "Stat modification types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "INTELLECT"
+        },
+        "2": {
+          "name": "KNOWLEDGE"
+        },
+        "3": {
+          "name": "PHYSIQUE"
+        },
+        "4": {
+          "name": "STAMINA"
+        },
+        "5": {
+          "name": "AGILITY"
+        },
+        "6": {
+          "name": "CHARISMA"
+        },
+        "7": {
+          "name": "BODY"
+        },
+        "8": {
+          "name": "MENTAL"
+        },
+        "9": {
+          "name": "PARALYSIS"
+        },
+        "10": {
+          "name": "STAT_DRAIN"
+        }
+      }
+    },
+    "misc_target_effects": {
+      "description": "Miscellaneous target effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "MORAL"
+        },
+        "2": {
+          "name": "WIND"
+        }
+      }
+    },
+    "misc_target_effects2": {
+      "description": "Additional miscellaneous effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "LIFE_STEAL"
+        }
+      }
+    }
+  },
+  "spells": [
+    {
+      "name": "motu",
+      "message": "a minor healing spell",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 1,
+      "min_effect": 4,
+      "max_effect": 8,
+      "scales_with_level": false,
+      "cost": 5,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "komiza",
+      "message": "a small shard of ice",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 1,
+      "min_effect": 2,
+      "max_effect": 12,
+      "scales_with_level": false,
+      "cost": 10,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "pakaza",
+      "message": "a thorn",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 1,
+      "min_effect": 4,
+      "max_effect": 8,
+      "scales_with_level": false,
+      "cost": 10,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "fadi",
+      "message": "a regenerative spell",
+      "spell_type": {
+        "id": 22,
+        "name": "REGENERATION",
+        "description": "Regeneration spell"
+      },
+      "mana_cost": 1,
+      "min_effect": 2,
+      "max_effect": 10,
+      "scales_with_level": false,
+      "cost": 15,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kamotu",
+      "message": "a healing spell",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 8,
+      "max_effect": 24,
+      "scales_with_level": false,
+      "cost": 20,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "tami",
+      "message": "a weak beam of bright energy",
+      "spell_type": {
+        "id": 2,
+        "name": "ACOLYTE_ATTACK",
+        "description": "Acolyte attack spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 2,
+      "max_effect": 16,
+      "scales_with_level": false,
+      "cost": 25,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "toduza",
+      "message": "a small bolt of flame",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 4,
+      "max_effect": 32,
+      "scales_with_level": false,
+      "cost": 20,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "muda",
+      "message": "a minor summoning spell",
+      "spell_type": {
+        "id": 31,
+        "name": "SUMMONING",
+        "description": "Summoning spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 1,
+      "max_effect": 1,
+      "scales_with_level": false,
+      "cost": 25,
+      "spell_target": {
+        "id": 4,
+        "name": "SUMMON",
+        "description": "Summon target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "toraza",
+      "message": "a stone shard",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 4,
+      "max_effect": 20,
+      "scales_with_level": false,
+      "cost": 15,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kotari",
+      "message": "a restorative spell",
+      "spell_type": {
+        "id": 12,
+        "name": "SUSTENANCE",
+        "description": "Sustenance spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 2000,
+      "max_effect": 4000,
+      "scales_with_level": false,
+      "cost": 20,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dobudani",
+      "message": "a curative spell",
+      "spell_type": {
+        "id": 11,
+        "name": "REMOVE_CONDITION",
+        "description": "Removes status condition"
+      },
+      "mana_cost": 3,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 30,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "POISON",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "yari",
+      "message": "an enchantment spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 28,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 4,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "komizuma",
+      "message": "a shower of ice shards",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 8,
+      "max_effect": 64,
+      "scales_with_level": false,
+      "cost": 30,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "modoki",
+      "message": "a bolt of lightning",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 5,
+      "max_effect": 40,
+      "scales_with_level": false,
+      "cost": 30,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "gimotu",
+      "message": "a greater healing spell",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 30,
+      "max_effect": 60,
+      "scales_with_level": false,
+      "cost": 35,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "katami",
+      "message": "a beam of bright energy",
+      "spell_type": {
+        "id": 2,
+        "name": "ACOLYTE_ATTACK",
+        "description": "Acolyte attack spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 8,
+      "max_effect": 48,
+      "scales_with_level": false,
+      "cost": 50,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "motumaru",
+      "message": "a pale bluish mist",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 8,
+      "max_effect": 16,
+      "scales_with_level": false,
+      "cost": 40,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kamuda",
+      "message": "a summoning spell",
+      "spell_type": {
+        "id": 31,
+        "name": "SUMMONING",
+        "description": "Summoning spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 2,
+      "max_effect": 3,
+      "scales_with_level": false,
+      "cost": 60,
+      "spell_target": {
+        "id": 4,
+        "name": "SUMMON",
+        "description": "Summon target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "toduzuma",
+      "message": "a shower of flame",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 16,
+      "max_effect": 96,
+      "scales_with_level": false,
+      "cost": 50,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "sivama",
+      "message": "a powerful gust of wind",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 8,
+      "max_effect": 32,
+      "scales_with_level": false,
+      "cost": 50,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "WIND",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "novadidan",
+      "message": "a charm spell",
+      "spell_type": {
+        "id": 41,
+        "name": "CHARM",
+        "description": "Charm spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 35,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "gitami",
+      "message": "a beam of brilliant energy",
+      "spell_type": {
+        "id": 2,
+        "name": "ACOLYTE_ATTACK",
+        "description": "Acolyte attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 16,
+      "max_effect": 64,
+      "scales_with_level": false,
+      "cost": 100,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kusamotu",
+      "message": "a very powerful healing spell",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 6,
+      "max_effect": 12,
+      "scales_with_level": true,
+      "cost": 75,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "komizadaku",
+      "message": "a storm of ice shards",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 1,
+      "max_effect": 6,
+      "scales_with_level": true,
+      "cost": 100,
+      "spell_target": {
+        "id": 2,
+        "name": "ROOM_MOB",
+        "description": "Monster in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "komidaku",
+      "message": "a storm of ice shards",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 16,
+      "max_effect": 64,
+      "scales_with_level": false,
+      "cost": 75,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "pakazuma",
+      "message": "a shower of wicked thorns",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 10,
+      "max_effect": 50,
+      "scales_with_level": false,
+      "cost": 75,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "novadi",
+      "message": "an invisibility spell",
+      "spell_type": {
+        "id": 32,
+        "name": "INVISIBILITY",
+        "description": "Invisibility spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 100,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "todukar",
+      "message": "a searing ball of flame",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 6,
+      "min_effect": 2,
+      "max_effect": 10,
+      "scales_with_level": true,
+      "cost": 120,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kusatami",
+      "message": "a devastating beam of brilliant energy",
+      "spell_type": {
+        "id": 2,
+        "name": "ACOLYTE_ATTACK",
+        "description": "Acolyte attack spell"
+      },
+      "mana_cost": 6,
+      "min_effect": 20,
+      "max_effect": 80,
+      "scales_with_level": false,
+      "cost": 150,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "modokidan",
+      "message": "several forked bolts of lightning",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 6,
+      "min_effect": 12,
+      "max_effect": 72,
+      "scales_with_level": false,
+      "cost": 125,
+      "spell_target": {
+        "id": 2,
+        "name": "ROOM_MOB",
+        "description": "Monster in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "gimuda",
+      "message": "a greater summoning spell",
+      "spell_type": {
+        "id": 31,
+        "name": "SUMMONING",
+        "description": "Summoning spell"
+      },
+      "mana_cost": 6,
+      "min_effect": 4,
+      "max_effect": 5,
+      "scales_with_level": false,
+      "cost": 150,
+      "spell_target": {
+        "id": 4,
+        "name": "SUMMON",
+        "description": "Summon target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "sivadaku",
+      "message": "a violent windstorm",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 32,
+      "max_effect": 64,
+      "scales_with_level": false,
+      "cost": 150,
+      "spell_target": {
+        "id": 3,
+        "name": "ROOM_MOB2",
+        "description": "Monster in room (variant)"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "WIND",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kusamuda",
+      "message": "a very powerful summoning spell",
+      "spell_type": {
+        "id": 31,
+        "name": "SUMMONING",
+        "description": "Summoning spell"
+      },
+      "mana_cost": 8,
+      "min_effect": 6,
+      "max_effect": 8,
+      "scales_with_level": false,
+      "cost": 300,
+      "spell_target": {
+        "id": 4,
+        "name": "SUMMON",
+        "description": "Summon target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "todudaku",
+      "message": "a devastating firestorm",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 6,
+      "min_effect": 32,
+      "max_effect": 96,
+      "scales_with_level": false,
+      "cost": 200,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "komasidaku",
+      "message": "a storm of fire bolts and ice shards",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 1,
+      "max_effect": 8,
+      "scales_with_level": true,
+      "cost": 250,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "igatok",
+      "message": "an enhancement spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 5,
+      "max_effect": 20,
+      "scales_with_level": false,
+      "cost": 35,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "AGILITY",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dobudanimaru",
+      "message": "a thick greyish mist",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 60,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "POISON",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "rotok",
+      "message": "an enhancement spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 5,
+      "max_effect": 20,
+      "scales_with_level": false,
+      "cost": 35,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "PHYSIQUE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "tsutok",
+      "message": "an enhancement spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 5,
+      "max_effect": 20,
+      "scales_with_level": false,
+      "cost": 35,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "STAMINA",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "igadani",
+      "message": "a draining spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 2,
+      "max_effect": 10,
+      "scales_with_level": false,
+      "cost": 60,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "AGILITY",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kotarimaru",
+      "message": "a thin brownish mist",
+      "spell_type": {
+        "id": 12,
+        "name": "SUSTENANCE",
+        "description": "Sustenance spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 2000,
+      "max_effect": 4000,
+      "scales_with_level": false,
+      "cost": 60,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "rodani",
+      "message": "a draining spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 2,
+      "max_effect": 10,
+      "scales_with_level": false,
+      "cost": 60,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "PHYSIQUE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "tsudani",
+      "message": "a draining spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 2,
+      "max_effect": 10,
+      "scales_with_level": false,
+      "cost": 60,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "STAMINA",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "torazuma",
+      "message": "a shower of stone shards",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 16,
+      "max_effect": 64,
+      "scales_with_level": false,
+      "cost": 100,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "takumi",
+      "message": "a curative spell",
+      "spell_type": {
+        "id": 11,
+        "name": "REMOVE_CONDITION",
+        "description": "Removes status condition"
+      },
+      "mana_cost": 3,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 125,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "PARALYSIS",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kamotumaru",
+      "message": "a bluish mist",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 16,
+      "max_effect": 32,
+      "scales_with_level": false,
+      "cost": 80,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "yarimaru",
+      "message": "a bright yellow mist",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 125,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 2,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "poradani",
+      "message": "a draining spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 1,
+      "max_effect": 5,
+      "scales_with_level": false,
+      "cost": 280,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "BODY",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "jinasutok",
+      "message": "an enhancement spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 2,
+      "max_effect": 10,
+      "scales_with_level": false,
+      "cost": 260,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "MENTAL",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "poratok",
+      "message": "an enhancement spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 2,
+      "max_effect": 10,
+      "scales_with_level": false,
+      "cost": 260,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "BODY",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "gimotumaru",
+      "message": "a dark bluish mist",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 32,
+      "max_effect": 64,
+      "scales_with_level": false,
+      "cost": 180,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "modokidaku",
+      "message": "a lightning storm",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 8,
+      "min_effect": 1,
+      "max_effect": 8,
+      "scales_with_level": true,
+      "cost": 180,
+      "spell_target": {
+        "id": 3,
+        "name": "ROOM_MOB2",
+        "description": "Monster in room (variant)"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "toradaku",
+      "message": "a hail of huge stone shards",
+      "spell_type": {
+        "id": 3,
+        "name": "DRUID_ATTACK",
+        "description": "Druid attack spell"
+      },
+      "mana_cost": 9,
+      "min_effect": 4,
+      "max_effect": 10,
+      "scales_with_level": true,
+      "cost": 180,
+      "spell_target": {
+        "id": 3,
+        "name": "ROOM_MOB2",
+        "description": "Monster in room (variant)"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "novadimaru",
+      "message": "a thick black mist",
+      "spell_type": {
+        "id": 32,
+        "name": "INVISIBILITY",
+        "description": "Invisibility spell"
+      },
+      "mana_cost": 8,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 300,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "jinasudani",
+      "message": "a draining spell",
+      "spell_type": {
+        "id": 33,
+        "name": "STAT_MOD",
+        "description": "Stat modification spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 1,
+      "max_effect": 5,
+      "scales_with_level": false,
+      "cost": 280,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "MENTAL",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "teka",
+      "message": "a weak beam of dark energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 1,
+      "min_effect": 2,
+      "max_effect": 16,
+      "scales_with_level": false,
+      "cost": 10,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kusamotumaru",
+      "message": "a very dark bluish mist",
+      "spell_type": {
+        "id": 21,
+        "name": "HEALING",
+        "description": "Healing spell"
+      },
+      "mana_cost": 9,
+      "min_effect": 4,
+      "max_effect": 8,
+      "scales_with_level": true,
+      "cost": 270,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "ganazi",
+      "message": "a curative spell",
+      "spell_type": {
+        "id": 11,
+        "name": "REMOVE_CONDITION",
+        "description": "Removes status condition"
+      },
+      "mana_cost": 8,
+      "min_effect": 0,
+      "max_effect": 0,
+      "scales_with_level": false,
+      "cost": 220,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "STAT_DRAIN",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dumoti",
+      "message": "a maelstrom of searing flame clouds and huge ice shards",
+      "spell_type": {
+        "id": 1,
+        "name": "SORCEROR_ATTACK",
+        "description": "Sorceror attack spell"
+      },
+      "mana_cost": 9,
+      "min_effect": 4,
+      "max_effect": 12,
+      "scales_with_level": true,
+      "cost": 350,
+      "spell_target": {
+        "id": 3,
+        "name": "ROOM_MOB2",
+        "description": "Monster in room (variant)"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kateka",
+      "message": "a beam of dark energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 8,
+      "max_effect": 64,
+      "scales_with_level": false,
+      "cost": 20,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "yilazi",
+      "message": "a bolt of red energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 3,
+      "min_effect": 2,
+      "max_effect": 6,
+      "scales_with_level": true,
+      "cost": 18,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "LIFE_STEAL"
+    },
+    {
+      "name": "kamaza",
+      "message": "a bolt of blue energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 1,
+      "max_effect": 2,
+      "scales_with_level": true,
+      "cost": 15,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "DRAIN",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dobuza",
+      "message": "a bolt of green energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 2,
+      "min_effect": 1,
+      "max_effect": 2,
+      "scales_with_level": false,
+      "cost": 12,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "MOB",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kamazadaku",
+      "message": "a storm of blue energy bolts",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 1,
+      "max_effect": 1,
+      "scales_with_level": true,
+      "cost": 120,
+      "spell_target": {
+        "id": 1,
+        "name": "ROOM_PLAYER",
+        "description": "Player in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "DRAIN",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "timimaru",
+      "message": "a foul cloud of choking vapor",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 6,
+      "min_effect": 4,
+      "max_effect": 16,
+      "scales_with_level": false,
+      "cost": 130,
+      "spell_target": {
+        "id": 2,
+        "name": "ROOM_MOB",
+        "description": "Monster in room"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "MORAL",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "kusateka",
+      "message": "a devastating beam of dark energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 6,
+      "min_effect": 32,
+      "max_effect": 256,
+      "scales_with_level": false,
+      "cost": 150,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dakidaku",
+      "message": "a torrential downpour of acid",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 7,
+      "min_effect": 4,
+      "max_effect": 8,
+      "scales_with_level": true,
+      "cost": 225,
+      "spell_target": {
+        "id": 3,
+        "name": "ROOM_MOB2",
+        "description": "Monster in room (variant)"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dakima",
+      "message": "a stream of acid",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 16,
+      "max_effect": 96,
+      "scales_with_level": false,
+      "cost": 30,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "tamikar",
+      "message": "a blast of dark energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 4,
+      "min_effect": 4,
+      "max_effect": 12,
+      "scales_with_level": true,
+      "cost": 50,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "giteka",
+      "message": "a crackling beam of dark energy",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 16,
+      "max_effect": 128,
+      "scales_with_level": false,
+      "cost": 75,
+      "spell_target": {
+        "id": 0,
+        "name": "SPECIFIED",
+        "description": "Specified target"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "NONE",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dobumaru",
+      "message": "a dark greenish mist",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 5,
+      "min_effect": 1,
+      "max_effect": 2,
+      "scales_with_level": false,
+      "cost": 90,
+      "spell_target": {
+        "id": 3,
+        "name": "ROOM_MOB2",
+        "description": "Monster in room (variant)"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "PLAYER",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    },
+    {
+      "name": "dobudakidaku",
+      "message": "a torrential downpour of dark green acid",
+      "spell_type": {
+        "id": 4,
+        "name": "NECROLYTE_ATTACK",
+        "description": "Necrolyte attack spell"
+      },
+      "mana_cost": 8,
+      "min_effect": 4,
+      "max_effect": 8,
+      "scales_with_level": true,
+      "cost": 325,
+      "spell_target": {
+        "id": 3,
+        "name": "ROOM_MOB2",
+        "description": "Monster in room (variant)"
+      },
+      "armor_modifier": 0,
+      "cure_condition": "NONE",
+      "poison_target": "ROOM_MOB",
+      "mana_effect": "NONE",
+      "stat_penalty": "NONE",
+      "stat_bonus": "NONE",
+      "misc_target_effect": "NONE",
+      "misc_target_effect2": "NONE"
+    }
+  ]
+}

@@ -1,0 +1,807 @@
+{
+  "0": {
+    "category": "plant",
+    "id": "strangle_vine",
+    "name": "Strangle Vine"
+  },
+  "1": {
+    "category": "plant",
+    "id": "white_orchid",
+    "name": "White Orchid"
+  },
+  "2": {
+    "category": "plant",
+    "id": "pink_orchid",
+    "name": "Pink Orchid"
+  },
+  "3": {
+    "category": "plant",
+    "id": "red_orchid",
+    "name": "Red Orchid"
+  },
+  "4": {
+    "category": "plant",
+    "id": "yellow_orchid",
+    "name": "Yellow Orchid"
+  },
+  "5": {
+    "category": "plant",
+    "id": "black_orchid",
+    "name": "Black Orchid"
+  },
+  "6": {
+    "category": "plant",
+    "id": "constrictor_ivy",
+    "name": "Constrictor Ivy"
+  },
+  "7": {
+    "category": "plant",
+    "id": "carrion_creeper",
+    "name": "Carrion Creeper"
+  },
+  "8": {
+    "category": "beast",
+    "id": "reaper_shrub",
+    "name": "Reaper Shrub"
+  },
+  "9": {
+    "category": "beast",
+    "id": "huge_rat",
+    "name": "Huge Rat"
+  },
+  "10": {
+    "category": "demon",
+    "id": "imp",
+    "name": "Imp"
+  },
+  "11": {
+    "category": "humanoid",
+    "id": "female_kobold",
+    "name": "Female Kobold"
+  },
+  "12": {
+    "category": "humanoid",
+    "id": "kobold",
+    "name": "Kobold"
+  },
+  "13": {
+    "category": "humanoid",
+    "id": "female_orc",
+    "name": "Female Orc"
+  },
+  "14": {
+    "category": "humanoid",
+    "id": "orc",
+    "name": "Orc"
+  },
+  "15": {
+    "category": "undead",
+    "id": "skeleton_warrior",
+    "name": "Skeleton Warrior"
+  },
+  "16": {
+    "category": "humanoid",
+    "id": "giant_scorpion",
+    "name": "Giant Scorpion"
+  },
+  "17": {
+    "category": "undead",
+    "id": "zombie",
+    "name": "Zombie"
+  },
+  "18": {
+    "category": "monster",
+    "id": "huge_toad",
+    "name": "Huge Toad"
+  },
+  "19": {
+    "category": "humanoid",
+    "id": "giant_slug",
+    "name": "Giant Slug"
+  },
+  "20": {
+    "category": "humanoid",
+    "id": "giant_bat",
+    "name": "Giant Bat"
+  },
+  "21": {
+    "category": "demon",
+    "id": "lesser_demoness",
+    "name": "Lesser Demoness"
+  },
+  "22": {
+    "category": "demon",
+    "id": "lesser_demon",
+    "name": "Lesser Demon"
+  },
+  "23": {
+    "category": "monster",
+    "id": "shade",
+    "name": "Shade"
+  },
+  "24": {
+    "category": "humanoid",
+    "id": "giant_spider",
+    "name": "Giant Spider"
+  },
+  "25": {
+    "category": "monster",
+    "id": "ram",
+    "name": "Ram"
+  },
+  "26": {
+    "category": "monster",
+    "id": "fire_beetle",
+    "name": "Fire Beetle"
+  },
+  "27": {
+    "category": "monster",
+    "id": "alligator",
+    "name": "Alligator"
+  },
+  "28": {
+    "category": "humanoid",
+    "id": "giant_asp",
+    "name": "Giant Asp"
+  },
+  "29": {
+    "category": "monster",
+    "id": "anaconda",
+    "name": "Anaconda"
+  },
+  "30": {
+    "category": "monster",
+    "id": "lizard_woman",
+    "name": "Lizard Woman"
+  },
+  "31": {
+    "category": "monster",
+    "id": "lizard_man",
+    "name": "Lizard Man"
+  },
+  "32": {
+    "category": "beast",
+    "id": "black_bear",
+    "name": "Black Bear"
+  },
+  "33": {
+    "category": "beast",
+    "id": "red_bear",
+    "name": "Red Bear"
+  },
+  "34": {
+    "category": "humanoid",
+    "id": "female_gnoll",
+    "name": "Female Gnoll"
+  },
+  "35": {
+    "category": "humanoid",
+    "id": "gnoll",
+    "name": "Gnoll"
+  },
+  "36": {
+    "category": "humanoid",
+    "id": "female_hobgoblin",
+    "name": "Female Hobgoblin"
+  },
+  "37": {
+    "category": "humanoid",
+    "id": "hobgoblin",
+    "name": "Hobgoblin"
+  },
+  "38": {
+    "category": "monster",
+    "id": "female_brigand",
+    "name": "Female Brigand"
+  },
+  "39": {
+    "category": "monster",
+    "id": "brigand",
+    "name": "Brigand"
+  },
+  "40": {
+    "category": "monster",
+    "id": "leopard",
+    "name": "Leopard"
+  },
+  "41": {
+    "category": "beast",
+    "id": "wolf",
+    "name": "Wolf"
+  },
+  "42": {
+    "category": "beast",
+    "id": "wild_boar",
+    "name": "Wild Boar"
+  },
+  "43": {
+    "category": "beast",
+    "id": "cave_bear",
+    "name": "Cave Bear"
+  },
+  "44": {
+    "category": "monster",
+    "id": "female_barbarian",
+    "name": "Female Barbarian"
+  },
+  "45": {
+    "category": "monster",
+    "id": "barbarian",
+    "name": "Barbarian"
+  },
+  "46": {
+    "category": "humanoid",
+    "id": "female_centaur",
+    "name": "Female Centaur"
+  },
+  "47": {
+    "category": "humanoid",
+    "id": "centaur",
+    "name": "Centaur"
+  },
+  "48": {
+    "category": "beast",
+    "id": "mountain_ape",
+    "name": "Mountain Ape"
+  },
+  "49": {
+    "category": "humanoid",
+    "id": "female_satyr",
+    "name": "Female Satyr"
+  },
+  "50": {
+    "category": "humanoid",
+    "id": "satyr",
+    "name": "Satyr"
+  },
+  "51": {
+    "category": "humanoid",
+    "id": "female_minotaur",
+    "name": "Female Minotaur"
+  },
+  "52": {
+    "category": "humanoid",
+    "id": "minotaur",
+    "name": "Minotaur"
+  },
+  "53": {
+    "category": "monster",
+    "id": "carrion_crane",
+    "name": "Carrion Crane"
+  },
+  "54": {
+    "category": "humanoid",
+    "id": "ogress",
+    "name": "Ogress"
+  },
+  "55": {
+    "category": "humanoid",
+    "id": "ogre",
+    "name": "Ogre"
+  },
+  "56": {
+    "category": "monster",
+    "id": "swordswoman",
+    "name": "Swordswoman"
+  },
+  "57": {
+    "category": "monster",
+    "id": "swordsman",
+    "name": "Swordsman"
+  },
+  "58": {
+    "category": "giant",
+    "id": "female_cyclops",
+    "name": "Female Cyclops"
+  },
+  "59": {
+    "category": "giant",
+    "id": "cyclops",
+    "name": "Cyclops"
+  },
+  "60": {
+    "category": "undead",
+    "id": "wraith",
+    "name": "Wraith"
+  },
+  "61": {
+    "category": "monster",
+    "id": "larochess",
+    "name": "Larochess"
+  },
+  "62": {
+    "category": "monster",
+    "id": "larochet",
+    "name": "Larochet"
+  },
+  "63": {
+    "category": "beast",
+    "id": "cave_lion",
+    "name": "Cave Lion"
+  },
+  "64": {
+    "category": "humanoid",
+    "id": "female_troll",
+    "name": "Female Troll"
+  },
+  "65": {
+    "category": "humanoid",
+    "id": "troll",
+    "name": "Troll"
+  },
+  "66": {
+    "category": "undead",
+    "id": "skeleton_lord",
+    "name": "Skeleton Lord"
+  },
+  "67": {
+    "category": "monster",
+    "id": "griffon",
+    "name": "Griffon"
+  },
+  "68": {
+    "category": "undead",
+    "id": "ghoul",
+    "name": "Ghoul"
+  },
+  "69": {
+    "category": "monster",
+    "id": "gargoyle",
+    "name": "Gargoyle"
+  },
+  "70": {
+    "category": "monster",
+    "id": "magmaman",
+    "name": "Magmaman"
+  },
+  "71": {
+    "category": "humanoid",
+    "id": "ogress_mage",
+    "name": "Ogress Mage"
+  },
+  "72": {
+    "category": "humanoid",
+    "id": "ogre_mage",
+    "name": "Ogre Mage"
+  },
+  "73": {
+    "category": "monster",
+    "id": "sand_worm",
+    "name": "Sand Worm"
+  },
+  "74": {
+    "category": "magical_creature",
+    "id": "chimera",
+    "name": "Chimera"
+  },
+  "75": {
+    "category": "monster",
+    "id": "warlock",
+    "name": "Warlock"
+  },
+  "76": {
+    "category": "humanoid",
+    "id": "minotaur_chieftain",
+    "name": "Minotaur Chieftain"
+  },
+  "77": {
+    "category": "humanoid",
+    "id": "stone_giantess",
+    "name": "Stone Giantess"
+  },
+  "78": {
+    "category": "humanoid",
+    "id": "stone_giant",
+    "name": "Stone Giant"
+  },
+  "79": {
+    "category": "dragon",
+    "id": "elysian_dragon",
+    "name": "Elysian Dragon"
+  },
+  "80": {
+    "category": "monster",
+    "id": "hydra",
+    "name": "Hydra"
+  },
+  "81": {
+    "category": "monster",
+    "id": "female_affreet",
+    "name": "Female Affreet"
+  },
+  "82": {
+    "category": "monster",
+    "id": "affreet",
+    "name": "Affreet"
+  },
+  "83": {
+    "category": "monster",
+    "id": "magma_worm",
+    "name": "Magma Worm"
+  },
+  "84": {
+    "category": "dragon",
+    "id": "stygian_dragon",
+    "name": "Stygian Dragon"
+  },
+  "85": {
+    "category": "humanoid",
+    "id": "ice_giantess",
+    "name": "Ice Giantess"
+  },
+  "86": {
+    "category": "humanoid",
+    "id": "ice_giant",
+    "name": "Ice Giant"
+  },
+  "87": {
+    "category": "monster",
+    "id": "octopod",
+    "name": "Octopod"
+  },
+  "88": {
+    "category": "undead",
+    "id": "skeleton_giant",
+    "name": "Skeleton Giant"
+  },
+  "89": {
+    "category": "demon",
+    "id": "greater_demoness",
+    "name": "Greater Demoness"
+  },
+  "90": {
+    "category": "demon",
+    "id": "greater_demon",
+    "name": "Greater Demon"
+  },
+  "91": {
+    "category": "humanoid",
+    "id": "sorceress",
+    "name": "Sorceress"
+  },
+  "92": {
+    "category": "humanoid",
+    "id": "sorcerer",
+    "name": "Sorceror"
+  },
+  "93": {
+    "category": "dragon",
+    "id": "apollyon_dragon",
+    "name": "Apollyon Dragon"
+  },
+  "94": {
+    "category": "humanoid",
+    "id": "flame_giantess",
+    "name": "Flame Giantess"
+  },
+  "95": {
+    "category": "humanoid",
+    "id": "flame_giant",
+    "name": "Flame Giant"
+  },
+  "96": {
+    "category": "humanoid",
+    "id": "flame_giant_warlord",
+    "name": "Flame Giant Warlord"
+  },
+  "97": {
+    "category": "dragon",
+    "id": "balneal_dragon",
+    "name": "Balneal Dragon"
+  },
+  "98": {
+    "category": "demon",
+    "id": "arch_demoness",
+    "name": "Arch Demoness"
+  },
+  "99": {
+    "category": "demon",
+    "id": "arch_demon",
+    "name": "Arch Demon"
+  },
+  "100": {
+    "category": "demon",
+    "id": "demon_king",
+    "name": "Demon King"
+  },
+  "101": {
+    "category": "dragon",
+    "id": "great_dragon",
+    "name": "Great Dragon"
+  },
+  "102": {
+    "category": "monster",
+    "id": "white_rabbit",
+    "name": "White Rabbit"
+  },
+  "103": {
+    "category": "monster",
+    "id": "black_rabbit",
+    "name": "Black Rabbit"
+  },
+  "104": {
+    "category": "monster",
+    "id": "pink_bunny",
+    "name": "Pink Bunny"
+  },
+  "105": {
+    "category": "monster",
+    "id": "lizard",
+    "name": "Lizard"
+  },
+  "106": {
+    "category": "monster",
+    "id": "monkey",
+    "name": "Monkey"
+  },
+  "107": {
+    "category": "monster",
+    "id": "owl",
+    "name": "Owl"
+  },
+  "108": {
+    "category": "monster",
+    "id": "squirrel",
+    "name": "Squirrel"
+  },
+  "109": {
+    "category": "monster",
+    "id": "frog",
+    "name": "Frog"
+  },
+  "110": {
+    "category": "monster",
+    "id": "lizard",
+    "name": "Lizard"
+  },
+  "111": {
+    "category": "monster",
+    "id": "fox",
+    "name": "Fox"
+  },
+  "112": {
+    "category": "monster",
+    "id": "hyena",
+    "name": "Hyena"
+  },
+  "113": {
+    "category": "beast",
+    "id": "tiger",
+    "name": "Tiger"
+  },
+  "114": {
+    "category": "beast",
+    "id": "mountain_lion",
+    "name": "Mountain Lion"
+  },
+  "115": {
+    "category": "monster",
+    "id": "female_nomad",
+    "name": "Female Nomad"
+  },
+  "116": {
+    "category": "monster",
+    "id": "nomad",
+    "name": "Nomad"
+  },
+  "117": {
+    "category": "humanoid",
+    "id": "female_bandit",
+    "name": "Female Bandit"
+  },
+  "118": {
+    "category": "humanoid",
+    "id": "bandit",
+    "name": "Bandit"
+  },
+  "119": {
+    "category": "humanoid",
+    "id": "forest_giantess",
+    "name": "Forest Giantess"
+  },
+  "120": {
+    "category": "humanoid",
+    "id": "forest_giant",
+    "name": "Forest Giant"
+  },
+  "121": {
+    "category": "monster",
+    "id": "jackal",
+    "name": "Jackal"
+  },
+  "122": {
+    "category": "elemental",
+    "id": "ice_elemental",
+    "name": "Ice Elemental"
+  },
+  "123": {
+    "category": "elemental",
+    "id": "flame_elemental",
+    "name": "Flame Elemental"
+  },
+  "124": {
+    "category": "elemental",
+    "id": "stone_elemental",
+    "name": "Stone Elemental"
+  },
+  "125": {
+    "category": "monster",
+    "id": "mystic_knight",
+    "name": "Mystic Knight"
+  },
+  "126": {
+    "category": "humanoid",
+    "id": "orc_warrior",
+    "name": "Orc Warrior"
+  },
+  "127": {
+    "category": "humanoid",
+    "id": "orc_subchief",
+    "name": "Orc Subchief"
+  },
+  "128": {
+    "category": "humanoid",
+    "id": "orc_chieftain",
+    "name": "Orc Chieftain"
+  },
+  "129": {
+    "category": "humanoid",
+    "id": "orc_shaman",
+    "name": "Orc Shaman"
+  },
+  "130": {
+    "category": "humanoid",
+    "id": "orc_warlord",
+    "name": "Orc Warlord"
+  },
+  "131": {
+    "category": "humanoid",
+    "id": "gnoll_warrior",
+    "name": "Gnoll Warrior"
+  },
+  "132": {
+    "category": "humanoid",
+    "id": "gnoll_subchief",
+    "name": "Gnoll Subchief"
+  },
+  "133": {
+    "category": "humanoid",
+    "id": "gnoll_chieftain",
+    "name": "Gnoll Chieftain"
+  },
+  "134": {
+    "category": "humanoid",
+    "id": "gnoll_warlord",
+    "name": "Gnoll Warlord"
+  },
+  "135": {
+    "category": "humanoid",
+    "id": "gnoll_shaman",
+    "name": "Gnoll Shaman"
+  },
+  "136": {
+    "category": "humanoid",
+    "id": "lizard_warrior",
+    "name": "Lizard Warrior"
+  },
+  "137": {
+    "category": "monster",
+    "id": "lizard_subchief",
+    "name": "Lizard Subchief"
+  },
+  "138": {
+    "category": "monster",
+    "id": "lizard_chieftain",
+    "name": "Lizard Chieftain"
+  },
+  "139": {
+    "category": "monster",
+    "id": "lizard_warlord",
+    "name": "Lizard Warlord"
+  },
+  "140": {
+    "category": "monster",
+    "id": "lizard_shaman",
+    "name": "Lizard Shaman"
+  },
+  "141": {
+    "category": "humanoid",
+    "id": "stone_warrior",
+    "name": "Stone Warrior"
+  },
+  "142": {
+    "category": "monster",
+    "id": "stone_scorpion",
+    "name": "Stone Scorpion"
+  },
+  "143": {
+    "category": "monster",
+    "id": "stone_wizard",
+    "name": "Stone Wizard"
+  },
+  "144": {
+    "category": "humanoid",
+    "id": "dwarven_guard",
+    "name": "Dwarven Guard"
+  },
+  "145": {
+    "category": "humanoid",
+    "id": "elite_dwarven_guard",
+    "name": "Elite Dwarven Guard"
+  },
+  "146": {
+    "category": "monster",
+    "id": "dwarven_captain",
+    "name": "Dwarven Captain"
+  },
+  "147": {
+    "category": "humanoid",
+    "id": "dwarven_sorcerer",
+    "name": "Dwarven Sorceror"
+  },
+  "148": {
+    "category": "monster",
+    "id": "dwarven_warhound",
+    "name": "Dwarven Warhound"
+  },
+  "149": {
+    "category": "monster",
+    "id": "dwarven_leutenant",
+    "name": "Dwarven Leutenant"
+  },
+  "150": {
+    "category": "monster",
+    "id": "dwarven_warlord",
+    "name": "Dwarven Warlord"
+  },
+  "151": {
+    "category": "monster",
+    "id": "smith",
+    "name": "Smith"
+  },
+  "152": {
+    "category": "monster",
+    "id": "master_smith",
+    "name": "Master Smith"
+  },
+  "153": {
+    "category": "monster",
+    "id": "dwarven_archmage",
+    "name": "Dwarven Archmage"
+  },
+  "154": {
+    "category": "demon",
+    "id": "hellhound",
+    "name": "Hellhound"
+  },
+  "155": {
+    "category": "monster",
+    "id": "magma_slug",
+    "name": "Magma Slug"
+  },
+  "156": {
+    "category": "monster",
+    "id": "elven_scout",
+    "name": "Elven Scout"
+  },
+  "157": {
+    "category": "monster",
+    "id": "female_elf",
+    "name": "Female Elf"
+  },
+  "158": {
+    "category": "humanoid",
+    "id": "elven_warrior",
+    "name": "Elven Warrior"
+  },
+  "159": {
+    "category": "monster",
+    "id": "elven_champion",
+    "name": "Elven Champion"
+  },
+  "160": {
+    "category": "monster",
+    "id": "elven_warlord",
+    "name": "Elven Warlord"
+  }
+}

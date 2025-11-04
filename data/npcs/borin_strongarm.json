@@ -1,0 +1,96 @@
+{
+  "id": "borin_strongarm",
+  "name": "Borin Strongarm",
+  "short_description": "a weapon shopkeeper",
+  "long_description": "The shop keeper is an brawny human smithy wearing heavy leather overalls. His head is bald, and he has a coarse black beard and moustache. He seems to be of a jovial sort because of his broad smile, and bright eyes.",
+  "level": 5,
+  "type": "npc",
+  "hostile": false,
+  "health": 50,
+  "race": "human",
+  "class": "artisan",
+  "keywords": [
+    "borin",
+    "strongarm",
+    "weapon",
+    "shopkeeper"
+  ],
+  "legacy_npc_id": 1,
+  "dialogue": {
+    "greeting": "Welcome to my weapon shop! Looking for a fine blade?",
+    "default": "Every weapon here is crafted with care and designed to serve you well in battle.",
+    "goodbye": "May your blade stay sharp!"
+  },
+  "services": [
+    "vendor",
+    "weapon_shop",
+    "repair"
+  ],
+  "stats": {
+    "strength": 12,
+    "dexterity": 11,
+    "constitution": 13,
+    "intelligence": 12,
+    "wisdom": 14,
+    "charisma": 13
+  },
+  "shop": {
+    "type": "weapon_shop",
+    "buy_rate": 0.4,
+    "sell_markup": 1.5,
+    "inventory": [
+      {
+        "item_id": "dagger",
+        "stock": -1
+      },
+      {
+        "item_id": "short_sword",
+        "stock": -1
+      },
+      {
+        "item_id": "shortsword",
+        "stock": -1
+      },
+      {
+        "item_id": "quarterstaff",
+        "stock": -1
+      },
+      {
+        "item_id": "mace",
+        "stock": -1
+      },
+      {
+        "item_id": "warhammer",
+        "stock": -1
+      },
+      {
+        "item_id": "morningstar",
+        "stock": -1
+      },
+      {
+        "item_id": "longsword",
+        "stock": -1
+      },
+      {
+        "item_id": "battleax",
+        "stock": -1
+      },
+      {
+        "item_id": "broadsword",
+        "stock": -1
+      },
+      {
+        "item_id": "flail",
+        "stock": -1
+      },
+      {
+        "item_id": "halberd",
+        "stock": -1
+      },
+      {
+        "item_id": "greatsword",
+        "stock": -1
+      }
+    ]
+  }
+}

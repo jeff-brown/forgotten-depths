@@ -1,0 +1,16 @@
+{
+  "id": "mhv_town_vaults",
+  "title": "The Town Vaults.",
+  "description": "You are standing at the entrance to the town vaults. The room is bare, and fashioned from solid natural stone. On the south wall there is a huge iron door, and an open window covered with iron bars. A richly dressed man in the window looks at you expectantly. A wide stone staircase leads upward.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "up": "mhv_guild_hall"
+  },
+  "is_safe": true,
+  "is_vault": true,
+  "light_level": "bright",
+  "shop_type": "vault",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -66
+}

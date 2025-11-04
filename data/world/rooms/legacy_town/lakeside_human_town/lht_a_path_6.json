@@ -1,0 +1,14 @@
+{
+  "id": "lht_a_path_6",
+  "title": "A Path.",
+  "description": "You are standing on a path that leads into open plazas to the north and south. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "north": "lht_north_plaza",
+    "south": "lht_south_plaza"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -83
+}

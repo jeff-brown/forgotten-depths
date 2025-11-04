@@ -1,0 +1,87 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine",
+    "original_file": "data/barriers.dat",
+    "description": "Barrier messages for doors and obstacles"
+  },
+  "_documentation": {
+    "barrier_id": "Unique identifier for the barrier",
+    "locked_message": "Message shown when barrier is locked",
+    "unlocked_message": "Message shown when player unlocks barrier (may contain {0} for item name)",
+    "rogue_message": "Message shown when rogue picks the lock",
+    "value": "Difficulty value or required level"
+  },
+  "barriers": [
+    {
+      "barrier_id": 1,
+      "locked_message": "The locked oak door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the oak door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the oak door.",
+      "value": 0
+    },
+    {
+      "barrier_id": 2,
+      "locked_message": "The locked iron door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the iron door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the iron door.",
+      "value": 35
+    },
+    {
+      "barrier_id": 3,
+      "locked_message": "The locked bronze door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the bronze door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the bronze door.",
+      "value": 25
+    },
+    {
+      "barrier_id": 4,
+      "locked_message": "The locked stone door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the stone door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the stone door.",
+      "value": 15
+    },
+    {
+      "barrier_id": 5,
+      "locked_message": "The locked brass door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the brass door and allows you to pass through.",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the brass door.",
+      "value": 20
+    },
+    {
+      "barrier_id": 6,
+      "locked_message": "The walls of this pit are too steep to climb unaided.",
+      "unlocked_message": "You climb out of the pit using your {0}.",
+      "rogue_message": "Your rogue abilities allow you to climb out of the pit.",
+      "value": 0
+    },
+    {
+      "barrier_id": 7,
+      "locked_message": "The wide chasm prevents your exit in that direction.",
+      "unlocked_message": "",
+      "rogue_message": "",
+      "value": 0
+    },
+    {
+      "barrier_id": 8,
+      "locked_message": "A mystical force prevents your exit in that direction.",
+      "unlocked_message": "",
+      "rogue_message": "",
+      "value": 0
+    },
+    {
+      "barrier_id": 9,
+      "locked_message": "You have progressed beyond the need to go there.",
+      "unlocked_message": "",
+      "rogue_message": "",
+      "value": 0
+    },
+    {
+      "barrier_id": 10,
+      "locked_message": "The locked ironwood door prevents your exit in that direction.",
+      "unlocked_message": "Your {0} unlocks the ironwood door and allows you to pass!",
+      "rogue_message": "Your rogue abilities allowed you to pick the lock on the ironwood door!",
+      "value": 60
+    }
+  ]
+}

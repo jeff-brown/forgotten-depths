@@ -1,0 +1,14 @@
+{
+  "id": "dut_arena",
+  "title": "The Arena.",
+  "description": "You are standing in an enormous natural cavern of dark reddish stone. The charred and stained walls and stonework floor tell of battles ancient and recent that have been fought in this place of death. The floor and walls of this cavern give off noticable heat. A huge iron gong hangs at the center of the arena suspended on a framework made of the bones of demons and dragons. The exit through a huge stone archway is to the southwest.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "southwest": "dut_an_underground_plaza_1"
+  },
+  "is_arena": true,
+  "light_level": "bright",
+  "service_level": 3,
+  "terrain": "town",
+  "legacy_room_id": -53
+}

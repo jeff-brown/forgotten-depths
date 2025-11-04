@@ -1,0 +1,19 @@
+{
+  "id": "dut_tavern",
+  "title": "The Tavern.",
+  "description": "You are in the tavern. The smoke from the many oil lamps decreases visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the tavern's rowdy patrons, primarily dwarves, gnomes, and an occasional goblin make themselves at home. The bar stands along the north wall and a door to the kitchen lies to the west. The only visibile exit lies to the southeast.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "southeast": "dut_an_underground_plaza_1"
+  },
+  "is_safe": true,
+  "is_tavern": true,
+  "light_level": "bright",
+  "npcs": [
+    "garth_thegiant"
+  ],
+  "shop_type": "inn",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -58
+}

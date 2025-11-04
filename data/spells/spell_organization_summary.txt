@@ -1,0 +1,181 @@
+SPELL ORGANIZATION SUMMARY
+============================================================
+
+
+SORCERER
+------------------------------------------------------------
+
+Level 1 (1 spells):
+  - Komiza (komiza)
+
+Level 2 (1 spells):
+  - Toduza (toduza)
+
+Level 3 (1 spells):
+  - Komizuma (komizuma)
+
+Level 4 (1 spells):
+  - Toduzuma (toduzuma)
+
+Level 5 (2 spells):
+  - Komidaku (komidaku)
+  - Komizadaku (komizadaku)
+
+Level 6 (2 spells):
+  - Todudaku (todudaku)
+  - Todukar (todukar)
+
+Level 7 (1 spells):
+  - Komasidaku (komasidaku)
+
+Level 9 (1 spells):
+  - Dumoti (dumoti)
+
+WARLOCK
+------------------------------------------------------------
+
+Level 1 (1 spells):
+  - Teka (teka)
+
+Level 2 (3 spells):
+  - Dobuza (dobuza)
+  - Kamaza (kamaza)
+  - Muda (muda)
+
+Level 3 (2 spells):
+  - Kateka (kateka)
+  - Yilazi (yilazi)
+
+Level 4 (6 spells):
+  - Dakima (dakima)
+  - Igadani (igadani)
+  - Kamuda (kamuda)
+  - Rodani (rodani)
+  - Tamikar (tamikar)
+  - Tsudani (tsudani)
+
+Level 5 (3 spells):
+  - Dobumaru (dobumaru)
+  - Giteka (giteka)
+  - Kamazadaku (kamazadaku)
+
+Level 6 (3 spells):
+  - Gimuda (gimuda)
+  - Kusateka (kusateka)
+  - Timimaru (timimaru)
+
+Level 7 (3 spells):
+  - Dakidaku (dakidaku)
+  - Jinasudani (jinasudani)
+  - Poradani (poradani)
+
+Level 8 (2 spells):
+  - Dobudakidaku (dobudakidaku)
+  - Kusamuda (kusamuda)
+
+CLERIC
+------------------------------------------------------------
+
+Level 1 (1 spells):
+  - Motu (motu)
+
+Level 2 (2 spells):
+  - Kamotu (kamotu)
+  - Tami (tami)
+
+Level 4 (4 spells):
+  - Dobudanimaru (dobudanimaru)
+  - Gimotu (gimotu)
+  - Katami (katami)
+  - Motumaru (motumaru)
+
+Level 5 (3 spells):
+  - Gitami (gitami)
+  - Kamotumaru (kamotumaru)
+  - Kusamotu (kusamotu)
+
+Level 6 (1 spells):
+  - Kusatami (kusatami)
+
+Level 7 (1 spells):
+  - Gimotumaru (gimotumaru)
+
+Level 9 (1 spells):
+  - Kusamotumaru (kusamotumaru)
+
+DRUID
+------------------------------------------------------------
+
+Level 1 (1 spells):
+  - Pakaza (pakaza)
+
+Level 2 (1 spells):
+  - Toraza (toraza)
+
+Level 3 (1 spells):
+  - Modoki (modoki)
+
+Level 4 (1 spells):
+  - Sivama (sivama)
+
+Level 5 (2 spells):
+  - Pakazuma (pakazuma)
+  - Torazuma (torazuma)
+
+Level 6 (1 spells):
+  - Modokidan (modokidan)
+
+Level 7 (1 spells):
+  - Sivadaku (sivadaku)
+
+Level 8 (1 spells):
+  - Modokidaku (modokidaku)
+
+Level 9 (1 spells):
+  - Toradaku (toradaku)
+
+MULTI CLASS
+------------------------------------------------------------
+
+Level 1 (5 spells):
+  - Cure Wounds (cure_wounds)
+  - Fadi (fadi)
+  - Heal (heal)
+  - Magic Missile (magic_missile)
+  - Shield (shield)
+
+Level 2 (5 spells):
+  - Frost Nova (frost_nova)
+  - Invisibility (invisibility)
+  - Kotari (kotari)
+  - Lightning Bolt (lightning_bolt)
+  - Murder (murder)
+
+Level 3 (7 spells):
+  - Dobudani (dobudani)
+  - Fireball (fireball)
+  - Igatok (igatok)
+  - Rotok (rotok)
+  - Takumi (takumi)
+  - Tsutok (tsutok)
+  - Yari (yari)
+
+Level 4 (1 spells):
+  - Novadidan (novadidan)
+
+Level 5 (3 spells):
+  - Kotarimaru (kotarimaru)
+  - Novadi (novadi)
+  - Yarimaru (yarimaru)
+
+Level 7 (2 spells):
+  - Jinasutok (jinasutok)
+  - Poratok (poratok)
+
+Level 8 (2 spells):
+  - Ganazi (ganazi)
+  - Novadimaru (novadimaru)
+
+============================================================
+
+Total spells: 81

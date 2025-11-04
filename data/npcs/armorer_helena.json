@@ -1,0 +1,44 @@
+{
+  "id": "armorer_helena",
+  "name": "Helena the Armorer",
+  "short_description": "a skilled armorer",
+  "long_description": "Helena is a compact, muscular woman with calloused hands and keen eyes that assess every piece of armor with expert precision. Her workshop smells of leather oil and metal polish. Suits of armor in various stages of completion line the walls, each one a testament to her meticulous craftsmanship. She takes great pride in ensuring every adventurer is properly protected.",
+  "level": 12,
+  "type": "npc",
+  "hostile": false,
+  "health": 150,
+  "race": "human",
+  "class": "artisan",
+  "keywords": ["helena", "armorer", "armor", "armorsmith"],
+  "dialogue": {
+    "greeting": "Welcome to Helena's Armory! The best protection gold can buy.",
+    "default": "A warrior is only as good as their armor. Let me outfit you with something that'll keep you alive.",
+    "goodbye": "Stay safe out there! May your armor never fail you."
+  },
+  "services": ["armorer", "repair"],
+  "shop": {
+    "type": "armorer",
+    "buy_rate": 0.5,
+    "sell_markup": 1.0,
+    "specialties": ["armor", "shields"],
+    "inventory": [
+      {"item_id": "cloak", "price": 10, "stock": -1},
+      {"item_id": "robes", "price": 20, "stock": -1},
+      {"item_id": "cuirass", "price": 40, "stock": 8},
+      {"item_id": "breastplate", "price": 200, "stock": 5},
+      {"item_id": "ringmail", "price": 250, "stock": 5},
+      {"item_id": "chainmail", "price": 300, "stock": 5},
+      {"item_id": "scalemail", "price": 400, "stock": 3},
+      {"item_id": "bandmail", "price": 500, "stock": 2},
+      {"item_id": "platemail", "price": 600, "stock": 2}
+    ]
+  },
+  "stats": {
+    "strength": 16,
+    "dexterity": 14,
+    "constitution": 15,
+    "intelligence": 13,
+    "wisdom": 14,
+    "charisma": 12
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "ett_northeast_plaza",
+  "title": "The Northeast Plaza.",
+  "description": "You are standing in the northeastern section of a large open square platform made of wood. The platform is ringed by intricately carved wooden railing. The trunk of a huge tree lies in the center of the platform, and appears to be the central support for the surrounding structure. The rest of the platform lies to the south and west, and a wooden catwalk leads off into the trees to the east.",
+  "area_id": "legacy_elven_tree",
+  "exits": {
+    "east": "ett_a_catwalk_8",
+    "south": "ett_southeast_plaza",
+    "west": "ett_northwest_plaza"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -43
+}

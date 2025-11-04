@@ -1,0 +1,21 @@
+{
+  "id": "forest_clearing_1",
+  "title": "You're in a clearing.",
+  "description": "You are standing in a clearing in the forest. The sounds of birds and other small animals in the trees gives life to this lush green wood. Paths lead off to the northeast, northwest, and southeast.",
+  "area_id": "forest",
+  "exits": {
+    "northeast": "forest_path_84",
+    "southeast": "forest_path_8",
+    "northwest": "forest_path_82"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 316,
+  "lairs": [
+    {
+      "mob_id": "satyr",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
+}

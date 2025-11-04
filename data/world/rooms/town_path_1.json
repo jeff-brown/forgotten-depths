@@ -1,0 +1,20 @@
+{
+  "id": "town_path_1",
+  "title": "Cobblestone Path",
+  "description": "A well-maintained cobblestone path winds between the two town squares. Trees line both sides of the path, their branches forming a natural canopy overhead. Benches are placed at intervals for weary travelers to rest. The sound of activity from both squares can be heard in the distance. The path runs north toward the main town square and south toward the arcane district.",
+  "area_id": "starter_town",
+  "exits": {
+    "north": "arcane_square",
+    "south": "market_square"
+  },
+  "items": [],
+  "npcs": [],
+  "features": [
+    "cobblestone_path",
+    "trees",
+    "benches",
+    "lamp_posts"
+  ],
+  "is_safe": true,
+  "light_level": "bright"
+}

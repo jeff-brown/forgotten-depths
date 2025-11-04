@@ -1,0 +1,28 @@
+{
+  "id": "mhv_tavern",
+  "title": "The Tavern.",
+  "description": "You are in the village tavern. The smoke from the many oil lamps decrease visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the tavern's patrons eat, drink, and generally enjoy themselves. The bar stands along the north wall and a door to the kitchen lies to the northeast. A large, full length mirror adorns the west wall. The only visible exits lie up a steep wooden ladder near the rear of the room, and out into the north plaza to the southwest.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "southwest": "mhv_north_plaza",
+    "up": "mhv_a_private_room"
+  },
+  "is_safe": true,
+  "is_tavern": true,
+  "light_level": "bright",
+  "npcs": [
+    "garth_thegiant",
+    "rosalie_goldenhair"
+  ],
+  "shop_type": "inn",
+  "service_level": 2,
+  "terrain": "town",
+  "legacy_room_id": -95,
+  "doors": {
+    "up": {
+      "door_type": "PrivateRoomDoor",
+      "barrier_id": 1,
+      "max_players": 2
+    }
+  }
+}

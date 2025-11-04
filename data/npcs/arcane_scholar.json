@@ -1,0 +1,13 @@
+{
+  "id": "arcane_scholar",
+  "name": "Arcane Scholar Meridian",
+  "description": "A middle-aged wizard in scholarly robes, carrying an armload of books and scrolls. Her hair is perpetually disheveled from running her hands through it while deep in thought. She occasionally mutters magical formulas under her breath and makes notes in a floating notebook that follows her around.",
+  "level": 12,
+  "type": "non_vendor",
+  "faction": "Arcane Academy",
+  "dialogue": {
+    "greeting": "Oh! Hello there. Pardon my distraction - I'm cataloging the magical resonances of the plaza. Fascinating stuff! Are you here to study with one of the masters? Each shop specializes in a different tradition of magic, you know.",
+    "info": "Let me see... North leads to Master Pyrus's Sanctum for sorcery, south to Malachar's Den for warlock pacts, east to Elder Thornbark's Grove for druid magic, and west to Sister Lumina's Chapel for divine spells. Quite the collection!",
+    "farewell": "Happy studying! Remember, the path to magical mastery begins with a single spell!"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "druids_grove",
+  "title": "Druid's Grove",
+  "description": "Stepping into this shop feels like entering an ancient forest glade. Living vines climb the walls, blooming with flowers that glow softly in ethereal colors. A massive oak tree grows through the center of the room, its trunk hollowed to serve as a display case for spell scrolls wrapped in leaves and bark. Moss carpets the floor, and the air is filled with the sounds of birdsong and rustling leaves, though no birds or wind can be seen. Elder Thornbark, an ancient druid whose beard is entwined with moss and tiny flowers, tends to the natural collection with reverent care.",
+  "area_id": "starter_town",
+  "exits": {
+    "west": "mystic_plaza"
+  },
+  "items": [],
+  "npcs": [
+    "elder_thornbark"
+  ],
+  "features": [
+    "living_vines",
+    "hollow_oak_tree",
+    "moss_carpet",
+    "ethereal_flowers"
+  ],
+  "is_safe": true,
+  "light_level": "natural",
+  "vendor_id": "elder_thornbark"
+}

@@ -1,0 +1,1178 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine - Armor Database",
+    "original_file": "data/armor.dat",
+    "description": "Complete armor definitions with decoded values",
+    "export_date": "2025-10-14T17:28:28.551785",
+    "total_items": 16
+  },
+  "_enumerations": {
+    "towns": {
+      "description": "Town availability for items",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not sold in towns"
+        },
+        "1": {
+          "name": "TOWN1",
+          "description": "Town 1"
+        },
+        "2": {
+          "name": "TOWN2",
+          "description": "Town 2"
+        },
+        "3": {
+          "name": "TOWN3",
+          "description": "Town 3"
+        },
+        "4": {
+          "name": "TOWN4",
+          "description": "Town 4"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid town"
+        }
+      }
+    },
+    "player_classes": {
+      "description": "Player class system with bit flags for allowable classes",
+      "values": {
+        "0": {
+          "name": "INVALID",
+          "bit": 0,
+          "description": "Invalid class"
+        },
+        "1": {
+          "name": "FIGHTER",
+          "bit": 1,
+          "description": "Fighter"
+        },
+        "2": {
+          "name": "SORCEROR",
+          "bit": 2,
+          "description": "Sorceror"
+        },
+        "3": {
+          "name": "CLERIC",
+          "bit": 4,
+          "description": "Cleric"
+        },
+        "4": {
+          "name": "ROGUE",
+          "bit": 8,
+          "description": "Rogue"
+        },
+        "5": {
+          "name": "RANGER",
+          "bit": 16,
+          "description": "Ranger"
+        },
+        "6": {
+          "name": "DRUID",
+          "bit": 32,
+          "description": "Druid"
+        },
+        "8": {
+          "name": "NECROLYTE",
+          "bit": 128,
+          "description": "Necrolyte"
+        },
+        "9": {
+          "name": "KNIGHT",
+          "bit": 1,
+          "description": "Knight (promoted Fighter)"
+        },
+        "10": {
+          "name": "ARCH_MAGUS",
+          "bit": 2,
+          "description": "Arch Magus (promoted Sorceror)"
+        },
+        "11": {
+          "name": "HIGH_PRIEST",
+          "bit": 4,
+          "description": "High Priest (promoted Cleric)"
+        },
+        "12": {
+          "name": "BLACK_GUARD",
+          "bit": 8,
+          "description": "Black Guard (promoted Rogue)"
+        },
+        "13": {
+          "name": "BEAST_MASTER",
+          "bit": 16,
+          "description": "Beast Master (promoted Ranger)"
+        },
+        "14": {
+          "name": "ARCH_DRUID",
+          "bit": 32,
+          "description": "Arch Druid (promoted Druid)"
+        },
+        "16": {
+          "name": "NECROMANCER",
+          "bit": 128,
+          "description": "Necromancer (promoted Necrolyte)"
+        }
+      },
+      "note": "allowable_classes field uses bitwise OR of class bits (255 = all classes)"
+    },
+    "armor_types": {
+      "description": "Armor weight/material categories",
+      "values": {
+        "11": {
+          "name": "CLOTH",
+          "description": "Cloth armor (robes, cloaks)"
+        },
+        "12": {
+          "name": "LEATHER",
+          "description": "Leather armor (cuirass)"
+        },
+        "13": {
+          "name": "MEDIUM",
+          "description": "Medium armor (breastplate, ringmail, chainmail)"
+        },
+        "14": {
+          "name": "HEAVY",
+          "description": "Heavy armor (scalemail, bandmail, platemail)"
+        },
+        "15": {
+          "name": "MAGICAL",
+          "description": "Magical armor (demonhide)"
+        },
+        "16": {
+          "name": "DRAGON",
+          "description": "Dragon armor (dragonscale)"
+        },
+        "-1": {
+          "name": "UNKNOWN",
+          "description": "Unknown armor type"
+        }
+      }
+    },
+    "equipment_types": {
+      "description": "Equipment type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not equipment"
+        },
+        "14": {
+          "name": "MISC",
+          "description": "Miscellaneous"
+        },
+        "21": {
+          "name": "SUPPLY",
+          "description": "Supply equipment"
+        },
+        "22": {
+          "name": "SUPPLY_WEAPON",
+          "description": "Weapon sold by supply store"
+        },
+        "23": {
+          "name": "THROWN_WEAPON_CONTAINER",
+          "description": "Container for thrown weapons"
+        },
+        "24": {
+          "name": "RANGED_WEAPON_AMMO",
+          "description": "Ammunition for ranged weapons"
+        },
+        "25": {
+          "name": "AMMO_CONTAINER",
+          "description": "Ammunition container"
+        },
+        "31": {
+          "name": "MINOR_MAGIC_ITEM",
+          "description": "Minor magic item"
+        },
+        "32": {
+          "name": "POTION",
+          "description": "Potion"
+        },
+        "33": {
+          "name": "MAJOR_MAGIC_ITEM",
+          "description": "Major magic item"
+        },
+        "41": {
+          "name": "KEY",
+          "description": "Key"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid equipment type"
+        }
+      }
+    },
+    "equipment_subtypes": {
+      "description": "Equipment subtype classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Undefined subtype"
+        },
+        "1": {
+          "name": "FOOD",
+          "description": "Food"
+        },
+        "2": {
+          "name": "WATER",
+          "description": "Water"
+        },
+        "3": {
+          "name": "HEAL",
+          "description": "Healing item"
+        },
+        "4": {
+          "name": "CURE_POISON",
+          "description": "Cures poison"
+        },
+        "5": {
+          "name": "MINOR_MANA_BOOST",
+          "description": "Boosts mana (minor)"
+        },
+        "6": {
+          "name": "PHYSIQUE_BOOST",
+          "description": "Boosts physique"
+        },
+        "7": {
+          "name": "AGILITY_BOOST",
+          "description": "Boosts agility"
+        },
+        "8": {
+          "name": "INVISIBILITY",
+          "description": "Grants invisibility"
+        },
+        "9": {
+          "name": "RECALL",
+          "description": "Recalls to temple"
+        },
+        "10": {
+          "name": "MAJOR_MANA_BOOST",
+          "description": "Boosts mana (major)"
+        },
+        "11": {
+          "name": "RESERVED",
+          "description": "Reserved/unknown"
+        },
+        "12": {
+          "name": "WAND",
+          "description": "Wand"
+        },
+        "13": {
+          "name": "RUNESTAFF",
+          "description": "Runestaff"
+        },
+        "14": {
+          "name": "ROD_OF_POWER",
+          "description": "Rod of power"
+        },
+        "15": {
+          "name": "FLAME_CRYSTAL",
+          "description": "Flame crystal"
+        },
+        "16": {
+          "name": "LIGHT",
+          "description": "Temporary light"
+        },
+        "17": {
+          "name": "ETERNAL_LIGHT",
+          "description": "Eternal light"
+        },
+        "18": {
+          "name": "SOULSTONE",
+          "description": "Soulstone"
+        },
+        "19": {
+          "name": "AMMO",
+          "description": "Ammunition"
+        },
+        "20": {
+          "name": "MISC2",
+          "description": "Miscellaneous 2 (unknown)"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid subtype"
+        }
+      }
+    },
+    "special_weapon_functions": {
+      "description": "Special weapon functions",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No special function"
+        },
+        "12": {
+          "name": "MAGIC",
+          "description": "Magic weapon with special attack"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid function"
+        }
+      }
+    },
+    "spell_types": {
+      "description": "Spell type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No spell type"
+        },
+        "1": {
+          "name": "SORCEROR_ATTACK",
+          "description": "Sorceror attack spell"
+        },
+        "2": {
+          "name": "ACOLYTE_ATTACK",
+          "description": "Acolyte attack spell"
+        },
+        "3": {
+          "name": "DRUID_ATTACK",
+          "description": "Druid attack spell"
+        },
+        "4": {
+          "name": "NECROLYTE_ATTACK",
+          "description": "Necrolyte attack spell"
+        },
+        "11": {
+          "name": "REMOVE_CONDITION",
+          "description": "Removes status condition"
+        },
+        "12": {
+          "name": "SUSTENANCE",
+          "description": "Sustenance spell"
+        },
+        "21": {
+          "name": "HEALING",
+          "description": "Healing spell"
+        },
+        "22": {
+          "name": "REGENERATION",
+          "description": "Regeneration spell"
+        },
+        "31": {
+          "name": "SUMMONING",
+          "description": "Summoning spell"
+        },
+        "32": {
+          "name": "INVISIBILITY",
+          "description": "Invisibility spell"
+        },
+        "33": {
+          "name": "STAT_MOD",
+          "description": "Stat modification spell"
+        },
+        "41": {
+          "name": "CHARM",
+          "description": "Charm spell"
+        }
+      }
+    },
+    "spell_targets": {
+      "description": "Valid spell targets",
+      "values": {
+        "0": {
+          "name": "SPECIFIED",
+          "description": "Specified target"
+        },
+        "1": {
+          "name": "ROOM_PLAYER",
+          "description": "Player in room"
+        },
+        "2": {
+          "name": "ROOM_MOB",
+          "description": "Monster in room"
+        },
+        "3": {
+          "name": "ROOM_MOB2",
+          "description": "Monster in room (variant)"
+        },
+        "4": {
+          "name": "SUMMON",
+          "description": "Summon target"
+        },
+        "5": {
+          "name": "ROOM_PLAYER2",
+          "description": "Player in room (PVP variant)"
+        }
+      }
+    },
+    "cure_conditions": {
+      "description": "Conditions cured by spells",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "POISON"
+        }
+      }
+    },
+    "poison_targets": {
+      "description": "Poison effect targets",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "2": {
+          "name": "MOB"
+        },
+        "4": {
+          "name": "PLAYER"
+        },
+        "6": {
+          "name": "ROOM_MOB"
+        }
+      }
+    },
+    "mana_effects": {
+      "description": "Mana effect types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "DRAIN"
+        }
+      }
+    },
+    "stat_modifiers": {
+      "description": "Stat modification types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "INTELLECT"
+        },
+        "2": {
+          "name": "KNOWLEDGE"
+        },
+        "3": {
+          "name": "PHYSIQUE"
+        },
+        "4": {
+          "name": "STAMINA"
+        },
+        "5": {
+          "name": "AGILITY"
+        },
+        "6": {
+          "name": "CHARISMA"
+        },
+        "7": {
+          "name": "BODY"
+        },
+        "8": {
+          "name": "MENTAL"
+        },
+        "9": {
+          "name": "PARALYSIS"
+        },
+        "10": {
+          "name": "STAT_DRAIN"
+        }
+      }
+    },
+    "misc_target_effects": {
+      "description": "Miscellaneous target effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "MORAL"
+        },
+        "2": {
+          "name": "WIND"
+        }
+      }
+    },
+    "misc_target_effects2": {
+      "description": "Additional miscellaneous effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "LIFE_STEAL"
+        }
+      }
+    }
+  },
+  "armor": [
+    {
+      "vnum": 12,
+      "name": "cloak",
+      "long_description": "a cloak",
+      "cost": 10,
+      "weight": 20,
+      "armor_type": {
+        "id": 11,
+        "name": "CLOTH",
+        "description": "Cloth armor (robes, cloaks)"
+      },
+      "armor_rating": 0,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 13,
+      "name": "robes",
+      "long_description": "robes",
+      "cost": 20,
+      "weight": 30,
+      "armor_type": {
+        "id": 11,
+        "name": "CLOTH",
+        "description": "Cloth armor (robes, cloaks)"
+      },
+      "armor_rating": 1,
+      "level": 1,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 14,
+      "name": "cuirass",
+      "long_description": "a leather cuirass",
+      "cost": 40,
+      "weight": 50,
+      "armor_type": {
+        "id": 12,
+        "name": "LEATHER",
+        "description": "Leather armor (cuirass)"
+      },
+      "armor_rating": 2,
+      "level": 2,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 125,
+        "description": "10 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "ROGUE",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BLACK_GUARD",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 15,
+      "name": "breastplate",
+      "long_description": "a steel breastplate",
+      "cost": 200,
+      "weight": 200,
+      "armor_type": {
+        "id": 13,
+        "name": "MEDIUM",
+        "description": "Medium armor (breastplate, ringmail, chainmail)"
+      },
+      "armor_rating": 4,
+      "level": 2,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 125,
+        "description": "10 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "ROGUE",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BLACK_GUARD",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 16,
+      "name": "ringmail",
+      "long_description": "ringmail armor",
+      "cost": 250,
+      "weight": 300,
+      "armor_type": {
+        "id": 13,
+        "name": "MEDIUM",
+        "description": "Medium armor (breastplate, ringmail, chainmail)"
+      },
+      "armor_rating": 5,
+      "level": 3,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 125,
+        "description": "10 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "ROGUE",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BLACK_GUARD",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 17,
+      "name": "chainmail",
+      "long_description": "chainmail armor",
+      "cost": 300,
+      "weight": 400,
+      "armor_type": {
+        "id": 13,
+        "name": "MEDIUM",
+        "description": "Medium armor (breastplate, ringmail, chainmail)"
+      },
+      "armor_rating": 6,
+      "level": 3,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 125,
+        "description": "10 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "ROGUE",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BLACK_GUARD",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 18,
+      "name": "scalemail",
+      "long_description": "scalemail armor",
+      "cost": 400,
+      "weight": 450,
+      "armor_type": {
+        "id": 14,
+        "name": "HEAVY",
+        "description": "Heavy armor (scalemail, bandmail, platemail)"
+      },
+      "armor_rating": 8,
+      "level": 4,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 5,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "KNIGHT",
+          "HIGH_PRIEST"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 19,
+      "name": "bandmail",
+      "long_description": "banded mail armor",
+      "cost": 500,
+      "weight": 500,
+      "armor_type": {
+        "id": 14,
+        "name": "HEAVY",
+        "description": "Heavy armor (scalemail, bandmail, platemail)"
+      },
+      "armor_rating": 10,
+      "level": 6,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 5,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "KNIGHT",
+          "HIGH_PRIEST"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 20,
+      "name": "platemail",
+      "long_description": "platemail armor",
+      "cost": 600,
+      "weight": 600,
+      "armor_type": {
+        "id": 14,
+        "name": "HEAVY",
+        "description": "Heavy armor (scalemail, bandmail, platemail)"
+      },
+      "armor_rating": 12,
+      "level": 8,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 5,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "KNIGHT",
+          "HIGH_PRIEST"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 54,
+      "name": "demonhide",
+      "long_description": "demonhide armor",
+      "cost": 1500,
+      "weight": 250,
+      "armor_type": {
+        "id": 15,
+        "name": "MAGICAL",
+        "description": "Magical armor (demonhide)"
+      },
+      "armor_rating": 15,
+      "level": 10,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 1,
+        "description": "2 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "KNIGHT"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 55,
+      "name": "dragonscale",
+      "long_description": "dragonscale armor",
+      "cost": 1800,
+      "weight": 500,
+      "armor_type": {
+        "id": 16,
+        "name": "DRAGON",
+        "description": "Dragon armor (dragonscale)"
+      },
+      "armor_rating": 18,
+      "level": 12,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 1,
+        "description": "2 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "KNIGHT"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 74,
+      "name": "pink teddy",
+      "long_description": "a pink teddy",
+      "cost": 0,
+      "weight": 0,
+      "armor_type": {
+        "id": 14,
+        "name": "HEAVY",
+        "description": "Heavy armor (scalemail, bandmail, platemail)"
+      },
+      "armor_rating": 15,
+      "level": 1000,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 5,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "KNIGHT",
+          "HIGH_PRIEST"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 75,
+      "name": "blue robes",
+      "long_description": "blue robes",
+      "cost": 0,
+      "weight": 0,
+      "armor_type": {
+        "id": 14,
+        "name": "HEAVY",
+        "description": "Heavy armor (scalemail, bandmail, platemail)"
+      },
+      "armor_rating": 18,
+      "level": 1000,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 5,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "KNIGHT",
+          "HIGH_PRIEST"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 80,
+      "name": "violet robes",
+      "long_description": "violet robes",
+      "cost": 0,
+      "weight": 30,
+      "armor_type": {
+        "id": 11,
+        "name": "CLOTH",
+        "description": "Cloth armor (robes, cloaks)"
+      },
+      "armor_rating": 1,
+      "level": 1000,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 100,
+      "name": "green tunic",
+      "long_description": "a green tunic",
+      "cost": 0,
+      "weight": 10,
+      "armor_type": {
+        "id": 11,
+        "name": "CLOTH",
+        "description": "Cloth armor (robes, cloaks)"
+      },
+      "armor_rating": 1,
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 103,
+      "name": "dwarven scalemail",
+      "long_description": "dwarven scalemail armor",
+      "cost": 0,
+      "weight": 550,
+      "armor_type": {
+        "id": 13,
+        "name": "MEDIUM",
+        "description": "Medium armor (breastplate, ringmail, chainmail)"
+      },
+      "armor_rating": 20,
+      "level": 15,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 125,
+        "description": "10 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "ROGUE",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BLACK_GUARD",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v2": 0,
+        "v3": 0,
+        "v4": 0,
+        "v7": 0,
+        "v8": 0,
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    }
+  ]
+}

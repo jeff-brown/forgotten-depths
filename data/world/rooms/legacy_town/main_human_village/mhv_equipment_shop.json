@@ -1,0 +1,19 @@
+{
+  "id": "mhv_equipment_shop",
+  "title": "The Equipment Shop.",
+  "description": "You are now inside the equipment shop, where one may purchase supplies and provisions essential to survival in the dungeons or the wilderness. The shop keeper sits on a tall stool behind a counter along the north wall, eyeing you warily. The exit is to the southeast.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "southeast": "mhv_north_plaza"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "gimble_tinkertop"
+  ],
+  "shop_type": "equipment",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -97
+}

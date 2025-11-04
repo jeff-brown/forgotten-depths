@@ -1,0 +1,20 @@
+{
+  "town_name": "Main Human Village",
+  "room_count": 13,
+  "room_ids": [
+    "mhv_a_private_room",
+    "mhv_arena",
+    "mhv_armor_shop",
+    "mhv_docks",
+    "mhv_equipment_shop",
+    "mhv_guild_hall",
+    "mhv_magic_shop",
+    "mhv_north_plaza",
+    "mhv_south_plaza",
+    "mhv_tavern",
+    "mhv_temple",
+    "mhv_town_vaults",
+    "mhv_weapon_shop"
+  ],
+  "source": "Ether MUD Engine - Town Area"
+}

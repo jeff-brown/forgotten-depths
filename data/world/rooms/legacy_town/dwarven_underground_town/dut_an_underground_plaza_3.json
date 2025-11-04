@@ -1,0 +1,16 @@
+{
+  "id": "dut_an_underground_plaza_3",
+  "title": "An Underground Plaza.",
+  "description": "You are standing in a large open plaza at the southwest corner of an enormous subterranean cavern. An ornate stone fountain of fine craftsmanship stands in the center of the plaza. The gurgling fountain fills you with a sense of peace and tranquility, and the cool air is very still here. The plaza opens out into the town square to the northeast. To the northwest, southeast, and southwest lie large stone archways decorated with intricate stonework.",
+  "area_id": "legacy_dwarven_underground",
+  "exits": {
+    "northeast": "dut_town_square",
+    "southeast": "dut_weapon_shop",
+    "southwest": "dut_armor_shop",
+    "northwest": "dut_equipment_shop"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -61
+}

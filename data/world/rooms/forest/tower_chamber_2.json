@@ -1,0 +1,19 @@
+{
+  "id": "tower_chamber_2",
+  "title": "You're in a vaulted chamber.",
+  "description": "You are standing in a vaulted chamber adorned with black marble columns and arches. The archway exits to the north.",
+  "area_id": "forest",
+  "exits": {
+    "north": "tower_hallway_8"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 1033,
+  "lairs": [
+    {
+      "mob_id": "brigand",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
+}

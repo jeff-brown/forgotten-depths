@@ -1,0 +1,19 @@
+{
+  "id": "ett_magic_shop",
+  "title": "The Magic Shop.",
+  "description": "You're standing in a warm, dimly lit shop where various magical items are bought and sold by a shrewd mage in crimson robes with an air of power and complete confidence about him. He doesn't look like someone whose spells you'd like to be on the wrong end of. The sweet scent of incense drifts in from a workroom in the rear of the shop. The exit is to the north.",
+  "area_id": "legacy_elven_tree",
+  "exits": {
+    "north": "ett_a_catwalk_14"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "kael_crimsonmage"
+  ],
+  "shop_type": "magic",
+  "service_level": 3,
+  "terrain": "town",
+  "legacy_room_id": -26
+}

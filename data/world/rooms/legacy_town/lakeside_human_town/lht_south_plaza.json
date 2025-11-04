@@ -1,0 +1,15 @@
+{
+  "id": "lht_south_plaza",
+  "title": "The South Plaza.",
+  "description": "You are standing in a large open plaza at the south end of town surrounded by shade trees. A path to the north leads to a plaza in the northern end of town. To the southwest, a well trodden path leads to what appears to be a weapon shop. A third path to the southeast leads to the docks.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "north": "lht_a_path_6",
+    "southeast": "lht_a_path",
+    "southwest": "lht_a_path_8"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -86
+}

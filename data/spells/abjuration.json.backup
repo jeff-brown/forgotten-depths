@@ -1,0 +1,18 @@
+{
+  "spells": {
+    "shield": {
+      "name": "Shield",
+      "description": "Create a magical barrier that increases armor class.",
+      "type": "buff",
+      "school": "abjuration",
+      "level": 1,
+      "mana_cost": 6,
+      "effect": "ac_bonus",
+      "bonus_amount": 3,
+      "duration": 600,
+      "range": "self",
+      "cooldown": 0,
+      "requires_target": false
+    }
+  }
+}

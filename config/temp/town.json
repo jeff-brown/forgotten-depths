@@ -1,0 +1,4227 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine",
+    "source_files": {
+      "area_structure": "area/town.xml",
+      "room_descriptions": "area/town_room_desc.xml"
+    },
+    "exported_by": "convert_town_to_json.py",
+    "description": "Town area data with fully decoded flags, descriptions, and door parameters",
+    "reference_files": {
+      "barriers": "data/barriers.dat",
+      "npcs": "data/npcs.dat",
+      "items": "data/equipment.dat, data/weapons.dat, data/armor.dat"
+    },
+    "enriched_with_game_data": true,
+    "game_data_sources": [
+      "data/json/barriers.json",
+      "data/json/traps.json",
+      "data/json/teleporters.json",
+      "data/json/npcs.json",
+      "data/json/mobs.json"
+    ]
+  },
+  "_enumerations": {
+    "room_flags": {
+      "description": "Room flag bit vector meanings",
+      "flags": {
+        "1": "safe",
+        "2": "dark",
+        "4": "arena",
+        "8": "tavern",
+        "16": "private",
+        "32": "docks",
+        "64": "guild hall",
+        "128": "vault",
+        "256": "equipment shop",
+        "512": "temple",
+        "1024": "armor shop",
+        "2048": "weapon shop",
+        "4096": "magic shop",
+        "16384": "inn",
+        "32768": "permanent darkness"
+      }
+    },
+    "terrain_types": {
+      "description": "Terrain type indices and names",
+      "types": {
+        "0": "Dungeon1",
+        "1": "Dungeon2",
+        "2": "Dungeon3",
+        "3": "Mountains",
+        "4": "Forest",
+        "5": "Swamp",
+        "6": "Desert",
+        "7": "Jungle",
+        "8": "Fire1",
+        "9": "Fire2",
+        "10": "Special",
+        "11": "Town",
+        "99": "Unknown",
+        "-1": "Invalid"
+      }
+    },
+    "service_levels": {
+      "description": "Shop service quality levels",
+      "levels": {
+        "0": "none",
+        "1": "basic shop",
+        "2": "advanced shop",
+        "3": "premium shop"
+      }
+    },
+    "runes": {
+      "description": "Rune progression system (player advancement)",
+      "progression": {
+        "0": "None",
+        "1": "White",
+        "2": "Yellow",
+        "3": "Green",
+        "4": "Blue",
+        "5": "Violet",
+        "6": "Red",
+        "7": "Orange",
+        "8": "Gold"
+      },
+      "note": "Runes are earned through gameplay and unlock access to higher level areas"
+    },
+    "exit_directions": {
+      "description": "Valid exit directions",
+      "directions": [
+        "north",
+        "south",
+        "east",
+        "west",
+        "northeast",
+        "northwest",
+        "southeast",
+        "southwest",
+        "up",
+        "down"
+      ]
+    },
+    "door_types": {
+      "description": "Door type documentation",
+      "types": {
+        "HasRuneDoor": {
+          "description": "Requires player to have a specific rune to pass through",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number (reference to barriers.dat)",
+            "__v4": "Required rune index (must match exactly)",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "MinimumRuneDoor": {
+          "description": "Requires player to have at least a minimum rune level",
+          "parameters": {
+            "__v0": "Door ID",
+            "__v3": "Barrier number",
+            "__v4": "Minimum rune index required (player must have >= this)",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "PrivateRoomDoor": {
+          "description": "Limits number of players in destination room",
+          "parameters": {
+            "__v0": "Door ID (negative value)",
+            "__v3": "Barrier number",
+            "__v4": "Unused",
+            "__v5": "Maximum players allowed in destination room",
+            "__v6": "Destination room number to check for player count"
+          }
+        },
+        "ItemKeyDoor": {
+          "description": "Requires a specific item (key) to unlock",
+          "parameters": {
+            "__v0": "Key item VNUM (item required to unlock)",
+            "__v3": "Barrier number",
+            "__v4": "Consume key flag (0=reusable, 1=consumed on use)",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        },
+        "PuzzleDoor": {
+          "description": "Requires solving a puzzle or trigger to open",
+          "parameters": {
+            "__v0": "Puzzle/trigger ID",
+            "__v3": "Barrier number",
+            "__v4": "Puzzle type or requirement",
+            "__v5": "Additional parameter",
+            "__v6": "Additional parameter"
+          }
+        },
+        "PromoteDoor": {
+          "description": "Requires minimum player level or class promotion",
+          "parameters": {
+            "__v0": "Minimum level or promotion requirement",
+            "__v3": "Barrier number",
+            "__v4": "Additional requirement",
+            "__v5": "Unused",
+            "__v6": "Unused"
+          }
+        }
+      }
+    }
+  },
+  "area_type": "DefaultArea",
+  "area_name": "Town",
+  "rooms": [
+    {
+      "room_id": -99,
+      "default_description_id": -1,
+      "alt_description_id": -1,
+      "short_description": "You're in the north plaza.",
+      "long_description": "You are standing at the north end of a large open plaza surrounded by shade trees as well as assorted flowering shrubs and hedges whose scent wafts through the warm, dry air. To the west stands an ornate temple adorned with ornate stone and brass architecture. A quaint little shop lies to the northwest, and a dimly lit, smokey little tavern to the northeast. To the east lay the huge wrought iron gates of the arena. To north is the town guild hall. The other half of the plaza lies to the south.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -92,
+          "direction": "north"
+        },
+        {
+          "to_room": -95,
+          "direction": "northeast"
+        },
+        {
+          "to_room": -98,
+          "direction": "east",
+          "door": {
+            "door_type": "HasRuneDoor",
+            "description": "Requires player to have a specific rune to pass through",
+            "raw_parameters": {
+              "__v0": -1,
+              "__v3": 8,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Door ID (negative value)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Required rune index (must match exactly)",
+              "__v5": "Unused",
+              "__v6": "Unused"
+            },
+            "decoded_values": {
+              "required_rune": {
+                "index": 0,
+                "name": "None"
+              },
+              "barrier_number": 8
+            },
+            "barrier": {
+              "barrier_id": 8,
+              "locked_message": "A mystical force prevents your exit in that direction.",
+              "unlocked_message": "",
+              "rogue_message": "",
+              "value": 0
+            }
+          }
+        },
+        {
+          "to_room": -90,
+          "direction": "south"
+        },
+        {
+          "to_room": -96,
+          "direction": "west"
+        },
+        {
+          "to_room": -97,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -98,
+      "default_description_id": -3,
+      "alt_description_id": -3,
+      "short_description": "You're in the arena.",
+      "long_description": "You now stand inside the gates of the village's most noteworthy and notorious point of interest, the arena. The charred and stained stone walls and scattered bits of bone, armor, and weaponry lying among the debris on the packed earthen floor. A huge brass gong hangs at the center of the arena suspended on a framework made of the bones of some of the less fortunate of the arena's combatants. To the south is a wide stone staircase leading down to the dungeon gate. The exit through the arena gates is to the west.",
+      "room_flags": {
+        "raw_value": 4,
+        "decoded_flags": [
+          "arena"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -99,
+          "direction": "west"
+        },
+        {
+          "to_room": 1,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -97,
+      "default_description_id": -5,
+      "alt_description_id": -5,
+      "short_description": "You're in the equipment shop.",
+      "long_description": "You are now inside the equipment shop, where one may purchase supplies and provisions essential to survival in the dungeons or the wilderness. The shop keeper sits on a tall stool behind a counter along the north wall, eyeing you warily. The exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 257,
+        "decoded_flags": [
+          "safe",
+          "equipment shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -99,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          0
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 0,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an old gnome wearing a dark green tunic and trousers, and a grimy leather apron. He has a white beard and bushy white eyebrows from beneath which a pair of deep set brown eyes peer out at you."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -96,
+      "default_description_id": -7,
+      "alt_description_id": -7,
+      "short_description": "You're in the temple.",
+      "long_description": "You are now in the main entry hall of a great temple. Huge black marble columns veined with platinum stretch to the ceiling some 100' overhead. The paterns in the tile floor are so ornate and complex as to be nearly impossible to follow or comprehend. Many black silk tapestries depicting various scenes of a religious or magical nature block your view into the many other areas of the temple. Blue robed priests and acolytes move here and there going about their daily duties. The exit is to the east.",
+      "room_flags": {
+        "raw_value": 513,
+        "decoded_flags": [
+          "safe",
+          "temple"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -99,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          8
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 8,
+            "name_singular": "blue robed priest",
+            "name_plural": "blue robed priests",
+            "description": "The priest wears blue robes. He has an air of peace and tranquility about him. Around his neck he wears a heavy silver chain which supports a large silver ankh."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -95,
+      "default_description_id": -9,
+      "alt_description_id": -9,
+      "short_description": "You're in the tavern.",
+      "long_description": "You are in the village tavern. The smoke from the many oil lamps decrease visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the tavern's patrons eat, drink, and generally enjoy themselves. The bar stands along the north wall and a door to the kitchen lies to the northeast. A large, full length mirror adorns the west wall. The only visible exits lie up a steep wooden ladder near the rear of the room, and out into the north plaza to the southwest.",
+      "room_flags": {
+        "raw_value": 9,
+        "decoded_flags": [
+          "safe",
+          "tavern"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -99,
+          "direction": "southwest"
+        },
+        {
+          "to_room": -67,
+          "direction": "up",
+          "door": {
+            "door_type": "PrivateRoomDoor",
+            "description": "Limits number of players in destination room",
+            "raw_parameters": {
+              "__v0": -3,
+              "__v3": 1,
+              "__v4": -67,
+              "__v5": 2,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Door ID (negative value)",
+              "__v3": "Barrier number",
+              "__v4": "Unused",
+              "__v5": "Maximum players allowed in destination room",
+              "__v6": "Destination room number to check for player count"
+            },
+            "decoded_values": {
+              "max_players": 2,
+              "target_room": 1,
+              "barrier_number": 1,
+              "logic": "Allow entry only if room 1 has fewer than 2 players"
+            },
+            "barrier": {
+              "barrier_id": 1,
+              "locked_message": "The locked oak door prevents your exit in that direction.",
+              "unlocked_message": "Your {0} unlocks the oak door and allows you to pass through.",
+              "rogue_message": "Your rogue abilities allowed you to pick the lock on the oak door.",
+              "value": 0
+            }
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          9,
+          10
+        ],
+        "count": 2,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 9,
+            "name_singular": "barkeep",
+            "name_plural": "barkeeps",
+            "description": "The barkeep is a giant of a man. He stands nearly seven feet tall and looks as though he might have a bit of ogre blood in him. He wears a pair of iron armbands and a leather tunic. The tavern's patrons seem to reguard him with respect if not fear."
+          },
+          {
+            "npc_id": 10,
+            "name_singular": "barmaid",
+            "name_plural": "barmaids",
+            "description": "The barmaid is a lovely wench wearing a low cut lacey white blouse, beige bodice, and cream colored skirts. She has long blonde hair and deep blue eyes. You notice quite a few of the tavern's male patrons eyeing her with mouths agape."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -94,
+      "default_description_id": -11,
+      "alt_description_id": -11,
+      "short_description": "You're in the weapon shop.",
+      "long_description": "You are now inside the weapon shop, where you may purchase various weapons to use for sparring in the arena or for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the south wall. The exit is to the west.",
+      "room_flags": {
+        "raw_value": 2049,
+        "decoded_flags": [
+          "safe",
+          "weapon shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -90,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          1
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 1,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an brawny human smithy wearing heavy leather overalls. His head is bald, and he has a coarse black beard and moustache. He seems to be of a jovial sort because of his broad smile, and bright eyes."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -93,
+      "default_description_id": -13,
+      "alt_description_id": -13,
+      "short_description": "You're in the armor shop.",
+      "long_description": "You are now inside the armor shop, where you may aquire different sorts of armor and protective gear to guard yourself against the blows of your opponents in the arena, or from the various non-human foes to be found in the dungeons beneath the town. The shop keeper sits on a high behind a worn counter along the south wall, eyeing you warily. The exit is to the east.",
+      "room_flags": {
+        "raw_value": 1025,
+        "decoded_flags": [
+          "safe",
+          "armor shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -90,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          2
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 2,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is a tough looking dwarf wearing a fine suit of chainmail. He has a thick head of unruly brown hair and an unkempt beard. He seems to be very direct and has a brusque manner about him."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -92,
+      "default_description_id": -15,
+      "alt_description_id": -15,
+      "short_description": "You're in the guild hall.",
+      "long_description": "You have entered the town guild hall, where one may seek the training neccessary to refine your combat and spell skills. This building is also a center of learning where the ancient art of sorcery is taught to those with the intelligence and skill to wield it effectively. Sages, wizards, and masters-at-arms rush about on errands or to and from training sessions. Ornately carved marble archways exit to the north and south, and a wide stone staircase leads downward.",
+      "room_flags": {
+        "raw_value": 65,
+        "decoded_flags": [
+          "safe",
+          "guild hall"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -89,
+          "direction": "north"
+        },
+        {
+          "to_room": -99,
+          "direction": "south"
+        },
+        {
+          "to_room": -66,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          7
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 7,
+            "name_singular": "master sorceror",
+            "name_plural": "master sorcerors",
+            "description": "The master sorceror wears shimering silver robes and bracers adorned with magical sigils and runes of power. His eyes betray his great wisdom. He has the mannerisms of one who is kind and gentle."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -91,
+      "default_description_id": -17,
+      "alt_description_id": -17,
+      "short_description": "You're in the magic shop.",
+      "long_description": "You're standing in a warm, dimly lit shop where various magical items are bought and sold by a shrewd mage in crimson robes with an air of power and complete confidence about him. He doesn't look like someone whose spells you'd like to be on the wrong end of. The sweet scent of incense drifts in from a workroom in the rear of the shop. The exit is to the north.",
+      "room_flags": {
+        "raw_value": 4097,
+        "decoded_flags": [
+          "safe",
+          "magic shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -90,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          6
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 6,
+            "name_singular": "crimson mage",
+            "name_plural": "crimson mages",
+            "description": "The mage wears red robes and radiates an aura of power and confidence. He has flowing white hair and a long white beard, though his face does not appear to show the age he would have to be to have such. Tatooed upon his right forearm is a crimson sigil which looks like a crecent moon."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -90,
+      "default_description_id": -19,
+      "alt_description_id": -19,
+      "short_description": "You're in the south plaza.",
+      "long_description": "You are standing at the south end of a large open plaza surrounded by shade trees as well as assorted flowering shrubs and hedges who's scent wafts through the warm, dry air. To the west stands the town's armor shop. The weapon shop lies to the east. There is a magic shop to the south. To the north lies the other half of the plaza and to the southwest lies the town's outer gate.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -99,
+          "direction": "north"
+        },
+        {
+          "to_room": -94,
+          "direction": "east"
+        },
+        {
+          "to_room": -91,
+          "direction": "south"
+        },
+        {
+          "to_room": -93,
+          "direction": "west"
+        },
+        {
+          "to_room": 183,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -89,
+      "default_description_id": -21,
+      "alt_description_id": -21,
+      "short_description": "You're on the docks.",
+      "long_description": "You are standing on the docks. The water from the lake laps quietly against the docks making the peaceful scene on the lake all that more serene. An ornately carved marble archway exits through the town wall to the south into the guild hall.",
+      "room_flags": {
+        "raw_value": 33,
+        "decoded_flags": [
+          "safe",
+          "docks"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -92,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          12,
+          12
+        ],
+        "count": 2,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 12,
+            "name_singular": "ship's captain",
+            "name_plural": "ship's captains",
+            "description": "The ship's captain is a grizzly old sailor with many a scar, several tatoos and an unkempt manner about him. His worn clothes appear to have seen just about every port there could possibly be, and he smells of stale sweat and cheap rum."
+          },
+          {
+            "npc_id": 12,
+            "name_singular": "ship's captain",
+            "name_plural": "ship's captains",
+            "description": "The ship's captain is a grizzly old sailor with many a scar, several tatoos and an unkempt manner about him. His worn clothes appear to have seen just about every port there could possibly be, and he smells of stale sweat and cheap rum."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -88,
+      "default_description_id": -23,
+      "alt_description_id": -23,
+      "short_description": "You're on the docks.",
+      "long_description": "You are standing on the docks. The water from the lake laps quietly against the docks making the peaceful scene on the lake all that more serene. A path leads towards a large open plaza to the northwest.",
+      "room_flags": {
+        "raw_value": 33,
+        "decoded_flags": [
+          "safe",
+          "docks"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -87,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          12,
+          12,
+          12
+        ],
+        "count": 3,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 12,
+            "name_singular": "ship's captain",
+            "name_plural": "ship's captains",
+            "description": "The ship's captain is a grizzly old sailor with many a scar, several tatoos and an unkempt manner about him. His worn clothes appear to have seen just about every port there could possibly be, and he smells of stale sweat and cheap rum."
+          },
+          {
+            "npc_id": 12,
+            "name_singular": "ship's captain",
+            "name_plural": "ship's captains",
+            "description": "The ship's captain is a grizzly old sailor with many a scar, several tatoos and an unkempt manner about him. His worn clothes appear to have seen just about every port there could possibly be, and he smells of stale sweat and cheap rum."
+          },
+          {
+            "npc_id": 12,
+            "name_singular": "ship's captain",
+            "name_plural": "ship's captains",
+            "description": "The ship's captain is a grizzly old sailor with many a scar, several tatoos and an unkempt manner about him. His worn clothes appear to have seen just about every port there could possibly be, and he smells of stale sweat and cheap rum."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -87,
+      "default_description_id": -25,
+      "alt_description_id": -25,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into an open plaza to the northwest, and to the docks on the great lake to the southeast. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -88,
+          "direction": "southeast"
+        },
+        {
+          "to_room": -86,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -86,
+      "default_description_id": -27,
+      "alt_description_id": -27,
+      "short_description": "You're in the south plaza.",
+      "long_description": "You are standing in a large open plaza at the south end of town surrounded by shade trees. A path to the north leads to a plaza in the northern end of town. To the southwest, a well trodden path leads to what appears to be a weapon shop. A third path to the southeast leads to the docks.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -83,
+          "direction": "north"
+        },
+        {
+          "to_room": -87,
+          "direction": "southeast"
+        },
+        {
+          "to_room": -85,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -85,
+      "default_description_id": -29,
+      "alt_description_id": -29,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into a weapon shop to the southwest, and to the town's southern plaza to the northeast. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -86,
+          "direction": "northeast"
+        },
+        {
+          "to_room": -84,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -84,
+      "default_description_id": -31,
+      "alt_description_id": -31,
+      "short_description": "You're in the weapon shop.",
+      "long_description": "You are now inside the weapon shop, where you may purchase various weapons to use for sparring in the arena or for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the west wall. The exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2049,
+        "decoded_flags": [
+          "safe",
+          "weapon shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -85,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          5
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 5,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is a small, but powerfully built man. He has light brown hair and a thich moustache. He has the manerisms of one who would be calm and relaxed in just about any situation."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -83,
+      "default_description_id": -33,
+      "alt_description_id": -33,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into open plazas to the north and south. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -82,
+          "direction": "north"
+        },
+        {
+          "to_room": -86,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -82,
+      "default_description_id": -35,
+      "alt_description_id": -35,
+      "short_description": "You're in the north plaza.",
+      "long_description": "You are standing in a large open plaza at the north end of town surrounded by shade trees. A path to the east leads to a plaza in the eastern end of town. To the west, a well trodden path leads to town's equipment shop. A third path to the south leads to a plaza in the southern end of town, and a fourth path leads to an inn to the southwest.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -77,
+          "direction": "north"
+        },
+        {
+          "to_room": -75,
+          "direction": "east"
+        },
+        {
+          "to_room": -83,
+          "direction": "south"
+        },
+        {
+          "to_room": -81,
+          "direction": "southwest"
+        },
+        {
+          "to_room": -79,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -81,
+      "default_description_id": -37,
+      "alt_description_id": -37,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into the town's inn to the southwest, and to the town's northern plaza to the northeast. Large old trees line the path and lend shade and birdsong to this quaint little town. There is a large rusty grate here which leads down into the town sewers.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -82,
+          "direction": "northeast"
+        },
+        {
+          "to_room": -80,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 844,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -80,
+      "default_description_id": -39,
+      "alt_description_id": -39,
+      "short_description": "You're in the inn.",
+      "long_description": "You are in the town's inn. The smoke from the many oil lamps decrease visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the inn's patrons eat, drink, and generally enjoy themselves. The bar stands along the north wall and a door to the kitchen lies to the southwest, and a staircase leads up to the inn's rooms. The only visibile exit lies to the northeast.",
+      "room_flags": {
+        "raw_value": 9,
+        "decoded_flags": [
+          "safe",
+          "tavern"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -81,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          9,
+          11
+        ],
+        "count": 2,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 9,
+            "name_singular": "barkeep",
+            "name_plural": "barkeeps",
+            "description": "The barkeep is a giant of a man. He stands nearly seven feet tall and looks as though he might have a bit of ogre blood in him. He wears a pair of iron armbands and a leather tunic. The tavern's patrons seem to reguard him with respect if not fear."
+          },
+          {
+            "npc_id": 11,
+            "name_singular": "barmaid",
+            "name_plural": "barmaids",
+            "description": "The barmaid is a lovely wench wearing a low cut lacey blue blouse, green bodice, and yellow skirts. She has long black hair and bright green eyes. You notice quite a few of the inn's male patrons eyeing her with mouths agape."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -79,
+      "default_description_id": -41,
+      "alt_description_id": -41,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into an equipment shop to the west, and to the town's northern plaza to the east. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -82,
+          "direction": "east"
+        },
+        {
+          "to_room": -78,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -78,
+      "default_description_id": -43,
+      "alt_description_id": -43,
+      "short_description": "You're in the equipment shop.",
+      "long_description": "You are now inside the equipment shop, where one may purchase supplies and provisions essential to survival in the dungeons or the wilderness. The shop keeper sits on a tall stool behind a counter along the west wall, eyeing you warily. The exit is to the east.",
+      "room_flags": {
+        "raw_value": 257,
+        "decoded_flags": [
+          "safe",
+          "equipment shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -79,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          3
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 3,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an lithe elf wearing a bright green tunic and trousers, He has whispy blonde hair and no facial hair. He smiles broadly at you as you look him over."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -77,
+      "default_description_id": -45,
+      "alt_description_id": -45,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into a magic shop to the north and, to the town's northern plaza to the south. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -76,
+          "direction": "north"
+        },
+        {
+          "to_room": -82,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -76,
+      "default_description_id": -47,
+      "alt_description_id": -47,
+      "short_description": "You're in the magic shop.",
+      "long_description": "You're standing in a warm, dimly lit shop where various magical items are bought and sold by a shrewd mage in crimson robes with an air of power and complete confidence about him. He doesn't look like someone whose spells you'd like to be on the wrong end of. The sweet scent of incense drifts in from a workroom in the rear of the shop. The exit is to the south.",
+      "room_flags": {
+        "raw_value": 4097,
+        "decoded_flags": [
+          "safe",
+          "magic shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -77,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          6
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 6,
+            "name_singular": "crimson mage",
+            "name_plural": "crimson mages",
+            "description": "The mage wears red robes and radiates an aura of power and confidence. He has flowing white hair and a long white beard, though his face does not appear to show the age he would have to be to have such. Tatooed upon his right forearm is a crimson sigil which looks like a crecent moon."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -75,
+      "default_description_id": -49,
+      "alt_description_id": -49,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into open plazas to the east and west. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -74,
+          "direction": "east"
+        },
+        {
+          "to_room": -82,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -74,
+      "default_description_id": -51,
+      "alt_description_id": -51,
+      "short_description": "You're in the east plaza.",
+      "long_description": "You are standing in a large open plaza at the east end of town surrounded by shade trees. A well trodden path to the east leads to an armor shop. To the west, another well used path leads to an open plaza in the northern end of town. A third path to the south leads to towns temple, and a fourth path leads to the town's arena.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -73,
+          "direction": "north"
+        },
+        {
+          "to_room": -71,
+          "direction": "east"
+        },
+        {
+          "to_room": -69,
+          "direction": "south"
+        },
+        {
+          "to_room": -75,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -73,
+      "default_description_id": -53,
+      "alt_description_id": -53,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into an open plaza to the south, and to the town's arena to the north. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -72,
+          "direction": "north"
+        },
+        {
+          "to_room": -74,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -72,
+      "default_description_id": -55,
+      "alt_description_id": -55,
+      "short_description": "You're in the arena.",
+      "long_description": "You now stand inside the gates of the town's arena. The charred and stained stone walls and scattered bits of bone, armor, and weaponry lying among the debris on the packed earthen floor. A huge bronze gong hangs at the center of the arena suspended on a framework made of the bones of some of the less fortunate of the arena's combatants. The exit through the arena gates is to the south.",
+      "room_flags": {
+        "raw_value": 4,
+        "decoded_flags": [
+          "arena"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -73,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -71,
+      "default_description_id": -57,
+      "alt_description_id": -57,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into an open plaza to the west, and to the armor shop to the east. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -70,
+          "direction": "east"
+        },
+        {
+          "to_room": -74,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -70,
+      "default_description_id": -59,
+      "alt_description_id": -59,
+      "short_description": "You're in the armor shop.",
+      "long_description": "You are now inside the armor shop, where you may aquire different sorts of armor and protective gear to guard yourself against the blows of your opponents in the arena, or from the various non-human foes to be found in the dungeons near the town. The shop keeper sits on a high stool behind a worn counter along the east wall, eyeing you warily. The exit is to the west.",
+      "room_flags": {
+        "raw_value": 1025,
+        "decoded_flags": [
+          "safe",
+          "armor shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -71,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          4
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 4,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an enormous half-ogre smith wearing heavy leather apron. He has coarse black hair, and a black beard and moustache. His facial features betray great strength and self assurance."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -69,
+      "default_description_id": -61,
+      "alt_description_id": -61,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on a path that leads into an open plaza to the north, and to the town's temple to the south. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -74,
+          "direction": "north"
+        },
+        {
+          "to_room": -68,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -68,
+      "default_description_id": -63,
+      "alt_description_id": -63,
+      "short_description": "You're in the temple.",
+      "long_description": "You are now in the main entry hall of a great temple. Huge black marble columns veined with platinum stretch to the ceiling some 100' overhead. The paterns in the tile floor are so ornate and complex as to be nearly impossible to follow or comprehend. Many black silk tapestries depicting various scenes of a religious or magical nature block your view into the many other areas of the temple. Blue robed priests and acolytes move here and there going about their duties. The exit is to the north.",
+      "room_flags": {
+        "raw_value": 513,
+        "decoded_flags": [
+          "safe",
+          "temple"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -69,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          8
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 8,
+            "name_singular": "blue robed priest",
+            "name_plural": "blue robed priests",
+            "description": "The priest wears blue robes. He has an air of peace and tranquility about him. Around his neck he wears a heavy silver chain which supports a large silver ankh."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside"
+      }
+    },
+    {
+      "room_id": -67,
+      "default_description_id": -65,
+      "alt_description_id": -65,
+      "short_description": "You're in a private room.",
+      "long_description": "You are in a private room above the tavern. The room is well furnished, though not richly. A window in the northern wall affords a breathtaking view of the great lake to the north of town. A steep wooden staircase leads down through a trap door in the floor to the tavern common room.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -95,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -66,
+      "default_description_id": -67,
+      "alt_description_id": -67,
+      "short_description": "You're in the town vaults.",
+      "long_description": "You are standing at the entrance to the town vaults. The room is bare, and fashioned from solid natural stone. On the south wall there is a huge iron door, and an open window covered with iron bars. A richly dressed man in the window looks at you expectantly. A wide stone staircase leads upward.",
+      "room_flags": {
+        "raw_value": 129,
+        "decoded_flags": [
+          "safe",
+          "vault"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -92,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main"
+      }
+    },
+    {
+      "room_id": -65,
+      "default_description_id": -69,
+      "alt_description_id": -69,
+      "short_description": "You're in the town square.",
+      "long_description": "You are standing in the midst of a large open square in a subterranean cavern. The vaulted ceiling rises high above your head into near dark. The light from oil lamps spaced evenly about the square affords adequate light. Plain stone benches of good workmanship line the outer edges of the square. To the four primary compass points stand smooth stone walls carved with detailed scenes depicting various aspects of dwarven life. To the northeast, southeast, southwest, and northeast lie open plazas surrounding ornate stone fountains.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -64,
+          "direction": "northeast"
+        },
+        {
+          "to_room": -63,
+          "direction": "southeast"
+        },
+        {
+          "to_room": -61,
+          "direction": "southwest"
+        },
+        {
+          "to_room": -62,
+          "direction": "northwest"
+        },
+        {
+          "to_room": 1457,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -64,
+      "default_description_id": -71,
+      "alt_description_id": -71,
+      "short_description": "You're in an underground plaza.",
+      "long_description": "You are standing in a large open plaza at the northeast corner of an enormous subterranean cavern. An ornate stone fountain of fine craftsmanship stands in the center of the plaza. The gurgling fountain fills you with a sense of peace and tranquility, and the cool air is very still here. The plaza opens out into the town square to the southwest. To the north and east lie large stone archways decorated with intricate stonework.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -60,
+          "direction": "north"
+        },
+        {
+          "to_room": -59,
+          "direction": "east"
+        },
+        {
+          "to_room": -65,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -63,
+      "default_description_id": -73,
+      "alt_description_id": -73,
+      "short_description": "You're in an underground plaza.",
+      "long_description": "You are standing in a large open plaza at the southeast corner of an enormous subterranean cavern. An ornate stone fountain of fine craftsmanship stands in the center of the plaza. The gurgling fountain fills you with a sense of peace and tranquility, and the cool air is very still here. The plaza opens out into the town square to the northwest. To the southeast lies a large stone archway decorated with intricate stonework.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -57,
+          "direction": "southeast"
+        },
+        {
+          "to_room": -65,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -62,
+      "default_description_id": -75,
+      "alt_description_id": -75,
+      "short_description": "You're in an underground plaza.",
+      "long_description": "You are standing in a large open plaza at the northwest corner of an enormous subterranean cavern. An ornate stone fountain of fine craftsmanship stands in the center of the plaza. The gurgling fountain fills you with a sense of peace and tranquility, and the cool air is very still here. The plaza opens out into the town square to the southeast. To the northeast, and northwest lie large stone archways decorated with intricate stonework.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -53,
+          "direction": "northeast"
+        },
+        {
+          "to_room": -65,
+          "direction": "southeast"
+        },
+        {
+          "to_room": -58,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -61,
+      "default_description_id": -77,
+      "alt_description_id": -77,
+      "short_description": "You're in an underground plaza.",
+      "long_description": "You are standing in a large open plaza at the southwest corner of an enormous subterranean cavern. An ornate stone fountain of fine craftsmanship stands in the center of the plaza. The gurgling fountain fills you with a sense of peace and tranquility, and the cool air is very still here. The plaza opens out into the town square to the northeast. To the northwest, southeast, and southwest lie large stone archways decorated with intricate stonework.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -65,
+          "direction": "northeast"
+        },
+        {
+          "to_room": -54,
+          "direction": "southeast"
+        },
+        {
+          "to_room": -55,
+          "direction": "southwest"
+        },
+        {
+          "to_room": -56,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -60,
+      "default_description_id": -79,
+      "alt_description_id": -79,
+      "short_description": "You're in the guild hall.",
+      "long_description": "You have entered the town guild hall, where one may seek the training neccessary to refine your combat and spell skills. This building is also a center of learning where the ancient art of sorcery is taught to those with the intelligence and skill to wield it effectively. Sages, wizards, and masters-at-arms rush about on errands or to and from training sessions. An ornately carved stone archway exits to the south.",
+      "room_flags": {
+        "raw_value": 65,
+        "decoded_flags": [
+          "safe",
+          "guild hall"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -64,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          7
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 7,
+            "name_singular": "master sorceror",
+            "name_plural": "master sorcerors",
+            "description": "The master sorceror wears shimering silver robes and bracers adorned with magical sigils and runes of power. His eyes betray his great wisdom. He has the mannerisms of one who is kind and gentle."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -59,
+      "default_description_id": -81,
+      "alt_description_id": -81,
+      "short_description": "You're in the temple.",
+      "long_description": "You are now in the main entry hall of a great temple. Huge reddish stone columns stretch to the ceiling some 50' overhead. The stone floor is made up of intricately engraved flagstones. Heavy cloth tapestries depicting various scenes of dwarven religious cerimonies block your view into the other areas of the temple. Grey robed priests and acolytes move here and there going about their daily duties. An ornate archway exits to the west.",
+      "room_flags": {
+        "raw_value": 513,
+        "decoded_flags": [
+          "safe",
+          "temple"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -64,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          13
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 13,
+            "name_singular": "grey robed priest",
+            "name_plural": "grey robed priests",
+            "description": "The dwarven priest wears grey robes. He has an air of peace and assurance about him. Around his neck he wears a heavy chain which supports a large iron talisman."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -58,
+      "default_description_id": -83,
+      "alt_description_id": -83,
+      "short_description": "You're in the tavern.",
+      "long_description": "You are in the tavern. The smoke from the many oil lamps decreases visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the tavern's rowdy patrons, primarily dwarves, gnomes, and an occasional goblin make themselves at home. The bar stands along the north wall and a door to the kitchen lies to the west. The only visibile exit lies to the southeast.",
+      "room_flags": {
+        "raw_value": 9,
+        "decoded_flags": [
+          "safe",
+          "tavern"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -62,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          9
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 9,
+            "name_singular": "barkeep",
+            "name_plural": "barkeeps",
+            "description": "The barkeep is a giant of a man. He stands nearly seven feet tall and looks as though he might have a bit of ogre blood in him. He wears a pair of iron armbands and a leather tunic. The tavern's patrons seem to reguard him with respect if not fear."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -57,
+      "default_description_id": -85,
+      "alt_description_id": -85,
+      "short_description": "You're in the magic shop.",
+      "long_description": "You're standing in a warm, dimly lit shop where various magical items are bought and sold by a shrewd mage in crimson robes with an air of power and complete confidence about him. He doesn't look like someone whose spells you'd like to be on the wrong end of. The sweet scent of incense drifts in from a workroom in the rear of the shop. A stone archway lies to the to the northwest.",
+      "room_flags": {
+        "raw_value": 4097,
+        "decoded_flags": [
+          "safe",
+          "magic shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -63,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          6
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 6,
+            "name_singular": "crimson mage",
+            "name_plural": "crimson mages",
+            "description": "The mage wears red robes and radiates an aura of power and confidence. He has flowing white hair and a long white beard, though his face does not appear to show the age he would have to be to have such. Tatooed upon his right forearm is a crimson sigil which looks like a crecent moon."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -56,
+      "default_description_id": -87,
+      "alt_description_id": -87,
+      "short_description": "You're in the equipment shop.",
+      "long_description": "You are now inside the equipment shop, where one may purchase supplies and provisions essential to survival in the dungeons or the wilderness. The shop keeper sits on a tall stool behind a counter along the west wall, eyeing you warily. A stone archway lies to the to the southeast.",
+      "room_flags": {
+        "raw_value": 257,
+        "decoded_flags": [
+          "safe",
+          "equipment shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -61,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          0
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 0,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an old gnome wearing a dark green tunic and trousers, and a grimy leather apron. He has a white beard and bushy white eyebrows from beneath which a pair of deep set brown eyes peer out at you."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -55,
+      "default_description_id": -89,
+      "alt_description_id": -89,
+      "short_description": "You're in the armor shop.",
+      "long_description": "You are now inside the armor shop, where you may aquire different sorts of armor and protective gear to guard yourself against the blows of your opponents. The shop keeper sits on a high behind a worn counter along the west wall, eyeing you warily. A stone archway lies to the to the northeast.",
+      "room_flags": {
+        "raw_value": 1025,
+        "decoded_flags": [
+          "safe",
+          "armor shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -61,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          2
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 2,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is a tough looking dwarf wearing a fine suit of chainmail. He has a thick head of unruly brown hair and an unkempt beard. He seems to be very direct and has a brusque manner about him."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -54,
+      "default_description_id": -91,
+      "alt_description_id": -91,
+      "short_description": "You're in the weapon shop.",
+      "long_description": "You are now inside the weapon shop, where you may purchase various weapons to use for sparring in the arena or for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the south wall. A stone archway lies to the to the northwest.",
+      "room_flags": {
+        "raw_value": 2049,
+        "decoded_flags": [
+          "safe",
+          "weapon shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 2,
+        "description": "advanced shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -61,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          4
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 4,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an enormous half-ogre smith wearing heavy leather apron. He has coarse black hair, and a black beard and moustache. His facial features betray great strength and self assurance."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -53,
+      "default_description_id": -93,
+      "alt_description_id": -93,
+      "short_description": "You're in the arena.",
+      "long_description": "You are standing in an enormous natural cavern of dark reddish stone. The charred and stained walls and stonework floor tell of battles ancient and recent that have been fought in this place of death. The floor and walls of this cavern give off noticable heat. A huge iron gong hangs at the center of the arena suspended on a framework made of the bones of demons and dragons. The exit through a huge stone archway is to the southwest.",
+      "room_flags": {
+        "raw_value": 4,
+        "decoded_flags": [
+          "arena"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 3,
+        "description": "premium shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -62,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground"
+      }
+    },
+    {
+      "room_id": -52,
+      "default_description_id": -95,
+      "alt_description_id": -95,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk is anchored against the trunk of a huge tree to the south, and continues north. There is a round hole in the platform near the tree trunk which leads down to some large branches which appear climbable.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -51,
+          "direction": "north"
+        },
+        {
+          "to_room": 3014,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -51,
+      "default_description_id": -97,
+      "alt_description_id": -97,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues north and south.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -50,
+          "direction": "north"
+        },
+        {
+          "to_room": -52,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -50,
+      "default_description_id": -99,
+      "alt_description_id": -99,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues south and west.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -51,
+          "direction": "south"
+        },
+        {
+          "to_room": -49,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -49,
+      "default_description_id": -101,
+      "alt_description_id": -101,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues to the north and east.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -48,
+          "direction": "north"
+        },
+        {
+          "to_room": -50,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -48,
+      "default_description_id": -103,
+      "alt_description_id": -103,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues north and south.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -47,
+          "direction": "north"
+        },
+        {
+          "to_room": -49,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -47,
+      "default_description_id": -105,
+      "alt_description_id": -105,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. A large wooden platform lies to the north. The catwalk continues south.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -46,
+          "direction": "north"
+        },
+        {
+          "to_room": -48,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -46,
+      "default_description_id": -107,
+      "alt_description_id": -107,
+      "short_description": "You're in the southeast plaza.",
+      "long_description": "You are standing in the southeastern section of a large open square platform made of wood. The platform is ringed by intricately carved wooden railing. The trunk of a huge tree lies in the center of the platform, and appears to be the central support for the surrounding structure. The rest of the platform lies to the north and west, and a wooden catwalk leads off into the trees to the south.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -43,
+          "direction": "north"
+        },
+        {
+          "to_room": -47,
+          "direction": "south"
+        },
+        {
+          "to_room": -45,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -45,
+      "default_description_id": -109,
+      "alt_description_id": -109,
+      "short_description": "You're in the southwest plaza.",
+      "long_description": "You are standing in the southwestern section of a large open square platform made of wood. The platform is ringed by intricately carved wooden railing. The trunk of a huge tree lies in the center of the platform, and appears to be the central support for the surrounding structure. The rest of the platform lies to the north and east, and a wooden catwalk leads off into the trees to the west.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -44,
+          "direction": "north"
+        },
+        {
+          "to_room": -46,
+          "direction": "east"
+        },
+        {
+          "to_room": -29,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -44,
+      "default_description_id": -111,
+      "alt_description_id": -111,
+      "short_description": "You're in the northwest plaza.",
+      "long_description": "You are standing in the northwestern section of a large open square platform made of wood. The platform is ringed by intricately carved wooden railing. The trunk of a huge tree lies in the center of the platform, and appears to be the central support for the surrounding structure. The rest of the platform lies to the south and east, and a wooden catwalk leads off into the trees to the north.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -36,
+          "direction": "north"
+        },
+        {
+          "to_room": -43,
+          "direction": "east"
+        },
+        {
+          "to_room": -45,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -43,
+      "default_description_id": -113,
+      "alt_description_id": -113,
+      "short_description": "You're in the northeast plaza.",
+      "long_description": "You are standing in the northeastern section of a large open square platform made of wood. The platform is ringed by intricately carved wooden railing. The trunk of a huge tree lies in the center of the platform, and appears to be the central support for the surrounding structure. The rest of the platform lies to the south and west, and a wooden catwalk leads off into the trees to the east.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -42,
+          "direction": "east"
+        },
+        {
+          "to_room": -46,
+          "direction": "south"
+        },
+        {
+          "to_room": -44,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -42,
+      "default_description_id": -115,
+      "alt_description_id": -115,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. A large wooden platform lies to the west. The catwalk continues east.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -41,
+          "direction": "east"
+        },
+        {
+          "to_room": -43,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -41,
+      "default_description_id": -117,
+      "alt_description_id": -117,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues north, east, and west.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -25,
+          "direction": "north"
+        },
+        {
+          "to_room": -40,
+          "direction": "east"
+        },
+        {
+          "to_room": -42,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -40,
+      "default_description_id": -119,
+      "alt_description_id": -119,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues south and west.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -39,
+          "direction": "south"
+        },
+        {
+          "to_room": -41,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -39,
+      "default_description_id": -121,
+      "alt_description_id": -121,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues north. To the east lies an ornately carved wooden archway.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -40,
+          "direction": "north"
+        },
+        {
+          "to_room": -38,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -38,
+      "default_description_id": -123,
+      "alt_description_id": -123,
+      "short_description": "You're in the weapon shop.",
+      "long_description": "You are now inside the weapon shop, where you may purchase various weapons to use for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the east wall. The exit is to the west.",
+      "room_flags": {
+        "raw_value": 2049,
+        "decoded_flags": [
+          "safe",
+          "weapon shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 3,
+        "description": "premium shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -39,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          3
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 3,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an lithe elf wearing a bright green tunic and trousers, He has whispy blonde hair and no facial hair. He smiles broadly at you as you look him over."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -37,
+      "default_description_id": -125,
+      "alt_description_id": -125,
+      "short_description": "You're in the armor shop.",
+      "long_description": "You are now inside the armor shop, where you may aquire different sorts of armor and protective gear to guard yourself against the blows of your opponents in the arenas, or from the various non-human foes to be found in the dungeons. The shop keeper sits on a high stool behind a worn counter along the north wall, eyeing you warily. The exit is to the south.",
+      "room_flags": {
+        "raw_value": 1025,
+        "decoded_flags": [
+          "safe",
+          "armor shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 3,
+        "description": "premium shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -25,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          3
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 3,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an lithe elf wearing a bright green tunic and trousers, He has whispy blonde hair and no facial hair. He smiles broadly at you as you look him over."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -36,
+      "default_description_id": -127,
+      "alt_description_id": -127,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. A large wooden platform lies to the south. The catwalk continues north.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -35,
+          "direction": "north"
+        },
+        {
+          "to_room": -44,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -35,
+      "default_description_id": -129,
+      "alt_description_id": -129,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues north, south, and west.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -32,
+          "direction": "north"
+        },
+        {
+          "to_room": -36,
+          "direction": "south"
+        },
+        {
+          "to_room": -34,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -34,
+      "default_description_id": -131,
+      "alt_description_id": -131,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues east. To the west lies an ornately carved wooden archway.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -35,
+          "direction": "east"
+        },
+        {
+          "to_room": -33,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -33,
+      "default_description_id": -133,
+      "alt_description_id": -133,
+      "short_description": "You're in the equipment shop.",
+      "long_description": "You are now inside the equipment shop, where one may purchase supplies and provisions essential to survival in the dungeons or the wilderness. The shop keeper sits on a tall stool behind a counter along the west wall, eyeing you warily. The exit is to the east.",
+      "room_flags": {
+        "raw_value": 257,
+        "decoded_flags": [
+          "safe",
+          "equipment shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 3,
+        "description": "premium shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -34,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          3
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 3,
+            "name_singular": "shop keeper",
+            "name_plural": "shop keepers",
+            "description": "The shop keeper is an lithe elf wearing a bright green tunic and trousers, He has whispy blonde hair and no facial hair. He smiles broadly at you as you look him over."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -32,
+      "default_description_id": -135,
+      "alt_description_id": -135,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues east and south.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -31,
+          "direction": "east"
+        },
+        {
+          "to_room": -35,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -31,
+      "default_description_id": -137,
+      "alt_description_id": -137,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues west. To the north lies an ornately carved wooden archway.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -30,
+          "direction": "north"
+        },
+        {
+          "to_room": -32,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -30,
+      "default_description_id": -139,
+      "alt_description_id": -139,
+      "short_description": "You're in the tavern.",
+      "long_description": "You are in the tavern. The smoke from the many oil lamps decreases visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the tavern's patrons, primarily elves, and an occasional human make themselves at home. The bar stands along the north wall and a door to the kitchen lies to the east. The only visibile exit lies to the south.",
+      "room_flags": {
+        "raw_value": 9,
+        "decoded_flags": [
+          "safe",
+          "tavern"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 1,
+        "description": "basic shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -31,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          15,
+          14
+        ],
+        "count": 2,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 15,
+            "name_singular": "barkeep",
+            "name_plural": "barkeeps",
+            "description": "The barkeep is a lively old elf. He stands nearly six feet tall and looks as though he's seen his fair share of adventure in his younger days. He wears a leather tunic and buskins. The tavern's patrons seem to reguard him with a great deal of respect."
+          },
+          {
+            "npc_id": 14,
+            "name_singular": "barmaid",
+            "name_plural": "barmaids",
+            "description": "The barmaid is an elven wench wearing a low cut lacey green blouse, brown bodice, and yellow skirts. She has curly red hair and clear grey eyes. You notice quite a few of the inn's male patrons eyeing her."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -29,
+      "default_description_id": -141,
+      "alt_description_id": -141,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. A large wooden platform lies to the east. The catwalk continues west.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -45,
+          "direction": "east"
+        },
+        {
+          "to_room": -28,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -28,
+      "default_description_id": -143,
+      "alt_description_id": -143,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues east and south.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -29,
+          "direction": "east"
+        },
+        {
+          "to_room": -27,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -27,
+      "default_description_id": -145,
+      "alt_description_id": -145,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues north. To the south lies an ornately carved wooden archway.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -28,
+          "direction": "north"
+        },
+        {
+          "to_room": -26,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -26,
+      "default_description_id": -147,
+      "alt_description_id": -147,
+      "short_description": "You're in the magic shop.",
+      "long_description": "You're standing in a warm, dimly lit shop where various magical items are bought and sold by a shrewd mage in crimson robes with an air of power and complete confidence about him. He doesn't look like someone whose spells you'd like to be on the wrong end of. The sweet scent of incense drifts in from a workroom in the rear of the shop. The exit is to the north.",
+      "room_flags": {
+        "raw_value": 4097,
+        "decoded_flags": [
+          "safe",
+          "magic shop"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 3,
+        "description": "premium shop"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -27,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [
+          6
+        ],
+        "count": 1,
+        "note": "NPC vnums reference data/npcs.dat",
+        "details": [
+          {
+            "npc_id": 6,
+            "name_singular": "crimson mage",
+            "name_plural": "crimson mages",
+            "description": "The mage wears red robes and radiates an aura of power and confidence. He has flowing white hair and a long white beard, though his face does not appear to show the age he would have to be to have such. Tatooed upon his right forearm is a crimson sigil which looks like a crecent moon."
+          }
+        ]
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    },
+    {
+      "room_id": -25,
+      "default_description_id": -149,
+      "alt_description_id": -149,
+      "short_description": "You're on a catwalk.",
+      "long_description": "You are standing on a wooden catwalk suspended high in the trees of a deep forest. The forest floor lies some fifty feet below you, and is hidden in shadow. The catwalk continues south. To the north lies an ornately carved wooden archway.",
+      "room_flags": {
+        "raw_value": 1,
+        "decoded_flags": [
+          "safe"
+        ],
+        "note": "Bitwise OR of flag values"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "terrain": {
+        "type": "TOWN",
+        "index": 11,
+        "description": "Town"
+      },
+      "exits": [
+        {
+          "to_room": -37,
+          "direction": "north"
+        },
+        {
+          "to_room": -41,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [],
+      "town": {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree"
+      }
+    }
+  ],
+  "_statistics": {
+    "total_rooms": 75,
+    "room_id_range": {
+      "min": -99,
+      "max": -25
+    },
+    "rooms_by_flag": {
+      "safe": 72,
+      "arena": 3,
+      "equipment shop": 4,
+      "temple": 3,
+      "tavern": 4,
+      "weapon shop": 4,
+      "armor shop": 4,
+      "guild hall": 2,
+      "magic shop": 4,
+      "docks": 2,
+      "vault": 1
+    },
+    "rooms_by_service_level": {
+      "none": 46,
+      "basic shop": 14,
+      "advanced shop": 10,
+      "premium shop": 5
+    },
+    "total_npcs": 33,
+    "rooms_with_doors": 2,
+    "door_types": {
+      "HasRuneDoor": 1,
+      "PrivateRoomDoor": 1
+    },
+    "total_towns": 4,
+    "towns_summary": {
+      "Elven Tree Town": {
+        "rooms": 28,
+        "npcs": 6,
+        "type": "elven_tree"
+      },
+      "Main Human Village": {
+        "rooms": 13,
+        "npcs": 10,
+        "type": "human_main"
+      },
+      "Lakeside Human Town": {
+        "rooms": 21,
+        "npcs": 10,
+        "type": "human_lakeside"
+      },
+      "Dwarven Underground Town": {
+        "rooms": 13,
+        "npcs": 7,
+        "type": "dwarven_underground"
+      }
+    }
+  },
+  "_towns": {
+    "description": "The area contains 4 distinct towns with no connections between them",
+    "total_towns": 4,
+    "towns": [
+      {
+        "town_id": 1,
+        "town_name": "Elven Tree Town",
+        "town_type": "elven_tree",
+        "description": "A town built high in the trees with wooden catwalks and platforms. Elven architecture and design throughout.",
+        "room_count": 28,
+        "room_id_range": {
+          "min": -52,
+          "max": -25
+        },
+        "total_npcs": 6,
+        "facilities": {
+          "weapon shop": 1,
+          "armor shop": 1,
+          "equipment shop": 1,
+          "tavern": 1,
+          "magic shop": 1
+        },
+        "features": {
+          "has_catwalk": true,
+          "has_underground": false,
+          "has_dwarven_architecture": false,
+          "has_elven_architecture": true,
+          "has_arena": false,
+          "has_guild_hall": false,
+          "has_vault": false,
+          "has_private_rooms": false,
+          "has_rune_locks": false,
+          "has_docks": false
+        },
+        "exit_directions": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "room_ids": [
+          -52,
+          -51,
+          -50,
+          -49,
+          -48,
+          -47,
+          -46,
+          -45,
+          -44,
+          -43,
+          -42,
+          -41,
+          -40,
+          -39,
+          -38,
+          -37,
+          -36,
+          -35,
+          -34,
+          -33,
+          -32,
+          -31,
+          -30,
+          -29,
+          -28,
+          -27,
+          -26,
+          -25
+        ]
+      },
+      {
+        "town_id": 2,
+        "town_name": "Main Human Village",
+        "town_type": "human_main",
+        "description": "The primary human settlement with full facilities including arena, guild hall, vault, and rune-protected areas.",
+        "room_count": 13,
+        "room_id_range": {
+          "min": -99,
+          "max": -66
+        },
+        "total_npcs": 10,
+        "facilities": {
+          "arena": 1,
+          "equipment shop": 1,
+          "temple": 1,
+          "tavern": 1,
+          "weapon shop": 1,
+          "armor shop": 1,
+          "guild hall": 1,
+          "magic shop": 1,
+          "docks": 1,
+          "vault": 1
+        },
+        "features": {
+          "has_catwalk": false,
+          "has_underground": false,
+          "has_dwarven_architecture": false,
+          "has_elven_architecture": true,
+          "has_arena": true,
+          "has_guild_hall": true,
+          "has_vault": true,
+          "has_private_rooms": true,
+          "has_rune_locks": true,
+          "has_docks": true
+        },
+        "exit_directions": [
+          "down",
+          "east",
+          "north",
+          "northeast",
+          "northwest",
+          "south",
+          "southeast",
+          "southwest",
+          "up",
+          "west"
+        ],
+        "room_ids": [
+          -99,
+          -98,
+          -97,
+          -96,
+          -95,
+          -94,
+          -93,
+          -92,
+          -91,
+          -90,
+          -89,
+          -67,
+          -66
+        ]
+      },
+      {
+        "town_id": 3,
+        "town_name": "Lakeside Human Town",
+        "town_type": "human_lakeside",
+        "description": "A human town located by the great lake with docks, shops, and an arena.",
+        "room_count": 21,
+        "room_id_range": {
+          "min": -88,
+          "max": -68
+        },
+        "total_npcs": 10,
+        "facilities": {
+          "docks": 1,
+          "weapon shop": 1,
+          "tavern": 1,
+          "equipment shop": 1,
+          "magic shop": 1,
+          "arena": 1,
+          "armor shop": 1,
+          "temple": 1
+        },
+        "features": {
+          "has_catwalk": false,
+          "has_underground": false,
+          "has_dwarven_architecture": false,
+          "has_elven_architecture": true,
+          "has_arena": true,
+          "has_guild_hall": false,
+          "has_vault": false,
+          "has_private_rooms": false,
+          "has_rune_locks": false,
+          "has_docks": true
+        },
+        "exit_directions": [
+          "down",
+          "east",
+          "north",
+          "northeast",
+          "northwest",
+          "south",
+          "southeast",
+          "southwest",
+          "west"
+        ],
+        "room_ids": [
+          -88,
+          -87,
+          -86,
+          -85,
+          -84,
+          -83,
+          -82,
+          -81,
+          -80,
+          -79,
+          -78,
+          -77,
+          -76,
+          -75,
+          -74,
+          -73,
+          -72,
+          -71,
+          -70,
+          -69,
+          -68
+        ]
+      },
+      {
+        "town_id": 4,
+        "town_name": "Dwarven Underground Town",
+        "town_type": "dwarven_underground",
+        "description": "A subterranean cavern town carved from stone. Home to dwarven craftsmen and warriors.",
+        "room_count": 13,
+        "room_id_range": {
+          "min": -65,
+          "max": -53
+        },
+        "total_npcs": 7,
+        "facilities": {
+          "guild hall": 1,
+          "temple": 1,
+          "tavern": 1,
+          "magic shop": 1,
+          "equipment shop": 1,
+          "armor shop": 1,
+          "weapon shop": 1,
+          "arena": 1
+        },
+        "features": {
+          "has_catwalk": false,
+          "has_underground": true,
+          "has_dwarven_architecture": true,
+          "has_elven_architecture": true,
+          "has_arena": true,
+          "has_guild_hall": true,
+          "has_vault": false,
+          "has_private_rooms": false,
+          "has_rune_locks": false,
+          "has_docks": false
+        },
+        "exit_directions": [
+          "east",
+          "north",
+          "northeast",
+          "northwest",
+          "south",
+          "southeast",
+          "southwest",
+          "west"
+        ],
+        "room_ids": [
+          -65,
+          -64,
+          -63,
+          -62,
+          -61,
+          -60,
+          -59,
+          -58,
+          -57,
+          -56,
+          -55,
+          -54,
+          -53
+        ]
+      }
+    ]
+  },
+  "_game_data_references": {
+    "description": "References to external game data files",
+    "barriers": "data/json/barriers.json",
+    "traps": "data/json/traps.json",
+    "teleporters": "data/json/teleporters.json",
+    "npcs": "data/json/npcs.json",
+    "mobs": "data/json/mobs.json"
+  }
+}

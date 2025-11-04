@@ -1,0 +1,26 @@
+{
+  "id": "fletcher_shop",
+  "title": "Aelwyn's Fletcher",
+  "description": "The earthy scent of wood shavings and beeswax fills this well-organized workshop. Rows of carefully crafted bows line the walls, ranging from simple hunting bows to elegant longbows. Bundles of arrows with various fletching colors are neatly arranged in quivers. A workbench near the window holds tools for bow-making and arrow-fletching. Aelwyn, the master fletcher, inspects her work with a keen eye.",
+  "area_id": "starter_town",
+  "exits": {
+    "southwest": "market_square"
+  },
+  "items": [],
+  "npcs": [
+    "fletcher_aelwyn"
+  ],
+  "features": [
+    "bow_rack",
+    "workbench",
+    "arrow_bundles",
+    "fletching_tools"
+  ],
+  "is_safe": true,
+  "light_level": "bright",
+  "shop": {
+    "type": "fletcher",
+    "buy_rate": 0.5,
+    "sell_rate": 1.2
+  }
+}

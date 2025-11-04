@@ -1,0 +1,19 @@
+{
+  "id": "lht_weapon_shop",
+  "title": "The Weapon Shop.",
+  "description": "You are now inside the weapon shop, where you may purchase various weapons to use for sparring in the arena or for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the west wall. The exit is to the northeast.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "northeast": "lht_a_path_8"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "marcus_steelhand"
+  ],
+  "shop_type": "weapon",
+  "service_level": 2,
+  "terrain": "town",
+  "legacy_room_id": -84
+}

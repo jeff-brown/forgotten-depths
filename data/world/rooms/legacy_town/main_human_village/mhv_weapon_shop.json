@@ -1,0 +1,19 @@
+{
+  "id": "mhv_weapon_shop",
+  "title": "The Weapon Shop.",
+  "description": "You are now inside the weapon shop, where you may purchase various weapons to use for sparring in the arena or for personal defense from the denizens of the dungeons. The shop keeper sits on a high stool behind a tall counter along the south wall. The exit is to the west.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "west": "mhv_south_plaza"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "borin_strongarm"
+  ],
+  "shop_type": "weapon",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -94
+}

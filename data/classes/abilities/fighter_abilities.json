@@ -1,0 +1,163 @@
+{
+  "abilities": [
+    {
+      "id": "weapon_mastery",
+      "name": "Weapon Mastery",
+      "type": "passive",
+      "min_level": 1,
+      "description": "Your weapon expertise grants +2 to melee damage.",
+      "trigger": "on_melee_attack",
+      "effect": {
+        "type": "damage_bonus",
+        "value": 2
+      }
+    },
+    {
+      "id": "second_wind",
+      "name": "Second Wind",
+      "type": "passive",
+      "min_level": 5,
+      "description": "When health drops below 30%, automatically heal for 20% of max HP once per combat.",
+      "trigger": "on_low_health",
+      "requirement": {
+        "health_percent": 0.3
+      },
+      "effect": {
+        "type": "auto_heal",
+        "value": 0.2,
+        "once_per_combat": true
+      }
+    },
+    {
+      "id": "extra_attack_high_str",
+      "name": "Overwhelming Force",
+      "type": "passive",
+      "min_level": 10,
+      "description": "When your STR reaches 30+, you gain an extra attack per combat round.",
+      "trigger": "combat_check",
+      "requirement": {
+        "stat": "strength",
+        "min_value": 30
+      },
+      "effect": {
+        "type": "extra_attack",
+        "value": 1
+      }
+    },
+    {
+      "id": "armor_expert",
+      "name": "Armor Expert",
+      "type": "passive",
+      "min_level": 7,
+      "description": "Heavy armor provides +50% more protection.",
+      "trigger": "on_armor_calculation",
+      "effect": {
+        "type": "armor_multiplier",
+        "value": 1.5
+      }
+    },
+    {
+      "id": "power_attack",
+      "name": "Power Attack",
+      "type": "active",
+      "command": "powerattack",
+      "aliases": [
+        "pa",
+        "power"
+      ],
+      "min_level": 1,
+      "cooldown": 15,
+      "description": "Sacrifice accuracy for a devastating blow that deals 2x damage.",
+      "requirements": {
+        "stat": "strength",
+        "min_value": 12
+      },
+      "effect": {
+        "type": "damage_multiplier",
+        "value": 2.0,
+        "hit_penalty": -0.2
+      }
+    },
+    {
+      "id": "cleave",
+      "name": "Cleave",
+      "type": "active",
+      "command": "cleave",
+      "aliases": [],
+      "min_level": 8,
+      "cooldown": 30,
+      "description": "Attack all enemies in the room with a sweeping strike (75% damage each).",
+      "requirements": {
+        "stat": "strength",
+        "min_value": 18
+      },
+      "effect": {
+        "type": "aoe_attack",
+        "damage_multiplier": 0.75,
+        "targets": "all_enemies"
+      }
+    },
+    {
+      "id": "dual_wield",
+      "name": "Dual Wield",
+      "type": "active",
+      "command": "dualwield",
+      "aliases": [
+        "dw"
+      ],
+      "min_level": 6,
+      "cooldown": 0,
+      "description": "Toggle dual wielding mode. Attack with both weapons but each deals reduced damage.",
+      "requirements": {
+        "stat": "dexterity",
+        "min_value": 15
+      },
+      "effect": {
+        "type": "toggle",
+        "main_hand_mult": 0.7,
+        "off_hand_mult": 0.5
+      }
+    },
+    {
+      "id": "shield_bash",
+      "name": "Shield Bash",
+      "type": "active",
+      "command": "shieldbash",
+      "aliases": [
+        "bash",
+        "sb"
+      ],
+      "min_level": 4,
+      "cooldown": 20,
+      "description": "Bash enemy with your shield, dealing damage and stunning them for one round.",
+      "requirements": {
+        "items": [
+          "shield"
+        ]
+      },
+      "effect": {
+        "type": "stun_attack",
+        "damage": "1d8",
+        "stun_duration": 1
+      }
+    },
+    {
+      "id": "battle_cry",
+      "name": "Battle Cry",
+      "type": "active",
+      "command": "battlecry",
+      "aliases": [
+        "cry",
+        "warcry"
+      ],
+      "min_level": 12,
+      "cooldown": 60,
+      "description": "Release a mighty war cry that increases your damage by 25% for 20 seconds.",
+      "effect": {
+        "type": "buff",
+        "damage_bonus": 0.25,
+        "duration": 20
+      }
+    }
+  ]
+}

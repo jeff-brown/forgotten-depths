@@ -1,0 +1,20 @@
+{
+  "id": "ett_tavern",
+  "title": "The Tavern.",
+  "description": "You are in the tavern. The smoke from the many oil lamps decreases visibility to your imediate surroundings, and the wavering light they cast about the room leaves many shadows and unlit corners. There are several tables about the room, where the tavern's patrons, primarily elves, and an occasional human make themselves at home. The bar stands along the north wall and a door to the kitchen lies to the east. The only visibile exit lies to the south.",
+  "area_id": "legacy_elven_tree",
+  "exits": {
+    "south": "ett_a_catwalk_15"
+  },
+  "is_safe": true,
+  "is_tavern": true,
+  "light_level": "bright",
+  "npcs": [
+    "finnian_oakbrew",
+    "sylvara_windsong"
+  ],
+  "shop_type": "inn",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -30
+}

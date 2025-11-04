@@ -1,0 +1,13 @@
+{
+  "id": "mhv_a_private_room",
+  "title": "A Private Room.",
+  "description": "You are in a private room above the tavern. The room is well furnished, though not richly. A window in the northern wall affords a breathtaking view of the great lake to the north of town. A steep wooden staircase leads down through a trap door in the floor to the tavern common room.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "down": "mhv_tavern"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -67
+}

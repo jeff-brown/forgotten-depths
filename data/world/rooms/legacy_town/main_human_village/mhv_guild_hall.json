@@ -1,0 +1,21 @@
+{
+  "id": "mhv_guild_hall",
+  "title": "The Guild Hall.",
+  "description": "You have entered the town guild hall, where one may seek the training neccessary to refine your combat and spell skills. This building is also a center of learning where the ancient art of sorcery is taught to those with the intelligence and skill to wield it effectively. Sages, wizards, and masters-at-arms rush about on errands or to and from training sessions. Ornately carved marble archways exit to the north and south, and a wide stone staircase leads downward.",
+  "area_id": "legacy_human_main",
+  "exits": {
+    "north": "mhv_docks",
+    "south": "mhv_north_plaza",
+    "down": "mhv_town_vaults"
+  },
+  "is_safe": true,
+  "is_guild_hall": true,
+  "light_level": "bright",
+  "npcs": [
+    "alderon_mastersorcerer"
+  ],
+  "shop_type": "guild",
+  "service_level": 1,
+  "terrain": "town",
+  "legacy_room_id": -92
+}

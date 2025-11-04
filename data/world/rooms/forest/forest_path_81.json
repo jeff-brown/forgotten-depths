@@ -1,0 +1,13 @@
+{
+  "id": "forest_path_81",
+  "title": "You're in the forest.",
+  "description": "You are standing on a path in a dense forest. The sounds of birds and other small animals in the trees gives life to this lush green wood. The path continues to the northwest and southwest.",
+  "area_id": "forest",
+  "exits": {
+    "southwest": "forest_path_82",
+    "northwest": "forest_path_80"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 314
+}

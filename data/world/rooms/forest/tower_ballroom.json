@@ -1,0 +1,13 @@
+{
+  "id": "tower_ballroom",
+  "title": "You're in a ballroom.",
+  "description": "You are standing in a magnificent ballroom that has somehow survived whatever cataclysm befell the rest of this once majestic edifice. The room is decorated gayly with many beautiful paintings and other works of art as well as several huge chandeliers made of fine crystals. To the west stands a massive iron bound oak door and to the north is a blue misty archway.",
+  "area_id": "forest",
+  "exits": {
+    "north": "tower_bedroom",
+    "west": "tower_ruined_hallway"
+  },
+  "terrain": "forest",
+  "light_level": "bright",
+  "legacy_room_id": 1462
+}

@@ -1,0 +1,25 @@
+{
+  "id": "mystic_plaza",
+  "title": "Mystic Plaza",
+  "description": "An enchanting plaza dedicated to the arcane arts, this circular courtyard is paved with polished marble inlaid with silver runes. Four ornate archways mark the cardinal directions, each emanating a different magical aura. At the center, a magnificent crystal sculpture floats in mid-air, slowly rotating and casting prismatic light across the plaza. The air hums with concentrated magical energy, and you can see practitioners of various magical traditions coming and going from the specialized shops.",
+  "area_id": "starter_town",
+  "exits": {
+    "north": "sorcerers_sanctum",
+    "south": "warlocks_den",
+    "east": "druids_grove",
+    "west": "divine_chapel",
+    "northwest": "arcane_square"
+  },
+  "items": [],
+  "npcs": [
+    "arcane_scholar"
+  ],
+  "features": [
+    "floating_crystal",
+    "marble_floor",
+    "silver_runes",
+    "magical_archways"
+  ],
+  "is_safe": true,
+  "light_level": "bright"
+}

@@ -1,0 +1,104 @@
+{
+  "traps": {
+    "spiked_trap": {
+      "trap_id": 0,
+      "name": "Spiked Trap",
+      "type": "floor_trap",
+      "message": "A spiked trap catches your foot and pain shoots up your leg!",
+      "min_damage": 10,
+      "max_damage": 30,
+      "difficulty": 0,
+      "damage_type": "piercing"
+    },
+    "crossbow_bolts": {
+      "trap_id": 1,
+      "name": "Crossbow Bolt Trap",
+      "type": "wall_trap",
+      "message": "Several crossbow bolts fire from holes in the walls, striking you!",
+      "min_damage": 20,
+      "max_damage": 60,
+      "difficulty": 10,
+      "damage_type": "piercing"
+    },
+    "pit_trap": {
+      "trap_id": 2,
+      "name": "Pit Trap",
+      "type": "floor_trap",
+      "message": "You fall to the ground with an agonizing impact!",
+      "min_damage": 30,
+      "max_damage": 90,
+      "difficulty": 0,
+      "damage_type": "bludgeoning"
+    },
+    "scything_blade": {
+      "trap_id": 3,
+      "name": "Scything Blade Trap",
+      "type": "wall_trap",
+      "message": "A scything blade slices into your stomach!",
+      "min_damage": 40,
+      "max_damage": 120,
+      "difficulty": 10,
+      "damage_type": "slashing"
+    },
+    "falling_stones": {
+      "trap_id": 4,
+      "name": "Falling Stone Trap",
+      "type": "ceiling_trap",
+      "message": "Several large stones fall on you from above!",
+      "min_damage": 50,
+      "max_damage": 150,
+      "difficulty": 20,
+      "damage_type": "bludgeoning"
+    },
+    "fireball": {
+      "trap_id": 5,
+      "name": "Fireball Trap",
+      "type": "wall_trap",
+      "message": "A ball of flame explodes from an opening in the wall and engulfs you!",
+      "min_damage": 60,
+      "max_damage": 180,
+      "difficulty": 30,
+      "damage_type": "fire"
+    },
+    "stone_block": {
+      "trap_id": 6,
+      "name": "Stone Block Trap",
+      "type": "ceiling_trap",
+      "message": "A huge stone block slams down on you from above!",
+      "min_damage": 70,
+      "max_damage": 210,
+      "difficulty": 40,
+      "damage_type": "bludgeoning"
+    },
+    "crushing_walls": {
+      "trap_id": 7,
+      "name": "Crushing Wall Trap",
+      "type": "wall_trap",
+      "message": "The walls slam together, nearly maiming you!",
+      "min_damage": 250,
+      "max_damage": 500,
+      "difficulty": 50,
+      "damage_type": "bludgeoning"
+    },
+    "bladed_poles": {
+      "trap_id": 8,
+      "name": "Bladed Pole Trap",
+      "type": "rotating_trap",
+      "message": "Rotating bladed poles tear your flesh!",
+      "min_damage": 50,
+      "max_damage": 150,
+      "difficulty": 60,
+      "damage_type": "slashing"
+    },
+    "stone_wheels": {
+      "trap_id": 9,
+      "name": "Stone Wheel Trap",
+      "type": "wall_trap",
+      "message": "Huge stone wheels roll over you from slots in the walls!",
+      "min_damage": 100,
+      "max_damage": 300,
+      "difficulty": 60,
+      "damage_type": "bludgeoning"
+    }
+  }
+}

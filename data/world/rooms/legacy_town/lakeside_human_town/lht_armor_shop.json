@@ -1,0 +1,19 @@
+{
+  "id": "lht_armor_shop",
+  "title": "The Armor Shop.",
+  "description": "You are now inside the armor shop, where you may aquire different sorts of armor and protective gear to guard yourself against the blows of your opponents in the arena, or from the various non-human foes to be found in the dungeons near the town. The shop keeper sits on a high stool behind a worn counter along the east wall, eyeing you warily. The exit is to the west.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "west": "lht_a_path_9"
+  },
+  "is_safe": true,
+  "is_shop": true,
+  "light_level": "bright",
+  "npcs": [
+    "grunk_ironhide"
+  ],
+  "shop_type": "armor",
+  "service_level": 2,
+  "terrain": "town",
+  "legacy_room_id": -70
+}

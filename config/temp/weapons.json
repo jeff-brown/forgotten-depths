@@ -1,0 +1,1641 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "source": "Ether MUD Engine - Weapons Database",
+    "original_file": "data/weapons.dat",
+    "description": "Complete weapon definitions with decoded values",
+    "export_date": "2025-10-14T17:28:28.564442",
+    "total_items": 27
+  },
+  "_enumerations": {
+    "towns": {
+      "description": "Town availability for items",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not sold in towns"
+        },
+        "1": {
+          "name": "TOWN1",
+          "description": "Town 1"
+        },
+        "2": {
+          "name": "TOWN2",
+          "description": "Town 2"
+        },
+        "3": {
+          "name": "TOWN3",
+          "description": "Town 3"
+        },
+        "4": {
+          "name": "TOWN4",
+          "description": "Town 4"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid town"
+        }
+      }
+    },
+    "player_classes": {
+      "description": "Player class system with bit flags for allowable classes",
+      "values": {
+        "0": {
+          "name": "INVALID",
+          "bit": 0,
+          "description": "Invalid class"
+        },
+        "1": {
+          "name": "FIGHTER",
+          "bit": 1,
+          "description": "Fighter"
+        },
+        "2": {
+          "name": "SORCEROR",
+          "bit": 2,
+          "description": "Sorceror"
+        },
+        "3": {
+          "name": "CLERIC",
+          "bit": 4,
+          "description": "Cleric"
+        },
+        "4": {
+          "name": "ROGUE",
+          "bit": 8,
+          "description": "Rogue"
+        },
+        "5": {
+          "name": "RANGER",
+          "bit": 16,
+          "description": "Ranger"
+        },
+        "6": {
+          "name": "DRUID",
+          "bit": 32,
+          "description": "Druid"
+        },
+        "8": {
+          "name": "NECROLYTE",
+          "bit": 128,
+          "description": "Necrolyte"
+        },
+        "9": {
+          "name": "KNIGHT",
+          "bit": 1,
+          "description": "Knight (promoted Fighter)"
+        },
+        "10": {
+          "name": "ARCH_MAGUS",
+          "bit": 2,
+          "description": "Arch Magus (promoted Sorceror)"
+        },
+        "11": {
+          "name": "HIGH_PRIEST",
+          "bit": 4,
+          "description": "High Priest (promoted Cleric)"
+        },
+        "12": {
+          "name": "BLACK_GUARD",
+          "bit": 8,
+          "description": "Black Guard (promoted Rogue)"
+        },
+        "13": {
+          "name": "BEAST_MASTER",
+          "bit": 16,
+          "description": "Beast Master (promoted Ranger)"
+        },
+        "14": {
+          "name": "ARCH_DRUID",
+          "bit": 32,
+          "description": "Arch Druid (promoted Druid)"
+        },
+        "16": {
+          "name": "NECROMANCER",
+          "bit": 128,
+          "description": "Necromancer (promoted Necrolyte)"
+        }
+      },
+      "note": "allowable_classes field uses bitwise OR of class bits (255 = all classes)"
+    },
+    "armor_types": {
+      "description": "Armor weight/material categories",
+      "values": {
+        "11": {
+          "name": "CLOTH",
+          "description": "Cloth armor (robes, cloaks)"
+        },
+        "12": {
+          "name": "LEATHER",
+          "description": "Leather armor (cuirass)"
+        },
+        "13": {
+          "name": "MEDIUM",
+          "description": "Medium armor (breastplate, ringmail, chainmail)"
+        },
+        "14": {
+          "name": "HEAVY",
+          "description": "Heavy armor (scalemail, bandmail, platemail)"
+        },
+        "15": {
+          "name": "MAGICAL",
+          "description": "Magical armor (demonhide)"
+        },
+        "16": {
+          "name": "DRAGON",
+          "description": "Dragon armor (dragonscale)"
+        },
+        "-1": {
+          "name": "UNKNOWN",
+          "description": "Unknown armor type"
+        }
+      }
+    },
+    "equipment_types": {
+      "description": "Equipment type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Not equipment"
+        },
+        "14": {
+          "name": "MISC",
+          "description": "Miscellaneous"
+        },
+        "21": {
+          "name": "SUPPLY",
+          "description": "Supply equipment"
+        },
+        "22": {
+          "name": "SUPPLY_WEAPON",
+          "description": "Weapon sold by supply store"
+        },
+        "23": {
+          "name": "THROWN_WEAPON_CONTAINER",
+          "description": "Container for thrown weapons"
+        },
+        "24": {
+          "name": "RANGED_WEAPON_AMMO",
+          "description": "Ammunition for ranged weapons"
+        },
+        "25": {
+          "name": "AMMO_CONTAINER",
+          "description": "Ammunition container"
+        },
+        "31": {
+          "name": "MINOR_MAGIC_ITEM",
+          "description": "Minor magic item"
+        },
+        "32": {
+          "name": "POTION",
+          "description": "Potion"
+        },
+        "33": {
+          "name": "MAJOR_MAGIC_ITEM",
+          "description": "Major magic item"
+        },
+        "41": {
+          "name": "KEY",
+          "description": "Key"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid equipment type"
+        }
+      }
+    },
+    "equipment_subtypes": {
+      "description": "Equipment subtype classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "Undefined subtype"
+        },
+        "1": {
+          "name": "FOOD",
+          "description": "Food"
+        },
+        "2": {
+          "name": "WATER",
+          "description": "Water"
+        },
+        "3": {
+          "name": "HEAL",
+          "description": "Healing item"
+        },
+        "4": {
+          "name": "CURE_POISON",
+          "description": "Cures poison"
+        },
+        "5": {
+          "name": "MINOR_MANA_BOOST",
+          "description": "Boosts mana (minor)"
+        },
+        "6": {
+          "name": "PHYSIQUE_BOOST",
+          "description": "Boosts physique"
+        },
+        "7": {
+          "name": "AGILITY_BOOST",
+          "description": "Boosts agility"
+        },
+        "8": {
+          "name": "INVISIBILITY",
+          "description": "Grants invisibility"
+        },
+        "9": {
+          "name": "RECALL",
+          "description": "Recalls to temple"
+        },
+        "10": {
+          "name": "MAJOR_MANA_BOOST",
+          "description": "Boosts mana (major)"
+        },
+        "11": {
+          "name": "RESERVED",
+          "description": "Reserved/unknown"
+        },
+        "12": {
+          "name": "WAND",
+          "description": "Wand"
+        },
+        "13": {
+          "name": "RUNESTAFF",
+          "description": "Runestaff"
+        },
+        "14": {
+          "name": "ROD_OF_POWER",
+          "description": "Rod of power"
+        },
+        "15": {
+          "name": "FLAME_CRYSTAL",
+          "description": "Flame crystal"
+        },
+        "16": {
+          "name": "LIGHT",
+          "description": "Temporary light"
+        },
+        "17": {
+          "name": "ETERNAL_LIGHT",
+          "description": "Eternal light"
+        },
+        "18": {
+          "name": "SOULSTONE",
+          "description": "Soulstone"
+        },
+        "19": {
+          "name": "AMMO",
+          "description": "Ammunition"
+        },
+        "20": {
+          "name": "MISC2",
+          "description": "Miscellaneous 2 (unknown)"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid subtype"
+        }
+      }
+    },
+    "special_weapon_functions": {
+      "description": "Special weapon functions",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No special function"
+        },
+        "12": {
+          "name": "MAGIC",
+          "description": "Magic weapon with special attack"
+        },
+        "-1": {
+          "name": "INVALID",
+          "description": "Invalid function"
+        }
+      }
+    },
+    "spell_types": {
+      "description": "Spell type classification",
+      "values": {
+        "0": {
+          "name": "NONE",
+          "description": "No spell type"
+        },
+        "1": {
+          "name": "SORCEROR_ATTACK",
+          "description": "Sorceror attack spell"
+        },
+        "2": {
+          "name": "ACOLYTE_ATTACK",
+          "description": "Acolyte attack spell"
+        },
+        "3": {
+          "name": "DRUID_ATTACK",
+          "description": "Druid attack spell"
+        },
+        "4": {
+          "name": "NECROLYTE_ATTACK",
+          "description": "Necrolyte attack spell"
+        },
+        "11": {
+          "name": "REMOVE_CONDITION",
+          "description": "Removes status condition"
+        },
+        "12": {
+          "name": "SUSTENANCE",
+          "description": "Sustenance spell"
+        },
+        "21": {
+          "name": "HEALING",
+          "description": "Healing spell"
+        },
+        "22": {
+          "name": "REGENERATION",
+          "description": "Regeneration spell"
+        },
+        "31": {
+          "name": "SUMMONING",
+          "description": "Summoning spell"
+        },
+        "32": {
+          "name": "INVISIBILITY",
+          "description": "Invisibility spell"
+        },
+        "33": {
+          "name": "STAT_MOD",
+          "description": "Stat modification spell"
+        },
+        "41": {
+          "name": "CHARM",
+          "description": "Charm spell"
+        }
+      }
+    },
+    "spell_targets": {
+      "description": "Valid spell targets",
+      "values": {
+        "0": {
+          "name": "SPECIFIED",
+          "description": "Specified target"
+        },
+        "1": {
+          "name": "ROOM_PLAYER",
+          "description": "Player in room"
+        },
+        "2": {
+          "name": "ROOM_MOB",
+          "description": "Monster in room"
+        },
+        "3": {
+          "name": "ROOM_MOB2",
+          "description": "Monster in room (variant)"
+        },
+        "4": {
+          "name": "SUMMON",
+          "description": "Summon target"
+        },
+        "5": {
+          "name": "ROOM_PLAYER2",
+          "description": "Player in room (PVP variant)"
+        }
+      }
+    },
+    "cure_conditions": {
+      "description": "Conditions cured by spells",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "POISON"
+        }
+      }
+    },
+    "poison_targets": {
+      "description": "Poison effect targets",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "2": {
+          "name": "MOB"
+        },
+        "4": {
+          "name": "PLAYER"
+        },
+        "6": {
+          "name": "ROOM_MOB"
+        }
+      }
+    },
+    "mana_effects": {
+      "description": "Mana effect types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "DRAIN"
+        }
+      }
+    },
+    "stat_modifiers": {
+      "description": "Stat modification types",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "INTELLECT"
+        },
+        "2": {
+          "name": "KNOWLEDGE"
+        },
+        "3": {
+          "name": "PHYSIQUE"
+        },
+        "4": {
+          "name": "STAMINA"
+        },
+        "5": {
+          "name": "AGILITY"
+        },
+        "6": {
+          "name": "CHARISMA"
+        },
+        "7": {
+          "name": "BODY"
+        },
+        "8": {
+          "name": "MENTAL"
+        },
+        "9": {
+          "name": "PARALYSIS"
+        },
+        "10": {
+          "name": "STAT_DRAIN"
+        }
+      }
+    },
+    "misc_target_effects": {
+      "description": "Miscellaneous target effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "MORAL"
+        },
+        "2": {
+          "name": "WIND"
+        }
+      }
+    },
+    "misc_target_effects2": {
+      "description": "Additional miscellaneous effects",
+      "values": {
+        "0": {
+          "name": "NONE"
+        },
+        "1": {
+          "name": "LIFE_STEAL"
+        }
+      }
+    }
+  },
+  "weapons": [
+    {
+      "vnum": 0,
+      "name": "dagger",
+      "long_description": "a dagger",
+      "magic_attack_message": "",
+      "cost": 15,
+      "weight": 10,
+      "range": 0,
+      "min_damage": 1,
+      "max_damage": 3,
+      "weapon_type": 1,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 1,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 1,
+      "name": "quarterstaff",
+      "long_description": "a quarterstaff",
+      "magic_attack_message": "",
+      "cost": 10,
+      "weight": 40,
+      "range": 0,
+      "min_damage": 1,
+      "max_damage": 4,
+      "weapon_type": 1,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 1,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 2,
+      "name": "shortsword",
+      "long_description": "a shortsword",
+      "magic_attack_message": "",
+      "cost": 30,
+      "weight": 20,
+      "range": 0,
+      "min_damage": 1,
+      "max_damage": 6,
+      "weapon_type": 3,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 1,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 89,
+        "description": "6 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "ROGUE",
+          "RANGER",
+          "KNIGHT",
+          "BLACK_GUARD",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 3,
+      "name": "mace",
+      "long_description": "a mace",
+      "magic_attack_message": "",
+      "cost": 35,
+      "weight": 50,
+      "range": 0,
+      "min_damage": 1,
+      "max_damage": 7,
+      "weapon_type": 2,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 1,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 53,
+        "description": "8 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 4,
+      "name": "warhammer",
+      "long_description": "a warhammer",
+      "magic_attack_message": "",
+      "cost": 40,
+      "weight": 70,
+      "range": 0,
+      "min_damage": 2,
+      "max_damage": 8,
+      "weapon_type": 2,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 1,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 53,
+        "description": "8 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 5,
+      "name": "longsword",
+      "long_description": "a longsword",
+      "magic_attack_message": "",
+      "cost": 50,
+      "weight": 30,
+      "range": 0,
+      "min_damage": 2,
+      "max_damage": 10,
+      "weapon_type": 3,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 3,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 89,
+        "description": "6 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "ROGUE",
+          "RANGER",
+          "KNIGHT",
+          "BLACK_GUARD",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 6,
+      "name": "battleax",
+      "long_description": "a battleax",
+      "magic_attack_message": "",
+      "cost": 60,
+      "weight": 50,
+      "range": 0,
+      "min_damage": 2,
+      "max_damage": 12,
+      "weapon_type": 4,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 3,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 17,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "RANGER",
+          "KNIGHT",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 7,
+      "name": "morningstar",
+      "long_description": "a morningstar",
+      "magic_attack_message": "",
+      "cost": 70,
+      "weight": 80,
+      "range": 0,
+      "min_damage": 2,
+      "max_damage": 14,
+      "weapon_type": 2,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 2,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 53,
+        "description": "8 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 8,
+      "name": "broadsword",
+      "long_description": "a broadsword",
+      "magic_attack_message": "",
+      "cost": 80,
+      "weight": 40,
+      "range": 0,
+      "min_damage": 2,
+      "max_damage": 16,
+      "weapon_type": 3,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 3,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 89,
+        "description": "6 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "ROGUE",
+          "RANGER",
+          "KNIGHT",
+          "BLACK_GUARD",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 9,
+      "name": "flail",
+      "long_description": "a flail",
+      "magic_attack_message": "",
+      "cost": 90,
+      "weight": 90,
+      "range": 0,
+      "min_damage": 3,
+      "max_damage": 18,
+      "weapon_type": 2,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 4,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 53,
+        "description": "8 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 10,
+      "name": "halberd",
+      "long_description": "a halberd",
+      "magic_attack_message": "",
+      "cost": 120,
+      "weight": 120,
+      "range": 0,
+      "min_damage": 6,
+      "max_damage": 24,
+      "weapon_type": 4,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 6,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 17,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "RANGER",
+          "KNIGHT",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 11,
+      "name": "greatsword",
+      "long_description": "a greatsword",
+      "magic_attack_message": "",
+      "cost": 150,
+      "weight": 70,
+      "range": 0,
+      "min_damage": 7,
+      "max_damage": 28,
+      "weapon_type": 4,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 6,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 17,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "RANGER",
+          "KNIGHT",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 51,
+      "name": "rimeax",
+      "long_description": "a rimeax",
+      "magic_attack_message": "a blast of frost",
+      "cost": 900,
+      "weight": 50,
+      "range": 0,
+      "min_damage": 6,
+      "max_damage": 36,
+      "weapon_type": 6,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 12,
+        "name": "MAGIC",
+        "description": "Magic weapon with special attack"
+      },
+      "level": 12,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 17,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "RANGER",
+          "KNIGHT",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 52,
+      "name": "pyrehammer",
+      "long_description": "a pyrehammer",
+      "magic_attack_message": "a blast of flame",
+      "cost": 750,
+      "weight": 70,
+      "range": 0,
+      "min_damage": 5,
+      "max_damage": 30,
+      "weapon_type": 5,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 12,
+        "name": "MAGIC",
+        "description": "Magic weapon with special attack"
+      },
+      "level": 10,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 53,
+        "description": "8 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 53,
+      "name": "levinblade",
+      "long_description": "a levinblade",
+      "magic_attack_message": "a bolt of lightning",
+      "cost": 1000,
+      "weight": 30,
+      "range": 0,
+      "min_damage": 8,
+      "max_damage": 40,
+      "weapon_type": 7,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 12,
+        "name": "MAGIC",
+        "description": "Magic weapon with special attack"
+      },
+      "level": 15,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 17,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "RANGER",
+          "KNIGHT",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 62,
+      "name": "short bow",
+      "long_description": "a short bow",
+      "magic_attack_message": "",
+      "cost": 30,
+      "weight": 30,
+      "range": 3,
+      "min_damage": 1,
+      "max_damage": 6,
+      "weapon_type": 8,
+      "ammo_vnum": 60,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 1,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 64,
+        "description": "0 classes allowed",
+        "classes": [
+          "NONE"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 63,
+      "name": "long bow",
+      "long_description": "a long bow",
+      "magic_attack_message": "",
+      "cost": 50,
+      "weight": 40,
+      "range": 5,
+      "min_damage": 2,
+      "max_damage": 10,
+      "weapon_type": 8,
+      "ammo_vnum": 60,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 2,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 64,
+        "description": "0 classes allowed",
+        "classes": [
+          "NONE"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 64,
+      "name": "crossbow",
+      "long_description": "a crossbow",
+      "magic_attack_message": "",
+      "cost": 100,
+      "weight": 60,
+      "range": 4,
+      "min_damage": 4,
+      "max_damage": 20,
+      "weapon_type": 8,
+      "ammo_vnum": 60,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 4,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 64,
+        "description": "0 classes allowed",
+        "classes": [
+          "NONE"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 68,
+      "name": "great bow",
+      "long_description": "a great bow",
+      "magic_attack_message": "",
+      "cost": 150,
+      "weight": 50,
+      "range": 5,
+      "min_damage": 6,
+      "max_damage": 30,
+      "weapon_type": 9,
+      "ammo_vnum": 60,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 6,
+      "town": {
+        "id": 2,
+        "name": "TOWN2",
+        "description": "Town 2"
+      },
+      "allowable_classes": {
+        "raw_value": 64,
+        "description": "0 classes allowed",
+        "classes": [
+          "NONE"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 76,
+      "name": "mithril sword",
+      "long_description": "a mithril sword",
+      "magic_attack_message": "",
+      "cost": 0,
+      "weight": 30,
+      "range": 0,
+      "min_damage": 8,
+      "max_damage": 40,
+      "weapon_type": 5,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 1000,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 53,
+        "description": "8 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "CLERIC",
+          "RANGER",
+          "DRUID",
+          "KNIGHT",
+          "HIGH_PRIEST",
+          "BEAST_MASTER",
+          "ARCH_DRUID"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 78,
+      "name": "darksword",
+      "long_description": "a darksword",
+      "magic_attack_message": "",
+      "cost": 0,
+      "weight": 30,
+      "range": 0,
+      "min_damage": 4,
+      "max_damage": 22,
+      "weapon_type": 3,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 1000,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 89,
+        "description": "6 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "ROGUE",
+          "RANGER",
+          "KNIGHT",
+          "BLACK_GUARD",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 91,
+      "name": "sling",
+      "long_description": "a sling",
+      "magic_attack_message": "",
+      "cost": 10,
+      "weight": 15,
+      "range": 3,
+      "min_damage": 1,
+      "max_damage": 4,
+      "weapon_type": 8,
+      "ammo_vnum": 89,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 0,
+      "town": {
+        "id": 1,
+        "name": "TOWN1",
+        "description": "Town 1"
+      },
+      "allowable_classes": {
+        "raw_value": 64,
+        "description": "0 classes allowed",
+        "classes": [
+          "NONE"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 94,
+      "name": "blowgun",
+      "long_description": "a blowgun",
+      "magic_attack_message": "",
+      "cost": 25,
+      "weight": 10,
+      "range": 3,
+      "min_damage": 1,
+      "max_damage": 2,
+      "weapon_type": 8,
+      "ammo_vnum": 92,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 2,
+      "town": {
+        "id": 3,
+        "name": "TOWN3",
+        "description": "Town 3"
+      },
+      "allowable_classes": {
+        "raw_value": 64,
+        "description": "0 classes allowed",
+        "classes": [
+          "NONE"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 96,
+      "name": "elven bow",
+      "long_description": "an elven bow",
+      "magic_attack_message": "a bolt of energy",
+      "cost": 1250,
+      "weight": 40,
+      "range": 5,
+      "min_damage": 10,
+      "max_damage": 40,
+      "weapon_type": 10,
+      "ammo_vnum": 60,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 12,
+        "name": "MAGIC",
+        "description": "Magic weapon with special attack"
+      },
+      "level": 15,
+      "town": {
+        "id": 3,
+        "name": "TOWN3",
+        "description": "Town 3"
+      },
+      "allowable_classes": {
+        "raw_value": 64,
+        "description": "0 classes allowed",
+        "classes": [
+          "NONE"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 101,
+      "name": "stick",
+      "long_description": "a stick",
+      "magic_attack_message": "",
+      "cost": 0,
+      "weight": 10,
+      "range": 0,
+      "min_damage": 1,
+      "max_damage": 2,
+      "weapon_type": 1,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 102,
+      "name": "wooden mallet",
+      "long_description": "a wooden mallet",
+      "magic_attack_message": "",
+      "cost": 0,
+      "weight": 20,
+      "range": 0,
+      "min_damage": 1,
+      "max_damage": 3,
+      "weapon_type": 1,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 0,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 255,
+        "description": "All classes",
+        "classes": [
+          "ALL"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    },
+    {
+      "vnum": 104,
+      "name": "dwarven battleax",
+      "long_description": "a dwarven battleax",
+      "magic_attack_message": "",
+      "cost": 0,
+      "weight": 100,
+      "range": 0,
+      "min_damage": 10,
+      "max_damage": 50,
+      "weapon_type": 4,
+      "ammo_vnum": 0,
+      "armor_rating": 0,
+      "special_function": {
+        "id": 0,
+        "name": "NONE",
+        "description": "No special function"
+      },
+      "level": 15,
+      "town": {
+        "id": 0,
+        "name": "NONE",
+        "description": "Not sold in towns"
+      },
+      "allowable_classes": {
+        "raw_value": 17,
+        "description": "4 classes allowed",
+        "classes": [
+          "FIGHTER",
+          "RANGER",
+          "KNIGHT",
+          "BEAST_MASTER"
+        ]
+      },
+      "unknown_fields": {
+        "v9": 0,
+        "v10": 0,
+        "v11": 0,
+        "v12": 0,
+        "v13": 0
+      }
+    }
+  ]
+}

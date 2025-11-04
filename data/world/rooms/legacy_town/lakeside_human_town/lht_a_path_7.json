@@ -1,0 +1,14 @@
+{
+  "id": "lht_a_path_7",
+  "title": "A Path.",
+  "description": "You are standing on a path that leads into a magic shop to the north and, to the town's northern plaza to the south. Large old trees line the path and lend shade and birdsong to this quaint little town.",
+  "area_id": "legacy_human_lakeside",
+  "exits": {
+    "north": "lht_magic_shop",
+    "south": "lht_north_plaza"
+  },
+  "is_safe": true,
+  "light_level": "bright",
+  "terrain": "town",
+  "legacy_room_id": -77
+}
