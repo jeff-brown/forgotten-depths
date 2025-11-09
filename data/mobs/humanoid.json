@@ -1,43 +1,6 @@
 {
   "monsters": [
     {
-      "id": "goblin_scout",
-      "name": "Goblin Scout",
-      "description": "A small, green-skinned creature wearing tattered leather armor. It carries a crude dagger and looks ready for trouble.",
-      "type": "humanoid",
-      "level": 2,
-      "health": 25,
-      "max_health": 25,
-      "damage_min": 3,
-      "damage_max": 6,
-      "armor": 2,
-      "experience_reward": 20,
-      "gold_reward": [
-        2,
-        8
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "backstab"
-      ],
-      "loot_table": [
-        {
-          "item_id": "rusty_dagger",
-          "chance": 0.2
-        },
-        {
-          "item_id": "goblin_ear",
-          "chance": 0.4
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.3
-        }
-      ],
-      "class": "rogue"
-    },
-    {
       "id": "female_kobold",
       "name": "Female Kobold",
       "description": "The kobold is a small humanoid with doglike facial features and is covered with coarse body hair. She stands just over three feet in height, is wearing a filthy tunic, and is armed with {0} {1}.",
@@ -79,10 +42,25 @@
       ],
       "class": "fighter",
       "vnum": 11,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 65,
       "can_track": true,
-      "morale": 50
+      "morale": 50,
+      "plural": "female kobolds",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 1
     },
     {
       "id": "kobold",
@@ -126,10 +104,25 @@
       ],
       "class": "fighter",
       "vnum": 12,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 75,
       "can_track": true,
-      "morale": 40
+      "morale": 40,
+      "plural": "kobolds",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 2
     },
     {
       "id": "female_orc",
@@ -173,10 +166,25 @@
       ],
       "class": "fighter",
       "vnum": 13,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 65,
       "can_track": true,
-      "morale": 45
+      "morale": 45,
+      "plural": "female orcs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 1
     },
     {
       "id": "orc",
@@ -223,9 +231,25 @@
       ],
       "class": "fighter",
       "vnum": 14,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 75,
-      "morale": 35
+      "morale": 35,
+      "plural": "orcs",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 3
     },
     {
       "id": "female_gnoll",
@@ -284,11 +308,25 @@
       ],
       "class": "fighter",
       "vnum": 34,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 75,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 25
+      "morale": 25,
+      "plural": "female gnolls",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 4
     },
     {
       "id": "gnoll",
@@ -347,11 +385,25 @@
       ],
       "class": "fighter",
       "vnum": 35,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 85,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 20
+      "morale": 20,
+      "plural": "gnolls",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 6
     },
     {
       "id": "female_hobgoblin",
@@ -407,10 +459,25 @@
       ],
       "class": "fighter",
       "vnum": 36,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 75,
       "can_track": true,
-      "morale": 25
+      "morale": 25,
+      "plural": "female hobgoblins",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 6
     },
     {
       "id": "hobgoblin",
@@ -466,10 +533,25 @@
       ],
       "class": "fighter",
       "vnum": 37,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 80,
       "can_track": true,
-      "morale": 20
+      "morale": 20,
+      "plural": "hobgoblins",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 8
     },
     {
       "id": "female_brigand",
@@ -519,7 +601,45 @@
           "chance": 0.3
         }
       ],
-      "class": "rogue"
+      "class": "rogue",
+      "vnum": 38,
+      "plural": "female brigands",
+      "morale": 80,
+      "combat_skill": 80,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 2,
+        "name": "Steal",
+        "description": "robbed"
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 4
     },
     {
       "id": "brigand",
@@ -569,7 +689,45 @@
           "chance": 0.3
         }
       ],
-      "class": "rogue"
+      "class": "rogue",
+      "vnum": 39,
+      "plural": "brigands",
+      "morale": 70,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 2,
+        "name": "Steal",
+        "description": "robbed"
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 5
     },
     {
       "id": "female_barbarian",
@@ -615,7 +773,45 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 44,
+      "plural": "female barbarians",
+      "morale": 15,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 1,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 3,
+        "name": "Mountains"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 4
     },
     {
       "id": "barbarian",
@@ -661,7 +857,45 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 45,
+      "plural": "barbarians",
+      "morale": 10,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 1,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 3,
+        "name": "Mountains"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 5
     },
     {
       "id": "female_centaur",
@@ -708,17 +942,31 @@
       ],
       "class": "ranger",
       "vnum": 46,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 80,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "flailed her hooves at",
-        "chance": 0.2,
-        "damage_min": 2,
-        "damage_max": 12
+        "chance_percent": 20,
+        "min_damage": 2,
+        "max_damage": 12
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "female centaurs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 5
     },
     {
       "id": "centaur",
@@ -765,17 +1013,31 @@
       ],
       "class": "ranger",
       "vnum": 47,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "flailed his hooves at",
-        "chance": 0.25,
-        "damage_min": 4,
-        "damage_max": 16
+        "chance_percent": 25,
+        "min_damage": 4,
+        "max_damage": 16
       },
-      "morale": 10
+      "morale": 10,
+      "plural": "centaurs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 6
     },
     {
       "id": "female_satyr",
@@ -822,10 +1084,30 @@
       ],
       "class": "bard",
       "vnum": 49,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 77,
       "can_track": true,
-      "morale": 35
+      "morale": 35,
+      "plural": "female satyrs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "special_ability": {
+        "id": 1,
+        "name": "Summon Aid",
+        "description": "sounds an ivory horn"
+      },
+      "treasure_code": 4
     },
     {
       "id": "satyr",
@@ -872,10 +1154,30 @@
       ],
       "class": "bard",
       "vnum": 50,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 87,
       "can_track": true,
-      "morale": 30
+      "morale": 30,
+      "plural": "satyrs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "special_ability": {
+        "id": 1,
+        "name": "Summon Aid",
+        "description": "sounds an ivory horn"
+      },
+      "treasure_code": 5
     },
     {
       "id": "female_minotaur",
@@ -926,16 +1228,31 @@
       ],
       "class": "fighter",
       "vnum": 51,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 75,
       "can_track": true,
       "special_attack": {
         "description": "charged",
-        "chance": 0.1,
-        "damage_min": 2,
-        "damage_max": 20
+        "chance_percent": 10,
+        "min_damage": 2,
+        "max_damage": 20
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "female minotaurs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 1,
+        "name": "Unknown"
+      },
+      "treasure_code": 5
     },
     {
       "id": "minotaur",
@@ -990,16 +1307,31 @@
       ],
       "class": "fighter",
       "vnum": 52,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 80,
       "can_track": true,
       "special_attack": {
         "description": "charged",
-        "chance": 0.15,
-        "damage_min": 4,
-        "damage_max": 24
+        "chance_percent": 15,
+        "min_damage": 4,
+        "max_damage": 24
       },
-      "morale": 10
+      "morale": 10,
+      "plural": "minotaurs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 1,
+        "name": "Unknown"
+      },
+      "treasure_code": 6
     },
     {
       "id": "ogress",
@@ -1054,9 +1386,25 @@
       ],
       "class": "fighter",
       "vnum": 54,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 80,
-      "morale": 20
+      "morale": 20,
+      "plural": "ogresses",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 1,
+        "name": "Unknown"
+      },
+      "treasure_code": 5
     },
     {
       "id": "ogre",
@@ -1111,9 +1459,25 @@
       ],
       "class": "fighter",
       "vnum": 55,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 85,
-      "morale": 15
+      "morale": 15,
+      "plural": "ogres",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 1,
+        "name": "Unknown"
+      },
+      "treasure_code": 6
     },
     {
       "id": "swordswoman",
@@ -1159,7 +1523,46 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 56,
+      "plural": "swordswomen",
+      "morale": 40,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "rapier",
+      "num_attacks": 2,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 6
     },
     {
       "id": "swordsman",
@@ -1205,7 +1608,46 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 57,
+      "plural": "swordsmen",
+      "morale": 35,
+      "combat_skill": 95,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "rapier",
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 8
     },
     {
       "id": "larochess",
@@ -1256,7 +1698,52 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 61,
+      "plural": "laroche",
+      "morale": 30,
+      "combat_skill": 65,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "wicked spear",
+      "num_attacks": 2,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "exhaled a cloud of acidic vapor at",
+        "chance_percent": 25,
+        "min_damage": 6,
+        "max_damage": 36
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 3
+      },
+      "treasure_code": 15
     },
     {
       "id": "larochet",
@@ -1307,7 +1794,52 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 62,
+      "plural": "larochets",
+      "morale": 25,
+      "combat_skill": 75,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "wicked spear",
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "exhaled a cloud of acidic vapor at",
+        "chance_percent": 20,
+        "min_damage": 8,
+        "max_damage": 48
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 2,
+        "max": 4
+      },
+      "treasure_code": 20
     },
     {
       "id": "female_troll",
@@ -1358,12 +1890,25 @@
       ],
       "class": "fighter",
       "vnum": 64,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 75,
       "can_track": true,
       "regeneration": 1,
       "num_attacks": 2,
-      "morale": 25
+      "morale": 25,
+      "plural": "female trolls",
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "treasure_code": 3
     },
     {
       "id": "troll",
@@ -1414,12 +1959,25 @@
       ],
       "class": "fighter",
       "vnum": 65,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 80,
       "can_track": true,
       "regeneration": 1,
       "num_attacks": 2,
-      "morale": 20
+      "morale": 20,
+      "plural": "trolls",
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "treasure_code": 4
     },
     {
       "id": "magmaman",
@@ -1465,7 +2023,46 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 70,
+      "plural": "magmamen",
+      "morale": 0,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "burning claws",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 8,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "ogress_mage",
@@ -1528,7 +2125,13 @@
       ],
       "class": "sorcerer",
       "vnum": 71,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 80,
       "spells": {
         "spell_type": "sorcerer",
@@ -1536,7 +2139,29 @@
         "min_level": 0,
         "max_level": 3
       },
-      "morale": 25
+      "morale": 25,
+      "plural": "ogress mages",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 65,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 0,
+        "max_level": 3
+      },
+      "treasure_code": 8
     },
     {
       "id": "ogre_mage",
@@ -1601,7 +2226,13 @@
       ],
       "class": "sorcerer",
       "vnum": 72,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 85,
       "spells": {
         "spell_type": "sorcerer",
@@ -1609,7 +2240,29 @@
         "min_level": 1,
         "max_level": 4
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "ogre mages",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 60,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 1,
+        "max_level": 4
+      },
+      "treasure_code": 10
     },
     {
       "id": "warlock",
@@ -1672,7 +2325,46 @@
           "chance": 0.25
         }
       ],
-      "class": "sorcerer"
+      "class": "sorcerer",
+      "vnum": 75,
+      "plural": "warlocks",
+      "morale": 15,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "flaming staff",
+      "num_attacks": 1,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 80,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 2,
+        "max_level": 7
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 12
     },
     {
       "id": "minotaur_chieftain",
@@ -1731,16 +2423,31 @@
       ],
       "class": "fighter",
       "vnum": 76,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "can_track": true,
       "special_attack": {
         "description": "charged",
-        "chance": 0.15,
-        "damage_min": 8,
-        "damage_max": 48
+        "chance_percent": 15,
+        "min_damage": 8,
+        "max_damage": 48
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "minotaur chieftains",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "treasure_code": 25
     },
     {
       "id": "sorceress",
@@ -1818,7 +2525,13 @@
       ],
       "class": "fighter",
       "vnum": 91,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 85,
       "can_track": true,
       "regeneration": 1,
@@ -1829,7 +2542,26 @@
         "min_level": 3,
         "max_level": 8
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "sorceresses",
+      "weapon_name": "frost rod",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 85,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 3,
+        "max_level": 8
+      },
+      "treasure_code": 32
     },
     {
       "id": "sorcerer",
@@ -1905,7 +2637,13 @@
       ],
       "class": "fighter",
       "vnum": 92,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "can_track": true,
       "regeneration": 1,
@@ -1916,7 +2654,26 @@
         "min_level": 3,
         "max_level": 9
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "sorcerors",
+      "weapon_name": "flaming staff",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 90,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 3,
+        "max_level": 9
+      },
+      "treasure_code": 58
     },
     {
       "id": "female_nomad",
@@ -1973,7 +2730,46 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 115,
+      "plural": "female nomads",
+      "morale": 25,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "scimitar",
+      "num_attacks": 1,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 4
     },
     {
       "id": "nomad",
@@ -2030,7 +2826,46 @@
           "chance": 0.3
         }
       ],
-      "class": "fighter"
+      "class": "fighter",
+      "vnum": 116,
+      "plural": "nomads",
+      "morale": 20,
+      "combat_skill": 95,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "scimitar",
+      "num_attacks": 1,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 5
     },
     {
       "id": "female_bandit",
@@ -2103,17 +2938,36 @@
       ],
       "class": "fighter",
       "vnum": 117,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "skillfully slashed",
-        "chance": 0.12,
-        "damage_min": 8,
-        "damage_max": 48
+        "chance_percent": 12,
+        "min_damage": 8,
+        "max_damage": 48
       },
-      "morale": 50
+      "morale": 50,
+      "plural": "female bandits",
+      "regeneration": 0,
+      "weapon_name": "sabre",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 2,
+        "name": "Steal",
+        "description": "robbed"
+      },
+      "treasure_code": 25
     },
     {
       "id": "bandit",
@@ -2186,128 +3040,36 @@
       ],
       "class": "fighter",
       "vnum": 118,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 95,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "skillfully slashed",
-        "chance": 0.15,
-        "damage_min": 12,
-        "damage_max": 72
+        "chance_percent": 15,
+        "min_damage": 12,
+        "max_damage": 72
       },
-      "morale": 40
-    },
-    {
-      "id": "mystic_knight",
-      "name": "Mystic Knight",
-      "description": "The mystic knight has the look of a well seasoned warrior who has seen many a battle in his time. His gear and clothing are the finest available. He is wearing glowing dragonscale armor and wielding a jeweled claymore. Somehow you are aware that he could easily defeat you.",
-      "type": "humanoid",
-      "level": 60,
-      "health": 2500,
-      "max_health": 2500,
-      "damage_min": 100,
-      "damage_max": 600,
-      "armor": 50,
-      "experience_reward": 600,
-      "gold_reward": [
-        0,
-        0
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "jeweled claymore",
-        "regeneration",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "knife",
-          "chance": 0.4
-        },
-        {
-          "item_id": "chainmail",
-          "chance": 0.3
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.35
-        },
-        {
-          "item_id": "broadsword",
-          "chance": 0.35
-        },
-        {
-          "item_id": "platemail",
-          "chance": 0.3
-        },
-        {
-          "item_id": "enchanted_blade",
-          "chance": 0.3
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.25
-        },
-        {
-          "item_id": "levinblade",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "pearl_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "opal_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "strato_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_flame",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "mithril_sword",
-          "chance": 0.12
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
+      "morale": 40,
+      "plural": "bandits",
+      "regeneration": 0,
+      "weapon_name": "sabre",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 2,
+        "name": "Steal",
+        "description": "robbed"
+      },
+      "treasure_code": 40
     },
     {
       "id": "orc_warrior",
@@ -2366,136 +3128,25 @@
       ],
       "class": "fighter",
       "vnum": 126,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 80,
       "num_attacks": 2,
-      "morale": 25
-    },
-    {
-      "id": "orc_subchief",
-      "name": "Orc Subchief",
-      "description": "The orc subchief is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands over five feet in height, is wearing chainmail armor, and is armed with {0} {1}.",
-      "type": "humanoid",
-      "level": 50,
-      "health": 500,
-      "max_health": 500,
-      "damage_min": 0,
-      "damage_max": 0,
-      "armor": 6,
-      "experience_reward": 500,
-      "gold_reward": [
-        0,
-        104
-      ],
-      "aggressive": false,
-      "speed": 1.0,
-      "abilities": [
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "goblin_ear",
-          "chance": 0.5
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.4
-        },
-        {
-          "item_id": "cheese",
-          "chance": 0.3
-        },
-        {
-          "item_id": "stick",
-          "chance": 0.25
-        },
-        {
-          "item_id": "leather_armor",
-          "chance": 0.2
-        },
-        {
-          "item_id": "silver_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "knife",
-          "chance": 0.2
-        },
-        {
-          "item_id": "rope",
-          "chance": 0.2
-        },
-        {
-          "item_id": "battleax",
-          "chance": 0.35
-        },
-        {
-          "item_id": "ringmail",
-          "chance": 0.3
-        },
-        {
-          "item_id": "platinum_key",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "electrum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "quartz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "runestaff",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "levinblade",
-          "chance": 0.12
-        },
-        {
-          "item_id": "demonhide",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter",
-      "vnum": 127,
-      "gender": "male",
-      "combat_skill": 85,
-      "num_attacks": 2,
-      "morale": 30
+      "morale": 25,
+      "plural": "orc warriors",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 5
     },
     {
       "id": "orc_chieftain",
@@ -2574,10 +3225,25 @@
       ],
       "class": "fighter",
       "vnum": 128,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "num_attacks": 2,
-      "morale": 35
+      "morale": 35,
+      "plural": "orc chieftains",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 10
     },
     {
       "id": "orc_shaman",
@@ -2651,7 +3317,13 @@
       ],
       "class": "fighter",
       "vnum": 129,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 80,
       "spells": {
         "spell_type": "necrolyte",
@@ -2659,7 +3331,29 @@
         "min_level": 1,
         "max_level": 4
       },
-      "morale": 25
+      "morale": 25,
+      "plural": "orc shaman",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 85,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 1,
+        "max_level": 4
+      },
+      "treasure_code": 7
     },
     {
       "id": "orc_warlord",
@@ -2742,10 +3436,25 @@
       ],
       "class": "fighter",
       "vnum": 130,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 95,
       "num_attacks": 2,
-      "morale": 35
+      "morale": 35,
+      "plural": "orc warlords",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 20
     },
     {
       "id": "gnoll_warrior",
@@ -2804,11 +3513,25 @@
       ],
       "class": "fighter",
       "vnum": 131,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 85,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 10
+      "morale": 10,
+      "plural": "gnoll warriors",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 8
     },
     {
       "id": "gnoll_subchief",
@@ -2887,11 +3610,25 @@
       ],
       "class": "fighter",
       "vnum": 132,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 15
+      "morale": 15,
+      "plural": "gnoll subchiefs",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 10
     },
     {
       "id": "gnoll_chieftain",
@@ -2974,11 +3711,25 @@
       ],
       "class": "fighter",
       "vnum": 133,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 20
+      "morale": 20,
+      "plural": "gnoll chieftains",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 12
     },
     {
       "id": "gnoll_warlord",
@@ -3061,11 +3812,25 @@
       ],
       "class": "fighter",
       "vnum": 134,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 95,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 20
+      "morale": 20,
+      "plural": "gnoll warlord",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 24
     },
     {
       "id": "gnoll_shaman",
@@ -3143,7 +3908,13 @@
       ],
       "class": "fighter",
       "vnum": 135,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 85,
       "can_track": true,
       "abilities": [
@@ -3156,881 +3927,28 @@
         "min_level": 1,
         "max_level": 4
       },
-      "morale": 25
-    },
-    {
-      "id": "stone_warrior",
-      "name": "Stone Warrior",
-      "description": "The stone warrior is skillfully crafted and resembles a heavily muscled warrior in full plate armor and stands nearly twenty feet high. It is armed with a huge stone axe.",
-      "type": "humanoid",
-      "level": 25,
-      "health": 600,
-      "max_health": 600,
-      "damage_min": 100,
-      "damage_max": 200,
-      "armor": 20,
-      "experience_reward": 250,
-      "gold_reward": [
-        0,
-        50
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "multiattack",
-        "stone axe",
-        "paralysis",
-        "unknown"
-      ],
-      "loot_table": [
-        {
-          "item_id": "short_sword",
-          "chance": 0.4
-        },
-        {
-          "item_id": "chainmail",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.35
-        },
-        {
-          "item_id": "morningstar",
-          "chance": 0.35
-        },
-        {
-          "item_id": "dwarven_scalemail",
-          "chance": 0.3
-        },
-        {
-          "item_id": "enchanted_blade",
-          "chance": 0.3
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.25
-        },
-        {
-          "item_id": "greatsword",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "electrum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "quartz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_flame",
-          "chance": 0.12
-        }
-      ],
-      "class": "fighter",
-      "vnum": 141,
-      "gender": "neuter",
-      "combat_skill": 90,
-      "can_track": true,
-      "num_attacks": 2,
-      "attack_effect": "paralysis",
-      "special_attack": {
-        "description": "kicks",
-        "chance": 0.35,
-        "damage_min": 200,
-        "damage_max": 400
-      }
-    },
-    {
-      "id": "stone_wizard",
-      "name": "Stone Wizard",
-      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorcerer in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
-      "type": "humanoid",
-      "level": 25,
-      "health": 500,
-      "max_health": 500,
-      "damage_min": 50,
-      "damage_max": 100,
-      "armor": 15,
-      "experience_reward": 250,
-      "gold_reward": [
-        0,
-        0
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "stone sceptre",
-        "discharged its sceptre at",
-        "multiattack"
-      ],
-      "spellcaster": true,
-      "spell_skill": 90,
-      "loot_table": [
-        {
-          "item_id": "yarrow_potion",
-          "chance": 0.6
-        },
-        {
-          "item_id": "scroll_magic_missile",
-          "chance": 0.5
-        },
-        {
-          "item_id": "vervain_potion",
-          "chance": 0.4
-        },
-        {
-          "item_id": "blue_robes",
-          "chance": 0.3
-        },
-        {
-          "item_id": "horn_of_frost",
-          "chance": 0.3
-        },
-        {
-          "item_id": "scroll_lightning_bolt",
-          "chance": 0.25
-        },
-        {
-          "item_id": "runestaff",
-          "chance": 0.35
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.4
-        },
-        {
-          "item_id": "rod_of_power",
-          "chance": 0.25
-        },
-        {
-          "item_id": "jade_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "onyx_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "jade_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gome_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_flame",
-          "chance": 0.12
-        }
-      ],
-      "class": "sorcerer"
-    },
-    {
-      "id": "dwarven_guard",
-      "name": "Dwarven Guard",
-      "description": "The guard is of obvious dwarven blood. He looks very tough and battle hardened. He wears scale mail armor of a design you're unfamiliar with and wields a battleax.",
-      "type": "humanoid",
-      "level": 25,
-      "health": 500,
-      "max_health": 500,
-      "damage_min": 19,
-      "damage_max": 34,
-      "armor": 0,
-      "experience_reward": 250,
-      "gold_reward": [
-        0,
-        55
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "multiattack",
-        "battleax"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "gold_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "dwarven_scalemail",
-          "chance": 0.35
-        },
-        {
-          "item_id": "dwarven_battleax",
-          "chance": 0.3
-        },
-        {
-          "item_id": "broadsword",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "onyx_key",
-          "chance": 0.35
-        },
-        {
-          "item_id": "strato_ring",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "pearl_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "topaz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_flame",
-          "chance": 0.12
-        }
-      ],
-      "class": "fighter",
-      "vnum": 144,
-      "gender": "male",
-      "combat_skill": 90,
-      "can_track": true,
-      "num_attacks": 5,
-      "morale": 20
-    },
-    {
-      "id": "elite_dwarven_guard",
-      "name": "Elite Dwarven Guard",
-      "description": "This guard closely resembles his lesser brethren, however his equipment is of a finer quality and he appears more agressive and well disciplined. He wears brushed steel scale mail armor and wields a huge battleax engraved with runes along the edge of the blade.",
-      "type": "humanoid",
-      "level": 30,
-      "health": 600,
-      "max_health": 600,
-      "damage_min": 27,
-      "damage_max": 42,
-      "armor": 8,
-      "experience_reward": 300,
-      "gold_reward": [
-        0,
-        85
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "multiattack",
-        "battleax"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "gold_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "dwarven_scalemail",
-          "chance": 0.35
-        },
-        {
-          "item_id": "dwarven_battleax",
-          "chance": 0.3
-        },
-        {
-          "item_id": "broadsword",
-          "chance": 0.25
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "onyx_key",
-          "chance": 0.35
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gold_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "tigereye_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_power",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rimeax",
-          "chance": 0.12
-        },
-        {
-          "item_id": "demonhide",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter",
-      "vnum": 145,
-      "gender": "male",
-      "combat_skill": 95,
-      "num_attacks": 5,
-      "morale": 10
-    },
-    {
-      "id": "dwarven_captain",
-      "name": "Dwarven Captain",
-      "description": "This grim warrior appears to have seen more than his share of battle, and seems utterly fearless. His dwarven mail is of fine quality and each scale has finely engraved runic designs. He wields a battleax with a haft easily four feet long and a blade blacker than night.",
-      "type": "humanoid",
-      "level": 40,
-      "health": 800,
-      "max_health": 800,
-      "damage_min": 38,
-      "damage_max": 53,
-      "armor": 12,
-      "experience_reward": 400,
-      "gold_reward": [
-        45,
-        60
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "battleax",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "bronze_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "dwarven_scalemail",
-          "chance": 0.35
-        },
-        {
-          "item_id": "dwarven_battleax",
-          "chance": 0.3
-        },
-        {
-          "item_id": "broadsword",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "ruby_key",
-          "chance": 0.35
-        },
-        {
-          "item_id": "strato_ring",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gold_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "stone_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "strato_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_flame",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "mithril_sword",
-          "chance": 0.12
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
-    },
-    {
-      "id": "dwarven_sorcerer",
-      "name": "Dwarven Sorceror",
-      "description": "The dwarven sorcerer has an obvious callousness about his expression, and appears no one to be trifled with. He radiates confidence and power. He wears robes of a deep reddish brown, similar to the hue of the stone in the walls of his home. He carries a black sceptre topped with some sort of softly glowing crystal.",
-      "type": "humanoid",
-      "level": 25,
-      "health": 400,
-      "max_health": 400,
-      "damage_min": 11,
-      "damage_max": 16,
-      "armor": 2,
-      "experience_reward": 250,
-      "gold_reward": [
-        0,
-        60
-      ],
-      "aggressive": false,
-      "speed": 1.0,
-      "abilities": [
-        "multiattack",
-        "black sceptre",
-        "mana drain",
-        "spells",
-        "spellcaster"
-      ],
-      "spellcaster": true,
-      "spell_skill": 90,
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "goblin_ear",
-          "chance": 0.5
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.4
-        },
-        {
-          "item_id": "ration_of_food",
-          "chance": 0.3
-        },
-        {
-          "item_id": "quarterstaff",
-          "chance": 0.25
-        },
-        {
-          "item_id": "cloak",
-          "chance": 0.2
-        },
-        {
-          "item_id": "bronze_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "short_sword",
-          "chance": 0.2
-        },
-        {
-          "item_id": "rope",
-          "chance": 0.2
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gold_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "tigereye_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "runestaff",
-          "chance": 0.12
-        }
-      ],
-      "class": "fighter",
-      "vnum": 147,
-      "gender": "male",
-      "combat_skill": 80,
-      "can_track": true,
-      "num_attacks": 5,
-      "attack_effect": "mana drain",
-      "spells": {
-        "spell_type": "sorcerer",
-        "spell_skill": 90,
-        "min_level": 6,
-        "max_level": 8
+      "morale": 25,
+      "plural": "gnoll shaman",
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 10,
+        "name": "Special"
       },
-      "morale": 30
-    },
-    {
-      "id": "dwarven_leutenant",
-      "name": "Dwarven Leutenant",
-      "description": "This dwarven officer wears scale armor of the finest quality and brandishes a huge battleaxe of fine make with an extraordinarily keen edge. He seems very dignified and confidant.",
-      "type": "humanoid",
-      "level": 45,
-      "health": 900,
-      "max_health": 900,
-      "damage_min": 41,
-      "damage_max": 66,
-      "armor": 15,
-      "experience_reward": 450,
-      "gold_reward": [
-        95,
-        110
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "battleax",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "copper_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "mithril_sword",
-          "chance": 0.4
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.35
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.4
-        },
-        {
-          "item_id": "tigereye_key",
-          "chance": 0.35
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "pearl_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "tigereye_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gome_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "runestaff",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "pyrehammer",
-          "chance": 0.12
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
-    },
-    {
-      "id": "dwarven_warlord",
-      "name": "Dwarven Warlord",
-      "description": "This ruthless dwarven battle chief is dressed in heavy scale armor made of a dull bluish metal that seems to absorb light. The weapon in his hands is an enormous battleax with a haft of dark grey wood and a head forged of the same strange metal as his armor. Dimly glowing runes adorn the head of his axe along the edges of the blades.",
-      "type": "humanoid",
-      "level": 50,
-      "health": 1000,
-      "max_health": 1000,
-      "damage_min": 43,
-      "damage_max": 83,
-      "armor": 20,
-      "experience_reward": 500,
-      "gold_reward": [
-        145,
-        160
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "battleax",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "silver_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "mithril_sword",
-          "chance": 0.4
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.35
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.4
-        },
-        {
-          "item_id": "jade_key",
-          "chance": 0.35
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "platinum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "topaz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "runestaff",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "enchanted_blade",
-          "chance": 0.12
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 80,
+        "type_id": 3,
+        "type_name": "Druid",
+        "min_level": 1,
+        "max_level": 4
+      },
+      "treasure_code": 8
     },
     {
       "id": "smith",
@@ -4111,760 +4029,46 @@
           "chance": 0.12
         }
       ],
-      "class": "fighter"
-    },
-    {
-      "id": "master_smith",
-      "name": "Master Smith",
-      "description": "This older dwarf is gnarled and bulging with muscle. His leathers smeared with grime and sweat. He seems very calm and at one with his surrounds. The great hammer he cradles in his arms is forged of a dull bluish metal, and almost seems to glow dimly.",
-      "type": "humanoid",
-      "level": 40,
-      "health": 800,
-      "max_health": 800,
-      "damage_min": 40,
-      "damage_max": 100,
-      "armor": 4,
-      "experience_reward": 400,
-      "gold_reward": [
-        20,
-        35
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "great hammer"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rusty_dagger",
-          "chance": 0.2
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "onyx_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "opal_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "strato_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "horn_of_frost",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "pyrehammer",
-          "chance": 0.12
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
-    },
-    {
-      "id": "dwarven_archmage",
-      "name": "Dwarven Archmage",
-      "description": "The dwarven archmage has an obvious callousness about his expression, and appears no one to be trifled with. He radiates incredible power. He wears robes of a deep purple hue. He carries a black sceptre topped with some sort of brightly glowing crystal.",
-      "type": "humanoid",
-      "level": 50,
-      "health": 600,
-      "max_health": 600,
-      "damage_min": 21,
-      "damage_max": 26,
-      "armor": 1,
-      "experience_reward": 500,
-      "gold_reward": [
-        95,
-        110
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "black sceptre",
-        "discharges his sceptre at",
-        "multiattack"
-      ],
-      "spellcaster": true,
-      "spell_skill": 95,
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "iron_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "runestaff",
-          "chance": 0.4
-        },
-        {
-          "item_id": "scroll_fireball",
-          "chance": 0.35
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.4
-        },
-        {
-          "item_id": "vervain_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "onyx_key",
-          "chance": 0.35
-        },
-        {
-          "item_id": "gome_ring",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "electrum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "onyx_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gome_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_flame",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "mithril_sword",
-          "chance": 0.12
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.1
-        }
-      ],
-      "class": "sorcerer"
-    },
-    {
-      "id": "elven_scout",
-      "name": "Elven Scout",
-      "description": "The elven scout peers at you through its forest green eyes.  The stripes painted on his face warn you that he has come across and slain many an unexpecting traveller.  Your doom awaits.",
-      "type": "humanoid",
-      "level": 30,
-      "health": 300,
-      "max_health": 300,
-      "damage_min": 50,
-      "damage_max": 65,
-      "armor": 10,
-      "experience_reward": 300,
-      "gold_reward": [
-        50,
-        65
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "shortsword",
-        "tracking",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "elven_bow",
-          "chance": 0.5
-        },
-        {
-          "item_id": "white_rose",
-          "chance": 0.3
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.35
-        },
-        {
-          "item_id": "arrow",
-          "chance": 0.6
-        },
-        {
-          "item_id": "quiver",
-          "chance": 0.4
-        },
-        {
-          "item_id": "short_sword",
-          "chance": 0.25
-        },
-        {
-          "item_id": "ruby_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gold_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "quartz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "horn_of_frost",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "pyrehammer",
-          "chance": 0.12
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.1
-        }
-      ],
-      "class": "rogue"
-    },
-    {
-      "id": "female_elf",
-      "name": "Female Elf",
-      "description": "Despite being female, this elf resembles a modern-day war machine. She moves blindingly fast, striking at any possible moment.  Though a good fight is her forte, she is also amazingly beautiful, as female elves always seem to be.",
-      "type": "humanoid",
-      "level": 32,
-      "health": 350,
-      "max_health": 350,
-      "damage_min": 55,
-      "damage_max": 75,
-      "armor": 12,
-      "experience_reward": 320,
-      "gold_reward": [
-        50,
-        65
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "shortsword",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "elven_bow",
-          "chance": 0.5
-        },
-        {
-          "item_id": "black_rose",
-          "chance": 0.3
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.35
-        },
-        {
-          "item_id": "quartz_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "platinum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "tigereye_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "runestaff",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "pyrehammer",
-          "chance": 0.12
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
-    },
-    {
-      "id": "elven_warrior",
-      "name": "Elven Warrior",
-      "description": "This elven warrior is built like a tree, and oddly enough blends in with the trees as well, a warrior of a stealthy sort.  He wields an axe that must have been crafted by the dwarves and enchanted by the high elves.  He is certainly a force to be reckoned with.",
-      "type": "humanoid",
-      "level": 33,
-      "health": 350,
-      "max_health": 350,
-      "damage_min": 90,
-      "damage_max": 125,
-      "armor": 20,
-      "experience_reward": 330,
-      "gold_reward": [
-        9,
-        141
-      ],
-      "aggressive": false,
-      "speed": 1.0,
-      "abilities": [
-        "multiattack",
-        "enchanted axe"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "elven_bow",
-          "chance": 0.5
-        },
-        {
-          "item_id": "black_rose",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.35
-        },
-        {
-          "item_id": "warhammer",
-          "chance": 0.4
-        },
-        {
-          "item_id": "cuirass",
-          "chance": 0.3
-        },
-        {
-          "item_id": "enchanted_blade",
-          "chance": 0.25
-        },
-        {
-          "item_id": "stone_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "platinum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "onyx_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "strato_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_power",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "levinblade",
-          "chance": 0.12
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.1
-        }
-      ],
       "class": "fighter",
-      "vnum": 158,
-      "gender": "male",
-      "combat_skill": 95,
-      "num_attacks": 2,
-      "morale": 25
-    },
-    {
-      "id": "elven_champion",
-      "name": "Elven Champion",
-      "description": "This elven champion is built like a mountain.  There seems to be no escape from this warrior of warriors, a man's man -- only an elf. He wields a great sword that shines like the moons on a good night. Only the most powerful elves can craft such a beast.",
-      "type": "humanoid",
-      "level": 37,
-      "health": 450,
-      "max_health": 450,
-      "damage_min": 100,
-      "damage_max": 155,
-      "armor": 25,
-      "experience_reward": 370,
-      "gold_reward": [
-        80,
-        95
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "shining sword",
-        "tracking",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "elven_bow",
-          "chance": 0.5
-        },
-        {
-          "item_id": "white_rose",
-          "chance": 0.3
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.35
-        },
-        {
-          "item_id": "enchanted_blade",
-          "chance": 0.6
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.5
-        },
-        {
-          "item_id": "levinblade",
-          "chance": 0.35
-        },
-        {
-          "item_id": "quartz_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "electrum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "quartz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "horn_of_frost",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rimeax",
-          "chance": 0.12
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
-    },
-    {
-      "id": "elven_warlord",
-      "name": "Elven Warlord",
-      "description": "This elven warlord is about to knock some sense into you with his warhammer.  His evil eyes seem to hypnotize you into giving in to your imminent death.",
-      "type": "humanoid",
-      "level": 44,
-      "health": 550,
-      "max_health": 550,
-      "damage_min": 110,
-      "damage_max": 185,
-      "armor": 30,
-      "experience_reward": 440,
-      "gold_reward": [
-        110,
-        125
-      ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "warhammer",
-        "gutted",
-        "tracking",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "elven_bow",
-          "chance": 0.5
-        },
-        {
-          "item_id": "black_rose",
-          "chance": 0.3
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.35
-        },
-        {
-          "item_id": "mithril_sword",
-          "chance": 0.5
-        },
-        {
-          "item_id": "demonhide",
-          "chance": 0.4
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.45
-        },
-        {
-          "item_id": "ruby_key",
-          "chance": 0.3
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.25
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "electrum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "jade_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "strato_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_power",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "levinblade",
-          "chance": 0.12
-        },
-        {
-          "item_id": "demonhide",
-          "chance": 0.1
-        }
-      ],
-      "class": "fighter"
+      "vnum": 151,
+      "plural": "smiths",
+      "morale": 20,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "great hammer",
+      "num_attacks": 0,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": -1,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 10
     },
     {
       "id": "giant_scorpion",
@@ -4885,7 +4089,13 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 70,
       "can_track": true,
       "num_attacks": 2,
@@ -4894,14 +4104,27 @@
         "tail",
         "poison"
       ],
-      "attack_effect": "poison",
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 2
+      },
       "special_attack": {
         "description": "snapped its pincers at",
-        "chance": 0.55,
-        "damage_min": 3,
-        "damage_max": 9
+        "chance_percent": 55,
+        "min_damage": 3,
+        "max_damage": 9
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "giant scorpions",
+      "regeneration": 0,
+      "weapon_name": "tail",
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_slug",
@@ -4922,21 +4145,41 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 65,
       "can_track": true,
       "abilities": [
         "toothy maw",
         "poison"
       ],
-      "attack_effect": "poison",
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 1
+      },
       "special_attack": {
         "description": "discharged a spray of acid at",
-        "chance": 0.25,
-        "damage_min": 4,
-        "damage_max": 16
+        "chance_percent": 25,
+        "min_damage": 4,
+        "max_damage": 16
       },
-      "morale": 5
+      "morale": 5,
+      "plural": "giant slugs",
+      "regeneration": 0,
+      "weapon_name": "toothy maw",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_bat",
@@ -4957,13 +4200,28 @@
       ],
       "aggressive": false,
       "speed": 1.0,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 85,
       "can_track": true,
       "abilities": [
         "vicious bite"
       ],
-      "morale": 25
+      "morale": 25,
+      "plural": "giant bats",
+      "regeneration": 0,
+      "weapon_name": "vicious bite",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_spider",
@@ -4984,15 +4242,35 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 70,
       "can_track": true,
       "abilities": [
         "mandibles",
         "poison"
       ],
-      "attack_effect": "poison",
-      "morale": 20
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 3
+      },
+      "morale": 20,
+      "plural": "giant spiders",
+      "regeneration": 0,
+      "weapon_name": "mandibles",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 1,
+        "name": "Unknown"
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_asp",
@@ -5013,21 +4291,41 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
       "can_track": true,
       "abilities": [
         "wicked bite",
         "poison"
       ],
-      "attack_effect": "poison",
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 2,
+        "max": 6
+      },
       "special_attack": {
         "description": "coiled around",
-        "chance": 0.15,
-        "damage_min": 2,
-        "damage_max": 16
+        "chance_percent": 15,
+        "min_damage": 2,
+        "max_damage": 16
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "giant asps",
+      "regeneration": 0,
+      "weapon_name": "wicked bite",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "treasure_code": 0
     },
     {
       "id": "stone_giantess",
@@ -5048,7 +4346,13 @@
       ],
       "aggressive": false,
       "speed": 1.0,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 70,
       "can_track": true,
       "abilities": [
@@ -5056,11 +4360,20 @@
       ],
       "special_attack": {
         "description": "hurled a boulder at",
-        "chance": 0.1,
-        "damage_min": 5,
-        "damage_max": 50
+        "chance_percent": 10,
+        "min_damage": 5,
+        "max_damage": 50
       },
-      "morale": 25
+      "morale": 25,
+      "plural": "stone giantesses",
+      "regeneration": 0,
+      "weapon_name": "huge club",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "treasure_code": 10
     },
     {
       "id": "stone_giant",
@@ -5081,7 +4394,13 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 75,
       "can_track": true,
       "abilities": [
@@ -5089,11 +4408,20 @@
       ],
       "special_attack": {
         "description": "hurled a boulder at",
-        "chance": 0.15,
-        "damage_min": 10,
-        "damage_max": 60
+        "chance_percent": 15,
+        "min_damage": 10,
+        "max_damage": 60
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "stone giants",
+      "regeneration": 0,
+      "weapon_name": "huge club",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "treasure_code": 15
     },
     {
       "id": "ice_giantess",
@@ -5114,18 +4442,34 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 80,
       "abilities": [
         "huge sword"
       ],
       "special_attack": {
         "description": "exhaled a blast of frost at",
-        "chance": 0.25,
-        "damage_min": 10,
-        "damage_max": 60
+        "chance_percent": 25,
+        "min_damage": 10,
+        "max_damage": 60
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "ice giantesses",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "huge sword",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 15
     },
     {
       "id": "ice_giant",
@@ -5146,18 +4490,34 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 85,
       "abilities": [
         "huge sword"
       ],
       "special_attack": {
         "description": "exhaled a blast of frost at",
-        "chance": 0.25,
-        "damage_min": 20,
-        "damage_max": 80
+        "chance_percent": 25,
+        "min_damage": 20,
+        "max_damage": 80
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "ice giants",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "huge sword",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 22
     },
     {
       "id": "flame_giantess",
@@ -5178,7 +4538,13 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 90,
       "can_track": true,
       "abilities": [
@@ -5186,11 +4552,20 @@
       ],
       "special_attack": {
         "description": "exhaled a blast of flame at",
-        "chance": 0.15,
-        "damage_min": 80,
-        "damage_max": 360
+        "chance_percent": 15,
+        "min_damage": 80,
+        "max_damage": 360
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "flame giantesses",
+      "regeneration": 0,
+      "weapon_name": "great axe",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 9,
+        "name": "Unknown"
+      },
+      "treasure_code": 22
     },
     {
       "id": "flame_giant",
@@ -5211,7 +4586,13 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 95,
       "can_track": true,
       "abilities": [
@@ -5219,11 +4600,20 @@
       ],
       "special_attack": {
         "description": "exhaled a blast of flame at",
-        "chance": 0.15,
-        "damage_min": 100,
-        "damage_max": 400
+        "chance_percent": 15,
+        "min_damage": 100,
+        "max_damage": 400
       },
-      "morale": 10
+      "morale": 10,
+      "plural": "flame giants",
+      "regeneration": 0,
+      "weapon_name": "great axe",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 9,
+        "name": "Unknown"
+      },
+      "treasure_code": 32
     },
     {
       "id": "flame_giant_warlord",
@@ -5244,7 +4634,13 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 95,
       "can_track": true,
       "num_attacks": 2,
@@ -5254,14 +4650,32 @@
         "vitality drain",
         "heal"
       ],
-      "attack_effect": "vitality drain",
+      "attack_effect": {
+        "id": 5,
+        "name": "Vitality Drain",
+        "min": 10,
+        "max": 60
+      },
       "special_attack": {
         "description": "exhaled a blast of flame at",
-        "chance": 0.25,
-        "damage_min": 120,
-        "damage_max": 240
+        "chance_percent": 25,
+        "min_damage": 120,
+        "max_damage": 240
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "flame giant warlords",
+      "regeneration": 0,
+      "weapon_name": "great spear",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 3,
+        "name": "Heal",
+        "description": "quaffed a potion"
+      },
+      "treasure_code": 63
     },
     {
       "id": "forest_giantess",
@@ -5282,7 +4696,13 @@
       ],
       "aggressive": false,
       "speed": 1.0,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 80,
       "can_track": true,
       "num_attacks": 2,
@@ -5290,7 +4710,15 @@
         "multiattack",
         "huge spear"
       ],
-      "morale": 35
+      "morale": 35,
+      "plural": "forest giantesses",
+      "regeneration": 0,
+      "weapon_name": "huge spear",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 10
     },
     {
       "id": "forest_giant",
@@ -5311,7 +4739,13 @@
       ],
       "aggressive": false,
       "speed": 1.0,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 85,
       "can_track": true,
       "num_attacks": 2,
@@ -5319,7 +4753,15 @@
         "multiattack",
         "huge spear"
       ],
-      "morale": 30
+      "morale": 30,
+      "plural": "forest giants",
+      "regeneration": 0,
+      "weapon_name": "huge spear",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 15
     },
     {
       "id": "lizard_warrior",
@@ -5340,14 +4782,28 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
       "abilities": [
         "multiattack"
       ],
-      "morale": 10
+      "morale": 10,
+      "plural": "lizard warriors",
+      "regeneration": 0,
+      "weapon_name": "",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 10
     }
   ]
 }

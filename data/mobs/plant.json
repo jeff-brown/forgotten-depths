@@ -40,9 +40,25 @@
         }
       ],
       "vnum": 0,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
-      "can_track": true
+      "can_track": true,
+      "plural": "strangle vines",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "choking vines",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "white_orchid",
@@ -84,9 +100,25 @@
         }
       ],
       "vnum": 1,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
-      "can_track": true
+      "can_track": true,
+      "plural": "white orchids",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "tendrils",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "pink_orchid",
@@ -128,9 +160,25 @@
         }
       ],
       "vnum": 2,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
-      "can_track": true
+      "can_track": true,
+      "plural": "pink orchids",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "tendrils",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "red_orchid",
@@ -172,9 +220,25 @@
         }
       ],
       "vnum": 3,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
-      "can_track": true
+      "can_track": true,
+      "plural": "red orchids",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "tendrils",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "treasure_code": 0
     },
     {
       "id": "yellow_orchid",
@@ -217,10 +281,31 @@
         }
       ],
       "vnum": 4,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "can_track": true,
-      "attack_effect": "poison"
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 3
+      },
+      "plural": "yellow orchids",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "tendrils",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "treasure_code": 0
     },
     {
       "id": "black_orchid",
@@ -264,11 +349,31 @@
         }
       ],
       "vnum": 5,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
-      "attack_effect": "poison"
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 2,
+        "max": 5
+      },
+      "plural": "black orchids",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "tendrils",
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "treasure_code": 0
     },
     {
       "id": "constrictor_ivy",
@@ -306,15 +411,31 @@
         }
       ],
       "vnum": 6,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
       "can_track": true,
       "special_attack": {
         "description": "coiled around",
-        "chance": 0.25,
-        "damage_min": 2,
-        "damage_max": 12
-      }
+        "chance_percent": 25,
+        "min_damage": 2,
+        "max_damage": 12
+      },
+      "plural": "constrictor ivies",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "lashing ivy",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "carrion_creeper",
@@ -353,16 +474,37 @@
         }
       ],
       "vnum": 7,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 85,
       "can_track": true,
-      "attack_effect": "poison",
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 2
+      },
       "special_attack": {
         "description": "mauled",
-        "chance": 0.25,
-        "damage_min": 2,
-        "damage_max": 12
-      }
+        "chance_percent": 25,
+        "min_damage": 2,
+        "max_damage": 12
+      },
+      "plural": "carrion creepers",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "thorny vines",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "treasure_code": 0
     },
     {
       "id": "reaper_shrub",
@@ -399,7 +541,52 @@
           "item_id": "bone_fragment",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 8,
+      "plural": "reaper shrubs",
+      "morale": 0,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "a thorny branch",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "raked several thorny branches across",
+        "chance_percent": 33,
+        "min_damage": 4,
+        "max_damage": 16
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     }
   ]
 }

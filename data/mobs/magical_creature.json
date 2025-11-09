@@ -44,7 +44,52 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 67,
+      "plural": "griffons",
+      "morale": 10,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "claws",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 3,
+        "name": "Mountains"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "viciously bit",
+        "chance_percent": 25,
+        "min_damage": 6,
+        "max_damage": 24
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 5
     },
     {
       "id": "gargoyle",
@@ -89,7 +134,46 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 69,
+      "plural": "gargoyles",
+      "morale": 15,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "wicked claws",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 6
     },
     {
       "id": "chimera",
@@ -135,17 +219,31 @@
         }
       ],
       "vnum": 74,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 85,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "breathed flames at",
-        "chance": 0.35,
-        "damage_min": 12,
-        "damage_max": 48
+        "chance_percent": 35,
+        "min_damage": 12,
+        "max_damage": 48
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "chimeras",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "treasure_code": 10
     },
     {
       "id": "hydra",
@@ -196,7 +294,52 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 80,
+      "plural": "hydras",
+      "morale": 10,
+      "combat_skill": 85,
+      "regeneration": 1,
+      "can_track": true,
+      "weapon_name": "gnashing teeth",
+      "num_attacks": 3,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "expelled a ball of fire at",
+        "chance_percent": 15,
+        "min_damage": 8,
+        "max_damage": 80
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 22
     }
   ]
 }

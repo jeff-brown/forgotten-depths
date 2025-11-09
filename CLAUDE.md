@@ -119,16 +119,166 @@ Combat uses a **fatigue-based** system:
 
 Lair rooms spawn specific monsters with respawn timers managed by the game engine's tick loop.
 
-### Command Structure
+### Command Structure (Modular Architecture)
 
-Commands are organized by category under `src/server/commands/`:
-- `movement/` - Navigation (go, north, south, etc.)
-- `combat/` - Attack, flee, etc.
-- `inventory/` - Get, drop, equip, unequip, inventory
-- `vendor/` - Buy, sell, list
-- `communication/` - Say, shout, whisper, etc.
+**IMPORTANT:** The command system uses a modular handler architecture (refactored in issue #12). Commands are now organized into specialized handlers that inherit from `BaseCommandHandler`.
 
-Commands inherit from `BaseCommand` and are registered with `CommandManager`.
+#### File Structure:
+```
+src/server/commands/
+├── command_handler.py          # Main router (526 lines - thin routing layer)
+├── base_handler.py             # Base class for all handlers
+└── handlers/                   # Specialized command handlers
+    ├── map_handler.py          # Map display and navigation
+    ├── admin_handler.py        # Admin/debug commands
+    ├── quest_handler.py        # Quest system and NPC interaction
+    ├── character_handler.py    # Character info and stat management
+    ├── inventory_handler.py    # Inventory management
+    ├── item_usage_handler.py   # Item consumption (eat, drink, etc.)
+    ├── vendor_handler.py       # Trading and shop services
+    ├── combat_handler.py       # Combat commands
+    ├── world_handler.py        # World interaction, traps, special movement
+    ├── auth_handler.py         # Authentication and character creation
+    ├── magic_handler.py        # Spell system
+    └── ability_handler.py      # Class-specific abilities
+```
+
+#### Architecture Guidelines:
+
+**When Adding New Commands:**
+
+1. **Determine the handler category** - Which existing handler does this command belong to?
+   - Quest-related? → `quest_handler.py`
+   - Item usage? → `item_usage_handler.py` or `inventory_handler.py`
+   - Spell/magic? → `magic_handler.py`
+   - Class ability? → `ability_handler.py`
+   - World interaction? → `world_handler.py`
+   - etc.
+
+2. **Add method to appropriate handler** - Follow naming convention:
+   ```python
+   async def handle_<command_name>(self, player_id: int, character: dict, params: str):
+       """Handle the <command> command.
+
+       Usage: <command> <parameters>
+       """
+       # Implementation
+   ```
+
+3. **Update main router** in `command_handler.py`:
+   ```python
+   elif command == 'yourcommand':
+       await self.appropriate_handler.handle_yourcommand(player_id, character, params)
+   ```
+
+4. **Delegate to game systems** (see issue #17) - Handlers should be thin routing layers:
+   ```python
+   # ✅ GOOD - Handler delegates to game system
+   async def handle_cast_spell(self, player_id, character, params):
+       result = await self.game_engine.spell_system.cast_spell(character, params)
+       await self.send_message(player_id, result.message)
+
+   # ❌ BAD - Handler contains game logic
+   async def handle_cast_spell(self, player_id, character, params):
+       # 100 lines of spell calculation logic
+       # This should be in src/server/game/magic/
+   ```
+
+**Separation of Concerns (Issue #17):**
+
+Command handlers should:
+- ✅ Parse commands and extract parameters
+- ✅ Call appropriate game system methods
+- ✅ Format and send responses
+- ✅ Handle basic validation and error messages
+- ❌ NOT contain complex game logic
+- ❌ NOT contain utility functions
+- ❌ NOT directly manipulate game state
+
+Game logic should live in `src/server/game/*`:
+- `src/server/game/player/` - Character progression, stats
+- `src/server/game/magic/` - Spell systems
+- `src/server/game/abilities/` - Class abilities
+- `src/server/game/combat/` - Combat mechanics
+- `src/server/game/items/` - Item management
+- `src/server/game/world/` - World interactions
+- `src/server/game/quests/` - Quest systems
+
+**Handler Design Pattern:**
+```python
+from ..base_handler import BaseCommandHandler
+
+class YourCommandHandler(BaseCommandHandler):
+    """Handles category-specific commands."""
+
+    async def handle_your_command(self, player_id: int, character: dict, params: str):
+        """Handle your command.
+
+        Usage: yourcommand <params>
+        """
+        # 1. Validate input
+        if not params:
+            await self.send_message(player_id, "Usage: yourcommand <params>")
+            return
+
+        # 2. Delegate to game system
+        result = self.game_engine.your_system.do_something(character, params)
+
+        # 3. Send response
+        await self.send_message(player_id, result.message)
+
+        # 4. Notify room if needed
+        room_id = character.get('room_id')
+        await self.broadcast_to_room(room_id, result.room_message, exclude_player=player_id)
+```
+
+**Key Points:**
+- Each handler is <300 lines ideally (thin routing layer)
+- Handlers inherit from `BaseCommandHandler` for common functionality
+- Main `command_handler.py` only routes commands, doesn't implement them
+- Game logic lives in `src/server/game/*` modules, not in handlers
+- This architecture improves testability, maintainability, and reusability
+
+### Game Systems Architecture
+
+Game logic is organized into modular systems under `src/server/game/`:
+
+#### Current Game Systems:
+- **`player/`** - Character management, progression, stats
+  - `player_manager.py` - Player data and character management
+  - `stats_utils.py` - Stat calculations and bonuses
+- **`combat/`** - Combat mechanics
+  - `combat_system.py` - Combat encounters and damage
+  - `damage_calculator.py` - Damage calculations
+- **`items/`** - Item management
+  - `item_manager.py` - Item instances and properties
+- **`world/`** - World management
+  - `world_manager.py` - Rooms, areas, NPCs
+  - `graph.py` - World navigation graph
+- **`quests/`** - Quest system
+  - `quest_manager.py` - Quest tracking and completion
+- **`vendors/`** - Commerce
+  - `vendor_system.py` - Shop and trading
+
+#### Planned/Future Game Systems (Issue #17):
+- **`magic/`** - Spell systems (to be extracted from magic_handler)
+  - `spell_executor.py` - Spell effect execution
+  - `spell_targeting.py` - Target selection
+  - `mana_system.py` - Mana costs and cooldowns
+- **`abilities/`** - Class abilities (to be extracted from ability_handler)
+  - `ability_executor.py` - Ability execution
+  - `rogue_abilities.py` - Rogue-specific implementations
+  - `fighter_abilities.py` - Fighter-specific implementations
+  - `ranger_abilities.py` - Ranger-specific implementations
+- **`world/`** - Enhanced world systems
+  - `trap_system.py` - Trap detection and disarming
+  - `passage_system.py` - Special movement (boats, teleports)
+
+**When Adding New Game Logic:**
+1. Identify which game system it belongs to (player, combat, magic, etc.)
+2. Add the logic to the appropriate module in `src/server/game/`
+3. Have command handlers call the game system methods
+4. Keep handlers thin - they should only route, not implement
 
 ### Async Patterns
 
@@ -163,3 +313,45 @@ When working with paths, note:
 - Scripts assume execution from project root
 - `sys.path.insert(0, 'src')` is used to make imports work
 - Data files use relative paths from project root (e.g., `data/mud.db`)
+
+## Quick Reference: Where Does Code Go?
+
+### Adding a New Command:
+1. **Choose handler** based on command category (see `src/server/commands/handlers/`)
+2. **Add method** to handler: `async def handle_commandname(self, player_id, character, params)`
+3. **Update router** in `command_handler.py`: `await self.handler_name.handle_commandname(...)`
+4. **Keep it thin** - delegate logic to game systems
+
+### Adding Game Logic:
+1. **Choose system** based on functionality (`src/server/game/player/`, `combat/`, `magic/`, etc.)
+2. **Add method** to appropriate system manager
+3. **Call from handler** - keep handler code minimal
+4. **Make it testable** - game logic should work independently of command handlers
+
+### Current Architecture (Issue #12 + #17):
+```
+Player Input
+    ↓
+command_handler.py (router - 526 lines)
+    ↓
+handlers/*.py (thin routing layer - <300 lines each)
+    ↓
+game/*/ (game logic - bulk of implementation)
+    ↓
+Database/Game State
+```
+
+### Example Flow:
+```
+Player types: "cast fireball goblin"
+    ↓
+CommandHandler.handle_command() routes to magic_handler
+    ↓
+MagicHandler.handle_cast_spell() validates and extracts params
+    ↓
+SpellSystem.cast_spell() executes game logic (damage, effects, mana)
+    ↓
+MagicHandler sends formatted response to player
+```
+
+**Remember:** Handlers route, game systems implement!

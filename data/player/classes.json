@@ -182,5 +182,28 @@
     "start_gold_min": 95,
     "start_gold_max": 130,
     "base_exp": 1225
+  },
+  "necromancer": {
+    "name": "Necromancer",
+    "description": "Masters of death magic who drain life force, sap vitality, and command the powers of decay and entropy.",
+    "stat_modifiers": {
+      "strength": -4,
+      "dexterity": -3,
+      "constitution": -2,
+      "vitality": -8,
+      "intelligence": 4,
+      "wisdom": 4,
+      "charisma": 2
+    },
+    "hp_modifier": 0.8,
+    "mana_modifier": 1.5,
+    "uses_magic": true,
+    "max_spell_level": 99,
+    "id": 256,
+    "extra_attack_each_level": 4,
+    "max_base_number_of_attacks": 3,
+    "start_gold_min": 95,
+    "start_gold_max": 130,
+    "base_exp": 1225
   }
 }

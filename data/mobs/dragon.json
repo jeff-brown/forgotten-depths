@@ -61,14 +61,20 @@
         }
       ],
       "vnum": 79,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "num_attacks": 2,
       "special_attack": {
         "description": "viciously bit",
-        "chance": 0.25,
-        "damage_min": 10,
-        "damage_max": 50
+        "chance_percent": 25,
+        "min_damage": 10,
+        "max_damage": 50
       },
       "spells": {
         "spell_type": "sorcerer",
@@ -76,7 +82,23 @@
         "min_level": 2,
         "max_level": 7
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "elysian dragons",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "talons",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "spell_casting": {
+        "skill": 95,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 2,
+        "max_level": 7
+      },
+      "treasure_code": 25
     },
     {
       "id": "stygian_dragon",
@@ -138,15 +160,21 @@
         }
       ],
       "vnum": 84,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 95,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "viciously bit",
-        "chance": 0.45,
-        "damage_min": 12,
-        "damage_max": 72
+        "chance_percent": 45,
+        "min_damage": 12,
+        "max_damage": 72
       },
       "spells": {
         "spell_type": "sorcerer",
@@ -154,7 +182,27 @@
         "min_level": 2,
         "max_level": 8
       },
-      "morale": 10
+      "morale": 10,
+      "plural": "stygian dragons",
+      "regeneration": 0,
+      "weapon_name": "talons",
+      "terrain": {
+        "id": 8,
+        "name": "Unknown"
+      },
+      "special_ability": {
+        "id": 6,
+        "name": "Attack All and Tumble",
+        "description": "lashed out with its tail"
+      },
+      "spell_casting": {
+        "skill": 95,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 2,
+        "max_level": 8
+      },
+      "treasure_code": 40
     },
     {
       "id": "apollyon_dragon",
@@ -236,14 +284,20 @@
         }
       ],
       "vnum": 93,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 97,
       "num_attacks": 2,
       "special_attack": {
         "description": "breathed flames at",
-        "chance": 0.25,
-        "damage_min": 50,
-        "damage_max": 200
+        "chance_percent": 25,
+        "min_damage": 50,
+        "max_damage": 200
       },
       "spells": {
         "spell_type": "sorcerer",
@@ -251,7 +305,28 @@
         "min_level": 2,
         "max_level": 9
       },
-      "morale": 10
+      "morale": 10,
+      "plural": "apollyon dragons",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "talons",
+      "terrain": {
+        "id": 9,
+        "name": "Unknown"
+      },
+      "special_ability": {
+        "id": 6,
+        "name": "Attack All and Tumble",
+        "description": "lashed out with its tail"
+      },
+      "spell_casting": {
+        "skill": 95,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 2,
+        "max_level": 9
+      },
+      "treasure_code": 100
     },
     {
       "id": "balneal_dragon",
@@ -340,15 +415,21 @@
         }
       ],
       "vnum": 97,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 97,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "viciously bit",
-        "chance": 0.35,
-        "damage_min": 60,
-        "damage_max": 240
+        "chance_percent": 35,
+        "min_damage": 60,
+        "max_damage": 240
       },
       "spells": {
         "spell_type": "sorcerer",
@@ -356,148 +437,22 @@
         "min_level": 2,
         "max_level": 9
       },
-      "morale": 10
-    },
-    {
-      "id": "great_dragon",
-      "name": "Great Dragon",
-      "description": "The great dragon has greyish scales and powerful leathery wings. It is without a doubt the most enormous creature you have ever seen, being well over two hundred feet in length. Its talons and teeth are yellowish white, and smoke curls upward from its nostrils as it regards you with amusement.",
-      "type": "dragon",
-      "level": 30,
-      "health": 1200,
-      "max_health": 1200,
-      "damage_min": 120,
-      "damage_max": 360,
-      "armor": 30,
-      "experience_reward": 300,
-      "gold_reward": [
-        0,
-        60
-      ],
-      "aggressive": false,
-      "speed": 1.0,
-      "abilities": [
-        "huge talons",
-        "spells",
-        "spellcaster"
-      ],
-      "resistances": [
-        "fear"
-      ],
-      "spellcaster": true,
-      "spell_skill": 95,
-      "loot_table": [
-        {
-          "item_id": "dragonscale",
-          "chance": 0.8
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.4
-        },
-        {
-          "item_id": "soul_gem",
-          "chance": 0.5
-        },
-        {
-          "item_id": "warhammer",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.4
-        },
-        {
-          "item_id": "enchanted_blade",
-          "chance": 0.5
-        },
-        {
-          "item_id": "manastone",
-          "chance": 0.4
-        },
-        {
-          "item_id": "dwarven_scalemail",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rimeax",
-          "chance": 0.4
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.35
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gold_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "topaz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gome_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_power",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "levinblade",
-          "chance": 0.12
-        },
-        {
-          "item_id": "dragonscale",
-          "chance": 0.1
-        }
-      ],
-      "vnum": 101,
-      "gender": "neuter",
-      "combat_skill": 99,
-      "can_track": true,
-      "regeneration": 1,
-      "special_attack": {
-        "description": "cruely bit",
-        "chance": 0.65,
-        "damage_min": 320,
-        "damage_max": 960
+      "morale": 10,
+      "plural": "balneal dragons",
+      "regeneration": 0,
+      "weapon_name": "talons",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
       },
-      "spells": {
-        "spell_type": "sorcerer",
-        "spell_skill": 95,
-        "min_level": 6,
-        "max_level": 10
+      "spell_casting": {
+        "skill": 95,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 2,
+        "max_level": 9
       },
-      "morale": 35
+      "treasure_code": 0
     }
   ]
 }

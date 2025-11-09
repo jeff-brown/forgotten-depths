@@ -1,1 +1,0 @@
-"""Movement commands for player navigation."""

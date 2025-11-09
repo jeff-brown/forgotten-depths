@@ -1,8 +1,10 @@
 {
   "spells": {
     "komiza": {
-      "name": "Komiza",
-      "description": "A small shard of ice",
+      "name": "Ice Shard",
+      "description": "Conjures a small shard of ice and hurls it at the target",
+      "cast_message": "{caster} conjures a razor-sharp shard of ice and hurls it at {target}!",
+      "hit_message": "The ice shard pierces through for {damage} cold damage!",
       "type": "damage",
       "school": "evocation",
       "level": 2,
@@ -17,8 +19,10 @@
       "scales_with_level": "No"
     },
     "toduza": {
-      "name": "Toduza",
-      "description": "A small bolt of flame",
+      "name": "Fire Bolt",
+      "description": "Unleashes a small bolt of flame that ignites the target",
+      "cast_message": "{caster} unleashes a bolt of flame at {target}!",
+      "hit_message": "Flames scorch {target} for {damage} fire damage!",
       "type": "damage",
       "school": "evocation",
       "level": 4,
@@ -33,8 +37,10 @@
       "scales_with_level": "No"
     },
     "komizuma": {
-      "name": "Komizuma",
-      "description": "A shower of ice shards",
+      "name": "Cone of Cold",
+      "description": "Creates a shower of ice shards that rain down on the target",
+      "cast_message": "{caster} creates a shower of ice shards that rain down on {target}!",
+      "hit_message": "The ice shards slash through for {damage} cold damage!",
       "type": "damage",
       "school": "evocation",
       "level": 6,
@@ -49,8 +55,10 @@
       "scales_with_level": "No"
     },
     "toduzuma": {
-      "name": "Toduzuma",
-      "description": "A shower of flame",
+      "name": "Flame Strike",
+      "description": "Releases a shower of flame that engulfs the target",
+      "cast_message": "{caster} releases a shower of flame that engulfs {target}!",
+      "hit_message": "Flames cascade down, burning for {damage} fire damage!",
       "type": "damage",
       "school": "evocation",
       "level": 8,
@@ -65,8 +73,10 @@
       "scales_with_level": "No"
     },
     "komidaku": {
-      "name": "Komidaku",
-      "description": "A storm of ice shards",
+      "name": "Ice Storm",
+      "description": "Summons a storm of ice shards that freezes all enemies",
+      "cast_message": "{caster} summons a freezing storm of ice shards!",
+      "hit_message": "Ice shards shred through all enemies for {damage} cold damage!",
       "type": "damage",
       "school": "evocation",
       "level": 10,
@@ -81,8 +91,10 @@
       "scales_with_level": "No"
     },
     "komizadaku": {
-      "name": "Komizadaku",
-      "description": "A storm of ice shards",
+      "name": "Blizzard",
+      "description": "Creates an intense storm of ice shards that freezes all foes",
+      "cast_message": "{caster} creates an intense freezing storm!",
+      "hit_message": "The ice storm batters all enemies for {damage} cold damage!",
       "type": "damage",
       "school": "evocation",
       "level": 10,
@@ -97,8 +109,10 @@
       "scales_with_level": "Yes"
     },
     "todudaku": {
-      "name": "Todudaku",
-      "description": "A devastating firestorm",
+      "name": "Firestorm",
+      "description": "Unleashes a devastating firestorm that incinerates all enemies",
+      "cast_message": "{caster} unleashes a devastating firestorm!",
+      "hit_message": "The firestorm incinerates everything for {damage} fire damage!",
       "type": "damage",
       "school": "evocation",
       "level": 12,
@@ -113,8 +127,10 @@
       "scales_with_level": "No"
     },
     "todukar": {
-      "name": "Todukar",
-      "description": "A searing ball of flame",
+      "name": "Fireball",
+      "description": "Hurls a searing ball of flame at the target",
+      "cast_message": "{caster} hurls a searing ball of flame at {target}!",
+      "hit_message": "The fireball explodes on impact for {damage} fire damage!",
       "type": "damage",
       "school": "evocation",
       "level": 12,
@@ -129,8 +145,10 @@
       "scales_with_level": "Yes"
     },
     "komasidaku": {
-      "name": "Komasidaku",
-      "description": "A storm of fire bolts and ice shards",
+      "name": "Elemental Chaos",
+      "description": "Creates a chaotic storm of fire bolts and ice shards that ravages all enemies",
+      "cast_message": "{caster} creates a chaotic storm of fire and ice!",
+      "hit_message": "Fire and ice tear through all foes for {damage} cold damage!",
       "type": "damage",
       "school": "evocation",
       "level": 14,
@@ -145,8 +163,10 @@
       "scales_with_level": "Yes"
     },
     "dumoti": {
-      "name": "Dumoti",
-      "description": "A maelstrom of searing flame clouds and huge ice shards",
+      "name": "Meteor Swarm",
+      "description": "Conjures a devastating maelstrom of searing flame clouds and huge ice shards",
+      "cast_message": "{caster} conjures a devastating maelstrom of fire and ice!",
+      "hit_message": "The elemental maelstrom annihilates all enemies for {damage} cold damage!",
       "type": "damage",
       "school": "evocation",
       "level": 18,

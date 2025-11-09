@@ -1,1 +1,0 @@
-"""Communication commands for player interaction."""

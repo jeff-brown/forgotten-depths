@@ -1,8 +1,10 @@
 {
   "spells": {
     "fadi": {
-      "name": "Fadi",
-      "description": "A regenerative spell",
+      "name": "Regeneration",
+      "description": "Grants regenerative power that heals wounds over time",
+      "cast_message": "{caster} grants {target} regenerative power!",
+      "hit_message": "Regenerative energy flows through {target}, restoring {damage} hit points over time!",
       "type": "heal",
       "school": "restoration",
       "level": 2,
@@ -17,7 +19,9 @@
     },
     "magic_missile": {
       "name": "Magic Missile",
-      "description": "A bolt of magical force that never misses its target.",
+      "description": "Launches unerring darts of magical force that never miss their target",
+      "cast_message": "{caster} launches glowing darts of magical force at {target}!",
+      "hit_message": "The magic missiles strike unerringly for {damage} force damage!",
       "type": "damage",
       "school": "evocation",
       "level": 2,
@@ -32,7 +36,9 @@
     },
     "shield": {
       "name": "Shield",
-      "description": "Create a magical barrier that increases armor class.",
+      "description": "Creates a magical barrier that increases armor class",
+      "cast_message": "{caster} creates a shimmering magical barrier!",
+      "hit_message": "A protective shield surrounds {caster}, granting +3 armor class!",
       "type": "buff",
       "school": "abjuration",
       "level": 2,
@@ -46,7 +52,9 @@
     },
     "invisibility": {
       "name": "Invisibility",
-      "description": "Become invisible to enemies.",
+      "description": "Makes the target fade from view, becoming invisible to enemies",
+      "cast_message": "{caster} fades from view, becoming invisible!",
+      "hit_message": "{caster} vanishes from sight!",
       "type": "buff",
       "school": "illusion",
       "level": 4,
@@ -58,8 +66,10 @@
       "requires_target": false
     },
     "kotari": {
-      "name": "Kotari",
-      "description": "A restorative spell",
+      "name": "Create Food",
+      "description": "Creates magical sustenance that sates hunger",
+      "cast_message": "{caster} creates magical sustenance for {target}!",
+      "hit_message": "{target} feels sated and refreshed!",
       "type": "heal",
       "school": "evocation",
       "level": 4,
@@ -72,8 +82,10 @@
       "scales_with_level": "No"
     },
     "watari": {
-      "name": "Watari",
-      "description": "A refreshing spell that quenches thirst",
+      "name": "Create Water",
+      "description": "Conjures refreshing water that quenches thirst",
+      "cast_message": "{caster} conjures refreshing water for {target}!",
+      "hit_message": "{target}'s thirst is quenched!",
       "type": "heal",
       "school": "evocation",
       "level": 4,
@@ -87,7 +99,9 @@
     },
     "lightning_bolt": {
       "name": "Lightning Bolt",
-      "description": "A stroke of lightning arcs toward a target.",
+      "description": "Calls down a stroke of lightning that arcs toward the target",
+      "cast_message": "{caster} calls down a bolt of lightning on {target}!",
+      "hit_message": "The lightning bolt strikes for {damage} lightning damage!",
       "type": "damage",
       "school": "evocation",
       "level": 4,
@@ -101,8 +115,10 @@
       "scales_with_level": "No"
     },
     "dobudani": {
-      "name": "Dobudani",
-      "description": "A curative spell",
+      "name": "Cure Poison",
+      "description": "Purges poison and toxins from the target's body",
+      "cast_message": "{caster} purges poison from {target}'s body!",
+      "hit_message": "Toxins are expelled as {target} is cured of poison!",
       "type": "heal",
       "school": "evocation",
       "level": 6,
@@ -115,8 +131,10 @@
       "scales_with_level": "No"
     },
     "igatok": {
-      "name": "Igatok",
-      "description": "An enhancement spell that boosts the target's agility, increasing their dexterity by 5-20 points",
+      "name": "Cat's Grace",
+      "description": "Enhances the target's agility, increasing their dexterity",
+      "cast_message": "{caster} enhances {target}'s agility with magical energy!",
+      "hit_message": "{target} feels lighter and more agile!",
       "type": "enhancement",
       "school": "evocation",
       "level": 6,
@@ -133,8 +151,10 @@
       "duration": 30
     },
     "rotok": {
-      "name": "Rotok",
-      "description": "An enhancement spell that empowers the target's might, increasing their strength by 5-20 points",
+      "name": "Bull's Strength",
+      "description": "Empowers the target's might, increasing their strength",
+      "cast_message": "{caster} empowers {target} with magical might!",
+      "hit_message": "{target} surges with physical power!",
       "type": "enhancement",
       "school": "evocation",
       "level": 6,
@@ -151,8 +171,10 @@
       "duration": 30
     },
     "takumi": {
-      "name": "Takumi",
-      "description": "A curative spell",
+      "name": "Remove Paralysis",
+      "description": "Removes paralysis and restores movement",
+      "cast_message": "{caster} removes paralysis from {target}!",
+      "hit_message": "{target} can move freely again!",
       "type": "heal",
       "school": "evocation",
       "level": 6,
@@ -165,8 +187,10 @@
       "effect": "cure_paralysis"
     },
     "tsutok": {
-      "name": "Tsutok",
-      "description": "An enhancement spell that fortifies the target's body, increasing their constitution by 5-20 points",
+      "name": "Bear's Endurance",
+      "description": "Fortifies the target's body, increasing their constitution",
+      "cast_message": "{caster} fortifies {target}'s body with magical energy!",
+      "hit_message": "{target} feels more resilient and hardy!",
       "type": "enhancement",
       "school": "evocation",
       "level": 6,
@@ -183,8 +207,10 @@
       "duration": 30
     },
     "yari": {
-      "name": "Yari",
-      "description": "A protective enchantment that strengthens the target's defenses, granting +4 armor class",
+      "name": "Mage Armor",
+      "description": "Strengthens the target's defenses with protective magic",
+      "cast_message": "{caster} surrounds {target} with protective magic!",
+      "hit_message": "{target}'s defenses are strengthened, granting +4 armor class!",
       "type": "enhancement",
       "school": "evocation",
       "level": 6,
@@ -200,8 +226,10 @@
       "effect_amount": "+4"
     },
     "novadidan": {
-      "name": "Novadidan",
-      "description": "A charm spell that beguiles the target, making them unable to attack",
+      "name": "Charm Monster",
+      "description": "Beguiles the target's mind, charming them into pacifism",
+      "cast_message": "{caster} weaves an enchantment, beguiling {target}!",
+      "hit_message": "{target} is charmed and becomes docile for {damage} psychic damage!",
       "type": "debuff",
       "school": "enchantment",
       "level": 8,
@@ -217,8 +245,10 @@
       "scales_with_level": "No"
     },
     "kotarimaru": {
-      "name": "Kotarimaru",
-      "description": "A thin brownish mist",
+      "name": "Heroes' Feast",
+      "description": "Creates a nourishing mist that sates the hunger of all allies",
+      "cast_message": "{caster} creates a nourishing mist that feeds all allies!",
+      "hit_message": "The mist sates everyone's hunger!",
       "type": "heal",
       "school": "evocation",
       "level": 10,
@@ -231,8 +261,10 @@
       "scales_with_level": "No"
     },
     "watarimaru": {
-      "name": "Watarimaru",
-      "description": "A cool blue mist that quenches the thirst of all allies",
+      "name": "Create Water (Mass)",
+      "description": "Conjures a refreshing mist that quenches the thirst of all allies",
+      "cast_message": "{caster} conjures a refreshing mist for all allies!",
+      "hit_message": "Cool mist quenches everyone's thirst!",
       "type": "heal",
       "school": "evocation",
       "level": 10,
@@ -245,8 +277,10 @@
       "scales_with_level": "No"
     },
     "novadi": {
-      "name": "Novadi",
-      "description": "An invisibility spell that makes the target fade from view",
+      "name": "Greater Invisibility",
+      "description": "Makes the target fade from view, rendering them invisible",
+      "cast_message": "{caster} weaves an illusion, making {target} fade from view!",
+      "hit_message": "{target} becomes invisible!",
       "type": "buff",
       "school": "illusion",
       "level": 10,
@@ -261,8 +295,10 @@
       "scales_with_level": "No"
     },
     "yarimaru": {
-      "name": "Yarimaru",
-      "description": "A bright yellow mist",
+      "name": "Shield of Faith (Mass)",
+      "description": "Creates a protective mist that strengthens the defenses of all allies",
+      "cast_message": "{caster} creates a protective mist that shields all allies!",
+      "hit_message": "Protective energy surrounds everyone, granting +2 armor class!",
       "type": "enhancement",
       "school": "evocation",
       "level": 10,
@@ -278,8 +314,10 @@
       "effect_amount": "+2"
     },
     "jinasutok": {
-      "name": "Jinasutok",
-      "description": "A powerful enhancement spell that greatly sharpens the target's mental faculties, increasing intelligence, wisdom, and charisma by 2-10 points each",
+      "name": "Fox's Cunning",
+      "description": "Greatly sharpens the target's mental faculties and clarity",
+      "cast_message": "{caster} sharpens {target}'s mind with magical clarity!",
+      "hit_message": "{target}'s mental faculties are greatly enhanced!",
       "type": "enhancement",
       "school": "evocation",
       "level": 14,
@@ -296,8 +334,10 @@
       "duration": 30
     },
     "poratok": {
-      "name": "Poratok",
-      "description": "A powerful enhancement spell that greatly strengthens the target's physical prowess, increasing strength, dexterity, and constitution by 2-10 points each",
+      "name": "Divine Power",
+      "description": "Greatly strengthens the target's physical prowess and capabilities",
+      "cast_message": "{caster} infuses {target} with overwhelming physical power!",
+      "hit_message": "{target}'s physical prowess is greatly enhanced!",
       "type": "enhancement",
       "school": "evocation",
       "level": 14,
@@ -314,8 +354,10 @@
       "duration": 30
     },
     "ganazi": {
-      "name": "Ganazi",
-      "description": "A curative spell",
+      "name": "Restoration",
+      "description": "Removes all draining effects and restores lost vitality",
+      "cast_message": "{caster} removes all draining effects from {target}!",
+      "hit_message": "{target}'s vitality is fully restored!",
       "type": "heal",
       "school": "evocation",
       "level": 16,
@@ -328,8 +370,10 @@
       "effect": "cure_drain"
     },
     "novadimaru": {
-      "name": "Novadimaru",
-      "description": "A swirling mist that grants invisibility to all allies in the area",
+      "name": "Mass Invisibility",
+      "description": "Creates a swirling mist that grants invisibility to all allies",
+      "cast_message": "{caster} creates a swirling mist that conceals all allies!",
+      "hit_message": "Everyone fades from view, becoming invisible!",
       "type": "buff",
       "school": "illusion",
       "level": 16,

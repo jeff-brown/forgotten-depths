@@ -1,0 +1,35 @@
+{
+  "id": "mortis_the_pale",
+  "name": "Mortis the Pale",
+  "description": "A skeletal figure wrapped in tattered burial shrouds that emanate a faint necrotic aura. His skin is pale as death itself, stretched tight over bone, and his sunken eyes glow with a sickly purple light. The scent of grave earth and decay follows him, and whispers of the departed seem to echo in his presence. Bones and ritual implements hang from his belt, clicking softly as he moves.",
+  "level": 16,
+  "type": "vendor",
+  "faction": "The Death Speakers",
+  "dialogue": {
+    "greeting": "Greetings, death-seeker. I am Mortis, speaker for those who rest in eternal slumber. You carry the stench of mortality, yet seek to command that which lies beyond. The dead have much to teach the living... for a price.",
+    "browse": "Behold the secrets of death magic - scrolls inscribed with the power to drain life, sap vitality, and command the unliving. Each bears the mark of the grave and whispers of entropy. These are not spells for the faint of heart.",
+    "buy": "The transaction is complete. Remember, death magic exacts its toll on both caster and victim. Tread carefully, necromancer.",
+    "sell": "I deal only in the arts of necromancy and death. Your mundane scrolls hold no interest for one who converses with the departed.",
+    "farewell": "Until death claims us all, seeker. May the spirits of the grave guide your path... and spare you from joining them too soon."
+  },
+  "services": ["shop"],
+  "shop": {
+    "type": "necromancer_scrolls",
+    "specialties": ["necromancy", "death_magic"],
+    "buy_rate": 0.35,
+    "sell_markup": 1.6,
+    "inventory": [
+      {"item_id": "scroll_kamaza", "price": 250, "stock": 5},
+      {"item_id": "scroll_yilazi", "price": 450, "stock": 4},
+      {"item_id": "scroll_raise_dead", "price": 500, "stock": 4},
+      {"item_id": "scroll_igadani", "price": 800, "stock": 3},
+      {"item_id": "scroll_rodani", "price": 800, "stock": 3},
+      {"item_id": "scroll_tsudani", "price": 800, "stock": 3},
+      {"item_id": "scroll_takumaru", "price": 1100, "stock": 3},
+      {"item_id": "scroll_kamazadaku", "price": 1500, "stock": 2},
+      {"item_id": "scroll_jinasudani", "price": 3500, "stock": 1},
+      {"item_id": "scroll_poradani", "price": 3500, "stock": 1},
+      {"item_id": "scroll_takumarudaku", "price": 2500, "stock": 2}
+    ]
+  }
+}

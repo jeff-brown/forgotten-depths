@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Optional, Dict, Any
 
 from ..networking.async_connection_manager import AsyncConnectionManager
-from ..commands.base_command import CommandManager
 from ..game.world.world_manager import WorldManager
 from .event_system import EventSystem
 from ..commands.command_handler import CommandHandler
@@ -39,7 +38,6 @@ class AsyncGameEngine:
         # Core systems
         self.event_system = EventSystem()
         self.connection_manager = AsyncConnectionManager()
-        self.command_manager = CommandManager()
         self.world_manager = WorldManager(self)
         self.config_manager = ConfigManager()
         self.command_handler = CommandHandler(self)

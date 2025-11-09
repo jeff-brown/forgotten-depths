@@ -1,0 +1,23 @@
+{
+  "id": "crypt_of_whispers",
+  "title": "Crypt of Whispers",
+  "description": "The air hangs heavy with the scent of grave earth and decay in this ancient stone crypt. Pale green phosphorescent fungi cling to the damp walls, casting an eerie glow that barely penetrates the darkness. Skulls and bones are meticulously arranged in alcoves, forming macabre geometric patterns that seem to shift when viewed from the corner of your eye. Faint whispers of the departed echo through the chamber - not quite words, but loaded with meaning that chills the soul. Behind an altar carved from a single massive gravestone stands Mortis the Pale, tending to his collection of death magic scrolls with skeletal fingers. The scrolls themselves emit a faint necrotic aura, and the very walls seem to pulse with the rhythm of some distant, dying heartbeat.",
+  "area_id": "starter_town",
+  "exits": {
+    "east": "mystic_plaza"
+  },
+  "items": [],
+  "npcs": [
+    "mortis_the_pale"
+  ],
+  "features": [
+    "skull_alcoves",
+    "gravestone_altar",
+    "phosphorescent_fungi",
+    "whispering_walls",
+    "necrotic_scrolls"
+  ],
+  "is_safe": true,
+  "light_level": "dim",
+  "vendor_id": "mortis_the_pale"
+}

@@ -12,38 +12,93 @@
     "sell": "I deal only in pact magic and eldritch secrets. Your mundane scrolls hold no value in my master's eyes.",
     "farewell": "Until the stars align again, pact-seeker. May your patrons smile upon you... or at least not devour your soul."
   },
-  "services": ["shop"],
+  "services": [
+    "shop"
+  ],
   "shop": {
     "type": "warlock_scrolls",
-    "specialties": ["eldritch", "warlock_spells"],
+    "specialties": [
+      "eldritch",
+      "warlock_spells"
+    ],
     "buy_rate": 0.35,
     "sell_markup": 1.6,
     "inventory": [
-      {"item_id": "scroll_teka", "price": 150, "stock": 5},
-      {"item_id": "scroll_dobuza", "price": 200, "stock": 5},
-      {"item_id": "scroll_kamaza", "price": 250, "stock": 5},
-      {"item_id": "scroll_muda", "price": 300, "stock": 4},
-      {"item_id": "scroll_kateka", "price": 400, "stock": 4},
-      {"item_id": "scroll_yilazi", "price": 450, "stock": 4},
-      {"item_id": "scroll_dakima", "price": 600, "stock": 4},
-      {"item_id": "scroll_igadani", "price": 800, "stock": 3},
-      {"item_id": "scroll_kamuda", "price": 800, "stock": 3},
-      {"item_id": "scroll_rodani", "price": 800, "stock": 3},
-      {"item_id": "scroll_tamikar", "price": 700, "stock": 3},
-      {"item_id": "scroll_tsudani", "price": 800, "stock": 3},
-      {"item_id": "scroll_dobumaru", "price": 1200, "stock": 3},
-      {"item_id": "scroll_giteka", "price": 1000, "stock": 3},
-      {"item_id": "scroll_takumaru", "price": 1100, "stock": 3},
-      {"item_id": "scroll_kamazadaku", "price": 1500, "stock": 2},
-      {"item_id": "scroll_takumarudaku", "price": 2500, "stock": 2},
-      {"item_id": "scroll_gimuda", "price": 2000, "stock": 2},
-      {"item_id": "scroll_kusateka", "price": 2200, "stock": 2},
-      {"item_id": "scroll_timimaru", "price": 1800, "stock": 2},
-      {"item_id": "scroll_dakidaku", "price": 3000, "stock": 2},
-      {"item_id": "scroll_jinasudani", "price": 3500, "stock": 1},
-      {"item_id": "scroll_poradani", "price": 3500, "stock": 1},
-      {"item_id": "scroll_dobudakidaku", "price": 4500, "stock": 1},
-      {"item_id": "scroll_kusamuda", "price": 4000, "stock": 1}
+      {
+        "item_id": "scroll_teka",
+        "price": 150,
+        "stock": 5
+      },
+      {
+        "item_id": "scroll_dobuza",
+        "price": 200,
+        "stock": 5
+      },
+      {
+        "item_id": "scroll_muda",
+        "price": 300,
+        "stock": 4
+      },
+      {
+        "item_id": "scroll_kateka",
+        "price": 400,
+        "stock": 4
+      },
+      {
+        "item_id": "scroll_dakima",
+        "price": 600,
+        "stock": 4
+      },
+      {
+        "item_id": "scroll_kamuda",
+        "price": 800,
+        "stock": 3
+      },
+      {
+        "item_id": "scroll_tamikar",
+        "price": 700,
+        "stock": 3
+      },
+      {
+        "item_id": "scroll_dobumaru",
+        "price": 1200,
+        "stock": 3
+      },
+      {
+        "item_id": "scroll_giteka",
+        "price": 1000,
+        "stock": 3
+      },
+      {
+        "item_id": "scroll_gimuda",
+        "price": 2000,
+        "stock": 2
+      },
+      {
+        "item_id": "scroll_kusateka",
+        "price": 2200,
+        "stock": 2
+      },
+      {
+        "item_id": "scroll_timimaru",
+        "price": 1800,
+        "stock": 2
+      },
+      {
+        "item_id": "scroll_dakidaku",
+        "price": 3000,
+        "stock": 2
+      },
+      {
+        "item_id": "scroll_dobudakidaku",
+        "price": 4500,
+        "stock": 1
+      },
+      {
+        "item_id": "scroll_kusamuda",
+        "price": 4000,
+        "stock": 1
+      }
     ]
   }
 }

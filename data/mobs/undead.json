@@ -41,59 +41,25 @@
         }
       ],
       "vnum": 15,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
-      "can_track": true
-    },
-    {
-      "id": "crypt_guardian",
-      "name": "Crypt Guardian",
-      "description": "An ancient skeletal guardian clad in rusted plate armor. Dark energy crackles around its form, and it carries a massive two-handed sword that still gleams despite the passage of centuries. Its eye sockets burn with unholy fire as it stands eternal watch over the burial crypt.",
-      "type": "undead",
-      "level": 6,
-      "health": 80,
-      "max_health": 80,
-      "damage_min": 8,
-      "damage_max": 15,
-      "armor": 6,
-      "experience_reward": 75,
-      "gold_reward": [
-        15,
-        35
-      ],
-      "aggressive": true,
-      "speed": 0.9,
-      "resistances": [
-        "poison",
-        "fear",
-        "cold"
-      ],
-      "weaknesses": [
-        "holy",
-        "fire"
-      ],
-      "abilities": [
-        "heavy_strike",
-        "necrotic_aura"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.8
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.9
-        },
-        {
-          "item_id": "rusted_plate",
-          "chance": 0.4
-        },
-        {
-          "item_id": "guardian_sword",
-          "chance": 0.15
-        }
-      ]
+      "can_track": true,
+      "plural": "skeleton warriors",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 0
     },
     {
       "id": "zombie",
@@ -135,9 +101,25 @@
         }
       ],
       "vnum": 17,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
-      "can_track": true
+      "can_track": true,
+      "plural": "zombies",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "treasure_code": 0
     },
     {
       "id": "shade",
@@ -174,7 +156,46 @@
           "item_id": "tattered_cloth",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 23,
+      "plural": "shades",
+      "morale": 0,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "claws",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "wraith",
@@ -221,11 +242,31 @@
         }
       ],
       "vnum": 60,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
-      "attack_effect": "paralysis"
+      "attack_effect": {
+        "id": 6,
+        "name": "Paralysis",
+        "min": 2,
+        "max": 4
+      },
+      "plural": "wraith",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 0
     },
     {
       "id": "skeleton_lord",
@@ -279,9 +320,25 @@
         }
       ],
       "vnum": 66,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
-      "can_track": true
+      "can_track": true,
+      "plural": "skeleton lords",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 2,
+        "name": "Unknown"
+      },
+      "treasure_code": 0
     },
     {
       "id": "ghoul",
@@ -328,12 +385,31 @@
         }
       ],
       "vnum": 68,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 87,
       "can_track": true,
       "num_attacks": 2,
-      "attack_effect": "mana drain",
-      "morale": 5
+      "attack_effect": {
+        "id": 4,
+        "name": "Mana Drain",
+        "min": 2,
+        "max": 4
+      },
+      "morale": 5,
+      "plural": "ghouls",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "treasure_code": 6
     },
     {
       "id": "skeleton_giant",
@@ -410,9 +486,25 @@
         }
       ],
       "vnum": 88,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 85,
-      "can_track": true
+      "can_track": true,
+      "plural": "skeleton giants",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "bone hammer",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "treasure_code": 0
     }
   ]
 }

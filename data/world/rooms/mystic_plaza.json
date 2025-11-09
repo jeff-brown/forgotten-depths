@@ -1,0 +1,23 @@
+{
+  "id": "mystic_plaza",
+  "title": "Mystic Plaza",
+  "description": "This shadowy plaza serves as a crossroads for practitioners of the darker magical arts. Unlike the bright Arcane Square, this area is shrouded in perpetual twilight, with dim lanterns casting flickering shadows that seem to move of their own accord. The cobblestones are darker here, some stained with what appears to be old ritual markings that refuse to wash away. The air carries a chill that has nothing to do with temperature. To the south stands the Warlock's Den, emanating an aura of eldritch power, while to the west lies the Crypt of Whispers, from which faint echoes of the departed can be heard.",
+  "area_id": "starter_town",
+  "exits": {
+    "northwest": "arcane_square",
+    "north": "sorcerers_sanctum",
+    "east": "druids_grove",
+    "south": "warlocks_den",
+    "west": "divine_chapel",
+    "southwest": "crypt_of_whispers"
+  },
+  "items": [],
+  "npcs": [],
+  "features": [
+    "ritual_markings",
+    "shadow_lanterns",
+    "twilight_aura"
+  ],
+  "is_safe": true,
+  "light_level": "dim"
+}

@@ -78,3 +78,26 @@ class BaseCommandHandler:
     async def broadcast_to_room(self, room_id: str, message: str, exclude_player: Optional[int] = None):
         """Broadcast a message to all players in a room."""
         await self.connection_manager.broadcast_to_room(room_id, message, exclude_player)
+
+    def calculate_xp_for_level(self, level: int) -> int:
+        """Calculate the total XP required to reach a specific level.
+
+        Args:
+            level: The target level
+
+        Returns:
+            Total XP required to reach that level
+        """
+        if level <= 1:
+            return 0
+
+        base_xp = self.config_manager.get_setting('player', 'leveling', 'base_xp_per_level', default=100)
+        multiplier = self.config_manager.get_setting('player', 'leveling', 'xp_multiplier', default=1.5)
+
+        # Calculate cumulative XP: sum of XP needed for each level
+        total_xp = 0
+        for lvl in range(2, level + 1):
+            xp_for_level = int(base_xp * (multiplier ** (lvl - 2)))
+            total_xp += xp_for_level
+
+        return total_xp

@@ -1,35 +1,6 @@
 {
   "monsters": [
     {
-      "id": "rat",
-      "name": "Giant Rat",
-      "description": "A large, mangy rat with yellowed teeth and beady red eyes. It looks hungry and aggressive.",
-      "type": "beast",
-      "level": 1,
-      "health": 15,
-      "max_health": 15,
-      "damage_min": 1,
-      "damage_max": 3,
-      "armor": 0,
-      "experience_reward": 10,
-      "gold_reward": [
-        1,
-        3
-      ],
-      "aggressive": true,
-      "speed": 1.2,
-      "loot_table": [
-        {
-          "item_id": "rat_tail",
-          "chance": 0.3
-        },
-        {
-          "item_id": "small_bone",
-          "chance": 0.1
-        }
-      ]
-    },
-    {
       "id": "wolf",
       "name": "Wolf",
       "description": "The wolf is very large and has greyish fur and icey blue eyes. It growls at you menacingly and bares its teeth.",
@@ -67,11 +38,25 @@
         }
       ],
       "vnum": 41,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 40
+      "morale": 40,
+      "plural": "wolves",
+      "regeneration": 0,
+      "weapon_name": "savage bite",
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "huge_rat",
@@ -109,10 +94,25 @@
         }
       ],
       "vnum": 9,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
       "can_track": true,
-      "morale": 50
+      "morale": 50,
+      "plural": "huge rats",
+      "regeneration": 0,
+      "weapon_name": "gnashing teeth",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_scorpion",
@@ -150,7 +150,52 @@
           "item_id": "bread",
           "chance": 0.4
         }
-      ]
+      ],
+      "vnum": 16,
+      "plural": "giant scorpions",
+      "morale": 20,
+      "combat_skill": 70,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "tail",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "snapped its pincers at",
+        "chance_percent": 55,
+        "min_damage": 3,
+        "max_damage": 9
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 2
+      },
+      "treasure_code": 0
     },
     {
       "id": "huge_toad",
@@ -186,7 +231,46 @@
           "item_id": "dark_essence",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 18,
+      "plural": "huge toads",
+      "morale": 35,
+      "combat_skill": 60,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "gaping mouth",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 1
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_slug",
@@ -223,7 +307,52 @@
           "item_id": "preserved_rations",
           "chance": 0.4
         }
-      ]
+      ],
+      "vnum": 19,
+      "plural": "giant slugs",
+      "morale": 5,
+      "combat_skill": 65,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "toothy maw",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "discharged a spray of acid at",
+        "chance_percent": 25,
+        "min_damage": 4,
+        "max_damage": 16
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 1
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_bat",
@@ -259,7 +388,46 @@
           "item_id": "dried_meat",
           "chance": 0.4
         }
-      ]
+      ],
+      "vnum": 20,
+      "plural": "giant bats",
+      "morale": 25,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "vicious bite",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_spider",
@@ -299,7 +467,46 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 24,
+      "plural": "giant spiders",
+      "morale": 20,
+      "combat_skill": 70,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "mandibles",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 1,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 1,
+        "max": 3
+      },
+      "treasure_code": 0
     },
     {
       "id": "fire_beetle",
@@ -344,7 +551,46 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 26,
+      "plural": "fire beetles",
+      "morale": 30,
+      "combat_skill": 75,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "mandibles",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 8,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "alligator",
@@ -390,7 +636,52 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 27,
+      "plural": "alligators",
+      "morale": 15,
+      "combat_skill": 80,
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "wicked bite",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "lashed its tail at",
+        "chance_percent": 35,
+        "min_damage": 2,
+        "max_damage": 8
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "giant_asp",
@@ -431,7 +722,52 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 28,
+      "plural": "giant asps",
+      "morale": 15,
+      "combat_skill": 80,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "wicked bite",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "coiled around",
+        "chance_percent": 15,
+        "min_damage": 2,
+        "max_damage": 16
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 1,
+        "name": "Poison",
+        "min": 2,
+        "max": 6
+      },
+      "treasure_code": 0
     },
     {
       "id": "anaconda",
@@ -477,7 +813,52 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 29,
+      "plural": "anacondas",
+      "morale": 20,
+      "combat_skill": 70,
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "wicked bite",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "coiled around",
+        "chance_percent": 25,
+        "min_damage": 2,
+        "max_damage": 16
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "lizard_woman",
@@ -521,7 +902,45 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 30,
+      "plural": "lizard women",
+      "morale": 20,
+      "combat_skill": 80,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 6
     },
     {
       "id": "lizard_man",
@@ -565,7 +984,45 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 31,
+      "plural": "lizard men",
+      "morale": 15,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 8
     },
     {
       "id": "black_bear",
@@ -611,11 +1068,25 @@
         }
       ],
       "vnum": 32,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 25
+      "morale": 25,
+      "plural": "black bears",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "red_bear",
@@ -665,11 +1136,25 @@
         }
       ],
       "vnum": 33,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 15
+      "morale": 15,
+      "plural": "red bears",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "leopard",
@@ -715,7 +1200,52 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 40,
+      "plural": "leopards",
+      "morale": 20,
+      "combat_skill": 95,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "claws",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "savagely bit",
+        "chance_percent": 35,
+        "min_damage": 4,
+        "max_damage": 12
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "wild_boar",
@@ -761,10 +1291,25 @@
         }
       ],
       "vnum": 42,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 85,
       "can_track": true,
-      "morale": 30
+      "morale": 30,
+      "plural": "wild boars",
+      "regeneration": 0,
+      "weapon_name": "tusks",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
     },
     {
       "id": "cave_bear",
@@ -814,11 +1359,25 @@
         }
       ],
       "vnum": 43,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 10
+      "morale": 10,
+      "plural": "cave bears",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 0
     },
     {
       "id": "mountain_ape",
@@ -865,11 +1424,25 @@
         }
       ],
       "vnum": 48,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 80,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 20
+      "morale": 20,
+      "plural": "mountain apes",
+      "regeneration": 0,
+      "weapon_name": "clenched fists",
+      "terrain": {
+        "id": 3,
+        "name": "Mountains"
+      },
+      "treasure_code": 0
     },
     {
       "id": "carrion_crane",
@@ -913,7 +1486,46 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 53,
+      "plural": "carrion cranes",
+      "morale": 30,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "hooked beak",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "cave_lion",
@@ -959,11 +1571,25 @@
         }
       ],
       "vnum": 63,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "can_track": true,
       "num_attacks": 2,
-      "morale": 10
+      "morale": 10,
+      "plural": "cave lions",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 1,
+        "name": "Unknown"
+      },
+      "treasure_code": 0
     },
     {
       "id": "sand_worm",
@@ -1007,7 +1633,46 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 73,
+      "plural": "sand worms",
+      "morale": 0,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "gaping maw",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "magma_worm",
@@ -1057,7 +1722,46 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 83,
+      "plural": "magma worms",
+      "morale": 0,
+      "combat_skill": 85,
+      "regeneration": 1,
+      "can_track": true,
+      "weapon_name": "gaping maw",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 8,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "octopod",
@@ -1107,7 +1811,52 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 87,
+      "plural": "octopods",
+      "morale": 0,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "a tentacle",
+      "num_attacks": 3,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "lashed several tentacles at",
+        "chance_percent": 15,
+        "min_damage": 12,
+        "max_damage": 60
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "white_rabbit",
@@ -1145,7 +1894,46 @@
           "item_id": "dark_essence",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 102,
+      "plural": "white rabbits",
+      "morale": 60,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "dull teeth",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 1,
+        "name": "Summon Aid",
+        "description": "emits a shrill screech"
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": -1,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "black_rabbit",
@@ -1183,7 +1971,46 @@
           "item_id": "dark_essence",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 103,
+      "plural": "black rabbits",
+      "morale": 60,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "dull teeth",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 1,
+        "name": "Summon Aid",
+        "description": "emits a shrill screech"
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": -1,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "pink_bunny",
@@ -1230,7 +2057,52 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 104,
+      "plural": "pink bunnies",
+      "morale": 95,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "daring nibble",
+      "num_attacks": 2,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "gnashed its big pointy teeth at",
+        "chance_percent": 33,
+        "min_damage": 20,
+        "max_damage": 60
+      },
+      "special_ability": {
+        "id": 6,
+        "name": "Attack All and Tumble",
+        "description": "becomes a berzerk flurry of gnashing teeth"
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "lizard",
@@ -1266,7 +2138,46 @@
           "item_id": "spear",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 105,
+      "plural": "lizards",
+      "morale": 100,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "tiny teeth",
+      "num_attacks": 0,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "monkey",
@@ -1302,7 +2213,46 @@
           "item_id": "dark_essence",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 106,
+      "plural": "monkeys",
+      "morale": 100,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "clinched fists",
+      "num_attacks": 0,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "owl",
@@ -1338,7 +2288,46 @@
           "item_id": "tattered_cloth",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 107,
+      "plural": "owls",
+      "morale": 100,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "talons",
+      "num_attacks": 0,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "squirrel",
@@ -1374,7 +2363,46 @@
           "item_id": "bone_fragment",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 108,
+      "plural": "squirrels",
+      "morale": 100,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "sharp teeth",
+      "num_attacks": 0,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "frog",
@@ -1410,7 +2438,46 @@
           "item_id": "small_bone",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 109,
+      "plural": "frogs",
+      "morale": 100,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "tiny teeth",
+      "num_attacks": 0,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 5,
+        "name": "Swamp"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "fox",
@@ -1446,7 +2513,46 @@
           "item_id": "dark_essence",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 111,
+      "plural": "foxes",
+      "morale": 100,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "sharp teeth",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "hyena",
@@ -1490,7 +2596,46 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 112,
+      "plural": "hyenas",
+      "morale": 40,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "wicked teeth",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "tiger",
@@ -1537,17 +2682,31 @@
         }
       ],
       "vnum": 113,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 95,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "savagely bit",
-        "chance": 0.35,
-        "damage_min": 12,
-        "damage_max": 36
+        "chance_percent": 35,
+        "min_damage": 12,
+        "max_damage": 36
       },
-      "morale": 30
+      "morale": 30,
+      "plural": "tigers",
+      "regeneration": 0,
+      "weapon_name": "wicked claws",
+      "terrain": {
+        "id": 7,
+        "name": "Jungle"
+      },
+      "treasure_code": 0
     },
     {
       "id": "mountain_lion",
@@ -1593,17 +2752,31 @@
         }
       ],
       "vnum": 114,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 95,
       "can_track": true,
       "num_attacks": 2,
       "special_attack": {
         "description": "savagely bit",
-        "chance": 0.35,
-        "damage_min": 6,
-        "damage_max": 18
+        "chance_percent": 35,
+        "min_damage": 6,
+        "max_damage": 18
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "mountain lions",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "terrain": {
+        "id": 3,
+        "name": "Mountains"
+      },
+      "treasure_code": 0
     },
     {
       "id": "jackal",
@@ -1647,7 +2820,46 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 121,
+      "plural": "jackal",
+      "morale": 40,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "wicked teeth",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 6,
+        "name": "Desert"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "lizard_warrior",
@@ -1699,7 +2911,45 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 136,
+      "plural": "lizard warriors",
+      "morale": 10,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 10
     },
     {
       "id": "lizard_subchief",
@@ -1759,7 +3009,45 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
+      ],
+      "vnum": 137,
+      "plural": "lizard subchiefs",
+      "morale": 15,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 12
     },
     {
       "id": "lizard_chieftain",
@@ -1823,7 +3111,45 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 138,
+      "plural": "lizard chieftains",
+      "morale": 20,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 14
     },
     {
       "id": "lizard_warlord",
@@ -1887,7 +3213,45 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 139,
+      "plural": "lizard warlords",
+      "morale": 20,
+      "combat_skill": 95,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 28
     },
     {
       "id": "lizard_shaman",
@@ -1941,86 +3305,45 @@
           "item_id": "rue_potion",
           "chance": 0.3
         }
-      ]
-    },
-    {
-      "id": "stone_scorpion",
-      "name": "Stone Scorpion",
-      "description": "The stone scorpion is skillfully crafted and resembles a common scorpion, except that it is nearly twenty feet in length and it's carapace has the color and texture of stone.",
-      "type": "beast",
-      "level": 25,
-      "health": 750,
-      "max_health": 750,
-      "damage_min": 125,
-      "damage_max": 250,
-      "armor": 25,
-      "experience_reward": 250,
-      "gold_reward": [
-        0,
-        0
       ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "tail",
-        "snaps its pincers at",
-        "is suddenly surrounded by a pale blue light",
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.3
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.25
-        },
-        {
-          "item_id": "stick",
-          "chance": 0.2
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "platinum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "stone_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "dragon_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "wand_of_lightning",
-          "chance": 0.12
-        }
-      ]
+      "vnum": 140,
+      "plural": "lizard shaman",
+      "morale": 25,
+      "combat_skill": 80,
+      "regeneration": 0,
+      "can_track": true,
+      "num_attacks": 2,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 75,
+        "type_id": 1,
+        "type_name": "Sorceror",
+        "min_level": 1,
+        "max_level": 3
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 8
     },
     {
       "id": "dwarven_warhound",
@@ -2104,100 +3427,46 @@
           "item_id": "rod_of_power",
           "chance": 0.12
         }
-      ]
-    },
-    {
-      "id": "magma_slug",
-      "name": "Magma Slug",
-      "description": "The magma slug is a gigantic slug that is covered in magma.  Its maw rumbles with fury as it looks to burn you alive with its own magma.",
-      "type": "beast",
-      "level": 35,
-      "health": 500,
-      "max_health": 500,
-      "damage_min": 80,
-      "damage_max": 115,
-      "armor": 18,
-      "experience_reward": 350,
-      "gold_reward": [
-        40,
-        55
       ],
-      "aggressive": true,
-      "speed": 1.0,
-      "abilities": [
-        "maw",
-        "unloaded a wad of magma"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.3
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.25
-        },
-        {
-          "item_id": "dagger",
-          "chance": 0.2
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "platinum_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "opal_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "zarynthium_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "gome_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "rod_of_flame",
-          "chance": 0.12
-        },
-        {
-          "item_id": "soulstone",
-          "chance": 0.15
-        },
-        {
-          "item_id": "enchanted_blade",
-          "chance": 0.12
-        },
-        {
-          "item_id": "champion_armor",
-          "chance": 0.1
-        }
-      ]
+      "vnum": 148,
+      "plural": "dwarven warhounds",
+      "morale": 0,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "vicious bite",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": -1,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     },
     {
       "id": "reaper_shrub",
@@ -2218,7 +3487,13 @@
       ],
       "aggressive": true,
       "speed": 1.0,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 90,
       "can_track": true,
       "abilities": [
@@ -2226,10 +3501,76 @@
       ],
       "special_attack": {
         "description": "raked several thorny branches across",
-        "chance": 0.33,
-        "damage_min": 4,
-        "damage_max": 16
-      }
+        "chance_percent": 33,
+        "min_damage": 4,
+        "max_damage": 16
+      },
+      "plural": "reaper shrubs",
+      "morale": 0,
+      "regeneration": 0,
+      "weapon_name": "a thorny branch",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 4,
+        "name": "Forest"
+      },
+      "treasure_code": 0
+    },
+    {
+      "id": "ram",
+      "name": "Ram",
+      "level": 2,
+      "health": [
+        15,
+        30
+      ],
+      "armor_class": 2,
+      "damage": "1d6",
+      "gold_reward": [
+        0,
+        5
+      ],
+      "description": "A sturdy ram with curved horns.",
+      "aggressive": false,
+      "vnum": 25,
+      "plural": "rams",
+      "morale": 35,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "curved horns",
+      "num_attacks": 1,
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
+      "terrain": {
+        "id": 3,
+        "name": "Mountains"
+      },
+      "sub_type": "Normal",
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 0
     }
   ]
 }

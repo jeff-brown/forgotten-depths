@@ -1,8 +1,10 @@
 {
   "spells": {
     "pakaza": {
-      "name": "Pakaza",
-      "description": "A thorn",
+      "name": "Thorn Whip",
+      "description": "Summons sharp magical thorns that pierce through the target's defenses",
+      "cast_message": "{caster} weaves natural magic, summoning sharp thorns at {target}!",
+      "hit_message": "The thorns pierce through armor for {damage} piercing damage!",
       "type": "damage",
       "school": "evocation",
       "level": 2,
@@ -17,8 +19,10 @@
       "scales_with_level": "No"
     },
     "toraza": {
-      "name": "Toraza",
-      "description": "A stone shard",
+      "name": "Stone Missile",
+      "description": "Commands the earth to hurl a razor-sharp stone shard at the target",
+      "cast_message": "{caster} commands the earth, launching a sharp stone shard at {target}!",
+      "hit_message": "The stone shard strikes with brutal force for {damage} damage!",
       "type": "damage",
       "school": "evocation",
       "level": 4,
@@ -33,8 +37,10 @@
       "scales_with_level": "No"
     },
     "modoki": {
-      "name": "Modoki",
-      "description": "A bolt of lightning",
+      "name": "Lightning Bolt",
+      "description": "Calls down a crackling bolt of lightning from the sky",
+      "cast_message": "{caster} calls to the storm, directing a bolt of lightning at {target}!",
+      "hit_message": "The lightning bolt crackles through the air for {damage} lightning damage!",
       "type": "damage",
       "school": "evocation",
       "level": 6,
@@ -49,8 +55,10 @@
       "scales_with_level": "No"
     },
     "sivama": {
-      "name": "Sivama",
-      "description": "A powerful gust of wind",
+      "name": "Gust of Wind",
+      "description": "Summons a powerful gust of wind that batters the target",
+      "cast_message": "{caster} summons the fury of the wind, blasting {target} with a powerful gust!",
+      "hit_message": "The violent wind slams into {target} for {damage} force damage!",
       "type": "damage",
       "school": "evocation",
       "level": 8,
@@ -65,8 +73,10 @@
       "scales_with_level": "No"
     },
     "pakazuma": {
-      "name": "Pakazuma",
-      "description": "A shower of wicked thorns",
+      "name": "Spike Growth",
+      "description": "Unleashes a shower of wicked thorns that rain down upon the target",
+      "cast_message": "{caster} channels primal energy, raining wicked thorns down on {target}!",
+      "hit_message": "A shower of thorns tears through flesh for {damage} piercing damage!",
       "type": "damage",
       "school": "evocation",
       "level": 10,
@@ -81,8 +91,10 @@
       "scales_with_level": "No"
     },
     "torazuma": {
-      "name": "Torazuma",
-      "description": "A shower of stone shards",
+      "name": "Stone Shower",
+      "description": "Causes a shower of stone shards to erupt from the earth and strike the target",
+      "cast_message": "{caster} raises their hands, causing stone shards to erupt toward {target}!",
+      "hit_message": "The stone shards bombard {target} relentlessly for {damage} force damage!",
       "type": "damage",
       "school": "evocation",
       "level": 10,
@@ -97,8 +109,10 @@
       "scales_with_level": "No"
     },
     "modokidan": {
-      "name": "Modokidan",
-      "description": "Several forked bolts of lightning",
+      "name": "Call Lightning",
+      "description": "Calls down several forked bolts of lightning that strike all enemies in the area",
+      "cast_message": "{caster} raises their staff to the sky, calling down forked lightning on all foes!",
+      "hit_message": "Lightning forks across the battlefield for {damage} lightning damage!",
       "type": "damage",
       "school": "evocation",
       "level": 12,
@@ -113,8 +127,10 @@
       "scales_with_level": "No"
     },
     "sivadaku": {
-      "name": "Sivadaku",
-      "description": "A violent windstorm",
+      "name": "Whirlwind",
+      "description": "Conjures a violent windstorm that tears through all enemies",
+      "cast_message": "{caster} unleashes the fury of nature, creating a violent windstorm!",
+      "hit_message": "The windstorm tears through all enemies for {damage} force damage!",
       "type": "damage",
       "school": "evocation",
       "level": 14,
@@ -129,8 +145,10 @@
       "scales_with_level": "No"
     },
     "modokidaku": {
-      "name": "Modokidaku",
-      "description": "A lightning storm",
+      "name": "Storm of Vengeance",
+      "description": "Summons a devastating lightning storm that electrifies all enemies",
+      "cast_message": "{caster} commands the storm itself, unleashing a devastating lightning storm!",
+      "hit_message": "Lightning crashes down repeatedly for {damage} lightning damage!",
       "type": "damage",
       "school": "evocation",
       "level": 16,
@@ -145,8 +163,10 @@
       "scales_with_level": "Yes"
     },
     "toradaku": {
-      "name": "Toradaku",
-      "description": "A hail of huge stone shards",
+      "name": "Earthquake",
+      "description": "Commands the earth to rain down a hail of huge stone shards upon all foes",
+      "cast_message": "{caster} channels the raw power of the earth, raining massive stone shards!",
+      "hit_message": "Huge stone shards pummel all enemies for {damage} force damage!",
       "type": "damage",
       "school": "evocation",
       "level": 18,

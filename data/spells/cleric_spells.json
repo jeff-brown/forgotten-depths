@@ -1,8 +1,10 @@
 {
   "spells": {
     "motu": {
-      "name": "Motu",
-      "description": "A minor healing spell",
+      "name": "Cure Wounds",
+      "description": "Channels divine energy to heal minor wounds",
+      "cast_message": "{caster} channels divine energy, healing {target}!",
+      "hit_message": "Divine light mends wounds, restoring {damage} hit points!",
       "type": "heal",
       "school": "restoration",
       "level": 2,
@@ -17,8 +19,10 @@
       "scales_with_level": "No"
     },
     "kamotu": {
-      "name": "Kamotu",
-      "description": "A healing spell",
+      "name": "Heal",
+      "description": "Invokes divine power to heal moderate wounds",
+      "cast_message": "{caster} invokes divine power, healing {target}!",
+      "hit_message": "Sacred energy flows through {target}, restoring {damage} hit points!",
       "type": "heal",
       "school": "restoration",
       "level": 4,
@@ -33,8 +37,10 @@
       "scales_with_level": "No"
     },
     "tami": {
-      "name": "Tami",
-      "description": "A weak beam of bright energy",
+      "name": "Sacred Flame",
+      "description": "Conjures a beam of holy light that smites enemies",
+      "cast_message": "{caster} conjures a beam of holy light, smiting {target}!",
+      "hit_message": "Holy radiance sears evil for {damage} radiant damage!",
       "type": "damage",
       "school": "transmutation",
       "level": 4,
@@ -49,8 +55,10 @@
       "scales_with_level": "No"
     },
     "dobudanimaru": {
-      "name": "Dobudanimaru",
-      "description": "A thick greyish mist",
+      "name": "Neutralize Poison",
+      "description": "Creates a purifying mist that cures poison from all allies",
+      "cast_message": "{caster} creates a purifying mist that cleanses all allies!",
+      "hit_message": "The sacred mist purges poison from all who breathe it!",
       "type": "heal",
       "school": "evocation",
       "level": 8,
@@ -64,8 +72,10 @@
       "scales_with_level": "No"
     },
     "gimotu": {
-      "name": "Gimotu",
-      "description": "A greater healing spell",
+      "name": "Greater Heal",
+      "description": "Calls upon divine grace to heal grievous wounds",
+      "cast_message": "{caster} calls upon divine grace, healing {target}!",
+      "hit_message": "Brilliant divine light knits wounds together, restoring {damage} hit points!",
       "type": "heal",
       "school": "restoration",
       "level": 8,
@@ -80,8 +90,10 @@
       "scales_with_level": "No"
     },
     "katami": {
-      "name": "Katami",
-      "description": "A beam of bright energy",
+      "name": "Searing Light",
+      "description": "Unleashes a powerful beam of holy radiance",
+      "cast_message": "{caster} unleashes a powerful beam of holy radiance at {target}!",
+      "hit_message": "Sacred light burns through darkness for {damage} radiant damage!",
       "type": "damage",
       "school": "evocation",
       "level": 8,
@@ -96,8 +108,10 @@
       "scales_with_level": "No"
     },
     "motumaru": {
-      "name": "Motumaru",
-      "description": "A pale bluish mist",
+      "name": "Mass Cure",
+      "description": "Spreads healing mist that restores vitality to all allies",
+      "cast_message": "{caster} spreads a healing mist across the battlefield!",
+      "hit_message": "Divine mist washes over allies, restoring {damage} hit points to all!",
       "type": "heal",
       "school": "evocation",
       "level": 8,
@@ -112,8 +126,10 @@
       "scales_with_level": "No"
     },
     "gitami": {
-      "name": "Gitami",
-      "description": "A beam of brilliant energy",
+      "name": "Flame Strike",
+      "description": "Channels divine wrath into a brilliant beam of searing light",
+      "cast_message": "{caster} channels divine wrath, unleashing brilliant light at {target}!",
+      "hit_message": "Brilliant divine fire sears through evil for {damage} radiant damage!",
       "type": "damage",
       "school": "evocation",
       "level": 10,
@@ -128,8 +144,10 @@
       "scales_with_level": "No"
     },
     "kamotumaru": {
-      "name": "Kamotumaru",
-      "description": "A bluish mist",
+      "name": "Mass Heal",
+      "description": "Calls forth a blessed mist that heals all allies in the area",
+      "cast_message": "{caster} calls forth a blessed mist to heal all allies!",
+      "hit_message": "Blessed mist suffuses allies with healing, restoring {damage} hit points!",
       "type": "heal",
       "school": "evocation",
       "level": 10,
@@ -144,8 +162,10 @@
       "scales_with_level": "No"
     },
     "kusamotu": {
-      "name": "Kusamotu",
-      "description": "A very powerful healing spell",
+      "name": "Supreme Heal",
+      "description": "Invokes divine intervention to heal even the most grievous wounds",
+      "cast_message": "{caster} invokes divine intervention, bathing {target} in radiant light!",
+      "hit_message": "Divine intervention mends even mortal wounds, restoring {damage} hit points!",
       "type": "heal",
       "school": "restoration",
       "level": 10,
@@ -160,8 +180,10 @@
       "scales_with_level": "Yes"
     },
     "kusatami": {
-      "name": "Kusatami",
-      "description": "A devastating beam of brilliant energy",
+      "name": "Pillar of Flame",
+      "description": "Calls down a devastating pillar of divine fire to smite enemies",
+      "cast_message": "{caster} calls down a pillar of divine fire upon {target}!",
+      "hit_message": "Divine fire incinerates evil for {damage} radiant damage!",
       "type": "damage",
       "school": "evocation",
       "level": 12,
@@ -176,8 +198,10 @@
       "scales_with_level": "No"
     },
     "gimotumaru": {
-      "name": "Gimotumaru",
-      "description": "A dark bluish mist",
+      "name": "Greater Mass Heal",
+      "description": "Summons a powerful healing mist blessed by the divine",
+      "cast_message": "{caster} summons a powerful healing mist blessed by the divine!",
+      "hit_message": "Sacred mist envelops all allies, restoring {damage} hit points!",
       "type": "heal",
       "school": "evocation",
       "level": 14,
@@ -192,8 +216,10 @@
       "scales_with_level": "No"
     },
     "kusamotumaru": {
-      "name": "Kusamotumaru",
-      "description": "A very dark bluish mist",
+      "name": "Supreme Mass Heal",
+      "description": "Manifests divine presence as a miraculous healing mist",
+      "cast_message": "{caster} manifests divine presence as a miraculous healing mist!",
+      "hit_message": "Miraculous divine energy flows through all allies, restoring {damage} hit points!",
       "type": "heal",
       "school": "evocation",
       "level": 18,

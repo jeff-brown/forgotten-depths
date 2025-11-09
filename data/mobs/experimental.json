@@ -1,0 +1,2623 @@
+{
+  "monsters": [
+    {
+      "id": "stone_warrior",
+      "name": "Stone Warrior",
+      "description": "The stone warrior is skillfully crafted and resembles a heavily muscled warrior in full plate armor and stands nearly twenty feet high. It is armed with a huge stone axe.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 100,
+      "damage_max": 200,
+      "armor": 20,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        50
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "stone axe",
+        "paralysis",
+        "unknown"
+      ],
+      "loot_table": [
+        {
+          "item_id": "short_sword",
+          "chance": 0.4
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "morningstar",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.3
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.25
+        },
+        {
+          "item_id": "greatsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        }
+      ],
+      "class": "fighter",
+      "vnum": 141,
+      "gender": "neuter",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 2,
+      "attack_effect": "paralysis",
+      "special_attack": {
+        "description": "kicks",
+        "chance": 0.35,
+        "damage_min": 200,
+        "damage_max": 400
+      },
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "stone_wizard",
+      "name": "Stone Wizard",
+      "description": "The stone wizard is skillfully crafted and resembles a gaunt sorcerer in flowing robes covered with runes and sigils. It is armed with a stone sceptre topped with a glowing crystal and stands nearly twenty feet high.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 50,
+      "damage_max": 100,
+      "armor": 15,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "stone sceptre",
+        "discharged its sceptre at",
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 90,
+      "loot_table": [
+        {
+          "item_id": "yarrow_potion",
+          "chance": 0.6
+        },
+        {
+          "item_id": "scroll_magic_missile",
+          "chance": 0.5
+        },
+        {
+          "item_id": "vervain_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "blue_robes",
+          "chance": 0.3
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.3
+        },
+        {
+          "item_id": "scroll_lightning_bolt",
+          "chance": 0.25
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.35
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.25
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        }
+      ],
+      "class": "sorcerer",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "dwarven_guard",
+      "name": "Dwarven Guard",
+      "description": "The guard is of obvious dwarven blood. He looks very tough and battle hardened. He wears scale mail armor of a design you're unfamiliar with and wields a battleax.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 19,
+      "damage_max": 34,
+      "armor": 0,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        55
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "battleax"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        }
+      ],
+      "class": "fighter",
+      "vnum": 144,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 5,
+      "morale": 20,
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "dwarven_sorcerer",
+      "name": "Dwarven Sorceror",
+      "description": "The dwarven sorcerer has an obvious callousness about his expression, and appears no one to be trifled with. He radiates confidence and power. He wears robes of a deep reddish brown, similar to the hue of the stone in the walls of his home. He carries a black sceptre topped with some sort of softly glowing crystal.",
+      "type": "humanoid",
+      "level": 25,
+      "health": 400,
+      "max_health": 400,
+      "damage_min": 11,
+      "damage_max": 16,
+      "armor": 2,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        60
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "black sceptre",
+        "mana drain",
+        "spells",
+        "spellcaster"
+      ],
+      "spellcaster": true,
+      "spell_skill": 90,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "ration_of_food",
+          "chance": 0.3
+        },
+        {
+          "item_id": "quarterstaff",
+          "chance": 0.25
+        },
+        {
+          "item_id": "cloak",
+          "chance": 0.2
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        }
+      ],
+      "class": "fighter",
+      "vnum": 147,
+      "gender": "male",
+      "combat_skill": 80,
+      "can_track": true,
+      "num_attacks": 5,
+      "attack_effect": "mana drain",
+      "spells": {
+        "spell_type": "sorcerer",
+        "spell_skill": 90,
+        "min_level": 6,
+        "max_level": 8
+      },
+      "morale": 30,
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "stone_scorpion",
+      "name": "Stone Scorpion",
+      "description": "The stone scorpion is skillfully crafted and resembles a common scorpion, except that it is nearly twenty feet in length and it's carapace has the color and texture of stone.",
+      "type": "beast",
+      "level": 25,
+      "health": 750,
+      "max_health": 750,
+      "damage_min": 125,
+      "damage_max": 250,
+      "armor": 25,
+      "experience_reward": 250,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "tail",
+        "snaps its pincers at",
+        "is suddenly surrounded by a pale blue light",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "stone_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "wand_of_lightning",
+          "chance": 0.12
+        }
+      ],
+      "_source_file": "beast.json"
+    },
+    {
+      "id": "hellhound",
+      "name": "Hellhound",
+      "description": "The hellhound is a large wolf-type creature that dwells in the firey depths of the volcano.  It glares at you with devilish red eyes, mentally feeding you to its young.  It moves with a certain strut that airs its pride and seems to taunt you with its vicious grin.",
+      "type": "demon",
+      "level": 28,
+      "health": 400,
+      "max_health": 400,
+      "damage_min": 30,
+      "damage_max": 45,
+      "armor": 14,
+      "experience_reward": 280,
+      "gold_reward": [
+        0,
+        60
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "small_bone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        }
+      ],
+      "vnum": 154,
+      "gender": "male",
+      "combat_skill": 90,
+      "can_track": true,
+      "num_attacks": 4,
+      "morale": 35,
+      "_source_file": "demon.json"
+    },
+    {
+      "id": "elite_dwarven_guard",
+      "name": "Elite Dwarven Guard",
+      "description": "This guard closely resembles his lesser brethren, however his equipment is of a finer quality and he appears more agressive and well disciplined. He wears brushed steel scale mail armor and wields a huge battleax engraved with runes along the edge of the blade.",
+      "type": "humanoid",
+      "level": 30,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 27,
+      "damage_max": 42,
+      "armor": 8,
+      "experience_reward": 300,
+      "gold_reward": [
+        0,
+        85
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "battleax"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "vnum": 145,
+      "gender": "male",
+      "combat_skill": 95,
+      "num_attacks": 5,
+      "morale": 10,
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "elven_scout",
+      "name": "Elven Scout",
+      "description": "The elven scout peers at you through its forest green eyes.  The stripes painted on his face warn you that he has come across and slain many an unexpecting traveller.  Your doom awaits.",
+      "type": "humanoid",
+      "level": 30,
+      "health": 300,
+      "max_health": 300,
+      "damage_min": 50,
+      "damage_max": 65,
+      "armor": 10,
+      "experience_reward": 300,
+      "gold_reward": [
+        50,
+        65
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "shortsword",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "white_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "arrow",
+          "chance": 0.6
+        },
+        {
+          "item_id": "quiver",
+          "chance": 0.4
+        },
+        {
+          "item_id": "short_sword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "ruby_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ],
+      "class": "rogue",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "great_dragon",
+      "name": "Great Dragon",
+      "description": "The great dragon has greyish scales and powerful leathery wings. It is without a doubt the most enormous creature you have ever seen, being well over two hundred feet in length. Its talons and teeth are yellowish white, and smoke curls upward from its nostrils as it regards you with amusement.",
+      "type": "dragon",
+      "level": 30,
+      "health": 1200,
+      "max_health": 1200,
+      "damage_min": 120,
+      "damage_max": 360,
+      "armor": 30,
+      "experience_reward": 300,
+      "gold_reward": [
+        0,
+        60
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "abilities": [
+        "huge talons",
+        "spells",
+        "spellcaster"
+      ],
+      "resistances": [
+        "fear"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "dragonscale",
+          "chance": 0.8
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "soul_gem",
+          "chance": 0.5
+        },
+        {
+          "item_id": "warhammer",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.4
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.5
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.35
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ],
+      "vnum": 101,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "can_track": true,
+      "regeneration": 1,
+      "special_attack": {
+        "description": "cruely bit",
+        "chance": 0.65,
+        "damage_min": 320,
+        "damage_max": 960
+      },
+      "spells": {
+        "spell_type": "sorcerer",
+        "spell_skill": 95,
+        "min_level": 6,
+        "max_level": 10
+      },
+      "morale": 35,
+      "_source_file": "dragon.json"
+    },
+    {
+      "id": "ice_elemental",
+      "name": "Ice Elemental",
+      "description": "The ice elemental is a titanic humanoid formed of ice.",
+      "type": "elemental",
+      "level": 30,
+      "health": 1000,
+      "max_health": 1000,
+      "damage_min": 150,
+      "damage_max": 300,
+      "armor": 0,
+      "experience_reward": 300,
+      "gold_reward": [
+        0,
+        60
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "a spear of ice",
+        "attack_all_and_tumble",
+        "spellcaster"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ice_crystal",
+          "chance": 0.9
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "frost_rod",
+          "chance": 0.35
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.6
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.35
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "wand_of_lightning",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ],
+      "vnum": 122,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "regeneration": 5,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "discharged a shower of ice shards at",
+        "chance": 0.35,
+        "damage_min": 300,
+        "damage_max": 600
+      },
+      "spells": {
+        "spell_type": "sorcerer",
+        "spell_skill": 0,
+        "min_level": 0,
+        "max_level": 1
+      },
+      "_source_file": "elemental.json"
+    },
+    {
+      "id": "female_elf",
+      "name": "Female Elf",
+      "description": "Despite being female, this elf resembles a modern-day war machine. She moves blindingly fast, striking at any possible moment.  Though a good fight is her forte, she is also amazingly beautiful, as female elves always seem to be.",
+      "type": "humanoid",
+      "level": 32,
+      "health": 350,
+      "max_health": 350,
+      "damage_min": 55,
+      "damage_max": 75,
+      "armor": 12,
+      "experience_reward": 320,
+      "gold_reward": [
+        50,
+        65
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "shortsword",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "black_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "elven_warrior",
+      "name": "Elven Warrior",
+      "description": "This elven warrior is built like a tree, and oddly enough blends in with the trees as well, a warrior of a stealthy sort.  He wields an axe that must have been crafted by the dwarves and enchanted by the high elves.  He is certainly a force to be reckoned with.",
+      "type": "humanoid",
+      "level": 33,
+      "health": 350,
+      "max_health": 350,
+      "damage_min": 90,
+      "damage_max": 125,
+      "armor": 20,
+      "experience_reward": 330,
+      "gold_reward": [
+        9,
+        141
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "enchanted axe"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "black_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "warhammer",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cuirass",
+          "chance": 0.3
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.25
+        },
+        {
+          "item_id": "stone_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "vnum": 158,
+      "gender": "male",
+      "combat_skill": 95,
+      "num_attacks": 2,
+      "morale": 25,
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "magma_slug",
+      "name": "Magma Slug",
+      "description": "The magma slug is a gigantic slug that is covered in magma.  Its maw rumbles with fury as it looks to burn you alive with its own magma.",
+      "type": "beast",
+      "level": 35,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 80,
+      "damage_max": 115,
+      "armor": 18,
+      "experience_reward": 350,
+      "gold_reward": [
+        40,
+        55
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "maw",
+        "unloaded a wad of magma"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.25
+        },
+        {
+          "item_id": "dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ],
+      "_source_file": "beast.json"
+    },
+    {
+      "id": "elven_champion",
+      "name": "Elven Champion",
+      "description": "This elven champion is built like a mountain.  There seems to be no escape from this warrior of warriors, a man's man -- only an elf. He wields a great sword that shines like the moons on a good night. Only the most powerful elves can craft such a beast.",
+      "type": "humanoid",
+      "level": 37,
+      "health": 450,
+      "max_health": 450,
+      "damage_min": 100,
+      "damage_max": 155,
+      "armor": 25,
+      "experience_reward": 370,
+      "gold_reward": [
+        80,
+        95
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "shining sword",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "white_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.6
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.5
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.35
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "dwarven_captain",
+      "name": "Dwarven Captain",
+      "description": "This grim warrior appears to have seen more than his share of battle, and seems utterly fearless. His dwarven mail is of fine quality and each scale has finely engraved runic designs. He wields a battleax with a haft easily four feet long and a blade blacker than night.",
+      "type": "humanoid",
+      "level": 40,
+      "health": 800,
+      "max_health": 800,
+      "damage_min": 38,
+      "damage_max": 53,
+      "armor": 12,
+      "experience_reward": 400,
+      "gold_reward": [
+        45,
+        60
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "bronze_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "dwarven_scalemail",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dwarven_battleax",
+          "chance": 0.3
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "ruby_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gold_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "stone_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "master_smith",
+      "name": "Master Smith",
+      "description": "This older dwarf is gnarled and bulging with muscle. His leathers smeared with grime and sweat. He seems very calm and at one with his surrounds. The great hammer he cradles in his arms is forged of a dull bluish metal, and almost seems to glow dimly.",
+      "type": "humanoid",
+      "level": 40,
+      "health": 800,
+      "max_health": 800,
+      "damage_min": 40,
+      "damage_max": 100,
+      "armor": 4,
+      "experience_reward": 400,
+      "gold_reward": [
+        20,
+        35
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "great hammer"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rusty_dagger",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "flame_elemental",
+      "name": "Flame Elemental",
+      "description": "The flame elemental is a titanic humanoid formed of flame.",
+      "type": "elemental",
+      "level": 40,
+      "health": 1500,
+      "max_health": 1500,
+      "damage_min": 200,
+      "damage_max": 400,
+      "armor": 0,
+      "experience_reward": 400,
+      "gold_reward": [
+        0,
+        80
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "a bolt of flame",
+        "attack_all_and_tumble"
+      ],
+      "loot_table": [
+        {
+          "item_id": "flame_crystal",
+          "chance": 0.9
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.3
+        },
+        {
+          "item_id": "flaming_staff",
+          "chance": 0.25
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.6
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "horn_of_frost",
+          "chance": 0.35
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rimeax",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ],
+      "vnum": 123,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "can_track": true,
+      "regeneration": 5,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "discharged a cloud of flames at",
+        "chance": 0.35,
+        "damage_min": 400,
+        "damage_max": 800
+      },
+      "_source_file": "elemental.json"
+    },
+    {
+      "id": "elven_warlord",
+      "name": "Elven Warlord",
+      "description": "This elven warlord is about to knock some sense into you with his warhammer.  His evil eyes seem to hypnotize you into giving in to your imminent death.",
+      "type": "humanoid",
+      "level": 44,
+      "health": 550,
+      "max_health": 550,
+      "damage_min": 110,
+      "damage_max": 185,
+      "armor": 30,
+      "experience_reward": 440,
+      "gold_reward": [
+        110,
+        125
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "warhammer",
+        "gutted",
+        "tracking",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "elven_bow",
+          "chance": 0.5
+        },
+        {
+          "item_id": "black_rose",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.5
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.45
+        },
+        {
+          "item_id": "ruby_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "dwarven_leutenant",
+      "name": "Dwarven Leutenant",
+      "description": "This dwarven officer wears scale armor of the finest quality and brandishes a huge battleaxe of fine make with an extraordinarily keen edge. He seems very dignified and confidant.",
+      "type": "humanoid",
+      "level": 45,
+      "health": 900,
+      "max_health": 900,
+      "damage_min": 41,
+      "damage_max": 66,
+      "armor": 15,
+      "experience_reward": 450,
+      "gold_reward": [
+        95,
+        110
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "copper_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.35
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "tigereye_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pyrehammer",
+          "chance": 0.12
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "orc_subchief",
+      "name": "Orc Subchief",
+      "description": "The orc subchief is a smallish humanoid with piglike facial features and is covered sparsely by coarse body hair. He stands over five feet in height, is wearing chainmail armor, and is armed with {0} {1}.",
+      "type": "humanoid",
+      "level": 50,
+      "health": 500,
+      "max_health": 500,
+      "damage_min": 0,
+      "damage_max": 0,
+      "armor": 6,
+      "experience_reward": 500,
+      "gold_reward": [
+        0,
+        104
+      ],
+      "aggressive": false,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "goblin_ear",
+          "chance": 0.5
+        },
+        {
+          "item_id": "tattered_cloth",
+          "chance": 0.4
+        },
+        {
+          "item_id": "cheese",
+          "chance": 0.3
+        },
+        {
+          "item_id": "stick",
+          "chance": 0.25
+        },
+        {
+          "item_id": "leather_armor",
+          "chance": 0.2
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "knife",
+          "chance": 0.2
+        },
+        {
+          "item_id": "rope",
+          "chance": 0.2
+        },
+        {
+          "item_id": "battleax",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ringmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "quartz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "vnum": 127,
+      "gender": "male",
+      "combat_skill": 85,
+      "num_attacks": 2,
+      "morale": 30,
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "dwarven_warlord",
+      "name": "Dwarven Warlord",
+      "description": "This ruthless dwarven battle chief is dressed in heavy scale armor made of a dull bluish metal that seems to absorb light. The weapon in his hands is an enormous battleax with a haft of dark grey wood and a head forged of the same strange metal as his armor. Dimly glowing runes adorn the head of his axe along the edges of the blades.",
+      "type": "humanoid",
+      "level": 50,
+      "health": 1000,
+      "max_health": 1000,
+      "damage_min": 43,
+      "damage_max": 83,
+      "armor": 20,
+      "experience_reward": 500,
+      "gold_reward": [
+        145,
+        160
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "battleax",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "silver_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.4
+        },
+        {
+          "item_id": "dragonscale",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.4
+        },
+        {
+          "item_id": "jade_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "topaz_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "dragon_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "dwarven_archmage",
+      "name": "Dwarven Archmage",
+      "description": "The dwarven archmage has an obvious callousness about his expression, and appears no one to be trifled with. He radiates incredible power. He wears robes of a deep purple hue. He carries a black sceptre topped with some sort of brightly glowing crystal.",
+      "type": "humanoid",
+      "level": 50,
+      "health": 600,
+      "max_health": 600,
+      "damage_min": 21,
+      "damage_max": 26,
+      "armor": 1,
+      "experience_reward": 500,
+      "gold_reward": [
+        95,
+        110
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "black sceptre",
+        "discharges his sceptre at",
+        "multiattack"
+      ],
+      "spellcaster": true,
+      "spell_skill": 95,
+      "loot_table": [
+        {
+          "item_id": "ancient_coin",
+          "chance": 0.3
+        },
+        {
+          "item_id": "bone_fragment",
+          "chance": 0.4
+        },
+        {
+          "item_id": "iron_key",
+          "chance": 0.3
+        },
+        {
+          "item_id": "runestaff",
+          "chance": 0.4
+        },
+        {
+          "item_id": "scroll_fireball",
+          "chance": 0.35
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "vervain_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.35
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.3
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "electrum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "zarynthium_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "onyx_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "gome_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ],
+      "class": "sorcerer",
+      "_source_file": "humanoid.json"
+    },
+    {
+      "id": "stone_elemental",
+      "name": "Stone Elemental",
+      "description": "The stone elemental is a titanic humanoid formed of stone.",
+      "type": "elemental",
+      "level": 50,
+      "health": 2000,
+      "max_health": 2000,
+      "damage_min": 250,
+      "damage_max": 500,
+      "armor": 50,
+      "experience_reward": 500,
+      "gold_reward": [
+        0,
+        100
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "multiattack",
+        "huge stone fist",
+        "attack_all_and_tumble"
+      ],
+      "loot_table": [
+        {
+          "item_id": "stone",
+          "chance": 0.9
+        },
+        {
+          "item_id": "morningstar",
+          "chance": 0.3
+        },
+        {
+          "item_id": "manastone",
+          "chance": 0.6
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.4
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.35
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "platinum_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "ancient_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_power",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.12
+        },
+        {
+          "item_id": "demonhide",
+          "chance": 0.1
+        }
+      ],
+      "vnum": 124,
+      "gender": "neuter",
+      "combat_skill": 99,
+      "can_track": true,
+      "regeneration": 5,
+      "num_attacks": 2,
+      "special_attack": {
+        "description": "stepped on",
+        "chance": 0.35,
+        "damage_min": 500,
+        "damage_max": 1000
+      },
+      "_source_file": "elemental.json"
+    },
+    {
+      "id": "mystic_knight",
+      "name": "Mystic Knight",
+      "description": "The mystic knight has the look of a well seasoned warrior who has seen many a battle in his time. His gear and clothing are the finest available. He is wearing glowing dragonscale armor and wielding a jeweled claymore. Somehow you are aware that he could easily defeat you.",
+      "type": "humanoid",
+      "level": 60,
+      "health": 2500,
+      "max_health": 2500,
+      "damage_min": 100,
+      "damage_max": 600,
+      "armor": 50,
+      "experience_reward": 600,
+      "gold_reward": [
+        0,
+        0
+      ],
+      "aggressive": true,
+      "speed": 1.0,
+      "abilities": [
+        "jeweled claymore",
+        "regeneration",
+        "multiattack"
+      ],
+      "loot_table": [
+        {
+          "item_id": "knife",
+          "chance": 0.4
+        },
+        {
+          "item_id": "chainmail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.35
+        },
+        {
+          "item_id": "broadsword",
+          "chance": 0.35
+        },
+        {
+          "item_id": "platemail",
+          "chance": 0.3
+        },
+        {
+          "item_id": "enchanted_blade",
+          "chance": 0.3
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.25
+        },
+        {
+          "item_id": "levinblade",
+          "chance": 0.25
+        },
+        {
+          "item_id": "rue_potion",
+          "chance": 0.3
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.25
+        },
+        {
+          "item_id": "amaranth_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "pearl_key",
+          "chance": 0.15
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.15
+        },
+        {
+          "item_id": "opal_key",
+          "chance": 0.2
+        },
+        {
+          "item_id": "anemone_potion",
+          "chance": 0.2
+        },
+        {
+          "item_id": "strato_ring",
+          "chance": 0.15
+        },
+        {
+          "item_id": "rod_of_flame",
+          "chance": 0.12
+        },
+        {
+          "item_id": "soulstone",
+          "chance": 0.15
+        },
+        {
+          "item_id": "mithril_sword",
+          "chance": 0.12
+        },
+        {
+          "item_id": "champion_armor",
+          "chance": 0.1
+        }
+      ],
+      "class": "fighter",
+      "_source_file": "humanoid.json"
+    }
+  ]
+}

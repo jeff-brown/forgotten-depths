@@ -1,0 +1,116 @@
+{
+  "summons": {
+    "kusamuda": {
+      "id": "kusamuda_summon",
+      "name": "Animated Skeleton",
+      "description": "A skeletal warrior animated by dark magic. Its bones rattle as it moves, and its empty eye sockets glow with an eerie green light.",
+      "type": "undead",
+      "level": 2,
+      "max_health": 20,
+      "damage_min": 2,
+      "damage_max": 6,
+      "armor_class": 2,
+      "combat_skill": 75,
+      "speed": 1.0,
+      "num_attacks": 1,
+      "weapon_name": "bony fists",
+      "resistances": ["poison", "fear"],
+      "weaknesses": ["holy", "bludgeoning"],
+      "aggressive": false,
+      "can_track": false,
+      "morale": 0,
+      "regeneration": 0
+    },
+    "muda": {
+      "id": "muda_summon",
+      "name": "Shadow Wolf",
+      "description": "A wolf-like creature formed from living shadow. Its form flickers and shifts, never quite solid, with burning red eyes that pierce the darkness.",
+      "type": "beast",
+      "level": 4,
+      "max_health": 35,
+      "damage_min": 3,
+      "damage_max": 10,
+      "armor_class": 3,
+      "combat_skill": 80,
+      "speed": 1.2,
+      "num_attacks": 2,
+      "weapon_name": "shadow fangs",
+      "resistances": ["dark"],
+      "weaknesses": ["holy", "light"],
+      "aggressive": false,
+      "can_track": true,
+      "morale": 0,
+      "regeneration": 1
+    },
+    "gimuda": {
+      "id": "gimuda_summon",
+      "name": "Earth Elemental",
+      "description": "A hulking humanoid form composed of stone and earth. Moss grows across its rocky surface, and each step it takes causes the ground to tremble.",
+      "type": "elemental",
+      "level": 6,
+      "max_health": 60,
+      "damage_min": 5,
+      "damage_max": 15,
+      "armor_class": 6,
+      "combat_skill": 85,
+      "speed": 0.8,
+      "num_attacks": 1,
+      "weapon_name": "stone fists",
+      "resistances": ["physical", "poison"],
+      "weaknesses": ["lightning"],
+      "aggressive": false,
+      "can_track": false,
+      "morale": 0,
+      "regeneration": 2,
+      "abilities": [
+        {
+          "id": "ground_slam",
+          "name": "Ground Slam",
+          "description": "Slams the ground with tremendous force",
+          "type": "active",
+          "cooldown": 30,
+          "damage": "3d6",
+          "effect": "stun"
+        }
+      ]
+    },
+    "kamuda": {
+      "id": "kamuda_summon",
+      "name": "Flame Atronach",
+      "description": "A towering humanoid figure wreathed in flames. Its body is pure fire given form, crackling and dancing with destructive energy. Heat radiates from it in waves.",
+      "type": "elemental",
+      "level": 8,
+      "max_health": 80,
+      "damage_min": 8,
+      "damage_max": 20,
+      "armor_class": 4,
+      "combat_skill": 90,
+      "speed": 1.0,
+      "num_attacks": 2,
+      "weapon_name": "flaming strikes",
+      "attack_effect": {
+        "id": 2,
+        "name": "Burn",
+        "min": 2,
+        "max": 5
+      },
+      "resistances": ["fire"],
+      "weaknesses": ["cold", "water"],
+      "aggressive": false,
+      "can_track": false,
+      "morale": 0,
+      "regeneration": 3,
+      "abilities": [
+        {
+          "id": "fireball",
+          "name": "Fireball",
+          "description": "Hurls a ball of flame at an enemy",
+          "type": "active",
+          "cooldown": 25,
+          "damage": "4d6",
+          "damage_type": "fire"
+        }
+      ]
+    }
+  }
+}

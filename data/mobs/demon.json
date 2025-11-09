@@ -40,10 +40,25 @@
         }
       ],
       "vnum": 10,
-      "gender": "neuter",
+      "gender": {
+        "id": 0,
+        "name": "Neuter",
+        "pronoun": "Its",
+        "objective": "It",
+        "noun": "It"
+      },
       "combat_skill": 85,
       "num_attacks": 2,
-      "morale": 75
+      "morale": 75,
+      "plural": "imps",
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "",
+      "terrain": {
+        "id": 0,
+        "name": "Unknown"
+      },
+      "treasure_code": 3
     },
     {
       "id": "lesser_demoness",
@@ -95,7 +110,13 @@
         }
       ],
       "vnum": 21,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 80,
       "can_track": true,
       "spells": {
@@ -104,7 +125,28 @@
         "min_level": 0,
         "max_level": 4
       },
-      "morale": 25
+      "morale": 25,
+      "plural": "lesser demonesses",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 80,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 0,
+        "max_level": 4
+      },
+      "treasure_code": 3
     },
     {
       "id": "lesser_demon",
@@ -156,7 +198,13 @@
         }
       ],
       "vnum": 22,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 85,
       "can_track": true,
       "spells": {
@@ -165,7 +213,28 @@
         "min_level": 1,
         "max_level": 5
       },
-      "morale": 20
+      "morale": 20,
+      "plural": "lesser demons",
+      "regeneration": 0,
+      "weapon_name": "claws",
+      "num_attacks": 1,
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 75,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 1,
+        "max_level": 5
+      },
+      "treasure_code": 4
     },
     {
       "id": "female_affreet",
@@ -218,7 +287,52 @@
           "item_id": "rue_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 81,
+      "plural": "female affreeti",
+      "morale": 20,
+      "combat_skill": 85,
+      "regeneration": 0,
+      "can_track": true,
+      "weapon_name": "glowing sword",
+      "num_attacks": 1,
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
+      "terrain": {
+        "id": 8,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "discharged a cloud of flame at",
+        "chance_percent": 15,
+        "min_damage": 10,
+        "max_damage": 80
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 10
     },
     {
       "id": "affreet",
@@ -272,7 +386,52 @@
           "item_id": "amaranth_potion",
           "chance": 0.25
         }
-      ]
+      ],
+      "vnum": 82,
+      "plural": "affreeti",
+      "morale": 15,
+      "combat_skill": 90,
+      "regeneration": 0,
+      "can_track": false,
+      "weapon_name": "glowing sword",
+      "num_attacks": 1,
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
+      "terrain": {
+        "id": 8,
+        "name": "Unknown"
+      },
+      "sub_type": "Normal",
+      "special_attack": {
+        "description": "discharged a cloud of flame at",
+        "chance_percent": 15,
+        "min_damage": 20,
+        "max_damage": 100
+      },
+      "special_ability": {
+        "id": 0,
+        "name": "None",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 0,
+        "type_id": 0,
+        "type_name": "None",
+        "min_level": 0,
+        "max_level": 0
+      },
+      "attack_effect": {
+        "id": 0,
+        "name": "None",
+        "min": 0,
+        "max": 0
+      },
+      "treasure_code": 15
     },
     {
       "id": "greater_demoness",
@@ -342,7 +501,13 @@
         }
       ],
       "vnum": 89,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 85,
       "can_track": true,
       "regeneration": 1,
@@ -353,7 +518,26 @@
         "min_level": 3,
         "max_level": 7
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "greater demonesses",
+      "weapon_name": "flaming sword",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 85,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 3,
+        "max_level": 7
+      },
+      "treasure_code": 25
     },
     {
       "id": "greater_demon",
@@ -423,7 +607,13 @@
         }
       ],
       "vnum": 90,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 90,
       "can_track": true,
       "regeneration": 1,
@@ -434,7 +624,26 @@
         "min_level": 3,
         "max_level": 7
       },
-      "morale": 10
+      "morale": 10,
+      "plural": "greater demons",
+      "weapon_name": "flaming sword",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 80,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 3,
+        "max_level": 7
+      },
+      "treasure_code": 40
     },
     {
       "id": "arch_demoness",
@@ -540,7 +749,13 @@
         }
       ],
       "vnum": 98,
-      "gender": "female",
+      "gender": {
+        "id": 2,
+        "name": "Female",
+        "pronoun": "Her",
+        "objective": "Her",
+        "noun": "She"
+      },
       "combat_skill": 90,
       "regeneration": 1,
       "num_attacks": 2,
@@ -550,7 +765,27 @@
         "min_level": 3,
         "max_level": 8
       },
-      "morale": 15
+      "morale": 15,
+      "plural": "arch demonesses",
+      "can_track": false,
+      "weapon_name": "huge bardiche",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 90,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 3,
+        "max_level": 8
+      },
+      "treasure_code": 40
     },
     {
       "id": "arch_demon",
@@ -656,7 +891,13 @@
         }
       ],
       "vnum": 99,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 95,
       "regeneration": 1,
       "num_attacks": 2,
@@ -666,7 +907,27 @@
         "min_level": 3,
         "max_level": 8
       },
-      "morale": 10
+      "morale": 10,
+      "plural": "arch demons",
+      "can_track": false,
+      "weapon_name": "huge bardiche",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 85,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 3,
+        "max_level": 8
+      },
+      "treasure_code": 90
     },
     {
       "id": "demon_king",
@@ -784,16 +1045,22 @@
         }
       ],
       "vnum": 100,
-      "gender": "male",
+      "gender": {
+        "id": 1,
+        "name": "Male",
+        "pronoun": "His",
+        "objective": "Him",
+        "noun": "He"
+      },
       "combat_skill": 99,
       "can_track": true,
       "regeneration": 1,
       "num_attacks": 2,
       "special_attack": {
         "description": "discharged a blast of dark energy at",
-        "chance": 0.65,
-        "damage_min": 0,
-        "damage_max": 0
+        "chance_percent": 65,
+        "min_damage": 0,
+        "max_damage": 0
       },
       "spells": {
         "spell_type": "necrolyte",
@@ -801,93 +1068,26 @@
         "min_level": 3,
         "max_level": 14
       },
-      "morale": 20
-    },
-    {
-      "id": "hellhound",
-      "name": "Hellhound",
-      "description": "The hellhound is a large wolf-type creature that dwells in the firey depths of the volcano.  It glares at you with devilish red eyes, mentally feeding you to its young.  It moves with a certain strut that airs its pride and seems to taunt you with its vicious grin.",
-      "type": "demon",
-      "level": 28,
-      "health": 400,
-      "max_health": 400,
-      "damage_min": 30,
-      "damage_max": 45,
-      "armor": 14,
-      "experience_reward": 280,
-      "gold_reward": [
-        0,
-        60
-      ],
-      "aggressive": false,
-      "speed": 1.0,
-      "abilities": [
-        "multiattack"
-      ],
-      "loot_table": [
-        {
-          "item_id": "ancient_coin",
-          "chance": 0.3
-        },
-        {
-          "item_id": "bone_fragment",
-          "chance": 0.4
-        },
-        {
-          "item_id": "tattered_cloth",
-          "chance": 0.3
-        },
-        {
-          "item_id": "small_bone",
-          "chance": 0.25
-        },
-        {
-          "item_id": "dagger",
-          "chance": 0.2
-        },
-        {
-          "item_id": "rue_potion",
-          "chance": 0.3
-        },
-        {
-          "item_id": "amaranth_potion",
-          "chance": 0.25
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "pearl_key",
-          "chance": 0.15
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.15
-        },
-        {
-          "item_id": "topaz_key",
-          "chance": 0.2
-        },
-        {
-          "item_id": "anemone_potion",
-          "chance": 0.2
-        },
-        {
-          "item_id": "ancient_ring",
-          "chance": 0.15
-        },
-        {
-          "item_id": "horn_of_frost",
-          "chance": 0.12
-        }
-      ],
-      "vnum": 154,
-      "gender": "male",
-      "combat_skill": 90,
-      "can_track": true,
-      "num_attacks": 4,
-      "morale": 35
+      "morale": 20,
+      "plural": "demon kings",
+      "weapon_name": "glowing sabre",
+      "terrain": {
+        "id": 10,
+        "name": "Special"
+      },
+      "special_ability": {
+        "id": 7,
+        "name": "Spells",
+        "description": ""
+      },
+      "spell_casting": {
+        "skill": 90,
+        "type_id": 4,
+        "type_name": "Necrolyte",
+        "min_level": 3,
+        "max_level": 14
+      },
+      "treasure_code": 200
     }
   ]
 }

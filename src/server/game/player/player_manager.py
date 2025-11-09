@@ -72,6 +72,14 @@ class PlayerManager:
                     del self.logged_in_usernames[username]
                     self.logger.info(f"User '{username}' logged out")
 
+                # Clean up summoned creatures if this player is a party leader
+                character = player_data.get('character')
+                if character:
+                    await self._despawn_player_summons(player_id, character, room_id)
+
+                    # Disband party if this player is the leader
+                    await self._disband_party_on_leader_disconnect(player_id, character)
+
             # Save character if authenticated
             if player_data.get('character') and player_data.get('authenticated'):
                 self.save_player_character(player_id, player_data['character'])
@@ -421,6 +429,12 @@ class PlayerManager:
 
             await self.game_engine.world_manager.send_room_description(player_id, detailed=False)
 
+            # Move followers if any players are following this player
+            await self._move_followers(player_id, current_room, new_room, full_direction, username)
+
+            # Move summoned creatures if this player is a party leader with summons
+            await self._move_summons(player_id, current_room, new_room, full_direction, username)
+
             # Send vendor greeting from the room being entered
             if hasattr(self.game_engine, 'vendor_system'):
                 await self.game_engine.vendor_system.send_vendor_greeting(player_id, new_room)
@@ -542,6 +556,336 @@ class PlayerManager:
                     )
 
             logger.info(f"[FOLLOW] {mob_name} followed player from {old_room_id} to {new_room_id} via {direction}")
+
+    async def _move_followers(self, leader_id: int, old_room_id: str, new_room_id: str, direction: str, leader_name: str):
+        """Move any players who are following this player.
+
+        Args:
+            leader_id: The player who just moved
+            old_room_id: The room the leader left
+            new_room_id: The room the leader entered
+            direction: The direction the leader moved
+            leader_name: The name of the leader (for messages)
+        """
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        # Find all players following this leader
+        for follower_id, follower_data in self.connected_players.items():
+            if follower_id == leader_id:
+                continue
+
+            follower_char = follower_data.get('character')
+            if not follower_char:
+                continue
+
+            # Check if this player is following the leader
+            if follower_char.get('following') != leader_id:
+                continue
+
+            # Check if follower is in the same room as the old room (where leader was)
+            if follower_char.get('room_id') != old_room_id:
+                # Follower lost the leader
+                follower_name = follower_data.get('username', 'Someone')
+                await self.connection_manager.send_message(
+                    follower_id,
+                    f"You lose sight of {leader_name} and stop following."
+                )
+                follower_char['following'] = None
+                # Remove from leader's followers list
+                leader_data = self.connected_players.get(leader_id)
+                if leader_data and leader_data.get('character'):
+                    leader_char = leader_data['character']
+                    if 'followers' in leader_char and follower_id in leader_char['followers']:
+                        leader_char['followers'].remove(follower_id)
+                continue
+
+            # Check if follower is in combat - cannot follow while fighting
+            if follower_id in self.game_engine.combat_system.player_combats:
+                follower_name = follower_data.get('username', 'Someone')
+                await self.connection_manager.send_message(
+                    follower_id,
+                    f"You are in combat and cannot follow {leader_name}!"
+                )
+                continue
+
+            # Check if follower is fatigued
+            if self.game_engine.combat_system.is_player_fatigued(follower_id):
+                follower_name = follower_data.get('username', 'Someone')
+                fatigue_time = self.game_engine.combat_system.get_player_fatigue_remaining(follower_id)
+                await self.connection_manager.send_message(
+                    follower_id,
+                    f"You are too exhausted to follow {leader_name}! Wait {fatigue_time:.1f} more seconds."
+                )
+                continue
+
+            # Check if follower is paralyzed
+            active_effects = follower_char.get('active_effects', [])
+            is_paralyzed = any(
+                effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze'
+                for effect in active_effects
+            )
+            if is_paralyzed:
+                await self.connection_manager.send_message(
+                    follower_id,
+                    f"You are paralyzed and cannot follow {leader_name}!"
+                )
+                continue
+
+            # Move the follower
+            follower_name = follower_data.get('username', 'Someone')
+            logger.info(f"[PARTY_FOLLOW] {follower_name} (ID {follower_id}) following {leader_name} {direction}")
+
+            # Notify others in old room that follower is leaving
+            await self.notify_room_except_player(
+                old_room_id,
+                follower_id,
+                f"{follower_name} follows {leader_name} {direction}."
+            )
+
+            # Move follower to new room
+            follower_char['room_id'] = new_room_id
+
+            # Track visited rooms
+            if 'visited_rooms' not in follower_char:
+                follower_char['visited_rooms'] = set()
+            if isinstance(follower_char['visited_rooms'], list):
+                follower_char['visited_rooms'] = set(follower_char['visited_rooms'])
+            follower_char['visited_rooms'].add(new_room_id)
+
+            # Notify follower
+            await self.connection_manager.send_message(
+                follower_id,
+                f"You follow {leader_name} {direction}."
+            )
+
+            # Notify others in new room
+            opposite_direction = self._get_opposite_direction(direction)
+            if opposite_direction:
+                await self.notify_room_except_player(
+                    new_room_id,
+                    follower_id,
+                    f"{follower_name} has just arrived from {opposite_direction}, following {leader_name}."
+                )
+            else:
+                await self.notify_room_except_player(
+                    new_room_id,
+                    follower_id,
+                    f"{follower_name} has just arrived, following {leader_name}."
+                )
+
+            # Send room description to follower
+            await self.game_engine.world_manager.send_room_description(follower_id, detailed=False)
+
+            logger.info(f"[PARTY_FOLLOW] {follower_name} successfully followed to {new_room_id}")
+
+    async def _move_summons(self, leader_id: int, old_room_id: str, new_room_id: str, direction: str, leader_name: str):
+        """Move any summoned creatures belonging to this player's party.
+
+        Args:
+            leader_id: The player who just moved
+            old_room_id: The room the player left
+            new_room_id: The room the player entered
+            direction: The direction the player moved
+            leader_name: The name of the player (for messages)
+        """
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        # Get the player's character
+        player_data = self.connected_players.get(leader_id)
+        if not player_data or not player_data.get('character'):
+            return
+
+        character = player_data['character']
+        party_leader_id = character.get('party_leader', leader_id)
+
+        # Get the party leader's character to access summons
+        if party_leader_id == leader_id:
+            leader_char = character
+        else:
+            leader_player_data = self.connected_players.get(party_leader_id)
+            if not leader_player_data or not leader_player_data.get('character'):
+                return
+            leader_char = leader_player_data['character']
+
+        # Get list of summoned party members from the party leader
+        summoned_members = leader_char.get('summoned_party_members', [])
+        if not summoned_members:
+            return
+
+        # Find summons in the old room that belong to this party
+        if old_room_id not in self.game_engine.room_mobs:
+            return
+
+        mobs_in_old_room = self.game_engine.room_mobs[old_room_id]
+        mobs_to_move = []
+
+        for mob in mobs_in_old_room:
+            if not mob:
+                continue
+
+            # Check if this is a summoned creature belonging to our party
+            summon_id = mob.get('summon_instance_id')
+            if summon_id and summon_id in summoned_members:
+                # Check if summon's party leader matches (extra safety check)
+                if mob.get('party_leader') == party_leader_id:
+                    mobs_to_move.append(mob)
+
+        # Move each summon
+        for mob in mobs_to_move:
+            mob_name = mob.get('name', 'creature')
+
+            # Notify old room
+            await self.game_engine._notify_room_players_sync(
+                old_room_id,
+                f"{mob_name} follows {leader_name} {direction}."
+            )
+
+            # Remove from old room
+            self.game_engine.room_mobs[old_room_id].remove(mob)
+
+            # Add to new room
+            if new_room_id not in self.game_engine.room_mobs:
+                self.game_engine.room_mobs[new_room_id] = []
+            self.game_engine.room_mobs[new_room_id].append(mob)
+
+            # Notify new room
+            opposite_direction = self._get_opposite_direction(direction)
+            if opposite_direction:
+                await self.game_engine._notify_room_players_sync(
+                    new_room_id,
+                    f"{mob_name} has just arrived from {opposite_direction}, following {leader_name}."
+                )
+            else:
+                await self.game_engine._notify_room_players_sync(
+                    new_room_id,
+                    f"{mob_name} has just arrived, following {leader_name}."
+                )
+
+            logger.info(f"[SUMMON_FOLLOW] {mob_name} (summon of {leader_name}) followed from {old_room_id} to {new_room_id} via {direction}")
+
+    async def _despawn_player_summons(self, player_id: int, character: dict, room_id: str):
+        """Despawn all summoned creatures belonging to a player when they logout or die.
+
+        Args:
+            player_id: The player ID
+            character: The player's character data
+            room_id: The room where the player is/was
+        """
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        # Check if this player is a party leader with summons
+        party_leader_id = character.get('party_leader', player_id)
+        if party_leader_id != player_id:
+            # Not a party leader, no summons to clean up
+            return
+
+        summoned_members = character.get('summoned_party_members', [])
+        if not summoned_members:
+            return
+
+        # Find and remove all summons across all rooms
+        rooms_with_summons = []
+        for room_check_id, mobs in list(self.game_engine.room_mobs.items()):
+            for mob in mobs[:]:  # Create copy to avoid modification during iteration
+                if not mob:
+                    continue
+
+                summon_id = mob.get('summon_instance_id')
+                if summon_id and summon_id in summoned_members:
+                    # This is one of the player's summons
+                    mob_name = mob.get('name', 'creature')
+
+                    # Notify room that summon is despawning
+                    await self.game_engine._notify_room_players_sync(
+                        room_check_id,
+                        f"{mob_name} fades away as its summoner departs."
+                    )
+
+                    # Remove summon from room
+                    self.game_engine.room_mobs[room_check_id].remove(mob)
+
+                    logger.info(f"[SUMMON_DESPAWN] Despawned {mob_name} (summon of player {player_id}) from room {room_check_id} due to player disconnect")
+
+        # Clear summoned party members list
+        character['summoned_party_members'] = []
+
+    async def _disband_party_on_leader_disconnect(self, player_id: int, character: dict):
+        """Disband the party when the party leader disconnects.
+
+        Args:
+            player_id: The disconnecting player's ID
+            character: The disconnecting player's character data
+        """
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        # Check if this player is a party leader
+        party_leader_id = character.get('party_leader', player_id)
+        if party_leader_id != player_id:
+            # Not a leader, just remove from their leader's party
+            leader_player_data = self.connected_players.get(party_leader_id)
+            if leader_player_data and leader_player_data.get('character'):
+                leader_char = leader_player_data['character']
+                party_members = leader_char.get('party_members', [])
+                if player_id in party_members:
+                    party_members.remove(player_id)
+                    logger.info(f"[PARTY] Removed disconnecting player {player_id} from party leader {party_leader_id}'s party")
+            return
+
+        # Player is a party leader - check if they have party members
+        party_members = character.get('party_members', [player_id])
+
+        # If only member is themselves, nothing to do
+        if len(party_members) <= 1:
+            return
+
+        logger.info(f"[PARTY] Disbanding party for disconnecting leader {player_id} ({character.get('name')})")
+
+        # Notify all party members that the party is being disbanded
+        leader_name = character.get('name', 'The party leader')
+
+        for member_id in party_members:
+            if member_id == player_id:
+                continue  # Skip the disconnecting leader
+
+            # Get member's character - use actual reference from connected_players
+            member_player_data = self.connected_players.get(member_id)
+            if member_player_data and member_player_data.get('character'):
+                member_char = member_player_data['character']
+
+                # Reset member's party data
+                member_char['party_leader'] = member_id
+                if 'party_members' in member_char:
+                    del member_char['party_members']
+
+                # Clear following status if following anyone
+                if member_char.get('following'):
+                    following_id = member_char.get('following')
+                    member_char['following'] = None
+
+                    # Remove from target's followers list if still connected
+                    if following_id in self.connected_players:
+                        target_data = self.connected_players[following_id]
+                        if target_data.get('character'):
+                            target_char = target_data['character']
+                            if 'followers' in target_char and member_id in target_char['followers']:
+                                target_char['followers'].remove(member_id)
+
+                # Notify member
+                await self.connection_manager.send_message(
+                    member_id,
+                    f"{leader_name} has left the game. The party has been disbanded."
+                )
+
+                logger.info(f"[PARTY] Removed player {member_id} from disbanded party")
+
+        # Clear leader's party data
+        character['party_leader'] = player_id
+        if 'party_members' in character:
+            del character['party_members']
 
     async def notify_room_except_player(self, room_id: str, exclude_player_id: int, message: str):
         """Send a message to all players in a room except the specified player."""

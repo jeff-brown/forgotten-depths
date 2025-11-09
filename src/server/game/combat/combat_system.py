@@ -1265,6 +1265,7 @@ class CombatSystem:
 
                 # Filter out None values and make a copy to avoid modification during iteration
                 valid_mobs = [mob for mob in mobs if mob is not None and isinstance(mob, dict)]
+
                 for mob in valid_mobs:
                     await self.process_single_mob_ai(mob, room_id)
         except Exception as e:
@@ -1295,8 +1296,8 @@ class CombatSystem:
                 if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
                     return
 
-            # Skip if not hostile
-            if mob.get('type') != 'hostile':
+            # Skip if not hostile (unless it's a summoned creature - they attack hostile mobs)
+            if mob.get('type') != 'hostile' and not mob.get('is_summoned'):
                 return
 
             # Check if mob has aggro target from attacks
@@ -1355,11 +1356,22 @@ class CombatSystem:
                     if fled:
                         return  # Mob fled, don't attack
 
-            # Find players in the same room (prioritize players, exclude invisible)
+            # Find players in the same room (prioritize players, exclude invisible and party members)
             target_players = []
+
+            # Get summoner's party leader (if this mob is a summon)
+            mob_party_leader = mob.get('party_leader') if mob.get('is_summoned') else None
+
             for player_id, player_data in self.game_engine.player_manager.connected_players.items():
                 character = player_data.get('character')
                 if character and character.get('room_id') == room_id:
+                    # Skip party members if this is a summoned creature
+                    if mob_party_leader is not None:
+                        player_party_leader = character.get('party_leader', player_id)
+                        # Don't attack players in the same party
+                        if player_party_leader == mob_party_leader:
+                            continue
+
                     # Check if player is invisible
                     active_effects = character.get('active_effects', [])
                     is_invisible = any(
@@ -1375,41 +1387,75 @@ class CombatSystem:
             target_is_player = False
             target_player_id = None
 
-            if target_players:
-                # Target a player
-                target_player_id = random.choice(target_players)
-                player_data = self.game_engine.player_manager.connected_players.get(target_player_id)
-                if player_data:
-                    target = player_data.get('character')
-                    target_is_player = True
-            else:
-                # No players present, look for other mobs to attack
-                other_mobs = []
-                if room_id in self.game_engine.room_mobs:
-                    # Check if attacking mob is a lair mob
-                    attacking_mob_is_lair = not mob.get('is_wandering', False)
+            # Build list of potential mob targets first
+            other_mobs = []
+            if room_id in self.game_engine.room_mobs:
+                    # Check if attacking mob is a lair mob (summons are treated as wandering)
+                    attacking_mob_is_lair = not mob.get('is_wandering', False) and not mob.get('is_summoned', False)
 
                     for other_mob in self.game_engine.room_mobs[room_id]:
                         # Skip None mobs
                         if other_mob is None:
                             continue
-                        # Don't attack self, and only attack living hostile mobs
-                        if (other_mob != mob and
-                            other_mob.get('health', 0) > 0 and
-                            other_mob.get('type') == 'hostile'):
-                            # If this mob is a lair mob, don't attack other lair mobs
-                            # (but wandering mobs are fair game)
-                            if attacking_mob_is_lair:
-                                target_is_lair = not other_mob.get('is_wandering', False)
-                                if target_is_lair:
-                                    # Don't attack fellow lair mob
-                                    continue
-                            other_mobs.append(other_mob)
 
-                # Target a random other mob if any are present
+                        # Summoned mobs only attack hostile mobs
+                        if mob.get('is_summoned'):
+                            # Don't attack self, only attack living hostile mobs
+                            if (other_mob != mob and
+                                other_mob.get('health', 0) > 0 and
+                                other_mob.get('type') == 'hostile'):
+                                other_mobs.append(other_mob)
+                        else:
+                            # Regular hostile mob behavior
+                            # Don't attack self, attack living hostile mobs and summoned mobs
+                            is_valid_target = (other_mob != mob and
+                                             other_mob.get('health', 0) > 0 and
+                                             (other_mob.get('type') == 'hostile' or other_mob.get('is_summoned')))
+
+                            if is_valid_target:
+                                # If this mob is a lair mob, don't attack other lair mobs
+                                # (but wandering mobs and summons are fair game)
+                                if attacking_mob_is_lair:
+                                    target_is_lair = not other_mob.get('is_wandering', False) and not other_mob.get('is_summoned', False)
+                                    if target_is_lair:
+                                        # Don't attack fellow lair mob
+                                        continue
+                                other_mobs.append(other_mob)
+
+            # Now choose target: summoned mobs only attack other mobs, regular mobs can attack players or mobs
+            if mob.get('is_summoned'):
+                # Summoned mobs only attack hostile mobs, never players
                 if other_mobs:
                     target = random.choice(other_mobs)
                     target_is_player = False
+            else:
+                # Regular hostile mobs: choose between players and other mobs
+                # Combine both pools and choose randomly
+                all_targets = []
+
+                # Add players to target pool
+                if target_players:
+                    for player_id in target_players:
+                        all_targets.append(('player', player_id))
+
+                # Add mobs to target pool
+                if other_mobs:
+                    for other_mob in other_mobs:
+                        all_targets.append(('mob', other_mob))
+
+                # Choose a random target from combined pool
+                if all_targets:
+                    target_type, target_obj = random.choice(all_targets)
+
+                    if target_type == 'player':
+                        target_player_id = target_obj
+                        player_data = self.game_engine.player_manager.connected_players.get(target_player_id)
+                        if player_data:
+                            target = player_data.get('character')
+                            target_is_player = True
+                    else:
+                        target = target_obj
+                        target_is_player = False
 
             # If we have a target, check for special ability use first
             if target:
@@ -2116,7 +2162,7 @@ class CombatSystem:
             from .damage_calculator import DamageCalculator
 
             # Get player's effective armor class (including buffs)
-            player_armor = self.game_engine.command_handler.get_effective_armor_class(character)
+            player_armor = self.game_engine.command_handler.character_handler.get_effective_armor_class(character)
 
             # Check attack outcome (miss/dodge/deflect/hit)
             base_hit_chance = self.game_engine.config_manager.get_setting('combat', 'base_hit_chance', default=0.50)
@@ -2215,6 +2261,9 @@ class CombatSystem:
                 if new_health <= 0:
                     death_msg = death_message(f"You have been killed by {mob_name}!")
                     await self.game_engine.connection_manager.send_message(target_player_id, death_msg)
+
+                    # Despawn player's summons on death
+                    await self.game_engine.player_manager._despawn_player_summons(target_player_id, character, room_id)
 
                     # Respawn player (simple respawn logic)
                     max_hp = character.get('max_hit_points', 20)
@@ -2356,7 +2405,7 @@ class CombatSystem:
                 from .damage_calculator import DamageCalculator
 
                 # Get player's effective armor class (including buffs)
-                player_armor = self.game_engine.command_handler.get_effective_armor_class(character)
+                player_armor = self.game_engine.command_handler.character_handler.get_effective_armor_class(character)
                 base_hit_chance = self.game_engine.config_manager.get_setting('combat', 'base_hit_chance', default=0.50)
 
                 # For spells, swap INT for DEX in hit calculation
@@ -2440,6 +2489,9 @@ class CombatSystem:
                 if new_health <= 0:
                     death_msg = death_message(f"You have been killed by {mob_name}'s {spell_name}!")
                     await self.game_engine.connection_manager.send_message(target_player_id, death_msg)
+
+                    # Despawn player's summons on death
+                    await self.game_engine.player_manager._despawn_player_summons(target_player_id, character, room_id)
 
                     # Respawn player
                     max_hp = character.get('max_hit_points', 20)
@@ -2934,22 +2986,77 @@ class CombatSystem:
             total_gold = base_gold + accumulated_gold
 
             if total_gold > 0:
-                character['gold'] = character.get('gold', 0) + total_gold
+                # Get party members in the same room for gold sharing
+                party_leader_id = character.get('party_leader', player_id)
+
+                # Get leader's character to access party_members list
+                if party_leader_id == player_id:
+                    leader_char = character
+                else:
+                    leader_player_data = self.game_engine.player_manager.connected_players.get(party_leader_id)
+                    leader_char = leader_player_data.get('character') if leader_player_data else None
+
+                # Get all party members in the same room
+                party_members_in_room = []
+                if leader_char:
+                    party_members = leader_char.get('party_members', [party_leader_id])
+                    for member_id in party_members:
+                        member_player_data = self.game_engine.player_manager.connected_players.get(member_id)
+                        if member_player_data and member_player_data.get('character'):
+                            member_char = member_player_data['character']
+                            if member_char.get('room_id') == room_id:
+                                party_members_in_room.append({
+                                    'player_id': member_id,
+                                    'character': member_char,
+                                    'name': member_char.get('name', 'Unknown')
+                                })
+
+                # If no party members in room, just give to killer
+                if not party_members_in_room:
+                    party_members_in_room = [{'player_id': player_id, 'character': character, 'name': character.get('name', 'Unknown')}]
+
+                # Split gold among party members (minimum 1 gold each)
+                num_members = len(party_members_in_room)
+                gold_per_member = max(1, total_gold // num_members)
 
                 from ...utils.colors import item_found
-                if accumulated_gold > 0:
-                    await self.game_engine.connection_manager.send_message(
-                        player_id,
-                        item_found(f"You loot {base_gold} gold (+{accumulated_gold} from the {mob.get('name', 'creature')}'s hoard)! Total: {total_gold} gold")
-                    )
-                else:
-                    await self.game_engine.connection_manager.send_message(
-                        player_id,
-                        item_found(f"You loot {total_gold} gold!")
-                    )
 
-                # Update encumbrance for gold weight change
-                self.game_engine.player_manager.update_encumbrance(character)
+                # Distribute gold to each party member
+                for member_info in party_members_in_room:
+                    member_id = member_info['player_id']
+                    member_char = member_info['character']
+                    member_name = member_info['name']
+
+                    member_char['gold'] = member_char.get('gold', 0) + gold_per_member
+
+                    # Update encumbrance for gold weight change
+                    self.game_engine.player_manager.update_encumbrance(member_char)
+
+                    # Send notification
+                    if num_members > 1:
+                        # Party split message
+                        if accumulated_gold > 0:
+                            await self.game_engine.connection_manager.send_message(
+                                member_id,
+                                item_found(f"Your party loots {total_gold} gold (+{accumulated_gold} from hoard). Your share: {gold_per_member} gold")
+                            )
+                        else:
+                            await self.game_engine.connection_manager.send_message(
+                                member_id,
+                                item_found(f"Your party loots {total_gold} gold. Your share: {gold_per_member} gold")
+                            )
+                    else:
+                        # Solo loot message
+                        if accumulated_gold > 0:
+                            await self.game_engine.connection_manager.send_message(
+                                member_id,
+                                item_found(f"You loot {base_gold} gold (+{accumulated_gold} from the {mob.get('name', 'creature')}'s hoard)! Total: {total_gold} gold")
+                            )
+                        else:
+                            await self.game_engine.connection_manager.send_message(
+                                member_id,
+                                item_found(f"You loot {total_gold} gold!")
+                            )
 
         # Process loot drops (lair loot, loot table, and equipped items)
         # These always drop in the room regardless of whether player is online
