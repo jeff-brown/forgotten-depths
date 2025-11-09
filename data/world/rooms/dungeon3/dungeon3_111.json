@@ -11,9 +11,24 @@
   },
   "lairs": [
     {
-      "mob_id": "apollyon_dragon",
+      "mob_id": "stygian_dragon",
       "respawn_time": 300,
       "max_mobs": 1
     }
-  ]
+  ],
+  "items": [
+    {
+      "item_id": "ruby_key",
+      "quantity": 1
+    }
+  ],
+  "doors": {
+    "north": {
+      "locked": true,
+      "key_id": "ruby_key",
+      "lock_difficulty": 5,
+      "pick_difficulty": 0,
+      "bash_difficulty": 3
+    }
+  }
 }

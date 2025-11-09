@@ -10,9 +10,9 @@
   },
   "lairs": [
     {
-      "mob_id": "balneal_dragon",
+      "mob_id": "stone_giantess",
       "respawn_time": 300,
-      "max_mobs": 1
+      "max_mobs": 2
     }
   ]
 }

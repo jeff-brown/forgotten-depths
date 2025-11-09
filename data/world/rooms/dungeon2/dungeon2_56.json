@@ -10,7 +10,7 @@
   },
   "lairs": [
     {
-      "mob_id": "crypt_guardian",
+      "mob_id": "wild_boar",
       "respawn_time": 300,
       "max_mobs": 1
     }

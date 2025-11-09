@@ -11,9 +11,15 @@
   },
   "lairs": [
     {
-      "mob_id": "skeleton_giant",
+      "mob_id": "cyclops",
       "respawn_time": 300,
       "max_mobs": 1
+    }
+  ],
+  "items": [
+    {
+      "item_id": "silver_key",
+      "quantity": 1
     }
   ]
 }

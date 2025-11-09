@@ -12,7 +12,7 @@
   },
   "lairs": [
     {
-      "mob_id": "apollyon_dragon",
+      "mob_id": "ogre",
       "respawn_time": 300,
       "max_mobs": 1
     }

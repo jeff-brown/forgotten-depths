@@ -11,7 +11,7 @@
   },
   "lairs": [
     {
-      "mob_id": "greater_demon",
+      "mob_id": "chimera",
       "respawn_time": 300,
       "max_mobs": 1
     }

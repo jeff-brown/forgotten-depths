@@ -15,5 +15,9 @@
       "respawn_time": 600,
       "max_mobs": 1
     }
-  ]
+  ],
+  "trap": {
+    "trap_id": "falling_stones",
+    "triggered": false
+  }
 }

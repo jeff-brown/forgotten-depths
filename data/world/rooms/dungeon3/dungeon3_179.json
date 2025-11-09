@@ -5,5 +5,14 @@
   "area_id": "dungeon3",
   "is_safe": false,
   "light_level": 0.05,
-  "exits": {}
+  "exits": {
+    "up": "dungeon2_76"
+  },
+  "special_exits": {
+    "up": {
+      "requires_item": "rope",
+      "exit_type": "trapdoor",
+      "difficulty": 6
+    }
+  }
 }

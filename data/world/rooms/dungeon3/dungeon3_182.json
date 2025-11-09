@@ -7,5 +7,9 @@
   "light_level": 0.05,
   "exits": {
     "south": "dungeon3_181"
+  },
+  "treasure": {
+    "level": 4,
+    "count": 1
   }
 }

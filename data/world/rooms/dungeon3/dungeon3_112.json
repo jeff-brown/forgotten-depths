@@ -10,9 +10,9 @@
   },
   "lairs": [
     {
-      "mob_id": "demon_king",
+      "mob_id": "skeleton_lord",
       "respawn_time": 300,
-      "max_mobs": 1
+      "max_mobs": 2
     }
   ]
 }

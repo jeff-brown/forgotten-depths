@@ -11,7 +11,7 @@
   },
   "lairs": [
     {
-      "mob_id": "dungeon_champion",
+      "mob_id": "troll",
       "respawn_time": 300,
       "max_mobs": 1
     }

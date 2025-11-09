@@ -12,7 +12,7 @@
   },
   "lairs": [
     {
-      "mob_id": "smith",
+      "mob_id": "gargoyle",
       "respawn_time": 300,
       "max_mobs": 1
     }
