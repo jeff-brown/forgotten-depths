@@ -9,10 +9,10 @@
     "north": "dungeon1_18",
     "southeast": "dungeon1_19"
   },
-  "locked_exits": {
+  "barriers": {
     "southeast": {
-      "required_key": "iron_key",
-      "description": "The iron bound oak door is locked tight."
+      "barrier_id": "iron_door",
+      "locked": true
     }
   },
   "lairs": [

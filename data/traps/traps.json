@@ -13,6 +13,7 @@
       "disarm_dc": 14,
       "description": "Small holes in the walls suggest hidden dart launchers.",
       "trigger_message": "A poisoned dart shoots out from the wall and strikes {target}!",
+      "trigger_message_self": "A poisoned dart shoots out from the wall and strikes you!",
       "search_message": "You notice small holes in the walls - this could be a dart trap."
     },
     "pit": {
@@ -24,6 +25,7 @@
       "disarm_dc": 16,
       "description": "The floor seems unstable in places.",
       "trigger_message": "{target} falls into a concealed pit trap!",
+      "trigger_message_self": "You fall into a concealed pit trap!",
       "search_message": "You find a concealed pit trap in the floor!"
     },
     "flame": {
@@ -39,6 +41,7 @@
       "disarm_dc": 15,
       "description": "Scorch marks and the smell of oil suggest a fire hazard.",
       "trigger_message": "Flames erupt from the floor, engulfing {target}!",
+      "trigger_message_self": "Flames erupt from the floor, engulfing you!",
       "search_message": "You discover a flame trap mechanism beneath the floor tiles!"
     }
   }

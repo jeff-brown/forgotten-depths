@@ -1,100 +1,302 @@
 {
   "barriers": {
-    "oak_door": {
-      "barrier_id": 1,
-      "name": "Oak Door",
-      "type": "locked_door",
-      "locked_message": "The locked oak door prevents your exit in that direction.",
-      "unlocked_message": "Your {0} unlocks the oak door and allows you to pass through.",
-      "rogue_message": "Your rogue abilities allowed you to pick the lock on the oak door.",
-      "difficulty": 0,
-      "material": "oak"
-    },
-    "iron_door": {
-      "barrier_id": 2,
-      "name": "Iron Door",
-      "type": "locked_door",
-      "locked_message": "The locked iron door prevents your exit in that direction.",
-      "unlocked_message": "Your {0} unlocks the iron door and allows you to pass through.",
-      "rogue_message": "Your rogue abilities allowed you to pick the lock on the iron door.",
-      "difficulty": 35,
-      "material": "iron"
-    },
     "bronze_door": {
-      "barrier_id": 3,
       "name": "Bronze Door",
       "type": "locked_door",
+      "material": "bronze",
       "locked_message": "The locked bronze door prevents your exit in that direction.",
-      "unlocked_message": "Your {0} unlocks the bronze door and allows you to pass through.",
-      "rogue_message": "Your rogue abilities allowed you to pick the lock on the bronze door.",
-      "difficulty": 25,
-      "material": "bronze"
+      "unlock_message": "Your {key} unlocks the bronze door and allows you to pass through.",
+      "unlock_methods": {
+        "key": {
+          "enabled": true,
+          "required_item": "bronze_key",
+          "consumes_item": true,
+          "difficulty": 0
+        },
+        "pick": {
+          "enabled": true,
+          "difficulty": 5,
+          "required_skill": "lockpicking",
+          "skill_level": 1,
+          "success_message": "Your rogue abilities allowed you to pick the lock on the bronze door."
+        },
+        "bash": {
+          "enabled": true,
+          "difficulty": 8,
+          "required_strength": 14,
+          "damage_on_fail": 5,
+          "success_message": "You bash through the bronze door!"
+        }
+      },
+      "requirements": {}
     },
-    "stone_door": {
-      "barrier_id": 4,
-      "name": "Stone Door",
+    "copper_door": {
+      "name": "Copper Door",
       "type": "locked_door",
-      "locked_message": "The locked stone door prevents your exit in that direction.",
-      "unlocked_message": "Your {0} unlocks the stone door and allows you to pass through.",
-      "rogue_message": "Your rogue abilities allowed you to pick the lock on the stone door.",
-      "difficulty": 15,
-      "material": "stone"
+      "material": "copper",
+      "locked_message": "The locked copper door prevents your exit in that direction.",
+      "unlock_message": "Your {key} unlocks the copper door and allows you to pass through.",
+      "unlock_methods": {
+        "key": {
+          "enabled": true,
+          "required_item": "copper_key",
+          "consumes_item": false,
+          "difficulty": 0
+        },
+        "pick": {
+          "enabled": true,
+          "difficulty": 4,
+          "required_skill": "lockpicking",
+          "skill_level": 1,
+          "success_message": "Your rogue abilities allowed you to pick the lock on the copper door."
+        },
+        "bash": {
+          "enabled": true,
+          "difficulty": 7,
+          "required_strength": 13,
+          "damage_on_fail": 5,
+          "success_message": "You bash through the copper door!"
+        }
+      },
+      "requirements": {}
     },
     "brass_door": {
-      "barrier_id": 5,
       "name": "Brass Door",
       "type": "locked_door",
-      "locked_message": "The locked brass door prevents your exit in that direction.",
-      "unlocked_message": "Your {0} unlocks the brass door and allows you to pass through.",
-      "rogue_message": "Your rogue abilities allowed you to pick the lock on the brass door.",
-      "difficulty": 20,
-      "material": "brass"
+      "material": "brass",
+      "locked_message": "The heavy iron door with a brass lock prevents your exit in that direction.",
+      "unlock_message": "Your {key} unlocks the brass mechanism and the iron door swings open.",
+      "unlock_methods": {
+        "key": {
+          "enabled": true,
+          "required_item": "brass_key",
+          "consumes_item": false,
+          "difficulty": 0
+        },
+        "pick": {
+          "enabled": true,
+          "difficulty": 6,
+          "required_skill": "lockpicking",
+          "skill_level": 2,
+          "success_message": "Your rogue abilities allowed you to pick the brass lock."
+        },
+        "bash": {
+          "enabled": true,
+          "difficulty": 10,
+          "required_strength": 16,
+          "damage_on_fail": 8,
+          "success_message": "You bash through the iron door!"
+        }
+      },
+      "requirements": {}
     },
-    "pit": {
-      "barrier_id": 6,
-      "name": "Pit",
+    "ruby_door": {
+      "name": "Ancient Ruby Door",
+      "type": "locked_door",
+      "material": "stone",
+      "locked_message": "An ancient stone door sealed with a ruby lock bars your way.",
+      "unlock_message": "Your {key} turns in the ruby lock and the ancient door swings open.",
+      "unlock_methods": {
+        "key": {
+          "enabled": true,
+          "required_item": "ruby_key",
+          "consumes_item": false,
+          "difficulty": 0
+        },
+        "pick": {
+          "enabled": false,
+          "difficulty": 10,
+          "required_skill": "lockpicking",
+          "skill_level": 8,
+          "success_message": "You carefully manipulate the ruby lock mechanism and hear a satisfying click."
+        },
+        "bash": {
+          "enabled": true,
+          "difficulty": 12,
+          "required_strength": 18,
+          "damage_on_fail": 15,
+          "success_message": "With tremendous effort, you smash through the ancient door!"
+        }
+      },
+      "requirements": {}
+    },
+    "silver_door": {
+      "name": "Silver Door",
+      "type": "locked_door",
+      "material": "silver",
+      "locked_message": "The locked silver door prevents your exit in that direction.",
+      "unlock_message": "Your {key} unlocks the silver door and allows you to pass through.",
+      "unlock_methods": {
+        "key": {
+          "enabled": true,
+          "required_item": "silver_key",
+          "consumes_item": false,
+          "difficulty": 0
+        },
+        "pick": {
+          "enabled": true,
+          "difficulty": 6,
+          "required_skill": "lockpicking",
+          "skill_level": 3,
+          "success_message": "Your rogue abilities allowed you to pick the lock on the silver door."
+        },
+        "bash": {
+          "enabled": true,
+          "difficulty": 9,
+          "required_strength": 15,
+          "damage_on_fail": 8,
+          "success_message": "You bash through the silver door!"
+        }
+      },
+      "requirements": {}
+    },
+    "iron_door": {
+      "name": "Iron Door",
+      "type": "locked_door",
+      "material": "iron",
+      "locked_message": "The locked iron door prevents your exit in that direction.",
+      "unlock_message": "Your {key} unlocks the iron door and allows you to pass through.",
+      "unlock_methods": {
+        "key": {
+          "enabled": true,
+          "required_item": "iron_key",
+          "consumes_item": false,
+          "difficulty": 0
+        },
+        "pick": {
+          "enabled": true,
+          "difficulty": 7,
+          "required_skill": "lockpicking",
+          "skill_level": 4,
+          "success_message": "Your rogue abilities allowed you to pick the lock on the iron door."
+        },
+        "bash": {
+          "enabled": true,
+          "difficulty": 11,
+          "required_strength": 17,
+          "damage_on_fail": 10,
+          "success_message": "You bash through the iron door!"
+        }
+      },
+      "requirements": {}
+    },
+    "pit_obstacle": {
+      "name": "Deep Pit",
       "type": "obstacle",
       "locked_message": "The walls of this pit are too steep to climb unaided.",
-      "unlocked_message": "You climb out of the pit using your {0}.",
-      "rogue_message": "Your rogue abilities allow you to climb out of the pit.",
-      "difficulty": 0
+      "unlock_message": "You climb out of the pit using your {item}.",
+      "unlock_methods": {
+        "rope": {
+          "enabled": true,
+          "required_item": "rope",
+          "consumes_item": false,
+          "difficulty": 6,
+          "success_message": "You use your rope to climb out of the pit."
+        },
+        "climb": {
+          "enabled": true,
+          "difficulty": 8,
+          "required_skill": "climbing",
+          "skill_level": 3,
+          "success_message": "Your climbing skills allow you to find handholds in the smooth walls."
+        }
+      },
+      "requirements": {}
     },
-    "chasm": {
-      "barrier_id": 7,
-      "name": "Chasm",
+    "trapdoor_pit": {
+      "name": "Trapdoor",
       "type": "obstacle",
-      "locked_message": "The wide chasm prevents your exit in that direction.",
-      "unlocked_message": "",
-      "rogue_message": "",
-      "difficulty": 0
+      "locked_message": "The trapdoor is stuck shut. You'll need rope to pull yourself up.",
+      "unlock_message": "You use your {item} to climb up through the trapdoor.",
+      "unlock_methods": {
+        "rope": {
+          "enabled": true,
+          "required_item": "rope",
+          "consumes_item": false,
+          "difficulty": 6,
+          "success_message": "You use your rope to pull yourself up through the trapdoor."
+        },
+        "climb": {
+          "enabled": true,
+          "difficulty": 7,
+          "required_skill": "climbing",
+          "skill_level": 2,
+          "success_message": "Your climbing skills allow you to pull yourself up through the trapdoor."
+        }
+      },
+      "requirements": {}
     },
-    "mystical_force": {
-      "barrier_id": 8,
-      "name": "Mystical Force",
+    "rune_barrier_white": {
+      "name": "White Rune Barrier",
       "type": "magical_barrier",
-      "locked_message": "A mystical force prevents your exit in that direction.",
-      "unlocked_message": "",
-      "rogue_message": "",
-      "difficulty": 0
+      "locked_message": "A shimmering barrier of white runes blocks your path.",
+      "unlock_message": "Your {item} resonates with the barrier and it dissipates.",
+      "unlock_methods": {
+        "rune": {
+          "enabled": true,
+          "required_item": "white_rune",
+          "consumes_item": false,
+          "difficulty": 0,
+          "success_message": "The white rune glows brightly and the barrier fades away."
+        }
+      },
+      "requirements": {
+        "required_rune": "white"
+      }
     },
     "level_barrier": {
-      "barrier_id": 9,
       "name": "Level Barrier",
       "type": "progression_barrier",
       "locked_message": "You have progressed beyond the need to go there.",
-      "unlocked_message": "",
-      "rogue_message": "",
-      "difficulty": 0
+      "unlock_message": "",
+      "unlock_methods": {},
+      "requirements": {
+        "max_level": 5
+      }
     },
-    "ironwood_door": {
-      "barrier_id": 10,
-      "name": "Ironwood Door",
-      "type": "locked_door",
-      "locked_message": "The locked ironwood door prevents your exit in that direction.",
-      "unlocked_message": "Your {0} unlocks the ironwood door and allows you to pass!",
-      "rogue_message": "Your rogue abilities allowed you to pick the lock on the ironwood door!",
-      "difficulty": 60,
-      "material": "ironwood"
+    "chasm": {
+      "name": "Wide Chasm",
+      "type": "obstacle",
+      "locked_message": "The wide chasm prevents your exit in that direction.",
+      "unlock_message": "",
+      "unlock_methods": {},
+      "requirements": {}
+    },
+    "rune_barrier_white_forbidden": {
+      "name": "White Rune Barrier",
+      "type": "magical_barrier",
+      "locked_message": "A shimmering barrier of white runes blocks your path.",
+      "unlock_message": "",
+      "unlock_methods": {},
+      "requirements": {
+        "forbidden_property": {
+          "name": "rune",
+          "value": "white"
+        }
+      },
+      "requirement_fail_message": "The white rune in your possession creates a resonance that prevents you from passing through the barrier."
+    },
+    "beginner_area_barrier": {
+      "name": "Beginner Area Barrier",
+      "type": "progression_barrier",
+      "locked_message": "An invisible force prevents your entry.",
+      "unlock_message": "",
+      "unlock_methods": {},
+      "requirements": {
+        "max_level": 5
+      },
+      "requirement_fail_message": "You have progressed beyond the need to go there."
+    },
+    "advanced_dungeon_barrier": {
+      "name": "Advanced Dungeon Gate",
+      "type": "progression_barrier",
+      "locked_message": "A powerful magical barrier blocks the entrance.",
+      "unlock_message": "",
+      "unlock_methods": {},
+      "requirements": {
+        "min_level": 10
+      },
+      "requirement_fail_message": "You must be at least level 10 to enter this dangerous area."
     }
   }
 }

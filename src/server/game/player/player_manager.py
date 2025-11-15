@@ -80,6 +80,9 @@ class PlayerManager:
                     # Disband party if this player is the leader
                     await self._disband_party_on_leader_disconnect(player_id, character)
 
+                    # Clear following relationships
+                    await self._clear_following_on_disconnect(player_id, character, username)
+
             # Save character if authenticated
             if player_data.get('character') and player_data.get('authenticated'):
                 self.save_player_character(player_id, player_data['character'])
@@ -299,109 +302,74 @@ class PlayerManager:
             new_room = exits[full_direction]
             username = player_data.get('username', 'Someone')
 
-            # Check if exit is locked
-            from ...utils.logger import get_logger
-            logger = get_logger()
-
-            logger.info(f"[DOOR] Player {username} attempting to move {full_direction} from {current_room} to {new_room}")
-
+            # Check barriers using the barrier system
             old_room = self.game_engine.world_manager.get_room(current_room)
             unlock_message = None
 
             if old_room:
-                logger.info(f"[DOOR] Room {current_room} locked_exits: {list(old_room.locked_exits.keys())}")
+                # Use barrier system to check if movement is allowed
+                can_pass, unlock_msg = await self.game_engine.barrier_system.check_barrier(
+                    player_id, character, old_room, full_direction, username
+                )
 
-                if old_room.is_exit_locked(full_direction):
-                    required_key = old_room.get_required_key(full_direction)
-                    lock_desc = old_room.locked_exits[full_direction].get('description', 'The way is locked.')
+                if not can_pass:
+                    # Barrier blocked movement
+                    return
 
-                    logger.info(f"[DOOR] Exit {full_direction} IS LOCKED, required key: '{required_key}'")
-
-                    # Check if player has the required key
-                    has_key = False
-                    inventory = character.get('inventory', [])
-                    logger.info(f"[DOOR] Player inventory: {inventory}")
-
-                    # Check for key by id, item_id, or by matching name
-                    required_key_name = required_key.replace('_', ' ').title()
-                    for item in inventory:
-                        if isinstance(item, dict):
-                            # Check id field
-                            if item.get('id') == required_key:
-                                has_key = True
-                                break
-                            # Check item_id field (for items created with old system)
-                            if item.get('item_id') == required_key:
-                                has_key = True
-                                break
-                            # Check name field
-                            if item.get('name', '').lower() == required_key_name.lower():
-                                has_key = True
-                                break
-                        elif item == required_key:
-                            has_key = True
-                            break
-
-                    logger.info(f"[DOOR] Has required key '{required_key}': {has_key}")
-
-                    if not has_key:
-                        logger.info(f"[DOOR] Player does NOT have key, blocking movement")
-                        await self.connection_manager.send_message(player_id, f"{lock_desc} You need a {required_key.replace('_', ' ')} to unlock it.")
-                        return
-
-                    # Player has the key - unlock the door, consume the key, and continue movement
-                    logger.info(f"[DOOR] Player HAS key, unlocking exit '{full_direction}' and consuming key")
-
-                    # Remove the key from inventory
-                    inventory = character.get('inventory', [])
-                    for i, item in enumerate(inventory):
-                        should_remove = False
-                        if isinstance(item, dict):
-                            # Check id, item_id, or name
-                            if item.get('id') == required_key:
-                                should_remove = True
-                            elif item.get('item_id') == required_key:
-                                should_remove = True
-                            elif item.get('name', '').lower() == required_key_name.lower():
-                                should_remove = True
-                        elif item == required_key:
-                            should_remove = True
-
-                        if should_remove:
-                            removed_key = inventory.pop(i)
-                            logger.info(f"[DOOR] Removed key '{required_key}' from inventory")
-                            break
-
-                    # Update encumbrance after removing key
-                    self.game_engine.player_manager.update_encumbrance(character)
-
-                    old_room.unlock_exit(full_direction)
-                    unlock_message = f"You use your {required_key.replace('_', ' ')} to unlock the door. The key crumbles to dust.\n"
-                else:
-                    logger.info(f"[DOOR] Exit {full_direction} is NOT locked")
+                if unlock_msg:
+                    unlock_message = unlock_msg
 
             # Send vendor farewell from the room being left
             if hasattr(self.game_engine, 'vendor_system'):
                 await self.game_engine.vendor_system.send_vendor_farewell(player_id, current_room)
-
-            # Check for trap triggers when exiting the room
-            from ...utils.colors import error_message, announcement
-            trap_result = self.game_engine.trap_system.check_trap_trigger(player_id, current_room)
-            if trap_result:
-                # Trap triggered while exiting!
-                damage_msg = self.game_engine.trap_system.apply_trap_damage(player_id, trap_result)
-                await self.connection_manager.send_message(player_id, error_message(damage_msg))
-
-                # Notify others in the room
-                trap_def = trap_result['trap_def']
-                trap_msg = trap_def['trigger_message'].format(target=username)
-                await self.game_engine._notify_room_except_player(current_room, player_id, announcement(trap_msg))
 
             # Notify others in the current room that this player is leaving
             await self.game_engine._notify_room_except_player(current_room, player_id, f"{username} has just gone {full_direction}.")
 
             # Move the player
             character['room_id'] = new_room
+
+            # Check for trap triggers when entering the new room
+            # Pass the direction we're entering from (opposite of travel direction)
+            from ...utils.colors import damage_to_player, announcement, success_message
+
+            # Map travel direction to entry direction (reverse)
+            opposite_directions = {
+                'north': 'south', 'south': 'north',
+                'east': 'west', 'west': 'east',
+                'northeast': 'southwest', 'southwest': 'northeast',
+                'northwest': 'southeast', 'southeast': 'northwest',
+                'up': 'down', 'down': 'up'
+            }
+            entry_direction = opposite_directions.get(full_direction, full_direction)
+
+            trap_result = self.game_engine.trap_system.check_trap_trigger(player_id, new_room, entry_direction)
+            if trap_result:
+                # Check if player avoided the trap
+                if trap_result.get('avoided'):
+                    # Player successfully avoided the trap
+                    await self.connection_manager.send_message(player_id, success_message(trap_result['message']))
+                    # Notify others in the room
+                    await self.game_engine._notify_room_except_player(
+                        new_room, player_id,
+                        f"{username} nimbly avoids a hidden trap!"
+                    )
+                else:
+                    # Trap triggered upon entering!
+                    damage_msg = await self.game_engine.trap_system.apply_trap_damage(player_id, trap_result)
+
+                    # Only send message if damage_msg is not empty (pit traps handle their own messages)
+                    if damage_msg:
+                        await self.connection_manager.send_message(player_id, damage_to_player(damage_msg))
+
+                        # Notify others in the room
+                        trap_def = trap_result['trap_def']
+                        trap_msg = trap_def['trigger_message'].format(target=username)
+                        await self.game_engine._notify_room_except_player(new_room, player_id, announcement(trap_msg))
+
+                    # If pit trap teleported player, stop movement processing (don't show normal entry messages)
+                    if trap_result.get('trap_config', {}).get('type') == 'pit':
+                        return
 
             # Track visited rooms for map functionality
             if 'visited_rooms' not in character:
@@ -886,6 +854,52 @@ class PlayerManager:
         character['party_leader'] = player_id
         if 'party_members' in character:
             del character['party_members']
+
+    async def _clear_following_on_disconnect(self, player_id: int, character: dict, username: str):
+        """Clear following relationships when a player disconnects.
+
+        Args:
+            player_id: The disconnecting player's ID
+            character: The disconnecting player's character data
+            username: The disconnecting player's username
+        """
+        from ...utils.logger import get_logger
+        logger = get_logger()
+
+        # Case 1: This player is following someone - notify the leader
+        if character.get('following'):
+            leader_id = character['following']
+            character['following'] = None
+
+            # Remove from leader's followers list
+            leader_data = self.connected_players.get(leader_id)
+            if leader_data and leader_data.get('character'):
+                leader_char = leader_data['character']
+                if 'followers' in leader_char and player_id in leader_char['followers']:
+                    leader_char['followers'].remove(player_id)
+                    await self.connection_manager.send_message(
+                        leader_id,
+                        f"{username} has stopped following you (disconnected)."
+                    )
+                    logger.info(f"[FOLLOW] Player {player_id} stopped following {leader_id} due to disconnect")
+
+        # Case 2: This player has followers - notify them all
+        if character.get('followers'):
+            followers = character.get('followers', []).copy()
+            for follower_id in followers:
+                follower_data = self.connected_players.get(follower_id)
+                if follower_data and follower_data.get('character'):
+                    follower_char = follower_data['character']
+                    follower_char['following'] = None
+                    follower_name = follower_data.get('username', 'Someone')
+                    await self.connection_manager.send_message(
+                        follower_id,
+                        f"{username} has left the game. You stop following."
+                    )
+                    logger.info(f"[FOLLOW] Player {follower_id} stopped following {player_id} due to leader disconnect")
+
+            # Clear followers list
+            character['followers'] = []
 
     async def notify_room_except_player(self, room_id: str, exclude_player_id: int, message: str):
         """Send a message to all players in a room except the specified player."""

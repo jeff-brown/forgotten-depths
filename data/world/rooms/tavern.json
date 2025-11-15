@@ -16,6 +16,12 @@
     "oak_bar",
     "wooden_tables"
   ],
+  "barriers": {
+    "north": {
+      "barrier_id": "rune_barrier_white_forbidden",
+      "locked": false
+    }
+  },
   "is_safe": true,
   "light_level": "warm"
 }

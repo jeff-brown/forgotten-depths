@@ -105,8 +105,14 @@ class TrapSystem:
                     self.room_trap_states[room_id][i]['trigger_time'] = 0
                     self.logger.info(f"[TRAP] Trap {i} in room {room_id} has reset")
 
-    def check_trap_trigger(self, player_id: int, room_id: str) -> Optional[Dict[str, Any]]:
-        """Check if player triggers a trap when entering a room."""
+    def check_trap_trigger(self, player_id: int, room_id: str, entry_direction: Optional[str] = None) -> Optional[Dict[str, Any]]:
+        """Check if player triggers a trap when entering a room.
+
+        Args:
+            player_id: ID of the player entering
+            room_id: ID of the room being entered
+            entry_direction: Direction player came from (e.g., 'up' if climbing from below)
+        """
         self.initialize_room_traps(room_id)
         self.reset_expired_traps(room_id)
 
@@ -114,7 +120,7 @@ class TrapSystem:
         if not traps:
             return None
 
-        self.logger.info(f"[TRAP] Checking {len(traps)} trap(s) in room {room_id}")
+        self.logger.info(f"[TRAP] Checking {len(traps)} trap(s) in room {room_id}, entry from: {entry_direction}")
 
         player_data = self.game_engine.player_manager.get_player_data(player_id)
         if not player_data or not player_data.get('character'):
@@ -130,6 +136,13 @@ class TrapSystem:
             if trap_state.get('triggered') or trap_state.get('disarmed'):
                 continue
 
+            # Check if trap only triggers from certain directions
+            trigger_directions = trap_config.get('trigger_directions', [])
+            if trigger_directions and entry_direction:
+                if entry_direction not in trigger_directions:
+                    self.logger.info(f"[TRAP] Trap {i} does not trigger from {entry_direction} (only from {trigger_directions})")
+                    continue
+
             # Get trap definition
             trap_type = trap_config.get('type')
             trap_def = TrapType.get_trap(trap_type)
@@ -140,12 +153,30 @@ class TrapSystem:
             # Trigger chance (can be modified by player stats/skills)
             trigger_chance = trap_config.get('trigger_chance', 0.5)
 
-            # Dexterity can help avoid traps
+            # Dexterity can help avoid traps (but not as much as before)
             dex = character.get('dexterity', 10)
             dex_modifier = (dex - 10) // 2
-            trigger_chance = max(0.1, trigger_chance - (dex_modifier * 0.1))
+            # Cap dex reduction at 30% max
+            dex_reduction = min(0.3, dex_modifier * 0.05)
+            trigger_chance = max(0.3, trigger_chance - dex_reduction)
 
-            if random.random() < trigger_chance:
+            self.logger.info(f"[TRAP] Trap type: {trap_type}, base chance: {trap_config.get('trigger_chance', 0.5)}, dex: {dex}, modifier: {dex_modifier}, final chance: {trigger_chance}")
+
+            roll = random.random()
+            self.logger.info(f"[TRAP] Roll: {roll} vs trigger_chance: {trigger_chance}")
+
+            if roll >= trigger_chance:
+                # Player avoided the trap due to dexterity
+                if dex_modifier > 0:  # Only notify if they have positive dex bonus
+                    self.logger.info(f"[TRAP] Player avoided {trap_type} trap with dexterity")
+                    return {
+                        'avoided': True,
+                        'trap_def': trap_def,
+                        'message': f"Your keen senses detect the {trap_def['name']} and you skillfully avoid it!"
+                    }
+                continue
+
+            if roll < trigger_chance:
                 # Check for passive trap avoidance ability (e.g., Rogue's Trap Sense)
                 ability_effect = self.game_engine.ability_system.check_passive_ability(
                     character,
@@ -158,8 +189,13 @@ class TrapSystem:
                     if random.random() < avoid_chance:
                         # Ability saved from trap!
                         self.logger.info(f"[TRAP] {trap_def['name']} avoided by ability in room {room_id}!")
-                        # Don't mark trap as triggered, player avoided it
-                        continue
+                        ability_name = ability_effect.get('ability_name', 'your ability')
+                        return {
+                            'avoided': True,
+                            'trap_def': trap_def,
+                            'message': f"Your {ability_name} allows you to sense and avoid the {trap_def['name']}!",
+                            'ability_based': True
+                        }
 
                 # Trap triggered!
                 self.logger.info(f"[TRAP] {trap_def['name']} triggered in room {room_id}!")
@@ -173,7 +209,7 @@ class TrapSystem:
 
         return None
 
-    def apply_trap_damage(self, player_id: int, trap_result: Dict[str, Any]) -> str:
+    async def apply_trap_damage(self, player_id: int, trap_result: Dict[str, Any]) -> str:
         """Apply trap damage and effects to a player."""
         trap_def = trap_result['trap_def']
         trap_config = trap_result['trap_config']
@@ -194,13 +230,60 @@ class TrapSystem:
         damage = int(damage * damage_multiplier)
 
         # Apply damage
-        current_hp = character.get('health', character.get('max_health', 20))
+        current_hp = character.get('current_hit_points', character.get('max_hit_points', 20))
         new_hp = max(0, current_hp - damage)
-        character['health'] = new_hp
+        character['current_hit_points'] = new_hp
+
+        self.logger.info(f"[TRAP] Applied {damage} damage to player {player_id}. HP: {current_hp} -> {new_hp}")
+
+        # Check for death
+        if new_hp <= 0:
+            self.logger.warning(f"[TRAP] Player {player_id} killed by trap!")
+            # Death will be handled by game engine death check
 
         # Format trigger message
         trigger_msg = trap_def['trigger_message'].format(target=username)
-        damage_msg = f"You take {damage} {trap_def['damage_type']} damage!"
+        max_hp = character.get('max_hit_points', 20)
+        damage_msg = f"You take {damage} {trap_def['damage_type']} damage! (HP: {new_hp}/{max_hp})"
+
+        # Special handling for pit traps - teleport player to pit room
+        if trap_config.get('type') == 'pit' and trap_config.get('destination_room'):
+            destination_room = trap_config['destination_room']
+            current_room = character.get('room_id')
+
+            # Teleport player to pit room
+            character['room_id'] = destination_room
+
+            self.logger.info(f"[TRAP] Player {player_id} fell into pit, teleported to {destination_room}")
+
+            # Notify old room
+            if current_room:
+                await self.game_engine._notify_room_except_player(
+                    current_room,
+                    player_id,
+                    f"{username} falls into a pit and disappears from view!"
+                )
+
+            # Send player the pit fall message with red damage text
+            from ...utils.colors import damage_to_player
+            self_trigger_msg = trap_def.get('trigger_message_self', trap_def.get('trigger_message', 'You triggered a trap!'))
+            await self.game_engine.connection_manager.send_message(
+                player_id,
+                f"\n{self_trigger_msg}\n{damage_to_player(damage_msg)}\n\nYou tumble into darkness and land hard at the bottom of a deep pit!\n"
+            )
+
+            # Send room description of pit
+            await self.game_engine._send_room_description(player_id, detailed=True)
+
+            # Notify new room (pit)
+            await self.game_engine._notify_room_except_player(
+                destination_room,
+                player_id,
+                f"{username} falls from above and crashes to the ground!"
+            )
+
+            # Return empty string since we already sent messages
+            return ""
 
         # Apply ongoing effects
         effect = trap_def.get('effect')
@@ -220,7 +303,9 @@ class TrapSystem:
                 effect_state = trap_def.get('effect_state_text', effect)
                 damage_msg += f" You are now {effect_state}!"
 
-        return f"{trigger_msg} {damage_msg}"
+        # Use first-person trigger message for the player
+        self_trigger_msg = trap_def.get('trigger_message_self', trigger_msg)
+        return f"{self_trigger_msg} {damage_msg}"
 
     def search_for_traps(self, player_id: int, room_id: str) -> str:
         """Player searches for traps in current room."""
@@ -402,15 +487,17 @@ class TrapSystem:
                 damage_dice = effect.get('damage', '1d4')
                 damage = self._roll_dice(damage_dice)
 
-                current_hp = character.get('health', character.get('max_health', 20))
+                current_hp = character.get('current_hit_points', character.get('max_hit_points', 20))
                 new_hp = max(0, current_hp - damage)
-                character['health'] = new_hp
+                character['current_hit_points'] = new_hp
 
                 # Send message
+                from ...utils.colors import damage_to_player
                 effect_name = effect_type.capitalize() if effect_type else "Unknown"
+                max_hp = character.get('max_hit_points', 20)
                 await self.game_engine.connection_manager.send_message(
                     player_id,
-                    error_message(f"{effect_name} deals {damage} damage to you!")
+                    damage_to_player(f"{effect_name} deals {damage} damage to you! (HP: {new_hp}/{max_hp})")
                 )
 
                 # Decrease duration

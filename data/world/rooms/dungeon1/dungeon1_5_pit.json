@@ -1,0 +1,17 @@
+{
+  "id": "dungeon1_5_pit",
+  "title": "Bottom of a Deep Pit",
+  "description": "You are at the bottom of a deep, dark pit. The fall was brutal and your body aches. Rough stone walls rise steeply on all sides, slick with moisture and impossible to climb without aid. Far above, you can see a faint glimmer of light from the cavern you fell from. The only way out is up, but you'll need rope or exceptional climbing skills to escape.",
+  "area_id": "dungeon1",
+  "is_safe": false,
+  "light_level": 0.1,
+  "exits": {
+    "up": "dungeon1_5"
+  },
+  "barriers": {
+    "up": {
+      "barrier_id": "pit_obstacle",
+      "locked": true
+    }
+  }
+}

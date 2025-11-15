@@ -11,17 +11,18 @@
     "south": "dungeon1_33",
     "southwest": "dungeon1_32"
   },
-  "locked_exits": {
+  "barriers": {
     "east": {
-      "required_key": "brass_key",
-      "description": "The heavy iron door is locked with a brass mechanism."
+      "barrier_id": "brass_door",
+      "locked": true
     }
   },
   "lairs": [
     {
-      "mob_id": "red_bear",
+      "mob_id": "ogre",
       "respawn_time": 300,
       "max_mobs": 1
     }
-  ]
+  ],
+  "lair_loot": ["brass_key"]
 }

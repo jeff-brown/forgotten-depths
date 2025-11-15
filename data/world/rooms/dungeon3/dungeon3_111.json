@@ -22,13 +22,10 @@
       "quantity": 1
     }
   ],
-  "doors": {
+  "barriers": {
     "north": {
-      "locked": true,
-      "key_id": "ruby_key",
-      "lock_difficulty": 5,
-      "pick_difficulty": 0,
-      "bash_difficulty": 3
+      "barrier_id": "ruby_door",
+      "locked": true
     }
   }
 }
