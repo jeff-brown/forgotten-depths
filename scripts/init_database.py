@@ -33,5 +33,6 @@ def init_database(db_path: str = "data/mud.db"):
     print("Database initialization complete!")
 
 if __name__ == "__main__":
-    db_path = sys.argv[1] if len(sys.argv) > 1 else "data/mud.db"
+    # Use DB_PATH env var, command line arg, or default
+    db_path = os.environ.get('DB_PATH') or (sys.argv[1] if len(sys.argv) > 1 else "data/mud.db")
     init_database(db_path)

@@ -20,10 +20,10 @@ spec:
       initContainers:
       - name: fix-permissions
         image: busybox
-        command: ['sh', '-c', 'chown -R 999:999 /app/data && chmod -R 755 /app/data']
+        command: ['sh', '-c', 'chown -R 999:999 /persistent && chmod -R 755 /persistent']
         volumeMounts:
         - name: data
-          mountPath: /app/data
+          mountPath: /persistent
       containers:
       - name: mud-server
         image: ghcr.io/jeff-brown/forgotten-depths:latest
@@ -35,6 +35,9 @@ spec:
         - name: web
           containerPort: 8080
           protocol: TCP
+        env:
+        - name: DB_PATH
+          value: "/persistent/mud.db"
         resources:
           requests:
             memory: "256Mi"
@@ -44,7 +47,7 @@ spec:
             cpu: "500m"
         volumeMounts:
         - name: data
-          mountPath: /app/data
+          mountPath: /persistent
         - name: logs
           mountPath: /app/logs
         - name: config

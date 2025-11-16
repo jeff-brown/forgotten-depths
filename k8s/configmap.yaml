@@ -57,7 +57,7 @@ data:
     # Database Configuration
     database:
       type: "sqlite"
-      path: "/app/data/mud.db"
+      path: "/persistent/mud.db"
       backup_enabled: true
       backup_interval: 3600
       backup_count: 24
