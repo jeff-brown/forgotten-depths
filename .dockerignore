@@ -32,8 +32,6 @@ ENV/
 
 # Kubernetes
 k8s/
-*.yaml
-*.yml
 
 # Documentation
 docs/
@@ -57,9 +55,6 @@ tmp/
 *.db-journal
 *.db-wal
 *.db-shm
-
-# Config (will be overridden by ConfigMap)
-config/*.yaml
 
 # Development files
 .env
