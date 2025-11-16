@@ -87,6 +87,12 @@ class AsyncGameEngine:
         self.last_auto_save = time.time()
         self.auto_save_interval = 60.0  # Auto-save every 60 seconds
 
+        # Performance monitoring
+        self.last_perf_report = time.time()
+        self.perf_report_interval = 300.0  # Report every 5 minutes
+        self.tick_count = 0
+        self.slow_tick_count = 0
+
         # Health check server for Kubernetes probes
         self.health_server = HealthServer(self)
 
@@ -255,61 +261,123 @@ class AsyncGameEngine:
     async def tick(self):
         """Process one async game tick."""
         tick_start = time.time()
+        timings = {}
 
         try:
             # Update world
+            t0 = time.time()
             await self.world_manager.update_world()
+            timings['world'] = time.time() - t0
 
             # Update NPCs, combat, etc.
+            t0 = time.time()
             await self._update_npcs()
+            timings['npcs'] = time.time() - t0
+
+            t0 = time.time()
             await self._update_combat()
+            timings['combat'] = time.time() - t0
 
             # Check lair respawns
+            t0 = time.time()
             await self._check_lair_respawns()
+            timings['lair_respawns'] = time.time() - t0
 
             # Check wandering mob spawns
+            t0 = time.time()
             await self._check_wandering_mob_spawns()
+            timings['wandering_spawns'] = time.time() - t0
 
             # Move wandering mobs
+            t0 = time.time()
             try:
                 await self._move_wandering_mobs()
             except Exception as e:
                 self.logger.error(f"Error moving wandering mobs: {e}")
                 import traceback
                 self.logger.error(traceback.format_exc())
+            timings['wandering_movement'] = time.time() - t0
 
             # Regenerate health and mana
+            t0 = time.time()
             await self._regenerate_players()
+            timings['regen_players'] = time.time() - t0
+
+            t0 = time.time()
             await self._regenerate_mobs()
+            timings['regen_mobs'] = time.time() - t0
 
             # Update spell cooldowns
+            t0 = time.time()
             await self._update_spell_cooldowns()
+            timings['spell_cooldowns'] = time.time() - t0
 
             # Update light sources (burning)
+            t0 = time.time()
             await self._update_light_sources()
+            timings['light_sources'] = time.time() - t0
 
             # Update trap effects (poison, burning)
+            t0 = time.time()
             await self.trap_system.update_trap_effects()
+            timings['trap_effects'] = time.time() - t0
 
             # Update active buffs/effects
+            t0 = time.time()
             await self._update_active_effects()
+            timings['active_effects'] = time.time() - t0
 
             # Update poison DOT effects
+            t0 = time.time()
             await self._update_poison_effects()
+            timings['poison_effects'] = time.time() - t0
 
             # Replenish vendor stock (every 5 minutes)
+            t0 = time.time()
             await self.vendor_system.replenish_vendor_stock()
+            timings['vendor_stock'] = time.time() - t0
 
             # Auto-save check
             current_time = time.time()
             if current_time - self.last_auto_save >= self.auto_save_interval:
+                t0 = time.time()
                 await self._auto_save_players()
                 self.last_auto_save = current_time
+                timings['auto_save'] = time.time() - t0
 
-            # Log slow ticks
+            # Log slow ticks with detailed breakdown
             tick_duration = time.time() - tick_start
-            if tick_duration > 0.5:
-                self.logger.warning(f"[PERFORMANCE] Slow tick: {tick_duration:.2f}s")
+            self.tick_count += 1
+
+            if tick_duration > 0.1:  # Log if tick takes >100ms (lowered threshold)
+                self.slow_tick_count += 1
+                # Find the slowest subsystems
+                slow_systems = [(k, v) for k, v in timings.items() if v > 0.05]
+                slow_systems.sort(key=lambda x: x[1], reverse=True)
+
+                if slow_systems:
+                    breakdown = ", ".join([f"{k}={v*1000:.0f}ms" for k, v in slow_systems[:5]])
+                    self.logger.warning(f"[PERFORMANCE] Slow tick: {tick_duration*1000:.0f}ms (top: {breakdown})")
+                else:
+                    self.logger.warning(f"[PERFORMANCE] Slow tick: {tick_duration*1000:.0f}ms")
+
+            # Periodic performance report
+            if current_time - self.last_perf_report >= self.perf_report_interval:
+                total_mobs = sum(len(mobs) for mobs in self.room_mobs.values())
+                wandering_mobs = sum(1 for mobs in self.room_mobs.values() for mob in mobs if mob.get('is_wandering'))
+                active_players = len(self.player_manager.connected_players)
+                active_combats = len(self.active_combats)
+
+                self.logger.info(
+                    f"[PERFORMANCE] 5min report: {self.tick_count} ticks, {self.slow_tick_count} slow "
+                    f"({100*self.slow_tick_count/max(1,self.tick_count):.1f}%), "
+                    f"players={active_players}, mobs={total_mobs} (wandering={wandering_mobs}), "
+                    f"combats={active_combats}, fatigue_entries={len(self.mob_fatigue)}, "
+                    f"room_mobs_tracked={len(self.room_mobs)}"
+                )
+                self.last_perf_report = current_time
+                self.tick_count = 0
+                self.slow_tick_count = 0
 
         except Exception as e:
             self.logger.error(f"Error in game tick: {e}")
