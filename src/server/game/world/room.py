@@ -11,7 +11,8 @@ class Room:
         self.title = title
         self.description = description
         self.exits: Dict[str, 'Exit'] = {}
-        self.locked_exits: Dict[str, Dict] = {}  # direction -> {required_key, description}
+        self.locked_exits: Dict[str, Dict] = {}  # direction -> {required_key, description} (legacy)
+        self.barriers: Dict[str, Dict] = {}  # direction -> {barrier_id, locked, unlocked_by} (new system)
         self.players: List['Character'] = []
         self.npcs: List['NPC'] = []
         self.items: List['Item'] = []

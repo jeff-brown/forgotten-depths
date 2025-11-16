@@ -109,6 +109,39 @@ Room connections form a directed graph managed by WorldGraph (`src/server/game/w
 - Special exits (doors, hidden passages, etc.)
 - Graph validation and pathfinding
 
+#### Adding Items to Rooms
+
+**IMPORTANT:** When adding items to room JSON files, you **MUST** use the dictionary format with `item_id` and `quantity` fields. The code in `world_manager.py:_initialize_room_items()` handles both formats for backwards compatibility, but the preferred format is:
+
+```json
+{
+  "items": [
+    {
+      "item_id": "ruby_key",
+      "quantity": 1
+    },
+    {
+      "item_id": "health_potion",
+      "quantity": 3
+    }
+  ]
+}
+```
+
+**Do NOT use the legacy string-only format:**
+```json
+{
+  "items": ["ruby_key", "health_potion"]  // ❌ LEGACY - avoid this
+}
+```
+
+The legacy format exists in some older rooms but should not be used for new content. The dict format is required because:
+- It supports item quantities
+- It's more explicit and maintainable
+- It matches the data structure used by the item system
+
+**Why this matters:** In November 2024, world loading broke because the code wasn't updated to handle the dict format when it was introduced. The fix in `world_manager.py:244-290` now handles both formats, but always use the dict format for new content to avoid confusion.
+
 ### Combat System
 
 Combat uses a **fatigue-based** system:

@@ -42,10 +42,19 @@ class VendorSystem:
             # Use cached NPC data from WorldManager instead of loading from files
             if hasattr(self.game_engine, 'world_manager') and self.game_engine.world_manager.npcs:
                 for npc_id, npc_data in self.game_engine.world_manager.npcs.items():
-                    # Check if this NPC has vendor services or shop data
-                    if (npc_data.get('services') and 'shop' in npc_data.get('services', [])) or npc_data.get('shop'):
+                    # Check if this NPC has vendor/shop services or shop data
+                    services = npc_data.get('services', [])
+                    # Check for any vendor-related service
+                    vendor_service_keywords = ['shop', 'vendor', 'weapon_shop', 'armor_shop', 'blacksmith',
+                                               'potion_shop', 'magic_shop', 'equipment_shop', 'repair',
+                                               'forge', 'tavern', 'inn']
+                    has_vendor_service = any(keyword in services for keyword in vendor_service_keywords)
+
+                    if has_vendor_service or npc_data.get('shop'):
+                        self.logger.info(f"[VENDOR DEBUG] Processing NPC as vendor: {npc_id} with services: {services}")
                         self._process_npc_vendor(npc_data)
                 self.logger.info(f"Loaded {len(self.vendors)} vendors from cached NPC data")
+                self.logger.info(f"[VENDOR DEBUG] Vendors loaded: {list(self.vendors.keys())}")
             else:
                 self.logger.warning("WorldManager NPCs not available, no vendors loaded")
 

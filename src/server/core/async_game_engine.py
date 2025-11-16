@@ -9,6 +9,7 @@ from typing import Optional, Dict, Any
 
 from ..networking.async_connection_manager import AsyncConnectionManager
 from ..game.world.world_manager import WorldManager
+from ..game.world.barrier_system import BarrierSystem
 from .event_system import EventSystem
 from ..commands.command_handler import CommandHandler
 from ..game.vendors.vendor_system import VendorSystem
@@ -40,6 +41,8 @@ class AsyncGameEngine:
         self.connection_manager = AsyncConnectionManager()
         self.world_manager = WorldManager(self)
         self.config_manager = ConfigManager()
+        self.barrier_system = BarrierSystem(self.world_manager, self.connection_manager)
+        self.barrier_system.game_engine = self  # Set game_engine reference for room notifications
         self.command_handler = CommandHandler(self)
         self.vendor_system = VendorSystem(self)
         self.combat_system = CombatSystem(self)
@@ -1508,6 +1511,30 @@ class AsyncGameEngine:
                 destination_id = exit_obj.destination_room_id if hasattr(exit_obj, 'destination_room_id') else str(exit_obj)
                 if not destination_id or destination_id not in self.world_manager.rooms:
                     continue
+
+                # Check barriers - wandering mobs must respect barriers like aggressive mobs
+                if hasattr(self, 'barrier_system'):
+                    # Create a minimal character dict for the mob (most mobs don't have keys)
+                    mob_character = {
+                        'inventory': mob.get('inventory', [])
+                    }
+
+                    # Check if barrier blocks movement
+                    can_pass, unlock_msg = await self.barrier_system.check_barrier(
+                        player_id=-1,  # Negative ID indicates this is a mob
+                        character=mob_character,
+                        room=room,
+                        direction=direction,
+                        player_name=mob_name
+                    )
+
+                    if not can_pass:
+                        # Barrier blocked movement - skip this exit and try a different one next time
+                        continue
+
+                    # If barrier was unlocked, update mob's inventory
+                    if unlock_msg:
+                        mob['inventory'] = mob_character['inventory']
 
                 # Check if destination is in the same area (prevent leaving dungeon)
                 destination_room = self.world_manager.get_room(destination_id)

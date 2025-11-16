@@ -122,6 +122,18 @@ class WorldLoader:
 
         return npcs
 
+    def load_barriers(self) -> Dict[str, Any]:
+        """Load barrier definitions from data/barriers.json."""
+        barriers_file = os.path.join(self.data_dir, "barriers.json")
+
+        if not os.path.exists(barriers_file):
+            return {}
+
+        with open(barriers_file, 'r') as f:
+            barriers_data = json.load(f)
+            # Return just the barriers dict, not the wrapper
+            return barriers_data.get('barriers', {})
+
     def load_connections(self) -> Dict[str, Any]:
         """Load room connections data."""
         connections_file = os.path.join(self.data_dir, "world", "connections.json")

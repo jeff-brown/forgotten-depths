@@ -10,10 +10,10 @@
     "west": "dungeon1_14",
     "up": "arena"
   },
-  "locked_exits": {
+  "barriers": {
     "northeast": {
-      "required_key": "bronze_key",
-      "description": "The enormous stone door is locked with a bronze mechanism."
+      "barrier_id": "bronze_door",
+      "locked": true
     }
   }
 }

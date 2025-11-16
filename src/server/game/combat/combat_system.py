@@ -1536,6 +1536,33 @@ class CombatSystem:
                 self.logger.debug(f"[MOB_MOVE] {mob_name} cannot find direction to {next_room_id}")
                 return False
 
+            # Check barriers - mobs must respect barriers like players do
+            if hasattr(self.game_engine, 'barrier_system'):
+                # Create a minimal character dict for the mob (most mobs don't have keys)
+                mob_character = {
+                    'inventory': mob.get('inventory', [])
+                }
+
+                # Check if barrier blocks movement
+                can_pass, unlock_msg = await self.game_engine.barrier_system.check_barrier(
+                    player_id=-1,  # Negative ID indicates this is a mob
+                    character=mob_character,
+                    room=room,
+                    direction=chosen_direction,
+                    player_name=mob_name
+                )
+
+                if not can_pass:
+                    self.logger.debug(f"[MOB_MOVE] {mob_name} blocked by barrier in direction {chosen_direction}, clearing aggro")
+                    # Clear aggro since we can't reach the target
+                    mob.pop('aggro_target', None)
+                    mob.pop('aggro_room', None)
+                    return False
+
+                # If barrier was unlocked, update mob's inventory
+                if unlock_msg:
+                    mob['inventory'] = mob_character['inventory']
+
             # Check if destination is a safe room - mobs cannot enter safe rooms
             dest_room = self.game_engine.world_manager.get_room(next_room_id)
             if dest_room and hasattr(dest_room, 'is_safe') and dest_room.is_safe:
@@ -1620,14 +1647,14 @@ class CombatSystem:
                 self.logger.debug(f"[FLEE] {mob_name} has no exits to flee through")
                 return False
 
-            # Filter out locked exits and exits leading to safe rooms
+            # Filter out locked exits, barriers, and exits leading to safe rooms
             valid_exits = []
             for direction in all_exits:
                 exit_obj = room.exits.get(direction)
                 if not exit_obj:
                     continue
 
-                # Check if exit is locked
+                # Check if exit is locked (old system - being phased out)
                 if hasattr(exit_obj, 'is_locked') and exit_obj.is_locked:
                     self.logger.debug(f"[FLEE] {mob_name} cannot flee {direction} - exit is locked")
                     continue
@@ -1636,6 +1663,28 @@ class CombatSystem:
                 destination_id = exit_obj.destination_room_id if hasattr(exit_obj, 'destination_room_id') else str(exit_obj)
                 if not destination_id or destination_id not in self.game_engine.world_manager.rooms:
                     continue
+
+                # Check barriers - mobs must respect barriers when fleeing
+                if hasattr(self.game_engine, 'barrier_system'):
+                    mob_character = {
+                        'inventory': mob.get('inventory', [])
+                    }
+
+                    can_pass, unlock_msg = await self.game_engine.barrier_system.check_barrier(
+                        player_id=-1,  # Negative ID indicates this is a mob
+                        character=mob_character,
+                        room=room,
+                        direction=direction,
+                        player_name=mob_name
+                    )
+
+                    if not can_pass:
+                        self.logger.debug(f"[FLEE] {mob_name} cannot flee {direction} - blocked by barrier")
+                        continue
+
+                    # Update mob inventory if barrier was unlocked
+                    if unlock_msg:
+                        mob['inventory'] = mob_character['inventory']
 
                 # Check if destination is a safe room
                 dest_room = self.game_engine.world_manager.get_room(destination_id)

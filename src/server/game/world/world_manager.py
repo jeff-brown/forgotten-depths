@@ -23,6 +23,7 @@ class WorldManager:
         self.rooms: Dict[str, Room] = {}
         self.npcs: Dict[str, 'NPC'] = {}
         self.items: Dict[str, 'Item'] = {}
+        self.barriers: Dict[str, Dict] = {}  # Store barrier definitions
         self.world_graph = WorldGraph()
         self.logger = get_logger()
         self.world_loader = WorldLoader()
@@ -39,6 +40,7 @@ class WorldManager:
             rooms_data = self.world_loader.load_rooms()
             items_data = self.world_loader.load_items()
             npcs_data = self.world_loader.load_npcs()
+            barriers_data = self.world_loader.load_barriers()
 
             # Store rooms_data for later use (e.g., admin commands)
             self.rooms_data = rooms_data
@@ -55,9 +57,10 @@ class WorldManager:
             # Build world graph from room exit data
             self._build_world_graph_from_rooms(rooms_data)
 
-            # Load items and NPCs
+            # Load items, NPCs, and barriers
             self._load_items(items_data)
             self._load_npcs(npcs_data)
+            self._load_barriers(barriers_data)
 
             # Initialize room items (place items from room JSON into rooms)
             self._initialize_room_items(rooms_data)
@@ -74,7 +77,9 @@ class WorldManager:
             self.logger.info(f"World loaded: {len(self.areas)} areas, {len(self.rooms)} rooms, {graph_stats['edges']} connections")
 
         except Exception as e:
+            import traceback
             self.logger.error(f"Failed to load world: {e}")
+            self.logger.error(f"Traceback: {traceback.format_exc()}")
             # Create a basic default world
             self._create_default_world()
 
@@ -123,12 +128,21 @@ class WorldManager:
             # NPCs will be populated later in _initialize_room_npcs
             # (don't set room.npcs here, it will be replaced with actual NPC objects)
 
-            # Load locked exits
+            # Load locked exits (legacy system)
             if 'locked_exits' in room_data:
                 room.locked_exits = room_data['locked_exits']
                 self.logger.info(f"[DOOR] Loaded locked_exits for room '{room_id}': {list(room.locked_exits.keys())}")
                 for direction, lock_info in room.locked_exits.items():
                     self.logger.info(f"[DOOR]   - {direction}: requires '{lock_info.get('required_key')}'")
+
+            # Load barriers (new unified system)
+            if 'barriers' in room_data:
+                room.barriers = room_data['barriers']
+                self.logger.info(f"[BARRIER] Loaded barriers for room '{room_id}': {list(room.barriers.keys())}")
+                for direction, barrier_info in room.barriers.items():
+                    barrier_id = barrier_info.get('barrier_id')
+                    locked = barrier_info.get('locked', True)
+                    self.logger.info(f"[BARRIER]   - {direction}: barrier_id='{barrier_id}', locked={locked}")
 
             # Store raw data for NPC and item references
             room._raw_data = room_data
@@ -192,6 +206,19 @@ class WorldManager:
         if quest_givers:
             self.logger.info(f"Quest-giver NPCs: {', '.join(quest_givers)}")
 
+    def _load_barriers(self, barriers_data: Dict):
+        """Load barrier definitions from barriers.json."""
+        self.barriers = barriers_data
+        self.logger.info(f"Loaded {len(barriers_data)} barrier definitions")
+
+        # Log barrier types
+        barrier_types = {}
+        for barrier_id, barrier_data in barriers_data.items():
+            barrier_type = barrier_data.get('type', 'unknown')
+            barrier_types[barrier_type] = barrier_types.get(barrier_type, 0) + 1
+
+        self.logger.info(f"Barrier types: {', '.join(f'{k}={v}' for k, v in barrier_types.items())}")
+
     def _initialize_room_items(self, rooms_data: Dict):
         """Initialize items in rooms from room data."""
         items_placed = 0
@@ -200,11 +227,30 @@ class WorldManager:
             if 'items' not in room_data:
                 continue
 
-            item_ids = room_data['items']
-            if not item_ids:
+            items_list = room_data['items']
+            if not items_list:
                 continue
 
-            for item_id in item_ids:
+            self.logger.debug(f"[ITEMS] Processing room '{room_id}' with {len(items_list)} items, type={type(items_list)}")
+
+            for item_entry in items_list:
+                self.logger.debug(f"[ITEMS]   Processing item_entry: {item_entry}, type={type(item_entry)}")
+
+                # Handle both dict format {"item_id": "...", "quantity": N} and string format
+                if isinstance(item_entry, dict):
+                    item_id = item_entry.get('item_id')
+                    quantity = item_entry.get('quantity', 1)
+                    self.logger.debug(f"[ITEMS]   Dict format: item_id='{item_id}', quantity={quantity}")
+                else:
+                    # Old format: just a string item_id
+                    item_id = item_entry
+                    quantity = 1
+                    self.logger.debug(f"[ITEMS]   String format: item_id='{item_id}'")
+
+                if not item_id:
+                    self.logger.warning(f"Invalid item entry in room '{room_id}': {item_entry}")
+                    continue
+
                 # Look up the full item data
                 if item_id in self.items:
                     item_data = self.items[item_id].copy()
@@ -215,9 +261,11 @@ class WorldManager:
 
                     # Add item to the room through game engine's item manager
                     if self.game_engine and hasattr(self.game_engine, 'item_manager'):
-                        self.game_engine.item_manager.add_item_to_room(room_id, item_data)
-                        items_placed += 1
-                        self.logger.info(f"[DOOR] Placed item '{item_id}' ({item_data.get('name', item_id)}) with id='{item_data.get('id')}' in room '{room_id}'")
+                        # Add the item 'quantity' times
+                        for _ in range(quantity):
+                            self.game_engine.item_manager.add_item_to_room(room_id, item_data)
+                            items_placed += 1
+                        self.logger.info(f"[DOOR] Placed {quantity}x item '{item_id}' ({item_data.get('name', item_id)}) with id='{item_data.get('id')}' in room '{room_id}'")
                     else:
                         self.logger.warning(f"Cannot place item '{item_id}' in room '{room_id}' - item manager not available")
                 else:
@@ -240,6 +288,7 @@ class WorldManager:
 
             room = self.rooms.get(room_id)
             if not room:
+                self.logger.warning(f"Room '{room_id}' not found in self.rooms, skipping NPCs")
                 continue
 
             # Clear the string list and replace with actual NPC objects
@@ -272,9 +321,8 @@ class WorldManager:
                     # Add NPC object to room
                     room.npcs.append(npc)
                     npcs_placed += 1
-                    self.logger.info(f"Placed NPC '{npc_id}' ({npc.name}) in room '{room_id}'")
                 else:
-                    self.logger.warning(f"NPC '{npc_id}' referenced in room '{room_id}' not found in npcs.json")
+                    self.logger.warning(f"NPC '{npc_id}' referenced in room '{room_id}' not found in self.npcs")
 
         self.logger.info(f"Initialized {npcs_placed} NPCs in rooms")
 

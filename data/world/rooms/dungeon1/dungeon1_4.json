@@ -14,5 +14,6 @@
       "respawn_time": 300,
       "max_mobs": 1
     }
-  ]
+  ],
+  "lair_loot": ["copper_key"]
 }
