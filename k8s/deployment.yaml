@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forgotten-depths
+  namespace: forgotten-depths
+  labels:
+    app: forgotten-depths
+spec:
+  replicas: 1  # Single replica for SQLite (not horizontally scalable)
+  strategy:
+    type: Recreate  # Recreate strategy for stateful app with single PV
+  selector:
+    matchLabels:
+      app: forgotten-depths
+  template:
+    metadata:
+      labels:
+        app: forgotten-depths
+    spec:
+      containers:
+      - name: mud-server
+        image: ghcr.io/jeff-brown/forgotten-depths:latest
+        imagePullPolicy: Always
+        ports:
+        - name: telnet
+          containerPort: 4000
+          protocol: TCP
+        - name: web
+          containerPort: 8080
+          protocol: TCP
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: data
+          mountPath: /app/data
+        - name: logs
+          mountPath: /app/logs
+        - name: config
+          mountPath: /app/config
+        livenessProbe:
+          tcpSocket:
+            port: 4000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          tcpSocket:
+            port: 4000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: forgotten-depths-data
+      - name: logs
+        emptyDir: {}
+      - name: config
+        configMap:
+          name: forgotten-depths-config

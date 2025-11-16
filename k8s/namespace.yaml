@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: forgotten-depths
+  labels:
+    app: forgotten-depths
+    environment: production

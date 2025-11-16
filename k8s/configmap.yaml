@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: forgotten-depths-config
+  namespace: forgotten-depths
+  labels:
+    app: forgotten-depths
+data:
+  server.yaml: |
+    # Server Configuration for Forgotten Depths MUD
+    network:
+      host: "0.0.0.0"
+      port: 4000
+      max_connections: 100
+      heartbeat_interval: 30
+      connection_timeout: 300
+
+    web:
+      enabled: true
+      host: "0.0.0.0"
+      port: 8080
+      debug: false
+
+    game:
+      tick_rate: 1.0
+      save_interval: 60
+      idle_timeout: 1800
+      max_level: 100
+      starting_room: "town_square"
+
+    combat:
+      base_damage: 5
+      base_hit_chance: 0.50
+      critical_chance: 0.05
+      critical_multiplier: 2.0
+      flee_chance: 0.7
+
+    experience:
+      base_needed: 100
+      multiplier: 1.5
+      mob_base: 25
+
+    logging:
+      level: "INFO"
+      file: "logs/server.log"
+      max_size: "10MB"
+      backup_count: 5
+      console: true
+
+    security:
+      max_login_attempts: 3
+      login_timeout: 900
+      password_min_length: 6
+      password_max_length: 50
+
+  database.yaml: |
+    # Database Configuration
+    database:
+      type: "sqlite"
+      path: "/app/data/mud.db"
+      backup_enabled: true
+      backup_interval: 3600
+      backup_count: 24
+
+  game_settings.yaml: |
+    # Game Settings
+    player:
+      max_inventory: 50
+      max_weight: 1000
+      starting_gold: 100
+
+    economy:
+      vendor_buy_multiplier: 0.5
+      vendor_sell_multiplier: 1.5
+
+    death:
+      experience_loss_percent: 10
+      respawn_room: "town_square"
+      corpse_decay_time: 300

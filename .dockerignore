@@ -1,0 +1,66 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# CI/CD
+.github/
+
+# Kubernetes
+k8s/
+*.yaml
+*.yml
+
+# Documentation
+docs/
+*.md
+README.md
+
+# Tests
+tests/
+*.test
+
+# Logs (will be created in container)
+logs/
+*.log
+
+# Temporary files
+tmp/
+*.tmp
+.DS_Store
+
+# Database (will use volume mount)
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Config (will be overridden by ConfigMap)
+config/*.yaml
+
+# Development files
+.env
+.env.local

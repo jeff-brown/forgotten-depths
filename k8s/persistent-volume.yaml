@@ -1,0 +1,15 @@
+# PersistentVolumeClaim for SQLite database storage
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: forgotten-depths-data
+  namespace: forgotten-depths
+  labels:
+    app: forgotten-depths
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: linode-block-storage-retain
