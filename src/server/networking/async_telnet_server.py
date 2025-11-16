@@ -256,6 +256,13 @@ class AsyncTelnetServer:
         connection_id = self.next_id
         self.next_id += 1
 
+        # Disable Nagle's algorithm for low-latency interactive gameplay
+        # Without this, TCP buffers small packets causing 40-200ms delays
+        sock = writer.get_extra_info('socket')
+        if sock:
+            import socket
+            sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+
         connection = AsyncTelnetConnection(reader, writer, connection_id, self)
         self.connections[connection_id] = connection
 
