@@ -1719,7 +1719,7 @@ class CombatSystem:
             arrive_msg = f"{mob_name} arrives, fleeing from combat!"
             await self._notify_room_players(destination_id, arrive_msg)
 
-            self.logger.info(f"[FLEE] {mob_name} fled from {room_id} to {destination_id} via {direction}")
+            self.logger.debug(f"[FLEE] {mob_name} fled from {room_id} to {destination_id} via {direction}")
             return True
 
         except Exception as e:

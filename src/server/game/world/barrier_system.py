@@ -38,7 +38,7 @@ class BarrierSystem:
         barrier_id = barrier_info.get('barrier_id')
         is_locked = barrier_info.get('locked', True)
 
-        self.logger.info(f"[BARRIER] Exit {direction} has barrier '{barrier_id}', locked={is_locked}")
+        self.logger.debug(f"[BARRIER] Exit {direction} has barrier '{barrier_id}', locked={is_locked}")
 
         # Get barrier definition
         barrier_def = self.world_manager.barriers.get(barrier_id)
@@ -51,7 +51,7 @@ class BarrierSystem:
             await self._notify_room_of_attempt(room, player_id, player_name, barrier_def, False)
             return (False, None)
 
-        self.logger.info(f"[BARRIER] Found barrier definition for '{barrier_id}': {barrier_def.get('name')}")
+        self.logger.debug(f"[BARRIER] Found barrier definition for '{barrier_id}': {barrier_def.get('name')}")
 
         # Check requirements first (level, items, etc.) - these ALWAYS block, regardless of locked status
         requirements = barrier_def.get('requirements', {})
@@ -119,7 +119,7 @@ class BarrierSystem:
         if player_id >= 0:
             await self.connection_manager.send_message(player_id, locked_msg)
         await self._notify_room_of_attempt(room, player_id, player_name, barrier_def, False, direction)
-        self.logger.info(f"[BARRIER] No unlock method succeeded, blocking movement")
+        self.logger.debug(f"[BARRIER] No unlock method succeeded, blocking movement")
         return (False, None)
 
     async def _try_key_unlock(self, player_id: int, character: Dict, barrier_info: Dict,
@@ -137,7 +137,7 @@ class BarrierSystem:
         required_item = key_method.get('required_item')
         consumes_item = key_method.get('consumes_item', False)
 
-        self.logger.info(f"[BARRIER] Checking for key: '{required_item}'")
+        self.logger.debug(f"[BARRIER] Checking for key: '{required_item}'")
 
         # Check if player has the required item
         has_item = False
@@ -154,7 +154,7 @@ class BarrierSystem:
 
                 if item_id_normalized == required_normalized:
                     has_item = True
-                    self.logger.info(f"[BARRIER] Found matching key: '{item_id}'")
+                    self.logger.debug(f"[BARRIER] Found matching key: '{item_id}'")
                     break
             elif isinstance(item, str):
                 # String item - normalize and compare
@@ -162,16 +162,16 @@ class BarrierSystem:
                 required_normalized = required_item.lower().replace(' ', '_')
                 if item_normalized == required_normalized:
                     has_item = True
-                    self.logger.info(f"[BARRIER] Found matching key: '{item}'")
+                    self.logger.debug(f"[BARRIER] Found matching key: '{item}'")
                     break
 
         if not has_item:
             # Player doesn't have the key
-            self.logger.info(f"[BARRIER] Player lacks required item '{required_item}'")
+            self.logger.debug(f"[BARRIER] Player lacks required item '{required_item}'")
             return (False, None)
 
         # Player has the item - unlock the barrier
-        self.logger.info(f"[BARRIER] Player has '{required_item}', unlocking barrier")
+        self.logger.debug(f"[BARRIER] Player has '{required_item}', unlocking barrier")
 
         # Optionally consume the item
         consumed_message = ""
@@ -185,7 +185,7 @@ class BarrierSystem:
 
                     if item_id_normalized == required_normalized:
                         inventory.pop(i)
-                        self.logger.info(f"[BARRIER] Consumed item '{item_id}'")
+                        self.logger.debug(f"[BARRIER] Consumed item '{item_id}'")
                         consumed_message = f"The {item_id.replace('_', ' ').lower()} crumbles to dust.\n"
                         break
                 elif isinstance(item, str):
@@ -193,7 +193,7 @@ class BarrierSystem:
                     item_normalized = item.lower().replace(' ', '_')
                     if item_normalized == required_normalized:
                         inventory.pop(i)
-                        self.logger.info(f"[BARRIER] Consumed item '{item}'")
+                        self.logger.debug(f"[BARRIER] Consumed item '{item}'")
                         consumed_message = f"The {item.replace('_', ' ').lower()} crumbles to dust.\n"
                         break
 
@@ -218,7 +218,7 @@ class BarrierSystem:
         # Notify room of successful unlock
         await self._notify_room_of_unlock(room, player_id, player_name, barrier_def, direction)
 
-        self.logger.info(f"[BARRIER] Barrier unlocked successfully with key")
+        self.logger.debug(f"[BARRIER] Barrier unlocked successfully with key")
         return (True, full_message)
 
     async def _try_climb_unlock(self, player_id: int, character: Dict, barrier_info: Dict,
@@ -257,16 +257,16 @@ class BarrierSystem:
             # Rogues get significant climbing bonus
             level = character.get('level', 1)
             ability_bonus = 0.15 + (level * 0.01)  # 15% base + 1% per level
-            self.logger.info(f"[BARRIER] Rogue climbing bonus: {ability_bonus}")
+            self.logger.debug(f"[BARRIER] Rogue climbing bonus: {ability_bonus}")
 
         # Calculate total success chance
         success_chance = base_chance + dex_bonus + str_bonus + ability_bonus
         success_chance = min(0.75, success_chance)  # Cap at 75%
 
-        self.logger.info(f"[BARRIER] Climb attempt: difficulty={difficulty}, base={base_chance}, dex_bonus={dex_bonus}, str_bonus={str_bonus}, ability_bonus={ability_bonus}, total={success_chance}")
+        self.logger.debug(f"[BARRIER] Climb attempt: difficulty={difficulty}, base={base_chance}, dex_bonus={dex_bonus}, str_bonus={str_bonus}, ability_bonus={ability_bonus}, total={success_chance}")
 
         roll = random.random()
-        self.logger.info(f"[BARRIER] Climb roll: {roll} vs success_chance: {success_chance}")
+        self.logger.debug(f"[BARRIER] Climb roll: {roll} vs success_chance: {success_chance}")
 
         if roll < success_chance:
             # Successful climb!
@@ -276,7 +276,7 @@ class BarrierSystem:
             # Notify room of successful climb
             await self._notify_room_of_unlock(room, player_id, player_name, barrier_def, direction)
 
-            self.logger.info(f"[BARRIER] Successful climb!")
+            self.logger.debug(f"[BARRIER] Successful climb!")
             return (True, success_msg)
         else:
             # Failed climb attempt
@@ -287,7 +287,7 @@ class BarrierSystem:
             # Notify room of failed attempt
             await self._notify_room_of_attempt(room, player_id, player_name, barrier_def, False, direction)
 
-            self.logger.info(f"[BARRIER] Failed climb attempt")
+            self.logger.debug(f"[BARRIER] Failed climb attempt")
             return (False, None)
 
     async def _check_requirements(self, player_id: int, character: Dict, requirements: Dict,
@@ -317,7 +317,7 @@ class BarrierSystem:
                 # Only send message to players, not mobs
                 if player_id >= 0:
                     await self.connection_manager.send_message(player_id, msg)
-                self.logger.info(f"[BARRIER] Level requirement not met: {char_level} < {min_level}")
+                self.logger.debug(f"[BARRIER] Level requirement not met: {char_level} < {min_level}")
                 return (False, None)
 
         # Check maximum level (prevents high-level players from entering beginner areas)
@@ -330,7 +330,7 @@ class BarrierSystem:
                 # Only send message to players, not mobs
                 if player_id >= 0:
                     await self.connection_manager.send_message(player_id, msg)
-                self.logger.info(f"[BARRIER] Level too high: {char_level} > {max_level}")
+                self.logger.debug(f"[BARRIER] Level too high: {char_level} > {max_level}")
                 return (False, None)
 
         # Check for required item (must have in inventory)
@@ -353,7 +353,7 @@ class BarrierSystem:
                 # Only send message to players, not mobs
                 if player_id >= 0:
                     await self.connection_manager.send_message(player_id, msg)
-                self.logger.info(f"[BARRIER] Required item missing: {required_item}")
+                self.logger.debug(f"[BARRIER] Required item missing: {required_item}")
                 return (False, None)
 
         # Check for forbidden item (cannot have in inventory)
@@ -376,7 +376,7 @@ class BarrierSystem:
                 # Only send message to players, not mobs
                 if player_id >= 0:
                     await self.connection_manager.send_message(player_id, msg)
-                self.logger.info(f"[BARRIER] Forbidden item present: {forbidden_item}")
+                self.logger.debug(f"[BARRIER] Forbidden item present: {forbidden_item}")
                 return (False, None)
 
         # Check for required property (e.g., rune)
@@ -392,7 +392,7 @@ class BarrierSystem:
                 # Only send message to players, not mobs
                 if player_id >= 0:
                     await self.connection_manager.send_message(player_id, msg)
-                self.logger.info(f"[BARRIER] Required property missing: {prop_name}={prop_value}")
+                self.logger.debug(f"[BARRIER] Required property missing: {prop_name}={prop_value}")
                 return (False, None)
 
         # Check for forbidden property (e.g., cannot have white rune)
@@ -408,7 +408,7 @@ class BarrierSystem:
                 # Only send message to players, not mobs
                 if player_id >= 0:
                     await self.connection_manager.send_message(player_id, msg)
-                self.logger.info(f"[BARRIER] Forbidden property present: {prop_name}={prop_value}")
+                self.logger.debug(f"[BARRIER] Forbidden property present: {prop_name}={prop_value}")
                 return (False, None)
 
         # Check for required class
@@ -421,7 +421,7 @@ class BarrierSystem:
                 # Only send message to players, not mobs
                 if player_id >= 0:
                     await self.connection_manager.send_message(player_id, msg)
-                self.logger.info(f"[BARRIER] Class requirement not met: {char_class} != {required_class}")
+                self.logger.debug(f"[BARRIER] Class requirement not met: {char_class} != {required_class}")
                 return (False, None)
 
         # All requirements met

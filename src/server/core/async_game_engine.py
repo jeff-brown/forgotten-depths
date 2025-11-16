@@ -244,6 +244,8 @@ class AsyncGameEngine:
 
     async def tick(self):
         """Process one async game tick."""
+        tick_start = time.time()
+
         try:
             # Update world
             await self.world_manager.update_world()
@@ -292,6 +294,11 @@ class AsyncGameEngine:
             current_time = time.time()
             if current_time - self.last_auto_save >= self.auto_save_interval:
                 await self._auto_save_players()
+
+            # Log slow ticks
+            tick_duration = time.time() - tick_start
+            if tick_duration > 0.5:
+                self.logger.warning(f"[PERFORMANCE] Slow tick: {tick_duration:.2f}s")
                 self.last_auto_save = current_time
 
         except Exception as e:
