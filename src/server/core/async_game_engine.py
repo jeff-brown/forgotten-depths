@@ -89,7 +89,7 @@ class AsyncGameEngine:
 
         # Performance monitoring
         self.last_perf_report = time.time()
-        self.perf_report_interval = 300.0  # Report every 5 minutes
+        self.perf_report_interval = 60.0  # Report every 1 minute
         self.tick_count = 0
         self.slow_tick_count = 0
 
@@ -185,6 +185,9 @@ class AsyncGameEngine:
 
             # Start health check server
             await self.health_server.start()
+
+            # Log initial performance monitoring status
+            self.logger.info("[PERFORMANCE] Monitoring enabled: slow_tick_threshold=100ms, report_interval=1min")
 
             # Start the server (this will run until stopped)
             await self.connection_manager.start_server(host, port)
@@ -369,7 +372,7 @@ class AsyncGameEngine:
                 active_combats = len(self.active_combats)
 
                 self.logger.info(
-                    f"[PERFORMANCE] 5min report: {self.tick_count} ticks, {self.slow_tick_count} slow "
+                    f"[PERFORMANCE] 1min report: {self.tick_count} ticks, {self.slow_tick_count} slow "
                     f"({100*self.slow_tick_count/max(1,self.tick_count):.1f}%), "
                     f"players={active_players}, mobs={total_mobs} (wandering={wandering_mobs}), "
                     f"combats={active_combats}, fatigue_entries={len(self.mob_fatigue)}, "
