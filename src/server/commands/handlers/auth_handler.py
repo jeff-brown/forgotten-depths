@@ -377,7 +377,7 @@ What will you become?
             'active_effects': [],  # Active buffs/debuffs
 
             # Map exploration
-            'visited_rooms': {starting_room},  # Track visited rooms for map
+            'visited_rooms': [starting_room],  # Track visited rooms for map (list for JSON serialization)
         })
 
         # Give starting spells based on class

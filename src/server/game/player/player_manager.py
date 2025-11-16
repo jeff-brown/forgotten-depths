@@ -380,10 +380,10 @@ class PlayerManager:
 
             # Track visited rooms for map functionality
             if 'visited_rooms' not in character:
-                character['visited_rooms'] = set()
-            if isinstance(character['visited_rooms'], list):
-                character['visited_rooms'] = set(character['visited_rooms'])
-            character['visited_rooms'].add(new_room)
+                character['visited_rooms'] = []
+            # Keep as list for JSON serialization
+            if new_room not in character['visited_rooms']:
+                character['visited_rooms'].append(new_room)
 
             # Check if any wandering mobs should follow the player
             await self._check_mob_following(player_id, current_room, new_room, full_direction)
@@ -623,10 +623,10 @@ class PlayerManager:
 
             # Track visited rooms
             if 'visited_rooms' not in follower_char:
-                follower_char['visited_rooms'] = set()
-            if isinstance(follower_char['visited_rooms'], list):
-                follower_char['visited_rooms'] = set(follower_char['visited_rooms'])
-            follower_char['visited_rooms'].add(new_room_id)
+                follower_char['visited_rooms'] = []
+            # Keep as list for JSON serialization
+            if new_room_id not in follower_char['visited_rooms']:
+                follower_char['visited_rooms'].append(new_room_id)
 
             # Notify follower
             await self.connection_manager.send_message(

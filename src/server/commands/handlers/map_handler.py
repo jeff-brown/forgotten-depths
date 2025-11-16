@@ -68,19 +68,17 @@ class MapCommandHandler(BaseCommandHandler):
         # Check if we should filter by explored rooms
         show_only_explored = self.config_manager.get_setting('world', 'map_shows_only_explored', default=True)
 
-        # Get player's visited rooms
-        visited_rooms = set()
+        # Get player's visited rooms (as a list for JSON serialization)
+        visited_rooms = []
         if show_only_explored:
             player_data = self.player_manager.get_player_data(player_id)
             if player_data and player_data.get('character'):
                 character = player_data['character']
-                visited_rooms = character.get('visited_rooms', set())
-                if isinstance(visited_rooms, list):
-                    visited_rooms = set(visited_rooms)
+                visited_rooms = character.get('visited_rooms', [])
                 # Always include current room
                 current_room = character.get('room_id')
-                if current_room:
-                    visited_rooms.add(current_room)
+                if current_room and current_room not in visited_rooms:
+                    visited_rooms.append(current_room)
 
         # Direction mappings (x, y)
         direction_offsets = {
