@@ -71,6 +71,7 @@ class CommandHandler:
 
         Routes commands based on player state (login, character creation, or in-game).
         """
+        cmd_start = time.time()
         player_data = self.game_engine.player_manager.get_player_data(player_id)
 
         # Handle character creation (even if authenticated)
@@ -81,10 +82,18 @@ class CommandHandler:
         # Handle login process
         if not player_data.get('authenticated'):
             await self.auth_handler.handle_login_process(player_id, command, params)
+            cmd_duration = time.time() - cmd_start
+            if cmd_duration > 0.5:
+                self.logger.warning(f"[CMD_PERF] Slow login command '{command}': {cmd_duration*1000:.0f}ms")
             return
 
         # Handle game commands
         await self._handle_game_command(player_id, command, params)
+
+        # Log slow commands
+        cmd_duration = time.time() - cmd_start
+        if cmd_duration > 0.5:
+            self.logger.warning(f"[CMD_PERF] Slow command '{command} {params}': {cmd_duration*1000:.0f}ms")
 
     async def _handle_game_command(self, player_id: int, command: str, params: str):
         """Handle a game command from an authenticated player."""
