@@ -29,8 +29,14 @@ class AsyncTelnetConnection:
         peername = writer.get_extra_info('peername')
         self.address = peername[0] if peername else "unknown"
 
-    async def send_message(self, message: str, add_newline: bool = True):
-        """Send a message to the client."""
+    async def send_message(self, message: str, add_newline: bool = True, flush: bool = False):
+        """Send a message to the client.
+
+        Args:
+            message: The message to send
+            add_newline: Whether to add newline/carriage return
+            flush: Whether to immediately drain the write buffer (default False for batching)
+        """
         if not self.connected:
             return
 
@@ -40,9 +46,23 @@ class AsyncTelnetConnection:
                 message += '\n\r'
 
             self.writer.write(message.encode('latin1'))
-            await self.writer.drain()
+
+            # Only drain if explicitly requested - allows batching multiple messages
+            if flush:
+                await self.writer.drain()
         except (ConnectionResetError, BrokenPipeError, OSError) as e:
             self.server.logger.debug(f"Send error to {self.connection_id}: {e}")
+            await self.disconnect()
+
+    async def flush(self):
+        """Flush the write buffer to the network."""
+        if not self.connected:
+            return
+
+        try:
+            await self.writer.drain()
+        except (ConnectionResetError, BrokenPipeError, OSError) as e:
+            self.server.logger.debug(f"Flush error to {self.connection_id}: {e}")
             await self.disconnect()
 
     async def disconnect(self):

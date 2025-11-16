@@ -77,11 +77,19 @@ class CommandHandler:
         # Handle character creation (even if authenticated)
         if player_data.get('creating_character'):
             await self.auth_handler.handle_character_creation_input(player_id, command)
+            # Flush writes after character creation
+            connection = self.game_engine.connection_manager.telnet_server.connections.get(player_id)
+            if connection:
+                await connection.flush()
             return
 
         # Handle login process
         if not player_data.get('authenticated'):
             await self.auth_handler.handle_login_process(player_id, command, params)
+            # Flush writes after login
+            connection = self.game_engine.connection_manager.telnet_server.connections.get(player_id)
+            if connection:
+                await connection.flush()
             cmd_duration = time.time() - cmd_start
             if cmd_duration > 0.5:
                 self.logger.warning(f"[CMD_PERF] Slow login command '{command}': {cmd_duration*1000:.0f}ms")
@@ -89,6 +97,11 @@ class CommandHandler:
 
         # Handle game commands
         await self._handle_game_command(player_id, command, params)
+
+        # Flush the write buffer to send all batched messages
+        connection = self.game_engine.connection_manager.telnet_server.connections.get(player_id)
+        if connection:
+            await connection.flush()
 
         # Log slow commands
         cmd_duration = time.time() - cmd_start
