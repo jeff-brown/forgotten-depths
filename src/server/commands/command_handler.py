@@ -96,15 +96,21 @@ class CommandHandler:
             return
 
         # Handle game commands
+        game_cmd_start = time.time()
         await self._handle_game_command(player_id, command, params)
+        game_cmd_duration = time.time() - game_cmd_start
 
         # Flush the write buffer to send all batched messages
+        flush_start = time.time()
         connection = self.game_engine.connection_manager.telnet_server.connections.get(player_id)
         if connection:
             await connection.flush()
+        flush_duration = time.time() - flush_start
 
-        # Log slow commands
+        # Log all commands with timing breakdown
         cmd_duration = time.time() - cmd_start
+        self.logger.info(f"[CMD_TIMING] '{command} {params}': total={cmd_duration*1000:.0f}ms (game={game_cmd_duration*1000:.0f}ms, flush={flush_duration*1000:.0f}ms)")
+
         if cmd_duration > 0.5:
             self.logger.warning(f"[CMD_PERF] Slow command '{command} {params}': {cmd_duration*1000:.0f}ms")
 
