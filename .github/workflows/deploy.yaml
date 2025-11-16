@@ -114,13 +114,11 @@ jobs:
         echo "=== Deployment Status ==="
         kubectl get deployment -n forgotten-depths
 
-    - name: Display LoadBalancer IPs
+    - name: Display LoadBalancer IP
       run: |
-        echo "Waiting for LoadBalancer IPs..."
+        echo "Waiting for LoadBalancer IP..."
         sleep 30
         echo ""
-        echo "=== Telnet Server ==="
-        kubectl get svc forgotten-depths-telnet -n forgotten-depths -o jsonpath='{.status.loadBalancer.ingress[0].ip}' || echo "IP pending..."
+        echo "=== Service IP (Telnet: 4000, Web: 80) ==="
+        kubectl get svc forgotten-depths -n forgotten-depths -o jsonpath='{.status.loadBalancer.ingress[0].ip}' || echo "IP pending..."
         echo ""
-        echo "=== Web Client ==="
-        kubectl get svc forgotten-depths-web -n forgotten-depths -o jsonpath='{.status.loadBalancer.ingress[0].ip}' || echo "IP pending..."

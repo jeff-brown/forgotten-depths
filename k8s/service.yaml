@@ -1,9 +1,9 @@
 ---
-# Service for Telnet access (TCP port 4000)
+# Single LoadBalancer for both Telnet and Web access
 apiVersion: v1
 kind: Service
 metadata:
-  name: forgotten-depths-telnet
+  name: forgotten-depths
   namespace: forgotten-depths
   labels:
     app: forgotten-depths
@@ -18,29 +18,11 @@ spec:
     protocol: TCP
     port: 4000
     targetPort: 4000
-  sessionAffinity: ClientIP
-  sessionAffinityConfig:
-    clientIP:
-      timeoutSeconds: 10800  # 3 hours for persistent connections
-
----
-# Service for Web Client (HTTP port 8080)
-apiVersion: v1
-kind: Service
-metadata:
-  name: forgotten-depths-web
-  namespace: forgotten-depths
-  labels:
-    app: forgotten-depths
-  annotations:
-    service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
-spec:
-  type: LoadBalancer
-  selector:
-    app: forgotten-depths
-  ports:
   - name: web
     protocol: TCP
     port: 80
     targetPort: 8080
   sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800  # 3 hours for persistent connections

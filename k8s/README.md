@@ -24,17 +24,13 @@ kubectl apply -f k8s/service.yaml
 | `configmap.yaml` | Game configuration (server, database, game settings) |
 | `persistent-volume.yaml` | 10GB volume for SQLite database |
 | `deployment.yaml` | Main application deployment (1 replica) |
-| `service.yaml` | LoadBalancers for Telnet (4000) and Web (80) |
+| `service.yaml` | Single LoadBalancer for both Telnet (4000) and Web (80) |
 
 ## Access
 
-Get service IPs:
+Get service IP:
 ```bash
-# Telnet server
-kubectl get svc forgotten-depths-telnet -n forgotten-depths
-
-# Web client
-kubectl get svc forgotten-depths-web -n forgotten-depths
+kubectl get svc forgotten-depths -n forgotten-depths
 ```
 
 Connect:
@@ -65,7 +61,7 @@ kubectl exec -it deployment/forgotten-depths -n forgotten-depths -- /bin/bash
 
 - **Single replica only**: SQLite doesn't support horizontal scaling
 - **Storage class**: Uses `linode-block-storage-retain` for data persistence
-- **LoadBalancers**: Linode provisions public IPs automatically
-- **Session affinity**: Enabled for persistent player connections
+- **Single LoadBalancer**: One IP serves both telnet and web (saves ~$10/month vs separate LoadBalancers)
+- **Session affinity**: Enabled for persistent player connections (3-hour timeout)
 
 See [docs/DEPLOYMENT.md](../docs/DEPLOYMENT.md) for complete documentation.
