@@ -8,7 +8,7 @@ metadata:
   labels:
     app: forgotten-depths
   annotations:
-    service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
+    service.beta.kubernetes.io/linode-loadbalancer-throttle: "20"  # Increased from 4 to support interactive gameplay
 spec:
   type: LoadBalancer
   selector:
