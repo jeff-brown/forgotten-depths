@@ -271,28 +271,41 @@ class PlayerManager:
 
     async def move_player(self, player_id: int, direction: str):
         """Move a player in a direction."""
+        import time
+        move_start = time.time()
+        timings = {}
+
+        t0 = time.time()
         player_data = self.get_player_data(player_id)
         if not player_data or not player_data.get('character'):
             return
+        timings['get_player'] = time.time() - t0
 
         # Check if player is fatigued from combat
+        t0 = time.time()
         if self.game_engine.combat_system.is_player_fatigued(player_id):
             fatigue_time = self.game_engine.combat_system.get_player_fatigue_remaining(player_id)
             await self.connection_manager.send_message(player_id,
                 f"You are too exhausted from combat to move! Wait {fatigue_time:.1f} more seconds.")
             return
+        timings['fatigue_check'] = time.time() - t0
 
         character = player_data['character']
 
         # Check if player is paralyzed
+        t0 = time.time()
         active_effects = character.get('active_effects', [])
         for effect in active_effects:
             if effect.get('type') == 'paralyze' or effect.get('effect') == 'paralyze':
                 await self.connection_manager.send_message(player_id,
                     "You are paralyzed and cannot move!")
                 return
+        timings['paralyze_check'] = time.time() - t0
+
+        t0 = time.time()
         current_room = character['room_id']
         exits = self.game_engine.world_manager.get_exits_from_room(current_room)
+        timings['get_exits'] = time.time() - t0
 
         # Map short directions to full names
         direction_map = {
@@ -309,6 +322,7 @@ class PlayerManager:
             username = player_data.get('username', 'Someone')
 
             # Check barriers using the barrier system
+            t0 = time.time()
             old_room = self.game_engine.world_manager.get_room(current_room)
             unlock_message = None
 
@@ -325,13 +339,18 @@ class PlayerManager:
 
                     if unlock_msg:
                         unlock_message = unlock_msg
+            timings['barrier_check'] = time.time() - t0
 
             # Send vendor farewell from the room being left
+            t0 = time.time()
             if hasattr(self.game_engine, 'vendor_system'):
                 await self.game_engine.vendor_system.send_vendor_farewell(player_id, current_room)
+            timings['vendor_farewell'] = time.time() - t0
 
             # Notify others in the current room that this player is leaving
+            t0 = time.time()
             await self.game_engine._notify_room_except_player(current_room, player_id, f"{username} has just gone {full_direction}.")
+            timings['notify_leave'] = time.time() - t0
 
             # Move the player
             character['room_id'] = new_room
@@ -350,7 +369,9 @@ class PlayerManager:
             }
             entry_direction = opposite_directions.get(full_direction, full_direction)
 
+            t0 = time.time()
             trap_result = self.game_engine.trap_system.check_trap_trigger(player_id, new_room, entry_direction)
+            timings['trap_check'] = time.time() - t0
             if trap_result:
                 # Check if player avoided the trap
                 if trap_result.get('avoided'):
@@ -386,33 +407,55 @@ class PlayerManager:
                 character['visited_rooms'].append(new_room)
 
             # Check if any wandering mobs should follow the player
+            t0 = time.time()
             await self._check_mob_following(player_id, current_room, new_room, full_direction)
+            timings['mob_following'] = time.time() - t0
 
             # Send unlock message if applicable
+            t0 = time.time()
             message = ""
             if unlock_message:
                 message += unlock_message
             message += f"You go {full_direction}."
             await self.connection_manager.send_message(player_id, message)
+            timings['send_move_msg'] = time.time() - t0
 
             # Notify others in the new room that this player has arrived
+            t0 = time.time()
             opposite_direction = self._get_opposite_direction(full_direction)
             if opposite_direction:
                 await self.game_engine._notify_room_except_player(new_room, player_id, f"{username} has just arrived from {opposite_direction}.")
             else:
                 await self.game_engine._notify_room_except_player(new_room, player_id, f"{username} has just arrived.")
+            timings['notify_arrive'] = time.time() - t0
 
+            t0 = time.time()
             await self.game_engine.world_manager.send_room_description(player_id, detailed=False)
+            timings['room_desc'] = time.time() - t0
 
             # Move followers if any players are following this player
+            t0 = time.time()
             await self._move_followers(player_id, current_room, new_room, full_direction, username)
+            timings['move_followers'] = time.time() - t0
 
             # Move summoned creatures if this player is a party leader with summons
+            t0 = time.time()
             await self._move_summons(player_id, current_room, new_room, full_direction, username)
+            timings['move_summons'] = time.time() - t0
 
             # Send vendor greeting from the room being entered
+            t0 = time.time()
             if hasattr(self.game_engine, 'vendor_system'):
                 await self.game_engine.vendor_system.send_vendor_greeting(player_id, new_room)
+            timings['vendor_greeting'] = time.time() - t0
+
+            # Log movement timing
+            move_duration = time.time() - move_start
+            if move_duration > 0.1:  # Log if movement takes >100ms
+                slow_parts = [(k, v) for k, v in timings.items() if v > 0.05]
+                slow_parts.sort(key=lambda x: x[1], reverse=True)
+                breakdown = ", ".join([f"{k}={v*1000:.0f}ms" for k, v in slow_parts[:5]])
+                self.logger.warning(f"[MOVE_PERF] Slow movement for player {player_id}: {move_duration*1000:.0f}ms (top: {breakdown})")
         else:
             available = ", ".join(exits.keys()) if exits else "none"
             await self.connection_manager.send_message(player_id, f"You can't go {direction}. Available exits: {available}")
