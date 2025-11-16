@@ -17,6 +17,13 @@ spec:
       labels:
         app: forgotten-depths
     spec:
+      initContainers:
+      - name: fix-permissions
+        image: busybox
+        command: ['sh', '-c', 'chown -R 999:999 /app/data && chmod -R 755 /app/data']
+        volumeMounts:
+        - name: data
+          mountPath: /app/data
       containers:
       - name: mud-server
         image: ghcr.io/jeff-brown/forgotten-depths:latest
