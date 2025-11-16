@@ -24,6 +24,7 @@ from ..game.npcs.mob import Mob
 from ..game.quests.quest_manager import QuestManager
 from ..game.traps.trap_system import TrapSystem
 from ..game.abilities.class_ability_system import ClassAbilitySystem
+from ..utils.health_server import HealthServer
 from shared.constants.game_constants import GAME_TICK_RATE
 
 
@@ -85,6 +86,9 @@ class AsyncGameEngine:
         self.game_loop_task: Optional[asyncio.Task] = None
         self.last_auto_save = time.time()
         self.auto_save_interval = 60.0  # Auto-save every 60 seconds
+
+        # Health check server for Kubernetes probes
+        self.health_server = HealthServer(self)
 
         # Setup system connections
         self._setup_connections()
@@ -173,6 +177,9 @@ class AsyncGameEngine:
             # Start background tasks
             self.game_loop_task = asyncio.create_task(self._game_loop())
 
+            # Start health check server
+            await self.health_server.start()
+
             # Start the server (this will run until stopped)
             await self.connection_manager.start_server(host, port)
 
@@ -207,6 +214,9 @@ class AsyncGameEngine:
                 await self.game_loop_task
             except asyncio.CancelledError:
                 pass
+
+        # Stop health check server
+        await self.health_server.stop()
 
         # Stop connection manager (this will trigger player disconnects which save characters)
         await self.connection_manager.stop_server()

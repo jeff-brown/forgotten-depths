@@ -3,6 +3,9 @@
 # Configuration and data handling
 PyYAML>=6.0
 
+# HTTP server for health checks
+aiohttp>=3.9.0
+
 # Database
 # SQLite is included with Python, no additional requirements needed
 

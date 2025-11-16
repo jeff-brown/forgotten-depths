@@ -35,6 +35,9 @@ spec:
         - name: web
           containerPort: 8080
           protocol: TCP
+        - name: health
+          containerPort: 8081
+          protocol: TCP
         env:
         - name: DB_PATH
           value: "/persistent/mud.db"
@@ -51,15 +54,17 @@ spec:
         - name: logs
           mountPath: /app/logs
         livenessProbe:
-          tcpSocket:
-            port: 4000
+          httpGet:
+            path: /healthz
+            port: 8081
           initialDelaySeconds: 30
           periodSeconds: 10
           timeoutSeconds: 5
           failureThreshold: 3
         readinessProbe:
-          tcpSocket:
-            port: 4000
+          httpGet:
+            path: /readyz
+            port: 8081
           initialDelaySeconds: 10
           periodSeconds: 5
           timeoutSeconds: 3
