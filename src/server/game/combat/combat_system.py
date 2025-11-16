@@ -1193,7 +1193,14 @@ class CombatSystem:
                     dead_mob_id = mob.get('id')
                     # Clean up spell state for dead mob
                     self.spellcasting.cleanup_mob(mob_participant_id)
+                    # Clean up fatigue state for dead mob
+                    if mob_participant_id in self.mob_fatigue:
+                        del self.mob_fatigue[mob_participant_id]
             self.game_engine.room_mobs[room_id] = alive_mobs
+
+            # Clean up empty room entries to prevent memory leak
+            if not alive_mobs and room_id in self.game_engine.room_mobs:
+                del self.game_engine.room_mobs[room_id]
 
         # Track quest progress for players in combat
         for player_id, combat_room in self.player_combats.items():
