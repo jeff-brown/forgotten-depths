@@ -308,16 +308,17 @@ class PlayerManager:
 
             if old_room:
                 # Use barrier system to check if movement is allowed
-                can_pass, unlock_msg = await self.game_engine.barrier_system.check_barrier(
-                    player_id, character, old_room, full_direction, username
-                )
+                if hasattr(self.game_engine, 'barrier_system'):
+                    can_pass, unlock_msg = await self.game_engine.barrier_system.check_barrier(
+                        player_id, character, old_room, full_direction, username
+                    )
 
-                if not can_pass:
-                    # Barrier blocked movement
-                    return
+                    if not can_pass:
+                        # Barrier blocked movement
+                        return
 
-                if unlock_msg:
-                    unlock_message = unlock_msg
+                    if unlock_msg:
+                        unlock_message = unlock_msg
 
             # Send vendor farewell from the room being left
             if hasattr(self.game_engine, 'vendor_system'):
