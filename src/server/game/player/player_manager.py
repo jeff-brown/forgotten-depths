@@ -159,7 +159,13 @@ class PlayerManager:
                 return
 
             # Save the character data
-            print(f"[DEBUG] Saving character for '{username}': level {character.get('level')}, gold {character.get('gold')}, room {character.get('room_id')}")
+            import json
+            char_json = json.dumps(character)
+            char_size_kb = len(char_json) / 1024
+            num_inventory = len(character.get('inventory', []))
+            num_effects = len(character.get('active_effects', []))
+            num_cooldowns = len(character.get('spell_cooldowns', {}))
+            print(f"[DEBUG] Saving character for '{username}': level {character.get('level')}, gold {character.get('gold')}, room {character.get('room_id')}, size={char_size_kb:.1f}KB, inv={num_inventory}, effects={num_effects}, cooldowns={num_cooldowns}")
             success = self.player_storage.save_character_data(username, character)
             if success:
                 self.logger.info(f"Successfully saved character data for {username}")
