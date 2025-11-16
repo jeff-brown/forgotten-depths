@@ -202,7 +202,7 @@ def main():
         writer = csv.writer(f)
         writer.writerow([
             'room_id', 'short_description', 'zone_id', 'zone_name',
-            'terrain', 'exits', 'npcs', 'lairs', 'triggers', 'flags',
+            'terrain', 'exits', 'exit_details', 'npcs', 'lairs', 'triggers', 'flags',
             'source_area', 'keywords'
         ])
 
@@ -214,6 +214,13 @@ def main():
                 if kw in desc:
                     keywords.append(kw)
 
+            # Build exit details string (direction: room_id)
+            exit_details = []
+            for exit_info in room.get('exits', []):
+                direction = exit_info.get('direction', '?')
+                to_room = exit_info.get('to_room', '?')
+                exit_details.append(f"{direction}:{to_room}")
+
             writer.writerow([
                 room['room_id'],
                 room.get('short_description', '')[:60],
@@ -221,6 +228,7 @@ def main():
                 room['_zone']['zone_name'],
                 room['_zone']['terrain'],
                 room['_exit_count'],
+                '; '.join(exit_details),  # Exit details with room IDs
                 room['_npc_count'],
                 room['_lair_count'],
                 room['_trigger_count'],
