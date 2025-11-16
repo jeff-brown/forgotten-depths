@@ -304,12 +304,12 @@ class AsyncGameEngine:
             current_time = time.time()
             if current_time - self.last_auto_save >= self.auto_save_interval:
                 await self._auto_save_players()
+                self.last_auto_save = current_time
 
             # Log slow ticks
             tick_duration = time.time() - tick_start
             if tick_duration > 0.5:
                 self.logger.warning(f"[PERFORMANCE] Slow tick: {tick_duration:.2f}s")
-                self.last_auto_save = current_time
 
         except Exception as e:
             self.logger.error(f"Error in game tick: {e}")
