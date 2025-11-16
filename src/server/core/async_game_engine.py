@@ -1634,6 +1634,11 @@ class AsyncGameEngine:
 
                 # Move mob to new room
                 self.room_mobs[room_id].remove(mob)
+
+                # Clean up source room if empty
+                if not self.room_mobs[room_id]:
+                    del self.room_mobs[room_id]
+
                 if destination_id not in self.room_mobs:
                     self.room_mobs[destination_id] = []
                 self.room_mobs[destination_id].append(mob)

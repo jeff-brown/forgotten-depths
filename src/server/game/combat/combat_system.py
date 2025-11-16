@@ -1587,6 +1587,10 @@ class CombatSystem:
                 if mob in self.game_engine.room_mobs[current_room_id]:
                     self.game_engine.room_mobs[current_room_id].remove(mob)
 
+                    # Clean up source room if empty
+                    if not self.game_engine.room_mobs[current_room_id]:
+                        del self.game_engine.room_mobs[current_room_id]
+
             # Add to destination room
             if destination_id not in self.game_engine.room_mobs:
                 self.game_engine.room_mobs[destination_id] = []
@@ -1712,6 +1716,10 @@ class CombatSystem:
             # Remove mob from current room
             if room_id in self.game_engine.room_mobs:
                 self.game_engine.room_mobs[room_id] = [m for m in self.game_engine.room_mobs[room_id] if m != mob]
+
+                # Clean up source room if empty
+                if not self.game_engine.room_mobs[room_id]:
+                    del self.game_engine.room_mobs[room_id]
 
             # Add mob to destination room
             if destination_id not in self.game_engine.room_mobs:
