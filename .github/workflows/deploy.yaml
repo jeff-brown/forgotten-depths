@@ -100,8 +100,11 @@ jobs:
         kubectl apply -f k8s/deployment.yaml
         kubectl apply -f k8s/service.yaml
 
-        # Wait for deployment to be ready
-        kubectl rollout status deployment/forgotten-depths -n forgotten-depths --timeout=5m
+        # Force a rollout restart to pick up the new image (since we use :latest tag)
+        kubectl rollout restart deployment/forgotten-depths -n forgotten-depths
+
+        # Wait for deployment to be ready (reduced timeout since restart is faster)
+        kubectl rollout status deployment/forgotten-depths -n forgotten-depths --timeout=2m
 
     - name: Get service endpoints
       run: |
