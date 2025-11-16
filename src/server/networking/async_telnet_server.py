@@ -60,6 +60,11 @@ class AsyncTelnetConnection:
             return
 
         try:
+            # Check write buffer size before draining
+            buffer_size = self.writer.transport.get_write_buffer_size() if self.writer.transport else 0
+            if buffer_size > 1000:
+                self.server.logger.warning(f"[BUFFER] Large write buffer for connection {self.connection_id}: {buffer_size} bytes")
+
             await self.writer.drain()
         except (ConnectionResetError, BrokenPipeError, OSError) as e:
             self.server.logger.debug(f"Flush error to {self.connection_id}: {e}")

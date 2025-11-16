@@ -371,12 +371,18 @@ class AsyncGameEngine:
                 active_players = len(self.player_manager.connected_players)
                 active_combats = len(self.active_combats)
 
+                # Check asyncio task count
+                import asyncio
+                all_tasks = asyncio.all_tasks()
+                task_count = len(all_tasks)
+
                 self.logger.info(
                     f"[PERFORMANCE] 1min report: {self.tick_count} ticks, {self.slow_tick_count} slow "
                     f"({100*self.slow_tick_count/max(1,self.tick_count):.1f}%), "
                     f"players={active_players}, mobs={total_mobs} (wandering={wandering_mobs}), "
                     f"combats={active_combats}, fatigue_entries={len(self.mob_fatigue)}, "
-                    f"room_mobs_tracked={len(self.room_mobs)}"
+                    f"room_mobs_tracked={len(self.room_mobs)}, "
+                    f"asyncio_tasks={task_count}"
                 )
                 self.last_perf_report = current_time
                 self.tick_count = 0
