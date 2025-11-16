@@ -93,8 +93,13 @@ jobs:
         kubectl apply -f k8s/configmap.yaml
         kubectl apply -f k8s/persistent-volume.yaml
 
-        # Wait for PVC to be bound
-        kubectl wait --for=condition=Bound pvc/forgotten-depths-data -n forgotten-depths --timeout=120s || true
+        # Check if PVC is already bound, otherwise wait for it
+        if kubectl get pvc forgotten-depths-data -n forgotten-depths -o jsonpath='{.status.phase}' 2>/dev/null | grep -q "Bound"; then
+          echo "PVC is already bound, skipping wait"
+        else
+          echo "Waiting for PVC to be bound..."
+          kubectl wait --for=condition=Bound pvc/forgotten-depths-data -n forgotten-depths --timeout=120s
+        fi
 
         # Apply deployment and services
         kubectl apply -f k8s/deployment.yaml
