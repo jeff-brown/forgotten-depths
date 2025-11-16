@@ -48,5 +48,5 @@ EXPOSE 4000 8080
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD python -c "import socket; s=socket.socket(); s.settimeout(5); s.connect(('localhost', 4000)); s.close()" || exit 1
 
-# Use entrypoint script to initialize database before starting app
-ENTRYPOINT ["scripts/docker-entrypoint.sh"]
+# Run the application
+CMD ["python", "main.py"]

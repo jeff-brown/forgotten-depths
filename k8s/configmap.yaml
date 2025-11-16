@@ -63,17 +63,120 @@ data:
       backup_count: 24
 
   game_settings.yaml: |
-    # Game Settings
+    # Game Settings Configuration for Forgotten Depths MUD
+
+    # Player Settings
     player:
-      max_inventory: 50
-      max_weight: 1000
-      starting_gold: 100
+      starting_stats:
+        strength:
+          min: 14
+          max: 22
+        dexterity:
+          min: 13
+          max: 21
+        constitution:
+          min: 14
+          max: 22
+        vitality:
+          min: 20
+          max: 34
+        intelligence:
+          min: 10
+          max: 18
+        wisdom:
+          min: 10
+          max: 18
+        charisma:
+          min: 8
+          max: 16
+
+      starting_resources:
+        health: 100
+        mana: 50
+        gold: 100
+
+      leveling:
+        base_xp_per_level: 100
+        xp_multiplier: 1.5
+        stat_points_per_level: 2
+        hp_per_level: 10
+        mana_per_level: 5
+        max_level: 50
+
+      hunger_thirst:
+        hunger_decay_per_tick: 0.005
+        thirst_decay_per_tick: 0.005
+        low_warning_threshold: 20
+        starvation_damage_per_tick: 0.05
+        dehydration_damage_per_tick: 0.1
+
+      inventory:
+        default_size: 20
+        max_size: 100
+        starting_items:
+          - "bread"
+          - "health_potion_small"
+
+    world:
+      respawn_time: 300
+      room_capacity: 50
+      weather_enabled: false
+      day_night_cycle: false
+      map_shows_only_explored: true
+
+    combat:
+      turn_based: false
+      auto_attack: true
+      damage_variance: 0.2
+      armor_effectiveness: 0.1
+      mob_flee:
+        health_threshold: 0.3
+        flee_chance: 0.5
+      mob_follow:
+        follow_chance: 0.4
 
     economy:
-      vendor_buy_multiplier: 0.5
-      vendor_sell_multiplier: 1.5
+      vendor_buy_rate: 0.5
+      vendor_sell_rate: 1.2
+      tax_rate: 0.05
+      inflation_rate: 0.0
+      vendor_stock_replenishment_interval: 300
+
+    communication:
+      max_message_length: 500
+      profanity_filter: false
+      chat_channels:
+        - "global"
+        - "newbie"
+        - "trade"
+      message_history: 100
+
+    quests:
+      auto_accept: false
+      completion_rewards_multiplier: 1.0
+      daily_quests: false
+
+    magic:
+      mana_regeneration: 1
+      spell_failure_chance: 0.05
+      reagent_required: false
 
     death:
-      experience_loss_percent: 10
-      respawn_room: "town_square"
-      corpse_decay_time: 300
+      permadeath: false
+      corpse_decay_time: 600
+      death_penalty:
+        experience_loss: 0.1
+        item_loss: false
+        stat_loss: false
+
+    ship_passage:
+      cost: 100
+      rat_event_chance: 0.15
+      robbery_event_chance: 0.10
+      robbery_gold_min: 10
+      robbery_gold_max: 50
+
+    admin:
+      godmode_available: true
+      building_enabled: true
+      player_editing: true
