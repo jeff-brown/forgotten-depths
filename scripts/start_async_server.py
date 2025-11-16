@@ -34,7 +34,8 @@ def initialize_database(db_config: dict):
     """Initialize the database."""
     from server.persistence.database import Database
 
-    db_path = db_config.get('database', {}).get('path', 'data/mud.db')
+    # Use DB_PATH env var if set, otherwise use config file
+    db_path = os.environ.get('DB_PATH') or db_config.get('database', {}).get('path', 'data/mud.db')
 
     # Ensure data directory exists
     os.makedirs(os.path.dirname(db_path), exist_ok=True)

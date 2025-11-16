@@ -50,8 +50,6 @@ spec:
           mountPath: /persistent
         - name: logs
           mountPath: /app/logs
-        - name: config
-          mountPath: /app/config
         livenessProbe:
           tcpSocket:
             port: 4000
@@ -72,6 +70,3 @@ spec:
           claimName: forgotten-depths-data
       - name: logs
         emptyDir: {}
-      - name: config
-        configMap:
-          name: forgotten-depths-config
