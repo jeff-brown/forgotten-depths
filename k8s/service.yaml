@@ -11,6 +11,7 @@ metadata:
     service.beta.kubernetes.io/linode-loadbalancer-throttle: "20"  # Increased from 4 to support interactive gameplay
 spec:
   type: LoadBalancer
+  externalTrafficPolicy: Local  # Bypass kube-proxy for lower latency
   selector:
     app: forgotten-depths
   ports:

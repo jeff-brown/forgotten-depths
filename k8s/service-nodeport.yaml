@@ -1,0 +1,23 @@
+---
+# NodePort service for bypassing LoadBalancer (testing only)
+apiVersion: v1
+kind: Service
+metadata:
+  name: forgotten-depths-nodeport
+  namespace: forgotten-depths
+  labels:
+    app: forgotten-depths
+spec:
+  type: NodePort
+  selector:
+    app: forgotten-depths
+  ports:
+  - name: telnet
+    protocol: TCP
+    port: 4000
+    targetPort: 4000
+    nodePort: 30400  # Accessible on any node at port 30400
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800  # 3 hours for persistent connections
