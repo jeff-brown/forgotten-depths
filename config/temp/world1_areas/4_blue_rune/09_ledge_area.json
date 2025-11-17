@@ -1,0 +1,5080 @@
+{
+  "area_id": 9,
+  "area_name": "Ledge Area",
+  "area_type": "World1Zone",
+  "terrain": "LEDGE",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Ledge Area - reorganized from World1 export",
+    "total_rooms": 136,
+    "room_id_range": {
+      "min": 1964,
+      "max": 2099
+    }
+  },
+  "_statistics": {
+    "total_rooms": 136,
+    "room_id_range": {
+      "min": 1964,
+      "max": 2099
+    },
+    "total_exits": 275,
+    "total_npcs": 0,
+    "total_lairs": 0,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "FIRE2": 136
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 1964,
+      "short_description": "You're on a ledge.",
+      "long_description": "You have entered a small room with a with a stone staircase in the center.\nThe staircase leads downward. You can also exit to the north and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1965,
+          "direction": "east"
+        },
+        {
+          "to_room": 1997,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1965,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1966,
+          "direction": "east"
+        },
+        {
+          "to_room": 1964,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1966,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1967,
+          "direction": "east"
+        },
+        {
+          "to_room": 1965,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1967,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1968,
+          "direction": "east"
+        },
+        {
+          "to_room": 1966,
+          "direction": "west"
+        },
+        {
+          "to_room": 2001,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1968,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1969,
+          "direction": "east"
+        },
+        {
+          "to_room": 1967,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1969,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east, west, and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1970,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1968,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1970,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1971,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1969,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1971,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1972,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1970,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1972,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1973,
+          "direction": "south"
+        },
+        {
+          "to_room": 1971,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1973,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1972,
+          "direction": "north"
+        },
+        {
+          "to_room": 1974,
+          "direction": "south"
+        },
+        {
+          "to_room": 2005,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1974,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1973,
+          "direction": "north"
+        },
+        {
+          "to_room": 1975,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1975,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1974,
+          "direction": "north"
+        },
+        {
+          "to_room": 1978,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1976,
+      "short_description": "You're on a ledge.",
+      "long_description": "You have entered a small room with a with a stone staircase in the center.\nThe staircase leads downward. You can also exit to the north and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1994,
+          "direction": "east"
+        },
+        {
+          "to_room": 1977,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1977,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1976,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2370,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1978,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1975,
+          "direction": "north"
+        },
+        {
+          "to_room": 1979,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1979,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1978,
+          "direction": "north"
+        },
+        {
+          "to_room": 1980,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1980,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1979,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1981,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1981,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1980,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1982,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1982,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1981,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1983,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1983,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1982,
+          "direction": "east"
+        },
+        {
+          "to_room": 1984,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1984,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1983,
+          "direction": "east"
+        },
+        {
+          "to_room": 1985,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1985,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1984,
+          "direction": "east"
+        },
+        {
+          "to_room": 1986,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1986,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1985,
+          "direction": "east"
+        },
+        {
+          "to_room": 1987,
+          "direction": "west"
+        },
+        {
+          "to_room": 2012,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1987,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1986,
+          "direction": "east"
+        },
+        {
+          "to_room": 1988,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1988,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1987,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1989,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1989,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1988,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1990,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1990,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1991,
+          "direction": "north"
+        },
+        {
+          "to_room": 1989,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1991,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1992,
+          "direction": "north"
+        },
+        {
+          "to_room": 1990,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1992,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1993,
+          "direction": "north"
+        },
+        {
+          "to_room": 1991,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1993,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1994,
+          "direction": "north"
+        },
+        {
+          "to_room": 1992,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1994,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1995,
+          "direction": "north"
+        },
+        {
+          "to_room": 1993,
+          "direction": "south"
+        },
+        {
+          "to_room": 1976,
+          "direction": "west"
+        },
+        {
+          "to_room": 2017,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1995,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north, south, west, and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1996,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1994,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1996,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1997,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1995,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1997,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1964,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1996,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1998,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1999,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1999,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2000,
+          "direction": "east"
+        },
+        {
+          "to_room": 1998,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2000,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2001,
+          "direction": "east"
+        },
+        {
+          "to_room": 1999,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2001,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2000,
+          "direction": "west"
+        },
+        {
+          "to_room": 1967,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2002,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads west and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2003,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2023,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2003,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2004,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2002,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2004,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2005,
+          "direction": "south"
+        },
+        {
+          "to_room": 2003,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2005,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2004,
+          "direction": "north"
+        },
+        {
+          "to_room": 1973,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2006,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2007,
+          "direction": "south"
+        },
+        {
+          "to_room": 2029,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2007,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2006,
+          "direction": "north"
+        },
+        {
+          "to_room": 2008,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2008,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2007,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2009,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2009,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2008,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2010,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2010,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2009,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2011,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2011,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2010,
+          "direction": "east"
+        },
+        {
+          "to_room": 2032,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2012,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2013,
+          "direction": "west"
+        },
+        {
+          "to_room": 1986,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2013,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2012,
+          "direction": "east"
+        },
+        {
+          "to_room": 2014,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2014,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2013,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2015,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2015,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2014,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2016,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2016,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads west and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2015,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2039,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2017,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2018,
+          "direction": "north"
+        },
+        {
+          "to_room": 1994,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2018,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north, south, west, and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2019,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2017,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2019,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2018,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2043,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2020,
+      "short_description": "You're on a ledge.",
+      "long_description": "You have entered a small room with a with a stone staircase in the center.\nThe staircase leads downward. You can also exit to the north and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2021,
+          "direction": "east"
+        },
+        {
+          "to_room": 2044,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2021,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2022,
+          "direction": "east"
+        },
+        {
+          "to_room": 2020,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2022,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southwest and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2021,
+          "direction": "west"
+        },
+        {
+          "to_room": 2045,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2023,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads west and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2024,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2002,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2024,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2025,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2023,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2025,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2026,
+          "direction": "south"
+        },
+        {
+          "to_room": 2024,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2026,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2025,
+          "direction": "north"
+        },
+        {
+          "to_room": 2027,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2027,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2026,
+          "direction": "north"
+        },
+        {
+          "to_room": 2028,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2028,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2027,
+          "direction": "north"
+        },
+        {
+          "to_room": 2029,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2029,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2028,
+          "direction": "north"
+        },
+        {
+          "to_room": 2006,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2030,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2031,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2031,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2030,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2057,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2032,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2033,
+          "direction": "west"
+        },
+        {
+          "to_room": 2011,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2033,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2032,
+          "direction": "east"
+        },
+        {
+          "to_room": 2034,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2034,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2033,
+          "direction": "east"
+        },
+        {
+          "to_room": 2035,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2035,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2034,
+          "direction": "east"
+        },
+        {
+          "to_room": 2036,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2036,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2035,
+          "direction": "east"
+        },
+        {
+          "to_room": 2037,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2037,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2036,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2038,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2038,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2037,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2039,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2039,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads west and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2038,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2016,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2040,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2041,
+          "direction": "north"
+        },
+        {
+          "to_room": 2066,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2041,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2042,
+          "direction": "north"
+        },
+        {
+          "to_room": 2040,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2042,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2041,
+          "direction": "south"
+        },
+        {
+          "to_room": 2067,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2043,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2044,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2019,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2044,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2020,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2043,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2045,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2046,
+          "direction": "east"
+        },
+        {
+          "to_room": 2022,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2046,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2047,
+          "direction": "east"
+        },
+        {
+          "to_room": 2045,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2047,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2048,
+          "direction": "east"
+        },
+        {
+          "to_room": 2046,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2048,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east, west, and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2049,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2047,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2049,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2050,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2048,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2050,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2051,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2049,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2051,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2052,
+          "direction": "south"
+        },
+        {
+          "to_room": 2050,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2052,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2051,
+          "direction": "north"
+        },
+        {
+          "to_room": 2053,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2053,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2052,
+          "direction": "north"
+        },
+        {
+          "to_room": 2080,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2054,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2055,
+          "direction": "south"
+        },
+        {
+          "to_room": 2081,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2055,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2054,
+          "direction": "north"
+        },
+        {
+          "to_room": 2056,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2056,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2055,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2057,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2057,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2056,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2031,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2058,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southwest and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2059,
+          "direction": "west"
+        },
+        {
+          "to_room": 2087,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2059,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2058,
+          "direction": "east"
+        },
+        {
+          "to_room": 2060,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2060,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2059,
+          "direction": "east"
+        },
+        {
+          "to_room": 2061,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2061,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2060,
+          "direction": "east"
+        },
+        {
+          "to_room": 2062,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2062,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2061,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2063,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2063,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2062,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2064,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2064,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2065,
+          "direction": "north"
+        },
+        {
+          "to_room": 2063,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2065,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2066,
+          "direction": "north"
+        },
+        {
+          "to_room": 2064,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2066,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2065,
+          "direction": "south"
+        },
+        {
+          "to_room": 2040,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2067,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2068,
+          "direction": "north"
+        },
+        {
+          "to_room": 2042,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2068,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north, south, west, and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2069,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2067,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2069,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2070,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2068,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2070,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2069,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2099,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2071,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2072,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2072,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2073,
+          "direction": "east"
+        },
+        {
+          "to_room": 2071,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2073,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2074,
+          "direction": "east"
+        },
+        {
+          "to_room": 2072,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2074,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2075,
+          "direction": "east"
+        },
+        {
+          "to_room": 2073,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2075,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads south and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2076,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2074,
+          "direction": "west"
+        },
+        {
+          "to_room": 2132,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2076,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2077,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2075,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2077,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2078,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2076,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2078,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2079,
+          "direction": "south"
+        },
+        {
+          "to_room": 2077,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2079,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2078,
+          "direction": "north"
+        },
+        {
+          "to_room": 2080,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2080,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2079,
+          "direction": "north"
+        },
+        {
+          "to_room": 2053,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2081,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2082,
+          "direction": "south"
+        },
+        {
+          "to_room": 2054,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2082,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2081,
+          "direction": "north"
+        },
+        {
+          "to_room": 2083,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2083,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2082,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2084,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2084,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2083,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2085,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2085,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2084,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2086,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2086,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2085,
+          "direction": "east"
+        },
+        {
+          "to_room": 2087,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2087,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southeast, west, and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2086,
+          "direction": "east"
+        },
+        {
+          "to_room": 2088,
+          "direction": "west"
+        },
+        {
+          "to_room": 2058,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2088,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2087,
+          "direction": "east"
+        },
+        {
+          "to_room": 2089,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2089,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2088,
+          "direction": "east"
+        },
+        {
+          "to_room": 2090,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2090,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2089,
+          "direction": "east"
+        },
+        {
+          "to_room": 2091,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2091,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads west and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2090,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2112,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2092,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads east, west, and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2093,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2093,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2094,
+          "direction": "north"
+        },
+        {
+          "to_room": 2092,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2094,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2095,
+          "direction": "north"
+        },
+        {
+          "to_room": 2093,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2095,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2096,
+          "direction": "north"
+        },
+        {
+          "to_room": 2094,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2096,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and south and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2097,
+          "direction": "north"
+        },
+        {
+          "to_room": 2095,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2097,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north, south, west, and slopes downward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2098,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2096,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2098,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2099,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2097,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2099,
+      "short_description": "You're on a ledge.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads north.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE2",
+        "index": 4,
+        "description": "Fire area level 2"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2098,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2070,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "blue_rune",
+    "description": "Blue Rune required for access"
+  }
+}

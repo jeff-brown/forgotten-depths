@@ -1,0 +1,2069 @@
+{
+  "area_id": 21,
+  "area_name": "Dungeon Level 1",
+  "area_type": "World1Zone",
+  "terrain": "DUNGEON1",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Dungeon Level 1 - reorganized from World1 export",
+    "total_rooms": 51,
+    "room_id_range": {
+      "min": 1,
+      "max": 51
+    }
+  },
+  "_statistics": {
+    "total_rooms": 51,
+    "room_id_range": {
+      "min": 1,
+      "max": 51
+    },
+    "total_exits": 103,
+    "total_npcs": 0,
+    "total_lairs": 5,
+    "total_triggers": 1,
+    "terrain_breakdown": {
+      "DUNGEON1": 51
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 1,
+      "short_description": "You are inside the dungeon entrance.",
+      "long_description": "Room 1",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 13,
+          "direction": "northeast",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 38,
+              "__v3": 4,
+              "__v4": 1,
+              "__v5": 2,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 38,
+              "consume_key": true,
+              "barrier_number": 4
+            }
+          }
+        },
+        {
+          "to_room": 14,
+          "direction": "west"
+        },
+        {
+          "to_room": -98,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 0,
+          "num_mobs": 0,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2,
+      "short_description": "You are in a large cavern.",
+      "long_description": "You are standing inside the entrance to the dungeon. This rounded\nstone and earth room bears the marks of digging tools and a number of\nassorted claw and hoof marks in the walls and floor. The only obvious\nexits are back up the stone stairway you just decended, to the west,\ndown a plain earthen tunnel, and to the northeast through an enormous\nrough-hewn stone door.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 18,
+          "direction": "north"
+        },
+        {
+          "to_room": 19,
+          "direction": "southeast",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 39,
+              "__v3": 1,
+              "__v4": 1,
+              "__v5": 3,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 39,
+              "consume_key": true,
+              "barrier_number": 1
+            }
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 52,
+          "num_mobs": 1,
+          "item_vnum": 39
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 3,
+      "short_description": "You are in a filthy cavern.",
+      "long_description": "You stand in a large cavern cluttered with stalagmites and stalagtites\nthat divide the room into many smaller chambers and passages and limit\nvision in any direction to a few feet. The maze-like form of this cavern\nis somewhat unnerving, as if someone or something had used natural forces\nto create a very unnatural labyrinth. You have entered the lair of the\nminotaur. The only exits are to the north and through an iron bound\noak door to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 21,
+          "direction": "north"
+        },
+        {
+          "to_room": 39,
+          "direction": "east",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 40,
+              "__v3": 2,
+              "__v4": 1,
+              "__v5": 3,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 40,
+              "consume_key": true,
+              "barrier_number": 2
+            }
+          }
+        },
+        {
+          "to_room": 33,
+          "direction": "south"
+        },
+        {
+          "to_room": 32,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 55,
+          "num_mobs": 1,
+          "item_vnum": 40
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4,
+      "short_description": "You are in an enormous cavern.",
+      "long_description": "You are now in a fairly large, but somewhat filthy cavern which smells\nof urine and excrement. Tattered rags, broken bones, as well as ruined\nweapons litter the floor. You get a great sense of foreboding as you\nrealize the carnage that must have taken place here. Caves exit to the\nnorth, south, and southwest. There is also an iron door to the east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 47,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 58,
+          "num_mobs": 1,
+          "item_vnum": 38
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 5,
+      "short_description": "You are in a huge cavern.",
+      "long_description": "You gape in awe at the piles of skulls in the center of this huge stone\nroom. The walls of this room are draped with the furs and skins of many\ndifferent types of animals, among which you recognize the furs of several\ncave bears, formidable opponents themselves. The only visible exit is back\nthe way you came.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 6,
+          "direction": "northeast",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 41,
+              "__v3": 3,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 41,
+              "consume_key": false,
+              "barrier_number": 3
+            }
+          }
+        },
+        {
+          "to_room": 51,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 59,
+          "num_mobs": 2,
+          "item_vnum": 41
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 6,
+      "short_description": "You're at the top of a circular stairwell.",
+      "long_description": "The ceiling of this cavern is shrouded in darkness above your head. The\nwhole room is roughly circular with the exit to the south. Though the\nwalls and floor give away the fact that many battles have been fought\nhere, and several of them recently, you see no sign of the slain or the\nequipment they may have carried. To the northeast is an unadorned bronze\ndoor.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 5,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 52,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 7,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the north.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 51,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 8,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 8,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 7,
+          "direction": "north"
+        },
+        {
+          "to_room": 9,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 9,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 8,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 10,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 10,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 9,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 11,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 11,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 10,
+          "direction": "east"
+        },
+        {
+          "to_room": 12,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 12,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 11,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 13,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 13,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 12,
+          "direction": "east"
+        },
+        {
+          "to_room": 1,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 14,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1,
+          "direction": "east"
+        },
+        {
+          "to_room": 15,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 15,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 14,
+          "direction": "east"
+        },
+        {
+          "to_room": 16,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 16,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 15,
+          "direction": "east"
+        },
+        {
+          "to_room": 17,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 17,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the north.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 16,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 18,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 18,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 17,
+          "direction": "north"
+        },
+        {
+          "to_room": 2,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 19,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 20,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 20,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 21,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 19,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TRAP",
+            "index": 2,
+            "description": "Trap trigger (damages player)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 0,
+            "v3": 0,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "trap_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 21,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3,
+          "direction": "south"
+        },
+        {
+          "to_room": 20,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 22,
+      "short_description": "You're in a cave.",
+      "long_description": "You stand in a circular shaft with a stairwell that decends around the\nouter wall into the darkness below. The air in this chamber is somewhat\ncooler than that outside the bronze door. From far below comes a faint\nshuffling sound that is barely audible and which you can make nothing of.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 23,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 23,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 24,
+          "direction": "north"
+        },
+        {
+          "to_room": 26,
+          "direction": "east"
+        },
+        {
+          "to_room": 22,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 24,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the north.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 25,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 26,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 23,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 25,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 24,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 26,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 27,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 23,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 27,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 28,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 26,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 28,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 29,
+          "direction": "east"
+        },
+        {
+          "to_room": 27,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 29,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 32,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 30,
+          "direction": "south"
+        },
+        {
+          "to_room": 28,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 30,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 29,
+          "direction": "north"
+        },
+        {
+          "to_room": 31,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 31,
+      "short_description": "You're in a cave.",
+      "long_description": "You stand in a circular shaft with a stairwell that decends around the\nouter wall into the darkness below. The air in this chamber is somewhat\ncooler than that outside the bronze door. From far below comes a faint\nshuffling sound that is barely audible and which you can make nothing of.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 30,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 32,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 29,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 33,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3,
+          "direction": "north"
+        },
+        {
+          "to_room": 34,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 34,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 35,
+          "direction": "south"
+        },
+        {
+          "to_room": 33,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 35,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, northwest\nand south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 34,
+          "direction": "north"
+        },
+        {
+          "to_room": 37,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 36,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 36,
+      "short_description": "You're in a cave.",
+      "long_description": "You stand in a circular shaft with a stairwell that decends around the\nouter wall into the darkness below. The air in this chamber is somewhat\ncooler than that outside the bronze door. From far below comes a faint\nshuffling sound that is barely audible and which you can make nothing of.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 35,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 37,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 38,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 35,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 38,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 37,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 39,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 40,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 40,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 41,
+          "direction": "east"
+        },
+        {
+          "to_room": 39,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 41,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast, southwest\nand north.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 43,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 42,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 40,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 42,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 41,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 43,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 44,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 41,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 44,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 46,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 43,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 45,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 48,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 46,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 46,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 45,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 47,
+          "direction": "south"
+        },
+        {
+          "to_room": 44,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 47,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 46,
+          "direction": "north"
+        },
+        {
+          "to_room": 4,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 48,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 49,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 45,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 49,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 50,
+          "direction": "south"
+        },
+        {
+          "to_room": 48,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 50,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 49,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 51,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON1",
+        "index": 0,
+        "description": "Dungeon level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 5,
+          "direction": "north"
+        },
+        {
+          "to_room": 7,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "no_rune",
+    "description": "Starter areas, no rune required"
+  }
+}

@@ -1,0 +1,3772 @@
+{
+  "area_id": 13,
+  "area_name": "Valley Area",
+  "area_type": "World1Zone",
+  "terrain": "VALLEY",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Valley Area - reorganized from World1 export",
+    "total_rooms": 100,
+    "room_id_range": {
+      "min": 2403,
+      "max": 2502
+    }
+  },
+  "_statistics": {
+    "total_rooms": 100,
+    "room_id_range": {
+      "min": 2403,
+      "max": 2502
+    },
+    "total_exits": 209,
+    "total_npcs": 0,
+    "total_lairs": 0,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "JUNGLE": 100
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 2403,
+      "short_description": "You're in a valley.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2278,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2404,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2404,
+      "short_description": "You're in a valley.",
+      "long_description": "You are at the edge of a lush jungle valley. A volcano looms over the trees\nto the northeast. Trees and thick undergrowth block your exit in all\ndirections except northeast into a smooth corridor and to the southwest,\ndeeper into the jungle.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2403,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2405,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2405,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2404,
+          "direction": "east"
+        },
+        {
+          "to_room": 2406,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2406,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2405,
+          "direction": "north"
+        },
+        {
+          "to_room": 2448,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2407,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2407,
+      "short_description": "You're in a valley.",
+      "long_description": "You are at the edge of a lush jungle valley. A volcano looms over the trees\nto the northeast. Trees and thick undergrowth block your exit in all\ndirections except northeast into a smooth corridor and to the southwest,\ndeeper into the jungle.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2406,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2408,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2408,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2407,
+          "direction": "east"
+        },
+        {
+          "to_room": 2425,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2409,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2409,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2408,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2410,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2410,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2409,
+          "direction": "east"
+        },
+        {
+          "to_room": 2411,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2411,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2410,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2427,
+          "direction": "south"
+        },
+        {
+          "to_room": 2412,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2412,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2411,
+          "direction": "east"
+        },
+        {
+          "to_room": 2413,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2413,
+      "short_description": "You're in a valley.",
+      "long_description": "You are at the edge of a lush jungle valley. A volcano looms over the trees\nto the northeast. Trees and thick undergrowth block your exit in all\ndirections except northeast into a smooth corridor and to the southwest,\ndeeper into the jungle.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2412,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2414,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2414,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2413,
+          "direction": "east"
+        },
+        {
+          "to_room": 2415,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2415,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2414,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2416,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2416,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2415,
+          "direction": "north"
+        },
+        {
+          "to_room": 2417,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2417,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2416,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2418,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2418,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2419,
+          "direction": "south"
+        },
+        {
+          "to_room": 2417,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2419,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2418,
+          "direction": "north"
+        },
+        {
+          "to_room": 2420,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2420,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2421,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2419,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2421,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2422,
+          "direction": "south"
+        },
+        {
+          "to_room": 2420,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2422,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2421,
+          "direction": "north"
+        },
+        {
+          "to_room": 2423,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2423,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2424,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2422,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2424,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2470,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2423,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2425,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2408,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2426,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2426,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2425,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2428,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2427,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2427,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2411,
+          "direction": "north"
+        },
+        {
+          "to_room": 2426,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2428,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2426,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2429,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2429,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2428,
+          "direction": "north"
+        },
+        {
+          "to_room": 2430,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2430,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2431,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2429,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2431,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2432,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2430,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2432,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2433,
+          "direction": "south"
+        },
+        {
+          "to_room": 2431,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2433,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2432,
+          "direction": "north"
+        },
+        {
+          "to_room": 2434,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2434,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2435,
+          "direction": "east"
+        },
+        {
+          "to_room": 2433,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2435,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2436,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2434,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2436,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2437,
+          "direction": "east"
+        },
+        {
+          "to_room": 2439,
+          "direction": "south"
+        },
+        {
+          "to_room": 2435,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2437,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2438,
+          "direction": "east"
+        },
+        {
+          "to_room": 2436,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2438,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2441,
+          "direction": "east"
+        },
+        {
+          "to_room": 2437,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2439,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2436,
+          "direction": "north"
+        },
+        {
+          "to_room": 2440,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2440,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2439,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2441,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2438,
+          "direction": "west"
+        },
+        {
+          "to_room": 2442,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2442,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe west and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2454,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2441,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2443,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2443,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2442,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2444,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2444,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2445,
+          "direction": "north"
+        },
+        {
+          "to_room": 2443,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2445,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2444,
+          "direction": "south"
+        },
+        {
+          "to_room": 2446,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2446,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2447,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2445,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2447,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2448,
+          "direction": "north"
+        },
+        {
+          "to_room": 2446,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2448,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2449,
+          "direction": "east"
+        },
+        {
+          "to_room": 2447,
+          "direction": "south"
+        },
+        {
+          "to_room": 2406,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2449,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2450,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2448,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2450,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2451,
+          "direction": "south"
+        },
+        {
+          "to_room": 2449,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2451,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2450,
+          "direction": "north"
+        },
+        {
+          "to_room": 2452,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2452,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2453,
+          "direction": "south"
+        },
+        {
+          "to_room": 2451,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2453,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2452,
+          "direction": "north"
+        },
+        {
+          "to_room": 2454,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2454,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2453,
+          "direction": "north"
+        },
+        {
+          "to_room": 2455,
+          "direction": "east"
+        },
+        {
+          "to_room": 2442,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2455,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2456,
+          "direction": "east"
+        },
+        {
+          "to_room": 2454,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2456,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2457,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2455,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2457,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2458,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2456,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2458,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2459,
+          "direction": "south"
+        },
+        {
+          "to_room": 2457,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2459,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2458,
+          "direction": "north"
+        },
+        {
+          "to_room": 2460,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2460,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2459,
+          "direction": "north"
+        },
+        {
+          "to_room": 2461,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2461,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2460,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2462,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2462,
+      "short_description": "You're in a valley.",
+      "long_description": "You are at the edge of a lush jungle valley. A volcano looms over the trees\nto the northeast. Trees and thick undergrowth block your exit in all\ndirections except northeast into a smooth corridor and to the southwest,\ndeeper into the jungle.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2461,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2463,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2463,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2462,
+          "direction": "east"
+        },
+        {
+          "to_room": 2464,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2464,
+      "short_description": "You're in a valley.",
+      "long_description": "You are at the edge of a lush jungle valley. A volcano looms over the trees\nto the northeast. Trees and thick undergrowth block your exit in all\ndirections except northeast into a smooth corridor and to the southwest,\ndeeper into the jungle.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2463,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2465,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2465,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2464,
+          "direction": "east"
+        },
+        {
+          "to_room": 2466,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2466,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2465,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2467,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2467,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2466,
+          "direction": "east"
+        },
+        {
+          "to_room": 2468,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2468,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2467,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2469,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2469,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2468,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2470,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2470,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2469,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2471,
+          "direction": "south"
+        },
+        {
+          "to_room": 2424,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2471,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2470,
+          "direction": "north"
+        },
+        {
+          "to_room": 2472,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2472,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2471,
+          "direction": "north"
+        },
+        {
+          "to_room": 2473,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2473,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2472,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2474,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2474,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast, south, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2473,
+          "direction": "north"
+        },
+        {
+          "to_room": 2475,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2475,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2476,
+          "direction": "east"
+        },
+        {
+          "to_room": 2474,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2476,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2477,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2475,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2477,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2491,
+          "direction": "east"
+        },
+        {
+          "to_room": 2478,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2476,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2478,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2477,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2479,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2479,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2478,
+          "direction": "north"
+        },
+        {
+          "to_room": 2480,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2480,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2479,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2481,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2481,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2480,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2499,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2482,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2482,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2481,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2483,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2483,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2482,
+          "direction": "east"
+        },
+        {
+          "to_room": 2484,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2484,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2483,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2485,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2485,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2486,
+          "direction": "north"
+        },
+        {
+          "to_room": 2484,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2486,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2487,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2485,
+          "direction": "south"
+        },
+        {
+          "to_room": 2497,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2487,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2489,
+          "direction": "north"
+        },
+        {
+          "to_room": 2488,
+          "direction": "east"
+        },
+        {
+          "to_room": 2486,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2488,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2487,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2489,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2487,
+          "direction": "south"
+        },
+        {
+          "to_room": 2490,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2490,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe north.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2489,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2491,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2492,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2477,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2492,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2494,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2493,
+          "direction": "south"
+        },
+        {
+          "to_room": 2491,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2493,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2492,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2494,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2495,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2492,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2495,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2496,
+          "direction": "east"
+        },
+        {
+          "to_room": 2494,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2496,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2885,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2495,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2497,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2486,
+          "direction": "east"
+        },
+        {
+          "to_room": 2498,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2498,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2497,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2499,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2481,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2500,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2500,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2499,
+          "direction": "north"
+        },
+        {
+          "to_room": 2501,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2501,
+      "short_description": "You're in a valley.",
+      "long_description": "You are deep within a lush jungle valley choked with huge trees and thick\nundergrowth. Trees and vegatation block exit in all directions except to\nthe northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2502,
+          "direction": "south"
+        },
+        {
+          "to_room": 2500,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2502,
+      "short_description": "You're in a valley.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, southeast,\nand southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "JUNGLE",
+        "index": 12,
+        "description": "Jungle"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2501,
+          "direction": "north"
+        },
+        {
+          "to_room": 2503,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "blue_rune",
+    "description": "Blue Rune required for access"
+  }
+}

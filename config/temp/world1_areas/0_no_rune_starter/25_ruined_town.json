@@ -1,0 +1,782 @@
+{
+  "area_id": 25,
+  "area_name": "Ruined Town",
+  "area_type": "World1Zone",
+  "terrain": "SWAMP",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Ruined Town - reorganized from World1 export",
+    "total_rooms": 20,
+    "room_id_range": {
+      "min": 423,
+      "max": 442
+    }
+  },
+  "_statistics": {
+    "total_rooms": 20,
+    "room_id_range": {
+      "min": 423,
+      "max": 442
+    },
+    "total_exits": 40,
+    "total_npcs": 0,
+    "total_lairs": 1,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "SWAMP": 20
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 423,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on an overgrown path which leads out of the swamp and\ninto what appears to be the ruins of a forgotten town to the north. The\nswamp's insect population is strangely quiet in this area. The path leads\noff to the north and the swamp lies to the south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 424,
+          "direction": "north"
+        },
+        {
+          "to_room": 347,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 424,
+      "short_description": "You're on a path.",
+      "long_description": "You are standing on an overgrown path which leads out of the swamp and\ninto what appears to be the ruins of a forgotten town to the north. The\nswamp's insect population is strangely quiet in this area. The path leads\noff to the south and the town gates stand ajar to the north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 442,
+          "direction": "north"
+        },
+        {
+          "to_room": 423,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 425,
+      "short_description": "You're on a ruined street.",
+      "long_description": "You are standing on a stonework street which shows signs of extreme\nage and weathering. Plants spring up from between the stones in places\nand many of the stones are cracked. The street leads to the west and\neast into the plaza.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 442,
+          "direction": "east"
+        },
+        {
+          "to_room": 426,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 426,
+      "short_description": "You're at a ruined intersection.",
+      "long_description": "You are standing at a stonework intersection which shows signs of\nextreme age and weathering. Plants spring up from between the stones in\nplaces and many of the stones are cracked. The street leads east. Paths\nlead west and south into the ruins of shops.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 425,
+          "direction": "east"
+        },
+        {
+          "to_room": 427,
+          "direction": "south"
+        },
+        {
+          "to_room": 428,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 427,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 426,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 428,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 426,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 429,
+      "short_description": "You're in an ancient temple.",
+      "long_description": "You are standing in an ancient temple dedicated to some forgotten deity.\nAlthoqgh it is in good condition, nothing of value remains to be seen.\nThe main exit lies to the south into the plaza, and a stone staircase\nnear the north wall leads downward.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 442,
+          "direction": "south"
+        },
+        {
+          "to_room": 443,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 430,
+      "short_description": "You're on a ruined street.",
+      "long_description": "You are standing on a stonework street which shows signs of extreme\nage and weathering. Plants spring up from between the stones in places\nand many of the stones are cracked. The street leads to the northwest\nand southeast into the plaza.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 442,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 431,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 431,
+      "short_description": "You're at a ruined intersection.",
+      "long_description": "You are standing at a stonework intersection which shows signs of\nextreme age and weathering. Plants spring up from between the stones in\nplaces and many of the stones are cracked. The street leads southeast. Paths\nlead northeast and northwest into the ruins of shops.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 432,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 430,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 433,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 432,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 431,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 433,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 431,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 60,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 434,
+      "short_description": "You're on a ruined street.",
+      "long_description": "You are standing on a stonework street which shows signs of extreme\nage and weathering. Plants spring up from between the stones in places\nand many of the stones are cracked. The street leads to the northeast\nand southwest into the plaza.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 435,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 442,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 435,
+      "short_description": "You're at a ruined intersection.",
+      "long_description": "You are standing at a stonework intersection which shows signs of\nextreme age and weathering. Plants spring up from between the stones in\nplaces and many of the stones are cracked. The street leads southwest. Paths\nlead northeast and northwest into the ruins of shops.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 436,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 434,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 437,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 436,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 435,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 437,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 435,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 438,
+      "short_description": "You're on a ruined street.",
+      "long_description": "You are standing on a stonework street which shows signs of extreme\nage and weathering. Plants spring up from between the stones in places\nand many of the stones are cracked. The street leads to the east and\nwest into the plaza.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 439,
+          "direction": "east"
+        },
+        {
+          "to_room": 442,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 439,
+      "short_description": "You're at a ruined intersection.",
+      "long_description": "You are standing at a stonework intersection which shows signs of\nextreme age and weathering. Plants spring up from between the stones in\nplaces and many of the stones are cracked. The street leads west. Paths lead\neast and south into the ruins of shops.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 440,
+          "direction": "east"
+        },
+        {
+          "to_room": 441,
+          "direction": "south"
+        },
+        {
+          "to_room": 438,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 440,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 439,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 441,
+      "short_description": "You're in a ruined shop.",
+      "long_description": "You're standing in the ruin of a shop which is littered with debris\nfrom ages past. Whatever was bought or sold here is a mystery now. The\nonly exit is to the north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 439,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 442,
+      "short_description": "You're in a ruined plaza.",
+      "long_description": "You are standing in the center of a ruined plaza which has succumbed\nto decay and the plantlife of the swamp. To the north is the entrance\nto a rather impressive temple which has stood the test of time well.\nThe stonework and architecture are of a design you do not recognize.\nRuined streets lead east, west, northeast, northwest, and south out\nthrough the open town gates.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 429,
+          "direction": "north"
+        },
+        {
+          "to_room": 434,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 438,
+          "direction": "east"
+        },
+        {
+          "to_room": 424,
+          "direction": "south"
+        },
+        {
+          "to_room": 425,
+          "direction": "west"
+        },
+        {
+          "to_room": 430,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "no_rune",
+    "description": "Starter areas, no rune required"
+  }
+}

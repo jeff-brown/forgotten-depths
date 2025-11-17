@@ -1,0 +1,12 @@
+{
+  "id": "mountains_area_209",
+  "title": "You're in the mountains",
+  "description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorth and southwest.",
+  "area_id": "mountains_area",
+  "is_safe": false,
+  "light_level": 0.5,
+  "exits": {
+    "north": "mountains_area_210",
+    "southwest": "mountains_area_208"
+  }
+}

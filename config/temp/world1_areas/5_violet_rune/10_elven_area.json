@@ -1,0 +1,5235 @@
+{
+  "area_id": 10,
+  "area_name": "Elven Area",
+  "area_type": "World1Zone",
+  "terrain": "ELVEN",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Elven Area - reorganized from World1 export",
+    "total_rooms": 136,
+    "room_id_range": {
+      "min": 3929,
+      "max": 4064
+    }
+  },
+  "_statistics": {
+    "total_rooms": 136,
+    "room_id_range": {
+      "min": 3929,
+      "max": 4064
+    },
+    "total_exits": 273,
+    "total_npcs": 0,
+    "total_lairs": 23,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "UNKNOWN": 1,
+      "INVALID": 135
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 3929,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nTo the west, the road ends at a cliff, most likely the result of an\navalanche.  Exits are to the west and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "UNKNOWN",
+        "index": 14,
+        "description": "Unknown terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3930,
+          "direction": "east"
+        },
+        {
+          "to_room": 217,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3930,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3931,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3929,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3931,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3932,
+          "direction": "north"
+        },
+        {
+          "to_room": 3930,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3932,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the south and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3933,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3931,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3933,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3934,
+          "direction": "north"
+        },
+        {
+          "to_room": 3932,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3934,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the south and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3935,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3933,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3935,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3936,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3934,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3936,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3937,
+          "direction": "south"
+        },
+        {
+          "to_room": 3935,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3937,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3936,
+          "direction": "north"
+        },
+        {
+          "to_room": 3938,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3938,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3937,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3939,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3939,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3940,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3938,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3940,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3941,
+          "direction": "south"
+        },
+        {
+          "to_room": 3939,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3941,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3940,
+          "direction": "north"
+        },
+        {
+          "to_room": 3942,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3942,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3943,
+          "direction": "east"
+        },
+        {
+          "to_room": 3941,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3943,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3944,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3942,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3944,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3945,
+          "direction": "north"
+        },
+        {
+          "to_room": 3943,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3945,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3944,
+          "direction": "south"
+        },
+        {
+          "to_room": 3946,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3946,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3945,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3947,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3947,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3948,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3946,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3948,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3949,
+          "direction": "north"
+        },
+        {
+          "to_room": 3947,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3949,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3950,
+          "direction": "north"
+        },
+        {
+          "to_room": 3948,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3950,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the south and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3951,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3949,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3951,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3952,
+          "direction": "east"
+        },
+        {
+          "to_room": 3950,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3952,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3953,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3951,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3953,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3954,
+          "direction": "north"
+        },
+        {
+          "to_room": 3952,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3954,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3955,
+          "direction": "east"
+        },
+        {
+          "to_room": 3953,
+          "direction": "south"
+        },
+        {
+          "to_room": 3977,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3955,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3956,
+          "direction": "east"
+        },
+        {
+          "to_room": 3954,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3956,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3957,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3955,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3957,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3958,
+          "direction": "east"
+        },
+        {
+          "to_room": 3956,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3958,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3959,
+          "direction": "east"
+        },
+        {
+          "to_room": 3957,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3959,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nThe road continues north and west, and a dirt path is leading south from here.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3960,
+          "direction": "north"
+        },
+        {
+          "to_room": 3988,
+          "direction": "south"
+        },
+        {
+          "to_room": 3958,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3960,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3961,
+          "direction": "north"
+        },
+        {
+          "to_room": 3959,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3961,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3960,
+          "direction": "south"
+        },
+        {
+          "to_room": 3962,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3962,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3961,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3963,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3963,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3962,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3964,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3964,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3963,
+          "direction": "east"
+        },
+        {
+          "to_room": 3965,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3965,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3964,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3966,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3966,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3967,
+          "direction": "north"
+        },
+        {
+          "to_room": 3965,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3967,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3968,
+          "direction": "north"
+        },
+        {
+          "to_room": 3966,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3968,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the south and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3969,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3967,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3969,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3970,
+          "direction": "east"
+        },
+        {
+          "to_room": 3968,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3970,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3971,
+          "direction": "east"
+        },
+        {
+          "to_room": 3969,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3971,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3972,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3970,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3972,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the southwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3973,
+          "direction": "east"
+        },
+        {
+          "to_room": 3971,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3973,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3974,
+          "direction": "east"
+        },
+        {
+          "to_room": 3972,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3974,
+      "short_description": "You're on a mountain road.",
+      "long_description": "You are travelling along an old cobblestone road in the mountains.  The\nstones making up the path have all but worn away.  Legend has it that the\nspirits of elves watch this road closely, alerting their kin of presense\nof danger.  Bones of unfortunate travellers and pieces of broken equipment,\ntoo brittle to be a target of thieves, litter the otherwise clean road.\nExits are to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3975,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3973,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3975,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  The path\nis bordered neatly on both sides by logs, which can be easily passed on\nfoot in many places.  Exits are southwest toward the mountain road, and\nnorth along the path.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3976,
+          "direction": "north"
+        },
+        {
+          "to_room": 3974,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3976,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  The path\nis bordered neatly on both sides by logs, which can be easily passed on\nfoot in many places.  Exits are to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4018,
+          "direction": "north"
+        },
+        {
+          "to_room": 3975,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3977,
+      "short_description": "You're on a crooked path.",
+      "long_description": "You're on a crooked path, that is oddly straight for a crooked path. This\npath, although oddly straight as it is, is oddly crooked for being so\nstraight.  Exits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3954,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3978,
+          "direction": "northwest",
+          "door": {
+            "door_type": "MinimumRuneDoor",
+            "description": "Requires player to have at least a minimum rune level",
+            "raw_parameters": {
+              "__v0": -2,
+              "__v3": 8,
+              "__v4": 5,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Door ID (negative value)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Minimum rune index required",
+              "__v5": "Unused",
+              "__v6": "Unused"
+            },
+            "decoded_values": {
+              "minimum_rune": {
+                "index": 5,
+                "name": "Violet"
+              },
+              "barrier_number": 8
+            }
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3978,
+      "short_description": "You're on a crooked path.",
+      "long_description": "You're on a crooked path, that is oddly straight for a crooked path. This\npath, although oddly straight as it is, is oddly crooked for being so\nstraight.  Exits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3977,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3979,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3979,
+      "short_description": "You're on a crooked path.",
+      "long_description": "You're on a crooked path, that is oddly straight for a crooked path. This\npath, although oddly straight as it is, is oddly crooked for being so\nstraight.  Exits are to the southeast and downward.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3978,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3980,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3980,
+      "short_description": "You're down in a hole.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  The path also went straight,\nbut the path was very crooked.  This is a straight hole.  A straight hole\nyou can freely climb up and down through.  Give it a try!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3979,
+          "direction": "up"
+        },
+        {
+          "to_room": 3981,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3981,
+      "short_description": "You're down in a hole.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  The path also went straight,\nbut the path was very crooked.  This is a straight hole.  A straight hole\nyou can freely climb up and down through.  Give it a try!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3980,
+          "direction": "up"
+        },
+        {
+          "to_room": 3982,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3982,
+      "short_description": "You're down in a hole.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  The path also went straight,\nbut the path was very crooked.  This is a straight hole.  A straight hole\nyou can freely climb up and down through.  Give it a try!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3981,
+          "direction": "up"
+        },
+        {
+          "to_room": 3983,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3983,
+      "short_description": "You're down in a hole.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  The path also went straight,\nbut the path was very crooked.  This is a straight hole.  A straight hole\nyou can freely climb up and down through.  Give it a try!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3982,
+          "direction": "up"
+        },
+        {
+          "to_room": 3984,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3984,
+      "short_description": "You're down in a hole.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  The path also went straight,\nbut the path was very crooked.  This is a straight hole.  A straight hole\nyou can freely climb up and down through.  Give it a try!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3983,
+          "direction": "up"
+        },
+        {
+          "to_room": 3985,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3985,
+      "short_description": "You're down in a hole.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  The path also went straight,\nbut the path was very crooked.  This is a straight hole.  A straight hole\nyou can freely climb up and down through.  Give it a try!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3984,
+          "direction": "up"
+        },
+        {
+          "to_room": 3986,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3986,
+      "short_description": "You're down in a hole.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  The path also went straight,\nbut the path was very crooked.  This is a straight hole.  A straight hole\nyou can freely climb up and down through.  Give it a try!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3985,
+          "direction": "up"
+        },
+        {
+          "to_room": 3987,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3987,
+      "short_description": "You're down in a hole, above a chamber.",
+      "long_description": "You're down in a hole you found by travelling through a crooked path.\nThis hole is not crooked, it goes straight down.  Down to a chamber, so you\nsee.  It doesn't look like you will be able to climb back up this way if you\ngo down any further!",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3986,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3988,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the north and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3959,
+          "direction": "north"
+        },
+        {
+          "to_room": 3989,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3989,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3990,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3988,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3990,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northwest and\nsouth.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3991,
+          "direction": "south"
+        },
+        {
+          "to_room": 3989,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 156,
+          "num_mobs": 1,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 157,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 3991,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the north and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3990,
+          "direction": "north"
+        },
+        {
+          "to_room": 3992,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3992,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northeast and\nsouth.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3991,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3993,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3993,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the north and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3992,
+          "direction": "north"
+        },
+        {
+          "to_room": 3994,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3994,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northwest and\neast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3995,
+          "direction": "east"
+        },
+        {
+          "to_room": 3993,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3995,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northeast and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3996,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3994,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3996,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3997,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3995,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 156,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 3997,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the east and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3998,
+          "direction": "east"
+        },
+        {
+          "to_room": 3996,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3998,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the southeast and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3999,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 3997,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 3999,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northwest and\neast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4000,
+          "direction": "east"
+        },
+        {
+          "to_room": 3998,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4000,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northeast and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4001,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 3999,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4001,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the north and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4002,
+          "direction": "north"
+        },
+        {
+          "to_room": 4000,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4002,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northeast and\nsouth.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4003,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 4001,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4003,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4004,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 4002,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4004,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the east and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4005,
+          "direction": "east"
+        },
+        {
+          "to_room": 4003,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 157,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4005,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the southeast and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4006,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4004,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4006,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4007,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4005,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4007,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northwest and\neast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4008,
+          "direction": "east"
+        },
+        {
+          "to_room": 4006,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4008,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the southeast and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4009,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4007,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4009,
+      "short_description": "You're on a dirt path.",
+      "long_description": "You're on a dirt path that winds around to the area's only known\nactive volcano, according to a very informative sign seen next to the\nold cobblestone road.  Hostile elves are often seen travelling this road,\nso you best watch your back!  The trail continues to the northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4010,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4008,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4010,
+      "short_description": "You're on a smouldering path at the base of the volcano.",
+      "long_description": "You're on a smouldering path at the base of the volcano.  Small\nstreams of hot lava flow through crevices at your feet, disappearing\ninto the earth.  Luckily the air here is kept cool and refreshing by\nthe wind coming from the nearby ocean.  You thank the gods for the\nSeas of Palthorak.  Faint grumbling and howling noises fill the\natmosphere as you go about your business.  Exits are northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4011,
+          "direction": "south"
+        },
+        {
+          "to_room": 4009,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4011,
+      "short_description": "You're on a smouldering path at the base of the volcano.",
+      "long_description": "You're on a smouldering path at the base of the volcano.  Small\nstreams of hot lava flow through crevices at your feet, disappearing\ninto the earth.  Luckily the air here is kept cool and refreshing by\nthe wind coming from the nearby ocean.  You thank the gods for the\nSeas of Palthorak.  Faint grumbling and howling noises fill the\natmosphere as you go about your business.  Exits are north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4010,
+          "direction": "north"
+        },
+        {
+          "to_room": 4012,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4012,
+      "short_description": "You're on a smouldering path at the base of the volcano.",
+      "long_description": "You're on a smouldering path at the base of the volcano.  Small\nstreams of hot lava flow through crevices at your feet, disappearing\ninto the earth.  Luckily the air here is kept cool and refreshing by\nthe wind coming from the nearby ocean.  You thank the gods for the\nSeas of Palthorak.  Faint grumbling and howling noises fill the\natmosphere as you go about your business.  Exits are northwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4013,
+          "direction": "east"
+        },
+        {
+          "to_room": 4011,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4013,
+      "short_description": "You're on a smouldering path at the base of the volcano.",
+      "long_description": "You're on a smouldering path at the base of the volcano.  Small\nstreams of hot lava flow through crevices at your feet, disappearing\ninto the earth.  Luckily the air here is kept cool and refreshing by\nthe wind coming from the nearby ocean.  You thank the gods for the\nSeas of Palthorak.  Faint grumbling and howling noises fill the\natmosphere as you go about your business.  Exits are west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4014,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4012,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 154,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4014,
+      "short_description": "You're on a smouldering path at the base of the volcano.",
+      "long_description": "You're on a smouldering path at the base of the volcano.  Small\nstreams of hot lava flow through crevices at your feet, disappearing\ninto the earth.  Luckily the air here is kept cool and refreshing by\nthe wind coming from the nearby ocean.  You thank the gods for the\nSeas of Palthorak.  Faint grumbling and howling noises fill the\natmosphere as you go about your business.  Exits are northwest and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4015,
+          "direction": "east"
+        },
+        {
+          "to_room": 4013,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4015,
+      "short_description": "You're on a smouldering path at the base of the volcano.",
+      "long_description": "You're on a smouldering path at the base of the volcano.  Small\nstreams of hot lava flow through crevices at your feet, disappearing\ninto the earth.  Luckily the air here is kept cool and refreshing by\nthe wind coming from the nearby ocean.  You thank the gods for the\nSeas of Palthorak.  Faint grumbling and howling noises fill the\natmosphere as you go about your business.  Exits are west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4016,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4014,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4016,
+      "short_description": "You're on a smouldering path at the base of the volcano.",
+      "long_description": "You're on a smouldering path at the base of the volcano.  Small\nstreams of hot lava flow through crevices at your feet, disappearing\ninto the earth.  Luckily the air here is kept cool and refreshing by\nthe wind coming from the nearby ocean.  You thank the gods for the\nSeas of Palthorak.  Faint grumbling and howling noises fill the\natmosphere as you go about your business.  Exits are northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4017,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4015,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4017,
+      "short_description": "You're at the very top of the volcano.",
+      "long_description": "You're at the very top of the volcano.  From here you can see\nevertything, the entire continent of Talshan (which was actually\nnamed long before the town even existed, contrary to popular belief).\nNorthward you can catch a glimpse of the elven valley.  Directly west\nyou view the town of Talshan.  Far to the south you can see the\nswamps and the Tower of Sorcery a tad to the west of them.  A distance\nto the northwest you can see the river flowing toward the Seas of\nPalthorak, and the northern docks of Talshan.  You can very faintly\nsee the desert that breaks near the northern Ocean of Galinor.  A fair\nday's walk to the west you also see a gigantic glacier cutting into the\nmountainside.  And here from the top of the volcano you have this\nbeautiful view.  You can climb back down to the northwest or enter the\nvolcano downward.  But beware, there is much peril within.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4016,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4018,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  The path\nis bordered neatly on both sides by logs, which can be easily passed on\nfoot in many places.  Exits are to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3976,
+          "direction": "south"
+        },
+        {
+          "to_room": 4019,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4019,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  The path\nis bordered neatly on both sides by logs, which can be easily passed on\nfoot in many places.  Exits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4018,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4020,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4020,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  The path\nis bordered neatly on both sides by logs, which can be easily passed on\nfoot in many places.  Exits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4019,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4021,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4021,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  The path\nis bordered neatly on both sides by logs, which can be easily passed on\nfoot in many places.  Exits are to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4020,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 4022,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4022,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  The path\nis bordered neatly on both sides by logs, which can be easily passed on\nfoot in many places.  Exits are to the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4023,
+          "direction": "north"
+        },
+        {
+          "to_room": 4021,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4023,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're standing on a path that is known to lead to the Elven city\nMytthos, oddly named by humans instead of the Elves themselves.  There is\na huge mithril door to the north, apparently the entrance to Mytthos.  Two\npaths run east and west of here, alongside the city wall.  This path\ncontinues southward.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4064,
+          "direction": "east"
+        },
+        {
+          "to_room": 4022,
+          "direction": "south"
+        },
+        {
+          "to_room": 4024,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4024,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4023,
+          "direction": "east"
+        },
+        {
+          "to_room": 4025,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4025,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4024,
+          "direction": "east"
+        },
+        {
+          "to_room": 4026,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4026,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4025,
+          "direction": "east"
+        },
+        {
+          "to_room": 4027,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4027,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4026,
+          "direction": "east"
+        },
+        {
+          "to_room": 4028,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4028,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4027,
+          "direction": "east"
+        },
+        {
+          "to_room": 4029,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4029,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4028,
+          "direction": "east"
+        },
+        {
+          "to_room": 4030,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4030,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4031,
+          "direction": "north"
+        },
+        {
+          "to_room": 4029,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 159,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4031,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4032,
+          "direction": "north"
+        },
+        {
+          "to_room": 4030,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4032,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4033,
+          "direction": "north"
+        },
+        {
+          "to_room": 4031,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4033,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4034,
+          "direction": "north"
+        },
+        {
+          "to_room": 4032,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4034,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4035,
+          "direction": "north"
+        },
+        {
+          "to_room": 4033,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4035,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4036,
+          "direction": "north"
+        },
+        {
+          "to_room": 4034,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4036,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4037,
+          "direction": "north"
+        },
+        {
+          "to_room": 4035,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4037,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are south and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4038,
+          "direction": "east"
+        },
+        {
+          "to_room": 4036,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 159,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4038,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4039,
+          "direction": "east"
+        },
+        {
+          "to_room": 4037,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4039,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4040,
+          "direction": "east"
+        },
+        {
+          "to_room": 4038,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4040,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4041,
+          "direction": "east"
+        },
+        {
+          "to_room": 4039,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4041,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4042,
+          "direction": "east"
+        },
+        {
+          "to_room": 4040,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4042,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4043,
+          "direction": "east"
+        },
+        {
+          "to_room": 4041,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4043,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4044,
+          "direction": "east"
+        },
+        {
+          "to_room": 4042,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4044,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4045,
+          "direction": "east"
+        },
+        {
+          "to_room": 4043,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 159,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4045,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4046,
+          "direction": "east"
+        },
+        {
+          "to_room": 4044,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4046,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4047,
+          "direction": "east"
+        },
+        {
+          "to_room": 4045,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4047,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4048,
+          "direction": "east"
+        },
+        {
+          "to_room": 4046,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4048,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4049,
+          "direction": "east"
+        },
+        {
+          "to_room": 4047,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4049,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4050,
+          "direction": "east"
+        },
+        {
+          "to_room": 4048,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4050,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4051,
+          "direction": "east"
+        },
+        {
+          "to_room": 4049,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4051,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4052,
+          "direction": "south"
+        },
+        {
+          "to_room": 4050,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 159,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4052,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4051,
+          "direction": "north"
+        },
+        {
+          "to_room": 4053,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4053,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4052,
+          "direction": "north"
+        },
+        {
+          "to_room": 4054,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4054,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4053,
+          "direction": "north"
+        },
+        {
+          "to_room": 4055,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4055,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4054,
+          "direction": "north"
+        },
+        {
+          "to_room": 4056,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4056,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4055,
+          "direction": "north"
+        },
+        {
+          "to_room": 4057,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4057,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4056,
+          "direction": "north"
+        },
+        {
+          "to_room": 4058,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4058,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are north and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4057,
+          "direction": "north"
+        },
+        {
+          "to_room": 4059,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 159,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4059,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4058,
+          "direction": "east"
+        },
+        {
+          "to_room": 4060,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4060,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4059,
+          "direction": "east"
+        },
+        {
+          "to_room": 4061,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4061,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4060,
+          "direction": "east"
+        },
+        {
+          "to_room": 4062,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4062,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4061,
+          "direction": "east"
+        },
+        {
+          "to_room": 4063,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 158,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 4063,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4062,
+          "direction": "east"
+        },
+        {
+          "to_room": 4064,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 4064,
+      "short_description": "You're on a path in the Elven Valley",
+      "long_description": "You're on a path in the Elven Valley that leads around the city\nof Mytthos.  There are no fresh footprints on the path, even though you\nhave seen elves creeping around.  The elves are not foolish enough to\nleave their trail to anyone who would like to follow them.  The further\nyou stray from the gate to the city, the more you fear for your life.\nExits are east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 4063,
+          "direction": "east"
+        },
+        {
+          "to_room": 4023,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "violet_rune",
+    "description": "Violet Rune required for access"
+  }
+}

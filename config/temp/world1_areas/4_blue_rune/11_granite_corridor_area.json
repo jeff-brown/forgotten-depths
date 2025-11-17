@@ -1,0 +1,5341 @@
+{
+  "area_id": 11,
+  "area_name": "Granite Corridor Area",
+  "area_type": "World1Zone",
+  "terrain": "GRANITE",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Granite Corridor Area - reorganized from World1 export",
+    "total_rooms": 127,
+    "room_id_range": {
+      "min": 2176,
+      "max": 2302
+    }
+  },
+  "_statistics": {
+    "total_rooms": 127,
+    "room_id_range": {
+      "min": 2176,
+      "max": 2302
+    },
+    "total_exits": 254,
+    "total_npcs": 0,
+    "total_lairs": 15,
+    "total_triggers": 14,
+    "terrain_breakdown": {
+      "DUNGEON3": 127
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 2176,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2177,
+          "direction": "north"
+        },
+        {
+          "to_room": 2204,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2177,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north, east, and south through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2178,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2176,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2178,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout this\nhuge granite chamber. The high vaulted ceiling is supported by huge columns\nset at regular intervals. The air here is kept very warm and dry by an\nenormous stone hearth in the southeast corner. In the the southwest portion\nof the chamber is a stone palet some five feet high covered with a layer of\nthick furs. The northeast wall is covered by an enormous tapestry of very\nintricate design colored in many rich shades of red. The only exit lies to\nthe northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2177,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 94,
+          "num_mobs": 1,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 95,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 10,
+            "v3": 18,
+            "v4": 2178,
+            "v5": 1579,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 10,
+            "v3": 18,
+            "v4": 2178,
+            "v5": 1579,
+            "v6": 0,
+            "is_active": true
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 12,
+            "v4": 2204,
+            "v5": 1545,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 12,
+            "v4": 2204,
+            "v5": 1545,
+            "v6": 0,
+            "is_active": false
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2179,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe only exit lies to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2180,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2214,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2180,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2181,
+          "direction": "east"
+        },
+        {
+          "to_room": 2179,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2181,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe corridor contines to the southwest. Huge stone doorways lie to the\nnortheast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2182,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2180,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2182,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and northeast through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2181,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 95,
+          "num_mobs": 1,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 94,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 10,
+            "v3": 18,
+            "v4": 2182,
+            "v5": 1577,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 10,
+            "v3": 18,
+            "v4": 2182,
+            "v5": 1577,
+            "v6": 0,
+            "is_active": true
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 12,
+            "v4": 2214,
+            "v5": 1559,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 12,
+            "v4": 2214,
+            "v5": 1559,
+            "v6": 0,
+            "is_active": false
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2183,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe only exit lies to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2184,
+          "direction": "south"
+        },
+        {
+          "to_room": 2225,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2184,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2183,
+          "direction": "north"
+        },
+        {
+          "to_room": 2185,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2185,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2186,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2184,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2186,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2187,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2185,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2187,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout this\nhuge granite chamber. The high vaulted ceiling is supported by huge columns\nset at regular intervals. The air here is kept very warm and dry by an\nenormous stone hearth in the southeast corner. In the the southwest portion\nof the chamber is a stone palet some five feet high covered with a layer of\nthick furs. The northeast wall is covered by an enormous tapestry of very\nintricate design colored in many rich shades of red. The only exit lies to\nthe northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2186,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 95,
+          "num_mobs": 1,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 94,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 10,
+            "v3": 18,
+            "v4": 2187,
+            "v5": 1579,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 10,
+            "v3": 18,
+            "v4": 2187,
+            "v5": 1579,
+            "v6": 0,
+            "is_active": true
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 12,
+            "v4": 2225,
+            "v5": 1543,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 12,
+            "v4": 2225,
+            "v5": 1543,
+            "v6": 0,
+            "is_active": false
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2188,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2189,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2271,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2189,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2190,
+          "direction": "east"
+        },
+        {
+          "to_room": 2188,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 95,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2190,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2191,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2189,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2191,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northwest and south through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2193,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2192,
+          "direction": "southeast",
+          "door": {
+            "door_type": "PuzzleDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -8,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        },
+        {
+          "to_room": 2190,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2192,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and northeast through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2191,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 94,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 10,
+            "v3": 18,
+            "v4": 2192,
+            "v5": 1577,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 10,
+            "v3": 18,
+            "v4": 2192,
+            "v5": 1577,
+            "v6": 0,
+            "is_active": true
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 12,
+            "v4": 2271,
+            "v5": 1507,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 12,
+            "v4": 2271,
+            "v5": 1507,
+            "v6": 0,
+            "is_active": false
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2193,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout this\nhuge granite chamber. The high vaulted ceiling is supported by huge columns\nset at regular intervals. The air here is kept very warm and dry by an\nenormous stone hearth in the southeast corner. In the the southwest portion\nof the chamber is a stone palet some five feet high covered with a layer of\nthick furs. The northeast wall is covered by an enormous tapestry of very\nintricate design colored in many rich shades of red. The only exit lies to\nthe northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2191,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 96,
+          "num_mobs": 1,
+          "item_vnum": 83
+        }
+      ],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 10,
+            "v3": 18,
+            "v4": 2193,
+            "v5": 1579,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 10,
+            "v3": 18,
+            "v4": 2193,
+            "v5": 1579,
+            "v6": 0,
+            "is_active": true
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 12,
+            "v4": 2191,
+            "v5": 1571,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 12,
+            "v4": 2191,
+            "v5": 1571,
+            "v6": 0,
+            "is_active": false
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2194,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2195,
+          "direction": "north"
+        },
+        {
+          "to_room": 2263,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2195,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north, east, and south through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2196,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2194,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2196,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout this\nhuge granite chamber. The high vaulted ceiling is supported by huge columns\nset at regular intervals. The air here is kept very warm and dry by an\nenormous stone hearth in the southeast corner. In the the southwest portion\nof the chamber is a stone palet some five feet high covered with a layer of\nthick furs. The northeast wall is covered by an enormous tapestry of very\nintricate design colored in many rich shades of red. The only exit lies to\nthe northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2195,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2197,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2198,
+          "direction": "east"
+        },
+        {
+          "to_room": 2208,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2198,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the west and southeast through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2199,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2197,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2199,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout this\nhuge granite chamber. The high vaulted ceiling is supported by huge columns\nset at regular intervals. The air here is kept very warm and dry by an\nenormous stone hearth in the southeast corner. In the the southwest portion\nof the chamber is a stone palet some five feet high covered with a layer of\nthick furs. The northeast wall is covered by an enormous tapestry of very\nintricate design colored in many rich shades of red. The only exit lies to\nthe northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2198,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 10,
+            "v3": 18,
+            "v4": 2199,
+            "v5": 1579,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 10,
+            "v3": 18,
+            "v4": 2199,
+            "v5": 1579,
+            "v6": 0,
+            "is_active": true
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 12,
+            "v4": 2208,
+            "v5": 1545,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 12,
+            "v4": 2208,
+            "v5": 1545,
+            "v6": 0,
+            "is_active": false
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2200,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout this\nhuge granite chamber. The high vaulted ceiling is supported by huge columns\nset at regular intervals. The air here is kept very warm and dry by an\nenormous stone hearth on the west wall. In the the sothern portion of the\nchamber is a stone palet some five feet high covered with a layer of thick\nfurs. The east wall is covered by an enormous tapestry of very intricate\ndesign colored in many rich shades of red. The only exit lies to the north\nthrough a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2201,
+          "direction": "south"
+        },
+        {
+          "to_room": 2219,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2201,
+      "short_description": "You're in a huge granite chamber.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout this\nhuge granite chamber. The high vaulted ceiling is supported by huge columns\nset at regular intervals. The air here is kept very warm and dry by an\nenormous stone hearth in the northeast corner. In the the northwest portion\nof the chamber is a stone palet some five feet high covered with a layer of\nthick furs. The southeast wall is covered by an enormous tapestry of very\nintricate design colored in many rich shades of red. The only exit lies to\nthe southwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2200,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 10,
+            "v3": 18,
+            "v4": 2201,
+            "v5": 1581,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 10,
+            "v3": 18,
+            "v4": 2201,
+            "v5": 1581,
+            "v6": 0,
+            "is_active": true
+          }
+        },
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1,
+            "v3": 12,
+            "v4": 2219,
+            "v5": 1555,
+            "v6": 0,
+            "v7": 0
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 1,
+            "v3": 12,
+            "v4": 2219,
+            "v5": 1555,
+            "v6": 0,
+            "is_active": false
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2202,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe only exit lies to the north.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2203,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2157,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2203,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2204,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2202,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2204,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and southwest through a huge stone\ndoorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2176,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2205,
+          "direction": "southeast",
+          "door": {
+            "door_type": "PuzzleDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -8,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        },
+        {
+          "to_room": 2203,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2205,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north and south through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2206,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2204,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2206,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2207,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2205,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2207,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2208,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2206,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2208,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This chamber is circular, and made of a highly polished black stone. The\ndistance across the middle of this enormous chamber is roughly three\nhundred feet. The high domed ceiling is supported by immense pillars of\nthe same black stone which stand as high as one hundred feet. The floor\nand walls of this chamber are pitted here and there with marks that seem\nto have been made by various blades and other weaponry. There are also\nmany places where the stone is charred or cracked as if damaged by extreme\nheat or cold. The heavy air in this chamber is oppressive and reeks of\ndeath and charred flesh. The floor is covered sparesly by a fine blackish\ngrit composed of stone flakes, metal shavings, bits of bone, and ash. You\nsee no visible means of egress. An overwhelming sense of impending doom\ndisheartens you greatly.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2197,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2209,
+          "direction": "southeast",
+          "door": {
+            "door_type": "PuzzleDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -8,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        },
+        {
+          "to_room": 2207,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2209,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "You are deep inside a winding labyrinth. The walls are smooth and glisten\nwith condensation. A thin layer of mold covers the walls in a deep green\nfilm. You notice a lever in a recess in the southern wall. The only exit\nis to the north. The southern wall bears the following inscription:\n          \"Take from the elements that which is swiftest.\n     Take from those which remain that which shares its origin.\n              Take also the element which consumes it.\n            Combine that which remains with its product.\n             What remains as the result of this union?\n     What shares the qualities of the byproduct of this union,\n                  yet binds and pervades them all?",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2210,
+          "direction": "south"
+        },
+        {
+          "to_room": 2208,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2210,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2209,
+          "direction": "north"
+        },
+        {
+          "to_room": 2211,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2211,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2210,
+          "direction": "north"
+        },
+        {
+          "to_room": 2212,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2212,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2211,
+          "direction": "north"
+        },
+        {
+          "to_room": 2213,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2213,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2212,
+          "direction": "north"
+        },
+        {
+          "to_room": 2214,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2214,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls cast a warm reddish light throughout the\nvast expanse of this hall which is at least one hundred feet wide, and\nsome two hundred fifty feet deep. The high vaulted ceiling is supported\nby huge columns set at regular intervals which are decorated with racks\nsupporting suits of armor and weaponry of giant proportions. The bare\nspaces on the walls and floor of this enormous chamber are covered with\nheavy tapestries and furs, and the air here is kept very warm and dry\nby colossal stone hearths flanking the room to the east and west. At\nthe southern end of the chamber is a stone dias some five feet high\nsupporting a pair of huge thrones. The only exit lies at the northern\nend of the hall through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2213,
+          "direction": "north"
+        },
+        {
+          "to_room": 2179,
+          "direction": "east"
+        },
+        {
+          "to_room": 2215,
+          "direction": "south",
+          "door": {
+            "door_type": "PuzzleDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -8,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2215,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, northwest, and southeast through a huge stone\ndoorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2214,
+          "direction": "north"
+        },
+        {
+          "to_room": 2216,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2216,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2215,
+          "direction": "north"
+        },
+        {
+          "to_room": 2217,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2217,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2216,
+          "direction": "north"
+        },
+        {
+          "to_room": 2218,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2218,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2217,
+          "direction": "north"
+        },
+        {
+          "to_room": 2219,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2219,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northwest and southeast through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2218,
+          "direction": "north"
+        },
+        {
+          "to_room": 2200,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2220,
+          "direction": "southwest",
+          "door": {
+            "door_type": "PuzzleDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -8,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2220,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north, east, and south through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2219,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2221,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2221,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2220,
+          "direction": "north"
+        },
+        {
+          "to_room": 2222,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2222,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2221,
+          "direction": "north"
+        },
+        {
+          "to_room": 2223,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2223,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2222,
+          "direction": "north"
+        },
+        {
+          "to_room": 2224,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2224,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2223,
+          "direction": "north"
+        },
+        {
+          "to_room": 2225,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2225,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southwest and northeast through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2224,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2183,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2226,
+          "direction": "southwest",
+          "door": {
+            "door_type": "PuzzleDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -8,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2226,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2225,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2227,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2227,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2226,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2228,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2228,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2227,
+          "direction": "north"
+        },
+        {
+          "to_room": 2229,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2229,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2228,
+          "direction": "north"
+        },
+        {
+          "to_room": 2230,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2230,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2229,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2231,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2231,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2230,
+          "direction": "east"
+        },
+        {
+          "to_room": 2232,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2232,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2233,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2231,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2233,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2234,
+          "direction": "north"
+        },
+        {
+          "to_room": 2232,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2234,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2235,
+          "direction": "north"
+        },
+        {
+          "to_room": 2233,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2235,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2236,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2234,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2236,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2237,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2235,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2237,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2238,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2236,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2238,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2239,
+          "direction": "north"
+        },
+        {
+          "to_room": 2237,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2239,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2240,
+          "direction": "north"
+        },
+        {
+          "to_room": 2238,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2240,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2241,
+          "direction": "north"
+        },
+        {
+          "to_room": 2239,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2241,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2242,
+          "direction": "north"
+        },
+        {
+          "to_room": 2240,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2242,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2243,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2241,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2243,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2244,
+          "direction": "north"
+        },
+        {
+          "to_room": 2242,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2244,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2245,
+          "direction": "north"
+        },
+        {
+          "to_room": 2243,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2245,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2246,
+          "direction": "north"
+        },
+        {
+          "to_room": 2244,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2246,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2247,
+          "direction": "north"
+        },
+        {
+          "to_room": 2245,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2247,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2248,
+          "direction": "north"
+        },
+        {
+          "to_room": 2246,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2248,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2249,
+          "direction": "north"
+        },
+        {
+          "to_room": 2247,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2249,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2250,
+          "direction": "north"
+        },
+        {
+          "to_room": 2248,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2250,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2251,
+          "direction": "north"
+        },
+        {
+          "to_room": 2249,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2251,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe only exit lies to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2250,
+          "direction": "south"
+        },
+        {
+          "to_room": 2252,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2252,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2251,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2253,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2253,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2252,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2254,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2254,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2253,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2255,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2255,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2254,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2256,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2256,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2255,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2257,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2257,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe only exit lies to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2256,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2258,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2258,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2257,
+          "direction": "east"
+        },
+        {
+          "to_room": 2259,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2259,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2258,
+          "direction": "east"
+        },
+        {
+          "to_room": 2260,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2260,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2259,
+          "direction": "east"
+        },
+        {
+          "to_room": 2261,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2261,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2260,
+          "direction": "east"
+        },
+        {
+          "to_room": 2262,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2262,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2261,
+          "direction": "east"
+        },
+        {
+          "to_room": 2263,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2263,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2194,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2262,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2264,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2264,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2263,
+          "direction": "east"
+        },
+        {
+          "to_room": 2265,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2265,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2264,
+          "direction": "east"
+        },
+        {
+          "to_room": 2266,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2266,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2265,
+          "direction": "east"
+        },
+        {
+          "to_room": 2267,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2267,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2266,
+          "direction": "east"
+        },
+        {
+          "to_room": 2268,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2268,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2267,
+          "direction": "east"
+        },
+        {
+          "to_room": 2269,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2269,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2268,
+          "direction": "east"
+        },
+        {
+          "to_room": 2270,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2270,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2269,
+          "direction": "east"
+        },
+        {
+          "to_room": 2271,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2271,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2188,
+          "direction": "north"
+        },
+        {
+          "to_room": 2270,
+          "direction": "east"
+        },
+        {
+          "to_room": 2272,
+          "direction": "southwest",
+          "door": {
+            "door_type": "PuzzleDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -8,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2272,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2271,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2273,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2273,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2272,
+          "direction": "east"
+        },
+        {
+          "to_room": 2274,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2274,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2273,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2275,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2275,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2274,
+          "direction": "north"
+        },
+        {
+          "to_room": 2276,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2276,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southwest, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2279,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2277,
+          "direction": "southwest",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 85,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 2,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 85,
+              "consume_key": false,
+              "barrier_number": 4
+            }
+          }
+        },
+        {
+          "to_room": 2275,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2277,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north, east, and south through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2276,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2278,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2278,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2277,
+          "direction": "north"
+        },
+        {
+          "to_room": 2403,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2279,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2280,
+          "direction": "east"
+        },
+        {
+          "to_room": 2276,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2280,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2281,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2279,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2281,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2282,
+          "direction": "east"
+        },
+        {
+          "to_room": 2280,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2282,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2283,
+          "direction": "east"
+        },
+        {
+          "to_room": 2281,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2283,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2284,
+          "direction": "east"
+        },
+        {
+          "to_room": 2282,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2284,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2285,
+          "direction": "east"
+        },
+        {
+          "to_room": 2283,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2285,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2286,
+          "direction": "east"
+        },
+        {
+          "to_room": 2284,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2286,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2287,
+          "direction": "east"
+        },
+        {
+          "to_room": 2285,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2287,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe only exit lies to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2288,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2286,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2288,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2289,
+          "direction": "east"
+        },
+        {
+          "to_room": 2287,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2289,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2290,
+          "direction": "east"
+        },
+        {
+          "to_room": 2288,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2290,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2291,
+          "direction": "east"
+        },
+        {
+          "to_room": 2289,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2291,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2292,
+          "direction": "east"
+        },
+        {
+          "to_room": 2290,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2292,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2293,
+          "direction": "east"
+        },
+        {
+          "to_room": 2291,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2293,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nThe only exit lies to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2294,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2292,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2294,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2295,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2293,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2295,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2296,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2294,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2296,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2297,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2295,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2297,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the southeast and northwest through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2298,
+          "direction": "southeast",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 82,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 2,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 82,
+              "consume_key": false,
+              "barrier_number": 4
+            }
+          }
+        },
+        {
+          "to_room": 2296,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2298,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "You are deep inside a winding labyrinth. The walls are smooth and glisten\nwith condensation. A thin layer of mold covers the walls in a deep green\nfilm. You notice a lever in a recess in the southern wall. The only exit\nis to the north. The southern wall bears the following inscription:\n          \"Take from the elements that which is swiftest.\n     Take from those which remain that which shares its origin.\n              Take also the element which consumes it.\n            Combine that which remains with its product.\n             What remains as the result of this union?\n     What shares the qualities of the byproduct of this union,\n                  yet binds and pervades them all?",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2299,
+          "direction": "south"
+        },
+        {
+          "to_room": 2297,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2299,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and north through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2298,
+          "direction": "north"
+        },
+        {
+          "to_room": 2300,
+          "direction": "south",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 83,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 2,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 83,
+              "consume_key": false,
+              "barrier_number": 4
+            }
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2300,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, northwest, and southeast through a huge stone\ndoorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2299,
+          "direction": "north"
+        },
+        {
+          "to_room": 2301,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 95,
+          "num_mobs": 3,
+          "item_vnum": 84
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2301,
+      "short_description": "You're in a hewn granite corridor.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the south and north through a huge stone doorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2300,
+          "direction": "north"
+        },
+        {
+          "to_room": 2302,
+          "direction": "south",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 84,
+              "__v3": 4,
+              "__v4": 0,
+              "__v5": 2,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 84,
+              "consume_key": false,
+              "barrier_number": 4
+            }
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2302,
+      "short_description": "You're in a great granite hall.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the north, southeast, and southwest through a huge stone\ndoorway.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2301,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 96,
+          "num_mobs": 2,
+          "item_vnum": 85
+        }
+      ],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "blue_rune",
+    "description": "Blue Rune required for access"
+  }
+}

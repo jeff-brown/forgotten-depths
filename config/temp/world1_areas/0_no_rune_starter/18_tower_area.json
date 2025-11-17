@@ -1,0 +1,2928 @@
+{
+  "area_id": 18,
+  "area_name": "Tower Area",
+  "area_type": "World1Zone",
+  "terrain": "TOWER",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Tower Area - reorganized from World1 export",
+    "total_rooms": 74,
+    "room_id_range": {
+      "min": 1019,
+      "max": 1463
+    }
+  },
+  "_statistics": {
+    "total_rooms": 74,
+    "room_id_range": {
+      "min": 1019,
+      "max": 1463
+    },
+    "total_exits": 146,
+    "total_npcs": 0,
+    "total_lairs": 12,
+    "total_triggers": 2,
+    "terrain_breakdown": {
+      "FOREST": 74
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 1019,
+      "short_description": "You're in an entrance hall.",
+      "long_description": "You are standing in the entrance hall of an obsidian tower. The walls here\nare of dull black stone, while the floor is of black marble run through\nwith swirls of silver. A black marble archway exits the room to the north\ninto the forest, and another exits to the south deeper into the tower.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 302,
+          "direction": "north"
+        },
+        {
+          "to_room": 1020,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1020,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1019,
+          "direction": "north"
+        },
+        {
+          "to_room": 1021,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1021,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1020,
+          "direction": "north"
+        },
+        {
+          "to_room": 1022,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1022,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north, south, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1021,
+          "direction": "north"
+        },
+        {
+          "to_room": 1023,
+          "direction": "east"
+        },
+        {
+          "to_room": 1026,
+          "direction": "south"
+        },
+        {
+          "to_room": 1034,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1023,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1024,
+          "direction": "east"
+        },
+        {
+          "to_room": 1022,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1024,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1025,
+          "direction": "east"
+        },
+        {
+          "to_room": 1023,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1025,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1024,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 41,
+          "num_mobs": 2,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 45,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1026,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1022,
+          "direction": "north"
+        },
+        {
+          "to_room": 1027,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1027,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1026,
+          "direction": "north"
+        },
+        {
+          "to_room": 1028,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1028,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north, south, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1027,
+          "direction": "north"
+        },
+        {
+          "to_room": 1029,
+          "direction": "east"
+        },
+        {
+          "to_room": 1033,
+          "direction": "south"
+        },
+        {
+          "to_room": 1031,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1029,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1030,
+          "direction": "east"
+        },
+        {
+          "to_room": 1028,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1030,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the west. A spiral staircase of black\nmarble leads up.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1029,
+          "direction": "west"
+        },
+        {
+          "to_room": 1038,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1031,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1028,
+          "direction": "east"
+        },
+        {
+          "to_room": 1032,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1032,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east. A spiral staircase of black\nmarble leads up.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1031,
+          "direction": "east"
+        },
+        {
+          "to_room": 1037,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1033,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1028,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 39,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1034,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1022,
+          "direction": "east"
+        },
+        {
+          "to_room": 1035,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1035,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1034,
+          "direction": "east"
+        },
+        {
+          "to_room": 1036,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1036,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1035,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 44,
+          "num_mobs": 2,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 41,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1037,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. Spiral staircases of black marble lead up and down.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1057,
+          "direction": "up"
+        },
+        {
+          "to_room": 1032,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1038,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the south. A spiral staircase of black\nmarble leads down.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1039,
+          "direction": "south"
+        },
+        {
+          "to_room": 1030,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1039,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1038,
+          "direction": "north"
+        },
+        {
+          "to_room": 1040,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1040,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north, south, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1039,
+          "direction": "north"
+        },
+        {
+          "to_room": 1041,
+          "direction": "east"
+        },
+        {
+          "to_room": 1047,
+          "direction": "south"
+        },
+        {
+          "to_room": 1044,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1041,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1042,
+          "direction": "east"
+        },
+        {
+          "to_room": 1040,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1042,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1043,
+          "direction": "east"
+        },
+        {
+          "to_room": 1041,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1043,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1042,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 39,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1044,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1040,
+          "direction": "east"
+        },
+        {
+          "to_room": 1045,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1045,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1044,
+          "direction": "east"
+        },
+        {
+          "to_room": 1046,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1046,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1045,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 38,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1047,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1040,
+          "direction": "north"
+        },
+        {
+          "to_room": 1048,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1048,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1047,
+          "direction": "north"
+        },
+        {
+          "to_room": 1049,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1049,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1048,
+          "direction": "north"
+        },
+        {
+          "to_room": 1050,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1050,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1049,
+          "direction": "north"
+        },
+        {
+          "to_room": 1051,
+          "direction": "east"
+        },
+        {
+          "to_room": 1054,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1051,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1052,
+          "direction": "east"
+        },
+        {
+          "to_room": 1050,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1052,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1053,
+          "direction": "east"
+        },
+        {
+          "to_room": 1051,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1053,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1052,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 57,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1054,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1050,
+          "direction": "east"
+        },
+        {
+          "to_room": 1055,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1055,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1054,
+          "direction": "east"
+        },
+        {
+          "to_room": 1056,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1056,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1055,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 56,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1057,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east. A spiral staircase of black\nmarble leads down.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1058,
+          "direction": "east"
+        },
+        {
+          "to_room": 1037,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1058,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1059,
+          "direction": "east"
+        },
+        {
+          "to_room": 1057,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1059,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1060,
+          "direction": "east"
+        },
+        {
+          "to_room": 1058,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1060,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1061,
+          "direction": "south"
+        },
+        {
+          "to_room": 1059,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1061,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1060,
+          "direction": "north"
+        },
+        {
+          "to_room": 1062,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1062,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1061,
+          "direction": "north"
+        },
+        {
+          "to_room": 1063,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1063,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1062,
+          "direction": "north"
+        },
+        {
+          "to_room": 1064,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1064,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1063,
+          "direction": "north"
+        },
+        {
+          "to_room": 1065,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1065,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1064,
+          "direction": "east"
+        },
+        {
+          "to_room": 1066,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1066,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1065,
+          "direction": "east"
+        },
+        {
+          "to_room": 1067,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1067,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1068,
+          "direction": "north"
+        },
+        {
+          "to_room": 1066,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1068,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1069,
+          "direction": "north"
+        },
+        {
+          "to_room": 1067,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1069,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the south and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1070,
+          "direction": "east"
+        },
+        {
+          "to_room": 1068,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1070,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the west. A spiral staircase of black\nmarble leads up.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1069,
+          "direction": "west"
+        },
+        {
+          "to_room": 1071,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1071,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east. A spiral staircase of black\nmarble leads down.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1072,
+          "direction": "east"
+        },
+        {
+          "to_room": 1070,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1072,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1073,
+          "direction": "east"
+        },
+        {
+          "to_room": 1071,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1073,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1074,
+          "direction": "south"
+        },
+        {
+          "to_room": 1072,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1074,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1073,
+          "direction": "north"
+        },
+        {
+          "to_room": 1075,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1075,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1074,
+          "direction": "north"
+        },
+        {
+          "to_room": 1076,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1076,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archways exit to the north, south, and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1075,
+          "direction": "north"
+        },
+        {
+          "to_room": 1081,
+          "direction": "east"
+        },
+        {
+          "to_room": 1077,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 57,
+          "num_mobs": 4,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1077,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1076,
+          "direction": "north"
+        },
+        {
+          "to_room": 1078,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1078,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1077,
+          "direction": "north"
+        },
+        {
+          "to_room": 1079,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1079,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1078,
+          "direction": "east"
+        },
+        {
+          "to_room": 1080,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1080,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1079,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TELEPORT",
+            "index": 3,
+            "description": "Teleporter (moves player to another room)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1529,
+            "v3": 2,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "target_room": 1529,
+            "teleporter_id": 2,
+            "is_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 1081,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1082,
+          "direction": "east"
+        },
+        {
+          "to_room": 1076,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1082,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1083,
+          "direction": "east"
+        },
+        {
+          "to_room": 1081,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1083,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1084,
+          "direction": "north"
+        },
+        {
+          "to_room": 1082,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1084,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1085,
+          "direction": "north"
+        },
+        {
+          "to_room": 1083,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1085,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1086,
+          "direction": "north"
+        },
+        {
+          "to_room": 1084,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1086,
+      "short_description": "You're in a marble hallway.",
+      "long_description": "You are standing in a marble hallway. The walls here are of dull black\nstone, while the floor is of black marble run through with swirls of\nsilver. The hallway continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1087,
+          "direction": "north"
+        },
+        {
+          "to_room": 1085,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1087,
+      "short_description": "You're in a vaulted chamber.",
+      "long_description": "You are standing in a vaulted chamber adorned with black marble\ncolumns and arches. The archway exits to the south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1086,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 67,
+          "num_mobs": 2,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 91,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 1459,
+      "short_description": "You're in a ruined entry hall.",
+      "long_description": "You are standing in a ruined entry hall. The tightly fit stone tiles that\nmake up the floor and walls here bear signs of weathering and extreme age.\nPassages blocked by impassible rockfalls where portions of the ceiling fell\nin lie to the east and west. The only accessible passageway leads to the\nnorth into darkness.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1460,
+          "direction": "north"
+        },
+        {
+          "to_room": 262,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1460,
+      "short_description": "You're in a ruined hallway.",
+      "long_description": "You are standing in a ruined hallway. The tightly fit stone tiles that\nmake up the floor and walls here bear signs of weathering and extreme age.\nThe northern portion of this hall is blocked by an impassible rockfall where\na portion of the ceiling fell in. To the west is a white misty archway, and\nto the east stands a massive iron bound oak door. The passageway continues\nto the south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1462,
+          "direction": "east"
+        },
+        {
+          "to_room": 1459,
+          "direction": "south"
+        },
+        {
+          "to_room": 1461,
+          "direction": "west",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 73,
+              "__v3": 8,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 73,
+              "consume_key": false,
+              "barrier_number": 8
+            }
+          }
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1461,
+      "short_description": "You're in a small study.",
+      "long_description": "You are standing in a small study that has somehow survived whatever\ncataclysm destroyed the rest of this once majestic edifice. The room is\nfurnished with fine oak furniture which appears to be well kept. Among\nthese items you note a large writing desk, a locked chest, and a large\ncanopy bed. In the west wall of this room is a large fireplace where a\nwarm fire burns brightly. The only exit is through a white misty archway\nto the east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1460,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1462,
+      "short_description": "You're in a ballroom.",
+      "long_description": "You are standing in a magnificent ballroom that has somehow survived\nwhatever cataclysm befell the rest of this once majestic edifice. The\nroom is decorated gayly with many beautiful paintings and other works of\nart as well as several huge chandeliers made of fine crystals. To the\nwest stands a massive iron bound oak door and to the north is a blue\nmisty archway.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1463,
+          "direction": "north",
+          "door": {
+            "door_type": "ItemKeyDoor",
+            "description": "Requires player to have a specific item to pass",
+            "raw_parameters": {
+              "__v0": 72,
+              "__v3": 8,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {
+              "__v0": "Key item VNUM (required to unlock)",
+              "__v3": "Barrier number (reference to barriers.dat)",
+              "__v4": "Consume flag (0=keep key, 1=consume key)",
+              "__v5": "Message index for locked door",
+              "__v6": "Message index for unlocked door"
+            },
+            "decoded_values": {
+              "key_item_vnum": 72,
+              "consume_key": false,
+              "barrier_number": 8
+            }
+          }
+        },
+        {
+          "to_room": 1460,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1463,
+      "short_description": "You're in a large bedroom.",
+      "long_description": "You are standing in a large bedroom that has somehow survived whatever\ncataclysm destroyed the rest of this once majestic edifice. The room is\nfurnished with fine furniture which appears to be well kept. The color\nwhich seems to dominate the room is pink. The room gives the impression\nthat it belongs to a young woman brought up by a family that was very\nwell off. Most of the furniture in the room is pink and frilly, especially\nthe large canopy bed dominating the northern portion of the room. In the\nbed lies a beautiful princess appears totally oblivious to the state of\nher surroundings. The only exit is through a blue misty archway to the\nsouth.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1462,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "PUZZLE",
+            "index": 4,
+            "description": "Puzzle trigger (command-based interaction)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 6,
+            "v3": 12,
+            "v4": 1463,
+            "v5": 933,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "cmd_trigger_id": 6,
+            "v3": 12,
+            "v4": 1463,
+            "v5": 933,
+            "v6": 0,
+            "is_active": true
+          }
+        }
+      ]
+    }
+  ],
+  "_access_requirements": {
+    "rune": "no_rune",
+    "description": "Starter areas, no rune required"
+  }
+}

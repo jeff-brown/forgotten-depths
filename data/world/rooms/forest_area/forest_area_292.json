@@ -1,0 +1,11 @@
+{
+  "id": "forest_area_292",
+  "title": "You're in the forest",
+  "description": "You are standing at the end of a path in a dense forest. The sounds\nof birds and other small animals in the trees gives life to this lush\ngreen wood. The path leads off to the northwest.",
+  "area_id": "forest_area",
+  "is_safe": false,
+  "light_level": 0.5,
+  "exits": {
+    "northwest": "forest_area_291"
+  }
+}

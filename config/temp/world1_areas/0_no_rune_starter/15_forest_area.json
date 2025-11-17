@@ -1,0 +1,3424 @@
+{
+  "area_id": 15,
+  "area_name": "Forest Area",
+  "area_type": "World1Zone",
+  "terrain": "FOREST",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Forest Area - reorganized from World1 export",
+    "total_rooms": 90,
+    "room_id_range": {
+      "min": 234,
+      "max": 323
+    }
+  },
+  "_statistics": {
+    "total_rooms": 90,
+    "room_id_range": {
+      "min": 234,
+      "max": 323
+    },
+    "total_exits": 184,
+    "total_npcs": 0,
+    "total_lairs": 7,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "FOREST": 90
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 234,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 235,
+          "direction": "east"
+        },
+        {
+          "to_room": 323,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 235,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 236,
+          "direction": "east"
+        },
+        {
+          "to_room": 234,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 236,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 237,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 235,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 237,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 238,
+          "direction": "north"
+        },
+        {
+          "to_room": 236,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 238,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 239,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 237,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 239,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 240,
+          "direction": "east"
+        },
+        {
+          "to_room": 238,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 240,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing at the end of a path in a dense forest. The sounds\nof birds and other small animals in the trees gives life to this lush\ngreen wood. The path leads off to the west and to the east is a damp\nand dismal swamp.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 324,
+          "direction": "east"
+        },
+        {
+          "to_room": 239,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 241,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 242,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 316,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 242,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 241,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 317,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 243,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 244,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 317,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 244,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the southeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 245,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 243,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 245,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 246,
+          "direction": "east"
+        },
+        {
+          "to_room": 244,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 246,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 247,
+          "direction": "east"
+        },
+        {
+          "to_room": 245,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 247,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 248,
+          "direction": "east"
+        },
+        {
+          "to_room": 246,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 248,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 249,
+          "direction": "south"
+        },
+        {
+          "to_room": 247,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 249,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 248,
+          "direction": "north"
+        },
+        {
+          "to_room": 250,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 250,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 249,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 251,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 251,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 250,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 252,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 252,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 253,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 251,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 253,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 254,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 252,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 254,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 255,
+          "direction": "east"
+        },
+        {
+          "to_room": 253,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 255,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing at the end of a path in a dense forest. The sounds\nof birds and other small animals in the trees gives life to this lush\ngreen wood. The path leads off to the west and to the east is a damp\nand dismal swamp.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 415,
+          "direction": "east"
+        },
+        {
+          "to_room": 254,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 256,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 317,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 257,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 257,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 256,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 258,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 258,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 259,
+          "direction": "north"
+        },
+        {
+          "to_room": 257,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 259,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 258,
+          "direction": "south"
+        },
+        {
+          "to_room": 260,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 260,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 259,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 318,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 261,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 262,
+          "direction": "north"
+        },
+        {
+          "to_room": 318,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 262,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1459,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 261,
+          "direction": "south"
+        },
+        {
+          "to_room": 263,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 263,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 262,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 264,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 264,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 263,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 265,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 265,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north, west, and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 266,
+          "direction": "north"
+        },
+        {
+          "to_room": 264,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 275,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 266,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 265,
+          "direction": "south"
+        },
+        {
+          "to_room": 267,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 267,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 266,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 268,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 268,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 269,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 267,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 269,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 268,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 270,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 270,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 269,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 271,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 271,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 270,
+          "direction": "east"
+        },
+        {
+          "to_room": 320,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 272,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 320,
+          "direction": "south"
+        },
+        {
+          "to_room": 273,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 273,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 274,
+          "direction": "north"
+        },
+        {
+          "to_room": 272,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 274,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing at the end of a path in a dense forest. The sounds\nof birds and other small animals in the trees gives life to this lush\ngreen wood. The path leads off to the south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 273,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 275,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 265,
+          "direction": "east"
+        },
+        {
+          "to_room": 276,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 276,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 275,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 277,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 277,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 276,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 278,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 278,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 277,
+          "direction": "east"
+        },
+        {
+          "to_room": 279,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 279,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 278,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 321,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 280,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 318,
+          "direction": "east"
+        },
+        {
+          "to_room": 281,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 281,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 280,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 282,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 282,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 281,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 283,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 283,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 284,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 282,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 284,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 285,
+          "direction": "south"
+        },
+        {
+          "to_room": 283,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 285,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 284,
+          "direction": "north"
+        },
+        {
+          "to_room": 286,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 286,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 285,
+          "direction": "north"
+        },
+        {
+          "to_room": 287,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 287,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 319,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 286,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 288,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 289,
+          "direction": "east"
+        },
+        {
+          "to_room": 319,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 289,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 290,
+          "direction": "east"
+        },
+        {
+          "to_room": 288,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 290,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 291,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 289,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 291,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 292,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 290,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 292,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing at the end of a path in a dense forest. The sounds\nof birds and other small animals in the trees gives life to this lush\ngreen wood. The path leads off to the northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 291,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 293,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 319,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 294,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 294,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 293,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 295,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 295,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 294,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 296,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 296,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 295,
+          "direction": "east"
+        },
+        {
+          "to_room": 297,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 297,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 296,
+          "direction": "east"
+        },
+        {
+          "to_room": 298,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 298,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 297,
+          "direction": "north"
+        },
+        {
+          "to_room": 299,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 299,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 298,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 322,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 300,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 301,
+          "direction": "east"
+        },
+        {
+          "to_room": 322,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 301,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 302,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 300,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 302,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1019,
+          "direction": "south"
+        },
+        {
+          "to_room": 301,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 303,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 229,
+          "direction": "east"
+        },
+        {
+          "to_room": 304,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 304,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 303,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 305,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 305,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 304,
+          "direction": "north"
+        },
+        {
+          "to_room": 306,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 306,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 305,
+          "direction": "north"
+        },
+        {
+          "to_room": 307,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 307,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 306,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 308,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 308,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 307,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 309,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 309,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 310,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 308,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 310,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 309,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 311,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 311,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 312,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 310,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 312,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 313,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 311,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 313,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 314,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 312,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 314,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 315,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 313,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 315,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 314,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 316,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 316,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nPaths lead off to the northeast, northwest, and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 323,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 241,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 315,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 50,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 317,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nPaths lead off to the northeast, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 242,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 243,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 256,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 72,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 318,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nPaths lead off to the north, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 261,
+          "direction": "north"
+        },
+        {
+          "to_room": 260,
+          "direction": "east"
+        },
+        {
+          "to_room": 280,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 39,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 319,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nPaths lead off to the east, northwest, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 288,
+          "direction": "east"
+        },
+        {
+          "to_room": 293,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 287,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 56,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 320,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nPaths lead off to the north and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 272,
+          "direction": "north"
+        },
+        {
+          "to_room": 271,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 46,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 321,
+      "short_description": "You're in the forest.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an eerie greenish light. The exits are to the east and west. There is light to the east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 279,
+          "direction": "north"
+        },
+        {
+          "to_room": 3059,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 112,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 322,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nPaths lead off to the north and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 299,
+          "direction": "north"
+        },
+        {
+          "to_room": 300,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 323,
+      "short_description": "You're in the forest.",
+      "long_description": "You are standing on a path in a dense forest. The sounds of birds and\nother small animals in the trees gives life to this lush green wood.\nThe path continues to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FOREST",
+        "index": 5,
+        "description": "Forest"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 234,
+          "direction": "east"
+        },
+        {
+          "to_room": 316,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "no_rune",
+    "description": "Starter areas, no rune required"
+  }
+}

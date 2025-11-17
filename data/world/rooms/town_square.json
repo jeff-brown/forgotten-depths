@@ -9,7 +9,8 @@
     "northeast": "inn_entrance",
     "west": "temple",
     "east": "wizard_tower",
-    "northwest": "general_store"  
+    "northwest": "general_store",
+    "southwest": "mountains_area_183"
   },
   "items": [
     "fountain_coin"

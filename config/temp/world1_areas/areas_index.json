@@ -1,0 +1,285 @@
+{
+  "_metadata": {
+    "version": "2.0",
+    "description": "World1 areas reorganized by manual zone assignments",
+    "total_areas": 25,
+    "total_rooms": 4064
+  },
+  "areas": [
+    {
+      "area_id": 1,
+      "area_name": "Stone Passages Areas",
+      "filename": "01_stone_passages_areas.json",
+      "terrain": "PASSAGES",
+      "room_count": 832,
+      "room_id_range": {
+        "min": 3097,
+        "max": 3928
+      }
+    },
+    {
+      "area_id": 2,
+      "area_name": "Labyrinth Area",
+      "filename": "02_labyrinth_area.json",
+      "terrain": "LABYRINTH",
+      "room_count": 500,
+      "room_id_range": {
+        "min": 1464,
+        "max": 1963
+      }
+    },
+    {
+      "area_id": 3,
+      "area_name": "Natural Caverns Area",
+      "filename": "03_natural_caverns_area.json",
+      "terrain": "CAVERNS",
+      "room_count": 313,
+      "room_id_range": {
+        "min": 2503,
+        "max": 2815
+      }
+    },
+    {
+      "area_id": 4,
+      "area_name": "Flagstone Area",
+      "filename": "04_flagstone_area.json",
+      "terrain": "FOREST",
+      "room_count": 299,
+      "room_id_range": {
+        "min": 502,
+        "max": 800
+      }
+    },
+    {
+      "area_id": 5,
+      "area_name": "Stoneworks Area",
+      "filename": "05_stoneworks_area.json",
+      "terrain": "STONEWORKS",
+      "room_count": 267,
+      "room_id_range": {
+        "min": 1192,
+        "max": 1458
+      }
+    },
+    {
+      "area_id": 6,
+      "area_name": "Deep Forest Area",
+      "filename": "06_deep_forest_area.json",
+      "terrain": "DEEPFOREST",
+      "room_count": 199,
+      "room_id_range": {
+        "min": 2816,
+        "max": 3014
+      }
+    },
+    {
+      "area_id": 7,
+      "area_name": "Sewers Area",
+      "filename": "07_sewers_area.json",
+      "terrain": "SEWERS",
+      "room_count": 178,
+      "room_id_range": {
+        "min": 844,
+        "max": 1090
+      }
+    },
+    {
+      "area_id": 8,
+      "area_name": "Sweltering Passages Area",
+      "filename": "08_sweltering_passages_area.json",
+      "terrain": "SWELTERING",
+      "room_count": 143,
+      "room_id_range": {
+        "min": 2133,
+        "max": 2402
+      }
+    },
+    {
+      "area_id": 9,
+      "area_name": "Ledge Area",
+      "filename": "09_ledge_area.json",
+      "terrain": "LEDGE",
+      "room_count": 136,
+      "room_id_range": {
+        "min": 1964,
+        "max": 2099
+      }
+    },
+    {
+      "area_id": 10,
+      "area_name": "Elven Area",
+      "filename": "10_elven_area.json",
+      "terrain": "ELVEN",
+      "room_count": 136,
+      "room_id_range": {
+        "min": 3929,
+        "max": 4064
+      }
+    },
+    {
+      "area_id": 11,
+      "area_name": "Granite Corridor Area",
+      "filename": "11_granite_corridor_area.json",
+      "terrain": "GRANITE",
+      "room_count": 127,
+      "room_id_range": {
+        "min": 2176,
+        "max": 2302
+      }
+    },
+    {
+      "area_id": 12,
+      "area_name": "Desert Area",
+      "filename": "12_desert_area.json",
+      "terrain": "DESERT",
+      "room_count": 101,
+      "room_id_range": {
+        "min": 1091,
+        "max": 1191
+      }
+    },
+    {
+      "area_id": 13,
+      "area_name": "Valley Area",
+      "filename": "13_valley_area.json",
+      "terrain": "VALLEY",
+      "room_count": 100,
+      "room_id_range": {
+        "min": 2403,
+        "max": 2502
+      }
+    },
+    {
+      "area_id": 14,
+      "area_name": "Swamp Area",
+      "filename": "14_swamp_area.json",
+      "terrain": "SWAMP",
+      "room_count": 99,
+      "room_id_range": {
+        "min": 324,
+        "max": 422
+      }
+    },
+    {
+      "area_id": 15,
+      "area_name": "Forest Area",
+      "filename": "15_forest_area.json",
+      "terrain": "FOREST",
+      "room_count": 90,
+      "room_id_range": {
+        "min": 234,
+        "max": 323
+      }
+    },
+    {
+      "area_id": 16,
+      "area_name": "Mountains Cave Area",
+      "filename": "16_mountains_cave_area.json",
+      "terrain": "CAVES",
+      "room_count": 82,
+      "room_id_range": {
+        "min": 3015,
+        "max": 3096
+      }
+    },
+    {
+      "area_id": 17,
+      "area_name": "Dungeon Level 3",
+      "filename": "17_dungeon_level_3.json",
+      "terrain": "DUNGEON3",
+      "room_count": 75,
+      "room_id_range": {
+        "min": 108,
+        "max": 182
+      }
+    },
+    {
+      "area_id": 18,
+      "area_name": "Tower Area",
+      "filename": "18_tower_area.json",
+      "terrain": "TOWER",
+      "room_count": 74,
+      "room_id_range": {
+        "min": 1019,
+        "max": 1463
+      }
+    },
+    {
+      "area_id": 19,
+      "area_name": "Cellar Area",
+      "filename": "19_cellar_area.json",
+      "terrain": "CELLARS",
+      "room_count": 59,
+      "room_id_range": {
+        "min": 443,
+        "max": 501
+      }
+    },
+    {
+      "area_id": 20,
+      "area_name": "Dungeon Level 2",
+      "filename": "20_dungeon_level_2.json",
+      "terrain": "DUNGEON2",
+      "room_count": 56,
+      "room_id_range": {
+        "min": 52,
+        "max": 107
+      }
+    },
+    {
+      "area_id": 21,
+      "area_name": "Dungeon Level 1",
+      "filename": "21_dungeon_level_1.json",
+      "terrain": "DUNGEON1",
+      "room_count": 51,
+      "room_id_range": {
+        "min": 1,
+        "max": 51
+      }
+    },
+    {
+      "area_id": 22,
+      "area_name": "Mountains Area",
+      "filename": "22_mountains_area.json",
+      "terrain": "MOUNTAINS",
+      "room_count": 51,
+      "room_id_range": {
+        "min": 183,
+        "max": 233
+      }
+    },
+    {
+      "area_id": 23,
+      "area_name": "Flagworks Area",
+      "filename": "23_flagworks_area.json",
+      "terrain": "FLAGWORKS",
+      "room_count": 43,
+      "room_id_range": {
+        "min": 801,
+        "max": 843
+      }
+    },
+    {
+      "area_id": 24,
+      "area_name": "Tunnel Area",
+      "filename": "24_tunnel_area.json",
+      "terrain": "TUNNEL",
+      "room_count": 33,
+      "room_id_range": {
+        "min": 2100,
+        "max": 2132
+      }
+    },
+    {
+      "area_id": 25,
+      "area_name": "Ruined Town",
+      "filename": "25_ruined_town.json",
+      "terrain": "SWAMP",
+      "room_count": 20,
+      "room_id_range": {
+        "min": 423,
+        "max": 442
+      }
+    }
+  ]
+}

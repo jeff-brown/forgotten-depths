@@ -1,0 +1,5418 @@
+{
+  "area_id": 8,
+  "area_name": "Sweltering Passages Area",
+  "area_type": "World1Zone",
+  "terrain": "SWELTERING",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Sweltering Passages Area - reorganized from World1 export",
+    "total_rooms": 143,
+    "room_id_range": {
+      "min": 2133,
+      "max": 2402
+    }
+  },
+  "_statistics": {
+    "total_rooms": 143,
+    "room_id_range": {
+      "min": 2133,
+      "max": 2402
+    },
+    "total_exits": 288,
+    "total_npcs": 0,
+    "total_lairs": 14,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "FIRE1": 143
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 2133,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southwest and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2134,
+          "direction": "north"
+        },
+        {
+          "to_room": 2358,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2134,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2137,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2133,
+          "direction": "south"
+        },
+        {
+          "to_room": 2135,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2135,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2134,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2136,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2136,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2135,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2137,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2138,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2134,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2138,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2139,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2137,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2139,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2142,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2140,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2138,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 95,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2140,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2141,
+          "direction": "east"
+        },
+        {
+          "to_room": 2139,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2141,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2140,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2142,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2144,
+          "direction": "north"
+        },
+        {
+          "to_room": 2143,
+          "direction": "east"
+        },
+        {
+          "to_room": 2139,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2143,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2142,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 1,
+          "item_vnum": 0
+        },
+        {
+          "mob_vnum": 96,
+          "num_mobs": 1,
+          "item_vnum": 82
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2144,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2145,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2142,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2145,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2144,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 94,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2146,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2147,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2348,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2147,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2148,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2146,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2153,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2148,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2149,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2147,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2149,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2151,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2150,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2148,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 95,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2150,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2149,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2151,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2152,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2149,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2152,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2151,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 94,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2153,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2154,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2147,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2154,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2156,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2153,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2155,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2155,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2154,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2156,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2157,
+          "direction": "north"
+        },
+        {
+          "to_room": 2154,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2157,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2156,
+          "direction": "south"
+        },
+        {
+          "to_room": 2202,
+          "direction": "down"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2158,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2159,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2344,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2159,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2160,
+          "direction": "east"
+        },
+        {
+          "to_room": 2158,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2160,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2161,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2159,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2161,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2162,
+          "direction": "south"
+        },
+        {
+          "to_room": 2160,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2162,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2161,
+          "direction": "north"
+        },
+        {
+          "to_room": 2163,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2163,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2162,
+          "direction": "north"
+        },
+        {
+          "to_room": 2164,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2164,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southwest and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2163,
+          "direction": "north"
+        },
+        {
+          "to_room": 2165,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2165,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2168,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2166,
+          "direction": "south"
+        },
+        {
+          "to_room": 2164,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2166,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2165,
+          "direction": "north"
+        },
+        {
+          "to_room": 2167,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2167,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2166,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2168,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2165,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2169,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2170,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2312,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2170,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2171,
+          "direction": "east"
+        },
+        {
+          "to_room": 2169,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2171,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2172,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2173,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2170,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2172,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2171,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2173,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2174,
+          "direction": "south"
+        },
+        {
+          "to_room": 2171,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2174,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southwest and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2173,
+          "direction": "north"
+        },
+        {
+          "to_room": 2175,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2175,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southeast, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2174,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2303,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2304,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2304,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2303,
+          "direction": "north"
+        },
+        {
+          "to_room": 2305,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2305,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2304,
+          "direction": "north"
+        },
+        {
+          "to_room": 2306,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2306,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2305,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2307,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2307,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2306,
+          "direction": "north"
+        },
+        {
+          "to_room": 2308,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2308,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2307,
+          "direction": "north"
+        },
+        {
+          "to_room": 2309,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2309,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2308,
+          "direction": "north"
+        },
+        {
+          "to_room": 2310,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2310,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2309,
+          "direction": "north"
+        },
+        {
+          "to_room": 2311,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2311,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2310,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2312,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2312,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2311,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2169,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2313,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2313,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2312,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2314,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2314,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2313,
+          "direction": "north"
+        },
+        {
+          "to_room": 2315,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2315,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2314,
+          "direction": "north"
+        },
+        {
+          "to_room": 2316,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2316,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2315,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2317,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2317,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2316,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2318,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2318,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and down.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2317,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2319,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2319,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2318,
+          "direction": "east"
+        },
+        {
+          "to_room": 2320,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2327,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2320,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and down.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2319,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2321,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2321,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2320,
+          "direction": "east"
+        },
+        {
+          "to_room": 2322,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2322,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2321,
+          "direction": "east"
+        },
+        {
+          "to_room": 2323,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2323,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2322,
+          "direction": "east"
+        },
+        {
+          "to_room": 2324,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2324,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2323,
+          "direction": "east"
+        },
+        {
+          "to_room": 2325,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2325,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2324,
+          "direction": "east"
+        },
+        {
+          "to_room": 2326,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2326,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2325,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2327,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2328,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2319,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2328,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2329,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2327,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2329,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2330,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2328,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2330,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2331,
+          "direction": "north"
+        },
+        {
+          "to_room": 2329,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2331,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2332,
+          "direction": "north"
+        },
+        {
+          "to_room": 2330,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2332,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2333,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2331,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2333,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2334,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2332,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2334,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2335,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2333,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2335,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2336,
+          "direction": "north"
+        },
+        {
+          "to_room": 2334,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2336,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2337,
+          "direction": "north"
+        },
+        {
+          "to_room": 2335,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2337,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2338,
+          "direction": "north"
+        },
+        {
+          "to_room": 2336,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2338,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2339,
+          "direction": "north"
+        },
+        {
+          "to_room": 2337,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2339,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2340,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2338,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2340,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2341,
+          "direction": "north"
+        },
+        {
+          "to_room": 2339,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2341,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2342,
+          "direction": "north"
+        },
+        {
+          "to_room": 2340,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2342,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2343,
+          "direction": "north"
+        },
+        {
+          "to_room": 2341,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2343,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2344,
+          "direction": "north"
+        },
+        {
+          "to_room": 2342,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2344,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2158,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2343,
+          "direction": "south"
+        },
+        {
+          "to_room": 2345,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2345,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2344,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2346,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2346,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2345,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2347,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2347,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2346,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2348,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2348,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2146,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2347,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2349,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2349,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2348,
+          "direction": "east"
+        },
+        {
+          "to_room": 2350,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2350,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2349,
+          "direction": "east"
+        },
+        {
+          "to_room": 2351,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2351,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2350,
+          "direction": "east"
+        },
+        {
+          "to_room": 2352,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2352,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2351,
+          "direction": "east"
+        },
+        {
+          "to_room": 2353,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2353,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast, southeast, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2352,
+          "direction": "east"
+        },
+        {
+          "to_room": 2354,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2354,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2353,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2355,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2355,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2354,
+          "direction": "east"
+        },
+        {
+          "to_room": 2356,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2356,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2355,
+          "direction": "east"
+        },
+        {
+          "to_room": 2357,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2357,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2356,
+          "direction": "east"
+        },
+        {
+          "to_room": 2358,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2358,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2357,
+          "direction": "east"
+        },
+        {
+          "to_room": 2359,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2133,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2359,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and down.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2358,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2360,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2360,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2359,
+          "direction": "east"
+        },
+        {
+          "to_room": 2361,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2361,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2360,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2362,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2362,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2361,
+          "direction": "north"
+        },
+        {
+          "to_room": 2363,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2363,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2362,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2365,
+          "direction": "south"
+        },
+        {
+          "to_room": 2364,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2364,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2363,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2365,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2363,
+          "direction": "north"
+        },
+        {
+          "to_room": 2366,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2366,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2365,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2367,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2367,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2368,
+          "direction": "south"
+        },
+        {
+          "to_room": 2366,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2368,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "You are standing in a surprisingly orderly complex of natural caverns which\nform wide passageways and large, spacious chambers with few stalagtites or\nstalagmites blocking open areas. The floor here is unnaturally smooth and\nlevel despite the apparent origin of these caverns. You may exit to the\nnorth, southeast, or to the west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2367,
+          "direction": "north"
+        },
+        {
+          "to_room": 2370,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2369,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2369,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2368,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2370,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2371,
+          "direction": "south"
+        },
+        {
+          "to_room": 2368,
+          "direction": "northwest"
+        },
+        {
+          "to_room": 1977,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2371,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2370,
+          "direction": "north"
+        },
+        {
+          "to_room": 2372,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2372,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2371,
+          "direction": "north"
+        },
+        {
+          "to_room": 2373,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2373,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2372,
+          "direction": "north"
+        },
+        {
+          "to_room": 2374,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2374,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2373,
+          "direction": "north"
+        },
+        {
+          "to_room": 2375,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2375,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2374,
+          "direction": "north"
+        },
+        {
+          "to_room": 2376,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2376,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2375,
+          "direction": "north"
+        },
+        {
+          "to_room": 2377,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2377,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2376,
+          "direction": "north"
+        },
+        {
+          "to_room": 2378,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2378,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2377,
+          "direction": "north"
+        },
+        {
+          "to_room": 2379,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2379,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2378,
+          "direction": "north"
+        },
+        {
+          "to_room": 2380,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2380,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southwest and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2379,
+          "direction": "north"
+        },
+        {
+          "to_room": 2381,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2381,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2382,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2380,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2382,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2383,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2381,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2383,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2384,
+          "direction": "east"
+        },
+        {
+          "to_room": 2386,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2382,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2384,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2385,
+          "direction": "east"
+        },
+        {
+          "to_room": 2383,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2385,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2384,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2386,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2383,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2387,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2387,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2386,
+          "direction": "east"
+        },
+        {
+          "to_room": 2388,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2390,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2388,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2387,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2389,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2389,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nThe only exit is to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2390,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2388,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2390,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2387,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2389,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2391,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2391,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2390,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2392,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2392,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southwest and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2393,
+          "direction": "north"
+        },
+        {
+          "to_room": 2391,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2393,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2394,
+          "direction": "north"
+        },
+        {
+          "to_room": 2392,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2394,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2395,
+          "direction": "north"
+        },
+        {
+          "to_room": 2393,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2395,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2396,
+          "direction": "north"
+        },
+        {
+          "to_room": 2394,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2396,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2397,
+          "direction": "north"
+        },
+        {
+          "to_room": 2395,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2397,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2398,
+          "direction": "north"
+        },
+        {
+          "to_room": 2396,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2398,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2399,
+          "direction": "north"
+        },
+        {
+          "to_room": 2397,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2399,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2400,
+          "direction": "north"
+        },
+        {
+          "to_room": 2398,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2400,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2401,
+          "direction": "north"
+        },
+        {
+          "to_room": 2399,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2401,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2402,
+          "direction": "north"
+        },
+        {
+          "to_room": 2400,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2402,
+      "short_description": "You're in a sweltering passage.",
+      "long_description": "This passage is huge and extremely hot. The walls are made of volcanic rock\nrun through with veins of some chalky black mineral which flakes off easily.\nYou can exit to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "FIRE1",
+        "index": 3,
+        "description": "Fire area level 1"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2401,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "blue_rune",
+    "description": "Blue Rune required for access"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mountains_cave_area_3041",
+  "title": "You're in a cave",
+  "description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an\neerie greenish light. The only exit is to the west.",
+  "area_id": "mountains_cave_area",
+  "is_safe": false,
+  "light_level": 0.5,
+  "exits": {
+    "west": "mountains_cave_area_3040"
+  },
+  "lairs": [
+    {
+      "mob_id": "female_orc",
+      "respawn_time": 300,
+      "max_mobs": 9
+    }
+  ]
+}

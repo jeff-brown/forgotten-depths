@@ -1,0 +1,1741 @@
+{
+  "area_id": 23,
+  "area_name": "Flagworks Area",
+  "area_type": "World1Zone",
+  "terrain": "FLAGWORKS",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Flagworks Area - reorganized from World1 export",
+    "total_rooms": 43,
+    "room_id_range": {
+      "min": 801,
+      "max": 843
+    }
+  },
+  "_statistics": {
+    "total_rooms": 43,
+    "room_id_range": {
+      "min": 801,
+      "max": 843
+    },
+    "total_exits": 85,
+    "total_npcs": 0,
+    "total_lairs": 13,
+    "total_triggers": 2,
+    "terrain_breakdown": {
+      "DUNGEON3": 43
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 801,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway leads to the southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 802,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 785,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 802,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northeast. There\nis also a marble staircase leading up.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 803,
+          "direction": "east"
+        },
+        {
+          "to_room": 801,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 803,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 804,
+          "direction": "east"
+        },
+        {
+          "to_room": 802,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 804,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 805,
+          "direction": "east"
+        },
+        {
+          "to_room": 803,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 805,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 806,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 804,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 806,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 807,
+          "direction": "east"
+        },
+        {
+          "to_room": 805,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 807,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 808,
+          "direction": "east"
+        },
+        {
+          "to_room": 806,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 808,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 807,
+          "direction": "west"
+        },
+        {
+          "to_room": 809,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 809,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned \nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 808,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 810,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 810,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned \nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 809,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 811,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 811,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 810,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 812,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 812,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 811,
+          "direction": "east"
+        },
+        {
+          "to_room": 813,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 813,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 812,
+          "direction": "east"
+        },
+        {
+          "to_room": 814,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 814,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northeast. There\nis also a marble staircase leading up.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 813,
+          "direction": "east"
+        },
+        {
+          "to_room": 815,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 815,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 814,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 816,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 816,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 815,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 817,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 817,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the west and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 816,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 818,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 818,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 819,
+          "direction": "east"
+        },
+        {
+          "to_room": 817,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 819,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 820,
+          "direction": "east"
+        },
+        {
+          "to_room": 818,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TRAP",
+            "index": 2,
+            "description": "Trap trigger (damages player)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 5,
+            "v3": 0,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "trap_id": 5
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 820,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 821,
+          "direction": "east"
+        },
+        {
+          "to_room": 819,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 821,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 822,
+          "direction": "east"
+        },
+        {
+          "to_room": 820,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 822,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 823,
+          "direction": "east"
+        },
+        {
+          "to_room": 821,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 95,
+          "num_mobs": 1,
+          "item_vnum": 2
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 823,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 824,
+          "direction": "east"
+        },
+        {
+          "to_room": 822,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 824,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 825,
+          "direction": "east"
+        },
+        {
+          "to_room": 823,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 825,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 826,
+          "direction": "east"
+        },
+        {
+          "to_room": 824,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TRAP",
+            "index": 2,
+            "description": "Trap trigger (damages player)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 5,
+            "v3": 0,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "trap_id": 5
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 826,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 827,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 825,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 827,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 828,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 826,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 828,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 827,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 829,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 829,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northwest and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 828,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 830,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 830,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 829,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 831,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 831,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 830,
+          "direction": "east"
+        },
+        {
+          "to_room": 832,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 832,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 831,
+          "direction": "east"
+        },
+        {
+          "to_room": 833,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 833,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 832,
+          "direction": "east"
+        },
+        {
+          "to_room": 834,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 834,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned \nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 833,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 835,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 835,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned \nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 834,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 836,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 836,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 837,
+          "direction": "east"
+        },
+        {
+          "to_room": 835,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 837,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 838,
+          "direction": "east"
+        },
+        {
+          "to_room": 836,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 838,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the northeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 839,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 837,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 839,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 840,
+          "direction": "east"
+        },
+        {
+          "to_room": 838,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 840,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 841,
+          "direction": "east"
+        },
+        {
+          "to_room": 839,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 841,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in an enormous stone chamber, fitted with reddish brown\nflagstones, unlike the dull grey stones in the outer corridors. The room is\noctagonal in shape, and huge smouldering censers burn in the corners. The\nonly visible exits are north and south through ornate stone archways.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 842,
+          "direction": "east"
+        },
+        {
+          "to_room": 840,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 842,
+      "short_description": "You are in an immaculate chamber.",
+      "long_description": "You are standing in an immaculate room. You notice on all four walls have\nluminous crimson luniform symbol. There are also enormous shackles attached\nto the walls near the floor. There is a enormous tapestry depicting a battle\nbetween a giant with ruddy skin and bright red hair and a small band of\ndwarven warriors. The exits lie to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 843,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 841,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 93,
+          "num_mobs": 2,
+          "item_vnum": 3
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 843,
+      "short_description": "You're in a well lit stonework passageway.",
+      "long_description": "You are standing in a well kept stonework passageway. The stonework here\nis of the finest quality, and certain of the stones, spaced evenly at\nshoulder height, are fitted with a piece of translucent material fashioned\nin the shape of a crescent moon. You also notice a glow of torchlight\ncoming through the crescent. The passageway runs to the east and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 842,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "yellow_rune",
+    "description": "Yellow Rune required for access"
+  }
+}

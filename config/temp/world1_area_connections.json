@@ -1,0 +1,96 @@
+{
+  "total_areas": 25,
+  "area_connections": {
+    "Stone Passages Areas": {
+      "Deep Forest Area": 1
+    },
+    "Natural Caverns Area": {
+      "Valley Area": 1
+    },
+    "Flagstone Area": {
+      "Cellar Area": 1,
+      "Flagworks Area": 1
+    },
+    "Stoneworks Area": {
+      "Desert Area": 1
+    },
+    "Deep Forest Area": {
+      "Stone Passages Areas": 1,
+      "Valley Area": 1
+    },
+    "Sewers Area": {
+      "Desert Area": 2
+    },
+    "Sweltering Passages Area": {
+      "Granite Corridor Area": 1,
+      "Ledge Area": 1
+    },
+    "Ledge Area": {
+      "Sweltering Passages Area": 1,
+      "Tunnel Area": 2
+    },
+    "Elven Area": {
+      "Mountains Area": 1
+    },
+    "Granite Corridor Area": {
+      "Sweltering Passages Area": 1,
+      "Valley Area": 1
+    },
+    "Desert Area": {
+      "Sewers Area": 2,
+      "Stoneworks Area": 1
+    },
+    "Valley Area": {
+      "Granite Corridor Area": 1,
+      "Deep Forest Area": 1,
+      "Natural Caverns Area": 1
+    },
+    "Swamp Area": {
+      "Forest Area": 2,
+      "Ruined Town": 1
+    },
+    "Forest Area": {
+      "Swamp Area": 2,
+      "Tower Area": 2,
+      "Mountains Area": 1,
+      "Mountains Cave Area": 1
+    },
+    "Mountains Cave Area": {
+      "Mountains Area": 1,
+      "Forest Area": 1
+    },
+    "Dungeon Level 3": {
+      "Dungeon Level 2": 3
+    },
+    "Tower Area": {
+      "Forest Area": 2
+    },
+    "Cellar Area": {
+      "Ruined Town": 1,
+      "Flagstone Area": 1
+    },
+    "Dungeon Level 2": {
+      "Dungeon Level 1": 1,
+      "Dungeon Level 3": 1
+    },
+    "Dungeon Level 1": {
+      "Dungeon Level 2": 1
+    },
+    "Mountains Area": {
+      "Elven Area": 1,
+      "Mountains Cave Area": 1,
+      "Forest Area": 1
+    },
+    "Flagworks Area": {
+      "Flagstone Area": 1
+    },
+    "Tunnel Area": {
+      "Labyrinth Area": 1,
+      "Ledge Area": 2
+    },
+    "Ruined Town": {
+      "Swamp Area": 1,
+      "Cellar Area": 1
+    }
+  }
+}

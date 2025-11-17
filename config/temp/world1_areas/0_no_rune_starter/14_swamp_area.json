@@ -1,0 +1,3793 @@
+{
+  "area_id": 14,
+  "area_name": "Swamp Area",
+  "area_type": "World1Zone",
+  "terrain": "SWAMP",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Swamp Area - reorganized from World1 export",
+    "total_rooms": 99,
+    "room_id_range": {
+      "min": 324,
+      "max": 422
+    }
+  },
+  "_statistics": {
+    "total_rooms": 99,
+    "room_id_range": {
+      "min": 324,
+      "max": 422
+    },
+    "total_exits": 211,
+    "total_npcs": 0,
+    "total_lairs": 7,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "SWAMP": 99
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 324,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the southeast and a path leads into a dense forest lies to the west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 325,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 240,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 325,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 326,
+          "direction": "south"
+        },
+        {
+          "to_room": 324,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 326,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 325,
+          "direction": "north"
+        },
+        {
+          "to_room": 327,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 327,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 326,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 328,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 328,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 329,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 327,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 329,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 330,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 328,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 330,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 418,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 329,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 331,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 332,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 418,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 332,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 333,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 331,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 333,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 334,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 332,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 334,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 335,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 333,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 335,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the southeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 336,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 334,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 336,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 337,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 335,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 337,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 419,
+          "direction": "east"
+        },
+        {
+          "to_room": 336,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 338,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 339,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 419,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 339,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 340,
+          "direction": "east"
+        },
+        {
+          "to_room": 338,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 340,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 341,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 339,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 341,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 342,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 340,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 342,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 343,
+          "direction": "east"
+        },
+        {
+          "to_room": 341,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 343,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west, northeast, and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 344,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 348,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 342,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 344,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 345,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 343,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 345,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 346,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 344,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 346,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 347,
+          "direction": "north"
+        },
+        {
+          "to_room": 345,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 347,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 423,
+          "direction": "north"
+        },
+        {
+          "to_room": 346,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 348,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 349,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 343,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 349,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 348,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 350,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 350,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 349,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 351,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 351,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the southeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 350,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 352,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 352,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 351,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 353,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 353,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 352,
+          "direction": "east"
+        },
+        {
+          "to_room": 354,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 354,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast, northwest, and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 353,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 381,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 355,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 355,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 354,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 356,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 356,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 419,
+          "direction": "north"
+        },
+        {
+          "to_room": 355,
+          "direction": "east"
+        },
+        {
+          "to_room": 357,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 357,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 356,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 358,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 358,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 357,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 359,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 359,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 360,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 358,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 360,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 359,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 361,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 361,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 360,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 362,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 362,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south, east, and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 361,
+          "direction": "east"
+        },
+        {
+          "to_room": 365,
+          "direction": "south"
+        },
+        {
+          "to_room": 363,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 363,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 362,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 364,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 364,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 363,
+          "direction": "east"
+        },
+        {
+          "to_room": 418,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 365,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 362,
+          "direction": "north"
+        },
+        {
+          "to_room": 366,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 366,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east, northwest, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 367,
+          "direction": "east"
+        },
+        {
+          "to_room": 410,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 365,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 367,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 368,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 366,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 368,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the southeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 369,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 367,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 369,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 370,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 368,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 370,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 371,
+          "direction": "east"
+        },
+        {
+          "to_room": 369,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 371,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north, south, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 373,
+          "direction": "north"
+        },
+        {
+          "to_room": 372,
+          "direction": "south"
+        },
+        {
+          "to_room": 370,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 372,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 371,
+          "direction": "north"
+        },
+        {
+          "to_room": 417,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 373,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north, south, and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 376,
+          "direction": "north"
+        },
+        {
+          "to_room": 374,
+          "direction": "east"
+        },
+        {
+          "to_room": 371,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 374,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 375,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 373,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 375,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 420,
+          "direction": "east"
+        },
+        {
+          "to_room": 374,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 376,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 377,
+          "direction": "north"
+        },
+        {
+          "to_room": 373,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 377,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 378,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 376,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 378,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 379,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 377,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 379,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 380,
+          "direction": "north"
+        },
+        {
+          "to_room": 378,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 380,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 382,
+          "direction": "east"
+        },
+        {
+          "to_room": 379,
+          "direction": "south"
+        },
+        {
+          "to_room": 381,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 381,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 380,
+          "direction": "east"
+        },
+        {
+          "to_room": 354,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 382,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 383,
+          "direction": "east"
+        },
+        {
+          "to_room": 380,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 383,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 384,
+          "direction": "east"
+        },
+        {
+          "to_room": 382,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 384,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 385,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 383,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 385,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 386,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 384,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 386,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 387,
+          "direction": "south"
+        },
+        {
+          "to_room": 385,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 387,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 386,
+          "direction": "north"
+        },
+        {
+          "to_room": 388,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 388,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 387,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 420,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 389,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the north, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 420,
+          "direction": "north"
+        },
+        {
+          "to_room": 390,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 400,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 390,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 391,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 389,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 391,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 392,
+          "direction": "east"
+        },
+        {
+          "to_room": 390,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 392,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 393,
+          "direction": "east"
+        },
+        {
+          "to_room": 391,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 393,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 421,
+          "direction": "south"
+        },
+        {
+          "to_room": 392,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 394,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 395,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 421,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 395,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 396,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 394,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 396,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 395,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 397,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 397,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 396,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 398,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 398,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 397,
+          "direction": "east"
+        },
+        {
+          "to_room": 399,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 399,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the south and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 398,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 422,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 400,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 389,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 401,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 401,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 400,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 402,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 402,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 401,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 403,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 403,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 402,
+          "direction": "east"
+        },
+        {
+          "to_room": 417,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 404,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 417,
+          "direction": "east"
+        },
+        {
+          "to_room": 405,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 405,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 404,
+          "direction": "east"
+        },
+        {
+          "to_room": 406,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 406,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 405,
+          "direction": "east"
+        },
+        {
+          "to_room": 407,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 407,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east, northwest, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 406,
+          "direction": "east"
+        },
+        {
+          "to_room": 411,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 408,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 408,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 409,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 407,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 409,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 410,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 408,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 410,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 366,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 409,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 411,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 407,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 416,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 412,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 416,
+          "direction": "east"
+        },
+        {
+          "to_room": 413,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 413,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 412,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 414,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 414,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 413,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 415,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 415,
+      "short_description": "You're in the swamp.",
+      "long_description": "You are standing on a trail in a dismal swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. The trail continues\nto the northeast and a path leads into a dense forest lies to the west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 414,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 255,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 416,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. Trails lead off\nto the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 411,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 412,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 27,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 417,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. Trails lead off\nto the east, west, and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 372,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 403,
+          "direction": "east"
+        },
+        {
+          "to_room": 404,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 56,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 418,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. Trails lead off\nto the north, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 331,
+          "direction": "north"
+        },
+        {
+          "to_room": 364,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 330,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 29,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 419,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. Trails lead off\nto the south, west, and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 338,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 356,
+          "direction": "south"
+        },
+        {
+          "to_room": 337,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 69,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 420,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. Trails lead off\nto the south, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 388,
+          "direction": "east"
+        },
+        {
+          "to_room": 389,
+          "direction": "south"
+        },
+        {
+          "to_room": 375,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 35,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 421,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. Trails lead off\nto the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 393,
+          "direction": "north"
+        },
+        {
+          "to_room": 394,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 19,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 422,
+      "short_description": "You're in a clearing.",
+      "long_description": "You are standing in a clearing in the swamp. The ground here is soft\nand damp, and there are many places where stagnant water lies in small\npools on the ground. The sounds of insects buzzing about breaks the\neerie silence that pervades this forboding place. A trail leads off\nto the north.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "SWAMP",
+        "index": 8,
+        "description": "Swamp"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 399,
+          "direction": "north"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 75,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "no_rune",
+    "description": "Starter areas, no rune required"
+  }
+}

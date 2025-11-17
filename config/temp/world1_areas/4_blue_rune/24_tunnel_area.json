@@ -1,0 +1,1361 @@
+{
+  "area_id": 24,
+  "area_name": "Tunnel Area",
+  "area_type": "World1Zone",
+  "terrain": "TUNNEL",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Tunnel Area - reorganized from World1 export",
+    "total_rooms": 33,
+    "room_id_range": {
+      "min": 2100,
+      "max": 2132
+    }
+  },
+  "_statistics": {
+    "total_rooms": 33,
+    "room_id_range": {
+      "min": 2100,
+      "max": 2132
+    },
+    "total_exits": 73,
+    "total_npcs": 0,
+    "total_lairs": 3,
+    "total_triggers": 2,
+    "terrain_breakdown": {
+      "DUNGEON3": 33
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 2100,
+      "short_description": "You're in the entrance to a tunnel.",
+      "long_description": "The ledge seems to be no more than a few feet wide and runs around a sheer\nwall high above an enormous pool of molten rock. The heat here is quite\nunbearable. The ledge leads southwest and slopes upward.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2101,
+          "direction": "north"
+        },
+        {
+          "to_room": 1912,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TELEPORT",
+            "index": 3,
+            "description": "Teleporter (moves player to another room)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 1576,
+            "v3": 1,
+            "v4": 0,
+            "v5": 0,
+            "v6": 0,
+            "v7": 1
+          },
+          "decoded_values": {
+            "target_room": 1576,
+            "teleporter_id": 1,
+            "is_enabled": true
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2101,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2102,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2100,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": [
+        {
+          "trigger_type": {
+            "name": "TREASURE",
+            "index": 1,
+            "description": "Treasure trigger (gold/items/runes)"
+          },
+          "is_triggered": false,
+          "raw_values": {
+            "v2": 0,
+            "v3": 4,
+            "v4": 0,
+            "v5": 0,
+            "v6": 1,
+            "v7": 1
+          },
+          "decoded_values": {
+            "treasure_id": 0,
+            "rune_reward": {
+              "index": 4,
+              "name": "Blue"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "room_id": 2102,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2103,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2111,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2101,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2103,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2104,
+          "direction": "north"
+        },
+        {
+          "to_room": 2102,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2104,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2105,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2103,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2105,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the to the north and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2115,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2104,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2106,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2106,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2107,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2105,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2107,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2108,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2106,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2108,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2109,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2107,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2109,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2110,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2119,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2108,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2110,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2109,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 84,
+          "num_mobs": 3,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2111,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe only exit lies to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2112,
+          "direction": "east"
+        },
+        {
+          "to_room": 2102,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2112,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the east and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2113,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2111,
+          "direction": "west"
+        },
+        {
+          "to_room": 2091,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2113,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast, west, and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2114,
+          "direction": "north"
+        },
+        {
+          "to_room": 2122,
+          "direction": "east"
+        },
+        {
+          "to_room": 2112,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2114,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2115,
+          "direction": "north"
+        },
+        {
+          "to_room": 2113,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2115,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2116,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2114,
+          "direction": "south"
+        },
+        {
+          "to_room": 2105,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2116,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2117,
+          "direction": "north"
+        },
+        {
+          "to_room": 2115,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2117,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2118,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2116,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 84,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2118,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2119,
+          "direction": "north"
+        },
+        {
+          "to_room": 2117,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2119,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2120,
+          "direction": "east"
+        },
+        {
+          "to_room": 2118,
+          "direction": "south"
+        },
+        {
+          "to_room": 2109,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2120,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the east, south, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2121,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 2119,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2121,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe only exit lies to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2128,
+          "direction": "east"
+        },
+        {
+          "to_room": 2120,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2122,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2123,
+          "direction": "east"
+        },
+        {
+          "to_room": 2113,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2123,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2124,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2122,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2124,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2125,
+          "direction": "north"
+        },
+        {
+          "to_room": 2123,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2125,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north and up.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2126,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2124,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 84,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 2126,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2127,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 2125,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2127,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2128,
+          "direction": "north"
+        },
+        {
+          "to_room": 2126,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2128,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the northeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2129,
+          "direction": "north"
+        },
+        {
+          "to_room": 2127,
+          "direction": "south"
+        },
+        {
+          "to_room": 2121,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2129,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2130,
+          "direction": "north"
+        },
+        {
+          "to_room": 2128,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2130,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the north, south, and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2129,
+          "direction": "south"
+        },
+        {
+          "to_room": 2131,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2131,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the southeast, southwest, and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2132,
+          "direction": "northeast",
+          "door": {
+            "door_type": "PromoteDoor",
+            "description": "Unknown door type",
+            "raw_parameters": {
+              "__v0": -4,
+              "__v3": 8,
+              "__v4": 0,
+              "__v5": 0,
+              "__v6": 1
+            },
+            "parameter_meanings": {}
+          }
+        },
+        {
+          "to_room": 2130,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 2132,
+      "short_description": "You're in a tunnel.",
+      "long_description": "This tunnel has been eroded from fossil rich rock. The air is humid\nand hot. Steam rises from many small holes through the walls and floor.\nThe exits are to the south and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DUNGEON3",
+        "index": 2,
+        "description": "Dungeon level 3"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 2131,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 2075,
+          "direction": "up"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "blue_rune",
+    "description": "Blue Rune required for access"
+  }
+}

@@ -1,0 +1,3914 @@
+{
+  "area_id": 12,
+  "area_name": "Desert Area",
+  "area_type": "World1Zone",
+  "terrain": "DESERT",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Desert Area - reorganized from World1 export",
+    "total_rooms": 101,
+    "room_id_range": {
+      "min": 1091,
+      "max": 1191
+    }
+  },
+  "_statistics": {
+    "total_rooms": 101,
+    "room_id_range": {
+      "min": 1091,
+      "max": 1191
+    },
+    "total_exits": 237,
+    "total_npcs": 0,
+    "total_lairs": 0,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "DESERT": 99,
+      "INVALID": 2
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 1091,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are in the western end of a large storage room. The room continues to\nthe east. This room appears to have been forgotten long ago.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1092,
+          "direction": "east"
+        },
+        {
+          "to_room": 1090,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1092,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are standing in a sandy stone passage. The walls and floor here are of\ncrudely worked stone while the ceiling is of packed earth and rock supported\nby heavy wooden beams. The passage continues to the east and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1093,
+          "direction": "south"
+        },
+        {
+          "to_room": 1091,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1093,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are standing in a sandy stone passage. The walls and floor here are of\ncrudely worked stone while the ceiling is of packed earth and rock supported\nby heavy wooden beams. The passage continues to the south and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1092,
+          "direction": "north"
+        },
+        {
+          "to_room": 1094,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1094,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are standing in a sandy stone passage. The walls and floor here are of\ncrudely worked stone while the ceiling is of packed earth and rock supported\nby heavy wooden beams. The passage continues to the south and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1093,
+          "direction": "north"
+        },
+        {
+          "to_room": 1095,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1095,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are standing in a sandy stone passage. The walls and floor here are of\ncrudely worked stone while the ceiling is of packed earth and rock supported\nby heavy wooden beams. The passage continues to the north and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1094,
+          "direction": "north"
+        },
+        {
+          "to_room": 1096,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1096,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are in the western end of a large storage room. The room continues to\nthe east. This room appears to have been forgotten long ago.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1095,
+          "direction": "east"
+        },
+        {
+          "to_room": 1097,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1097,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are in the western end of a large storage room. The room continues to\nthe east. This room appears to have been forgotten long ago.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1096,
+          "direction": "east"
+        },
+        {
+          "to_room": 1098,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1098,
+      "short_description": "You're in a sandy passage.",
+      "long_description": "You are standing in a sandy stone passage. The walls and floor here are of\ncrudely worked stone while the ceiling is of packed earth and rock supported\nby heavy wooden beams. The passage continues to the north and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1097,
+          "direction": "east"
+        },
+        {
+          "to_room": 1101,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1099,
+      "short_description": "You're in a storage room.",
+      "long_description": "You are in a circular stone building approximately forty feet in diameter.\nIn the center of the room is an iron grate leading downward. To the east\nand west lie sturdy oak doors.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1090,
+          "direction": "east"
+        },
+        {
+          "to_room": 1100,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1100,
+      "short_description": "You're in a storage room.",
+      "long_description": "You are in the eastern end of a large storage room. The room continues to\nthe west and a sturdy oak door lies to the east. This room appears to have been\nforgotten long ago.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1099,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1101,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest. The entrance\nto a cave in a large rock outcropping lies to the south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1098,
+          "direction": "north"
+        },
+        {
+          "to_room": 1102,
+          "direction": "east"
+        },
+        {
+          "to_room": 1135,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1102,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1103,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1101,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1103,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1104,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1102,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1104,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1105,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1103,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1105,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1106,
+          "direction": "south"
+        },
+        {
+          "to_room": 1104,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1106,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast,\nand southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1105,
+          "direction": "north"
+        },
+        {
+          "to_room": 1107,
+          "direction": "east"
+        },
+        {
+          "to_room": 1129,
+          "direction": "south"
+        },
+        {
+          "to_room": 1130,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1107,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, south, east, and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1114,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1108,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1106,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1108,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1109,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1107,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1109,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1110,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1115,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1108,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1110,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west, northeast, and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1111,
+          "direction": "north"
+        },
+        {
+          "to_room": 1109,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1111,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1112,
+          "direction": "north"
+        },
+        {
+          "to_room": 1110,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1112,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1111,
+          "direction": "south"
+        },
+        {
+          "to_room": 1113,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1113,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1112,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1114,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1114,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the southwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1113,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1107,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1115,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1109,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1116,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1116,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1115,
+          "direction": "north"
+        },
+        {
+          "to_room": 1117,
+          "direction": "east"
+        },
+        {
+          "to_room": 1124,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1117,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1118,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1116,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1118,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1119,
+          "direction": "south"
+        },
+        {
+          "to_room": 1117,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1119,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1118,
+          "direction": "north"
+        },
+        {
+          "to_room": 1120,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1122,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1120,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, southeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1121,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1119,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1121,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1120,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1178,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1122,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1122,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1119,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1121,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1123,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1123,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1122,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1124,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1124,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, south, east, and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1116,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1123,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1125,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1125,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1124,
+          "direction": "east"
+        },
+        {
+          "to_room": 1174,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1126,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1126,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1125,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1127,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1127,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the east, southwest and\nnorthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1128,
+          "direction": "north"
+        },
+        {
+          "to_room": 1126,
+          "direction": "east"
+        },
+        {
+          "to_room": 1145,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1128,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1129,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1127,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1129,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west, northeast, and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1106,
+          "direction": "north"
+        },
+        {
+          "to_room": 1128,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1130,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1106,
+          "direction": "east"
+        },
+        {
+          "to_room": 1131,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1131,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1130,
+          "direction": "east"
+        },
+        {
+          "to_room": 1142,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1132,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1132,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1131,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1133,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1133,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1132,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1134,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1134,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1135,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1133,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1136,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1135,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast, southeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1101,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1134,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1136,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the southwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1134,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1137,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1137,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, south, east, and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1136,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1139,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1138,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1138,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the southwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1137,
+          "direction": "east"
+        },
+        {
+          "to_room": 1152,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1139,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1140,
+          "direction": "east"
+        },
+        {
+          "to_room": 1137,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1140,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1141,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1139,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1141,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1142,
+          "direction": "east"
+        },
+        {
+          "to_room": 1140,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1142,
+      "short_description": "You're in the desert.",
+      "long_description": "Glowing orbs set in the walls give off an eerie yellow light. The high\nvaulted ceiling is supported by huge columns set at regular intervals.\nExits lie to the northeast, northwest, and southwest through a huge stone\ndoorway.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1131,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1143,
+          "direction": "south"
+        },
+        {
+          "to_room": 1141,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1143,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1142,
+          "direction": "north"
+        },
+        {
+          "to_room": 1144,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1144,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south, west, and\nnortheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1145,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1146,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1143,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1145,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1127,
+          "direction": "east"
+        },
+        {
+          "to_room": 1191,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1144,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1146,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, south, east, and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1144,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1191,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1147,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1147,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1146,
+          "direction": "east"
+        },
+        {
+          "to_room": 1159,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1148,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1148,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1147,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1149,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1149,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1148,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1150,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1150,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1149,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1151,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1151,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1150,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1152,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1152,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1138,
+          "direction": "north"
+        },
+        {
+          "to_room": 1151,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1153,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1153,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1152,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1154,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1154,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1153,
+          "direction": "north"
+        },
+        {
+          "to_room": 1155,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1155,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1156,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1154,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1156,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1157,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1155,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1157,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1158,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1163,
+          "direction": "south"
+        },
+        {
+          "to_room": 1156,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1158,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south, northwest and\nnortheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1159,
+          "direction": "east"
+        },
+        {
+          "to_room": 1157,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1159,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, south, east, and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1147,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1160,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1158,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1160,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1161,
+          "direction": "south"
+        },
+        {
+          "to_room": 1159,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1161,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast,\nand southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1160,
+          "direction": "north"
+        },
+        {
+          "to_room": 1171,
+          "direction": "east"
+        },
+        {
+          "to_room": 1164,
+          "direction": "south"
+        },
+        {
+          "to_room": 1162,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1162,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1161,
+          "direction": "east"
+        },
+        {
+          "to_room": 1163,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1163,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1157,
+          "direction": "north"
+        },
+        {
+          "to_room": 1162,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1164,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1161,
+          "direction": "north"
+        },
+        {
+          "to_room": 1165,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1165,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1166,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1164,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1166,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1167,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1187,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1165,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1167,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast, southeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1168,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1166,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1168,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the east and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1186,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1184,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1167,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1169,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1169,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1170,
+          "direction": "north"
+        },
+        {
+          "to_room": 1168,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1170,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast,\nsouthwest, and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1172,
+          "direction": "north"
+        },
+        {
+          "to_room": 1169,
+          "direction": "south"
+        },
+        {
+          "to_room": 1171,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1171,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, east, and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1170,
+          "direction": "east"
+        },
+        {
+          "to_room": 1161,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1172,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, south, and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1173,
+          "direction": "east"
+        },
+        {
+          "to_room": 1170,
+          "direction": "south"
+        },
+        {
+          "to_room": 1190,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1173,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south, east and\nnorthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1174,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1172,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1174,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the east and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1125,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1175,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1173,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1175,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1176,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1174,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1176,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1177,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1175,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1177,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and east.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1178,
+          "direction": "east"
+        },
+        {
+          "to_room": 1176,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1178,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, south, east, and\nwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1121,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1179,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1177,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1179,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, southeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1180,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1178,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1180,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast, southeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1179,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1181,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1181,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast, southeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1180,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1182,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1182,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south, east and\nnorthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1181,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1183,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1183,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the east, southwest and\nnorthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1184,
+          "direction": "north"
+        },
+        {
+          "to_room": 1182,
+          "direction": "east"
+        },
+        {
+          "to_room": 1187,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1184,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1185,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1183,
+          "direction": "south"
+        },
+        {
+          "to_room": 1168,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1185,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north, southeast and\nsouthwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1184,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1186,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1186,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the north and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1185,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 1168,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1187,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest, northeast and\nsoutheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1183,
+          "direction": "east"
+        },
+        {
+          "to_room": 1188,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 1166,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1188,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the west and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1187,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1189,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1189,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northeast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "DESERT",
+        "index": 10,
+        "description": "Desert"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1192,
+          "direction": "south"
+        },
+        {
+          "to_room": 1188,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1190,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the south and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1191,
+          "direction": "north"
+        },
+        {
+          "to_room": 1172,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 1191,
+      "short_description": "You're in the desert.",
+      "long_description": "You are standing in a rocky windswept desert. Huge black outcroppings of\nrock block travel in all directions except to the northwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "INVALID",
+        "index": 13,
+        "description": "Invalid terrain"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 1145,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 1190,
+          "direction": "south"
+        },
+        {
+          "to_room": 1146,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "white_rune",
+    "description": "White Rune required for access"
+  }
+}

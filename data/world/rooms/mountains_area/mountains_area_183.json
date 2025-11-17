@@ -1,0 +1,14 @@
+{
+  "id": "mountains_area_183",
+  "title": "You're outside the town gates",
+  "description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. From time to time an\nominous dark shape soars overhead. The town gates lie to the northeast.\nOther exits are to the northwest, southeast, and southwest.",
+  "area_id": "mountains_area",
+  "is_safe": false,
+  "light_level": 0.5,
+  "exits": {
+    "northeast": "town_square",
+    "southeast": "mountains_area_195",
+    "southwest": "mountains_area_184",
+    "northwest": "mountains_area_187"
+  }
+}

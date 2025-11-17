@@ -1,0 +1,1949 @@
+{
+  "area_id": 22,
+  "area_name": "Mountains Area",
+  "area_type": "World1Zone",
+  "terrain": "MOUNTAINS",
+  "_metadata": {
+    "version": "2.0",
+    "source": "Manual zone assignment from rooms_summary.csv",
+    "description": "Mountains Area - reorganized from World1 export",
+    "total_rooms": 51,
+    "room_id_range": {
+      "min": 183,
+      "max": 233
+    }
+  },
+  "_statistics": {
+    "total_rooms": 51,
+    "room_id_range": {
+      "min": 183,
+      "max": 233
+    },
+    "total_exits": 104,
+    "total_npcs": 0,
+    "total_lairs": 3,
+    "total_triggers": 0,
+    "terrain_breakdown": {
+      "MOUNTAINS": 51
+    }
+  },
+  "rooms": [
+    {
+      "room_id": 183,
+      "short_description": "You're outside the town gates.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. From time to time an\nominous dark shape soars overhead. The town gates lie to the northeast.\nOther exits are to the northwest, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": -90,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 195,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 184,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 187,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 184,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnortheast and south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 183,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 185,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 185,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorth and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 184,
+          "direction": "north"
+        },
+        {
+          "to_room": 186,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 186,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The entrance to a dark\ncave lies to the southeast. The only other exit is to the northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 185,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 225,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 187,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorth and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 188,
+          "direction": "north"
+        },
+        {
+          "to_room": 183,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 188,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nsouth and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 187,
+          "direction": "south"
+        },
+        {
+          "to_room": 189,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 189,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorth and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 190,
+          "direction": "north"
+        },
+        {
+          "to_room": 188,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 190,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nsouth and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 189,
+          "direction": "south"
+        },
+        {
+          "to_room": 191,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 191,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnortheast and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 192,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 190,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 192,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\neast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 193,
+          "direction": "east"
+        },
+        {
+          "to_room": 191,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 193,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 194,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 192,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 194,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The entrance to a dark\ncave lies to the north. The only other exit is to the southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 222,
+          "direction": "north"
+        },
+        {
+          "to_room": 193,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 195,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\neast and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 196,
+          "direction": "east"
+        },
+        {
+          "to_room": 183,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 196,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\neast and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 197,
+          "direction": "east"
+        },
+        {
+          "to_room": 195,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 197,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nwest and northeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 198,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 196,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 198,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\neast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 199,
+          "direction": "east"
+        },
+        {
+          "to_room": 197,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 199,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nwest, northeast, and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 208,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 201,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 198,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 200,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The only exit is to the\nnortheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 202,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 201,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorthwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 202,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 199,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 202,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnortheast, northwest, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 203,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 200,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 201,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 203,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\neast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 204,
+          "direction": "east"
+        },
+        {
+          "to_room": 202,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 204,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nsoutheast and west.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 205,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 203,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 205,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorthwest and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 206,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 204,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 206,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The entrance to a dark\ncave lies to the southwest. The only other exits are to the northeast\nand northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 207,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 231,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 205,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 207,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The entrance to a dark\ncave lies to the northeast. The only other exit is to the southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 232,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 206,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 208,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnortheast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 209,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 199,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 209,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorth and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 210,
+          "direction": "north"
+        },
+        {
+          "to_room": 208,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 210,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nsouth and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 209,
+          "direction": "south"
+        },
+        {
+          "to_room": 212,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 211,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The only exit is to the\nnortheast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 212,
+          "direction": "northeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 212,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnortheast, northwest, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 213,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 210,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 211,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 214,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 213,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnortheast and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 216,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 212,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 214,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorth and southeast.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 215,
+          "direction": "north"
+        },
+        {
+          "to_room": 212,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 215,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The only exit is to the\nsouth.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 214,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 216,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\nnorth, southeast, and southwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 218,
+          "direction": "north"
+        },
+        {
+          "to_room": 217,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 213,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 217,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The exits are to the\neast and northwest.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3929,
+          "direction": "east"
+        },
+        {
+          "to_room": 216,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 218,
+      "short_description": "You're in the mountains.",
+      "long_description": "You are standing on a rocky path between high, impassible mountains.\nOther than the sounds of the wind and an occasional bird cry, nothing\nbreaks the silence of this desolate landscape. The entrance to a dark\ncave lies to the northwest. The only other exit is to the south.",
+      "room_flags": {
+        "raw_value": 0,
+        "decoded_flags": [
+          "none"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 216,
+          "direction": "south"
+        },
+        {
+          "to_room": 219,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 219,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an\neerie greenish light. The exits are to the north, northwest, and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 3015,
+          "direction": "north"
+        },
+        {
+          "to_room": 218,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 220,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 220,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 221,
+          "direction": "north"
+        },
+        {
+          "to_room": 219,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 221,
+      "short_description": "You are in a clean cave.",
+      "long_description": "This cave is very clean and well kept. It has the look and feel of\nthe den of a sorceror. The floor of the cave has no trace of dirt or\nother litter. There are several items of furniture, all somewhat large\nand very sturdy looking. The only exit is to the south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 220,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 72,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 222,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the north and south. There\nis light to the south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 223,
+          "direction": "north"
+        },
+        {
+          "to_room": 194,
+          "direction": "south"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 223,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and south.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 222,
+          "direction": "south"
+        },
+        {
+          "to_room": 224,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 224,
+      "short_description": "You are in a large cave.",
+      "long_description": "This cave is very large and smells slightly of offal. It has the look\nof the den of some wild beast. The floor of the cave is covered with\nstraw and other litter. The only exit is to the southeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 223,
+          "direction": "southeast"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 67,
+          "num_mobs": 1,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    },
+    {
+      "room_id": 225,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northwest and southwest.\nThere is light to the northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 226,
+          "direction": "southwest"
+        },
+        {
+          "to_room": 186,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 226,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 225,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 227,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 227,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and northwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 226,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 228,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 228,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 227,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 229,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 229,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the east and west. There\nis light to the west.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 228,
+          "direction": "east"
+        },
+        {
+          "to_room": 303,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 230,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The only exit is to the east.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 231,
+          "direction": "east"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 231,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the northeast and west.\nThere is light to the northeast.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 206,
+          "direction": "northeast"
+        },
+        {
+          "to_room": 230,
+          "direction": "west"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 232,
+      "short_description": "You're in a cave.",
+      "long_description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide\nan eerie greenish light. The exits are to the southeast and southwest.\nThere is light to the southwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 233,
+          "direction": "southeast"
+        },
+        {
+          "to_room": 207,
+          "direction": "southwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [],
+      "triggers": []
+    },
+    {
+      "room_id": 233,
+      "short_description": "You are in a filthy cave.",
+      "long_description": "This cave is large and smells strongly of animal dung. It looks as if\nit might be home to some wild animal. This cave is filthy and littered\nwith the broken skeletons of many small animals. The only exit is to the\nnorthwest.",
+      "room_flags": {
+        "raw_value": 2,
+        "decoded_flags": [
+          "dark"
+        ],
+        "note": "Bitwise OR of flag values from _enumerations.room_flags"
+      },
+      "terrain": {
+        "name": "MOUNTAINS",
+        "index": 6,
+        "description": "Mountains"
+      },
+      "service_level": {
+        "value": 0,
+        "description": "none"
+      },
+      "exits": [
+        {
+          "to_room": 232,
+          "direction": "northwest"
+        }
+      ],
+      "npcs": {
+        "vnums": [],
+        "count": 0
+      },
+      "lairs": [
+        {
+          "mob_vnum": 48,
+          "num_mobs": 2,
+          "item_vnum": 0
+        }
+      ],
+      "triggers": []
+    }
+  ],
+  "_access_requirements": {
+    "rune": "no_rune",
+    "description": "Starter areas, no rune required"
+  }
+}

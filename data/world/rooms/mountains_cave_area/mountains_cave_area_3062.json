@@ -1,0 +1,25 @@
+{
+  "id": "mountains_cave_area_3062",
+  "title": "You're in a cave",
+  "description": "You're in a damp, poorly lit cave. Glowing lichens and fungi provide an\neerie greenish light. The exits are to the east, soutwest, and northwest.",
+  "area_id": "mountains_cave_area",
+  "is_safe": false,
+  "light_level": 0.5,
+  "exits": {
+    "east": "mountains_cave_area_3061",
+    "southwest": "mountains_cave_area_3086",
+    "northwest": "mountains_cave_area_3063"
+  },
+  "lairs": [
+    {
+      "mob_id": "gnoll",
+      "respawn_time": 300,
+      "max_mobs": 2
+    },
+    {
+      "mob_id": "gnoll_shaman",
+      "respawn_time": 300,
+      "max_mobs": 1
+    }
+  ]
+}
